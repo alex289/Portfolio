@@ -1,0 +1,10 @@
+{
+    "name": "Alexander Konietzko",
+    "Scope": "/",
+    "start-url": "/",
+    "background_color": "#fff",
+    "theme_color": "#000",
+    "short_name": "Alex",
+    "display": "standalone",
+    "orientation": "portrait"
+}
