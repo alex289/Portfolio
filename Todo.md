@@ -1,5 +1,0 @@
-# Todo
-
-- Deploying
-
-- Icons

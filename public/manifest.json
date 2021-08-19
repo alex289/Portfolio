@@ -6,5 +6,17 @@
     "theme_color": "#000",
     "short_name": "Alex",
     "display": "standalone",
-    "orientation": "portrait"
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/static/icon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/static/icon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
 }

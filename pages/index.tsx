@@ -5,14 +5,21 @@ export default function Index() {
   return (
     <Layout>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+        <img
+          className="w-41 h-41 rounded-full mx-auto mb-16"
+          src="/static/images/konietzko_alexander.jpg"
+          alt="Profile picture"
+          width="250"
+          height="250"
+        />
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Hey, I’m Alexander Konietzko
         </h1>
         <h2 className="text-gray-600 dark:text-gray-400 mb-16">
-          I&apos;m a developer, writer, and creator. I work as the Head of
-          Developer Relations at Vercel. You’ve found my personal slice of the
-          internet –&nbsp;sign my guestbook while you&apos;re here or learn more
-          about me.
+          I&apos;m a software developer, dual student, and creator. I work at
+          the development team of Netgo. You’ve found my personal slice of the
+          internet –&nbsp;have fun while you&apos;re here or learn more about
+          me.
         </h2>
         <h3
           id="about"
@@ -20,10 +27,22 @@ export default function Index() {
           About
         </h3>
         <h2 className="text-gray-600 dark:text-gray-400 mb-16">
-          I&apos;m a developer, writer, and creator. I work as the Head of
-          Developer Relations at Vercel. You’ve found my personal slice of the
-          internet –&nbsp;sign my guestbook while you&apos;re here or learn more
-          about me.
+          <p className="mb-6">
+            Hey, I&apos;m Alex. I&apos;m {new Date().getFullYear() - 2002} years
+            old and come from Germany. I live in NRW and spend my free time
+            playing piano, do sports or enjoying time with friends and family.
+          </p>
+          <p className="mb-6">
+            I started working with computers when I was young and started
+            programming in school. After I graduated I began my dual study at
+            Netgo GmbH where I work and Westfälische Hochschule where I study.
+          </p>
+          <p>
+            I&apos;m currently learning .NET Core but my favourite framework ist
+            NextJs. In the future I want to build my own Kubernetes cluster with
+            backend services, database integration and a solid frontend combined
+            by Nginx.
+          </p>
         </h2>
         <h3
           id="projects"

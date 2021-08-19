@@ -36,6 +36,23 @@ const Meta = () => (
     />
     <meta name="author" content="Alexander Konietzko" />
     <meta name="HandheldFriendly" content="true" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/static/icon/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/static/icon/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/static/icon/apple-touch-icon.png"
+    />
   </Head>
 );
 

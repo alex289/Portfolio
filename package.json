@@ -27,12 +27,12 @@
   "homepage": "https://github.com/Alex289/NextJs-Boilerplate#readme",
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
-    "@types/node": "^16.4.3",
-    "@types/react": "^17.0.15",
-    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@types/node": "^16.6.2",
+    "@types/react": "^17.0.19",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
     "autoprefixer": "^10.3.1",
-    "eslint": "^7.31.0",
-    "eslint-config-next": "^11.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.0",
     "eslint-config-prettier": "^8.3.0",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "next": "^11.0.1",
+    "next": "^11.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "use-dark-mode": "^2.3.1"

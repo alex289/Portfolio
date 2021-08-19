@@ -6,8 +6,6 @@ import Document, {
   DocumentContext,
 } from 'next/document';
 
-import Script from 'next/script';
-
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -25,7 +23,7 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/static/icon/favicon.ico" />
         </Head>
         <body className="bg-white dark:bg-black text-white dark:text-black">
-          <Script strategy="beforeInteractive" src="/static/noflash.js" />
+          <div id="top" />
           <Main />
           <NextScript />
         </body>

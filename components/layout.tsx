@@ -5,7 +5,7 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
 const Layout = ({ children }: { children: ReactNode }) => (
-  <div id="top" className="bg-white dark:bg-black">
+  <div className="bg-white dark:bg-black">
     <Meta />
     <Navbar />
     <main className="flex flex-col justify-center px-8 bg-white dark:bg-black">
