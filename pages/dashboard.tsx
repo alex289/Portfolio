@@ -32,7 +32,7 @@ export default function Index() {
               Status
             </div>
             <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              {data?.status || 'Error'}
+              {data?.status || 'No data'}
             </p>
           </div>
           <div className="metric-card border border-gray-200 dark:border-gray-800 rounded p-4 max-w-72 w-full">
@@ -40,7 +40,7 @@ export default function Index() {
               Uptime
             </div>
             <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              {data?.uptime || 'Error'}
+              {data?.uptime || 'No data'}
             </p>
           </div>
           <div className="metric-card border border-gray-200 dark:border-gray-800 rounded p-4 max-w-72 w-full">
@@ -48,7 +48,7 @@ export default function Index() {
               Rss
             </div>
             <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              {data?.mem.rss || 'Error'}
+              {data?.mem.rss || 'No data'}
             </p>
           </div>
           <div className="metric-card border border-gray-200 dark:border-gray-800 rounded p-4 max-w-72 w-full">
@@ -56,7 +56,7 @@ export default function Index() {
               Heap total
             </div>
             <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              {data?.mem.heapTotal || 'Error'}
+              {data?.mem.heapTotal || 'No data'}
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function Index() {
               Heap used
             </div>
             <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              {data?.mem.heapUsed || 'Error'}
+              {data?.mem.heapUsed || 'No data'}
             </p>
           </div>
           <div className="metric-card border border-gray-200 dark:border-gray-800 rounded p-4 max-w-72 w-full">
@@ -74,7 +74,7 @@ export default function Index() {
               External
             </div>
             <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              {data?.mem.external || 'Error'}
+              {data?.mem.external || 'No data'}
             </p>
           </div>
           <div className="metric-card border border-gray-200 dark:border-gray-800 rounded p-4 max-w-72 w-full">
@@ -82,7 +82,7 @@ export default function Index() {
               Array buffers
             </div>
             <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              {data?.mem.arrayBuffers || 'Error'}
+              {data?.mem.arrayBuffers || 'No data'}
             </p>
           </div>
         </div>

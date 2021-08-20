@@ -3,15 +3,13 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "prettier",
-        "next"
+        "next/core-web-vitals"
     ],
     "plugins": [
         "@typescript-eslint"
     ],
     "rules": {
-        "@next/next/no-img-element": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
-        "no-undef": "off",
         "semi": "warn",
         "eqeqeq": "warn",
         "curly": "warn"

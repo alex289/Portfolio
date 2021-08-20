@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import Layout from '@/components/layout';
 import Project from '@/components/projects';
 
@@ -5,13 +7,16 @@ export default function Index() {
   return (
     <Layout>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <img
-          className="w-41 h-41 rounded-full mx-auto mb-16"
-          src="/static/images/konietzko_alexander.jpg"
-          alt="Profile picture"
-          width="250"
-          height="250"
-        />
+        <div className="w-41 h-41 mx-auto mb-16">
+          <Image
+            className="rounded-full"
+            src="/static/images/konietzko_alexander.jpg"
+            alt="Profile picture"
+            width="250"
+            height="250"
+            quality={100}
+          />
+        </div>
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Hey, I’m Alexander Konietzko
         </h1>
