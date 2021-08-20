@@ -6,8 +6,8 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 
 ## Overview
 
-- `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction). Currently only haelth check implemented
-- `pages/*` - All  static pages. (Index and 404)
+- `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction). Currently only health check implemented
+- `pages/*` - All  static pages. (Index, dashboard and 404)
 
 ## Running Locally
 
