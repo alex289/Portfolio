@@ -54,7 +54,7 @@ export default function Footer() {
           </ExternalLink>
         </div>
       </div>
-      <p className="text-gray-400 text-sm mx-auto">
+      <p className="text-gray-500 text-sm mx-auto">
         Powered by{' '}
         <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink> and{' '}
         <ExternalLink href="https://tailwindcss.com/">TailwindCss</ExternalLink>

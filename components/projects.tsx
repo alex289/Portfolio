@@ -27,7 +27,7 @@ const Project = () => {
         <div
           key={index}
           className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 my-3 p-3">
-          <h4 className="font-semibold text-lg tracking-wide">
+          <h3 className="font-semibold text-lg tracking-wide">
             <a
               className="hover:text-gray-700 transition"
               target="_blank"
@@ -35,7 +35,7 @@ const Project = () => {
               href={project.html_url}>
               {project.name}
             </a>
-          </h4>
+          </h3>
           <p className="col-span-2">{project.description}</p>
           <p>{project.language}</p>
         </div>
