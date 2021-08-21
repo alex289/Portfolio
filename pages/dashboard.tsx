@@ -32,7 +32,9 @@ export default function Index() {
               Status
             </div>
             <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              {data?.status || 'No data'}
+              <div className={data?.status ? 'text-green-600' : 'text-red-600'}>
+                {data?.status || 'No data'}
+              </div>
             </p>
           </div>
           <div className="metric-card border border-gray-200 dark:border-gray-800 rounded p-4 max-w-72 w-full">
