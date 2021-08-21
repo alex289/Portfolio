@@ -1,23 +1,42 @@
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import useDarkMode from 'use-dark-mode';
+import { useTheme } from 'next-themes';
 
 const Navbar = () => {
-  const darkMode = useDarkMode(false, {
-    classNameDark: 'dark',
-    classNameLight: 'light',
-  });
+  const router = useRouter();
+  const { theme, setTheme } = useTheme();
+
+  function scrollTo(e: { preventDefault: () => unknown }, anchor: string) {
+    e && e.preventDefault();
+    if (router.pathname !== '/') {
+      router.push('/#' + anchor);
+    }
+    const elementToView = document.getElementById(anchor);
+    elementToView?.scrollIntoView();
+  }
+
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between w-full max-w-4xl p-8 mx-auto my-0 text-gray-900 bg-white sticky-nav md:my-8 dark:bg-black dark:text-gray-100">
       <div>
-        <Link href="#top">
-          <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Home</a>
+        <Link href="/">
+          <a
+            onClick={(e) => scrollTo(e, 'top')}
+            className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
+            Home
+          </a>
         </Link>
-        <Link href="#about">
-          <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">About</a>
+        <Link href="/">
+          <a
+            onClick={(e) => scrollTo(e, 'about')}
+            className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
+            About
+          </a>
         </Link>
-        <Link href="#projects">
-          <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
+        <Link href="/">
+          <a
+            onClick={(e) => scrollTo(e, 'projects')}
+            className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
             Projects
           </a>
         </Link>
@@ -26,14 +45,14 @@ const Navbar = () => {
         aria-label="Toggle Dark Mode"
         type="button"
         className="w-10 h-10 p-3 bg-gray-200 rounded dark:bg-gray-800"
-        onClick={darkMode.toggle}>
+        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
           stroke="currentColor"
           className="w-4 h-4 text-gray-800 dark:text-gray-200">
-          {darkMode.value ? (
+          {theme === 'dark' ? (
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

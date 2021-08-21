@@ -15,6 +15,7 @@ export default function Index() {
             width="250"
             height="250"
             quality={100}
+            loading="lazy"
           />
         </div>
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">

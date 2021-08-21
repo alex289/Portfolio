@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
@@ -18,21 +19,40 @@ const ExternalLink = ({
 );
 
 export default function Footer() {
+  const router = useRouter();
+
+  function scrollTo(e: { preventDefault: () => unknown }, anchor: string) {
+    e && e.preventDefault();
+    if (router.pathname !== '/') {
+      router.push('/#' + anchor);
+    }
+    const elementToView = document.getElementById(anchor);
+    elementToView?.scrollIntoView();
+  }
+
   return (
     <footer className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8">
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
       <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-12 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
-          <Link href="#top">
-            <a className="text-gray-500 hover:text-gray-600 transition">Home</a>
+          <Link href="/">
+            <a
+              onClick={(e) => scrollTo(e, 'top')}
+              className="text-gray-500 hover:text-gray-600 transition">
+              Home
+            </a>
           </Link>
-          <Link href="#about">
-            <a className="text-gray-500 hover:text-gray-600 transition">
+          <Link href="/">
+            <a
+              onClick={(e) => scrollTo(e, 'about')}
+              className="text-gray-500 hover:text-gray-600 transition">
               About
             </a>
           </Link>
-          <Link href="#projects">
-            <a className="text-gray-500 hover:text-gray-600 transition">
+          <Link href="/">
+            <a
+              onClick={(e) => scrollTo(e, 'projects')}
+              className="text-gray-500 hover:text-gray-600 transition">
               Projects
             </a>
           </Link>

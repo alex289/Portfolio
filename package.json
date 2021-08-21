@@ -12,19 +12,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alex289/NextJs-Boilerplate.git"
+    "url": "git+https://github.com/Alex289/Portfolio.git"
   },
   "keywords": [
     "NextJs",
     "TailwindCss",
     "Portfolio"
   ],
-  "author": "Alex",
+  "author": "Alex289",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Alex289/NextJs-Boilerplate/issues"
+    "url": "https://github.com/Alex289/Portfolio/issues"
   },
-  "homepage": "https://github.com/Alex289/NextJs-Boilerplate#readme",
+  "homepage": "https://github.com/Alex289/Portfolio#readme",
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
     "@types/node": "^16.6.2",
@@ -42,8 +42,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "next": "^11.1.0",
+    "next-themes": "^0.0.15",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "use-dark-mode": "^2.3.1"
+    "react-dom": "^17.0.2"
   }
 }
