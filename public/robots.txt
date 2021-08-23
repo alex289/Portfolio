@@ -1,2 +1,2 @@
 User-Agent: *
-Allow: /
+Sitemap: https://alexanderkonietzko.vercel.app/sitemap.xml
