@@ -17,6 +17,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       formatted[key] = formatMemory(mem[key]);
     }
 
+    res.setHeader(
+      'Cache-Control',
+      'public, s-maxage=10, stale-while-revalidate=59'
+    );
+
     res.status(200).json({
       status: 'UP',
       mem: formatted,
