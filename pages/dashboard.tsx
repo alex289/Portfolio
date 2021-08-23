@@ -89,14 +89,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <style jsx>{`
-        @media screen and (min-width: 768px) {
-          .dashboard {
-            margin-left: 31%;
-            margin-right: 31%;
-          }
-        }
-      `}</style>
     </Layout>
   );
 }
