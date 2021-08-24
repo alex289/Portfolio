@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Layout from '@/components/layout';
 import Project from '@/components/projects';
 
+import profilePic from '../public/static/images/konietzko_alexander.jpg';
+
 export default function Index() {
   return (
     <Layout>
@@ -10,7 +12,8 @@ export default function Index() {
         <div className="w-41 h-41 mx-auto mb-16">
           <Image
             className="rounded-full"
-            src="/static/images/konietzko_alexander.jpg"
+            src={profilePic}
+            placeholder="blur"
             alt="Profile picture"
             width="250"
             height="250"
