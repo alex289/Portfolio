@@ -29,7 +29,7 @@ const Project = () => {
           className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 my-3 p-3">
           <h3 className="font-semibold text-lg tracking-wide">
             <a
-              className="hover:text-gray-700 transition"
+              className="hover:text-blue-800 text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 transition"
               target="_blank"
               rel="noopener noreferrer"
               href={project.html_url}>

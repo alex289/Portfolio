@@ -10,7 +10,7 @@ const ExternalLink = ({
   children: ReactNode;
 }) => (
   <a
-    className="text-gray-500 hover:text-gray-600 transition"
+    className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
     target="_blank"
     rel="noopener noreferrer"
     href={href}>
@@ -38,21 +38,21 @@ export default function Footer() {
           <Link href="/">
             <a
               onClick={(e) => scrollTo(e, 'top')}
-              className="text-gray-500 hover:text-gray-600 transition">
+              className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition">
               Home
             </a>
           </Link>
           <Link href="/">
             <a
               onClick={(e) => scrollTo(e, 'about')}
-              className="text-gray-500 hover:text-gray-600 transition">
+              className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition">
               About
             </a>
           </Link>
           <Link href="/">
             <a
               onClick={(e) => scrollTo(e, 'projects')}
-              className="text-gray-500 hover:text-gray-600 transition">
+              className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition">
               Projects
             </a>
           </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
           </ExternalLink>
         </div>
       </div>
-      <p className="text-gray-500 text-sm mx-auto">
+      <p className="text-gray-500 dark:text-gray-400 text-sm mx-auto">
         Powered by{' '}
         <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink> and{' '}
         <ExternalLink href="https://tailwindcss.com/">TailwindCss</ExternalLink>
