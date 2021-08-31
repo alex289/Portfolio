@@ -27,21 +27,21 @@
   "homepage": "https://github.com/Alex289/Portfolio#readme",
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
-    "@types/node": "^16.7.1",
+    "@types/node": "^16.7.8",
     "@types/react": "^17.0.19",
-    "@typescript-eslint/eslint-plugin": "^4.29.3",
-    "autoprefixer": "^10.3.2",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "autoprefixer": "^10.3.3",
     "eslint": "^7.32.0",
-    "eslint-config-next": "^11.1.0",
+    "eslint-config-next": "^11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
-    "tailwindcss": "^2.2.7",
-    "typescript": "^4.3.5"
+    "tailwindcss": "^2.2.9",
+    "typescript": "^4.4.2"
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "next": "^11.1.0",
+    "next": "^11.1.2",
     "next-themes": "^0.0.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
