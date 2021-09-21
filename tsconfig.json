@@ -3,6 +3,8 @@
     "baseUrl": ".",
         "paths": {
             "@/components/*": ["components/*"],
+            "@/lib/*": ["lib/*"],
+            "@/locales/*": ["locales/*"]
         },
     "target": "es5",
     "lib": [

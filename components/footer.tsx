@@ -2,6 +2,8 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
+import useTranslation from '@/lib/useTranslation';
+
 const ExternalLink = ({
   href,
   children,
@@ -13,13 +15,16 @@ const ExternalLink = ({
     className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
     target="_blank"
     rel="noopener noreferrer"
-    href={href}>
+    href={href}
+  >
     {children}
   </a>
 );
 
 export default function Footer() {
   const router = useRouter();
+
+  const { t } = useTranslation();
 
   function scrollTo(e: { preventDefault: () => unknown }, anchor: string) {
     e && e.preventDefault();
@@ -38,47 +43,51 @@ export default function Footer() {
           <Link href="/">
             <a
               onClick={(e) => scrollTo(e, 'top')}
-              className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition">
-              Home
+              className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
+            >
+              {t('home')}
             </a>
           </Link>
           <Link href="/">
             <a
               onClick={(e) => scrollTo(e, 'about')}
-              className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition">
-              About
+              className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
+            >
+              {t('about')}
             </a>
           </Link>
           <Link href="/">
             <a
               onClick={(e) => scrollTo(e, 'projects')}
-              className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition">
-              Projects
+              className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
+            >
+              {t('projects')}
             </a>
           </Link>
         </div>
         <div className="flex flex-col space-y-4">
           <ExternalLink href="#">Twitter</ExternalLink>
           <ExternalLink href="https://github.com/Alex289">GitHub</ExternalLink>
-          <ExternalLink href="#">Coming soon...</ExternalLink>
+          <ExternalLink href="#">{t('comming-soon')}</ExternalLink>
         </div>
         <div className="flex flex-col space-y-4">
           <ExternalLink href="https://github.com/Alex289/My-config-setup">
-            My setup
+            {t('my-setup')}
           </ExternalLink>
           <ExternalLink href="https://github.com/Alex289/Portfolio">
-            Source code
+            {t('sourcecode')}
           </ExternalLink>
           <ExternalLink href="https://github.com/Alex289/Alex289/issues/new?assignees=Alex289&labels=Contact&template=contact-template.md&title=%5BContact%5D+Your-title-here">
-            Contact
+            {t('contact')}
           </ExternalLink>
         </div>
       </div>
       <p className="text-gray-500 dark:text-gray-400 text-sm mx-auto">
-        Powered by{' '}
-        <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink> and{' '}
+        {t('powered')}
+        <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink>{' '}
+        {t('and')}
         <ExternalLink href="https://tailwindcss.com/">TailwindCss</ExternalLink>
-        . Hosted on{' '}
+        . {t('hosted')}
         <ExternalLink href="https://vercel.com/">Vercel</ExternalLink>.
       </p>
     </footer>
