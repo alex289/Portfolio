@@ -11,14 +11,19 @@ const Project = () => {
       language: '',
     },
   ]);
-  useEffect(() => {
-    axios
+
+  const getData = async () => {
+    await axios
       .get('https://api.github.com/users/Alex289/repos', {
         responseType: 'json',
       })
       .then((response) => {
         setProjects(response.data);
       });
+  };
+
+  useEffect(() => {
+    getData();
   }, []);
 
   return (

@@ -15,13 +15,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="black-translucent"
-          />
-          <link rel="shortcut icon" href="/static/icon/favicon.ico" />
-        </Head>
+        <Head />
         <body className="bg-white dark:bg-black text-white dark:text-black">
           <div id="top" />
           <Main />

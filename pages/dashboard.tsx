@@ -17,9 +17,15 @@ type healthData = {
 
 export default function Index() {
   const [data, setData] = useState<healthData>();
+
+  const getData = async () => {
+    await axios.get('/api/health').then((res) => setData(res.data));
+  };
+
   useEffect(() => {
-    axios.get('/api/health').then((res) => setData(res.data));
+    getData();
   }, []);
+
   return (
     <Layout>
       <div className="flex flex-col justify-center items-start max-w-2xl dashboard mb-16">

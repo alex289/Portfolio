@@ -26,13 +26,13 @@ const get = (obj: any, path: any, defValue?: any) => {
 const useTranslation = () => {
   const router = useRouter();
   const { locale } = router;
-  const language = locale;
+  const language = locale || 'en';
 
-  const t = (key = '') => {
-    return get(locales[locale ?? 'en'], key) || key;
+  const t = (key = ''): string => {
+    return get(locales[language], key) || key;
   };
 
-  const changeLanguage = (locale: string) => {
+  const changeLanguage = (locale: string): void => {
     router.push(router.pathname, router.asPath, { locale, scroll: false });
   };
 

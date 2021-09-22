@@ -16,8 +16,8 @@ const Layout = ({ children }: { children: ReactNode }) => (
       id="skip"
     >
       {children}
-      <Footer></Footer>
     </main>
+    <Footer></Footer>
   </div>
 );
 
