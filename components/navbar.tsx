@@ -22,7 +22,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between w-full max-w-4xl p-8 mx-auto my-0 text-gray-900 bg-white sticky-nav bg-opacity-60 md:my-8 dark:bg-black dark:text-gray-100">
+    <nav className="sticky top-0 z-50 flex items-center justify-between w-full max-w-4xl p-4 md:p-8 mx-auto my-0 text-gray-900 bg-white sticky-nav bg-opacity-60 md:my-8 dark:bg-black dark:text-gray-100">
       <div>
         <Link href="/">
           <a
@@ -53,7 +53,7 @@ const Navbar = () => {
         <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="w-10 h-10 p-3 bg-gray-200 rounded dark:bg-gray-800 mr-3"
+          className="w-10 h-10 p-3 bg-gray-200 rounded dark:bg-gray-800 mr-1 md:mr-3"
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         >
           <svg
@@ -83,7 +83,7 @@ const Navbar = () => {
         <select
           onChange={(e) => changeLanguage(e.target.value)}
           defaultValue={locale}
-          className="form-select text-shadow-sm text-lg bg-transparent tracking-wide ml-3"
+          className="form-select text-shadow-sm text-lg bg-transparent tracking-wide ml-1 md:ml-3"
         >
           <option className="text-black" value="en">
             EN
