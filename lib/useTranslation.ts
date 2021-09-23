@@ -3,34 +3,32 @@ import { useRouter } from 'next/router';
 import en from '@/locales/en.json';
 import de from '@/locales/de.json';
 
-type localesType = {
-  [x: string]: string;
-};
+import { IObjectType, IUseTranslation } from '@/lib/types';
 
-const locales: { [x: string]: localesType } = {
+const locales: { [x: string]: IObjectType } = {
   en,
   de,
 };
 
-const get = (obj: localesType, path: string) => {
+const get = (obj: IObjectType, path: string) => {
   if (!path) {
     return undefined;
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const pathArray: any = Array.isArray(path) ? path : path.match(/([^[.\]])+/g);
   const result = pathArray?.reduce(
-    (prevObj: localesType, key: string) => prevObj && prevObj[key],
+    (prevObj: IObjectType, key: string) => prevObj && prevObj[key],
     obj
   );
   return result;
 };
 
-const useTranslation = () => {
+const useTranslation = (): IUseTranslation => {
   const router = useRouter();
   const { locale } = router;
   const language = locale || 'en';
 
-  const t = (key = ''): string => {
+  const t = (key: string): string => {
     return get(locales[language], key) || key;
   };
 

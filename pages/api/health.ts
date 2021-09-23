@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import { IObjectType } from '@/lib/types';
+
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
     const secs = process.uptime();
@@ -11,7 +13,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       ('0' + Math.floor((secs % 3600) % 60)).slice(-2);
 
     const mem = process.memoryUsage();
-    const formatted: { [key: string]: string } = {};
+    const formatted: IObjectType = {};
 
     for (const [key, value] of Object.entries(mem)) {
       formatted[key] = formatMemory(value);

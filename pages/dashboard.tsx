@@ -3,17 +3,7 @@ import axios from 'axios';
 
 import Layout from '@/components/layout';
 
-type healthData = {
-  status: string;
-  mem: {
-    rss: string;
-    heapTotal: string;
-    heapUsed: string;
-    external: string;
-    arrayBuffers: string;
-  };
-  uptime: string;
-};
+import { healthData } from '@/lib/types';
 
 export default function Index() {
   const [data, setData] = useState<healthData>();
