@@ -3,24 +3,26 @@ import { useRouter } from 'next/router';
 import en from '@/locales/en.json';
 import de from '@/locales/de.json';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const locales: any = {
+type localesType = {
+  [x: string]: string;
+};
+
+const locales: { [x: string]: localesType } = {
   en,
   de,
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const get = (obj: any, path: any, defValue?: any) => {
+const get = (obj: localesType, path: string) => {
   if (!path) {
     return undefined;
   }
-  const pathArray = Array.isArray(path) ? path : path.match(/([^[.\]])+/g);
-  const result = pathArray.reduce(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (prevObj: any, key: any) => prevObj && prevObj[key],
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const pathArray: any = Array.isArray(path) ? path : path.match(/([^[.\]])+/g);
+  const result = pathArray?.reduce(
+    (prevObj: localesType, key: string) => prevObj && prevObj[key],
     obj
   );
-  return result === undefined ? defValue : result;
+  return result;
 };
 
 const useTranslation = () => {

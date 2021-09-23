@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -11,10 +10,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       ':' +
       ('0' + Math.floor((secs % 3600) % 60)).slice(-2);
 
-    const mem: any = process.memoryUsage();
-    const formatted: any = {};
-    for (const key in mem) {
-      formatted[key] = formatMemory(mem[key]);
+    const mem = process.memoryUsage();
+    const formatted: { [key: string]: string } = {};
+
+    for (const [key, value] of Object.entries(mem)) {
+      formatted[key] = formatMemory(value);
     }
 
     res.setHeader(
@@ -32,7 +32,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 }
 
-function formatMemory(bytes: any) {
+function formatMemory(bytes: number) {
   if (bytes === 0) {
     return '0 Bytes';
   }
