@@ -71,7 +71,11 @@ export default function Footer() {
             <ExternalLink href="https://github.com/Alex289">
               GitHub
             </ExternalLink>
-            <ExternalLink href="#">{t('comming-soon')}</ExternalLink>
+            <Link href="/dashboard">
+              <a className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition">
+                {t('dashboard')}
+              </a>
+            </Link>
           </div>
           <div className="flex flex-col space-y-4">
             <ExternalLink href="https://github.com/Alex289/My-config-setup">
