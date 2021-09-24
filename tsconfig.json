@@ -4,7 +4,8 @@
         "paths": {
             "@/components/*": ["components/*"],
             "@/lib/*": ["lib/*"],
-            "@/locales/*": ["locales/*"]
+            "@/locales/*": ["locales/*"],
+            "@/styles/*": ["styles/*"]
         },
     "target": "es5",
     "lib": [
