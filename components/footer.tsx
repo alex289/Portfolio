@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import useTranslation from '@/lib/useTranslation';
 

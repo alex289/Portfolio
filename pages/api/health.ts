@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { IObjectType } from '@/lib/types';
+import type { IObjectType } from '@/lib/types';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
@@ -30,7 +30,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       uptime: uptime,
     });
   } else {
-    res.status(404).json({ status: 'Not found' });
+    res.status(500).json({ status: 'Internal Server Error' });
   }
 }
 

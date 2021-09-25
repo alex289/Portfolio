@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import axios from 'axios';
 
-import { Projects } from '@/lib/types';
+import type { Projects } from '@/lib/types';
 
 const Project = () => {
   const [projects, setProjects] = useState<Projects[]>([

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Layout from '@/components/layout';
 
-import { healthData } from '@/lib/types';
+import type { healthData } from '@/lib/types';
 
 export default function Index() {
   const [data, setData] = useState<healthData>();

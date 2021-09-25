@@ -7,8 +7,10 @@ import NProgress from 'nprogress';
 import '@/styles/global.css';
 import 'nprogress/nprogress.css';
 
-Router.events.on('routeChangeStart', () => {
-  NProgress.start();
+Router.events.on('routeChangeStart', (url, { shallow }) => {
+  if (!shallow) {
+    NProgress.start();
+  }
 });
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());

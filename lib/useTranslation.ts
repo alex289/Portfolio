@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import en from '@/locales/en.json';
 import de from '@/locales/de.json';
 
-import { IObjectType, IUseTranslation } from '@/lib/types';
+import type { IObjectType, IUseTranslation } from '@/lib/types';
 
 const locales: { [x: string]: IObjectType } = {
   en,
@@ -33,7 +33,11 @@ const useTranslation = (): IUseTranslation => {
   };
 
   const changeLanguage = (locale: string): void => {
-    router.push(router.pathname, router.asPath, { locale, scroll: false });
+    router.push(router.pathname, router.asPath, {
+      locale,
+      scroll: false,
+      shallow: true,
+    });
   };
 
   return {
