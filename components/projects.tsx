@@ -14,17 +14,30 @@ const Project = () => {
     },
   ]);
 
-  const getData = async () => {
-    await axios
-      .get('https://api.github.com/users/Alex289/repos', {
-        responseType: 'json',
-      })
-      .then((response) => {
-        setProjects(response.data);
-      });
-  };
-
   useEffect(() => {
+    const getData = async () => {
+      await axios
+        .get('https://api.github.com/users/Alex289/repos', {
+          responseType: 'json',
+        })
+        .then((response) => {
+          setProjects(response.data);
+        })
+        .catch(() => {
+          getLocalData();
+        });
+    };
+
+    const getLocalData = async () => {
+      await axios
+        .get('/static/projects.json', {
+          responseType: 'json',
+        })
+        .then((response) => {
+          setProjects(response.data);
+        });
+    };
+
     getData();
   }, []);
 
