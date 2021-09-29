@@ -26,8 +26,8 @@ export default function Footer() {
 
   const { t } = useTranslation();
 
-  function scrollTo(e: { preventDefault: () => unknown }, anchor: string) {
-    e && e.preventDefault();
+  function scrollTo(event: { preventDefault: () => unknown }, anchor: string) {
+    event && event.preventDefault();
     if (router.pathname !== '/') {
       router.push('/#' + anchor);
     }
@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="flex flex-col space-y-4">
             <Link href="/">
               <a
-                onClick={(e) => scrollTo(e, 'top')}
+                onClick={(event) => scrollTo(event, 'top')}
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
               >
                 {t('home')}
@@ -51,7 +51,7 @@ export default function Footer() {
             </Link>
             <Link href="/">
               <a
-                onClick={(e) => scrollTo(e, 'about')}
+                onClick={(event) => scrollTo(event, 'about')}
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
               >
                 {t('about')}
@@ -59,7 +59,7 @@ export default function Footer() {
             </Link>
             <Link href="/">
               <a
-                onClick={(e) => scrollTo(e, 'projects')}
+                onClick={(event) => scrollTo(event, 'projects')}
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
               >
                 {t('projects')}

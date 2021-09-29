@@ -49,7 +49,7 @@ html {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .dashboard {
     margin-left: 31%;
     margin-right: 31%;

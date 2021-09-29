@@ -12,8 +12,8 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const { t, changeLanguage } = useTranslation();
 
-  function scrollTo(e: { preventDefault: () => unknown }, anchor: string) {
-    e && e.preventDefault();
+  function scrollTo(event: { preventDefault: () => unknown }, anchor: string) {
+    event && event.preventDefault();
 
     if (router.pathname !== '/') {
       router.push('/#' + anchor);
@@ -34,7 +34,7 @@ const Navbar = () => {
       <div>
         <Link href="/">
           <a
-            onClick={(e) => scrollTo(e, 'top')}
+            onClick={(event) => scrollTo(event, 'top')}
             className="p-1 text-gray-900 sm:p-4 dark:text-gray-100"
           >
             {t('home')}
@@ -42,7 +42,7 @@ const Navbar = () => {
         </Link>
         <Link href="/">
           <a
-            onClick={(e) => scrollTo(e, 'about')}
+            onClick={(event) => scrollTo(event, 'about')}
             className="p-1 text-gray-900 sm:p-4 dark:text-gray-100"
           >
             {t('about')}
@@ -50,7 +50,7 @@ const Navbar = () => {
         </Link>
         <Link href="/">
           <a
-            onClick={(e) => scrollTo(e, 'projects')}
+            onClick={(event) => scrollTo(event, 'projects')}
             className="p-1 text-gray-900 sm:p-4 dark:text-gray-100"
           >
             {t('projects')}
@@ -89,7 +89,7 @@ const Navbar = () => {
           </svg>
         </button>
         <select
-          onChange={(e) => changeLanguage(e.target.value)}
+          onChange={(event) => changeLanguage(event.target.value)}
           defaultValue={locale}
           className="form-select text-shadow-sm text-lg bg-transparent tracking-wide ml-1 md:ml-3"
         >
