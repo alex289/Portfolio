@@ -7,7 +7,7 @@ import Project from '@/components/projects';
 
 import profilePic from '../public/static/images/konietzko_alexander.jpg';
 
-export default function Index() {
+export default function Index(): JSX.Element {
   const { t } = useTranslation();
   const age = new Date().getFullYear() - 2002;
   return (

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import type { Projects } from '@/lib/types';
 
-const Project = () => {
+const Project = (): JSX.Element => {
   const [projects, setProjects] = useState<Projects[]>([
     {
       name: '',

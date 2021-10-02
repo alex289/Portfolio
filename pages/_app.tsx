@@ -15,7 +15,7 @@ Router.events.on('routeChangeStart', (url, { shallow }) => {
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ThemeProvider attribute="class" defaultTheme="light">
       <Component {...pageProps} />

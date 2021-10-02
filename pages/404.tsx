@@ -4,7 +4,7 @@ import useTranslation from '@/lib/useTranslation';
 
 import Layout from '@/components/layout';
 
-export default function NotFound() {
+export default function NotFound(): JSX.Element {
   const { t } = useTranslation();
   return (
     <Layout>

@@ -9,7 +9,6 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
         "semi": "warn",
         "eqeqeq": "warn",
         "curly": "warn"

@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import { useTheme } from 'next-themes';
 
-const Meta = () => {
+const Meta = (): JSX.Element => {
   const { theme } = useTheme();
   return (
     <Head>

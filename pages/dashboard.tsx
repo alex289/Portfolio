@@ -5,14 +5,14 @@ import Layout from '@/components/layout';
 
 import type { healthData } from '@/lib/types';
 
-export default function Index() {
+export default function Dashboard(): JSX.Element {
   const [data, setData] = useState<healthData>();
 
-  const getData = async () => {
-    await axios.get('/api/health').then((res) => setData(res.data));
-  };
-
   useEffect(() => {
+    const getData = async () => {
+      await axios.get('/api/health').then((res) => setData(res.data));
+    };
+
     getData();
   }, []);
 

@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes';
 
 import useTranslation from '@/lib/useTranslation';
 
-const Navbar = () => {
+const Navbar = (): JSX.Element => {
   const router = useRouter();
   const { locale } = router;
 

@@ -21,18 +21,26 @@ const ExternalLink = ({
   </a>
 );
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   const router = useRouter();
 
   const { t } = useTranslation();
 
   function scrollTo(event: { preventDefault: () => unknown }, anchor: string) {
     event && event.preventDefault();
+
     if (router.pathname !== '/') {
       router.push('/#' + anchor);
     }
+
     const elementToView = document.getElementById(anchor);
     elementToView?.scrollIntoView();
+
+    history.replaceState(
+      '',
+      document.title,
+      window.location.origin + window.location.pathname + window.location.search
+    );
   }
 
   return (

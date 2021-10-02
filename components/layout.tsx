@@ -4,7 +4,7 @@ import Meta from '@/components/meta';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
-const Layout = ({ children }: { children: ReactNode }) => (
+const Layout = ({ children }: { children: ReactNode }): JSX.Element => (
   <div className="bg-white dark:bg-black">
     <Meta />
     <a href="#skip" className="skip-nav">
