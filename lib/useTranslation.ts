@@ -33,7 +33,7 @@ const useTranslation = (): UseTranslation => {
   };
 
   const changeLanguage = (locale: string): void => {
-    router.push(router.pathname, router.asPath, {
+    router.push(router.pathname, router.asPath.split('#')[0], {
       locale,
       scroll: false,
       shallow: true,
