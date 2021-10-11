@@ -17,4 +17,8 @@ module.exports = {
 
     return config;
   },
+  experimental: {
+    swcLoader: true,
+    swcMinify: true,
+  },
 };

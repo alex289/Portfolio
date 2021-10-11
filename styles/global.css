@@ -100,6 +100,6 @@ html {
 
 .form-select:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-  border-color: #63b3ed;
+  box-shadow: 0 0 0 3px rgba(209, 213, 219, 0.5);
+  border-color: #a3a6aa;
 }

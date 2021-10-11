@@ -61,7 +61,7 @@ const Navbar = (): JSX.Element => {
         <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="w-10 h-10 p-3 bg-gray-200 rounded dark:bg-gray-800 mr-1 md:mr-3"
+          className="w-10 h-10 p-3 bg-gray-200 rounded-lg dark:bg-gray-800 mr-1 md:mr-3 ring-gray-300 hover:ring-4"
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         >
           <svg
@@ -91,7 +91,7 @@ const Navbar = (): JSX.Element => {
         <select
           onChange={(event) => changeLanguage(event.target.value)}
           defaultValue={locale}
-          className="form-select text-shadow-sm text-lg bg-transparent tracking-wide ml-1 md:ml-3"
+          className="form-select text-shadow-sm text-lg bg-transparent tracking-wide ml-1 md:ml-3 ring-gray-300"
         >
           <option className="text-black" value="en">
             EN
