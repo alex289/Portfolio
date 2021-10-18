@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
 import useTranslation from '@/lib/useTranslation';
+import MobileMenu from '@/components/mobilemenu';
 
 const Navbar = (): JSX.Element => {
   const router = useRouter();
@@ -12,7 +13,7 @@ const Navbar = (): JSX.Element => {
   const { theme, setTheme } = useTheme();
   const { t, changeLanguage } = useTranslation();
 
-  function scrollTo(event: { preventDefault: () => unknown }, anchor: string) {
+  function scrollTo(event: { preventDefault: () => void }, anchor: string) {
     event && event.preventDefault();
 
     if (router.pathname !== '/') {
@@ -30,32 +31,35 @@ const Navbar = (): JSX.Element => {
   }
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between w-full max-w-4xl p-4 md:p-8 mx-auto my-0 text-gray-900 bg-white sticky-nav bg-opacity-60 md:my-8 dark:bg-black dark:text-gray-100">
+    <nav className="sticky top-0 z-50 flex items-center justify-between w-full max-w-4xl p-4 md:p-8 mx-auto my-0 text-gray-900 bg-white sticky-nav md:my-8 dark:bg-black dark:text-gray-100">
       <div>
-        <Link href="/">
-          <a
-            onClick={(event) => scrollTo(event, 'top')}
-            className="p-1 text-gray-900 sm:p-4 dark:text-gray-100"
-          >
-            {t('home')}
-          </a>
-        </Link>
-        <Link href="/">
-          <a
-            onClick={(event) => scrollTo(event, 'about')}
-            className="p-1 text-gray-900 sm:p-4 dark:text-gray-100"
-          >
-            {t('about')}
-          </a>
-        </Link>
-        <Link href="/">
-          <a
-            onClick={(event) => scrollTo(event, 'projects')}
-            className="p-1 text-gray-900 sm:p-4 dark:text-gray-100"
-          >
-            {t('projects')}
-          </a>
-        </Link>
+        <MobileMenu />
+        <div className="md:w-0">
+          <Link href="/">
+            <a
+              onClick={(event) => scrollTo(event, 'top')}
+              className="p-1 text-gray-900 sm:p-4 dark:text-gray-100 invisible md:visible"
+            >
+              {t('home')}
+            </a>
+          </Link>
+          <Link href="/">
+            <a
+              onClick={(event) => scrollTo(event, 'about')}
+              className="p-1 text-gray-900 sm:p-4 dark:text-gray-100 invisible md:visible"
+            >
+              {t('about')}
+            </a>
+          </Link>
+          <Link href="/">
+            <a
+              onClick={(event) => scrollTo(event, 'projects')}
+              className="p-1 text-gray-900 sm:p-4 dark:text-gray-100 invisible md:visible"
+            >
+              {t('projects')}
+            </a>
+          </Link>
+        </div>
       </div>
       <div>
         <button

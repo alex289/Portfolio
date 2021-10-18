@@ -10,7 +10,9 @@ export default function Dashboard(): JSX.Element {
 
   useEffect(() => {
     const getData = async () => {
-      await axios.get('/api/health').then((res) => setData(res.data));
+      await axios
+        .get<healthData>('/api/health')
+        .then((res) => setData(res.data));
     };
 
     getData();
@@ -27,11 +29,11 @@ export default function Dashboard(): JSX.Element {
             <div className="flex items-center text-gray-900 dark:text-gray-100">
               Status
             </div>
-            <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              <div className={data?.status ? 'text-green-600' : 'text-red-600'}>
+            <div className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
+              <p className={data?.status ? 'text-green-600' : 'text-red-600'}>
                 {data?.status || 'No data'}
-              </div>
-            </p>
+              </p>
+            </div>
           </div>
           <div className="metric-card border border-gray-200 dark:border-gray-800 rounded p-4 max-w-72 w-full">
             <div className="flex items-center text-gray-900 dark:text-gray-100">
@@ -50,12 +52,12 @@ export default function Dashboard(): JSX.Element {
             </p>
           </div>
           <div className="metric-card border border-gray-200 dark:border-gray-800 rounded p-4 max-w-72 w-full">
-            <div className="flex items-center text-gray-900 dark:text-gray-100">
+            <p className="flex items-center text-gray-900 dark:text-gray-100">
               Heap total
-            </div>
-            <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              {data?.mem.heapTotal || 'No data'}
             </p>
+            <div className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
+              {data?.mem.heapTotal || 'No data'}
+            </div>
           </div>
         </div>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">

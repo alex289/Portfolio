@@ -26,7 +26,7 @@ export default function Footer(): JSX.Element {
 
   const { t } = useTranslation();
 
-  function scrollTo(event: { preventDefault: () => unknown }, anchor: string) {
+  function scrollTo(event: { preventDefault: () => void }, anchor: string) {
     event && event.preventDefault();
 
     if (router.pathname !== '/') {

@@ -17,7 +17,7 @@ const Project = (): JSX.Element => {
   useEffect(() => {
     const getData = async () => {
       await axios
-        .get('https://api.github.com/users/Alex289/repos', {
+        .get<Projects[]>('https://api.github.com/users/Alex289/repos', {
           responseType: 'json',
         })
         .then((response) => {
@@ -30,7 +30,7 @@ const Project = (): JSX.Element => {
 
     const getLocalData = async () => {
       await axios
-        .get('/static/projects.json', {
+        .get<Projects[]>('/static/projects.json', {
           responseType: 'json',
         })
         .then((response) => {
