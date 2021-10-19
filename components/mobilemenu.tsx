@@ -49,33 +49,48 @@ const MobileMenu = (): JSX.Element => {
 
       <ul
         className={`menu flex flex-col absolute bg-white dark:bg-black mt-4 md:hidden ${
-          isMenuOpen ? 'menuRendered' : 'hidden'
+          isMenuOpen ? 'menuRendered' : ''
         }`}
       >
-        <Link href="/">
-          <a
-            onClick={(event) => scrollTo(event, 'top')}
-            className="ml-4 p-1 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
-          >
-            {t('home')}
-          </a>
-        </Link>
-        <Link href="/">
-          <a
-            onClick={(event) => scrollTo(event, 'about')}
-            className="ml-4 p-1 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
-          >
-            {t('about')}
-          </a>
-        </Link>
-        <Link href="/">
-          <a
-            onClick={(event) => scrollTo(event, 'projects')}
-            className="ml-4 p-1 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
-          >
-            {t('projects')}
-          </a>
-        </Link>
+        <li
+          className="ml-3 border-b border-gray-300 dark:border-gray-700"
+          style={{ transitionDelay: '150ms' }}
+        >
+          <Link href="/">
+            <a
+              onClick={(event) => scrollTo(event, 'top')}
+              className="flex w-auto pb-4 ml-4 p-1 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
+            >
+              {t('home')}
+            </a>
+          </Link>
+        </li>
+        <li
+          className="ml-3 border-b border-gray-300 dark:border-gray-700"
+          style={{ transitionDelay: '150ms' }}
+        >
+          <Link href="/">
+            <a
+              onClick={(event) => scrollTo(event, 'about')}
+              className="flex w-auto pb-4 ml-4 p-1 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
+            >
+              {t('about')}
+            </a>
+          </Link>
+        </li>
+        <li
+          className="ml-3 border-b border-gray-300 dark:border-gray-700"
+          style={{ transitionDelay: '150ms' }}
+        >
+          <Link href="/">
+            <a
+              onClick={(event) => scrollTo(event, 'projects')}
+              className="flex w-auto pb-4 ml-4 p-1 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
+            >
+              {t('projects')}
+            </a>
+          </Link>
+        </li>
       </ul>
     </>
   );
