@@ -51,6 +51,7 @@ export default function Footer(): JSX.Element {
           <div className="flex flex-col space-y-4">
             <Link href="/">
               <a
+                id="footer-home"
                 onClick={(event) => scrollTo(event, 'top')}
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
               >
@@ -59,6 +60,7 @@ export default function Footer(): JSX.Element {
             </Link>
             <Link href="/">
               <a
+                id="footer-about"
                 onClick={(event) => scrollTo(event, 'about')}
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
               >
@@ -67,6 +69,7 @@ export default function Footer(): JSX.Element {
             </Link>
             <Link href="/">
               <a
+                id="footer-projects"
                 onClick={(event) => scrollTo(event, 'projects')}
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
               >

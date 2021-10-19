@@ -30,7 +30,10 @@ export default function Dashboard(): JSX.Element {
               Status
             </div>
             <div className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              <p className={data?.status ? 'text-green-600' : 'text-red-600'}>
+              <p
+                id="status"
+                className={data?.status ? 'text-green-600' : 'text-red-600'}
+              >
                 {data?.status || 'No data'}
               </p>
             </div>

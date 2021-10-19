@@ -37,6 +37,7 @@ const Navbar = (): JSX.Element => {
         <div className="md:w-0">
           <Link href="/">
             <a
+              id="nav-home"
               onClick={(event) => scrollTo(event, 'top')}
               className="p-1 text-gray-900 sm:p-4 dark:text-gray-100 invisible md:visible"
             >
@@ -45,6 +46,7 @@ const Navbar = (): JSX.Element => {
           </Link>
           <Link href="/">
             <a
+              id="nav-about"
               onClick={(event) => scrollTo(event, 'about')}
               className="p-1 text-gray-900 sm:p-4 dark:text-gray-100 invisible md:visible"
             >
@@ -53,6 +55,7 @@ const Navbar = (): JSX.Element => {
           </Link>
           <Link href="/">
             <a
+              id="nav-projects"
               onClick={(event) => scrollTo(event, 'projects')}
               className="p-1 text-gray-900 sm:p-4 dark:text-gray-100 invisible md:visible"
             >
@@ -63,6 +66,7 @@ const Navbar = (): JSX.Element => {
       </div>
       <div>
         <button
+          id="dark-mode-toggle"
           aria-label="Toggle Dark Mode"
           type="button"
           className="w-10 h-10 p-3 bg-gray-200 rounded-lg dark:bg-gray-800 mr-1 md:mr-3 ring-gray-300 hover:ring-4"
@@ -93,6 +97,7 @@ const Navbar = (): JSX.Element => {
           </svg>
         </button>
         <select
+          id="switch-lang"
           onChange={(event) => changeLanguage(event.target.value)}
           defaultValue={locale}
           className="form-select text-shadow-sm text-lg bg-transparent tracking-wide ml-1 md:ml-3 ring-gray-300"

@@ -38,6 +38,7 @@ const MobileMenu = (): JSX.Element => {
   return (
     <>
       <button
+        id="burger"
         className="burger visible md:hidden"
         aria-label="Toggle menu"
         type="button"
@@ -58,6 +59,7 @@ const MobileMenu = (): JSX.Element => {
         >
           <Link href="/">
             <a
+              id="mobile-nav-home"
               onClick={(event) => scrollTo(event, 'top')}
               className="flex w-auto pb-4 ml-4 p-1 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
             >
@@ -71,6 +73,7 @@ const MobileMenu = (): JSX.Element => {
         >
           <Link href="/">
             <a
+              id="mobile-nav-about"
               onClick={(event) => scrollTo(event, 'about')}
               className="flex w-auto pb-4 ml-4 p-1 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
             >
@@ -84,6 +87,7 @@ const MobileMenu = (): JSX.Element => {
         >
           <Link href="/">
             <a
+              id="mobile-nav-projects"
               onClick={(event) => scrollTo(event, 'projects')}
               className="flex w-auto pb-4 ml-4 p-1 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
             >

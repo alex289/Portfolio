@@ -53,6 +53,7 @@ const Project = (): JSX.Element => {
               className="hover:text-blue-800 text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 transition"
               target="_blank"
               rel="noopener noreferrer"
+              id={project.name}
               href={project.html_url}
             >
               {project.name}
