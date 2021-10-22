@@ -1,25 +1,9 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import type { ReactNode } from 'react';
 
 import useTranslation from '@/lib/useTranslation';
 
-const ExternalLink = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: ReactNode;
-}) => (
-  <a
-    className="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition"
-    target="_blank"
-    rel="noopener noreferrer"
-    href={href}
-  >
-    {children}
-  </a>
-);
+import ExternalLink from '@/components/link-external';
 
 export default function Footer(): JSX.Element {
   const router = useRouter();
