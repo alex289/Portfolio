@@ -101,7 +101,7 @@ export default function Dashboard(): JSX.Element {
               Deployed
             </div>
             <p className="mt-2 text-3xl font-bold spacing-sm text-black dark:text-white">
-              {data?.vercel.deployed || 'False'}
+              {data?.vercel.deployed ? 'True' : 'False'}
             </p>
           </div>
           <div className="metric-card border border-gray-200 dark:border-gray-800 rounded p-4 max-w-72 w-full">
