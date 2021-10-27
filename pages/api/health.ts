@@ -29,8 +29,13 @@ export default function handler(
 
     res.status(200).json({
       status: 'UP',
+      env: process.env.NODE_ENV,
       mem: formatted,
       uptime: uptime,
+      vercel: {
+        deployed: process.env.VERCEL === '1' ? true : false,
+        env: process.env.VERCEL_ENV ? process.env.VERCEL_ENV : 'local',
+      },
     });
   } else {
     res.status(500).json({ status: 'Internal Server Error' });

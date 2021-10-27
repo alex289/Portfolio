@@ -17,6 +17,8 @@ export type Projects = {
 
 export type healthData = {
   status: string;
+  env: string;
+  uptime: string;
   mem: {
     rss: string;
     heapTotal: string;
@@ -24,5 +26,8 @@ export type healthData = {
     external: string;
     arrayBuffers: string;
   };
-  uptime: string;
+  vercel: {
+    deployed: boolean;
+    env: string;
+  };
 };
