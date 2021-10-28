@@ -40,27 +40,33 @@ const Navbar = (): JSX.Element => {
             <a
               id="nav-home"
               onClick={(event) => scrollTo(event, 'top')}
-              className="p-1 text-gray-900 sm:p-4 dark:text-gray-100 invisible md:visible"
+              className="m-1 text-gray-900 sm:m-4 dark:text-gray-100 invisible md:visible"
             >
-              {t('home')}
+              <span className="border-gray-800 dark:border-gray-300 hover:border-b-2">
+                {t('home')}
+              </span>
             </a>
           </Link>
           <Link href="/">
             <a
               id="nav-about"
               onClick={(event) => scrollTo(event, 'about')}
-              className="p-1 text-gray-900 sm:p-4 dark:text-gray-100 invisible md:visible"
+              className="m-1 text-gray-900 sm:m-4 dark:text-gray-100 invisible md:visible"
             >
-              {t('about')}
+              <span className="border-gray-800 dark:border-gray-300 hover:border-b-2">
+                {t('about')}
+              </span>
             </a>
           </Link>
           <Link href="/">
             <a
               id="nav-projects"
               onClick={(event) => scrollTo(event, 'projects')}
-              className="p-1 text-gray-900 sm:p-4 dark:text-gray-100 invisible md:visible"
+              className="m-1 text-gray-900 sm:m-4 dark:text-gray-100 invisible md:visible"
             >
-              {t('projects')}
+              <span className="border-gray-800 dark:border-gray-300 hover:border-b-2">
+                {t('projects')}
+              </span>
             </a>
           </Link>
         </div>
