@@ -7,6 +7,7 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Deployment**: [Vercel](https://vercel.com)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Authentication**: Basic Authentication with NextJs middleware
 
 ## Overview
 
@@ -22,3 +23,6 @@ $ cd Portfolio
 $ yarn
 $ yarn dev
 ```
+
+Create a `.env` file  similar to [`.env.example`](https://github.com/Alex289/Portfolio/blob/main/.env.example)
+
