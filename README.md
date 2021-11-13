@@ -11,9 +11,13 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 
 ## Overview
 
+- `lib/*` - Short for "library", a collection of helpful utilities or code for external services.
 - `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction). Currently only health check
 - `pages/dashboard` - containing metrics from health api
 - `pages/*` - All static pages. (Index and 404)
+- `public/*` - Static assets including fonts and images.
+- `styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
+- `locales/*` - All translations objects
 
 ## Running Locally
 
