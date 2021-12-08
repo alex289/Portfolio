@@ -32,7 +32,7 @@ const Navbar = (): JSX.Element => {
   }
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between w-full max-w-4xl p-4 md:p-8 mx-auto my-0 text-gray-900 bg-white sticky-nav md:my-8 dark:bg-black dark:text-gray-100">
+    <nav className="sticky top-0 z-50 flex items-center justify-between w-full max-w-4xl p-4 md:p-8 mx-auto my-0 text-gray-900 bg-gray-50 sticky-nav md:my-8 dark:bg-gray-900 dark:text-gray-100">
       <div>
         <MobileMenu />
         <div className="md:w-0">
@@ -42,7 +42,7 @@ const Navbar = (): JSX.Element => {
               onClick={(event) => scrollTo(event, 'top')}
               className="m-1 text-gray-900 sm:m-4 dark:text-gray-100 invisible md:visible"
             >
-              <span className="border-gray-800 dark:border-gray-300 hover:border-b-2">
+              <span className="border-gray-800 dark:border-gray-300 link-underline py-1">
                 {t('home')}
               </span>
             </a>
@@ -53,7 +53,7 @@ const Navbar = (): JSX.Element => {
               onClick={(event) => scrollTo(event, 'about')}
               className="m-1 text-gray-900 sm:m-4 dark:text-gray-100 invisible md:visible"
             >
-              <span className="border-gray-800 dark:border-gray-300 hover:border-b-2">
+              <span className="border-gray-800 dark:border-gray-300 link-underline py-1">
                 {t('about')}
               </span>
             </a>
@@ -64,7 +64,7 @@ const Navbar = (): JSX.Element => {
               onClick={(event) => scrollTo(event, 'projects')}
               className="m-1 text-gray-900 sm:m-4 dark:text-gray-100 invisible md:visible"
             >
-              <span className="border-gray-800 dark:border-gray-300 hover:border-b-2">
+              <span className="border-gray-800 dark:border-gray-300 link-underline py-1">
                 {t('projects')}
               </span>
             </a>

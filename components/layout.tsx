@@ -5,14 +5,14 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
 const Layout = ({ children }: { children: ReactNode }): JSX.Element => (
-  <div className="bg-white dark:bg-black">
+  <div className="bg-gray-50 dark:bg-gray-900">
     <Meta />
     <a href="#skip" className="skip-nav">
       Skip to content
     </a>
     <Navbar />
     <main
-      className="flex flex-col justify-center px-8 bg-white dark:bg-black"
+      className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
       id="skip"
     >
       {children}
