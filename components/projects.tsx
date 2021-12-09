@@ -1,49 +1,24 @@
-import { useState, useEffect } from 'react';
+import useSWR from 'swr';
 
-import axios from 'axios';
-
+import fetcher from '@/lib/fetcher';
 import type { Projects } from '@/lib/types';
 
 const Project = (): JSX.Element => {
-  const [projects, setProjects] = useState<Projects[]>([
-    {
-      name: '',
-      html_url: '',
-      description: '',
-      language: '',
-    },
-  ]);
+  const { data, error } = useSWR<Projects[]>(
+    'https://api.github.com/users/Alex289/repos',
+    fetcher
+  );
 
-  useEffect(() => {
-    const getData = async () => {
-      await axios
-        .get<Projects[]>('https://api.github.com/users/Alex289/repos', {
-          responseType: 'json',
-        })
-        .then((response) => {
-          setProjects(response.data);
-        })
-        .catch(() => {
-          getLocalData();
-        });
-    };
-
-    const getLocalData = async () => {
-      await axios
-        .get<Projects[]>('/static/projects.json', {
-          responseType: 'json',
-        })
-        .then((response) => {
-          setProjects(response.data);
-        });
-    };
-
-    getData();
-  }, []);
+  if (error) {
+    return <div>Failed to load</div>;
+  }
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
-      {projects.map((project, index) => (
+      {data.map((project: Projects, index: number) => (
         <div
           key={index}
           className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 my-3 p-3"

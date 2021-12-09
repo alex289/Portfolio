@@ -1,22 +1,18 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import useSWR from 'swr';
 
 import Layout from '@/components/layout';
-
-import type { healthData } from '@/lib/types';
+import fetcher from '@/lib/fetcher';
+import { healthData } from '@/lib/types';
 
 export default function Dashboard(): JSX.Element {
-  const [data, setData] = useState<healthData>();
+  const { data, error } = useSWR<healthData>('/api/health', fetcher);
 
-  useEffect(() => {
-    const getData = async () => {
-      await axios
-        .get<healthData>('/api/health')
-        .then((res) => setData(res.data));
-    };
-
-    getData();
-  }, []);
+  if (error) {
+    return <div>Failed to load</div>;
+  }
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Layout>
