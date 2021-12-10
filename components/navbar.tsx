@@ -42,7 +42,7 @@ const Navbar = (): JSX.Element => {
               onClick={(event) => scrollTo(event, 'top')}
               className="m-1 text-gray-900 sm:m-4 dark:text-gray-100 invisible md:visible"
             >
-              <span className="border-gray-800 dark:border-gray-300 link-underline py-1">
+              <span className="dark:link-underline link-underline-black py-1">
                 {t('home')}
               </span>
             </a>
@@ -53,7 +53,7 @@ const Navbar = (): JSX.Element => {
               onClick={(event) => scrollTo(event, 'about')}
               className="m-1 text-gray-900 sm:m-4 dark:text-gray-100 invisible md:visible"
             >
-              <span className="border-gray-800 dark:border-gray-300 link-underline py-1">
+              <span className="dark:link-underline link-underline-black py-1">
                 {t('about')}
               </span>
             </a>
@@ -64,7 +64,7 @@ const Navbar = (): JSX.Element => {
               onClick={(event) => scrollTo(event, 'projects')}
               className="m-1 text-gray-900 sm:m-4 dark:text-gray-100 invisible md:visible"
             >
-              <span className="border-gray-800 dark:border-gray-300 link-underline py-1">
+              <span className="dark:link-underline link-underline-black py-1">
                 {t('projects')}
               </span>
             </a>

@@ -7,6 +7,7 @@ const Meta = (): JSX.Element => {
   return (
     <Head>
       <title>Alexander Konietzko</title>
+      <meta name="title" content="Alexander Konietzko" />
       <link rel="shortcut icon" href="/static/icon/favicon.ico" />
       <meta
         name="viewport"
@@ -37,6 +38,10 @@ const Meta = (): JSX.Element => {
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Alexander Konietzko" />
       <meta
+        property="og:url"
+        content="https://alexanderkonietzko.vercel.app/"
+      />
+      <meta
         property="og:description"
         content="Front-End and Back-End developer"
       />
@@ -64,6 +69,16 @@ const Meta = (): JSX.Element => {
         rel="apple-touch-icon"
         sizes="180x180"
         href="/static/icon/apple-touch-icon.png"
+      />
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta
+        property="twitter:url"
+        content="https://alexanderkonietzko.vercel.app/"
+      />
+      <meta property="twitter:title" content="Alexander Konietzko" />
+      <meta
+        property="twitter:description"
+        content="Front-End and Back-End developer"
       />
     </Head>
   );
