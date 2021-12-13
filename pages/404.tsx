@@ -14,7 +14,7 @@ export default function NotFound(): JSX.Element {
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-8">{t('404-text')}</p>
         <Link href="/">
-          <a className="p-1 sm:p-4 w-64 font-bold mx-auto bg-gray-100 dark:bg-gray-900 text-center rounded-md text-black dark:text-white">
+          <a className="p-1 sm:p-4 w-64 font-bold mx-auto bg-gray-200 dark:bg-gray-800 hover:dark:bg-gray-700 text-center rounded-md text-black dark:text-white">
             {t('return-home')}
           </a>
         </Link>

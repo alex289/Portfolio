@@ -17,7 +17,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light">
+    <ThemeProvider attribute="class" defaultTheme="dark">
       <Component {...pageProps} />
     </ThemeProvider>
   );
