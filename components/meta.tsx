@@ -1,9 +1,14 @@
 import Head from 'next/head';
 
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const Meta = (): JSX.Element => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const { theme } = useTheme();
+
   return (
     <Head>
       <title>Alexander Konietzko</title>
@@ -31,10 +36,12 @@ const Meta = (): JSX.Element => {
       />
       <meta name="description" content="Front-End and Back-End developer" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-      <meta
-        name="theme-color"
-        content={theme === 'light' ? '#ffffff' : '#000000'}
-      />
+      {mounted && (
+        <meta
+          name="theme-color"
+          content={theme === 'light' ? '#ffffff' : '#000000'}
+        />
+      )}
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Alexander Konietzko" />
       <meta

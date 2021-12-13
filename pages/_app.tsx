@@ -7,7 +7,7 @@ import NProgress from 'nprogress';
 import '@/styles/global.css';
 import 'nprogress/nprogress.css';
 
-Router.events.on('routeChangeStart', (url, { shallow }) => {
+Router.events.on('routeChangeStart', (_url, { shallow }) => {
   if (!shallow) {
     NProgress.start();
   }
@@ -17,7 +17,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark">
+    <ThemeProvider attribute="class">
       <Component {...pageProps} />
     </ThemeProvider>
   );

@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import type { ObjectType } from '@/lib/types';
+import type { errorApiReponse, healthData, ObjectType } from '@/lib/types';
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<healthData | errorApiReponse>
 ): void {
   if (req.method === 'GET') {
     const secs = process.uptime();
@@ -30,7 +30,7 @@ export default function handler(
     res.status(200).json({
       status: 'UP',
       env: process.env.NODE_ENV,
-      mem: formatted,
+      mem: formatted as unknown as NodeJS.MemoryUsage,
       uptime: uptime,
       vercel: {
         deployed: process.env.VERCEL === '1' ? true : false,

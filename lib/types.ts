@@ -19,15 +19,13 @@ export type healthData = {
   status: string;
   env: string;
   uptime: string;
-  mem: {
-    rss: string;
-    heapTotal: string;
-    heapUsed: string;
-    external: string;
-    arrayBuffers: string;
-  };
+  mem: NodeJS.MemoryUsage;
   vercel: {
     deployed: boolean;
     env: string;
   };
+};
+
+export type errorApiReponse = {
+  status: string;
 };

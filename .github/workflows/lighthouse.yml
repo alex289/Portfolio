@@ -17,6 +17,6 @@ jobs:
           urls: |
             https://alexanderkonietzko.vercel.app/
             https://alexanderkonietzko.vercel.app/de
-          uploadArtifacts: true
+          uploadArtifacts: false
           temporaryPublicStorage: true
           runs: 3
