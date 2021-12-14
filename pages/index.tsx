@@ -12,8 +12,8 @@ export default function Index(): JSX.Element {
   const age = new Date().getFullYear() - 2002;
   return (
     <Layout>
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <div className="w-41 h-41 mx-auto mb-16">
+      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
+        <div className="mx-auto mb-16 w-41 h-41">
           <Image
             className="rounded-full"
             src={profilePic}
@@ -25,28 +25,28 @@ export default function Index(): JSX.Element {
             loading="lazy"
           />
         </div>
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           {t('title')}
         </h1>
-        <h2 className="text-gray-600 dark:text-gray-400 mb-16">{t('intro')}</h2>
+        <h2 className="mb-16 text-gray-600 dark:text-gray-400">{t('intro')}</h2>
         <h3
           id="about"
-          className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white"
+          className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white"
         >
           {t('about')}
         </h3>
-        <h2 className="text-gray-600 dark:text-gray-400 mb-16">
+        <h2 className="mb-16 text-gray-600 dark:text-gray-400">
           <p className="mb-6">{t('about-1').replace('$AGE', age.toString())}</p>
           <p className="mb-6">{t('about-2')}</p>
           <p>{t('about-3')}</p>
         </h2>
         <h3
           id="projects"
-          className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white"
+          className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white"
         >
           {t('projects')}
         </h3>
-        <h2 className="text-gray-600 dark:text-gray-400 mb-16">
+        <h2 className="mb-16 text-gray-600 dark:text-gray-400">
           <Project />
         </h2>
       </div>

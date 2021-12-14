@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-        "paths": {
-            "@/components/*": ["components/*"],
-            "@/lib/*": ["lib/*"],
-            "@/locales/*": ["locales/*"],
-            "@/styles/*": ["styles/*"]
-        },
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/lib/*": ["lib/*"],
+      "@/locales/*": ["locales/*"],
+      "@/styles/*": ["styles/*"]
+    },
     "target": "es5",
     "lib": [
       "dom",

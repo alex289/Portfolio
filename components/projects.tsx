@@ -21,11 +21,11 @@ const Project = (): JSX.Element => {
       {data.map((project: Projects, index: number) => (
         <div
           key={index}
-          className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 my-3 p-3"
+          className="p-3 my-3 grid lg:grid-cols-4 md:grid-cols-2 gap-4"
         >
-          <h3 className="font-semibold text-lg tracking-wide">
+          <h3 className="text-lg font-semibold tracking-wide">
             <a
-              className="hover:text-blue-800 text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 transition"
+              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-500 transition"
               target="_blank"
               rel="noopener noreferrer"
               id={project.name}

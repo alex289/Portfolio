@@ -8,13 +8,13 @@ export default function NotFound(): JSX.Element {
   const { t } = useTranslation();
   return (
     <Layout>
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           404 – {t('page-not-found')}
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-8">{t('404-text')}</p>
+        <p className="mb-8 text-gray-600 dark:text-gray-400">{t('404-text')}</p>
         <Link href="/">
-          <a className="p-1 sm:p-4 w-64 font-bold mx-auto bg-gray-200 dark:bg-gray-800 hover:dark:bg-gray-700 text-center rounded-md text-black dark:text-white">
+          <a className="w-64 p-1 mx-auto font-bold text-center text-black bg-gray-200 sm:p-4 dark:bg-gray-800 hover:dark:bg-gray-700 rounded-md dark:text-white">
             {t('return-home')}
           </a>
         </Link>
