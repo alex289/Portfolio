@@ -60,7 +60,10 @@ export default function Footer(): JSX.Element {
             </ExternalLink>
           </div>
         </div>
-        <p className="mx-auto text-sm text-gray-500 dark:text-gray-400">
+        <p
+          className="mx-auto text-sm text-gray-500 dark:text-gray-400"
+          id="powered-by"
+        >
           {t('powered')}
           <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink>{' '}
           {t('and')}

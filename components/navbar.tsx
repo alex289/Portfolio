@@ -17,7 +17,7 @@ const Navbar = (): JSX.Element => {
   const { locale } = router;
 
   const { theme, setTheme } = useTheme();
-  const { t, changeLanguage } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between w-full max-w-4xl p-4 mx-auto my-0 text-gray-900 md:p-8 bg-gray-50 sticky-nav md:my-8 dark:bg-gray-900 dark:text-gray-100">
@@ -66,19 +66,19 @@ const Navbar = (): JSX.Element => {
         >
           {mounted && <ThemeToggleIcon theme={theme} />}
         </button>
-        <select
-          id="switch-lang"
-          onChange={(event) => changeLanguage(event.target.value)}
-          defaultValue={locale}
-          className="ml-1 text-lg tracking-wide bg-transparent form-select text-shadow-sm md:ml-3 ring-gray-300"
+        <Link
+          href={router.pathname}
+          scroll={false}
+          shallow={true}
+          locale={locale === 'de' ? 'en' : 'de'}
         >
-          <option className="text-black" value="en">
-            EN
-          </option>
-          <option className="text-black" value="de">
-            DE
-          </option>
-        </select>
+          <a
+            id="switch-lang"
+            className="pb-1 mx-3 text-lg tracking-wide md:dark:link-underline md:link-underline-black"
+          >
+            {locale === 'de' ? 'EN' : 'DE'}
+          </a>
+        </Link>
       </div>
     </nav>
   );
