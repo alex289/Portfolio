@@ -1,11 +1,9 @@
-export type ObjectType = {
+export type LocalesJsonObject = {
   [x: string]: string;
 };
 
 export type UseTranslation = {
   t: (key: string) => string;
-  language: string;
-  changeLanguage: (locale: string) => void;
 };
 
 export type Projects = {

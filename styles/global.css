@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .link-underline {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  }
+
+  .link-underline-black {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#000, #000);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .5s ease-in-out;
+  }
+  
+  .link-underline:hover,
+  .link-underline-black:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%
+  }
+}
+
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -127,28 +148,4 @@ html {
   100% {
     height: 24px;
   }
-}
-
-.link-underline {
-  border-bottom-width: 0;
-  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
-  background-size: 0 3px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size .5s ease-in-out;
-}
-
-.link-underline-black {
-  border-bottom-width: 0;
-  background-image: linear-gradient(transparent, transparent), linear-gradient(#000, #000);
-  background-size: 0 3px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size .5s ease-in-out;
-}
-
-.link-underline:hover,
-.link-underline-black:hover {
-  background-size: 100% 3px;
-  background-position: 0 100%
 }

@@ -1,6 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import type { errorApiReponse, healthData, ObjectType } from '@/lib/types';
+import type {
+  errorApiReponse,
+  healthData,
+  LocalesJsonObject,
+} from '@/lib/types';
 
 export default function handler(
   req: NextApiRequest,
@@ -16,7 +20,7 @@ export default function handler(
       ('0' + Math.floor((secs % 3600) % 60)).slice(-2);
 
     const mem = process.memoryUsage();
-    const formatted: ObjectType = {};
+    const formatted: LocalesJsonObject = {};
 
     for (const [key, value] of Object.entries(mem)) {
       formatted[key] = formatMemory(value);
