@@ -4,10 +4,7 @@ import fetcher from '@/lib/fetcher';
 import type { Projects } from '@/lib/types';
 
 const Project = (): JSX.Element => {
-  const { data, error } = useSWR<Projects[]>(
-    'https://api.github.com/users/Alex289/repos',
-    fetcher
-  );
+  const { data, error } = useSWR<Projects[]>('/api/repos', fetcher);
 
   if (error) {
     return <div>Failed to load</div>;
