@@ -41,7 +41,7 @@ const MobileMenu = (): JSX.Element => {
       </button>
 
       <ul
-        className={`menu flex flex-col absolute bg-gray-50 dark:bg-gray-900 mt-4 md:hidden ${
+        className={`menu flex flex-col absolute bg-gray-50 dark:bg-gray-800 mt-4 md:hidden ${
           isMenuOpen ? 'menuRendered' : ''
         }`}
       >

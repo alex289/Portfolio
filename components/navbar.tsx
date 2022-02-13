@@ -20,7 +20,7 @@ const Navbar = (): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between w-full max-w-4xl p-4 mx-auto my-0 text-gray-900 md:p-8 bg-gray-50 sticky-nav md:my-8 dark:bg-gray-900 dark:text-gray-100">
+    <nav className="sticky top-0 z-50 flex items-center justify-between w-full max-w-4xl p-4 mx-auto my-0 text-gray-900 md:p-8 bg-gray-50 sticky-nav md:my-8 dark:bg-gray-800 dark:text-gray-100">
       <div>
         <MobileMenu />
         <div className="md:w-0">
@@ -62,7 +62,7 @@ const Navbar = (): JSX.Element => {
             id="dark-mode-toggle"
             aria-label="Toggle Dark Mode"
             type="button"
-            className="w-10 h-10 p-3 mr-1 bg-gray-200 rounded-lg dark:bg-gray-800 md:mr-3 ring-gray-300 hover:ring-4"
+            className="w-10 h-10 p-3 mr-1 bg-gray-200 rounded-lg dark:bg-gray-700 md:mr-3 ring-gray-300 hover:ring-4"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           >
             <ThemeToggleIcon theme={theme} />

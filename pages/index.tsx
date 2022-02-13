@@ -1,5 +1,8 @@
 import Image from 'next/image';
 
+import type { GetStaticProps } from 'next';
+import type { Projects } from '@/lib/types';
+
 import useTranslation from '@/lib/useTranslation';
 
 import Layout from '@/components/layout';
@@ -7,7 +10,11 @@ import Project from '@/components/projects';
 
 import profilePic from '../public/static/images/konietzko_alexander.jpg';
 
-export default function Index(): JSX.Element {
+export default function Index({
+  fallbackData,
+}: {
+  fallbackData: Projects[];
+}): JSX.Element {
   const { t } = useTranslation();
   const age = new Date().getFullYear() - 2002;
   return (
@@ -28,14 +35,14 @@ export default function Index(): JSX.Element {
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           {t('title')}
         </h1>
-        <h2 className="mb-16 text-gray-600 dark:text-gray-400">{t('intro')}</h2>
+        <h2 className="mb-16 text-gray-600 dark:text-gray-200">{t('intro')}</h2>
         <h3
           id="about"
           className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white"
         >
           {t('about')}
         </h3>
-        <h2 className="mb-16 text-gray-600 dark:text-gray-400">
+        <h2 className="mb-16 text-gray-600 dark:text-gray-200">
           <p className="mb-6">{t('about-1').replace('$AGE', age.toString())}</p>
           <p className="mb-6">{t('about-2')}</p>
           <p>{t('about-3')}</p>
@@ -46,10 +53,25 @@ export default function Index(): JSX.Element {
         >
           {t('projects')}
         </h3>
-        <h2 className="mb-16 text-gray-600 dark:text-gray-400">
-          <Project />
+        <h2 className="mb-16 text-gray-600 dark:text-gray-200">
+          <Project fallbackData={fallbackData} />
         </h2>
       </div>
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const reposResponse = await fetch(
+    'https://api.github.com/users/Alex289/repos?per_page=100'
+  );
+
+  const fallbackData = await reposResponse.json();
+
+  return {
+    props: {
+      fallbackData,
+    },
+    revalidate: 60,
+  };
+};

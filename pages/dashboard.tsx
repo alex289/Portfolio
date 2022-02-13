@@ -23,7 +23,7 @@ export default function Dashboard(): JSX.Element {
           Dashboard
         </h1>
         <div className="w-full my-2 grid gap-4 grid-cols-1 sm:grid-cols-2">
-          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-800 max-w-72">
+          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <div className="flex items-center text-gray-900 dark:text-gray-100">
               Status
             </div>
@@ -36,7 +36,7 @@ export default function Dashboard(): JSX.Element {
               </p>
             </div>
           </div>
-          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-800 max-w-72">
+          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <div className="flex items-center text-gray-900 dark:text-gray-100">
               Environment
             </div>
@@ -44,7 +44,7 @@ export default function Dashboard(): JSX.Element {
               {data.env}
             </p>
           </div>
-          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-800 max-w-72">
+          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <div className="flex items-center text-gray-900 dark:text-gray-100">
               Uptime
             </div>
@@ -52,7 +52,7 @@ export default function Dashboard(): JSX.Element {
               {data.uptime}
             </p>
           </div>
-          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-800 max-w-72">
+          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <div className="flex items-center text-gray-900 dark:text-gray-100">
               Rss
             </div>
@@ -60,7 +60,7 @@ export default function Dashboard(): JSX.Element {
               {data.mem.rss}
             </p>
           </div>
-          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-800 max-w-72">
+          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <p className="flex items-center text-gray-900 dark:text-gray-100">
               Heap total
             </p>
@@ -68,7 +68,7 @@ export default function Dashboard(): JSX.Element {
               {data.mem.heapTotal}
             </div>
           </div>
-          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-800 max-w-72">
+          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <div className="flex items-center text-gray-900 dark:text-gray-100">
               Heap used
             </div>
@@ -78,7 +78,7 @@ export default function Dashboard(): JSX.Element {
           </div>
         </div>
         <div className="w-full my-2 grid gap-4 grid-cols-1 sm:grid-cols-2">
-          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-800 max-w-72">
+          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <div className="flex items-center text-gray-900 dark:text-gray-100">
               External
             </div>
@@ -86,7 +86,7 @@ export default function Dashboard(): JSX.Element {
               {data.mem.external}
             </p>
           </div>
-          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-800 max-w-72">
+          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <div className="flex items-center text-gray-900 dark:text-gray-100">
               Array buffers
             </div>
@@ -94,7 +94,7 @@ export default function Dashboard(): JSX.Element {
               {data.mem.arrayBuffers}
             </p>
           </div>
-          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-800 max-w-72">
+          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <div className="flex items-center text-gray-900 dark:text-gray-100">
               Deployed
             </div>
@@ -102,7 +102,7 @@ export default function Dashboard(): JSX.Element {
               {data.vercel.deployed ? 'True' : 'False'}
             </p>
           </div>
-          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-800 max-w-72">
+          <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <div className="flex items-center text-gray-900 dark:text-gray-100">
               Vercel environment
             </div>

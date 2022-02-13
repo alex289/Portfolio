@@ -3,8 +3,14 @@ import useSWR from 'swr';
 import fetcher from '@/lib/fetcher';
 import type { Projects } from '@/lib/types';
 
-const Project = (): JSX.Element => {
-  const { data, error } = useSWR<Projects[]>('/api/repos', fetcher);
+const Project = ({
+  fallbackData,
+}: {
+  fallbackData: Projects[];
+}): JSX.Element => {
+  const { data, error } = useSWR<Projects[]>('/api/repos', fetcher, {
+    fallbackData,
+  });
 
   if (error) {
     return <div>Failed to load</div>;
