@@ -6,7 +6,7 @@ export default async function handler(
   res: NextApiResponse<Projects[]>
 ) {
   const reposResponse = await fetch(
-    'https://api.github.com/users/Alex289/repos?per_page=100'
+    'https://api.github.com/users/Alex289/repos?per_page=100&sort=pushed'
   );
 
   const repos = await reposResponse.json();
