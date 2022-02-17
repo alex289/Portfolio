@@ -1,3 +1,4 @@
+import { signIn, signOut, useSession } from 'next-auth/react';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
@@ -7,13 +8,23 @@ import Layout from '@/components/layout';
 import { healthData } from '@/lib/types';
 
 export default function Dashboard(): JSX.Element {
+  const { data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      signIn();
+    },
+  });
+
   const { data, error } = useSWR<healthData>('/api/health', fetcher);
 
+  if (!session) {
+    return <Layout>Not authenticated</Layout>;
+  }
   if (error) {
-    return <div>Failed to load</div>;
+    return <Layout>Failed to load</Layout>;
   }
   if (!data) {
-    return <div>Loading...</div>;
+    return <Layout>Loading...</Layout>;
   }
 
   return (
@@ -22,6 +33,12 @@ export default function Dashboard(): JSX.Element {
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           Dashboard
         </h1>
+        <div
+          onClick={() => signOut({ callbackUrl: '/' })}
+          className="cursor-pointer"
+        >
+          Logout
+        </div>
         <div className="w-full my-2 grid gap-4 grid-cols-1 sm:grid-cols-2">
           <div className="w-full p-4 border border-gray-200 rounded metric-card dark:border-gray-700 max-w-72">
             <div className="flex items-center text-gray-900 dark:text-gray-100">

@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import Router from 'next/router';
 
+import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 import NProgress from 'nprogress';
 
@@ -15,10 +16,15 @@ Router.events.on('routeChangeStart', (_url, { shallow }) => {
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps): JSX.Element {
   return (
-    <ThemeProvider attribute="class">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <SessionProvider session={session}>
+      <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </SessionProvider>
   );
 }
