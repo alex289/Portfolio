@@ -1,24 +1,50 @@
-import { NextRequest, NextResponse } from 'next/server';
+import type { NextFetchEvent, NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
-export function middleware(req: NextRequest) {
-  console.log({
+async function logPageView(req: NextRequest) {
+  if (
+    //process.env.NODE_ENV !== 'production' ||
+    req.nextUrl.pathname.startsWith('/static') ||
+    req.nextUrl.pathname.startsWith('/api') ||
+    req.nextUrl.pathname.startsWith('/dashboard')
+  ) {
+    return;
+  }
+
+  const body = JSON.stringify({
     slug: req.nextUrl.pathname,
     ua: req.ua?.ua,
     ...req.geo,
   });
 
+  const requestHeaders: HeadersInit = new Headers();
+  requestHeaders.set('apikey', process.env.SUPABASE_ANON_KEY as string);
+  requestHeaders.set('Content-Type', 'application/json');
+
+  const request = await fetch(`${process.env.SUPABASE_URL}/rest/v1/analytics`, {
+    headers: requestHeaders,
+    body,
+    method: 'POST',
+  });
+
+  if (request.status !== 201) {
+    console.error('Error logging analytics: ', body);
+  }
+
+  return;
+}
+
+function addSecurityHeaders(response: NextResponse) {
   const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
-    child-src 'self';
-    style-src 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
+    child-src *.youtube.com *.google.com *.twitter.com;
+    style-src 'self' 'unsafe-inline' *.googleapis.com;
     img-src * blob: data:;
     media-src 'none';
     connect-src *;
     font-src 'self';
   `;
-
-  const response = NextResponse.next();
 
   response.headers.set(
     'Content-Security-Policy',
@@ -38,4 +64,14 @@ export function middleware(req: NextRequest) {
   response.headers.set('X-DNS-Prefetch-Control', 'on');
 
   return response;
+}
+
+export function middleware(req: NextRequest, ev: NextFetchEvent) {
+  ev.waitUntil(
+    (async () => {
+      logPageView(req);
+    })()
+  );
+
+  return addSecurityHeaders(NextResponse.next());
 }
