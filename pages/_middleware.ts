@@ -1,6 +1,12 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export function middleware() {
+export function middleware(req: NextRequest) {
+  console.log({
+    slug: req.nextUrl.pathname,
+    ua: req.ua?.ua,
+    ...req.geo,
+  });
+
   const ContentSecurityPolicy = `
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline';
