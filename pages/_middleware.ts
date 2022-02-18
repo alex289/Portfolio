@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 async function logPageView(req: NextRequest) {
   if (
-    //process.env.NODE_ENV !== 'production' ||
+    process.env.NODE_ENV !== 'production' ||
     req.nextUrl.pathname.startsWith('/static') ||
     req.nextUrl.pathname.startsWith('/api') ||
     req.nextUrl.pathname.startsWith('/dashboard')
@@ -13,6 +13,7 @@ async function logPageView(req: NextRequest) {
 
   const body = JSON.stringify({
     slug: req.nextUrl.pathname,
+    locale: req.nextUrl.locale,
     ua: req.ua?.ua,
     ...req.geo,
   });
