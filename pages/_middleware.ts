@@ -9,7 +9,7 @@ async function logPageView(req: NextRequest) {
     req.nextUrl.pathname.startsWith('/robots.txt') ||
     req.nextUrl.pathname.startsWith('/manifest.json') ||
     req.nextUrl.pathname.startsWith('/dashboard') ||
-    req.ua?.isBot
+    req.ua?.ua.match('Vercelbot|Lighthouse|Checkly') !== null
   ) {
     return;
   }
