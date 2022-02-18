@@ -6,7 +6,10 @@ async function logPageView(req: NextRequest) {
     process.env.NODE_ENV !== 'production' ||
     req.nextUrl.pathname.startsWith('/static') ||
     req.nextUrl.pathname.startsWith('/api') ||
-    req.nextUrl.pathname.startsWith('/dashboard')
+    req.nextUrl.pathname.startsWith('/robots.txt') ||
+    req.nextUrl.pathname.startsWith('/manifest.json') ||
+    req.nextUrl.pathname.startsWith('/dashboard') ||
+    req.ua?.isBot
   ) {
     return;
   }
