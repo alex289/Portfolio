@@ -2287,10 +2287,10 @@ next-auth@^4.2.1:
     preact-render-to-string "^5.1.19"
     uuid "^8.3.2"
 
-next-themes@^0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.0.15.tgz#ab0cee69cd763b77d41211f631e108beab39bf7d"
-  integrity sha512-LTmtqYi03c4gMTJmWwVK9XkHL7h0/+XrtR970Ujvtu3s0kZNeJN24aJsi4rkZOI8i19+qq6f8j+8Duwy5jqcrQ==
+next-themes@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.1.0.tgz#b06e0a8a51d41882188f1b5c9ac05ec788ee174d"
+  integrity sha512-ZegYm66ruv/KFEIM28sMXcSOyqFjkc/5wM+vnPKAzIPzuIog/zUpgWZ9fwNoKrWkWygUxqJOZ8DItkARYSN//g==
 
 next@12.1.0:
   version "12.1.0"
