@@ -22,9 +22,11 @@ jobs:
         with:
           node-version: '16.x'
 
+      - name: Install yarn
+        run: npm install -g yarn
+
       - name: Install dependencies
-        - run: npm install -g yarn
-        - run: yarn
+        run: yarn
 
       - name: Restore next build
         uses: actions/cache@v2
