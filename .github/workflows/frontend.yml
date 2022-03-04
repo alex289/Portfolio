@@ -21,20 +21,19 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Cache node modules
+    - name: Cache node modules and next build
       uses: actions/cache@v2
-      env:
-        cache-name: cache-node-modules
+      id: yarn-cache
       with:
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        path: |
+          node_modules
+          .next/cache
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
+          ${{ runner.os }}-yarn-
 
     - run: npm install -g yarn
-    - run: yarn
+    - run: yarn install --frozen-lockfile
     - run: yarn format
     - run: yarn lint
     - run: yarn build
