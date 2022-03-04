@@ -41,9 +41,9 @@ async function logPageView(req: NextRequest) {
 function addSecurityHeaders(response: NextResponse) {
   const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
-    child-src *.youtube.com *.google.com *.twitter.com;
-    style-src 'self' 'unsafe-inline' *.googleapis.com;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' data:;
+    child-src 'self';
+    style-src 'self' 'unsafe-inline';
     img-src * blob: data:;
     media-src 'none';
     connect-src *;
