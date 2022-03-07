@@ -38,8 +38,7 @@ export default function Index({
         <h2 className="mb-16 text-gray-600 dark:text-gray-200">{t('intro')}</h2>
         <h3
           id="about"
-          className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white"
-        >
+          className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           {t('about')}
         </h3>
         <h2 className="mb-16 text-gray-600 dark:text-gray-200">
@@ -49,8 +48,7 @@ export default function Index({
         </h2>
         <h3
           id="projects"
-          className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white"
-        >
+          className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           {t('projects')}
         </h3>
         <h2 className="mb-16 text-gray-600 dark:text-gray-200">

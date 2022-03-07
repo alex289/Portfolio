@@ -17,24 +17,21 @@ export default function Footer(): JSX.Element {
             <Link href="/#top">
               <a
                 id="footer-home"
-                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition"
-              >
+                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
                 {t('home')}
               </a>
             </Link>
             <Link href="/#about">
               <a
                 id="footer-about"
-                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition"
-              >
+                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
                 {t('about')}
               </a>
             </Link>
             <Link href="/#projects">
               <a
                 id="footer-projects"
-                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition"
-              >
+                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
                 {t('projects')}
               </a>
             </Link>
@@ -56,8 +53,7 @@ export default function Footer(): JSX.Element {
                 onClick={() =>
                   signIn('credentials', { callbackUrl: '/dashboard' })
                 }
-                className="text-gray-500 cursor-pointer hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition"
-              >
+                className="text-gray-500 cursor-pointer hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
                 {t('dashboard')}
               </div>
             )}
@@ -76,8 +72,7 @@ export default function Footer(): JSX.Element {
         </div>
         <p
           className="mx-auto text-sm text-gray-500 dark:text-gray-300"
-          id="powered-by"
-        >
+          id="powered-by">
           {t('powered')}
           <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink>{' '}
           {t('and')}

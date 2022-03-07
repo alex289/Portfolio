@@ -34,8 +34,7 @@ const MobileMenu = (): JSX.Element => {
         className="visible burger md:hidden"
         aria-label="Toggle menu"
         type="button"
-        onClick={toggleMenu}
-      >
+        onClick={toggleMenu}>
         <MenuIcon data-hide={isMenuOpen} />
         <CrossIcon data-hide={!isMenuOpen} />
       </button>
@@ -43,46 +42,39 @@ const MobileMenu = (): JSX.Element => {
       <ul
         className={`menu flex flex-col absolute bg-gray-50 dark:bg-gray-800 mt-4 md:hidden ${
           isMenuOpen ? 'menuRendered' : ''
-        }`}
-      >
+        }`}>
         <li
           className="ml-3 border-b border-gray-300 dark:border-gray-700"
-          style={{ transitionDelay: '150ms' }}
-        >
+          style={{ transitionDelay: '150ms' }}>
           <Link href="/">
             <a
               id="mobile-nav-home"
               onClick={(event) => scrollTo(event, 'top')}
-              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
-            >
+              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
               {t('home')}
             </a>
           </Link>
         </li>
         <li
           className="ml-3 border-b border-gray-300 dark:border-gray-700"
-          style={{ transitionDelay: '150ms' }}
-        >
+          style={{ transitionDelay: '150ms' }}>
           <Link href="/">
             <a
               id="mobile-nav-about"
               onClick={(event) => scrollTo(event, 'about')}
-              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
-            >
+              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
               {t('about')}
             </a>
           </Link>
         </li>
         <li
           className="ml-3 border-b border-gray-300 dark:border-gray-700"
-          style={{ transitionDelay: '150ms' }}
-        >
+          style={{ transitionDelay: '150ms' }}>
           <Link href="/">
             <a
               id="mobile-nav-projects"
               onClick={(event) => scrollTo(event, 'projects')}
-              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100"
-            >
+              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
               {t('projects')}
             </a>
           </Link>

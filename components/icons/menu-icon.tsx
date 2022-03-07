@@ -6,8 +6,7 @@ function MenuIcon(props: JSX.IntrinsicElements['svg']) {
       height="20"
       viewBox="0 0 20 20"
       fill="none"
-      {...props}
-    >
+      {...props}>
       <path
         d="M2.5 7.5H17.5"
         stroke="currentColor"

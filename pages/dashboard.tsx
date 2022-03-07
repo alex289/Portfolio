@@ -35,8 +35,7 @@ export default function Dashboard(): JSX.Element {
         </h1>
         <div
           onClick={() => signOut({ callbackUrl: '/' })}
-          className="cursor-pointer"
-        >
+          className="cursor-pointer">
           Logout
         </div>
         <div className="w-full my-2 grid gap-4 grid-cols-1 sm:grid-cols-2">
@@ -47,8 +46,7 @@ export default function Dashboard(): JSX.Element {
             <div className="mt-2 text-3xl font-bold text-black spacing-sm dark:text-white">
               <p
                 id="status"
-                className={data.status ? 'text-green-600' : 'text-red-600'}
-              >
+                className={data.status ? 'text-green-600' : 'text-red-600'}>
                 {data.status}
               </p>
             </div>

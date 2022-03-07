@@ -24,16 +24,14 @@ const Project = ({
       {data.map((project: Projects, index: number) => (
         <div
           key={index}
-          className="p-3 my-3 grid lg:grid-cols-4 md:grid-cols-2 gap-4"
-        >
+          className="p-3 my-3 grid lg:grid-cols-4 md:grid-cols-2 gap-4">
           <h3 className="text-lg font-semibold tracking-wide">
             <a
               className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-500 transition"
               target="_blank"
               rel="noopener noreferrer"
               id={project.name}
-              href={project.html_url}
-            >
+              href={project.html_url}>
               {project.name}
             </a>
           </h3>
