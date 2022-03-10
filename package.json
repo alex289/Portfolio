@@ -29,7 +29,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "@types/node": "^17.0.21",
     "@types/nprogress": "^0.2.0",
-    "@types/react": "^17.0.39",
+    "@types/react": "^17.0.40",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "autoprefixer": "^10.4.2",
     "eslint": "^8.10.0",
@@ -42,7 +42,7 @@
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "axios": "^0.26.0",
+    "axios": "^0.26.1",
     "next": "12.1.0",
     "next-auth": "^4.2.1",
     "next-themes": "^0.1.1",

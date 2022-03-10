@@ -1,4 +1,4 @@
-const ThemeToggleIcon = ({ theme }: { theme: string | undefined }) => {
+const ThemeToggleIcon = ({ theme }: { theme: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

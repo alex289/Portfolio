@@ -16,7 +16,7 @@ const Navbar = (): JSX.Element => {
   const router = useRouter();
   const { locale } = router;
 
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const { t } = useTranslation();
 
   return (
@@ -54,16 +54,14 @@ const Navbar = (): JSX.Element => {
         </div>
       </div>
       <div>
-        {mounted && theme !== undefined && (
-          <button
-            id="dark-mode-toggle"
-            aria-label="Toggle Dark Mode"
-            type="button"
-            className="w-10 h-10 p-3 mr-1 bg-gray-200 rounded-lg dark:bg-gray-700 md:mr-3 ring-gray-300 hover:ring-4"
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-            <ThemeToggleIcon theme={theme} />
-          </button>
-        )}
+        <button
+          id="dark-mode-toggle"
+          aria-label="Toggle Dark Mode"
+          type="button"
+          className="w-10 h-10 p-3 mr-1 bg-gray-200 rounded-lg dark:bg-gray-700 md:mr-3 ring-gray-300 hover:ring-4"
+          onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
+          {mounted && <ThemeToggleIcon theme={resolvedTheme} />}
+        </button>
         <Link
           href={router.pathname}
           scroll={false}
