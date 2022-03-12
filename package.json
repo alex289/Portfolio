@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "motion": "^10.6.2",
     "next": "12.1.0",
     "next-auth": "^4.2.1",
     "next-themes": "^0.1.1",

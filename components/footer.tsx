@@ -4,6 +4,7 @@ import { signIn, useSession } from 'next-auth/react';
 import useTranslation from '@/lib/useTranslation';
 
 import ExternalLink from '@/components/link-external';
+import NowPlaying from '@/components/now-playing';
 
 export default function Footer(): JSX.Element {
   const { data: session } = useSession();
@@ -12,6 +13,7 @@ export default function Footer(): JSX.Element {
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800">
       <footer className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-8">
         <hr className="w-full mb-8 border border-gray-200 dark:border-gray-700" />
+        <NowPlaying />
         <div className="w-full max-w-2xl pb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div className="flex flex-col space-y-4">
             <Link href="/#top">
