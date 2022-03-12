@@ -1,15 +1,9 @@
 import type { NextFetchEvent, NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
-const PUBLIC_FILE = /\.(.*)$/;
-
 async function logPageView(req: NextRequest) {
   const isPageRequest =
-    !PUBLIC_FILE.test(req.nextUrl.pathname) &&
-    !req.nextUrl.pathname.startsWith('/api') &&
-    !req.nextUrl.pathname.startsWith('/static') &&
-    !req.nextUrl.pathname.startsWith('/dashboard') &&
-    !req.headers.get('x-middleware-preflight');
+    req.nextUrl.pathname === '/' && !req.headers.get('x-middleware-preflight');
 
   if (process.env.NODE_ENV !== 'production' && !isPageRequest) {
     return;
