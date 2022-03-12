@@ -1,16 +1,16 @@
 import type { NextFetchEvent, NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
+const PUBLIC_FILE = /\.(.*)$/;
+
 async function logPageView(req: NextRequest) {
-  if (
-    process.env.NODE_ENV !== 'production' ||
-    req.nextUrl.pathname.startsWith('/static') ||
-    req.nextUrl.pathname.startsWith('/api') ||
-    req.nextUrl.pathname.startsWith('/robots.txt') ||
-    req.nextUrl.pathname.startsWith('/manifest.json') ||
-    req.nextUrl.pathname.startsWith('/dashboard') ||
-    req.ua?.ua.match('Vercelbot|Lighthouse|Checkly') !== null
-  ) {
+  const isPageRequest =
+    !PUBLIC_FILE.test(req.nextUrl.pathname) &&
+    !req.nextUrl.pathname.startsWith('/api') &&
+    !req.nextUrl.pathname.startsWith('/dashboard') &&
+    !req.headers.get('x-middleware-preflight');
+
+  if (process.env.NODE_ENV !== 'production' && isPageRequest) {
     return;
   }
 

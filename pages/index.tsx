@@ -20,14 +20,14 @@ export default function Index({
   return (
     <Layout>
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
-        <div className="mx-auto mb-16 w-41 h-41">
+        <div className="w-64 h-64 mx-auto mb-16">
           <Image
             className="rounded-full"
             src={profilePic}
             placeholder="blur"
             alt="Profile picture"
-            width="250"
-            height="250"
+            width="500"
+            height="500"
             quality={100}
             loading="lazy"
           />
@@ -38,8 +38,7 @@ export default function Index({
         <h2 className="mb-16 text-gray-600 dark:text-gray-200">{t('intro')}</h2>
         <h3
           id="about"
-          className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white"
-        >
+          className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           {t('about')}
         </h3>
         <h2 className="mb-16 text-gray-600 dark:text-gray-200">
@@ -49,11 +48,10 @@ export default function Index({
         </h2>
         <h3
           id="projects"
-          className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white"
-        >
+          className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           {t('projects')}
         </h3>
-        <h2 className="mb-16 text-gray-600 dark:text-gray-200">
+        <h2 className="text-gray-600 dark:text-gray-200">
           <Project fallbackData={fallbackData} />
         </h2>
       </div>

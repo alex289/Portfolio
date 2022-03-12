@@ -13,8 +13,7 @@ const Layout = ({ children }: { children: ReactNode }): JSX.Element => (
     <Navbar />
     <main
       className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800"
-      id="skip"
-    >
+      id="skip">
       {children}
     </main>
     <Footer></Footer>

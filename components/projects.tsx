@@ -22,24 +22,21 @@ const Project = ({
   return (
     <>
       {data.map((project: Projects, index: number) => (
-        <div
+        <a
           key={index}
-          className="p-3 my-3 grid lg:grid-cols-4 md:grid-cols-2 gap-4"
-        >
-          <h3 className="text-lg font-semibold tracking-wide">
-            <a
-              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-500 transition"
-              target="_blank"
-              rel="noopener noreferrer"
-              id={project.name}
-              href={project.html_url}
-            >
+          target="_blank"
+          rel="noopener noreferrer"
+          id={project.name}
+          href={project.html_url}
+          className="p-6 my-3 border border-gray-200 rounded-lg shadow dark:border-gray-700 grid lg:grid-cols-4 md:grid-cols-2 gap-4 hover:bg-gray-200 dark:hover:bg-gray-700">
+          <div className="flex flex-row">
+            <p className="font-semibold text-gray-500 dark:text-white">
               {project.name}
-            </a>
-          </h3>
+            </p>
+          </div>
           <p className="col-span-2">{project.description}</p>
           <p>{project.language}</p>
-        </div>
+        </a>
       ))}
     </>
   );

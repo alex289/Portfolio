@@ -11,8 +11,7 @@ const ExternalLink = ({
     className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition"
     target="_blank"
     rel="noopener noreferrer"
-    href={href}
-  >
+    href={href}>
     {children}
   </a>
 );

@@ -11,30 +11,27 @@ export default function Footer(): JSX.Element {
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800">
       <footer className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-8">
-        <hr className="w-full mb-8 border-gray-200 border-1 dark:border-gray-700" />
+        <hr className="w-full mb-8 border border-gray-200 dark:border-gray-700" />
         <div className="w-full max-w-2xl pb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div className="flex flex-col space-y-4">
             <Link href="/#top">
               <a
                 id="footer-home"
-                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition"
-              >
+                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
                 {t('home')}
               </a>
             </Link>
             <Link href="/#about">
               <a
                 id="footer-about"
-                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition"
-              >
+                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
                 {t('about')}
               </a>
             </Link>
             <Link href="/#projects">
               <a
                 id="footer-projects"
-                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition"
-              >
+                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
                 {t('projects')}
               </a>
             </Link>
@@ -56,8 +53,7 @@ export default function Footer(): JSX.Element {
                 onClick={() =>
                   signIn('credentials', { callbackUrl: '/dashboard' })
                 }
-                className="text-gray-500 cursor-pointer hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition"
-              >
+                className="text-gray-500 cursor-pointer hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
                 {t('dashboard')}
               </div>
             )}
@@ -76,8 +72,7 @@ export default function Footer(): JSX.Element {
         </div>
         <p
           className="mx-auto text-sm text-gray-500 dark:text-gray-300"
-          id="powered-by"
-        >
+          id="powered-by">
           {t('powered')}
           <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink>{' '}
           {t('and')}

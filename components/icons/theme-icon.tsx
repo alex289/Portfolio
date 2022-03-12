@@ -1,12 +1,11 @@
-const ThemeToggleIcon = ({ theme }: { theme: string | undefined }) => {
+const ThemeToggleIcon = ({ theme }: { theme: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
       stroke="currentColor"
-      className="w-4 h-4 text-gray-800 dark:text-gray-200"
-    >
+      className="w-4 h-4 text-gray-800 dark:text-gray-200">
       {theme === 'dark' ? (
         <path
           strokeLinecap="round"
