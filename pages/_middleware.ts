@@ -7,10 +7,11 @@ async function logPageView(req: NextRequest) {
   const isPageRequest =
     !PUBLIC_FILE.test(req.nextUrl.pathname) &&
     !req.nextUrl.pathname.startsWith('/api') &&
+    !req.nextUrl.pathname.startsWith('/static') &&
     !req.nextUrl.pathname.startsWith('/dashboard') &&
     !req.headers.get('x-middleware-preflight');
 
-  if (process.env.NODE_ENV !== 'production' && isPageRequest) {
+  if (process.env.NODE_ENV !== 'production' && !isPageRequest) {
     return;
   }
 
