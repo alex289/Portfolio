@@ -16,7 +16,7 @@ export default function Footer(): JSX.Element {
         <NowPlaying />
         <div className="w-full max-w-2xl pb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div className="flex flex-col space-y-4">
-            <Link href="/#top">
+            <Link href="/">
               <a
                 id="footer-home"
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">

@@ -24,7 +24,7 @@ const Navbar = (): JSX.Element => {
       <div>
         <MobileMenu />
         <div className="md:w-0">
-          <Link href="/#top">
+          <Link href="/">
             <a
               id="nav-home"
               className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">

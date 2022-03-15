@@ -10,7 +10,9 @@ const Layout = ({ children }: { children: ReactNode }): JSX.Element => (
     <a href="#skip" className="skip-nav">
       Skip to content
     </a>
-    <Navbar />
+    <div className="sticky-nav bg-gray-50 dark:bg-gray-800">
+      <Navbar />
+    </div>
     <main
       className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800"
       id="skip">

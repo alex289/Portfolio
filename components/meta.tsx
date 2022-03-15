@@ -13,7 +13,7 @@ const Meta = (): JSX.Element => {
     <Head>
       <title>Alexander Konietzko</title>
       <meta name="title" content="Alexander Konietzko" />
-      <link rel="shortcut icon" href="/static/icon/favicon.ico" />
+      <link rel="shortcut icon" href="favicon.ico" />
       <meta
         name="viewport"
         content="minimum-scale=1, initial-scale=1, width=device-width"
