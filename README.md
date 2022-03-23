@@ -1,3 +1,5 @@
+![cover](https://repository-images.githubusercontent.com/386759878/1e7b8a9c-c8bf-41ee-92e5-c1cceb42a170)
+
 # Portfolio
 
 My own personal portfolio website

@@ -16,7 +16,9 @@ export default function Index({
   fallbackData: Projects[];
 }): JSX.Element {
   const { t } = useTranslation();
-  const age = new Date().getFullYear() - 2002;
+  const age = Math.floor(
+    (new Date().getTime() - new Date('2002-09-28').getTime()) / 3.15576e10
+  );
   return (
     <Layout>
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
