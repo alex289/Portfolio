@@ -3,8 +3,12 @@ import type { Projects } from '@/lib/types';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Projects[]>
+  res: NextApiResponse<Projects[] | string>
 ) {
+  if (req.method !== 'POST') {
+    return res.status(405).json('Only POST method allowed');
+  }
+
   const reposResponse = await fetch(
     'https://api.github.com/users/Alex289/repos?per_page=100&sort=pushed'
   );

@@ -24,10 +24,6 @@ export type healthData = {
   };
 };
 
-export type errorApiReponse = {
-  status: string;
-};
-
 export type NowPlayingSong = {
   album: string;
   albumImageUrl: string;

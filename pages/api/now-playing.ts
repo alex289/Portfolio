@@ -2,9 +2,13 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { getNowPlaying } from 'lib/spotify';
 
 export default async function handler(
-  _req: NextApiRequest,
+  req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (req.method !== 'GET') {
+    return res.status(405).json('Only GET method allowed');
+  }
+
   const response = await getNowPlaying();
 
   if (response.status === 204 || response.status > 400) {
