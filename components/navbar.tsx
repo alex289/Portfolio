@@ -63,7 +63,7 @@ const Navbar = (): JSX.Element => {
           {mounted && <ThemeToggleIcon theme={resolvedTheme} />}
         </button>
         <Link
-          href={router.pathname}
+          href={router.asPath}
           scroll={false}
           shallow={true}
           locale={locale === 'de' ? 'en' : 'de'}>
