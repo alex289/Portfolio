@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import Step from '@/components/blog/Step';
-import ProsCard from '@/components/blog/ProsCard';
-import ConsCard from '@/components/blog/ConsCard';
-import ImageWithTheme from '@/components/blog/ImageWithTheme';
+import Step from '@/components/blog/MDXComponents/Step';
+import ProsCard from '@/components/blog/MDXComponents/ProsCard';
+import ConsCard from '@/components/blog/MDXComponents/ConsCard';
+import ImageWithTheme from '@/components/blog/MDXComponents/ImageWithTheme';
 
 const CustomLink = (props: any) => {
   const href = props.href;

@@ -14,6 +14,7 @@ const Meta = (): JSX.Element => {
       <title>Alexander Konietzko</title>
       <meta name="title" content="Alexander Konietzko" />
       <link rel="shortcut icon" href="/favicon.ico" />
+      <meta name="robots" content="follow, index" />
       <meta
         name="viewport"
         content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -48,6 +49,7 @@ const Meta = (): JSX.Element => {
         property="og:url"
         content="https://alexanderkonietzko.vercel.app/"
       />
+      <link rel="canonical" href="https://alexanderkonietzko.vercel.app" />
       <meta
         property="og:description"
         content="Front-End and Back-End developer"

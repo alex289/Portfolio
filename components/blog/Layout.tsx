@@ -18,7 +18,6 @@ export default function BlogLayout({
     <Container
       title={`${post.title} – Alexander Konietzko`}
       description={post.summary}
-      image={`https://alexanderkonietzko.vercel.app${post.image}`}
       date={new Date(post.publishedAt).toISOString()}
       type="article">
       <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
@@ -35,7 +34,7 @@ export default function BlogLayout({
               className="rounded-full"
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-[#c2c2c2]">
-              {'Lee Robinson / '}
+              {'Alexander Konietzko / '}
               {format(parseISO(post.publishedAt), 'MMMM dd, yyyy')}
             </p>
           </div>

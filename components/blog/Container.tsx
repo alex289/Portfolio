@@ -7,7 +7,7 @@ export default function Container(props: any) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Alexander Konietzko – Software Developer',
+    title: 'Alexander Konietzko',
     description: `Full-Stack developer, JavaScript enthusiast, and musician.`,
     type: 'website',
     ...customMeta,
@@ -17,7 +17,6 @@ export default function Container(props: any) {
     <Layout>
       <Head>
         <title>{meta.title}</title>
-        <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
+
 import { Views } from '@/lib/types';
 import type { Blog } from 'contentlayer/generated';
 

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-import type { GetStaticProps } from 'next';
 import type { Projects } from '@/lib/types';
 
 import useTranslation from '@/lib/useTranslation';
