@@ -87,6 +87,10 @@ const Meta = (): JSX.Element => {
         property="twitter:description"
         content="Front-End and Back-End developer"
       />
+      <meta
+        name="google-site-verification"
+        content="XNhetJhnVMxwkpI-WlrE0WXTCgN39bmb3VosiR8_C1I"
+      />
     </Head>
   );
 };
