@@ -27,7 +27,7 @@ export default function Blog({
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           Blog
         </h1>
-        <p className="mb-4 text-gray-600 dark:text-gray-400">
+        <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
           {t('blog-description').replace('$AMOUNT', posts.length.toString())}
         </p>
         <div className="relative w-full mb-4">
@@ -56,7 +56,7 @@ export default function Blog({
           All Posts
         </h3>
         {!filteredBlogPosts.length && (
-          <p className="mb-4 text-gray-600 dark:text-gray-400">
+          <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
             No posts found.
           </p>
         )}

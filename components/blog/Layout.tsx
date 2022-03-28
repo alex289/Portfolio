@@ -34,12 +34,12 @@ export default function BlogLayout({
               src="/static/images/konietzko_alexander.jpg"
               className="rounded-full"
             />
-            <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <p className="ml-2 text-sm text-gray-700 dark:text-[#c2c2c2]">
               {'Lee Robinson / '}
               {format(parseISO(post.publishedAt), 'MMMM dd, yyyy')}
             </p>
           </div>
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
+          <p className="mt-2 text-sm text-gray-600 dark:text-[#c2c2c2] min-w-32 md:mt-0">
             {post.readingTime.text}
             {` • `}
             <ViewCounter slug={post.slug} />
@@ -48,7 +48,7 @@ export default function BlogLayout({
         <div className="w-full mt-4 prose dark:prose-dark max-w-none">
           {children}
         </div>
-        <div className="text-sm text-gray-700 dark:text-gray-300">
+        <div className="text-sm text-gray-700 dark:text-[#c2c2c2]">
           <a
             href={editUrl(post.slug)}
             target="_blank"
