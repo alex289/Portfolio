@@ -47,7 +47,7 @@ export default function BlogLayout({
         <div className="w-full mt-4 prose dark:prose-dark max-w-none">
           {children}
         </div>
-        <div className="text-sm text-gray-700 dark:text-[#c2c2c2]">
+        <div className="mt-4 text-sm text-gray-700 dark:text-[#c2c2c2]">
           <a
             href={editUrl(post.slug)}
             target="_blank"
