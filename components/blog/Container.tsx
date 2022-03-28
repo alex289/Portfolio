@@ -7,9 +7,8 @@ export default function Container(props: any) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Lee Robinson – Developer, writer, creator.',
-    description: `Front-end developer, JavaScript enthusiast, and course creator.`,
-    image: 'https://alexanderkonietzko.vercel.app/static/images/banner.png',
+    title: 'Alexander Konietzko – Software Developer',
+    description: `Full-Stack developer, JavaScript enthusiast, and musician.`,
     type: 'website',
     ...customMeta,
   };
@@ -32,7 +31,6 @@ export default function Container(props: any) {
         <meta property="og:site_name" content="Alexander Konietzko" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
         {meta.date && (
           <meta property="article:published_time" content={meta.date} />
         )}

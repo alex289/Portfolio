@@ -5,8 +5,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Projects[] | string>
 ) {
-  if (req.method !== 'POST') {
-    return res.status(405).json('Only POST method allowed');
+  if (req.method !== 'GET') {
+    return res.status(405).json('Only GET method allowed');
   }
 
   const reposResponse = await fetch(

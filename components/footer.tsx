@@ -39,10 +39,11 @@ export default function Footer(): JSX.Element {
             </Link>
           </div>
           <div className="flex flex-col space-y-4">
-            <ExternalLink href="#">Twitter</ExternalLink>
-            <ExternalLink href="https://github.com/Alex289">
-              GitHub
-            </ExternalLink>
+            <Link href="/blog">
+              <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
+                Blog
+              </a>
+            </Link>
             {session && (
               <Link href="/dashboard">
                 <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
@@ -59,6 +60,9 @@ export default function Footer(): JSX.Element {
                 {t('dashboard')}
               </div>
             )}
+            <ExternalLink href="https://github.com/Alex289">
+              GitHub
+            </ExternalLink>
           </div>
           <div className="flex flex-col space-y-4">
             <ExternalLink href="https://github.com/Alex289/My-config-setup">
