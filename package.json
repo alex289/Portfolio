@@ -6,6 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
+    "postbuild": "node ./scripts/generate-sitemap.mjs",
     "export": "next export",
     "lint": "next lint",
     "format": "prettier --write pages/** components/** lib/**"
@@ -36,6 +37,7 @@
     "eslint-config-next": "12.1.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-tailwind": "^0.2.1",
+    "globby": "^13.1.1",
     "postcss": "^8.4.12",
     "prettier": "^2.6.1",
     "prisma": "^3.11.1",
