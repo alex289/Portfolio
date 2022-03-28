@@ -32,7 +32,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-build-v2-${{ env.cache-name }}-
           ${{ runner.os }}-build-v2
-          ${{ runner.os }}-
 
     - name: Cache next build
       uses: actions/cache@v2
