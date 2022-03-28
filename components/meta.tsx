@@ -35,7 +35,6 @@ const Meta = (): JSX.Element => {
         content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover"
       />
       <meta name="description" content="Front-End and Back-End developer" />
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       {mounted && (
         <meta
           name="theme-color"
@@ -89,7 +88,7 @@ const Meta = (): JSX.Element => {
       />
       <meta
         name="google-site-verification"
-        content="XNhetJhnVMxwkpI-WlrE0WXTCgN39bmb3VosiR8_C1I"
+        content="64Pb4e1oRhhlHgM6aJGvqSunCfPa38sJ5ZHPfLNtzts"
       />
     </Head>
   );
