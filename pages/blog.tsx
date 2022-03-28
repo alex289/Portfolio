@@ -7,11 +7,14 @@ import BlogPost from '@/components/blog/BlogPost';
 import { pick } from '@/lib/utils';
 
 import type { InferGetStaticPropsType } from 'next';
+import useTranslation from '@/lib/useTranslation';
 
 export default function Blog({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { t } = useTranslation();
   const [searchValue, setSearchValue] = useState('');
+
   const filteredBlogPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(searchValue.toLowerCase())
   );
@@ -25,9 +28,7 @@ export default function Blog({
           Blog
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
-          {`I've been writing online since 2014, mostly about web development and tech careers.
-            In total, I've written ${posts.length} articles on my blog.
-            Use the search below to filter by title.`}
+          {t('blog-description').replace('$AMOUNT', posts.length.toString())}
         </p>
         <div className="relative w-full mb-4">
           <input

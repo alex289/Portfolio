@@ -16,5 +16,6 @@
     "about-3": "I'm currently learning .NET Core and Angular but my favourite framework is \nNextJs. In the future I want to build my own Kubernetes cluster with \nbackend services, database integration and a solid frontend combined \nby Nginx.",
     "powered": "Powered by ",
     "and": "and ",
-    "hosted": "Hosted on "
+    "hosted": "Hosted on ",
+    "blog-description": "I've been writing online since 2022, mostly about web devlopment and setups. In total, I've written $AMOUNT articles on my blog (currently only in English version). Use the search below to filter by title."
 }
