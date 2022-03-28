@@ -6,7 +6,7 @@ async function generate() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
   const pages = await globby([
     'pages/*.tsx',
-    'data/**/.mdx',
+    'data/**/*.mdx',
     '!data/*.mdx',
     '!pages/_*.tsx',
     '!pages/api',
