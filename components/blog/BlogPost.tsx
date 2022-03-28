@@ -22,7 +22,7 @@ export default function BlogPost({
             <h4 className="w-full mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100">
               {title}
             </h4>
-            <p className="w-32 mb-4 text-left text-gray-500 md:text-right md:mb-0">
+            <p className="w-32 mb-4 text-left text-[#c2c2c2] md:text-right md:mb-0">
               {`${views ? new Number(views).toLocaleString() : '–––'} views`}
             </p>
           </div>

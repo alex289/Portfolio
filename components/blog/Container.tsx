@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+
 import Layout from '@/components/layout';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

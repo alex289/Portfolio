@@ -1,12 +1,13 @@
 {
     "name": "Alexander Konietzko",
-    "Scope": "/",
-    "start-url": "/",
+    "description": "Software developer and dual student",
+    "start_url": "/",
     "background_color": "#fff",
     "theme_color": "#000",
     "short_name": "Alex",
     "display": "standalone",
     "orientation": "portrait",
+    "dir": "ltr",
     "icons": [
         {
             "src": "/static/icon/android-chrome-192x192.png",
