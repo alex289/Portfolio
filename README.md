@@ -7,17 +7,22 @@ My own personal portfolio website
 Inspired by [leerob](https://github.com/leerob/leerob.io)
 
 - **Framework**: [Next.js](https://nextjs.org/)
+- **Database**: [PlanetScale](https://planetscale.com)
+- **ORM**: [Prisma](https://prisma.io/)
 - **Authentication**: [NextAuth.js](https://next-auth.js.org/)
 - **Deployment**: [Vercel](https://vercel.com)
+- **Content**: [MDX](https://github.com/mdx-js/mdx)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
 ## Overview
 
+- `data/*` - MDX data that is used for my blog
 - `lib/*` - Short for "library", a collection of helpful utilities or code for external services.
 - `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction). Health check and stuff.
 - `pages/dashboard` - containing metrics from health api
 - `pages/*` - All other static pages.
 - `public/*` - Static assets including fonts and images.
+- `prisma/*` - My Prisma schema, which uses a PlanetScale MySQL database.
 - `styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
 - `locales/*` - All translations objects
 

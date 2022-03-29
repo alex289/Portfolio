@@ -13,14 +13,15 @@ const Meta = (): JSX.Element => {
     <Head>
       <title>Alexander Konietzko</title>
       <meta name="title" content="Alexander Konietzko" />
-      <link rel="shortcut icon" href="favicon.ico" />
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <meta name="robots" content="follow, index" />
       <meta
         name="viewport"
         content="minimum-scale=1, initial-scale=1, width=device-width"
       />
       <link
         rel="preload"
-        href="static/fonts/inter-var-latin.woff2"
+        href="/static/fonts/inter-var-latin.woff2"
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"
@@ -29,7 +30,7 @@ const Meta = (): JSX.Element => {
         name="apple-mobile-web-app-status-bar-style"
         content="black-translucent"
       />
-      <link rel="manifest" href="/manifest.json" />
+      <link rel="manifest" href="/site.webmanifest" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover"

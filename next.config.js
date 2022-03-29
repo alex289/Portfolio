@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { withContentlayer } = require('next-contentlayer');
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withContentlayer()({
   reactStrictMode: true,
   swcMinify: true,
   i18n: {
@@ -19,6 +22,6 @@ const nextConfig = {
 
     return config;
   },
-};
+});
 
 module.exports = nextConfig;

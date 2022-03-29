@@ -1,5 +1,6 @@
 {
    "files.exclude": {
-      ".next": true
+      ".next": true,
+      ".contentlayer": true
    }
 }
