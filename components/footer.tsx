@@ -65,7 +65,7 @@ export default function Footer(): JSX.Element {
             </ExternalLink>
           </div>
           <div className="flex flex-col space-y-4">
-            <ExternalLink href="https://github.com/Alex289/My-config-setup">
+            <ExternalLink href="https://github.com/Alex289/dotfiles">
               {t('my-setup')}
             </ExternalLink>
             <ExternalLink href="https://github.com/Alex289/Portfolio">
