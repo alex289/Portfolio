@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { signIn, useSession } from 'next-auth/react';
 
 import useTranslation from '@/lib/useTranslation';
 
@@ -7,7 +6,6 @@ import ExternalLink from '@/components/link-external';
 import NowPlaying from '@/components/now-playing';
 
 export default function Footer(): JSX.Element {
-  const { data: session } = useSession();
   const { t } = useTranslation();
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800">
