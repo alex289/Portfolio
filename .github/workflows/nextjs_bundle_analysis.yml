@@ -35,7 +35,7 @@ jobs:
           cache-name: cache-next-build
         with:
           path: .next/cache
-          key: ${{ runner.os }}-build-v2-${{ env.cache-name }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
 
       - name: Build next.js app
         run: yarn build

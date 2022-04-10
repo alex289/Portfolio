@@ -28,10 +28,10 @@ jobs:
         cache-name: cache-node-modules
       with:
         path: node_modules
-        key: ${{ runner.os }}-build-v3-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-build-v2-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-build-v3-${{ env.cache-name }}-
-          ${{ runner.os }}-build-v3
+          ${{ runner.os }}-build-v2-${{ env.cache-name }}-
+          ${{ runner.os }}-build-v2
 
     - name: Cache next build
       uses: actions/cache@v2
@@ -40,7 +40,7 @@ jobs:
         cache-name: cache-next-build
       with:
         path: .next/cache
-        key: ${{ runner.os }}-build-v3-${{ env.cache-name }}
+        key: ${{ runner.os }}-build-v2-${{ env.cache-name }}
 
     - name: Install yarn
       run: npm install -g yarn
