@@ -1,8 +1,10 @@
-import Layout from '@/components/layout';
 import prisma from '@/lib/prisma';
-import { Guestbook as GuestbookComponent } from '@/components/guestbook';
-import type { GuestbookData } from '@/lib/types';
 import useTranslation from '@/lib/useTranslation';
+
+import Layout from '@/components/layout';
+import { Guestbook as GuestbookComponent } from '@/components/guestbook';
+
+import type { GuestbookData } from '@/lib/types';
 
 export default function Guestbook({
   fallbackData,
