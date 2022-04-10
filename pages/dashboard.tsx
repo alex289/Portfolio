@@ -18,7 +18,7 @@ export default function Dashboard(): JSX.Element {
 
   const { data, error } = useSWR<healthData>('/api/health', fetcher);
 
-  if (!session) {
+  if (!session || !session.isAdmin) {
     return <Layout>Not authenticated</Layout>;
   }
   if (error) {

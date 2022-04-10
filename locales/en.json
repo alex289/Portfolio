@@ -17,5 +17,19 @@
     "powered": "Powered by ",
     "and": "and ",
     "hosted": "Hosted on ",
-    "blog-description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written $AMOUNT articles on my blog (currently only in English version). Use the search below to filter by title."
+    "blog-description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written $AMOUNT articles on my blog (currently only in English version). Use the search below to filter by title.",
+    "guestbook": {
+        "title": "Guestbook",
+        "description": "Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!",
+        "login": "Login",
+        "form": {
+            "title": "Sign the Guestbook",
+            "description": "Share a message for a future visitor of my site.",
+            "input": "Your message...",
+            "submit": "Send",
+            "info": "Your information is only used to display your name and reply by email."
+        },
+        "success": "Hooray! Thanks for signing my Guestbook.",
+        "delete": "Delete"
+    }
 }

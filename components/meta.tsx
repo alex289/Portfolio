@@ -3,7 +3,11 @@ import Head from 'next/head';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-const Meta = (): JSX.Element => {
+const Meta = ({
+  title = 'Alexander Konietzko',
+}: {
+  title?: string;
+}): JSX.Element => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -11,8 +15,8 @@ const Meta = (): JSX.Element => {
 
   return (
     <Head>
-      <title>Alexander Konietzko</title>
-      <meta name="title" content="Alexander Konietzko" />
+      <title>{title}</title>
+      <meta name="title" content={title} />
       <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="robots" content="follow, index" />
       <meta
@@ -52,7 +56,7 @@ const Meta = (): JSX.Element => {
         property="og:description"
         content="Front-End and Back-End developer"
       />
-      <meta property="og:title" content="Alexander Konietzko" />
+      <meta property="og:title" content={title} />
       <meta name="application-name" content="Alexander Konietzko" />
       <meta
         name="keywords"
@@ -82,7 +86,7 @@ const Meta = (): JSX.Element => {
         property="twitter:url"
         content="https://alexanderkonietzko.vercel.app/"
       />
-      <meta property="twitter:title" content="Alexander Konietzko" />
+      <meta property="twitter:title" content={title} />
       <meta
         property="twitter:description"
         content="Front-End and Back-End developer"

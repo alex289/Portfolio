@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { signIn, useSession } from 'next-auth/react';
 
 import useTranslation from '@/lib/useTranslation';
 
@@ -7,7 +6,6 @@ import ExternalLink from '@/components/link-external';
 import NowPlaying from '@/components/now-playing';
 
 export default function Footer(): JSX.Element {
-  const { data: session } = useSession();
   const { t } = useTranslation();
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800">
@@ -44,22 +42,11 @@ export default function Footer(): JSX.Element {
                 Blog
               </a>
             </Link>
-            {session && (
-              <Link href="/dashboard">
-                <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
-                  {t('dashboard')}
-                </a>
-              </Link>
-            )}
-            {!session && (
-              <div
-                onClick={() =>
-                  signIn('credentials', { callbackUrl: '/dashboard' })
-                }
-                className="text-gray-500 cursor-pointer hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
-                {t('dashboard')}
-              </div>
-            )}
+            <Link href="/guestbook">
+              <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
+                {t('guestbook.title')}
+              </a>
+            </Link>
             <ExternalLink href="https://github.com/Alex289">
               GitHub
             </ExternalLink>
