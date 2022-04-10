@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
-import Meta from '@/components/meta';
-import Navbar from '@/components/navbar';
-import Footer from '@/components/footer';
+import Meta from '@/components/Meta';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const Layout = ({ children }: { children: ReactNode }): JSX.Element => (
   <div className="bg-gray-50 dark:bg-gray-800">

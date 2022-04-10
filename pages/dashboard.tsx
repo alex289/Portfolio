@@ -3,10 +3,10 @@ import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
 
-import Layout from '@/components/layout';
+import Layout from '@/components/Layout';
 
 import { healthData } from '@/lib/types';
-import Metric from '@/components/metric';
+import Metric from '@/components/Metric';
 
 export default function Dashboard(): JSX.Element {
   const { data: session } = useSession({

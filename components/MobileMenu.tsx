@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 import useTranslation from '@/lib/useTranslation';
 
-import MenuIcon from '@/components/icons/menu-icon';
-import CrossIcon from '@/components/icons/cross-icon';
+import MenuIcon from '@/components/icons/MenuIcon';
+import CrossIcon from '@/components/icons/CrossIcon';
 
 const MobileMenu = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

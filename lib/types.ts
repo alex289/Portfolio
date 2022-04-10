@@ -1,5 +1,5 @@
 export type LocalesJsonObject = {
-  [x: string]: string;
+  [x: string]: string | LocalesJsonObject;
 };
 
 export type UseTranslation = {
