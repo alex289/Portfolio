@@ -18,7 +18,7 @@ export default async function handler(
   });
 
   if (!entry) {
-    return res.status(400).send('Can not find the entry with id ' + id);
+    return res.status(400).send('Can not find the entry');
   }
 
   if (req.method === 'GET') {

@@ -26,7 +26,7 @@ type GuestBookEntryProps = {
     | undefined;
 };
 
-function GuestbookEntry({ t, entry, user, }: GuestBookEntryProps) {
+function GuestbookEntry({ t, entry, user }: GuestBookEntryProps) {
   const { mutate } = useSWRConfig();
   const deleteEntry = async (e: ClickEvent) => {
     e.preventDefault();
@@ -42,10 +42,12 @@ function GuestbookEntry({ t, entry, user, }: GuestBookEntryProps) {
     <div className="flex flex-col space-y-2">
       <div className="w-full prose dark:prose-dark">{entry.body}</div>
       <div className="flex items-center space-x-3">
-        <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">{entry.created_by}</p>
+        <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
+          {entry.created_by}
+        </p>
         <span className=" text-gray-600 dark:text-[#c2c2c2]">/</span>
         <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
-          {format(new Date(entry.updated_at), "d MMM yyyy, k:mm")}
+          {format(new Date(entry.updated_at), 'd MMM yyyy, k:mm')}
         </p>
         {user && entry.created_by === user.name && (
           <>
@@ -53,7 +55,7 @@ function GuestbookEntry({ t, entry, user, }: GuestBookEntryProps) {
             <button
               className="text-sm text-red-600 dark:text-red-400"
               onClick={deleteEntry}>
-              {t("guestbook.delete")}
+              {t('guestbook.delete')}
             </button>
           </>
         )}
@@ -63,7 +65,7 @@ function GuestbookEntry({ t, entry, user, }: GuestBookEntryProps) {
 }
 
 export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const { data: session } = useSession();
   const { mutate } = useSWRConfig();
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
@@ -100,7 +102,7 @@ export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
     mutate('/api/guestbook');
     setForm({
       state: Form.Success,
-      message: `Hooray! Thanks for signing my Guestbook.`,
+      message: t('guestbook.success'),
     });
   };
 
@@ -108,10 +110,10 @@ export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
     <>
       <div className="w-full p-6 my-4 border border-blue-200 rounded dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque">
         <h5 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-100">
-          {t("guestbook.form.title")}
+          {t('guestbook.form.title')}
         </h5>
         <p className="my-1 text-gray-800 dark:text-gray-200">
-        {t("guestbook.form.description")}
+          {t('guestbook.form.description')}
         </p>
         {!session && (
           <button
@@ -119,7 +121,7 @@ export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
             onClick={() => {
               signIn('google');
             }}>
-            {t("guestbook.login")}
+            {t('guestbook.login')}
           </button>
         )}
         {session?.user && (
@@ -127,14 +129,18 @@ export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
             <input
               ref={inputEl}
               aria-label="Your message"
-              placeholder={t("guestbook.form.input")}
+              placeholder={t('guestbook.form.input')}
               required
               className="block w-full py-2 pl-4 pr-32 mt-1 text-gray-900 bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500 rounded-md dark:bg-gray-800 dark:text-gray-100"
             />
             <button
               className="absolute flex items-center justify-center h-8 px-4 py-1 font-medium text-gray-900 bg-gray-100 rounded right-1 top-1 dark:bg-gray-700 dark:text-gray-100 w-28"
               type="submit">
-              {form.state === Form.Loading ? <LoadingSpinner /> : t("guestbook.form.submit")}
+              {form.state === Form.Loading ? (
+                <LoadingSpinner />
+              ) : (
+                t('guestbook.form.submit')
+              )}
             </button>
           </form>
         )}
@@ -144,13 +150,18 @@ export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
           <SuccessMessage>{form.message as string}</SuccessMessage>
         ) : (
           <p className="text-sm text-gray-800 dark:text-gray-200">
-            {t("guestbook.form.info")}
+            {t('guestbook.form.info')}
           </p>
         )}
       </div>
       <div className="mt-4 space-y-8">
         {entries?.map((entry) => (
-          <GuestbookEntry key={entry.id} t={t} entry={entry} user={session?.user} />
+          <GuestbookEntry
+            key={entry.id}
+            t={t}
+            entry={entry}
+            user={session?.user}
+          />
         ))}
       </div>
     </>
