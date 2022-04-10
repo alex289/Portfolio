@@ -2,21 +2,22 @@ import Layout from '@/components/layout';
 import prisma from '@/lib/prisma';
 import { Guestbook as GuestbookEntry } from '@/components/guestbook';
 import type { GuestbookData } from '@/lib/types';
+import useTranslation from '@/lib/useTranslation';
 
 export default function Guestbook({
   fallbackData,
 }: {
   fallbackData: GuestbookData[];
 }) {
+  const { t } = useTranslation();
   return (
     <Layout>
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-          Guestbook
+          {t("guestbook.title")}
         </h1>
-        <p className="mb-4 text-gray-600 dark:text-gray-400">
-          Leave a comment below. It could be anything – appreciation,
-          information, wisdom, or even humor. Surprise me!
+        <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
+          {t("guestbook.description")}
         </p>
         <GuestbookEntry fallbackData={fallbackData} />
       </div>
