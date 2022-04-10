@@ -15,9 +15,8 @@ export default function Container(props: any) {
   };
 
   return (
-    <Layout>
+    <Layout title={meta.title}>
       <Head>
-        <title>{meta.title}</title>
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"

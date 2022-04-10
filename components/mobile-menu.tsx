@@ -97,7 +97,7 @@ const MobileMenu = (): JSX.Element => {
             <a
               id="mobile-nav-guestbook"
               className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
-              Guestbook
+              {t('guestbook.title')}
             </a>
           </Link>
         </li>
