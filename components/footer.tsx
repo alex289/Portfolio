@@ -44,22 +44,11 @@ export default function Footer(): JSX.Element {
                 Blog
               </a>
             </Link>
-            {session && (
-              <Link href="/dashboard">
-                <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
-                  {t('dashboard')}
-                </a>
-              </Link>
-            )}
-            {!session && (
-              <div
-                onClick={() =>
-                  signIn('credentials', { callbackUrl: '/dashboard' })
-                }
-                className="text-gray-500 cursor-pointer hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
-                {t('dashboard')}
-              </div>
-            )}
+            <Link href="/guestbook">
+              <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
+                Guestbook
+              </a>
+            </Link>
             <ExternalLink href="https://github.com/Alex289">
               GitHub
             </ExternalLink>

@@ -2,7 +2,7 @@
 const { withContentlayer } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
-const nextConfig = withContentlayer()({
+const nextConfig = withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
   i18n: {

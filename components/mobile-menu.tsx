@@ -90,6 +90,17 @@ const MobileMenu = (): JSX.Element => {
             </a>
           </Link>
         </li>
+        <li
+          className="ml-3 border-b border-gray-300 dark:border-gray-700"
+          style={{ transitionDelay: '150ms' }}>
+          <Link href="/guestbook">
+            <a
+              id="mobile-nav-guestbook"
+              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
+              Guestbook
+            </a>
+          </Link>
+        </li>
       </ul>
     </>
   );
