@@ -1,6 +1,6 @@
-import Layout from '@/components/Layout';
+import Layout from '@/components/layout';
 import prisma from '@/lib/prisma';
-import { Guestbook as GuestbookComponent } from '@/components/Guestbook';
+import { Guestbook as GuestbookEntry } from '@/components/guestbook';
 import type { GuestbookData } from '@/lib/types';
 import useTranslation from '@/lib/useTranslation';
 
@@ -14,12 +14,12 @@ export default function Guestbook({
     <Layout>
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-          {t('guestbook.title')}
+          {t("guestbook.title")}
         </h1>
         <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
-          {t('guestbook.description')}
+          {t("guestbook.description")}
         </p>
-        <GuestbookComponent fallbackData={fallbackData} />
+        <GuestbookEntry fallbackData={fallbackData} />
       </div>
     </Layout>
   );

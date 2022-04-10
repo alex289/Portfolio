@@ -4,8 +4,8 @@ import type { Projects } from '@/lib/types';
 
 import useTranslation from '@/lib/useTranslation';
 
-import Layout from '@/components/Layout';
-import Project from '@/components/Projects';
+import Layout from '@/components/layout';
+import Project from '@/components/projects';
 
 import profilePic from '../public/static/images/konietzko_alexander.jpg';
 

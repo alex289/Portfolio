@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
 import useTranslation from '@/lib/useTranslation';
-import MobileMenu from '@/components/MobileMenu';
-import ThemeToggleIcon from './icons/ThemeIcon';
+import MobileMenu from '@/components/mobile-menu';
+import ThemeToggleIcon from './icons/theme-icon';
 
 const Navbar = (): JSX.Element => {
   const [mounted, setMounted] = useState(false);
@@ -65,7 +65,7 @@ const Navbar = (): JSX.Element => {
               id="nav-guestbook"
               className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
               <span className="py-1 dark:link-underline link-underline-black">
-                {t('guestbook.title')}
+                {t("guestbook.title")}
               </span>
             </a>
           </Link>

@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 import useTranslation from '@/lib/useTranslation';
 
-import ExternalLink from '@/components/LinkExternal';
-import NowPlaying from '@/components/NowPlaying';
+import ExternalLink from '@/components/link-external';
+import NowPlaying from '@/components/now-playing';
 
 export default function Footer(): JSX.Element {
   const { t } = useTranslation();
@@ -44,7 +44,7 @@ export default function Footer(): JSX.Element {
             </Link>
             <Link href="/guestbook">
               <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
-                {t('guestbook.title')}
+              {t("guestbook.title")}
               </a>
             </Link>
             <ExternalLink href="https://github.com/Alex289">
