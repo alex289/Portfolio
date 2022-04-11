@@ -34,6 +34,10 @@ export default async function handler(
   const { email, name } = session.user;
 
   if (req.method === 'POST') {
+    if (req.body.body.trim().length === 0) {
+      return res.status(400).send({"error":'Body is required.'});
+    }
+
     const newEntry = await prisma.guestbook.create({
       data: {
         email,

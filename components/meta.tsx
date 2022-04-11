@@ -25,7 +25,7 @@ const Meta = ({
       />
       <link
         rel="preload"
-        href="/static/fonts/inter-var-latin.woff2"
+        href="/static/fonts/ibm-plex-sans-var.woff2"
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"

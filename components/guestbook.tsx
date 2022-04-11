@@ -82,6 +82,11 @@ export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
     e.preventDefault();
     setForm({ state: Form.Loading });
 
+    if (inputEl.current.value.trim().length === 0) {
+      setForm({ state: Form.Error, message: t("guestbook.error") });
+      return;
+    }
+
     const res = await fetch('/api/guestbook', {
       body: JSON.stringify({
         body: inputEl.current.value,

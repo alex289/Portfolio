@@ -40,7 +40,8 @@
             "submit": "Senden",
             "info": "Deine Informationen werden nur für die Anzeige deines Namens und zum antworten per Email benutzt."
         },
-        "success": "Hurra! Danke für das Schreiben in mein Gästebuch",
+        "success": "Hurra! Danke für das Schreiben in mein Gästebuch.",
+        "error": "Bitte gebe eine Nachricht ein.",
         "delete": "Löschen"
     },
     "not-playing": "Spielt nichts"

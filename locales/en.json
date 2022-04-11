@@ -41,6 +41,7 @@
             "info": "Your information is only used to display your name and reply by email."
         },
         "success": "Hooray! Thanks for signing my Guestbook.",
+        "error": "Please enter a message.",
         "delete": "Delete"
     },
     "not-playing": "Not Playing"
