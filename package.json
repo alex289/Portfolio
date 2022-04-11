@@ -69,7 +69,7 @@
     "swr": "^1.2.2"
   },
   "nextBundleAnalysis": {
-    "budget": 102400,
+    "budget": 120400,
     "budgetPercentIncreaseRed": 20,
     "showDetails": true
   }

@@ -28,7 +28,7 @@ export default function Blog({
           Blog
         </h1>
         <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
-          {t('blog-description').replace('$AMOUNT', posts.length.toString())}
+          {t('blog.description').replace('$AMOUNT', posts.length.toString())}
         </p>
         <div className="relative w-full mb-4">
           <input
@@ -53,11 +53,11 @@ export default function Blog({
           </svg>
         </div>
         <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-          All Posts
+          {t("blog.all-posts")}
         </h3>
         {!filteredBlogPosts.length && (
           <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
-            No posts found.
+            {t("blog.no-posts")}
           </p>
         )}
         {filteredBlogPosts.map((post) => (

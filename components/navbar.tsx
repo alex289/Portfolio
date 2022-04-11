@@ -29,7 +29,7 @@ const Navbar = (): JSX.Element => {
               id="nav-home"
               className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
               <span className="py-1 dark:link-underline link-underline-black">
-                {t('home')}
+                {t('main.home')}
               </span>
             </a>
           </Link>
@@ -38,7 +38,7 @@ const Navbar = (): JSX.Element => {
               id="nav-about"
               className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
               <span className="py-1 dark:link-underline link-underline-black">
-                {t('about')}
+                {t('main.about')}
               </span>
             </a>
           </Link>
@@ -47,7 +47,7 @@ const Navbar = (): JSX.Element => {
               id="nav-projects"
               className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
               <span className="py-1 dark:link-underline link-underline-black">
-                {t('projects')}
+                {t('main.projects')}
               </span>
             </a>
           </Link>
@@ -60,7 +60,7 @@ const Navbar = (): JSX.Element => {
               </span>
             </a>
           </Link>
-          {/* <Link href="/guestbook">
+          <Link href="/guestbook">
             <a
               id="nav-guestbook"
               className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
@@ -68,7 +68,7 @@ const Navbar = (): JSX.Element => {
                 {t('guestbook.title')}
               </span>
             </a>
-          </Link> */}
+          </Link>
         </div>
       </div>
       <div>

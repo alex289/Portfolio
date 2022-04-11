@@ -1,23 +1,34 @@
 {
-    "title": "Hey, I’m Alexander Konietzko",
-    "home": "Home",
-    "about": "About",
-    "projects": "Projects",
-    "my-setup": "My dotfiles",
-    "sourcecode": "Source code",
-    "contact": "Contact",
-    "dashboard": "Dashboard",
-    "page-not-found": "Page not found",
-    "return-home": "Return Home",
-    "404-text": "Why show a generic 404 when I can make it sound mysterious? It seems \nyou've found something that used to exist, or you spelled \nsomething wrong. I'm guessing you spelled something wrong. Can \nyou double check that URL?",
-    "intro": "I'm a software developer, dual student, and creator. I work at \nthe development team of Netgo. You've found my personal slice of the \ninternet – have fun while you're here or learn more about me.",
-    "about-1": "Hey, I'm Alex. I'm $AGE years \nold and come from Germany. I live in NRW and spend my free time \nplaying piano, do sports or enjoying time with friends and family.",
-    "about-2": "I started working with computers when I was young and started \nprogramming in school. After I graduated I began my dual study at \nNetgo GmbH where I work and Westfälische Hochschule where I study.",
-    "about-3": "I'm currently learning .NET Core and Angular but my favourite framework is \nNextJs. In the future I want to build my own Kubernetes cluster with \nbackend services, database integration and a solid frontend combined \nby Nginx.",
-    "powered": "Powered by ",
-    "and": "and ",
-    "hosted": "Hosted on ",
-    "blog-description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written $AMOUNT articles on my blog (currently only in English version). Use the search below to filter by title.",
+    "main": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects"
+    },
+    "footer": {
+        "my-setup": "My dotfiles",
+        "sourcecode": "Source code",
+        "contact": "Contact",
+        "powered": "Powered by ",
+        "and": "and ",
+        "hosted": "Hosted on "
+    },
+    "index-page": {
+        "title": "Hey, I’m Alexander Konietzko",
+        "intro": "I'm a software developer, dual student, and creator. I work at \nthe development team of Netgo. You've found my personal slice of the \ninternet – have fun while you're here or learn more about me.",
+        "about-1": "Hey, I'm Alex. I'm $AGE years \nold and come from Germany. I live in NRW and spend my free time \nplaying piano, do sports or enjoying time with friends and family.",
+        "about-2": "I started working with computers when I was young and started \nprogramming in school. After I graduated I began my dual study at \nNetgo GmbH where I work and Westfälische Hochschule where I study.",
+        "about-3": "I'm currently learning .NET Core and Angular but my favourite framework is \nNextJs. In the future I want to build my own Kubernetes cluster with \nbackend services, database integration and a solid frontend combined \nby Nginx."
+    },
+    "404": {
+        "title": "Page not found",
+        "description": "Why show a generic 404 when I can make it sound mysterious? It seems \nyou've found something that used to exist, or you spelled \nsomething wrong. I'm guessing you spelled something wrong. Can \nyou double check that URL?",
+        "return-home": "Return Home"
+    },
+    "blog": {
+        "description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written $AMOUNT articles on my blog (currently only in English version). Use the search below to filter by title.",
+        "no-posts": "No posts found.",
+        "all-posts": "All Posts"
+    },
     "guestbook": {
         "title": "Guestbook",
         "description": "Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!",
@@ -31,5 +42,6 @@
         },
         "success": "Hooray! Thanks for signing my Guestbook.",
         "delete": "Delete"
-    }
+    },
+    "not-playing": "Not Playing"
 }
