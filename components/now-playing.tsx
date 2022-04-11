@@ -103,7 +103,7 @@ export default function NowPlaying() {
           </a>
         ) : (
           <p className="font-medium text-gray-800 capsize dark:text-gray-200">
-            {t("not-playing")}
+            {t('not-playing')}
           </p>
         )}
         <span className="hidden mx-2 text-gray-500 capsize dark:text-gray-300 sm:block">

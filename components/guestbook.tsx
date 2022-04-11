@@ -112,9 +112,9 @@ export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
   return (
     <>
       <div className="w-full p-6 my-4 border border-blue-200 rounded dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque">
-        <h5 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-100">
+        <h2 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-100">
           {t('guestbook.form.title')}
-        </h5>
+        </h2>
         <p className="my-1 text-gray-800 dark:text-gray-200">
           {t('guestbook.form.description')}
         </p>

@@ -45,7 +45,9 @@ export default function Index({
           {t('main.about')}
         </h3>
         <h2 className="mb-16 text-gray-600 dark:text-[#c2c2c2]">
-          <p className="mb-6">{t('index-page.about-1').replace('$AGE', age.toString())}</p>
+          <p className="mb-6">
+            {t('index-page.about-1').replace('$AGE', age.toString())}
+          </p>
           <p className="mb-6">{t('index-page.about-2')}</p>
           <p>{t('index-page.about-3')}</p>
         </h2>
