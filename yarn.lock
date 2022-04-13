@@ -45,29 +45,29 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@contentlayer/cli@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.2.1.tgz#6866e042c71b8c9b699ae1059f65ff8995095695"
-  integrity sha512-m/HUlXE5zauOueSkzLQNIuILo4icmBkBSB7tQB+KOTSjU4U3Cq+RQxYKzkC7FvFwsfh74ThMiuhR1M4c3xrETA==
+"@contentlayer/cli@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.2.2.tgz#9c4ae620ed13ffa5515eaf95d6ab614e5cb06256"
+  integrity sha512-CUlnC0BOYitEOdCXuCXX3ysIGLrwMC9n1/DvV6YBCFhz/M/3bU/q9hH+Kv93Meph6MvcxI2VCBLPQw8Zgv7DQA==
   dependencies:
-    "@contentlayer/core" "0.2.1"
-    "@contentlayer/utils" "0.2.1"
+    "@contentlayer/core" "0.2.2"
+    "@contentlayer/utils" "0.2.2"
     clipanion "^3.2.0-rc.10"
     typanion "^3.7.1"
 
-"@contentlayer/client@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@contentlayer/client/-/client-0.2.1.tgz#eec9bf057bb88832dc249a7711f18861d178636c"
-  integrity sha512-ZjEEfHbLR+inorl0an0Js0Cwi2sOQ9tPoP84n8SWpqWTwcJNC2oXcnLiIwGCMWLG6hHpObrNC4k9BF2JLAA/vQ==
+"@contentlayer/client@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@contentlayer/client/-/client-0.2.2.tgz#62c1840614f4100e4874a738b4d709b0deea7de1"
+  integrity sha512-Snk9uQ2vMRXn20FoRNR/71Y4GpubbiNVBYM0OeOdXWFDdX3RNzHW1PGeyAD6//kYvMGHfYFTjECkeqKBQElEQw==
   dependencies:
-    "@contentlayer/core" "0.2.1"
+    "@contentlayer/core" "0.2.2"
 
-"@contentlayer/core@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@contentlayer/core/-/core-0.2.1.tgz#fd852b3f77cd2f6d5c36cd3f827503373957760e"
-  integrity sha512-srRG2r8GLxcFX1dKGzH72GLS+aQW1pZkBl17sOm1GGrALbYp8IEEl9LTlQ6k/ISxZfH27Kbo4pn6tPQRiF5Phg==
+"@contentlayer/core@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@contentlayer/core/-/core-0.2.2.tgz#f33abc66a2157cbd5c12a11d4c89acf8e82b2eff"
+  integrity sha512-ofBlFu9i5Ft6YwiLznBDxzqikoaiZsFvWNLsQnLcHlT9D/cY3p9rerfE+buYAgpmYtEglyvXm6j9E+DJhaz+wQ==
   dependencies:
-    "@contentlayer/utils" "0.2.1"
+    "@contentlayer/utils" "0.2.2"
     camel-case "^4.1.2"
     comment-json "^4.2.2"
     date-fns "2.x"
@@ -82,13 +82,13 @@
     type-fest "^2.12.1"
     unified "^10.1.2"
 
-"@contentlayer/source-files@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.2.1.tgz#dda653f59926ab38a8c8be4ff5f2d6c3df6480a1"
-  integrity sha512-l5FORKUMJVC3wQYmUrABEGroGYYsUcg6qnFXBkbdkyX7RZ9CkVhGsVFXNutsJKG2Jb+aQoiJBEFAfiZPNcSLDw==
+"@contentlayer/source-files@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.2.2.tgz#7a85c0a2316a844f56cc5fa44ba9d431640ed898"
+  integrity sha512-GbOyTgoJ9zz/QB6Bu8DWKC+ZXZhfqnACV+JaFiq9DJ6t4VO4Vz9068f2ujw/pJawJ4ry21WFc+vmqWFvB0vH2w==
   dependencies:
-    "@contentlayer/core" "0.2.1"
-    "@contentlayer/utils" "0.2.1"
+    "@contentlayer/core" "0.2.2"
+    "@contentlayer/utils" "0.2.2"
     chokidar "^3.5.3"
     date-fns-tz "^1.3.1"
     glob "^7.2.0"
@@ -99,10 +99,10 @@
     unified "^10.1.2"
     yaml "^1.10.2"
 
-"@contentlayer/utils@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.2.1.tgz#d2d874bfd78cccaeb27a5de1a93e3383afdb0568"
-  integrity sha512-AdM4XBvXYajp/4aOWbhzi0pxCxgZw97AWl3M4h/QXqO6M1htUHnGJxqUJqOUIrLlJScM2H6QG6z/ej4Xox60Ow==
+"@contentlayer/utils@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.2.2.tgz#341a31c15862858e6d4da38dd87d5617d537413f"
+  integrity sha512-4kCGkn/NIRBBGgl8OTFg828KNkq5Lx7UBQO80rY7YPx4RRNDmw89uPFmvsc7ZbdNZOBsEyQyk3fnQgSs7y9RYg==
   dependencies:
     "@effect-ts/core" "^0.58.0"
     "@effect-ts/otel" "^0.13.0"
@@ -1365,16 +1365,16 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
-contentlayer@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/contentlayer/-/contentlayer-0.2.1.tgz#0cf9e9f3eaa869f7346909fca9ef9541c7b2fc6d"
-  integrity sha512-HmrhVHwB32ZwKhW9R6tVrav+/sufzGlt++mLdzY4QDkWCJfJh2bfk/vCXqV877dBzBYlcF7FQwE6Y1CBNdIX3Q==
+contentlayer@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/contentlayer/-/contentlayer-0.2.2.tgz#48a324261764d8aeb699b00f4c5ba5635077af0d"
+  integrity sha512-rBAVH5PLnbiFeWgI3eX/6W2hRO+RJx9LRDbGRvl5+pOR44vETsR/yYldQ6dzdDeaBJOI5wcQWQgPO6wgUg3oMA==
   dependencies:
-    "@contentlayer/cli" "0.2.1"
-    "@contentlayer/client" "0.2.1"
-    "@contentlayer/core" "0.2.1"
-    "@contentlayer/source-files" "0.2.1"
-    "@contentlayer/utils" "0.2.1"
+    "@contentlayer/cli" "0.2.2"
+    "@contentlayer/client" "0.2.2"
+    "@contentlayer/core" "0.2.2"
+    "@contentlayer/source-files" "0.2.2"
+    "@contentlayer/utils" "0.2.2"
 
 cookie@^0.4.1:
   version "0.4.2"
@@ -3997,13 +3997,13 @@ next-auth@^4.3.1:
     preact-render-to-string "^5.1.19"
     uuid "^8.3.2"
 
-next-contentlayer@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.2.1.tgz#c9a73f79c37381907b8405db51e16485c050ae11"
-  integrity sha512-s5cmLTt60ByPLE10q0IeL1sGAphsncAJF17pUVOC/tmbUNUsBlZLQnEB5F9iwy8hSeeTEZ/5cjNpeUOwqDmyng==
+next-contentlayer@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.2.2.tgz#329ae3fce2e6a63f31c8c8490e61ec288a5e2b3d"
+  integrity sha512-ll3I+3SS0/kW4zHmYix7q5stVeE04SDPm2kCDa8jhXJYu5+tqB/6RNZ2mCow00Wy8Zy1V2goSHGo3VvclkHsNA==
   dependencies:
-    "@contentlayer/core" "0.2.1"
-    "@contentlayer/utils" "0.2.1"
+    "@contentlayer/core" "0.2.2"
+    "@contentlayer/utils" "0.2.2"
     rxjs "^7.1.0"
 
 next-themes@^0.1.1:
