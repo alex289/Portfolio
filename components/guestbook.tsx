@@ -83,7 +83,7 @@ export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
     setForm({ state: Form.Loading });
 
     if (inputEl.current.value.trim().length === 0) {
-      setForm({ state: Form.Error, message: t("guestbook.error") });
+      setForm({ state: Form.Error, message: t('guestbook.error') });
       return;
     }
 
