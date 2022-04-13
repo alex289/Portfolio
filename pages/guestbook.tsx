@@ -1,8 +1,8 @@
 import prisma from '@/lib/prisma';
 import useTranslation from '@/lib/useTranslation';
 
-import Layout from '@/components/layout';
-import { Guestbook as GuestbookComponent } from '@/components/guestbook';
+import Layout from '@/components/Layout';
+import { Guestbook as GuestbookComponent } from '@/components/Guestbook';
 
 import type { GuestbookData } from '@/lib/types';
 

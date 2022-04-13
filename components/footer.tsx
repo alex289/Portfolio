@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 import useTranslation from '@/lib/useTranslation';
 
-import ExternalLink from '@/components/link-external';
-import NowPlaying from '@/components/now-playing';
+import ExternalLink from '@/components/ExternalLink';
+import NowPlaying from '@/components/NowPlaying';
 
 export default function Footer(): JSX.Element {
   const { t } = useTranslation();
