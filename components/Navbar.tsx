@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 
 import useTranslation from '@/lib/useTranslation';
 import MobileMenu from '@/components/MobileMenu';
-import ThemeToggleIcon from './icons/theme-icon';
+import ThemeToggleIcon from '@/components/icons/ThemeIcon';
 
 const Navbar = (): JSX.Element => {
   const [mounted, setMounted] = useState(false);
