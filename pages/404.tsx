@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import useTranslation from '@/lib/useTranslation';
 
-import Layout from '@/components/layout';
+import Layout from '@/components/Layout';
 
 export default function NotFound(): JSX.Element {
   const { t } = useTranslation();

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
 import useTranslation from '@/lib/useTranslation';
-import MobileMenu from '@/components/mobile-menu';
+import MobileMenu from '@/components/MobileMenu';
 import ThemeToggleIcon from './icons/theme-icon';
 
 const Navbar = (): JSX.Element => {
