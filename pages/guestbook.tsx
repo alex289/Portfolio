@@ -4,6 +4,7 @@ import useTranslation from '@/lib/useTranslation';
 import Layout from '@/components/Layout';
 import { Guestbook as GuestbookComponent } from '@/components/Guestbook';
 
+import type { GetStaticProps } from 'next';
 import type { GuestbookData } from '@/lib/types';
 
 export default function Guestbook({
@@ -27,7 +28,7 @@ export default function Guestbook({
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const entries = await prisma.guestbook.findMany({
     orderBy: {
       updated_at: 'desc',
@@ -47,4 +48,4 @@ export async function getStaticProps() {
     },
     revalidate: 60,
   };
-}
+};

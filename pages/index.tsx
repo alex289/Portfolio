@@ -9,6 +9,8 @@ import Project from '@/components/Projects';
 
 import profilePic from '../public/static/images/konietzko_alexander.jpg';
 
+import type { GetStaticProps } from 'next';
+
 export default function Index({
   fallbackData,
 }: {
@@ -64,7 +66,7 @@ export default function Index({
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const reposResponse = await fetch(
     'https://api.github.com/users/Alex289/repos?per_page=100&sort=pushed'
   );
@@ -77,4 +79,4 @@ export async function getStaticProps() {
     },
     revalidate: 60,
   };
-}
+};
