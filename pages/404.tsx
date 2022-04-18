@@ -7,7 +7,7 @@ import Layout from '@/components/Layout';
 export default function NotFound(): JSX.Element {
   const { t } = useTranslation();
   return (
-    <Layout>
+    <Layout title='404 - Alexander Konietzko'>
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           404 – {t('404.title')}

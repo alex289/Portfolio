@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { allBlogs } from 'contentlayer/generated';
 
-import Container from '@/components/blog/Container';
+import Layout from '@/components/Layout';
 import BlogPost from '@/components/blog/BlogPost';
 import { pick } from '@/lib/utils';
 
@@ -20,9 +20,9 @@ export default function Blog({
   );
 
   return (
-    <Container
+    <Layout
       title="Blog – Alexander Konietzko"
-      description="Thoughts on the programming, tech, music, and my personal life.">
+      description="Thoughts on programming, tech, music, and my personal life.">
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           Blog
@@ -64,7 +64,7 @@ export default function Blog({
           <BlogPost key={post.title} {...post} />
         ))}
       </div>
-    </Container>
+    </Layout>
   );
 }
 

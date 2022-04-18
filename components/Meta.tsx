@@ -2,12 +2,22 @@ import Head from 'next/head';
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+
+type Props = {
+  title?: string;
+  description?: string;
+  type?: string;
+  date?: string;
+};
 
 const Meta = ({
   title = 'Alexander Konietzko',
-}: {
-  title?: string;
-}): JSX.Element => {
+  type = 'website',
+  description = 'Software developer, Typescript enthusiast and dual student',
+  date,
+}: Props): JSX.Element => {
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -39,24 +49,26 @@ const Meta = ({
         name="viewport"
         content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover"
       />
-      <meta name="description" content="Front-End and Back-End developer" />
+      <meta name="description" content={description} />
       {mounted && (
         <meta
           name="theme-color"
           content={theme === 'light' ? '#ffffff' : '#000000'}
         />
       )}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Alexander Konietzko" />
       <meta
         property="og:url"
-        content="https://alexanderkonietzko.vercel.app/"
+        content={`https://alexanderkonietzko.vercel.app${router.asPath}`}
       />
-      <meta
-        property="og:description"
-        content="Front-End and Back-End developer"
+      <link
+        rel="canonical"
+        href={`https://alexanderkonietzko.vercel.app${router.asPath}`}
       />
+      <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
+      {date && <meta property="article:published_time" content={date} />}
       <meta name="application-name" content="Alexander Konietzko" />
       <meta
         name="keywords"
@@ -89,7 +101,7 @@ const Meta = ({
       <meta property="twitter:title" content={title} />
       <meta
         property="twitter:description"
-        content="Front-End and Back-End developer"
+        content={description}
       />
       <meta
         name="google-site-verification"
