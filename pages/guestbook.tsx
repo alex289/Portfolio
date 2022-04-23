@@ -5,12 +5,12 @@ import Layout from '@/components/Layout';
 import { Guestbook as GuestbookComponent } from '@/components/Guestbook';
 
 import type { GetStaticProps } from 'next';
-import type { GuestbookData } from '@/lib/types';
+import type { guestbook } from '@prisma/client';
 
 export default function Guestbook({
   fallbackData,
 }: {
-  fallbackData: GuestbookData[];
+  fallbackData: guestbook[];
 }) {
   const { t } = useTranslation();
   return (

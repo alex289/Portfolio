@@ -37,15 +37,6 @@ export type Views = {
   total: number;
 };
 
-export type GuestbookData = {
-  id: string;
-  email: string;
-  body: string;
-  created_by: string;
-  created_at: Date;
-  updated_at: Date;
-};
-
 export enum Form {
   Initial,
   Loading,

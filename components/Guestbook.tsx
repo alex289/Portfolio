@@ -11,7 +11,8 @@ import SuccessMessage from '@/components/guestbook/SuccessMessage';
 import ErrorMessage from '@/components/guestbook/ErrorMessage';
 import LoadingSpinner from '@/components/guestbook/LoadingSpinner';
 
-import { Form, FormState, GuestbookData } from 'lib/types';
+import { Form, FormState } from 'lib/types';
+import { guestbook } from '@prisma/client';
 
 type ClickEvent = {
   preventDefault: () => void;
@@ -19,7 +20,7 @@ type ClickEvent = {
 
 type GuestBookEntryProps = {
   t: (key: string) => string;
-  entry: GuestbookData;
+  entry: guestbook;
   user:
     | {
         name?: string | null | undefined;
@@ -67,14 +68,14 @@ function GuestbookEntry({ t, entry, user }: GuestBookEntryProps) {
   );
 }
 
-export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
+export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
   const { t } = useTranslation();
   const { data: session } = useSession();
   const { mutate } = useSWRConfig();
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const inputEl = useRef<any>(null);
-  const { data: entries } = useSWR<GuestbookData[]>('/api/guestbook', fetcher, {
+  const { data: entries } = useSWR<guestbook[]>('/api/guestbook', fetcher, {
     fallbackData,
   });
 
@@ -165,7 +166,7 @@ export function Guestbook({ fallbackData }: { fallbackData: GuestbookData[] }) {
       <div className="mt-4 space-y-8">
         {entries?.map((entry) => (
           <GuestbookEntry
-            key={entry.id}
+            key={entry.id.toString()}
             t={t}
             entry={entry}
             user={session?.user}

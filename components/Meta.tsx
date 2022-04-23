@@ -99,10 +99,7 @@ const Meta = ({
         content="https://alexanderkonietzko.vercel.app/"
       />
       <meta property="twitter:title" content={title} />
-      <meta
-        property="twitter:description"
-        content={description}
-      />
+      <meta property="twitter:description" content={description} />
       <meta
         name="google-site-verification"
         content="64Pb4e1oRhhlHgM6aJGvqSunCfPa38sJ5ZHPfLNtzts"
