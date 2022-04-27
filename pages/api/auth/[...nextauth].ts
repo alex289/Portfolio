@@ -1,5 +1,5 @@
 import NextAuth from 'next-auth';
-import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from 'next-auth/providers/google';
 
 export default NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
@@ -9,22 +9,25 @@ export default NextAuth({
     logo: 'https://alexanderkonietzko.vercel.app/static/images/konietzko_alexander.png',
   },
   providers: [
-    CredentialsProvider({
-      id: 'admin-login',
-      name: 'admin login',
-      credentials: {
-        password: { label: 'Password', type: 'password' },
-      },
-      async authorize(credentials) {
-        const user = {
-          isAdmin: true,
-        };
-
-        if (credentials?.password === process.env.AUTH_ADMIN_PASSWORD) {
-          return user;
-        }
-        return null;
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      authorization: {
+        params: {
+          prompt: 'consent',
+          access_type: 'offline',
+          response_type: 'code',
+        },
       },
     }),
   ],
+  callbacks: {
+    session: async ({ session, token }) => {
+      token.image = token.picture;
+      session.user = token;
+      session.isAdmin = token.email === process.env.ADMIN_EMAIL;
+
+      return session;
+    },
+  },
 });

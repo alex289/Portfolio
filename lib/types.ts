@@ -1,5 +1,5 @@
 export type LocalesJsonObject = {
-  [x: string]: string;
+  [x: string]: string | LocalesJsonObject;
 };
 
 export type UseTranslation = {
@@ -35,4 +35,16 @@ export type NowPlayingSong = {
 
 export type Views = {
   total: number;
+};
+
+export enum Form {
+  Initial,
+  Loading,
+  Success,
+  Error,
+}
+
+export type FormState = {
+  state: Form;
+  message?: string;
 };

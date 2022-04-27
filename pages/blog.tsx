@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { allBlogs } from 'contentlayer/generated';
 
-import Container from '@/components/blog/Container';
+import Layout from '@/components/Layout';
 import BlogPost from '@/components/blog/BlogPost';
 import { pick } from '@/lib/utils';
 
@@ -20,15 +20,15 @@ export default function Blog({
   );
 
   return (
-    <Container
+    <Layout
       title="Blog – Alexander Konietzko"
-      description="Thoughts on the programming, tech, music, and my personal life.">
+      description="Thoughts on programming, tech, music, and my personal life.">
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           Blog
         </h1>
         <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
-          {t('blog-description').replace('$AMOUNT', posts.length.toString())}
+          {t('blog.description').replace('$AMOUNT', posts.length.toString())}
         </p>
         <div className="relative w-full mb-4">
           <input
@@ -52,19 +52,19 @@ export default function Blog({
             />
           </svg>
         </div>
-        <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-          All Posts
-        </h3>
+        <h2 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
+          {t('blog.all-posts')}
+        </h2>
         {!filteredBlogPosts.length && (
           <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
-            No posts found.
+            {t('blog.no-posts')}
           </p>
         )}
         {filteredBlogPosts.map((post) => (
           <BlogPost key={post.title} {...post} />
         ))}
       </div>
-    </Container>
+    </Layout>
   );
 }
 

@@ -39,6 +39,8 @@ jobs:
 
       - name: Build next.js app
         run: yarn build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Analyze bundle
         run: npx -p nextjs-bundle-analysis report

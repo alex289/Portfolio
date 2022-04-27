@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
 import useTranslation from '@/lib/useTranslation';
-import MobileMenu from '@/components/mobile-menu';
-import ThemeToggleIcon from './icons/theme-icon';
+import MobileMenu from '@/components/MobileMenu';
+import ThemeToggleIcon from '@/components/icons/ThemeIcon';
 
 const Navbar = (): JSX.Element => {
   const [mounted, setMounted] = useState(false);
@@ -23,13 +23,13 @@ const Navbar = (): JSX.Element => {
     <nav className="sticky z-50 flex items-center justify-between w-full max-w-4xl p-4 mx-auto my-0 text-gray-900 md:p-8 bg-gray-50 sticky-nav md:my-8 dark:bg-gray-800 dark:text-gray-100">
       <div>
         <MobileMenu />
-        <div className="md:w-0">
+        <div>
           <Link href="/">
             <a
               id="nav-home"
               className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
               <span className="py-1 dark:link-underline link-underline-black">
-                {t('home')}
+                {t('main.home')}
               </span>
             </a>
           </Link>
@@ -38,7 +38,7 @@ const Navbar = (): JSX.Element => {
               id="nav-about"
               className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
               <span className="py-1 dark:link-underline link-underline-black">
-                {t('about')}
+                {t('main.about')}
               </span>
             </a>
           </Link>
@@ -47,7 +47,7 @@ const Navbar = (): JSX.Element => {
               id="nav-projects"
               className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
               <span className="py-1 dark:link-underline link-underline-black">
-                {t('projects')}
+                {t('main.projects')}
               </span>
             </a>
           </Link>
@@ -57,6 +57,15 @@ const Navbar = (): JSX.Element => {
               className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
               <span className="py-1 dark:link-underline link-underline-black">
                 Blog
+              </span>
+            </a>
+          </Link>
+          <Link href="/guestbook">
+            <a
+              id="nav-guestbook"
+              className="hidden m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:inline">
+              <span className="py-1 dark:link-underline link-underline-black">
+                {t('guestbook.title')}
               </span>
             </a>
           </Link>

@@ -1,21 +1,48 @@
 {
-    "title": "Hey, ich bin Alexander Konietzko",
-    "home": "Startseite",
-    "about": "Über",
-    "projects": "Projekte",
-    "my-setup": "Mein Setup",
-    "sourcecode": "Quellcode",
-    "contact": "Kontakt",
-    "dashboard": "Dashboard",
-    "page-not-found": "Seite nicht gefunden",
-    "return-home": "Zurück zur Startseite",
-    "404-text": "Wozu einen 404 Fehler zeigen wenn ich es mysteriös machen kann? Es scheint als würde das nicht existieren was du suchst, oder du hast es falsch geschrieben. Ich glaub du hast was falsch geschrieben. Kannst du das nochmal prüfen?",
-    "intro": "Ich bin ein Software Entwickler, dualer Student, und Creator. Ich arbeite in der Entwicklung \nvon Netgo. Du hast meinen persönlichen Teil des \nInternets gefunden – hab Spaß solange du hier bist und etwas über mich erfährst.",
-    "about-1": "Hey, ich bin Alex. Ich bin $AGE Jahre \nalt und komme aus Deutschland. Ich lebe in NRW und in meiner Freizeit \nspiele ich Klavier, mache Sport oder genieße die Zeit mit Freunden und der Familie.",
-    "about-2": "Ich hab angefangen mit Computern zu spielen als ich klein war und habe in der Schule \nmit dem programmieren angefangen. Nach meinem Abitur habe ich mein duales Studium bei \nNetgo begonnen wo ich arbeite und der Westfälische Hochschule wo ich studiere.",
-    "about-3": "Ich lerne gerade .NET Core und Angular aber mein lieblings Framework ist \nNextJs. Irgendwann möchte ich einen eigenen Kubernetes Cluster bauen mit \nBackend Services, Datenbanken und einem soliden Frontend kombiniert \nduch Nginx.",
-    "powered": "Geschrieben mit ",
-    "and": "und ",
-    "hosted": "Bereitgestellt auf ",
-    "blog-description": "Ich schreibe Artikel seit 2022, meistens über Web-Entwicklung und irgendwelches Zeug. Bisher habe ich $AMOUNT Artikel auf meinem Blog geschrieben (erstmal nur in englischer Version). Benutze die Suchleiste zum filtern von Artikeln."
+    "main": {
+        "home": "Startseite",
+        "about": "Über",
+        "projects": "Projekte"
+    },
+    "footer": {
+        "my-setup": "Mein Setup",
+        "sourcecode": "Quellcode",
+        "contact": "Kontakt",
+        "powered": "Geschrieben mit ",
+        "and": "und ",
+        "hosted": "Bereitgestellt auf "
+    },
+    "index-page": {
+        "title": "Hey, ich bin Alexander Konietzko",
+        "intro": "Ich bin ein Software Entwickler, dualer Student, und Creator. Ich arbeite in der Entwicklung \nvon Netgo. Du hast meinen persönlichen Teil des \nInternets gefunden – hab Spaß solange du hier bist und etwas über mich erfährst.",
+        "about-1": "Hey, ich bin Alex. Ich bin $AGE Jahre \nalt und komme aus Deutschland. Ich lebe in NRW und in meiner Freizeit \nspiele ich Klavier, mache Sport oder genieße die Zeit mit Freunden und der Familie.",
+        "about-2": "Ich hab angefangen mit Computern zu spielen als ich klein war und habe in der Schule \nmit dem programmieren angefangen. Nach meinem Abitur habe ich mein duales Studium bei \nNetgo begonnen wo ich arbeite und der Westfälische Hochschule wo ich studiere.",
+        "about-3": "Ich lerne gerade .NET Core und Angular aber mein lieblings Framework ist \nNextJs. Irgendwann möchte ich einen eigenen Kubernetes Cluster bauen mit \nBackend Services, Datenbanken und einem soliden Frontend kombiniert \nduch Nginx."
+    },
+    "404": {
+        "title": "Seite nicht gefunden",
+        "description": "Wozu einen 404 Fehler zeigen wenn ich es mysteriös machen kann? Es scheint als würde das nicht existieren was du suchst, oder du hast es falsch geschrieben. Ich glaub du hast was falsch geschrieben. Kannst du das nochmal prüfen?",
+        "return-home": "Zurück zur Startseite"
+    },
+    "blog": {
+        "description": "Ich schreibe Artikel seit 2022, meistens über Web-Entwicklung und irgendwelches Zeug. Bisher habe ich $AMOUNT Artikel auf meinem Blog geschrieben (erstmal nur in englischer Version). Benutze die Suchleiste zum filtern von Artikeln.",
+        "no-posts": "Keinen Beitrag gefunden.",
+        "all-posts": "Alle Beitrag"
+    },
+    "guestbook": {
+        "title": "Gästebuch",
+        "description": "Schreibe einen Kommentar über irgendwas - Komplimente, Informationen, Weisheiten, oder etwas lustiges. Überrasch mich!",
+        "login": "Einloggen",
+        "form": {
+            "title": "Schreibe in das Gästebuch",
+            "description": "Teile eine Nachricht für zukünftige Besucher.",
+            "input": "Deine Nachricht...",
+            "submit": "Senden",
+            "info": "Deine Informationen werden nur für die Anzeige deines Namens und zum antworten per Email benutzt."
+        },
+        "success": "Hurra! Danke für das Schreiben in mein Gästebuch.",
+        "error": "Bitte gebe eine Nachricht ein.",
+        "delete": "Löschen"
+    },
+    "not-playing": "Spielt nichts"
 }

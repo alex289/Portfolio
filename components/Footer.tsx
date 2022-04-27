@@ -1,13 +1,11 @@
 import Link from 'next/link';
-import { signIn, useSession } from 'next-auth/react';
 
 import useTranslation from '@/lib/useTranslation';
 
-import ExternalLink from '@/components/link-external';
-import NowPlaying from '@/components/now-playing';
+import ExternalLink from '@/components/ExternalLink';
+import NowPlaying from '@/components/NowPlaying';
 
 export default function Footer(): JSX.Element {
-  const { data: session } = useSession();
   const { t } = useTranslation();
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800">
@@ -20,21 +18,21 @@ export default function Footer(): JSX.Element {
               <a
                 id="footer-home"
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
-                {t('home')}
+                {t('main.home')}
               </a>
             </Link>
             <Link href="/#about">
               <a
                 id="footer-about"
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
-                {t('about')}
+                {t('main.about')}
               </a>
             </Link>
             <Link href="/#projects">
               <a
                 id="footer-projects"
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
-                {t('projects')}
+                {t('main.projects')}
               </a>
             </Link>
           </div>
@@ -44,48 +42,37 @@ export default function Footer(): JSX.Element {
                 Blog
               </a>
             </Link>
-            {session && (
-              <Link href="/dashboard">
-                <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
-                  {t('dashboard')}
-                </a>
-              </Link>
-            )}
-            {!session && (
-              <div
-                onClick={() =>
-                  signIn('credentials', { callbackUrl: '/dashboard' })
-                }
-                className="text-gray-500 cursor-pointer hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
-                {t('dashboard')}
-              </div>
-            )}
+            <Link href="/guestbook">
+              <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
+                {t('guestbook.title')}
+              </a>
+            </Link>
             <ExternalLink href="https://github.com/Alex289">
               GitHub
             </ExternalLink>
           </div>
           <div className="flex flex-col space-y-4">
             <ExternalLink href="https://github.com/Alex289/dotfiles">
-              {t('my-setup')}
+              {t('footer.my-setup')}
             </ExternalLink>
             <ExternalLink href="https://github.com/Alex289/Portfolio">
-              {t('sourcecode')}
+              {t('footer.sourcecode')}
             </ExternalLink>
             <ExternalLink href="https://github.com/Alex289/Alex289/issues/new?assignees=Alex289&labels=Contact&template=contact-template.md&title=%5BContact%5D+Your-title-here">
-              {t('contact')}
+              {t('footer.contact')}
             </ExternalLink>
           </div>
         </div>
         <p
           className="mx-auto text-sm text-gray-500 dark:text-gray-300"
           id="powered-by">
-          {t('powered')}
+          {t('footer.powered')}
           <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink>{' '}
-          {t('and')}
+          {t('footer.and')}
           <ExternalLink href="https://tailwindcss.com/">
             TailwindCss
           </ExternalLink>
-          . {t('hosted')}
+          . {t('footer.hosted')}
           <ExternalLink href="https://vercel.com/">Vercel</ExternalLink>.
         </p>
       </footer>

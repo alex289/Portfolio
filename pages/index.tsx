@@ -4,10 +4,12 @@ import type { Projects } from '@/lib/types';
 
 import useTranslation from '@/lib/useTranslation';
 
-import Layout from '@/components/layout';
-import Project from '@/components/projects';
+import Layout from '@/components/Layout';
+import Project from '@/components/Projects';
 
 import profilePic from '../public/static/images/konietzko_alexander.jpg';
+
+import type { GetStaticProps } from 'next';
 
 export default function Index({
   fallbackData,
@@ -34,25 +36,27 @@ export default function Index({
           />
         </div>
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-          {t('title')}
+          {t('index-page.title')}
         </h1>
         <h2 className="mb-16 text-gray-600 dark:text-[#c2c2c2]">
-          {t('intro')}
+          {t('index-page.intro')}
         </h2>
         <h3
           id="about"
           className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-          {t('about')}
+          {t('main.about')}
         </h3>
         <h2 className="mb-16 text-gray-600 dark:text-[#c2c2c2]">
-          <p className="mb-6">{t('about-1').replace('$AGE', age.toString())}</p>
-          <p className="mb-6">{t('about-2')}</p>
-          <p>{t('about-3')}</p>
+          <p className="mb-6">
+            {t('index-page.about-1').replace('$AGE', age.toString())}
+          </p>
+          <p className="mb-6">{t('index-page.about-2')}</p>
+          <p>{t('index-page.about-3')}</p>
         </h2>
         <h3
           id="projects"
           className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-          {t('projects')}
+          {t('main.projects')}
         </h3>
         <h2 className="text-gray-600 dark:text-gray-200">
           <Project fallbackData={fallbackData} />
@@ -62,7 +66,7 @@ export default function Index({
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const reposResponse = await fetch(
     'https://api.github.com/users/Alex289/repos?per_page=100&sort=pushed'
   );
@@ -75,4 +79,4 @@ export async function getStaticProps() {
     },
     revalidate: 60,
   };
-}
+};

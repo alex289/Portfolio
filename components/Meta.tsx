@@ -2,8 +2,22 @@ import Head from 'next/head';
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
-const Meta = (): JSX.Element => {
+type Props = {
+  title?: string;
+  description?: string;
+  type?: string;
+  date?: string;
+};
+
+const Meta = ({
+  title = 'Alexander Konietzko',
+  type = 'website',
+  description = 'Software developer, Typescript enthusiast and dual student',
+  date,
+}: Props): JSX.Element => {
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -11,8 +25,8 @@ const Meta = (): JSX.Element => {
 
   return (
     <Head>
-      <title>Alexander Konietzko</title>
-      <meta name="title" content="Alexander Konietzko" />
+      <title>{title}</title>
+      <meta name="title" content={title} />
       <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="robots" content="follow, index" />
       <meta
@@ -21,7 +35,7 @@ const Meta = (): JSX.Element => {
       />
       <link
         rel="preload"
-        href="/static/fonts/inter-var-latin.woff2"
+        href="/static/fonts/ibm-plex-sans-var.woff2"
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"
@@ -35,24 +49,26 @@ const Meta = (): JSX.Element => {
         name="viewport"
         content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover"
       />
-      <meta name="description" content="Front-End and Back-End developer" />
+      <meta name="description" content={description} />
       {mounted && (
         <meta
           name="theme-color"
           content={theme === 'light' ? '#ffffff' : '#000000'}
         />
       )}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Alexander Konietzko" />
       <meta
         property="og:url"
-        content="https://alexanderkonietzko.vercel.app/"
+        content={`https://alexanderkonietzko.vercel.app${router.asPath}`}
       />
-      <meta
-        property="og:description"
-        content="Front-End and Back-End developer"
+      <link
+        rel="canonical"
+        href={`https://alexanderkonietzko.vercel.app${router.asPath}`}
       />
-      <meta property="og:title" content="Alexander Konietzko" />
+      <meta property="og:description" content={description} />
+      <meta property="og:title" content={title} />
+      {date && <meta property="article:published_time" content={date} />}
       <meta name="application-name" content="Alexander Konietzko" />
       <meta
         name="keywords"
@@ -82,11 +98,8 @@ const Meta = (): JSX.Element => {
         property="twitter:url"
         content="https://alexanderkonietzko.vercel.app/"
       />
-      <meta property="twitter:title" content="Alexander Konietzko" />
-      <meta
-        property="twitter:description"
-        content="Front-End and Back-End developer"
-      />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
       <meta
         name="google-site-verification"
         content="64Pb4e1oRhhlHgM6aJGvqSunCfPa38sJ5ZHPfLNtzts"

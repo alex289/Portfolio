@@ -4,12 +4,12 @@ import { useTheme } from 'next-themes';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ImageWithTheme(props: any) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
     <Image
       alt={props.alt}
-      src={theme === 'light' ? props.light : props.dark}
+      src={resolvedTheme === 'light' ? props.light : props.dark}
       {...props}
     />
   );

@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 import useTranslation from '@/lib/useTranslation';
 
-import MenuIcon from '@/components/icons/menu-icon';
-import CrossIcon from '@/components/icons/cross-icon';
+import MenuIcon from '@/components/icons/MenuIcon';
+import CrossIcon from '@/components/icons/CrossIcon';
 
 const MobileMenu = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,7 +51,7 @@ const MobileMenu = (): JSX.Element => {
               id="mobile-nav-home"
               onClick={() => setIsMenuOpen(false)}
               className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
-              {t('home')}
+              {t('main.home')}
             </a>
           </Link>
         </li>
@@ -61,9 +61,9 @@ const MobileMenu = (): JSX.Element => {
           <Link href="/">
             <a
               id="mobile-nav-about"
-              onClick={(event) => scrollTo(event, 'about')}
+              onClick={(event) => scrollTo(event, 'main.about')}
               className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
-              {t('about')}
+              {t('main.about')}
             </a>
           </Link>
         </li>
@@ -73,9 +73,9 @@ const MobileMenu = (): JSX.Element => {
           <Link href="/">
             <a
               id="mobile-nav-projects"
-              onClick={(event) => scrollTo(event, 'projects')}
+              onClick={(event) => scrollTo(event, 'main.projects')}
               className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
-              {t('projects')}
+              {t('main.projects')}
             </a>
           </Link>
         </li>
@@ -87,6 +87,17 @@ const MobileMenu = (): JSX.Element => {
               id="mobile-nav-blog"
               className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
               Blog
+            </a>
+          </Link>
+        </li>
+        <li
+          className="ml-3 border-b border-gray-300 dark:border-gray-700"
+          style={{ transitionDelay: '150ms' }}>
+          <Link href="/guestbook">
+            <a
+              id="mobile-nav-guestbook"
+              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
+              {t('guestbook.title')}
             </a>
           </Link>
         </li>

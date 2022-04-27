@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { animate } from 'motion';
 
 import fetcher from 'lib/fetcher';
+import useTranslation from '@/lib/useTranslation';
+
 import { NowPlayingSong } from 'lib/types';
 
 function AnimatedBars() {
@@ -76,6 +78,7 @@ function AnimatedBars() {
 
 export default function NowPlaying() {
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher);
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-row-reverse items-center w-full mb-8 sm:flex-row space-x-0 sm:space-x-2">
@@ -100,7 +103,7 @@ export default function NowPlaying() {
           </a>
         ) : (
           <p className="font-medium text-gray-800 capsize dark:text-gray-200">
-            Not Playing
+            {t('not-playing')}
           </p>
         )}
         <span className="hidden mx-2 text-gray-500 capsize dark:text-gray-300 sm:block">

@@ -3,10 +3,10 @@ import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
 
-import Layout from '@/components/layout';
+import Layout from '@/components/Layout';
+import Metric from '@/components/Metric';
 
 import { healthData } from '@/lib/types';
-import Metric from '@/components/metric';
 
 export default function Dashboard(): JSX.Element {
   const { data: session } = useSession({
@@ -18,7 +18,7 @@ export default function Dashboard(): JSX.Element {
 
   const { data, error } = useSWR<healthData>('/api/health', fetcher);
 
-  if (!session) {
+  if (!session || !session.isAdmin) {
     return <Layout>Not authenticated</Layout>;
   }
   if (error) {
