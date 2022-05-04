@@ -19,7 +19,9 @@ export default function ViewCounter({ slug }: Props) {
         method: 'POST',
       });
 
-    registerView();
+    if (process.env.NODE_ENV === 'production') {
+      registerView();
+    }
   }, [slug]);
 
   return <span>{`${views > 0 ? views.toLocaleString() : '–––'} views`}</span>;
