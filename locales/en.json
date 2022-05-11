@@ -33,6 +33,8 @@
         "title": "Guestbook",
         "description": "Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!",
         "login": "Login",
+        "logout": "Logout",
+        "logged-in-as": "Logged in as",
         "form": {
             "title": "Sign the Guestbook",
             "description": "Share a message for a future visitor of my site.",

@@ -27,7 +27,9 @@ const Navbar = (): JSX.Element => {
           <Link href="/">
             <a
               id="nav-home"
-              className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
+              className={`invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible ${
+                router.asPath === '/' ? 'font-semibold' : ''
+              }`}>
               <span className="py-1 dark:link-underline link-underline-black">
                 {t('main.home')}
               </span>
@@ -36,7 +38,9 @@ const Navbar = (): JSX.Element => {
           <Link href="/#about">
             <a
               id="nav-about"
-              className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
+              className={`invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible ${
+                router.asPath === '/#about' ? 'font-semibold' : ''
+              }`}>
               <span className="py-1 dark:link-underline link-underline-black">
                 {t('main.about')}
               </span>
@@ -45,7 +49,9 @@ const Navbar = (): JSX.Element => {
           <Link href="/#projects">
             <a
               id="nav-projects"
-              className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
+              className={`invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible ${
+                router.asPath === '/#projects' ? 'font-semibold' : ''
+              }`}>
               <span className="py-1 dark:link-underline link-underline-black">
                 {t('main.projects')}
               </span>
@@ -54,7 +60,9 @@ const Navbar = (): JSX.Element => {
           <Link href="/blog">
             <a
               id="nav-blog"
-              className="invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible">
+              className={`invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible ${
+                router.pathname === '/blog' ? 'font-semibold' : ''
+              }`}>
               <span className="py-1 dark:link-underline link-underline-black">
                 Blog
               </span>
@@ -63,7 +71,9 @@ const Navbar = (): JSX.Element => {
           <Link href="/guestbook">
             <a
               id="nav-guestbook"
-              className="hidden m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:inline">
+              className={`hidden m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:inline ${
+                router.pathname === '/guestbook' ? 'font-semibold' : ''
+              }`}>
               <span className="py-1 dark:link-underline link-underline-black">
                 {t('guestbook.title')}
               </span>

@@ -33,6 +33,8 @@
         "title": "Gästebuch",
         "description": "Schreibe einen Kommentar über irgendwas - Komplimente, Informationen, Weisheiten, oder etwas lustiges. Überrasch mich!",
         "login": "Einloggen",
+        "logout": "Ausloggen",
+        "logged-in-as": "Eingeloggt als",
         "form": {
             "title": "Schreibe in das Gästebuch",
             "description": "Teile eine Nachricht für zukünftige Besucher.",
