@@ -50,7 +50,9 @@ const MobileMenu = (): JSX.Element => {
             <a
               id="mobile-nav-home"
               onClick={() => setIsMenuOpen(false)}
-              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
+              className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
+                router.asPath === '/' ? 'font-semibold' : ''
+              }`}>
               {t('main.home')}
             </a>
           </Link>
@@ -61,8 +63,10 @@ const MobileMenu = (): JSX.Element => {
           <Link href="/">
             <a
               id="mobile-nav-about"
-              onClick={(event) => scrollTo(event, 'main.about')}
-              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
+              onClick={(event) => scrollTo(event, 'about')}
+              className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
+                router.asPath === '/#about' ? 'font-semibold' : ''
+              }`}>
               {t('main.about')}
             </a>
           </Link>
@@ -73,8 +77,10 @@ const MobileMenu = (): JSX.Element => {
           <Link href="/">
             <a
               id="mobile-nav-projects"
-              onClick={(event) => scrollTo(event, 'main.projects')}
-              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
+              onClick={(event) => scrollTo(event, 'projects')}
+              className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
+                router.asPath === '/#projects' ? 'font-semibold' : ''
+              }`}>
               {t('main.projects')}
             </a>
           </Link>
@@ -85,7 +91,9 @@ const MobileMenu = (): JSX.Element => {
           <Link href="/blog">
             <a
               id="mobile-nav-blog"
-              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
+              className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
+                router.pathname === '/blog' ? 'font-semibold' : ''
+              }`}>
               Blog
             </a>
           </Link>
@@ -96,7 +104,9 @@ const MobileMenu = (): JSX.Element => {
           <Link href="/guestbook">
             <a
               id="mobile-nav-guestbook"
-              className="flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100">
+              className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
+                router.pathname === '/guestbook' ? 'font-semibold' : ''
+              }`}>
               {t('guestbook.title')}
             </a>
           </Link>
