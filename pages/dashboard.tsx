@@ -40,11 +40,11 @@ export default function Dashboard(): JSX.Element {
         </h1>
         <p>
           Logged in as {session.user?.email} (
-          <div
+          <button
             onClick={() => signOut({ callbackUrl: '/' })}
-            className="underline cursor-pointer">
+            className="underline">
             Logout
-          </div>
+          </button>
           )
         </p>
         <div className="w-full my-2 grid gap-4 grid-cols-1 sm:grid-cols-2">
