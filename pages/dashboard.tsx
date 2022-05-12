@@ -28,9 +28,6 @@ export default function Dashboard(): JSX.Element {
   if (error || viewsError) {
     return <Layout>Failed to load</Layout>;
   }
-  if (!data || !viewsData) {
-    return <Layout>Loading...</Layout>;
-  }
 
   return (
     <Layout>
@@ -49,22 +46,20 @@ export default function Dashboard(): JSX.Element {
         </p>
         <div className="w-full my-2 grid gap-4 grid-cols-1 sm:grid-cols-2">
           <Metric title="Status">
-            <span className={data.status ? 'text-green-600' : 'text-red-600'}>
-              {data.status}
+            <span className={data?.status ? 'text-green-600' : 'text-red-600'}>
+              {data?.status}
             </span>
           </Metric>
-          <Metric title="Environment">{data.env}</Metric>
-          <Metric title="Uptime">{data.uptime}</Metric>
-          <Metric title="Rss">{data.mem.rss}</Metric>
-          <Metric title="Heap total">{data.mem.heapTotal}</Metric>
-          <Metric title="Heap used">{data.mem.heapUsed}</Metric>
-          <Metric title="External">{data.mem.external}</Metric>
-          <Metric title="Array buffers">{data.mem.arrayBuffers}</Metric>
-          <Metric title="Deployed">
-            {data.vercel.deployed ? 'true' : 'false'}
-          </Metric>
-          <Metric title="Vercel environment">{data.vercel.env}</Metric>
-          <Metric title="Blog total views">{viewsData.total}</Metric>
+          <Metric title="Environment">{data?.env}</Metric>
+          <Metric title="Uptime">{data?.uptime}</Metric>
+          <Metric title="Rss">{data?.mem.rss}</Metric>
+          <Metric title="Heap total">{data?.mem.heapTotal}</Metric>
+          <Metric title="Heap used">{data?.mem.heapUsed}</Metric>
+          <Metric title="External">{data?.mem.external}</Metric>
+          <Metric title="Array buffers">{data?.mem.arrayBuffers}</Metric>
+          <Metric title="Deployed">{data?.vercel.deployed.toString()}</Metric>
+          <Metric title="Vercel environment">{data?.vercel.env}</Metric>
+          <Metric title="Blog total views">{viewsData?.total}</Metric>
         </div>
       </div>
     </Layout>
