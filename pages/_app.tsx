@@ -7,6 +7,7 @@ import NProgress from 'nprogress';
 
 import '@/styles/global.css';
 import 'nprogress/nprogress.css';
+import Analytics from '@/components/Analytics';
 
 Router.events.on('routeChangeStart', (_url, { shallow }) => {
   if (!shallow) {
@@ -23,6 +24,7 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <ThemeProvider attribute="class">
+        <Analytics />
         <Component {...pageProps} />
       </ThemeProvider>
     </SessionProvider>

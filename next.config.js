@@ -10,6 +10,15 @@ const nextConfig = withContentlayer({
     defaultLocale: 'en',
     localeDetection: false,
   },
+  async redirects() {
+    return [
+      {
+        source: '/analytics',
+        destination: 'https://alexanderkonietzko-analytics.vercel.app/share/iGO3fY48/alexanderkonietzko',
+        permanent: true,
+      },
+    ];
+  },
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
