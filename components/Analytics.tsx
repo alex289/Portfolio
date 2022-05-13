@@ -3,7 +3,7 @@ import Script from 'next/script';
 const Analytics = () => {
   return (
     <>
-      {process.env.NODE_ENV === 'development' && (
+      {process.env.NODE_ENV === 'production' && (
         <>
           <Script
             async
