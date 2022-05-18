@@ -5,9 +5,10 @@ import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 import NProgress from 'nprogress';
 
+import Analytics from '@/components/Analytics';
+
 import '@/styles/global.css';
 import 'nprogress/nprogress.css';
-import Analytics from '@/components/Analytics';
 
 Router.events.on('routeChangeStart', (_url, { shallow }) => {
   if (!shallow) {
