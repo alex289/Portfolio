@@ -6,6 +6,7 @@ import ViewCounter from '@/components/blog/ViewCounter';
 
 import type { PropsWithChildren } from 'react';
 import type { Blog } from 'contentlayer/generated';
+import useTranslation from '@/lib/useTranslation';
 
 const editUrl = (slug: string) =>
   `https://github.com/alex289/portfolio/edit/main/data/blog/${slug}.mdx`;
@@ -14,12 +15,14 @@ export default function BlogLayout({
   children,
   post,
 }: PropsWithChildren<{ post: Blog }>) {
+  const { t } = useTranslation();
   return (
     <Layout
       title={`${post.title} – Alexander Konietzko`}
       description={post.summary}
       date={new Date(post.publishedAt).toISOString()}
-      type="article">
+      type="article"
+      blogTranslation={post.translation}>
       <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           {post.title}
@@ -52,7 +55,7 @@ export default function BlogLayout({
             href={editUrl(post.slug)}
             target="_blank"
             rel="noopener noreferrer">
-            {'Edit on GitHub'}
+            {t('blog.edit-post')}
           </a>
         </div>
       </article>

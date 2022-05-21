@@ -6,10 +6,6 @@ import BlogLayout from '@/components/blog/Layout';
 
 import type { Blog } from 'contentlayer/generated';
 
-type Post = {
-  slug: string;
-};
-
 export default function Post({ post }: { post: Blog }) {
   const Component = useMDXComponent(post.body.code);
 
@@ -27,13 +23,21 @@ export default function Post({ post }: { post: Blog }) {
   );
 }
 
-export async function getStaticPaths({ locales }: { locales: string[] }) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const paths: any = [];
+type Paths = {
+  params: {
+    slug: string;
+  },
+  locale: string;
+};
 
-  allBlogs.map((post: Post) => {
+export async function getStaticPaths({ locales }: { locales: string[] }) {
+  const paths: Paths[] = [];
+
+  allBlogs.map((post) => {
     locales.map((locale) => {
-      paths.push({ params: { slug: post.slug }, locale });
+      if (post.lang === locale) {
+        paths.push({ params: { slug: post.slug }, locale });
+      }
     });
   });
 
@@ -44,7 +48,7 @@ export async function getStaticPaths({ locales }: { locales: string[] }) {
 }
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const post = allBlogs.find((post: Post) => post.slug === params.slug);
+  const post = allBlogs.find((post) => post.slug === params.slug);
 
   return { props: { post } };
 }

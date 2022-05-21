@@ -25,9 +25,10 @@
         "return-home": "Zurück zur Startseite"
     },
     "blog": {
-        "description": "Ich schreibe Artikel seit 2022, meistens über Web-Entwicklung und irgendwelches Zeug. Bisher habe ich $AMOUNT Artikel auf meinem Blog geschrieben (erstmal nur in englischer Version). Benutze die Suchleiste zum filtern von Artikeln.",
+        "description": "Ich schreibe Artikel seit 2022, meistens über Web-Entwicklung und irgendwelches Zeug. Bisher habe ich $AMOUNT Artikel auf meinem Blog geschrieben. Benutze die Suchleiste zum filtern von Artikeln.",
         "no-posts": "Keinen Beitrag gefunden.",
-        "all-posts": "Alle Beitrag"
+        "all-posts": "Alle Beitrag",
+        "edit-post": "Auf Github bearbeiten"
     },
     "guestbook": {
         "title": "Gästebuch",

@@ -10,6 +10,7 @@ type Props = {
   description?: string;
   type?: string;
   date?: string;
+  blogTranslation?: string;
 };
 
 const Layout = ({
@@ -18,6 +19,7 @@ const Layout = ({
   description,
   type,
   date,
+  blogTranslation,
 }: Props): JSX.Element => (
   <div className="bg-gray-50 dark:bg-gray-800">
     <Meta title={title} type={type} description={description} date={date} />
@@ -25,7 +27,7 @@ const Layout = ({
       Skip to content
     </a>
     <div className="sticky-nav bg-gray-50 dark:bg-gray-800">
-      <Navbar />
+      <Navbar blogTranslation={blogTranslation} />
     </div>
     <main
       className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800"
