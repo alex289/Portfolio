@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { useRouter } from 'next/router';
 import { allBlogs } from 'contentlayer/generated';
 
 import Layout from '@/components/Layout';
@@ -13,11 +14,14 @@ export default function Blog({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
+  const { locale } = useRouter();
   const [searchValue, setSearchValue] = useState('');
 
-  const filteredBlogPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  const filteredBlogPosts = posts
+    .filter((post) =>
+      post.title.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    .filter((post) => post.lang === locale);
 
   return (
     <Layout
@@ -70,7 +74,9 @@ export default function Blog({
 
 export function getStaticProps() {
   const posts = allBlogs
-    .map((post) => pick(post, ['slug', 'title', 'summary', 'publishedAt']))
+    .map((post) =>
+      pick(post, ['slug', 'title', 'summary', 'publishedAt', 'lang'])
+    )
     .sort(
       (a, b) =>
         Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))

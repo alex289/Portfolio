@@ -9,7 +9,11 @@ import useTranslation from '@/lib/useTranslation';
 import MobileMenu from '@/components/MobileMenu';
 import ThemeToggleIcon from '@/components/icons/ThemeIcon';
 
-const Navbar = (): JSX.Element => {
+type Props = {
+  blogTranslation?: string;
+};
+
+const Navbar = ({ blogTranslation }: Props): JSX.Element => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -91,9 +95,9 @@ const Navbar = (): JSX.Element => {
           {mounted && <ThemeToggleIcon theme={resolvedTheme} />}
         </button>
         <Link
-          href={router.asPath}
+          href={blogTranslation || router.asPath}
           scroll={false}
-          shallow={true}
+          shallow={blogTranslation ? false : true}
           locale={locale === 'de' ? 'en' : 'de'}>
           <a
             id="switch-lang"

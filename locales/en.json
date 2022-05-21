@@ -25,9 +25,10 @@
         "return-home": "Return Home"
     },
     "blog": {
-        "description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written $AMOUNT articles on my blog (currently only in English version). Use the search below to filter by title.",
+        "description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written $AMOUNT articles on my blog. Use the search below to filter by title.",
         "no-posts": "No posts found.",
-        "all-posts": "All Posts"
+        "all-posts": "All Posts",
+        "edit-post": "Edit on Github"
     },
     "guestbook": {
         "title": "Guestbook",
