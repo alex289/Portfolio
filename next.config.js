@@ -23,7 +23,7 @@ const nextConfig = withContentlayer({
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: '/:path*',
         headers: securityHeaders
       }
     ];
