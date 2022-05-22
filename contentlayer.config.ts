@@ -23,7 +23,7 @@ const computedFields: ComputedFields = {
   },
   slug: {
     type: 'string',
-    resolve: (doc: any) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+    resolve: (doc: any) => doc._raw.sourceFileName.replace(/\.mdx$/, '').replace("de_", ""),
   },
 };
 

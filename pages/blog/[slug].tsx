@@ -26,7 +26,7 @@ export default function Post({ post }: { post: Blog }) {
 type Paths = {
   params: {
     slug: string;
-  },
+  };
   locale: string;
 };
 
