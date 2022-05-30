@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { useRouter } from 'next/router';
 import { allBlogs } from 'contentlayer/generated';
+import { pick } from '@contentlayer/utils';
 
 import Layout from '@/components/Layout';
 import BlogPost from '@/components/blog/BlogPost';
-import { pick } from '@/lib/utils';
 
 import type { InferGetStaticPropsType } from 'next';
 import useTranslation from '@/lib/useTranslation';
@@ -32,7 +32,10 @@ export default function Blog({
           Blog
         </h1>
         <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
-          {t('blog.description').replace('$AMOUNT', posts.length.toString())}
+          {t('blog.description').replace(
+            '$AMOUNT',
+            posts.filter((post) => post.lang === locale).length.toString()
+          )}
         </p>
         <div className="relative w-full mb-4">
           <input

@@ -10,6 +10,10 @@ const nextConfig = withContentlayer({
     defaultLocale: 'en',
     localeDetection: false,
   },
+  experimental: {
+    legacyBrowsers: false,
+    browsersListForSwc: true
+  },
   async redirects() {
     return [
       {
