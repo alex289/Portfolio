@@ -42,20 +42,22 @@ jobs:
         path: .next/cache
         key: ${{ runner.os }}-build-v2-${{ env.cache-name }}
 
-    - name: Install yarn
-      run: npm install -g yarn
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2.2.2
+      with:
+        version: 7.1.7
 
     - name: Install dependencies
       if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile
+      run: pnpm i --frozen-lockfile
 
     - name: Format
-      run: yarn format
+      run: pnpm format
 
     - name: Lint
-      run: yarn lint
+      run: pnpm lint
 
     - name: Build
-      run: yarn build
+      run: pnpm build
       env:
         DATABASE_URL: ${{ secrets.DATABASE_URL }}

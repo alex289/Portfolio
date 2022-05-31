@@ -10,6 +10,7 @@ import Analytics from '@/components/Analytics';
 import '@/styles/global.css';
 import 'nprogress/nprogress.css';
 
+NProgress.configure({ showSpinner: false });
 Router.events.on('routeChangeStart', (_url, { shallow }) => {
   if (!shallow) {
     NProgress.start();

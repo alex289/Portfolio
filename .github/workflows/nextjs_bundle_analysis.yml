@@ -22,11 +22,13 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Install yarn
-        run: npm install -g yarn
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.1.7
 
       - name: Install dependencies
-        run: yarn
+        run: pnpm i
 
       - name: Restore next build
         uses: actions/cache@v2
@@ -38,7 +40,7 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}
 
       - name: Build next.js app
-        run: yarn build
+        run: pnpm build
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
