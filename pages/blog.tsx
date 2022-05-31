@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useRouter } from 'next/router';
 import { allBlogs } from 'contentlayer/generated';
-import { pick } from '@contentlayer/utils';
+import { pick } from 'contentlayer/utils';
 
 import Layout from '@/components/Layout';
 import BlogPost from '@/components/blog/BlogPost';
