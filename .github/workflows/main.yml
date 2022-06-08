@@ -21,18 +21,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Cache node modules
-      id: cache-nodemodules
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-node-modules
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-build-v2-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-build-v2-${{ env.cache-name }}-
-          ${{ runner.os }}-build-v2
-
     - name: Cache next build
       uses: actions/cache@v2
       id: restore-build-cache
@@ -40,12 +28,26 @@ jobs:
         cache-name: cache-next-build
       with:
         path: .next/cache
-        key: ${{ runner.os }}-build-v2-${{ env.cache-name }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}
 
     - name: Setup pnpm
       uses: pnpm/action-setup@v2.2.2
       with:
         version: 7.1.7
+        run_install: false
+
+    - name: Get pnpm store directory
+      id: pnpm-cache
+      run: |
+        echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+    - uses: actions/cache@v3
+      name: Setup pnpm cache
+      with:
+        path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
 
     - name: Install dependencies
       if: steps.cache-nodemodules.outputs.cache-hit != 'true'
@@ -61,3 +63,4 @@ jobs:
       run: pnpm build
       env:
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
+#   - run: yarn test
