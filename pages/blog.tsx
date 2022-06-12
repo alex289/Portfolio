@@ -78,7 +78,7 @@ export default function Blog({
 export function getStaticProps() {
   const posts = allBlogs
     .map((post) =>
-      pick(post, ['slug', 'title', 'summary', 'publishedAt', 'lang'])
+      pick(post, ['slug', 'title', 'summary', 'publishedAt', 'lang', 'tags'])
     )
     .sort(
       (a, b) =>

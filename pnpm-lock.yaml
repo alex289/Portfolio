@@ -1,11 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@prisma/client': ^3.15.0
+  '@prisma/client': ^3.15.1
   '@tailwindcss/typography': ^0.5.2
-  '@types/node': ^17.0.41
+  '@types/node': ^17.0.42
   '@types/nprogress': ^0.2.0
-  '@types/react': ^17.0.43
+  '@types/react': ^18.0.12
   '@typescript-eslint/eslint-plugin': ^5.27.1
   autoprefixer: ^10.4.7
   axios: ^0.27.2
@@ -16,17 +16,17 @@ specifiers:
   eslint-config-next: 12.1.6
   eslint-config-prettier: ^8.5.0
   eslint-plugin-tailwind: ^0.2.1
-  globby: ^13.1.1
+  globby: ^13.1.2
   motion: ^10.10.0
   next: 12.1.6
-  next-auth: ^4.3.4
+  next-auth: ^4.4.0
   next-contentlayer: ^0.2.5
   next-themes: ^0.2.0
   nprogress: ^0.2.0
   postcss: ^8.4.14
-  preact: 10.6.6
+  preact: 10.7.3
   prettier: ^2.6.2
-  prisma: ^3.15.0
+  prisma: ^3.15.1
   react: ^17.0.2
   react-dom: ^17.0.2
   reading-time: ^1.5.0
@@ -37,49 +37,49 @@ specifiers:
   remark-gfm: ^3.0.1
   sharp: ^0.30.6
   swr: ^1.3.0
-  tailwindcss: ^3.0.24
+  tailwindcss: ^3.1.2
   typescript: ^4.7.3
 
 dependencies:
-  '@prisma/client': 3.15.0_prisma@3.15.0
+  '@prisma/client': 3.15.1_prisma@3.15.1
   axios: 0.27.2
   classnames: 2.3.1
   contentlayer: 0.2.5_date-fns@2.28.0
   date-fns: 2.28.0
   motion: 10.10.0_sfoxds7t5ydpegc3knd667wn6m
   next: 12.1.6_sfoxds7t5ydpegc3knd667wn6m
-  next-auth: 4.3.4_sfoxds7t5ydpegc3knd667wn6m
+  next-auth: 4.4.0_sfoxds7t5ydpegc3knd667wn6m
   next-contentlayer: 0.2.5_zhtyyhxvjc4vmyivr6fwl32yja
   next-themes: 0.2.0_zhtyyhxvjc4vmyivr6fwl32yja
   nprogress: 0.2.0
-  preact: 10.6.6
+  preact: 10.7.3
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   sharp: 0.30.6
   swr: 1.3.0_react@17.0.2
 
 devDependencies:
-  '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
-  '@types/node': 17.0.41
+  '@tailwindcss/typography': 0.5.2_tailwindcss@3.1.2
+  '@types/node': 17.0.42
   '@types/nprogress': 0.2.0
-  '@types/react': 17.0.45
+  '@types/react': 18.0.12
   '@typescript-eslint/eslint-plugin': 5.27.1_ud6rd4xtew5bv4yhvkvu24pzm4
   autoprefixer: 10.4.7_postcss@8.4.14
   eslint: 8.17.0
   eslint-config-next: 12.1.6_qwqcuvhue6diaz4jqbkm5dp3pa
   eslint-config-prettier: 8.5.0_eslint@8.17.0
   eslint-plugin-tailwind: 0.2.1_eslint@8.17.0
-  globby: 13.1.1
+  globby: 13.1.2
   postcss: 8.4.14
   prettier: 2.6.2
-  prisma: 3.15.0
+  prisma: 3.15.1
   reading-time: 1.5.0
   rehype-autolink-headings: 6.1.1
   rehype-code-titles: 1.1.0
   rehype-prism-plus: 1.4.0
   rehype-slug: 5.0.1
   remark-gfm: 3.0.1
-  tailwindcss: 3.0.24
+  tailwindcss: 3.1.2
   typescript: 4.7.3
 
 packages:
@@ -327,7 +327,7 @@ packages:
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
       '@grpc/proto-loader': 0.6.12
-      '@types/node': 17.0.41
+      '@types/node': 17.0.42
     dev: false
 
   /@grpc/proto-loader/0.6.12:
@@ -752,8 +752,8 @@ packages:
     resolution: {integrity: sha512-MSAs9t3Go7GUkMhpKC44T58DJ5KGk2vBo+h1cqQeqlMfdGkxaVB78ZWpv9gYi/g2fa4sopag9gJsNvS8XGgWJA==}
     dev: false
 
-  /@prisma/client/3.15.0_prisma@3.15.0:
-    resolution: {integrity: sha512-0bwpIXtE3qkkm8JV6kSHLPyEbEUQD+hFAO7NM5INr23vFBOoyKwKI1Q4V08A7jq3NdI7g2NlBuugCHE9//1ANw==}
+  /@prisma/client/3.15.1_prisma@3.15.1:
+    resolution: {integrity: sha512-Lsk7oupvO9g99mrIs07iE6BIMouHs46Yq/YY8itTsUQNKfecsPuZvVYvcKci0pqRQ0neOpvIvoA/ouZmIMBCrQ==}
     engines: {node: '>=12.6'}
     requiresBuild: true
     peerDependencies:
@@ -762,16 +762,16 @@ packages:
       prisma:
         optional: true
     dependencies:
-      '@prisma/engines-version': 3.15.0-29.b9297dc3a59307060c1c39d7e4f5765066f38372
-      prisma: 3.15.0
+      '@prisma/engines-version': 3.15.1-1.461d6a05159055555eb7dfb337c9fb271cbd4d7e
+      prisma: 3.15.1
     dev: false
 
-  /@prisma/engines-version/3.15.0-29.b9297dc3a59307060c1c39d7e4f5765066f38372:
-    resolution: {integrity: sha512-VRj1Svti6h4UnUxEbIpio+40zppFztGKogVbkgblndbEQfmNdLh2M5bzDD6kaO+r8LBxHUBzUG/zEmlpxTvwoA==}
+  /@prisma/engines-version/3.15.1-1.461d6a05159055555eb7dfb337c9fb271cbd4d7e:
+    resolution: {integrity: sha512-e3k2Vd606efd1ZYy2NQKkT4C/pn31nehyLhVug6To/q8JT8FpiMrDy7zmm3KLF0L98NOQQcutaVtAPhzKhzn9w==}
     dev: false
 
-  /@prisma/engines/3.15.0-29.b9297dc3a59307060c1c39d7e4f5765066f38372:
-    resolution: {integrity: sha512-S5T0NuVF2+NoKoxY5bN6O/7avv4ifcjqqk5+JFZ6C4g+P7JMM3nY0wGBPI+46A8yGIDsyyFmvFTYiIDsEUwUeQ==}
+  /@prisma/engines/3.15.1-1.461d6a05159055555eb7dfb337c9fb271cbd4d7e:
+    resolution: {integrity: sha512-NHlojO1DFTsSi3FtEleL9QWXeSF/UjhCW0fgpi7bumnNZ4wj/eQ+BJJ5n2pgoOliTOGv9nX2qXvmHap7rJMNmg==}
     requiresBuild: true
 
   /@protobufjs/aspromise/1.1.2:
@@ -821,7 +821,7 @@ packages:
     resolution: {integrity: sha512-WiBSI6JBIhC6LRIsB2Kwh8DsGTlbBU+mLRxJmAe3LjHTdkDpwIbEOZgoXBbZilk/vlfjK8i6nKRAvIRn1XaIMw==}
     dev: true
 
-  /@tailwindcss/typography/0.5.2_tailwindcss@3.0.24:
+  /@tailwindcss/typography/0.5.2_tailwindcss@3.1.2:
     resolution: {integrity: sha512-coq8DBABRPFcVhVIk6IbKyyHUt7YTEC/C992tatFB+yEx5WGBQrCgsSFjxHUr8AWXphWckadVJbominEduYBqw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || insiders'
@@ -829,7 +829,7 @@ packages:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
-      tailwindcss: 3.0.24
+      tailwindcss: 3.1.2
     dev: true
 
   /@types/acorn/4.0.6:
@@ -890,8 +890,8 @@ packages:
   /@types/ms/0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
-  /@types/node/17.0.41:
-    resolution: {integrity: sha512-xA6drNNeqb5YyV5fO3OAEsnXLfO7uF0whiOfPTz5AeDo8KeZFmODKnvwPymMNO8qE/an8pVY/O50tig2SQCrGw==}
+  /@types/node/17.0.42:
+    resolution: {integrity: sha512-Q5BPGyGKcvQgAMbsr7qEGN/kIPN6zZecYYABeTDBizOsau+2NMdSVTar9UQw21A2+JyA2KRNDYaYrPB0Rpk2oQ==}
 
   /@types/nprogress/0.2.0:
     resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
@@ -909,8 +909,8 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react/17.0.45:
-    resolution: {integrity: sha512-YfhQ22Lah2e3CHPsb93tRwIGNiSwkuz1/blk4e6QrWS0jQzCSNbGLtOEYhPg02W0yGTTmpajp7dCTbBAMN3qsg==}
+  /@types/react/18.0.12:
+    resolution: {integrity: sha512-duF1OTASSBQtcigUvhuiTB1Ya3OvSy+xORCiEf20H0P0lzx+/KeVsA99U5UjLXSbyo1DRJDlLKqTeM1ngosqtg==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -2831,8 +2831,8 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /globby/13.1.1:
-    resolution: {integrity: sha512-XMzoDZbGZ37tufiv7g0N4F/zp3zkwdFtVbV3EHsVl1KQr4RPLfNoT068/97RPshz2J5xYNEjLKKBKaGHifBd3Q==}
+  /globby/13.1.2:
+    resolution: {integrity: sha512-LKSDZXToac40u8Q1PQtZihbNdTYSNMuWe+K5l+oa6KgDzSvVrHXlJy40hUP522RjAIoNLJYBJi7ow+rbFpIhHQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       dir-glob: 3.0.1
@@ -4022,8 +4022,8 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
-  /next-auth/4.3.4_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-8dGkNicbxY2BYsJq4uOJIEsGt39wXj5AViTBsVfbRQqtAFmZmXYHutf90VBmobm8rT2+Xl60HDUTkuVVK+x+xw==}
+  /next-auth/4.4.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-Lz5ytnkP4OfTUsknhpZVH9eTLaLOZX/UEe6OQESMaZSTBr9cVc99G4kEPG83KrwKMe7VVb5DfDWH0rlod7wMzA==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
     peerDependencies:
       nodemailer: ^6.6.5
@@ -4039,8 +4039,8 @@ packages:
       jose: 4.8.1
       oauth: 0.9.15
       openid-client: 5.1.6
-      preact: 10.6.6
-      preact-render-to-string: 5.2.0_preact@10.6.6
+      preact: 10.7.3
+      preact-render-to-string: 5.2.0_preact@10.7.3
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       uuid: 8.3.2
@@ -4186,7 +4186,7 @@ packages:
     dev: false
 
   /oauth/0.9.15:
-    resolution: {integrity: sha1-vR/vr2hslrdUda7VGWQS/2DPucE=}
+    resolution: {integrity: sha512-a5ERWK1kh38ExDEfoO6qUHJb32rd7aYmPHuyCu3Fta/cnICvYmgd2uhuKXvPD+PXB+gCEYYEaQdIRAjCOwAKNA==}
     dev: false
 
   /object-assign/4.1.1:
@@ -4416,6 +4416,23 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
+  /pify/2.3.0:
+    resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  /postcss-import/14.1.0_postcss@8.4.14:
+    resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.14
+      postcss-value-parser: 4.2.0
+      read-cache: 1.0.0
+      resolve: 1.22.0
+    dev: true
+
   /postcss-js/4.0.0_postcss@8.4.14:
     resolution: {integrity: sha512-77QESFBwgX4irogGVPgQ5s07vLvFqWr228qZY+w6lW599cRlK/HmnlivnnVUxkjHnCu4J16PDMHcH+e+2HbvTQ==}
     engines: {node: ^12 || ^14 || >= 16}
@@ -4482,17 +4499,17 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
-  /preact-render-to-string/5.2.0_preact@10.6.6:
+  /preact-render-to-string/5.2.0_preact@10.7.3:
     resolution: {integrity: sha512-+RGwSW78Cl+NsZRUbFW1MGB++didsfqRk+IyRVTaqy+3OjtpKK/6HgBtfszUX0YXMfo41k2iaQSseAHGKEwrbg==}
     peerDependencies:
       preact: '>=10'
     dependencies:
-      preact: 10.6.6
+      preact: 10.7.3
       pretty-format: 3.8.0
     dev: false
 
-  /preact/10.6.6:
-    resolution: {integrity: sha512-dgxpTFV2vs4vizwKohYKkk7g7rmp1wOOcfd4Tz3IB3Wi+ivZzsn/SpeKJhRENSE+n8sUfsAl4S3HiCVT923ABw==}
+  /preact/10.7.3:
+    resolution: {integrity: sha512-giqJXP8VbtA1tyGa3f1n9wiN7PrHtONrDyE3T+ifjr/tTkg+2N4d/6sjC9WyJKv8wM7rOYDveqy5ZoFmYlwo4w==}
     dev: false
 
   /prebuild-install/7.1.0:
@@ -4532,16 +4549,16 @@ packages:
     dev: true
 
   /pretty-format/3.8.0:
-    resolution: {integrity: sha1-v77VbV6ad2ZF9LH/eqGjrE+jw4U=}
+    resolution: {integrity: sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==}
     dev: false
 
-  /prisma/3.15.0:
-    resolution: {integrity: sha512-HL1kGDuFi9PdhbVLYsQO9vAH9uRFAHk7ifUOQxSrzUDs7R4VfLtg45VvXz8VHwcgLY5h0OrDVe1TdEX7a4o9tg==}
+  /prisma/3.15.1:
+    resolution: {integrity: sha512-MLO3JUGJpe5+EVisA/i47+zlyF8Ug0ivvGYG4B9oSXQcPiUHB1ccmnpxqR7o0Up5SQgmxkBiEU//HgR6UuIKOw==}
     engines: {node: '>=12.6'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 3.15.0-29.b9297dc3a59307060c1c39d7e4f5765066f38372
+      '@prisma/engines': 3.15.1-1.461d6a05159055555eb7dfb337c9fb271cbd4d7e
 
   /process-nextick-args/2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
@@ -4579,7 +4596,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.2
-      '@types/node': 17.0.41
+      '@types/node': 17.0.42
       long: 4.0.0
     dev: false
 
@@ -4633,6 +4650,12 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
+
+  /read-cache/1.0.0:
+    resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
+    dependencies:
+      pify: 2.3.0
+    dev: true
 
   /readable-stream/2.3.7:
     resolution: {integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==}
@@ -5237,8 +5260,8 @@ packages:
       string-width: 3.1.0
     dev: true
 
-  /tailwindcss/3.0.24:
-    resolution: {integrity: sha512-H3uMmZNWzG6aqmg9q07ZIRNIawoiEcNFKDfL+YzOPuPsXuDXxJxB9icqzLgdzKNwjG3SAro2h9SYav8ewXNgig==}
+  /tailwindcss/3.1.2:
+    resolution: {integrity: sha512-yJ6L5s1U5AeS5g7HHy212zdQfjwD426FBfm59pet/JsyneuZuD4C2W7PpJEg4ppisiB21uLqtNagv8KXury3+Q==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
@@ -5256,6 +5279,7 @@ packages:
       object-hash: 3.0.0
       picocolors: 1.0.0
       postcss: 8.4.14
+      postcss-import: 14.1.0_postcss@8.4.14
       postcss-js: 4.0.0_postcss@8.4.14
       postcss-load-config: 3.1.4_postcss@8.4.14
       postcss-nested: 5.0.6_postcss@8.4.14
