@@ -1,0 +1,192 @@
+---
+title: 'Bestes Terminal Setup'
+publishedAt: '2022-05-26'
+summary: 'Wie richtet man seinen Terminal gut und effizient ein'
+image: '/static/images/initial-commit/nextjs-logo.png'
+lang: 'de'
+translation: 'terminal-setup'
+tags: "Powershell, Windows"
+---
+
+<Image
+  alt={`My terminal`}
+  src={`/static/images/terminal-setup/terminal.png`}
+  width={1672}
+  height={979}
+  priority
+/>
+
+## Inhaltsverzeichnis 📃
+
+> Dieses Setup ist für Windows 10 Systeme gedacht
+
+- PowerShell
+- Scoop
+- oh-my-posh
+- Terminal Icons
+- PSReadLine
+- z
+- Neovim (Optional)
+- Nützliche Npm Pakete
+- Nützliche PowerShell Skripte
+
+Für meine komplette Konfigurationen schau bei meinem [dotfiles repository](https://github.com/Alex289/dotfiles) vorbei.
+
+## PowerShell
+
+[PowerShell](https://github.com/PowerShell/PowerShell) ist der beste Startpunkt für einen guten Windows Terminal.
+Installiere ihn ganz einfach aus dem Microsoft Store, suche nach PowerShell oder klicke [hier](https://apps.microsoft.com/store/detail/powershell/9MZ1SNWT0N5D).
+
+Um besseres Management für diverse Terminal zu haben kannst du noch den Windows Terminal installieren.
+Verfügbar wieder über den Microsoft Store unter "Windows Terminal", oder [hier](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701).
+
+Damit dein Terminal spezielle Zeichen anzeigen kann die bei oh-my-posh benötigt werden solltest du noch eine Nerdfont installieren.
+Es gibt viele unterschiedliche, aber ich empfehle "MesloLGL Nerd Font". Eine Vorschau und Download findest du [hier](https://www.nerdfonts.com/font-downloads).
+
+## Scoop
+
+[Scoop](https://scoop.sh/) ist ein Paket Manager für Windows.
+Um es zu installieren führe folgendes in deiner neuen PowerShell Umgebung aus:
+
+```powershell
+# Optional: Wird für das ausführen von Remote-Skripten benötigt (einmalig)
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+> irm get.scoop.sh | iex
+```
+
+## oh-my-posh
+
+Um deinen Terminal-Prompt besser aussehen zu lassen installiere [oh-my-posh](https://ohmyposh.dev/) mit dem folgenden Befehl:
+
+```powershell
+> scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+```
+
+Danach musst du noch folgendes zu deinem PowerShell Profil hinzufügen. Mit `open $PROFILE` öffnet sich dein PowerShell Profil in einem Editor.
+> Wenn du Visual Studio Code installiert hast kannst du `code $PROFILE` eingeben um es direkt in vscode zu öffnen.
+
+```powershell
+oh-my-posh init pwsh | Invoke-Expression
+```
+
+## Terminal Icons
+
+[Terminal Icons](https://github.com/devblackops/Terminal-Icons) fügt Icons zum `ls` Befehl hinzu. Installiere es mit:
+
+```powershell
+> Install-Module -Name Terminal-Icons -Repository PSGallery
+```
+
+und füge folgendes zu deinem Profil hinzu:
+
+```powershell
+Import-Module Terminal-Icons
+```
+
+Wenn jetzt `ls` ausführst sind in der Ausgabe Icons dabei.
+
+## PSReadLine
+
+Eine der stärksten PowerShell Tools ist [PSReadLine](https://docs.microsoft.com/en-us/powershell/module/psreadline/). Es fügt auto-ergänzung in deinem Terminal hinzu.
+
+```powershell
+> Install-Module PSReadLine
+```
+
+Und aktiviere es mit folgenden Zeilen in deiner Konfiguration:
+
+```powershell
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+```
+
+## z
+
+[z](https://www.powershellgallery.com/packages/z) ist eine verbesserte Version des `cd` Befehls. Mit dem Befehl `z your-folder-name` kann man von überall zu einer Directory springen.
+Installiere es mit:
+
+```powershell
+> Install-Module -Name z
+```
+
+### Neovim (Optional)
+
+> Das ist eher was für erfahrener Entwickler. Für Leute mit nicht so viel Erfahrung kann das überfordernd sein.
+
+<Image
+  alt={`Neovim`}
+  src={`/static/images/terminal-setup/nvim.png`}
+  width={1920}
+  height={1020}
+/>
+
+[Neovim](https://neovim.io/) ist ein Weg deinen Terminal Workflow zu optimieren und Code direkt in deinem Terminal zu schreiben.
+
+Install es mit scoop:
+```powershell
+scoop install neovim
+```
+
+Für eine Starter-Konfiguration empfehle ich [AstroNvim](https://github.com/AstroNvim/AstroNvim).
+
+## Nützliche Npm Pakete
+
+Hier ist eine Liste an nütlichen Paketen die ich oft nutze:
+
+- @angular/cli
+- npm-check-updates
+- prettier
+- serve
+- tree-sitter-cli (For neovim)
+- typescript
+- yarn
+- nvm
+- speed-test
+
+## Nützliche PowerShell Skripte
+
+Hier ist eine Liste an nütlichen PowerShell Skripten die ich täglich nutze und empfehle
+
+#### aliases
+```powershell
+Set-Alias v nvim
+Set-Alias g git
+Set-Alias y yarn
+Set-Alias ll ls
+Set-Alias touch New-Item
+```
+
+#### which
+Um den Ort des auszuführenden Programms zu bekommen
+
+```powershell
+function which ($command) {
+  Get-Command -Name $command -ErrorAction SilentlyContinue |
+    Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+}
+```
+
+#### transfer
+Teile eine Datei oder einen Ordner in Sekunden
+
+```powershell
+function transfer ($file) {
+    curl -H "Max-Downloads: 1" -H "Max-Days: 5" --upload-file $file https://transfer.sh/$file
+}
+```
+
+#### shortcuts
+Füge folgenden Befehl für shortcuts hinzu
+
+```powershell
+Set-PSReadLineKeyHandler -Chord Ctrl+q -ScriptBlock {
+    [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+    [Microsoft.PowerShell.PSConsoleReadLine]::Insert('exit')
+    [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
+```
+
+## Fazit 🔚
+
+Ich hoffe dir hat mein Setup gefallen. Über Feedback und Verbesserungen würde ich mich freuen ❤
