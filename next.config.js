@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { withContentlayer } = require('next-contentlayer');
-
 /** @type {import('next').NextConfig} */
-const nextConfig = withContentlayer({
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n: {
@@ -12,7 +9,7 @@ const nextConfig = withContentlayer({
   },
   experimental: {
     legacyBrowsers: false,
-    browsersListForSwc: true
+    browsersListForSwc: true,
   },
   async redirects() {
     return [
@@ -28,8 +25,8 @@ const nextConfig = withContentlayer({
     return [
       {
         source: '/:path*',
-        headers: securityHeaders
-      }
+        headers: securityHeaders,
+      },
     ];
   },
   webpack: (config, { dev, isServer }) => {
@@ -44,7 +41,7 @@ const nextConfig = withContentlayer({
 
     return config;
   },
-});
+};
 
 const ContentSecurityPolicy = `
   default-src 'self';

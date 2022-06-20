@@ -1,3 +1,5 @@
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+
 export type LocalesJsonObject = {
   [x: string]: string | LocalesJsonObject;
 };
@@ -47,4 +49,15 @@ export enum Form {
 export type FormState = {
   state: Form;
   message?: string;
+};
+
+export type Post = {
+  _id: string;
+  slug: string;
+  content: MDXRemoteSerializeResult;
+  title: string;
+  date: string;
+  excerpt: string;
+  coverImage: string;
+  readingTime: string;
 };

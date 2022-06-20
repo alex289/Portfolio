@@ -6,7 +6,6 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
-    "postbuild": "node ./scripts/generate-sitemap.mjs",
     "export": "next export",
     "lint": "next lint",
     "format": "prettier --write pages/** components/** lib/**"
