@@ -9,5 +9,5 @@ export const previewClient = createClient({
   token: process.env.SANITY_API_TOKEN,
 });
 
-export const getClient = (preview: any) =>
+export const getClient = (preview: boolean) =>
   preview ? previewClient : sanityClient;

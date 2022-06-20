@@ -23,7 +23,7 @@ export default function Blog({
     .filter((post) =>
       post.title.toLowerCase().includes(searchValue.toLowerCase())
     )
-    .filter((post) => post.lang === locale);
+    .filter((post) => post.language === locale);
 
   return (
     <Layout
@@ -36,7 +36,7 @@ export default function Blog({
         <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
           {t('blog.description').replace(
             '$AMOUNT',
-            posts.filter((post) => post.lang === locale).length.toString()
+            posts.filter((post) => post.language === locale).length.toString()
           )}
         </p>
         <div className="relative w-full mb-4">
@@ -74,7 +74,9 @@ export default function Blog({
             key={post.title}
             slug={post.slug}
             title={post.title}
-            summary={post.excerpt}
+            excerpt={post.excerpt}
+            date={post.date}
+            tags={post.tags}
           />
         ))}
       </div>

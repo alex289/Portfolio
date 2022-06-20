@@ -7,7 +7,7 @@ import { sanityClient, getClient } from '@/lib/sanity/sanity-server';
 import { mdxToHtml } from 'lib/mdx';
 import { Post } from 'lib/types';
 
-export default function Post({ post }: { post: Post }) {
+export default function BlogPosts({ post }: { post: Post }) {
   return (
     <BlogLayout post={post}>
       <MDXRemote
@@ -23,26 +23,36 @@ export default function Post({ post }: { post: Post }) {
   );
 }
 
-type Paths = {
-  params: {
-    slug: string;
-  };
-  locale: string;
-};
-
 // DONT FORGET I18N
 export async function getStaticPaths({ locales }: { locales: string[] }) {
   const paths = await sanityClient.fetch(postSlugsQuery);
   return {
-    paths: paths.map((slug: any) => ({ params: { slug } })),
+    paths: paths.map((slug: string) => ({ params: { slug } })),
     fallback: 'blocking',
   };
 }
 
-export async function getStaticProps({ params, preview = false }: any) {
+type getStaticPropsParams = {
+  params: {
+    slug: string;
+  };
+  preview: boolean;
+};
+
+export async function getStaticProps({
+  params,
+  preview = false,
+}: getStaticPropsParams) {
   const { post } = await getClient(preview).fetch(postQuery, {
     slug: params.slug,
   });
+
+  if (!post) {
+    return {
+      notFound: true,
+    };
+  }
+
   const { html, readingTime } = await mdxToHtml(post.content);
 
   return {

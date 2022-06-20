@@ -58,6 +58,8 @@ export type Post = {
   title: string;
   date: string;
   excerpt: string;
-  coverImage: string;
+  language: string;
+  translation: string;
+  tags: string[];
   readingTime: string;
 };

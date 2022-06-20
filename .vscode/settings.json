@@ -1,7 +1,7 @@
 {
    "files.exclude": {
       ".next": true,
-      ".contentlayer": true
+      ".sanity": true
    },
    "editor.formatOnSave": true
 }

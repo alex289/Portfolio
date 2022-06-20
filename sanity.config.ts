@@ -43,6 +43,22 @@ export default createConfig({
             title: 'Date',
             type: 'datetime',
           },
+          {
+            name: 'language',
+            title: 'Language',
+            type: 'string',
+          },
+          {
+            name: 'translation',
+            title: 'Translation',
+            type: 'string',
+          },
+          {
+            name: 'tags',
+            title: 'Tags',
+            type: 'array',
+            of: [{ type: 'string' }],
+          },
         ],
       },
     ],

@@ -7,7 +7,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (!isValidRequest(req, process.env.SANITY_STUDIO_REVALIDATE_SECRET)) {
+  if (!isValidRequest(req, process.env.SANITY_STUDIO_REVALIDATE_SECRET ?? '')) {
     return res.status(401).json({ message: 'Invalid request' });
   }
 
@@ -23,6 +23,7 @@ export default async function handler(
       res.unstable_revalidate(`/blog/${slug}`),
     ]);
     return res.status(200).json({ message: `Updated ${slug}` });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     return res.status(500).json({ message: err.message });
   }
