@@ -5,7 +5,7 @@ import { markdownSchema } from 'sanity-plugin-markdown';
 export default createConfig({
   name: 'default',
   title: 'alexanderkonietzko.vercel.app',
-  projectId: 'ieyuhi8r',
+  projectId: 'evkyvibr',
   dataset: 'production',
   plugins: [deskTool(), markdownSchema()],
   schema: {
