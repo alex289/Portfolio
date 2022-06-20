@@ -3,7 +3,9 @@ const postFields = `
   title,
   date,
   excerpt,
-  coverImage,
+  language,
+  translation,
+  "tags": tags,
   "slug": slug.current,
 `;
 
@@ -21,7 +23,7 @@ export const postQuery = `
 }`;
 
 export const postSlugsQuery = `
-*[_type == "post" && defined(slug.current)][].slug.current
+*[_type == "post" && defined(slug.current)] {"slug": slug.current, language}
 `;
 
 export const postBySlugQuery = `

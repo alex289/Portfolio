@@ -23,11 +23,15 @@ export default function BlogPosts({ post }: { post: Post }) {
   );
 }
 
-// DONT FORGET I18N
-export async function getStaticPaths({ locales }: { locales: string[] }) {
+export async function getStaticPaths() {
   const paths = await sanityClient.fetch(postSlugsQuery);
   return {
-    paths: paths.map((slug: string) => ({ params: { slug } })),
+    paths: paths.map(
+      ({ slug, language }: { slug: string; language: string }) => ({
+        params: { slug },
+        locale: language,
+      })
+    ),
     fallback: 'blocking',
   };
 }
@@ -36,18 +40,20 @@ type getStaticPropsParams = {
   params: {
     slug: string;
   };
+  locale: string;
   preview: boolean;
 };
 
 export async function getStaticProps({
   params,
+  locale,
   preview = false,
 }: getStaticPropsParams) {
   const { post } = await getClient(preview).fetch(postQuery, {
     slug: params.slug,
   });
 
-  if (!post) {
+  if (!post || post.language !== locale) {
     return {
       notFound: true,
     };
