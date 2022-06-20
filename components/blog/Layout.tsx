@@ -4,10 +4,10 @@ import { parseISO, format } from 'date-fns';
 import Layout from '@/components/Layout';
 import ViewCounter from '@/components/blog/ViewCounter';
 
-import type { PropsWithChildren } from 'react';
 import useTranslation from '@/lib/useTranslation';
 
-import { Post } from '@/lib/types';
+import type { PropsWithChildren } from 'react';
+import type { Post } from '@/lib/types';
 
 export default function BlogLayout({
   children,

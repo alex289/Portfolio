@@ -5,12 +5,12 @@ import { useRouter } from 'next/router';
 import Layout from '@/components/Layout';
 import BlogPost from '@/components/blog/BlogPost';
 
-import type { InferGetStaticPropsType } from 'next';
 import useTranslation from '@/lib/useTranslation';
-
 import { indexQuery } from '@/lib/sanity/queries';
 import { getClient } from '@/lib/sanity/sanity-server';
-import { Post } from '@/lib/types';
+
+import type { InferGetStaticPropsType } from 'next';
+import type { Post } from '@/lib/types';
 
 export default function Blog({
   posts,
