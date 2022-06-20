@@ -1,17 +1,17 @@
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import { allBlogs } from 'contentlayer/generated';
-
+import { MDXRemote } from 'next-mdx-remote';
 import components from '@/components/blog/MDXComponents';
 import BlogLayout from '@/components/blog/Layout';
 
-import type { Blog } from 'contentlayer/generated';
+import { postQuery, postSlugsQuery } from '@/lib/sanity/queries';
+import { sanityClient, getClient } from '@/lib/sanity/sanity-server';
+import { mdxToHtml } from 'lib/mdx';
+import { Post } from 'lib/types';
 
-export default function Post({ post }: { post: Blog }) {
-  const Component = useMDXComponent(post.body.code);
-
+export default function Post({ post }: { post: Post }) {
   return (
     <BlogLayout post={post}>
-      <Component
+      <MDXRemote
+        {...post.content}
         components={
           {
             ...components,
@@ -30,25 +30,28 @@ type Paths = {
   locale: string;
 };
 
+// DONT FORGET I18N
 export async function getStaticPaths({ locales }: { locales: string[] }) {
-  const paths: Paths[] = [];
-
-  allBlogs.map((post) => {
-    locales.map((locale) => {
-      if (post.lang === locale) {
-        paths.push({ params: { slug: post.slug }, locale });
-      }
-    });
-  });
-
+  const paths = await sanityClient.fetch(postSlugsQuery);
   return {
-    paths: paths,
-    fallback: false,
+    paths: paths.map((slug: any) => ({ params: { slug } })),
+    fallback: 'blocking',
   };
 }
 
-export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+export async function getStaticProps({ params, preview = false }: any) {
+  const { post } = await getClient(preview).fetch(postQuery, {
+    slug: params.slug,
+  });
+  const { html, readingTime } = await mdxToHtml(post.content);
 
-  return { props: { post } };
+  return {
+    props: {
+      post: {
+        ...post,
+        content: html,
+        readingTime,
+      },
+    },
+  };
 }

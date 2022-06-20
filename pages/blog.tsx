@@ -1,14 +1,16 @@
 import { useState } from 'react';
 
 import { useRouter } from 'next/router';
-import { allBlogs } from 'contentlayer/generated';
-import { pick } from 'contentlayer/client';
 
 import Layout from '@/components/Layout';
 import BlogPost from '@/components/blog/BlogPost';
 
 import type { InferGetStaticPropsType } from 'next';
 import useTranslation from '@/lib/useTranslation';
+
+import { indexQuery } from '@/lib/sanity/queries';
+import { getClient } from '@/lib/sanity/sanity-server';
+import { Post } from '@/lib/types';
 
 export default function Blog({
   posts,
@@ -68,22 +70,20 @@ export default function Blog({
           </p>
         )}
         {filteredBlogPosts.map((post) => (
-          <BlogPost key={post.title} {...post} />
+          <BlogPost
+            key={post.title}
+            slug={post.slug}
+            title={post.title}
+            summary={post.excerpt}
+          />
         ))}
       </div>
     </Layout>
   );
 }
 
-export function getStaticProps() {
-  const posts = allBlogs
-    .map((post) =>
-      pick(post, ['slug', 'title', 'summary', 'publishedAt', 'lang', 'tags'])
-    )
-    .sort(
-      (a, b) =>
-        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-    );
+export async function getStaticProps({ preview = false }) {
+  const posts: Post[] = await getClient(preview).fetch(indexQuery);
 
   return { props: { posts } };
 }

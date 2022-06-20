@@ -5,7 +5,14 @@ import { parseISO, format } from 'date-fns';
 import fetcher from '@/lib/fetcher';
 
 import { Views } from '@/lib/types';
-import type { Blog } from 'contentlayer/generated';
+
+type Props = {
+  title: string;
+  summary: string;
+  slug: string;
+  publishedAt: string;
+  tags: string;
+};
 
 export default function BlogPost({
   title,
@@ -13,7 +20,7 @@ export default function BlogPost({
   slug,
   publishedAt,
   tags,
-}: Pick<Blog, 'title' | 'summary' | 'slug' | 'publishedAt' | 'tags'>) {
+}: Props) {
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
   const views = data?.total;
 

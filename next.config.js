@@ -7,6 +7,7 @@ const nextConfig = {
     defaultLocale: 'en',
     localeDetection: false,
   },
+  images: ['cdn.sanity.io'],
   experimental: {
     legacyBrowsers: false,
     browsersListForSwc: true,
