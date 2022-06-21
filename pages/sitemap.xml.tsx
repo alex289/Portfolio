@@ -20,7 +20,7 @@ const createSitemap = (
 export async function getServerSideProps({ res }: any) {
   const allPosts = await sanityClient.fetch(postSlugsQuery);
   const allPages = [
-    ...allPosts.map((slug: string) => `blog/${slug}`),
+    ...allPosts.map(({ slug }: { slug: string }) => `blog/${slug}`),
     ...['', 'blog', 'dashboard', 'guestbook'],
   ];
 
