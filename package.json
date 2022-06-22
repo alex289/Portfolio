@@ -37,7 +37,6 @@
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-tailwind": "^0.2.1",
-    "globby": "^13.1.2",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "prisma": "^3.15.2",

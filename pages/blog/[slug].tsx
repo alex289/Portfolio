@@ -5,7 +5,7 @@ import BlogLayout from '@/components/blog/Layout';
 
 import { postQuery, postSlugsQuery } from '@/lib/sanity/queries';
 import { sanityClient, getClient } from '@/lib/sanity/sanity-server';
-import { mdxToHtml } from 'lib/mdx';
+import { mdxToHtml } from '@/lib/mdx';
 
 import type { Post } from 'lib/types';
 
