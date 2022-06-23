@@ -52,7 +52,6 @@
   "dependencies": {
     "@prisma/client": "^3.15.2",
     "@sanity/core": "^2.30.2",
-    "@sanity/image-url": "^1.0.1",
     "@sanity/webhook": "^1.0.2",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
