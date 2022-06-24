@@ -17,9 +17,9 @@ specifiers:
   eslint-config-next: 12.1.6
   eslint-config-prettier: ^8.5.0
   eslint-plugin-tailwind: ^0.2.1
-  motion: ^10.10.0
+  motion: ^10.10.2
   next: 12.1.6
-  next-auth: ^4.5.0
+  next-auth: ^4.6.1
   next-mdx-remote: ^4.0.3
   next-sanity: ^0.5.2
   next-themes: ^0.2.0
@@ -51,9 +51,9 @@ dependencies:
   axios: 0.27.2
   classnames: 2.3.1
   date-fns: 2.28.0
-  motion: 10.10.0_sfoxds7t5ydpegc3knd667wn6m
+  motion: 10.10.2_sfoxds7t5ydpegc3knd667wn6m
   next: 12.1.6_bw5me6qlxrwkidqrhljke6qy5u
-  next-auth: 4.5.0_sfoxds7t5ydpegc3knd667wn6m
+  next-auth: 4.6.1_sfoxds7t5ydpegc3knd667wn6m
   next-mdx-remote: 4.0.3_sfoxds7t5ydpegc3knd667wn6m
   next-sanity: 0.5.2_react@17.0.2
   next-themes: 0.2.0_zhtyyhxvjc4vmyivr6fwl32yja
@@ -1528,8 +1528,8 @@ packages:
       react: 17.0.2
     dev: false
 
-  /@motionone/animation/10.9.0:
-    resolution: {integrity: sha512-RsT6Y/JbTldNgwSy2IQGghqVVd6CH8yeexNs71+Gziz802rNiksVdMdgYuvXeTU8TJTG30f18V/rnm7mAUyO+A==}
+  /@motionone/animation/10.10.1:
+    resolution: {integrity: sha512-iX839/Ir5wT7hVX0yCZYjcDhHAOkVR5hIhVBTf37qEUD693uVwrxC2i1BI9vMVPc1rIoFtftYjOtwoO9Oq/aog==}
     dependencies:
       '@motionone/easing': 10.9.0
       '@motionone/types': 10.9.0
@@ -1537,10 +1537,10 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@motionone/dom/10.10.0:
-    resolution: {integrity: sha512-7IsOcEUYJthabt101ckQUsaM8mM3f2PxgXlRR0Xye6+C2ltuyKLXyiJwDv7LaqoblXl+xmf9mzBvcrZ6bVqJNQ==}
+  /@motionone/dom/10.10.2:
+    resolution: {integrity: sha512-GWdauAz0/n3OzoKcDDCjOGBnxEIJyKOH8eaB1eANuSk8DVT1unZQdkGpOTCBAS9lC317mj5dvBSwO5AX1ugz8w==}
     dependencies:
-      '@motionone/animation': 10.9.0
+      '@motionone/animation': 10.10.1
       '@motionone/generators': 10.9.0
       '@motionone/types': 10.9.0
       '@motionone/utils': 10.9.0
@@ -1563,8 +1563,8 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@motionone/react/10.10.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-6NJKT3O4Gz+JqH5QD1S6F3AOB2/wLg+270y+9GrNzf6uqF+PbHlreq3+/EUA/ijgqQ2AFfnabBLQAyXy6tz3gg==}
+  /@motionone/react/10.10.2_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-2dIQ8OLfB9APclr5EZXkC61GZJpptkFk5ROPuSXLZfswR556gbVPnrWV0Vz0C58/7etFIuzzxMgrFfAhN80a5g==}
     peerDependencies:
       react: ^17.0.2
       react-dom: ^17.0.2
@@ -1574,17 +1574,17 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@motionone/dom': 10.10.0
+      '@motionone/dom': 10.10.2
       hey-listen: 1.0.8
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       tslib: 2.4.0
     dev: false
 
-  /@motionone/svelte/10.10.0:
-    resolution: {integrity: sha512-YUB1ChNPrqCrRGU3YusrydkAoCfZC/DvEZzIEf1wvowbCH1oNUOdSZToAFstgdoTChnQpriCsCKPG4oKFVpTjw==}
+  /@motionone/svelte/10.10.2:
+    resolution: {integrity: sha512-5osaFO7OMQrXE3iHSjH8RRAdy2/iglO77rzYY16galCDTViYk1v1aXLTiiBTzAPYpTQxQBuTWfF+dqqyAsIuDg==}
     dependencies:
-      '@motionone/dom': 10.10.0
+      '@motionone/dom': 10.10.2
       tslib: 2.4.0
     dev: false
 
@@ -1600,10 +1600,10 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@motionone/vue/10.10.0:
-    resolution: {integrity: sha512-4g/rnShYMIRhU6GJxebEEeUxkR5bucJFjJMS6pOxWvtd0fPDRyl+ckaA9ONWk+CzrsDCTOBy4NDToeuWsuoWeg==}
+  /@motionone/vue/10.10.2:
+    resolution: {integrity: sha512-uJzNTzdSVyHOUiwuikVjKirq1zbI/UHAXkHC+dbbSgqXhDXAFcaRHcGCO436yG7lZfMnuDZCKPuNEzEJgIdcOw==}
     dependencies:
-      '@motionone/dom': 10.10.0
+      '@motionone/dom': 10.10.2
       tslib: 2.4.0
     dev: false
 
@@ -9211,15 +9211,15 @@ packages:
     resolution: {integrity: sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==}
     dev: false
 
-  /motion/10.10.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-dHr4pfvLn48cDTj0GMCY6+R/Ny1s6vQa8ktAAEc2uoiun5XiNpfAuhJ0Gz6tnfffHMfJrsR9qWELlPdZKC11hQ==}
+  /motion/10.10.2_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-kIYszdz8KybSY/rUy9Vq8HXuN61j35rIceEON6/sgUdtJTDLBfErmQLVqXsfCW1etzLFOBH7fG1b1Y/+nCA0aw==}
     dependencies:
-      '@motionone/animation': 10.9.0
-      '@motionone/dom': 10.10.0
-      '@motionone/react': 10.10.0_sfoxds7t5ydpegc3knd667wn6m
-      '@motionone/svelte': 10.10.0
+      '@motionone/animation': 10.10.1
+      '@motionone/dom': 10.10.2
+      '@motionone/react': 10.10.2_sfoxds7t5ydpegc3knd667wn6m
+      '@motionone/svelte': 10.10.2
       '@motionone/types': 10.9.0
-      '@motionone/vue': 10.10.0
+      '@motionone/vue': 10.10.2
     transitivePeerDependencies:
       - react
       - react-dom
@@ -9328,8 +9328,8 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: false
 
-  /next-auth/4.5.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-B6gYRIbqtj8nlDsx3y2Ruwp/mvZnItPs7VUULY43QYw+M9xtDPIM9EBZ3ryd/wNYA3MDteBJlzGm/ivseXcmJA==}
+  /next-auth/4.6.1_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-Fq0+NUZ0Kp7LhT0UZzZkSBcRb0W6DYlhgTUZragSqW5HXTJ7ShgFqOhH5aFoGSpXIxsZQmfFBbt9Oun09mf+aA==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
     peerDependencies:
       nodemailer: ^6.6.5
