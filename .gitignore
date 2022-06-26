@@ -20,7 +20,5 @@ yarn-error.log*
 # local env files
 .env*.local
 
-# Contentlayer
-.contentlayer
-
-public/sitemap.xml
+# Sanity
+.sanity

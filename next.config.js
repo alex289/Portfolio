@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { withContentlayer } = require('next-contentlayer');
-
 /** @type {import('next').NextConfig} */
-const nextConfig = withContentlayer({
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n: {
@@ -10,9 +7,11 @@ const nextConfig = withContentlayer({
     defaultLocale: 'en',
     localeDetection: false,
   },
+  images: { domains: ['cdn.sanity.io'] },
   experimental: {
     legacyBrowsers: false,
-    browsersListForSwc: true
+    browsersListForSwc: true,
+    images: { allowFutureImage: true },
   },
   async redirects() {
     return [
@@ -28,23 +27,11 @@ const nextConfig = withContentlayer({
     return [
       {
         source: '/:path*',
-        headers: securityHeaders
-      }
+        headers: securityHeaders,
+      },
     ];
   },
-  webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      Object.assign(config.resolve.alias, {
-        'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      });
-    }
-
-    return config;
-  },
-});
+};
 
 const ContentSecurityPolicy = `
   default-src 'self';

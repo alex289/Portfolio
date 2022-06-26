@@ -12,6 +12,7 @@
     "rules": {
         "semi": "warn",
         "eqeqeq": "warn",
-        "curly": "warn"
+        "curly": "warn",
+        "@next/next/no-server-import-in-page": 0
     }
 }

@@ -1,17 +1,19 @@
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import { allBlogs } from 'contentlayer/generated';
+import { MDXRemote } from 'next-mdx-remote';
 
 import components from '@/components/blog/MDXComponents';
 import BlogLayout from '@/components/blog/Layout';
 
-import type { Blog } from 'contentlayer/generated';
+import { postQuery, postSlugsQuery } from '@/lib/sanity/queries';
+import { sanityClient, getClient } from '@/lib/sanity/sanity-server';
+import { mdxToHtml } from '@/lib/mdx';
 
-export default function Post({ post }: { post: Blog }) {
-  const Component = useMDXComponent(post.body.code);
+import type { Post } from 'lib/types';
 
+export default function BlogPosts({ post }: { post: Post }) {
   return (
     <BlogLayout post={post}>
-      <Component
+      <MDXRemote
+        {...post.content}
         components={
           {
             ...components,
@@ -23,32 +25,51 @@ export default function Post({ post }: { post: Blog }) {
   );
 }
 
-type Paths = {
+export async function getStaticPaths() {
+  const paths = await sanityClient.fetch(postSlugsQuery);
+  return {
+    paths: paths.map(
+      ({ slug, language }: { slug: string; language: string }) => ({
+        params: { slug },
+        locale: language,
+      })
+    ),
+    fallback: 'blocking',
+  };
+}
+
+type getStaticPropsParams = {
   params: {
     slug: string;
   };
   locale: string;
+  preview: boolean;
 };
 
-export async function getStaticPaths({ locales }: { locales: string[] }) {
-  const paths: Paths[] = [];
-
-  allBlogs.map((post) => {
-    locales.map((locale) => {
-      if (post.lang === locale) {
-        paths.push({ params: { slug: post.slug }, locale });
-      }
-    });
+export async function getStaticProps({
+  params,
+  locale,
+  preview = false,
+}: getStaticPropsParams) {
+  const { post } = await getClient(preview).fetch(postQuery, {
+    slug: params.slug,
   });
 
+  if (!post || post.language !== locale) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const { html, readingTime } = await mdxToHtml(post.content);
+
   return {
-    paths: paths,
-    fallback: false,
+    props: {
+      post: {
+        ...post,
+        content: html,
+        readingTime,
+      },
+    },
   };
-}
-
-export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const post = allBlogs.find((post) => post.slug === params.slug);
-
-  return { props: { post } };
 }

@@ -1,26 +1,24 @@
-import Image from 'next/image';
+import Image from 'next/future/image';
 import { parseISO, format } from 'date-fns';
 
 import Layout from '@/components/Layout';
 import ViewCounter from '@/components/blog/ViewCounter';
 
-import type { PropsWithChildren } from 'react';
-import type { Blog } from 'contentlayer/generated';
 import useTranslation from '@/lib/useTranslation';
 
-const editUrl = (slug: string) =>
-  `https://github.com/alex289/portfolio/edit/main/data/blog/${slug}.mdx`;
+import { PropsWithChildren, Suspense } from 'react';
+import type { Post } from '@/lib/types';
 
 export default function BlogLayout({
   children,
   post,
-}: PropsWithChildren<{ post: Blog }>) {
+}: PropsWithChildren<{ post: Post }>) {
   const { t } = useTranslation();
   return (
     <Layout
       title={`${post.title} – Alexander Konietzko`}
-      description={post.summary}
-      date={new Date(post.publishedAt).toISOString()}
+      description={post.excerpt}
+      date={new Date(post.date).toISOString()}
       type="article"
       blogTranslation={post.translation}>
       <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
@@ -38,26 +36,28 @@ export default function BlogLayout({
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-[#c2c2c2]">
               {'Alexander Konietzko / '}
-              {format(parseISO(post.publishedAt), 'MMMM dd, yyyy')}
+              {format(parseISO(post.date), 'MMMM dd, yyyy')}
             </p>
           </div>
           <p className="mt-2 text-sm text-gray-600 dark:text-[#c2c2c2] min-w-32 md:mt-0">
-            {post.readingTime.text}
+            {post.readingTime}
             {` • `}
             <ViewCounter slug={post.slug} />
           </p>
         </div>
-        <div className="w-full mt-4 prose dark:prose-dark max-w-none">
-          {children}
-        </div>
-        <div className="mt-4 text-sm text-gray-700 dark:text-[#c2c2c2]">
-          <a
-            href={editUrl(post.slug)}
-            target="_blank"
-            rel="noopener noreferrer">
-            {t('blog.edit-post')}
-          </a>
-        </div>
+        <Suspense fallback={null}>
+          <div className="w-full mt-4 prose dark:prose-dark max-w-none">
+            {children}
+          </div>
+          <div className="mt-4 text-sm text-gray-700 dark:text-[#c2c2c2]">
+            <a
+              href="https://github.com/alex289/portfolio/issues"
+              target="_blank"
+              rel="noopener noreferrer">
+              {t('blog.edit-post')}
+            </a>
+          </div>
+        </Suspense>
       </article>
     </Layout>
   );

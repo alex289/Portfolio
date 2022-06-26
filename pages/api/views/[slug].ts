@@ -7,9 +7,9 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    const slug = req.query.slug.toString();
+    const slug = req.query.slug?.toString();
 
-    if (req.method === 'POST') {
+    if (req.method === 'POST' && slug) {
       const newOrUpdatedViews = await prisma.views.upsert({
         where: { slug },
         create: {

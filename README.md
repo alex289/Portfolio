@@ -11,15 +11,17 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 - **ORM**: [Prisma](https://prisma.io/)
 - **Authentication**: [NextAuth.js](https://next-auth.js.org/)
 - **Deployment**: [Vercel](https://vercel.com)
-- **Content**: [MDX](https://github.com/mdx-js/mdx)
+- **CMS**: [MDX](https://sanity.io)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
 ## Overview
 
 - `data/*` - MDX data that is used for my blog
 - `lib/*` - Short for "library", a collection of helpful utilities or code for external services.
-- `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction). Health check and stuff.
+- `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction). Health check, spotify, guestbook and blog post views.
+- `pages/blog/*` - Static pre-rendered blog pages using MDX
 - `pages/dashboard` - containing metrics from health api
+- `pages/sitemap.xml.tsx` - Automatically generated sitemap
 - `pages/*` - All other static pages.
 - `public/*` - Static assets including fonts and images.
 - `prisma/*` - My Prisma schema, which uses a PlanetScale MySQL database.

@@ -5,15 +5,16 @@ import { parseISO, format } from 'date-fns';
 import fetcher from '@/lib/fetcher';
 
 import { Views } from '@/lib/types';
-import type { Blog } from 'contentlayer/generated';
 
-export default function BlogPost({
-  title,
-  summary,
-  slug,
-  publishedAt,
-  tags,
-}: Pick<Blog, 'title' | 'summary' | 'slug' | 'publishedAt' | 'tags'>) {
+type Props = {
+  title: string;
+  excerpt: string;
+  slug: string;
+  date: string;
+  tags: string[];
+};
+
+export default function BlogPost({ title, excerpt, slug, date, tags }: Props) {
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
   const views = data?.total;
 
@@ -27,12 +28,12 @@ export default function BlogPost({
             </h3>
             <p className="w-full mb-4 text-left text-gray-900 dark:text-[#c2c2c2] md:text-right md:mb-0">
               {`${views ? new Number(views).toLocaleString() : '–––'} views`} |{' '}
-              {format(parseISO(publishedAt), 'MMMM dd, yyyy')}
+              {format(parseISO(date), 'MMMM dd, yyyy')}
             </p>
           </div>
-          <p className="text-gray-600 dark:text-[#c2c2c2]">{summary}</p>
+          <p className="text-gray-600 dark:text-[#c2c2c2]">{excerpt}</p>
           <div className="flex mt-1">
-            {tags.split(', ').map((tag, key) => {
+            {tags.map((tag, key) => {
               return (
                 <div
                   key={key}

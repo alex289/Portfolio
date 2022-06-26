@@ -28,7 +28,7 @@
         "description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written $AMOUNT articles on my blog. Use the search below to filter by title.",
         "no-posts": "No posts found.",
         "all-posts": "All Posts",
-        "edit-post": "Edit on Github"
+        "edit-post": "Suggest Change"
     },
     "guestbook": {
         "title": "Guestbook",

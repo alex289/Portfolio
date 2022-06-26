@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/future/image';
 
 import type { Projects } from '@/lib/types';
 
@@ -10,6 +10,7 @@ import Project from '@/components/Projects';
 import profilePic from '../public/static/images/konietzko_alexander.jpg';
 
 import type { GetStaticProps } from 'next';
+import { Suspense } from 'react';
 
 export default function Index({
   fallbackData,
@@ -32,7 +33,7 @@ export default function Index({
             width="500"
             height="500"
             quality={100}
-            loading="lazy"
+            priority
           />
         </div>
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
@@ -58,9 +59,11 @@ export default function Index({
           className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           {t('main.projects')}
         </h3>
-        <h2 className="text-gray-600 dark:text-gray-200">
-          <Project fallbackData={fallbackData} />
-        </h2>
+        <Suspense fallback={null}>
+          <h2 className="text-gray-600 dark:text-gray-200">
+            <Project fallbackData={fallbackData} />
+          </h2>
+        </Suspense>
       </div>
     </Layout>
   );

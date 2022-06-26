@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 
 import { useRouter } from 'next/router';
-import { allBlogs } from 'contentlayer/generated';
-import { pick } from 'contentlayer/client';
 
 import Layout from '@/components/Layout';
 import BlogPost from '@/components/blog/BlogPost';
 
-import type { InferGetStaticPropsType } from 'next';
 import useTranslation from '@/lib/useTranslation';
+import { indexQuery } from '@/lib/sanity/queries';
+import { getClient } from '@/lib/sanity/sanity-server';
+
+import type { InferGetStaticPropsType } from 'next';
+import type { Post } from '@/lib/types';
 
 export default function Blog({
   posts,
@@ -21,7 +23,7 @@ export default function Blog({
     .filter((post) =>
       post.title.toLowerCase().includes(searchValue.toLowerCase())
     )
-    .filter((post) => post.lang === locale);
+    .filter((post) => post.language === locale);
 
   return (
     <Layout
@@ -34,7 +36,7 @@ export default function Blog({
         <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
           {t('blog.description').replace(
             '$AMOUNT',
-            posts.filter((post) => post.lang === locale).length.toString()
+            posts.filter((post) => post.language === locale).length.toString()
           )}
         </p>
         <div className="relative w-full mb-4">
@@ -59,31 +61,33 @@ export default function Blog({
             />
           </svg>
         </div>
-        <h2 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-          {t('blog.all-posts')}
-        </h2>
-        {!filteredBlogPosts.length && (
-          <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
-            {t('blog.no-posts')}
-          </p>
-        )}
-        {filteredBlogPosts.map((post) => (
-          <BlogPost key={post.title} {...post} />
-        ))}
+        <Suspense fallback={null}>
+          <h2 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
+            {t('blog.all-posts')}
+          </h2>
+          {!filteredBlogPosts.length && (
+            <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
+              {t('blog.no-posts')}
+            </p>
+          )}
+          {filteredBlogPosts.map((post) => (
+            <BlogPost
+              key={post.title}
+              slug={post.slug}
+              title={post.title}
+              excerpt={post.excerpt}
+              date={post.date}
+              tags={post.tags}
+            />
+          ))}
+        </Suspense>
       </div>
     </Layout>
   );
 }
 
-export function getStaticProps() {
-  const posts = allBlogs
-    .map((post) =>
-      pick(post, ['slug', 'title', 'summary', 'publishedAt', 'lang', 'tags'])
-    )
-    .sort(
-      (a, b) =>
-        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-    );
+export async function getStaticProps({ preview = false }) {
+  const posts: Post[] = await getClient(preview).fetch(indexQuery);
 
   return { props: { posts } };
 }
