@@ -17,7 +17,6 @@ specifiers:
   eslint-config-next: 12.1.7-canary.48
   eslint-config-prettier: ^8.5.0
   eslint-plugin-tailwind: ^0.2.1
-  globby: ^13.1.2
   motion: ^10.10.2
   next: 12.1.7-canary.48
   next-auth: ^4.6.1
@@ -77,7 +76,6 @@ devDependencies:
   eslint-config-next: 12.1.7-canary.48_zhj2overriywynn63o4wb2g2fm
   eslint-config-prettier: 8.5.0_eslint@8.18.0
   eslint-plugin-tailwind: 0.2.1_eslint@8.18.0
-  globby: 13.1.2
   postcss: 8.4.14
   prettier: 2.7.1
   prisma: 3.15.2
@@ -6906,17 +6904,6 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /globby/13.1.2:
-    resolution: {integrity: sha512-LKSDZXToac40u8Q1PQtZihbNdTYSNMuWe+K5l+oa6KgDzSvVrHXlJy40hUP522RjAIoNLJYBJi7ow+rbFpIhHQ==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-    dependencies:
-      dir-glob: 3.0.1
-      fast-glob: 3.2.11
-      ignore: 5.2.0
-      merge2: 1.4.1
-      slash: 4.0.0
-    dev: true
-
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
     dev: false
@@ -12349,11 +12336,6 @@ packages:
   /slash/3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
-
-  /slash/4.0.0:
-    resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
-    engines: {node: '>=12'}
-    dev: true
 
   /slate/0.72.3:
     resolution: {integrity: sha512-ALsYQHKTN4rC+iHnOJzV+aC4AHdhoPkBWrfEK3W/LbXOzPrR+wL80a66OZiYg9Xb0QeGzlLSGdOOFQd2ix9Wmg==}
