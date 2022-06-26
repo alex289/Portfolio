@@ -14,7 +14,7 @@ specifiers:
   classnames: ^2.3.1
   date-fns: ^2.28.0
   eslint: ^8.18.0
-  eslint-config-next: 12.1.6
+  eslint-config-next: 12.1.7-canary.48
   eslint-config-prettier: ^8.5.0
   eslint-plugin-tailwind: ^0.2.1
   motion: ^10.10.2
@@ -73,7 +73,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.29.0_t5sxc3bagki3l2mk6notn5hgtm
   autoprefixer: 10.4.7_postcss@8.4.14
   eslint: 8.18.0
-  eslint-config-next: 12.1.6_zhj2overriywynn63o4wb2g2fm
+  eslint-config-next: 12.1.7-canary.48_zhj2overriywynn63o4wb2g2fm
   eslint-config-prettier: 8.5.0_eslint@8.18.0
   eslint-plugin-tailwind: 0.2.1_eslint@8.18.0
   postcss: 8.4.14
@@ -1608,8 +1608,8 @@ packages:
   /@next/env/12.1.7-canary.48:
     resolution: {integrity: sha512-5GY5lOTANTUVilxP+SvH3XvygasehIGKWkUQp/lRKMEy/CUyI6YKvlwh5XwoDW/02bF+v7Wgus/G/eNj/NLrXA==}
 
-  /@next/eslint-plugin-next/12.1.6:
-    resolution: {integrity: sha512-yNUtJ90NEiYFT6TJnNyofKMPYqirKDwpahcbxBgSIuABwYOdkGwzos1ZkYD51Qf0diYwpQZBeVqElTk7Q2WNqw==}
+  /@next/eslint-plugin-next/12.1.7-canary.48:
+    resolution: {integrity: sha512-G2KieAN6fBQ0BVWdQrYWh3SqSWV9syYAZp911JQbJt6qU0QJaEPbtA21qPoFvhI6B8G5TMIUtqXnssq7dwJsTQ==}
     dependencies:
       glob: 7.1.7
     dev: true
@@ -5601,8 +5601,8 @@ packages:
       estraverse: 4.3.0
     dev: false
 
-  /eslint-config-next/12.1.6_zhj2overriywynn63o4wb2g2fm:
-    resolution: {integrity: sha512-qoiS3g/EPzfCTkGkaPBSX9W0NGE/B1wNO3oWrd76QszVGrdpLggNqcO8+LR6MB0CNqtp9Q8NoeVrxNVbzM9hqA==}
+  /eslint-config-next/12.1.7-canary.48_zhj2overriywynn63o4wb2g2fm:
+    resolution: {integrity: sha512-4zywfgQuY6dQacB3ut36yB1vSvXHPPuB0YqkaEReSZ/sNCy8s5OzAC9Ny0VUCIBiwttR9HktN78K2NUTGoQNLg==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       next: '>=10.2.0'
@@ -5611,7 +5611,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 12.1.6
+      '@next/eslint-plugin-next': 12.1.7-canary.48
       '@rushstack/eslint-patch': 1.1.3
       '@typescript-eslint/parser': 5.26.0_b5e7v2qnwxfo6hmiq56u52mz3e
       eslint: 8.18.0

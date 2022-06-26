@@ -1,12 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import type { Projects } from '@/lib/types';
+import { type NextRequest } from 'next/server';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Projects[] | string>
-) {
+export const config = {
+  runtime: 'experimental-edge',
+};
+
+export default async function handler(req: NextRequest) {
   if (req.method !== 'GET') {
-    return res.status(405).json('Only GET method allowed');
+    return new Response('Method not allowed', { status: 405 });
   }
 
   const reposResponse = await fetch(
@@ -15,10 +15,11 @@ export default async function handler(
 
   const repos = await reposResponse.json();
 
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=1200, stale-while-revalidate=600'
-  );
-
-  return res.status(200).json(repos);
+  return new Response(JSON.stringify(repos), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'cache-control': 'public, s-maxage=1200, stale-while-revalidate=600',
+    },
+  });
 }
