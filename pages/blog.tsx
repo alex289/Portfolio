@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 
 import { useRouter } from 'next/router';
 
@@ -61,24 +61,26 @@ export default function Blog({
             />
           </svg>
         </div>
-        <h2 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-          {t('blog.all-posts')}
-        </h2>
-        {!filteredBlogPosts.length && (
-          <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
-            {t('blog.no-posts')}
-          </p>
-        )}
-        {filteredBlogPosts.map((post) => (
-          <BlogPost
-            key={post.title}
-            slug={post.slug}
-            title={post.title}
-            excerpt={post.excerpt}
-            date={post.date}
-            tags={post.tags}
-          />
-        ))}
+        <Suspense fallback={null}>
+          <h2 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
+            {t('blog.all-posts')}
+          </h2>
+          {!filteredBlogPosts.length && (
+            <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
+              {t('blog.no-posts')}
+            </p>
+          )}
+          {filteredBlogPosts.map((post) => (
+            <BlogPost
+              key={post.title}
+              slug={post.slug}
+              title={post.title}
+              excerpt={post.excerpt}
+              date={post.date}
+              tags={post.tags}
+            />
+          ))}
+        </Suspense>
       </div>
     </Layout>
   );

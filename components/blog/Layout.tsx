@@ -6,7 +6,7 @@ import ViewCounter from '@/components/blog/ViewCounter';
 
 import useTranslation from '@/lib/useTranslation';
 
-import type { PropsWithChildren } from 'react';
+import { PropsWithChildren, Suspense } from 'react';
 import type { Post } from '@/lib/types';
 
 export default function BlogLayout({
@@ -45,17 +45,19 @@ export default function BlogLayout({
             <ViewCounter slug={post.slug} />
           </p>
         </div>
-        <div className="w-full mt-4 prose dark:prose-dark max-w-none">
-          {children}
-        </div>
-        <div className="mt-4 text-sm text-gray-700 dark:text-[#c2c2c2]">
-          <a
-            href="https://github.com/alex289/portfolio/issues"
-            target="_blank"
-            rel="noopener noreferrer">
-            {t('blog.edit-post')}
-          </a>
-        </div>
+        <Suspense fallback={null}>
+          <div className="w-full mt-4 prose dark:prose-dark max-w-none">
+            {children}
+          </div>
+          <div className="mt-4 text-sm text-gray-700 dark:text-[#c2c2c2]">
+            <a
+              href="https://github.com/alex289/portfolio/issues"
+              target="_blank"
+              rel="noopener noreferrer">
+              {t('blog.edit-post')}
+            </a>
+          </div>
+        </Suspense>
       </article>
     </Layout>
   );
