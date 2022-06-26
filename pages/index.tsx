@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/future/image';
 
 import type { Projects } from '@/lib/types';
 
@@ -32,7 +32,7 @@ export default function Index({
             width="500"
             height="500"
             quality={100}
-            loading="lazy"
+            priority
           />
         </div>
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
