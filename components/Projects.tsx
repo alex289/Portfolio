@@ -8,7 +8,7 @@ const Project = ({
 }: {
   fallbackData: Projects[];
 }): JSX.Element => {
-  const { data, error } = useSWR<Projects[]>('/api/repos', fetcher, {
+  const { data, error } = useSWR<Projects[]>('/api/repos?per_page=3', fetcher, {
     fallbackData,
   });
 

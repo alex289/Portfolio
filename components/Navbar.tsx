@@ -24,7 +24,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <nav className="sticky z-50 flex items-center justify-between w-full max-w-4xl p-4 mx-auto my-0 text-gray-900 md:p-8 bg-gray-50 sticky-nav md:my-8 dark:bg-gray-800 dark:text-gray-100">
+    <nav className="sticky z-50 flex items-center justify-between w-full max-w-4xl p-4 mx-auto my-0 text-gray-900 md:p-8 bg-gray-50 sticky-nav md:my-4 dark:bg-gray-800 dark:text-gray-100">
       <div>
         <MobileMenu />
         <div>
@@ -39,22 +39,22 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
               </span>
             </a>
           </Link>
-          <Link href="/#about">
+          <Link href="/about">
             <a
               id="nav-about"
               className={`invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible ${
-                router.asPath === '/#about' ? 'font-semibold' : ''
+                router.pathname === '/about' ? 'font-semibold' : ''
               }`}>
               <span className="py-1 dark:link-underline link-underline-black">
                 {t('main.about')}
               </span>
             </a>
           </Link>
-          <Link href="/#projects">
+          <Link href="/projects">
             <a
               id="nav-projects"
               className={`invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible ${
-                router.asPath === '/#projects' ? 'font-semibold' : ''
+                router.pathname === '/projects' ? 'font-semibold' : ''
               }`}>
               <span className="py-1 dark:link-underline link-underline-black">
                 {t('main.projects')}

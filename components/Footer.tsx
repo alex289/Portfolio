@@ -21,14 +21,14 @@ export default function Footer(): JSX.Element {
                 {t('main.home')}
               </a>
             </Link>
-            <Link href="/#about">
+            <Link href="/about">
               <a
                 id="footer-about"
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
                 {t('main.about')}
               </a>
             </Link>
-            <Link href="/#projects">
+            <Link href="/projects">
               <a
                 id="footer-projects"
                 className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">

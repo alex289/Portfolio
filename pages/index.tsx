@@ -71,7 +71,7 @@ export default function Index({
 
 export const getStaticProps: GetStaticProps = async () => {
   const reposResponse = await fetch(
-    'https://api.github.com/users/Alex289/repos?per_page=100&sort=pushed'
+    'https://api.github.com/users/Alex289/repos?per_page=3&sort=pushed'
   );
 
   const fallbackData = await reposResponse.json();

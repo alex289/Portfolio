@@ -9,8 +9,10 @@ export default async function handler(req: NextRequest) {
     return new Response('Method not allowed', { status: 405 });
   }
 
+  const per_page = req.nextUrl.searchParams.get('per_page') || '20';
+
   const reposResponse = await fetch(
-    'https://api.github.com/users/Alex289/repos?per_page=100&sort=pushed'
+    `https://api.github.com/users/Alex289/repos?per_page=${per_page}&sort=pushed`
   );
 
   const repos = await reposResponse.json();

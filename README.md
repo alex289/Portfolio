@@ -20,7 +20,9 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 - `lib/*` - Short for "library", a collection of helpful utilities or code for external services.
 - `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction). Health check, spotify, guestbook and blog post views.
 - `pages/blog/*` - Static pre-rendered blog pages using MDX
-- `pages/dashboard` - containing metrics from health api
+- `pages/dashboard` - Containing metrics from health api
+- `pages/projects` - Showcase of my current projects on GitHub
+- `pages/about` - General information about me
 - `pages/sitemap.xml.tsx` - Automatically generated sitemap
 - `pages/*` - All other static pages.
 - `public/*` - Static assets including fonts and images.
