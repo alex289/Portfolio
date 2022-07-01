@@ -33,8 +33,8 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 ```bash
 $ git clone https://github.com/Alex289/Portfolio.git
 $ cd Portfolio
-$ yarn
-$ yarn dev
+$ pnpm i
+$ pnpm dev
 ```
 
 Create a `.env` file  similar to [`.env.example`](https://github.com/Alex289/Portfolio/blob/main/.env.example)

@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@prisma/client': ^4.0.0
   '@sanity/core': ^2.30.2
-  '@sanity/webhook': ^1.0.2
+  '@sanity/webhook': ^2.0.0
   '@tailwindcss/typography': ^0.5.2
   '@types/node': ^18.0.0
   '@types/nprogress': ^0.2.0
@@ -19,7 +19,7 @@ specifiers:
   eslint-plugin-tailwind: ^0.2.1
   motion: ^10.11.0
   next: 12.2.0
-  next-auth: ^4.6.1
+  next-auth: ^4.8.0
   next-mdx-remote: ^4.0.3
   next-sanity: ^0.5.2
   next-themes: ^0.2.0
@@ -46,13 +46,13 @@ specifiers:
 dependencies:
   '@prisma/client': 4.0.0_prisma@4.0.0
   '@sanity/core': 2.30.2_667lyqj6ojxmbq7jsvtmcw5cea
-  '@sanity/webhook': 1.0.2
+  '@sanity/webhook': 2.0.0
   axios: 0.27.2
   classnames: 2.3.1
   date-fns: 2.28.0
   motion: 10.11.0_biqbaboplfbrettd7655fr4n2y
   next: 12.2.0_4cc5zw5azim2bix77d63le72su
-  next-auth: 4.6.1_biqbaboplfbrettd7655fr4n2y
+  next-auth: 4.8.0_biqbaboplfbrettd7655fr4n2y
   next-mdx-remote: 4.0.3_biqbaboplfbrettd7655fr4n2y
   next-sanity: 0.5.2_react@18.2.0
   next-themes: 0.2.0_24lkarzjpo3wcmj2o6qyrkug4y
@@ -2519,8 +2519,8 @@ packages:
       - supports-color
     dev: false
 
-  /@sanity/webhook/1.0.2:
-    resolution: {integrity: sha512-WV31Y8XNKOULoYTgKe3BF5ErVDD8XlS81EcRjj0kNOKuPrVfHDzxwymop4HNTGt6vxrVnTTAfR/XoWL3jFeC5g==}
+  /@sanity/webhook/2.0.0:
+    resolution: {integrity: sha512-KusHeWVy6yW3hcgVHbGx6qVv//bUj3CD9Nr0EOw086+mo/ESrUV21HjOCrNQ+AYqXvJ9H5qhqmMiuc8H5dXUGA==}
     engines: {node: '>=12.0.0'}
     dependencies:
       base64url: 3.0.1
@@ -9377,8 +9377,8 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: false
 
-  /next-auth/4.6.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-Fq0+NUZ0Kp7LhT0UZzZkSBcRb0W6DYlhgTUZragSqW5HXTJ7ShgFqOhH5aFoGSpXIxsZQmfFBbt9Oun09mf+aA==}
+  /next-auth/4.8.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-7vN7akNsAEqV8w1cqZf71UFYw18zy/N5y3xEQz2k3Rju34n7z3+cwdNjGS0FVCoKi/s1wiN27z9ruwlOwiQNsg==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
     peerDependencies:
       nodemailer: ^6.6.5
