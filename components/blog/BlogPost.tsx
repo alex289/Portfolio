@@ -33,15 +33,16 @@ export default function BlogPost({ title, excerpt, slug, date, tags }: Props) {
           </div>
           <p className="text-gray-600 dark:text-[#c2c2c2]">{excerpt}</p>
           <div className="flex mt-1">
-            {tags.map((tag, key) => {
-              return (
-                <div
-                  key={key}
-                  className="mx-2 text-purple-700 dark:text-purple-500">
-                  #{tag}
-                </div>
-              );
-            })}
+            {tags &&
+              tags.map((tag, key) => {
+                return (
+                  <div
+                    key={key}
+                    className="mx-2 text-purple-700 dark:text-purple-500">
+                    #{tag}
+                  </div>
+                );
+              })}
           </div>
         </div>
       </a>
