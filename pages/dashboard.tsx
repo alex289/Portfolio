@@ -6,9 +6,14 @@ import fetcher from '@/lib/fetcher';
 import Layout from '@/components/Layout';
 import Metric from '@/components/Metric';
 
-import { healthData, Views } from '@/lib/types';
+import type { GetStaticProps } from 'next';
+import type { healthData, Views } from '@/lib/types';
 
-export default function Dashboard(): JSX.Element {
+type Props = {
+  previewMode: boolean;
+};
+
+export default function Dashboard({ previewMode }: Props): JSX.Element {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
@@ -17,6 +22,7 @@ export default function Dashboard(): JSX.Element {
   });
 
   const { data, error } = useSWR<healthData>('/api/health', fetcher);
+  const { data: guestbookCount } = useSWR('/api/guestbook?count=true', fetcher);
   const { data: viewsData, error: viewsError } = useSWR<Views>(
     '/api/views',
     fetcher
@@ -60,8 +66,20 @@ export default function Dashboard(): JSX.Element {
           <Metric title="Deployed">{data?.vercel.deployed.toString()}</Metric>
           <Metric title="Vercel environment">{data?.vercel.env}</Metric>
           <Metric title="Blog total views">{viewsData?.total}</Metric>
+          <Metric title="Guestbook entries">
+            {guestbookCount ? guestbookCount.count : ''}
+          </Metric>
+          <Metric title="Preview mode">{previewMode.toString()}</Metric>
         </div>
       </div>
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  return {
+    props: {
+      previewMode: context.preview ?? false,
+    },
+  };
+};

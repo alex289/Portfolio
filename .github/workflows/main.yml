@@ -68,4 +68,4 @@ jobs:
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
         NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
         SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-#   - run: yarn test
+#   - run: pnpm test
