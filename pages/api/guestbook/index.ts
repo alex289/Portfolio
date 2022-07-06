@@ -9,6 +9,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'GET') {
+    if (req.query.count) {
+      const count = await prisma.guestbook.count();
+      return res.json({ count });
+    }
+
     const entries = await prisma.guestbook.findMany({
       orderBy: {
         updated_at: 'desc',
