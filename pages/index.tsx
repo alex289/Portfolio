@@ -11,6 +11,7 @@ import profilePic from '../public/static/images/konietzko_alexander.jpg';
 
 import type { GetStaticProps } from 'next';
 import { Suspense } from 'react';
+import Link from 'next/link';
 
 export default function Index({
   fallbackData,
@@ -63,6 +64,9 @@ export default function Index({
           <h2 className="text-gray-600 dark:text-gray-200">
             <Project fallbackData={fallbackData} />
           </h2>
+          <div className="underline underline-offset-1">
+            <Link href="/projects">See more</Link>
+          </div>
         </Suspense>
       </div>
     </Layout>

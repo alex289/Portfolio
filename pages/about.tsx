@@ -23,9 +23,13 @@ export default function About() {
           Links
         </h1>
         <h2 className="mb-16 text-gray-600 dark:text-[#c2c2c2]"></h2>
+
+        <h1 className="mb-4 text-xl font-bold tracking-tight text-black md:text-3xl dark:text-white">
+          Timeline
+        </h1>
         <ol className="relative border-l border-gray-200 dark:border-gray-700">
           <li className="mb-10 ml-6">
-            <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+            <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-gray-100 dark:ring-gray-800 dark:bg-blue-900">
               <svg
                 className="w-3 h-3 text-blue-600 dark:text-blue-400"
                 fill="currentColor"

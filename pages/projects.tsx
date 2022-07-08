@@ -3,6 +3,7 @@ import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
 
+import Project from '@/components/Projects';
 import Layout from '@/components/Layout';
 
 import type { GetStaticProps } from 'next';
@@ -30,47 +31,11 @@ export default function ProjectsPage({
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           Projects
         </h1>
-        {data.length > 0 && (
-          <table>
-            <thead>
-              <tr>
-                <th className="px-2 py-4 text-left border-b border-gray-500">
-                  Name
-                </th>
-                <th className="px-2 py-4 text-left border-b border-gray-500">
-                  Description
-                </th>
-                <th className="hidden px-2 py-4 text-left border-b border-gray-500 md:block">
-                  Language
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <Suspense fallback={null}>
-                {data.map((project, index) => (
-                  <tr
-                    key={index}
-                    className="cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700">
-                    <td className="px-2 py-4">
-                      <a
-                        href={project.html_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-2">
-                        {project.name}
-                      </a>
-                    </td>
-                    <td className="px-2 py-4">{project.description}</td>
-                    <td className="hidden px-2 py-4 md:block">
-                      {project.language}
-                    </td>
-                  </tr>
-                ))}
-              </Suspense>
-            </tbody>
-          </table>
-        )}
-        {data.length === 0 && <p>No projects found</p>}
+        <Suspense fallback={null}>
+          <h2 className="text-gray-600 dark:text-gray-200">
+            <Project fallbackData={fallbackData} amount={10} />
+          </h2>
+        </Suspense>
       </div>
     </Layout>
   );
