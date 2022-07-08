@@ -30,7 +30,6 @@ specifiers:
   prisma: ^4.0.0
   react: ^18.2.0
   react-dom: ^18.2.0
-  react-vertical-timeline-component: ^3.5.2
   reading-time: ^1.5.0
   rehype-autolink-headings: ^6.1.1
   rehype-code-titles: ^1.1.0
@@ -11292,14 +11291,6 @@ packages:
       source-map: 0.7.4
     dev: false
 
-  /react-intersection-observer/8.34.0_react@18.2.0:
-    resolution: {integrity: sha512-TYKh52Zc0Uptp5/b4N91XydfSGKubEhgZRtcg1rhTKABXijc4Sdr1uTp5lJ8TN27jwUsdXxjHXtHa0kPj704sw==}
-    peerDependencies:
-      react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
-    dependencies:
-      react: 18.2.0
-    dev: false
-
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -11411,17 +11402,6 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-    dev: false
-
-  /react-vertical-timeline-component/3.5.2_react@18.2.0:
-    resolution: {integrity: sha512-Wcb85NUvmygLFF45bfxVGU4AyHOBjdQY9IqB8uLG1jXWvIthkQft1ZJOGirIlYHSYnDl9sOs8ItL1sNtqA7GUg==}
-    requiresBuild: true
-    dependencies:
-      classnames: 2.3.1
-      prop-types: 15.8.1
-      react-intersection-observer: 8.34.0_react@18.2.0
-    transitivePeerDependencies:
-      - react
     dev: false
 
   /react/18.2.0:
