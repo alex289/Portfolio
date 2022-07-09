@@ -1,8 +1,11 @@
-import Layout from '@/components/Layout';
-import useTranslation from '@/lib/useTranslation';
 import Link from 'next/link';
 import Image from 'next/future/image';
+
+import useTranslation from '@/lib/useTranslation';
+
 import avatar from '../public/static/images/konietzko_alexander.jpg';
+
+import Layout from '@/components/Layout';
 
 export default function About() {
   const { t } = useTranslation();

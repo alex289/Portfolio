@@ -1,18 +1,17 @@
+import { Suspense } from 'react';
+import Link from 'next/link';
 import Image from 'next/future/image';
-
-import type { Projects } from '@/lib/types';
 
 import useTranslation from '@/lib/useTranslation';
 
-import Layout from '@/components/Layout';
-import Project from '@/components/Projects';
-
 import profilePic from '../public/static/images/konietzko_alexander.jpg';
 
-import type { GetStaticProps } from 'next';
-import { Suspense } from 'react';
-import Link from 'next/link';
+import Layout from '@/components/Layout';
 import BlogPostCard from '@/components/blog/BlogPostCard';
+import Project from '@/components/Projects';
+
+import type { GetStaticProps } from 'next';
+import type { Projects } from '@/lib/types';
 
 export default function Index({
   fallbackData,
