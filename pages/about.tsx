@@ -17,10 +17,10 @@ export default function About() {
         </h1>
         <h2 className="mb-16 text-gray-600 dark:text-[#c2c2c2]">
           <p className="mb-6">
-            {t('index-page.about-1').replace('$AGE', age.toString())}
+            {t('about-page.text-1').replace('$AGE', age.toString())}
           </p>
-          <p className="mb-6">{t('index-page.about-2')}</p>
-          <p>{t('index-page.about-3')}</p>
+          <p className="mb-6">{t('about-page.text-2')}</p>
+          <p>{t('about-page.text-3')}</p>
         </h2>
         <h1 className="mb-4 text-xl font-bold tracking-tight text-black md:text-3xl dark:text-white">
           Links
@@ -45,19 +45,21 @@ export default function About() {
         <ol className="relative mb-16 border-l border-gray-200 dark:border-gray-700">
           <li className="mb-10 ml-4">
             <div className="absolute w-3 h-3 bg-gray-200 border border-white rounded-full -left-1.5 dark:border-gray-900 dark:bg-gray-700"></div>
-            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            <time className="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-[#c2c2c2]">
               August 2021
             </time>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Dual study at Netgo/Westfälische Hochschule
+              {t('about-page.timeline.2.title')}
             </h3>
-            <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-              I started my first job as a software engineer at Netgo. Combined
-              with this I studied software systems (Informatics, B. SC.).
+            <p className="mb-4 text-base font-normal text-gray-500 dark:text-[#c2c2c2]">
+              {t('about-page.timeline.2.description')}
             </p>
-            <Link href="https://www.netgo.de/">
-              <div className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                Learn more{' '}
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://www.netgo.de/">
+              <div className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:text-[#c2c2c2] dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                {t('about-page.timeline.learn-more')}{' '}
                 <svg
                   className="w-3 h-3 ml-2"
                   fill="currentColor"
@@ -69,18 +71,18 @@ export default function About() {
                     clipRule="evenodd"></path>
                 </svg>
               </div>
-            </Link>
+            </a>
           </li>
           <li className="ml-4">
             <div className="absolute w-3 h-3 bg-gray-200 border border-white rounded-full -left-1.5 dark:border-gray-900 dark:bg-gray-700"></div>
-            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              July 2021
+            <time className="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-[#c2c2c2]">
+              {t('about-page.timeline.1.date')}
             </time>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Graduation from school
+              {t('about-page.timeline.1.title')}
             </h3>
-            <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-              I finished my school :D
+            <p className="text-base font-normal text-gray-500 dark:text-[#c2c2c2]">
+              {t('about-page.timeline.1.description')}
             </p>
           </li>
         </ol>

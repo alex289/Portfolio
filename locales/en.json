@@ -13,11 +13,40 @@
         "hosted": "Hosted on "
     },
     "index-page": {
-        "title": "Hey, I’m Alexander Konietzko",
-        "intro": "I'm a software developer, dual student, and creator. I work at \nthe development team of Netgo. You've found my personal slice of the \ninternet – have fun while you're here or learn more about me.",
-        "about-1": "Hey, I'm Alex. I'm $AGE years \nold and come from Germany. I live in NRW and spend my free time \nplaying piano, do sports or enjoying time with friends and family.",
-        "about-2": "I started working with computers when I was young and started \nprogramming in school. After I graduated I began my dual study at \nNetgo GmbH where I work and Westfälische Hochschule where I study.",
-        "about-3": "I'm currently learning .NET Core and Angular but my favourite framework is \nNextJs. In the future I want to build my own Kubernetes cluster with \nbackend services, database integration and a solid frontend combined \nby Nginx."
+        "title": "Software Engineer and Student at",
+        "intro": "Trying to build a faster web. Learning about web development, Dotnet Core and React / Next.js.",
+        "posts": {
+            "read-all": "Read all posts",
+            "1": {
+                "title": "Initial Commit",
+                "slug": "initial-commit"
+            },
+            "2": {
+                "title": "The Best PowerShell Terminal Setup",
+                "slug": "terminal-setup"
+            },
+            "3": {
+                "title": "The Best PowerShell Terminal Setup",
+                "slug": "terminal-setup"
+            }
+        }
+    },
+    "about-page": {
+        "text-1": "Hey, I'm Alex. I'm $AGE years \nold and come from Germany. I live in NRW and spend my free time \nplaying piano, do sports or enjoying time with friends and family.",
+        "text-2": "I started working with computers when I was young and started \nprogramming in school. After I graduated I began my dual study at \nNetgo GmbH where I work and Westfälische Hochschule where I study.",
+        "text-3": "I'm currently learning .NET Core and Angular but my favourite framework is \nNextJs. In the future I want to build my own Kubernetes cluster with \nbackend services, database integration and a solid frontend combined \nby Nginx.",
+        "timeline": {
+            "learn-more": "Learn more",
+            "1": {
+                "date": "July 2021",
+                "title": "Graduation from school",
+                "description": "I finished my school :D"
+            },
+            "2": {
+                "title": "Dual study at Netgo / Westfälische Hochschule",
+                "description": "I started my first job as a software engineer at Netgo. Combined with this I studied software systems (Informatics, B. SC.)."
+            }
+        }
     },
     "404": {
         "title": "Page not found",
@@ -46,6 +75,10 @@
         "success": "Hooray! Thanks for signing my Guestbook.",
         "error": "Please enter a message.",
         "delete": "Delete"
+    },
+    "projects": {
+        "not-found": "No projects found",
+        "see-more": "See all projects"
     },
     "not-playing": "Not Playing"
 }

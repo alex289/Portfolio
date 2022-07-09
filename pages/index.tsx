@@ -30,10 +30,10 @@ export default function Index({
                 Alexander Konietzko
               </h1>
               <h2 className="mb-4 text-gray-700 dark:text-gray-200">
-                Software Engineer and Student at{' '}
+                {t('index-page.title')}{' '}
                 <span className="font-semibold">Netgo</span>
               </h2>
-              <p className="mb-16 text-gray-600 dark:text-gray-400">
+              <p className="mb-16 text-gray-600 dark:text-gray-300">
                 {t('index-page.intro')}
               </p>
             </div>
@@ -54,23 +54,41 @@ export default function Index({
           <h3 className="mb-6 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
             Featured Posts
           </h3>
-          <div className="flex flex-col mb-16 gap-6 md:flex-row">
+          <div className="flex flex-col gap-6 md:flex-row">
             <BlogPostCard
-              title="Initial Commit"
-              slug="initial-commit"
+              title={t('index-page.posts.1.title')}
+              slug={t('index-page.posts.1.slug')}
               gradient="from-[#D8B4FE] to-[#818CF8]"
             />
             <BlogPostCard
-              title="Best Terminal Setup"
-              slug="terminal-setup"
+              title={t('index-page.posts.2.title')}
+              slug={t('index-page.posts.2.slug')}
               gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
             />
             <BlogPostCard
-              title="Best Terminal Setup"
-              slug="terminal-setup"
+              title={t('index-page.posts.3.title')}
+              slug={t('index-page.posts.3.slug')}
               gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
             />
           </div>
+          <Link href="/blog">
+            <a className="flex h-6 mt-8 mb-16 text-gray-600 rounded-lg dark:text-gray-300 leading-7 hover:text-gray-800 dark:hover:text-gray-200 transition-all">
+              {t('index-page.posts.read-all')}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="w-6 h-6 ml-1">
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
+                />
+              </svg>
+            </a>
+          </Link>
 
           <h3
             id="projects"
@@ -80,9 +98,24 @@ export default function Index({
           <h2 className="text-gray-600 dark:text-gray-200">
             <Project fallbackData={fallbackData} />
           </h2>
-          <div className="underline underline-offset-1">
-            <Link href="/projects">See more</Link>
-          </div>
+          <Link href="/projects">
+            <a className="flex h-6 mt-4 mb-16 text-gray-600 rounded-lg dark:text-gray-300 leading-7 hover:text-gray-800 dark:hover:text-gray-200 transition-all">
+              {t('projects.see-more')}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="w-6 h-6 ml-1">
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
+                />
+              </svg>
+            </a>
+          </Link>
         </div>
       </Suspense>
     </Layout>
