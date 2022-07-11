@@ -56,6 +56,10 @@ const Meta = ({
           content={theme === 'light' ? '#ffffff' : '#222222'}
         />
       )}
+      <meta
+        property="og:image"
+        content="https://repository-images.githubusercontent.com/386759878/9e991155-c521-4a40-855d-3fa47f53fb3a"
+      />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Alexander Konietzko" />
       <meta
@@ -93,13 +97,17 @@ const Meta = ({
         sizes="180x180"
         href="/static/icon/apple-touch-icon.png"
       />
-      <meta property="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta
-        property="twitter:url"
+        name="twitter:url"
         content="https://alexanderkonietzko.vercel.app/"
       />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta
+        name="twitter:image"
+        content="https://repository-images.githubusercontent.com/386759878/9e991155-c521-4a40-855d-3fa47f53fb3a"
+      />
       <meta
         name="google-site-verification"
         content="64Pb4e1oRhhlHgM6aJGvqSunCfPa38sJ5ZHPfLNtzts"
