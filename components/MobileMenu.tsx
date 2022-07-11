@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
+import cn from 'classnames';
+
 import useTranslation from '@/lib/useTranslation';
 
 import MenuIcon from '@/components/icons/MenuIcon';
@@ -11,13 +13,6 @@ const MobileMenu = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
   const { t } = useTranslation();
-
-  function scrollTo(event: { preventDefault: () => void }, anchor: string) {
-    event && event.preventDefault();
-    router.push('/#' + anchor);
-
-    setIsMenuOpen(false);
-  }
 
   function toggleMenu() {
     if (isMenuOpen) {
@@ -40,9 +35,10 @@ const MobileMenu = (): JSX.Element => {
       </button>
 
       <ul
-        className={`menu flex flex-col absolute bg-gray-50 dark:bg-gray-800 mt-4 md:hidden ${
-          isMenuOpen ? 'menuRendered' : ''
-        }`}>
+        className={cn(
+          'menu flex flex-col absolute bg-gray-50 dark:bg-gray-800 mt-4 md:hidden',
+          isMenuOpen ? 'menuRendered' : 'h-0 w-0'
+        )}>
         <li
           className="ml-3 border-b border-gray-300 dark:border-gray-700"
           style={{ transitionDelay: '150ms' }}>
@@ -60,12 +56,11 @@ const MobileMenu = (): JSX.Element => {
         <li
           className="ml-3 border-b border-gray-300 dark:border-gray-700"
           style={{ transitionDelay: '150ms' }}>
-          <Link href="/">
+          <Link href="/about">
             <a
               id="mobile-nav-about"
-              onClick={(event) => scrollTo(event, 'about')}
               className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
-                router.asPath === '/#about' ? 'font-semibold' : ''
+                router.pathname === '/about' ? 'font-semibold' : ''
               }`}>
               {t('main.about')}
             </a>
@@ -74,12 +69,11 @@ const MobileMenu = (): JSX.Element => {
         <li
           className="ml-3 border-b border-gray-300 dark:border-gray-700"
           style={{ transitionDelay: '150ms' }}>
-          <Link href="/">
+          <Link href="/projects">
             <a
               id="mobile-nav-projects"
-              onClick={(event) => scrollTo(event, 'projects')}
               className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
-                router.asPath === '/#projects' ? 'font-semibold' : ''
+                router.pathname === '/projects' ? 'font-semibold' : ''
               }`}>
               {t('main.projects')}
             </a>

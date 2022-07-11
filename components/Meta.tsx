@@ -53,7 +53,7 @@ const Meta = ({
       {mounted && (
         <meta
           name="theme-color"
-          content={theme === 'light' ? '#ffffff' : '#000000'}
+          content={theme === 'light' ? '#ffffff' : '#222222'}
         />
       )}
       <meta property="og:type" content={type} />

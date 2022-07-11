@@ -26,7 +26,7 @@ export default function BlogPost({ title, excerpt, slug, date, tags }: Props) {
             <h3 className="w-full mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100">
               {title}
             </h3>
-            <p className="w-full mb-4 text-left text-gray-900 dark:text-[#c2c2c2] md:text-right md:mb-0">
+            <p className="max-w-full mb-4 text-left text-gray-900 min-w-fit dark:text-[#c2c2c2] md:text-right md:mb-0">
               {`${views ? new Number(views).toLocaleString() : '–––'} views`} |{' '}
               {format(parseISO(date), 'MMMM dd, yyyy')}
             </p>

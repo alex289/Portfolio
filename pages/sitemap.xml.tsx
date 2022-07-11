@@ -24,7 +24,15 @@ export async function getServerSideProps({ res }: any) {
       ({ slug, language }: { slug: string; language: string }) =>
         `${language !== 'en' ? language + '/' : ''}blog/${slug}`
     ),
-    ...['', 'blog', 'dashboard', 'guestbook'],
+    ...['', 'blog', 'dashboard', 'guestbook', 'projects', 'about'],
+    ...[
+      'de',
+      'de/blog',
+      'de/dashboard',
+      'de/guestbook',
+      'de/projects',
+      'de/about',
+    ],
   ];
 
   res.setHeader('Content-Type', 'text/xml');

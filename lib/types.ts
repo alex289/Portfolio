@@ -11,6 +11,7 @@ export type UseTranslation = {
 export type Projects = {
   name: string;
   html_url: string;
+  homepage: string;
   description: string;
   language: string;
 };

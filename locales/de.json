@@ -13,11 +13,40 @@
         "hosted": "Bereitgestellt auf "
     },
     "index-page": {
-        "title": "Hey, ich bin Alexander Konietzko",
-        "intro": "Ich bin ein Software Entwickler, dualer Student, und Creator. Ich arbeite in der Entwicklung \nvon Netgo. Du hast meinen persönlichen Teil des \nInternets gefunden – hab Spaß solange du hier bist und etwas über mich erfährst.",
-        "about-1": "Hey, ich bin Alex. Ich bin $AGE Jahre \nalt und komme aus Deutschland. Ich lebe in NRW und in meiner Freizeit \nspiele ich Klavier, mache Sport oder genieße die Zeit mit Freunden und der Familie.",
-        "about-2": "Ich hab angefangen mit Computern zu spielen als ich klein war und habe in der Schule \nmit dem programmieren angefangen. Nach meinem Abitur habe ich mein duales Studium bei \nNetgo begonnen wo ich arbeite und der Westfälische Hochschule wo ich studiere.",
-        "about-3": "Ich lerne gerade .NET Core und Angular aber mein lieblings Framework ist \nNextJs. Irgendwann möchte ich einen eigenen Kubernetes Cluster bauen mit \nBackend Services, Datenbanken und einem soliden Frontend kombiniert \nduch Nginx."
+        "title": "Software Entwickler und Student bei",
+        "intro": "Dabei ein schnelleres Web entwickeln. Ich lerne Web Entwicklung, Dotnet Core und React / Next.js.",
+        "posts": {
+            "read-all": "Lies alle Beiträge",
+            "1": {
+                "title": "Erster Beitrag",
+                "slug": "erster-beitrag"
+            },
+            "2": {
+                "title": "Das Beste PowerShell Terminal Setup",
+                "slug": "terminal-einrichtung"
+            },
+            "3": {
+                "title": "Wie Veröffentlicht man eine Fullstack Web App auf Vercel?",
+                "slug": "vercel-veroeffentlichen"
+            }
+        }
+    },
+    "about-page": {
+        "text-1": "Hey, ich bin Alex. Ich bin $AGE Jahre \nalt und komme aus Deutschland. Ich lebe in NRW und in meiner Freizeit \nspiele ich Klavier, mache Sport oder genieße die Zeit mit Freunden und der Familie.",
+        "text-2": "Ich hab angefangen mit Computern zu spielen als ich klein war und habe in der Schule \nmit dem programmieren angefangen. Nach meinem Abitur habe ich mein duales Studium bei \nNetgo begonnen wo ich arbeite und der Westfälische Hochschule wo ich studiere.",
+        "text-3": "Ich lerne gerade .NET Core und Angular aber mein lieblings Framework ist \nNextJs. Irgendwann möchte ich einen eigenen Kubernetes Cluster bauen mit \nBackend Services, Datenbanken und einem soliden Frontend kombiniert \nduch Nginx.",
+        "timeline": {
+            "learn-more": "Erfahre mehr",
+            "1": {
+                "date": "Juli 2021",
+                "title": "Abschluss am Gymnasium",
+                "description": "Mit einem Abitur abgeschlossen :D"
+            },
+            "2": {
+                "title": "Duales Studium bei Netgo und der Westfälischen Hochschule",
+                "description": "Ich habe eine Ausbildung als Entwickler bei Netgo angefangen. Gleichzeitig dazu habe ich ein Informatik Studium begonnen (Softwaresysteme, B. SC.)."
+            }
+        }
     },
     "404": {
         "title": "Seite nicht gefunden",
@@ -46,6 +75,10 @@
         "success": "Hurra! Danke für das Schreiben in mein Gästebuch.",
         "error": "Bitte gebe eine Nachricht ein.",
         "delete": "Löschen"
+    },
+    "projects": {
+        "not-found": "Keine Projekte gefunden",
+        "see-more": "Alle Projekte"
     },
     "not-playing": "Spielt nichts"
 }
