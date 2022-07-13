@@ -1,13 +1,14 @@
 import { createConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { markdownSchema } from 'sanity-plugin-markdown';
+import { media } from 'sanity-plugin-media';
 
 export default createConfig({
   name: 'default',
   title: 'alexanderkonietzko.vercel.app',
   projectId: 'evkyvibr',
   dataset: 'production',
-  plugins: [deskTool(), markdownSchema()],
+  plugins: [deskTool(), markdownSchema(), media()],
   schema: {
     types: [
       {
