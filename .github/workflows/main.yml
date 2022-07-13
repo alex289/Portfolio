@@ -74,6 +74,11 @@ jobs:
     needs: build
 
     steps:
+    - name: Set up node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '16.x'
+
     - name: Analyze bundle
       run: npx -p nextjs-bundle-analysis report
 
