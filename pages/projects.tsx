@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
+import useTranslation from '@/lib/useTranslation';
 
 import Project from '@/components/Projects';
 import Layout from '@/components/Layout';
@@ -14,6 +15,7 @@ export default function ProjectsPage({
 }: {
   fallbackData: Projects[];
 }) {
+  const { t } = useTranslation();
   const { data, error } = useSWR<Projects[]>('/api/repos', fetcher, {
     fallbackData,
   });
@@ -29,7 +31,7 @@ export default function ProjectsPage({
     <Layout title="Projects - Alexander Konietzko">
       <div className="flex flex-col items-start justify-center max-w-3xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-          Projects
+          {t('main.projects')}
         </h1>
         <Suspense fallback={null}>
           <h2 className="text-gray-600 dark:text-gray-200">
