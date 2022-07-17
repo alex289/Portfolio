@@ -48,7 +48,15 @@ export const getStaticProps: GetStaticProps = async () => {
     'https://api.github.com/users/Alex289/repos?per_page=20&sort=pushed'
   );
 
-  const fallbackData = await reposResponse.json();
+  let fallbackData = await reposResponse.json();
+
+  if (!reposResponse.ok) {
+    const backupResponse = await fetch(
+      'https://gist.githubusercontent.com/alex289/152c0b6abecd4a7bac6b9abde6551185/raw/9c2e7c29eea6759cff46e4fb9c02ff17d59527f8/repos.json'
+    );
+
+    fallbackData = await backupResponse.json();
+  }
 
   return {
     props: {
