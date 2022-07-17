@@ -1,113 +1,122 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import cn from 'classnames';
+import useDelayedRender from 'use-delayed-render';
 
 import useTranslation from '@/lib/useTranslation';
 
-import MenuIcon from '@/components/icons/MenuIcon';
-import CrossIcon from '@/components/icons/CrossIcon';
+import MenuIcon from './icons/MenuIcon';
+import CrossIcon from './icons/CrossIcon';
 
-const MobileMenu = (): JSX.Element => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+import styles from 'styles/mobile-menu.module.css';
+
+export default function MobileMenu() {
   const router = useRouter();
   const { t } = useTranslation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
+    isMenuOpen,
+    {
+      enterDelay: 20,
+      exitDelay: 300,
+    }
+  );
 
   function toggleMenu() {
     if (isMenuOpen) {
       setIsMenuOpen(false);
+      document.body.style.overflow = '';
     } else {
       setIsMenuOpen(true);
+      document.body.style.overflow = 'hidden';
     }
   }
+
+  useEffect(() => {
+    return function cleanup() {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   return (
     <>
       <button
-        id="burger"
-        className="visible burger md:hidden"
+        className={cn(styles.burger, 'visible md:hidden')}
         aria-label="Toggle menu"
         type="button"
         onClick={toggleMenu}>
         <MenuIcon data-hide={isMenuOpen} />
         <CrossIcon data-hide={!isMenuOpen} />
       </button>
-
-      <ul
-        className={cn(
-          'menu flex flex-col absolute bg-gray-50 dark:bg-gray-800 mt-4 md:hidden',
-          isMenuOpen ? 'menuRendered' : 'h-0 w-0'
-        )}>
-        <li
-          className="ml-3 border-b border-gray-300 dark:border-gray-700"
-          style={{ transitionDelay: '150ms' }}>
-          <Link href="/">
-            <a
-              id="mobile-nav-home"
-              onClick={() => setIsMenuOpen(false)}
-              className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
-                router.asPath === '/' ? 'font-semibold' : ''
-              }`}>
-              {t('main.home')}
-            </a>
-          </Link>
-        </li>
-        <li
-          className="ml-3 border-b border-gray-300 dark:border-gray-700"
-          style={{ transitionDelay: '150ms' }}>
-          <Link href="/about">
-            <a
-              id="mobile-nav-about"
-              className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
-                router.pathname === '/about' ? 'font-semibold' : ''
-              }`}>
-              {t('main.about')}
-            </a>
-          </Link>
-        </li>
-        <li
-          className="ml-3 border-b border-gray-300 dark:border-gray-700"
-          style={{ transitionDelay: '150ms' }}>
-          <Link href="/projects">
-            <a
-              id="mobile-nav-projects"
-              className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
-                router.pathname === '/projects' ? 'font-semibold' : ''
-              }`}>
-              {t('main.projects')}
-            </a>
-          </Link>
-        </li>
-        <li
-          className="ml-3 border-b border-gray-300 dark:border-gray-700"
-          style={{ transitionDelay: '150ms' }}>
-          <Link href="/blog">
-            <a
-              id="mobile-nav-blog"
-              className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
-                router.pathname === '/blog' ? 'font-semibold' : ''
-              }`}>
-              Blog
-            </a>
-          </Link>
-        </li>
-        <li
-          className="ml-3 border-b border-gray-300 dark:border-gray-700"
-          style={{ transitionDelay: '150ms' }}>
-          <Link href="/guestbook">
-            <a
-              id="mobile-nav-guestbook"
-              className={`flex w-auto p-1 pb-4 ml-4 text-lg text-gray-900 sm:p-4 dark:text-gray-100 ${
-                router.pathname === '/guestbook' ? 'font-semibold' : ''
-              }`}>
-              {t('guestbook.title')}
-            </a>
-          </Link>
-        </li>
-      </ul>
+      {isMenuMounted && (
+        <ul
+          className={cn(
+            styles.menu,
+            'flex flex-col absolute bg-gray-100 dark:bg-gray-800 mt-4',
+            isMenuRendered && styles.menuRendered
+          )}>
+          <li
+            className={cn(
+              'ml-3 border-b border-gray-300 dark:border-gray-700',
+              router.asPath === '/' && 'font-semibold'
+            )}
+            style={{ transitionDelay: '150ms' }}>
+            <Link href="/">
+              <a className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+                {t('main.home')}
+              </a>
+            </Link>
+          </li>
+          <li
+            className={cn(
+              'ml-3 border-b border-gray-300 dark:border-gray-700',
+              router.pathname === '/about' && 'font-semibold'
+            )}
+            style={{ transitionDelay: '175ms' }}>
+            <Link href="/about">
+              <a className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+                {t('main.about')}
+              </a>
+            </Link>
+          </li>
+          <li
+            className={cn(
+              'ml-3 border-b border-gray-300 dark:border-gray-700',
+              router.pathname === '/projects' && 'font-semibold'
+            )}
+            style={{ transitionDelay: '200ms' }}>
+            <Link href="/projects">
+              <a className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+                {t('main.projects')}
+              </a>
+            </Link>
+          </li>
+          <li
+            className={cn(
+              'ml-3 border-b border-gray-300 dark:border-gray-700',
+              router.pathname === '/blog' && 'font-semibold'
+            )}
+            style={{ transitionDelay: '250ms' }}>
+            <Link href="/blog">
+              <a className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">Blog</a>
+            </Link>
+          </li>
+          <li
+            className={cn(
+              'ml-3 border-b border-gray-300 dark:border-gray-700',
+              router.pathname === '/guestbook' && 'font-semibold'
+            )}
+            style={{ transitionDelay: '275ms' }}>
+            <Link href="/guestbook">
+              <a className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+                {t('guestbook.title')}
+              </a>
+            </Link>
+          </li>
+        </ul>
+      )}
     </>
   );
-};
-
-export default MobileMenu;
+}
