@@ -43,6 +43,7 @@ export default function MobileMenu() {
   return (
     <>
       <button
+        id="burger"
         className={cn(styles.burger, 'visible md:hidden')}
         aria-label="Toggle menu"
         type="button"
@@ -54,7 +55,7 @@ export default function MobileMenu() {
         <ul
           className={cn(
             styles.menu,
-            'flex flex-col absolute bg-gray-100 dark:bg-gray-800 mt-4',
+            'flex flex-col absolute bg-gray-100 dark:bg-gray-800 mt-4 md:hidden',
             isMenuRendered && styles.menuRendered
           )}>
           <li
@@ -64,7 +65,9 @@ export default function MobileMenu() {
             )}
             style={{ transitionDelay: '150ms' }}>
             <Link href="/">
-              <a className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+              <a
+                id="mobile-nav-home"
+                className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
                 {t('main.home')}
               </a>
             </Link>
@@ -76,7 +79,9 @@ export default function MobileMenu() {
             )}
             style={{ transitionDelay: '175ms' }}>
             <Link href="/about">
-              <a className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+              <a
+                id="mobile-nav-about"
+                className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
                 {t('main.about')}
               </a>
             </Link>
@@ -88,7 +93,9 @@ export default function MobileMenu() {
             )}
             style={{ transitionDelay: '200ms' }}>
             <Link href="/projects">
-              <a className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+              <a
+                id="mobile-nav-projects"
+                className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
                 {t('main.projects')}
               </a>
             </Link>
@@ -100,7 +107,11 @@ export default function MobileMenu() {
             )}
             style={{ transitionDelay: '250ms' }}>
             <Link href="/blog">
-              <a className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">Blog</a>
+              <a
+                id="mobile-nav-blog"
+                className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+                Blog
+              </a>
             </Link>
           </li>
           <li
@@ -110,7 +121,9 @@ export default function MobileMenu() {
             )}
             style={{ transitionDelay: '275ms' }}>
             <Link href="/guestbook">
-              <a className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+              <a
+                id="mobile-nav-guestbook"
+                className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
                 {t('guestbook.title')}
               </a>
             </Link>
