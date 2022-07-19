@@ -44,7 +44,7 @@ function GuestbookEntry({ t, entry, user }: GuestBookEntryProps) {
 
   return (
     <div className="flex flex-col space-y-2">
-      <div className="w-full prose dark:prose-dark">{entry.body}</div>
+      <div className="prose w-full dark:prose-dark">{entry.body}</div>
       <div className="flex items-center space-x-3">
         <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
           {entry.created_by}
@@ -126,8 +126,8 @@ export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
           )
         </p>
       )}
-      <div className="w-full p-6 my-4 border border-blue-200 rounded dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque">
-        <h2 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-100">
+      <div className="my-4 w-full rounded border border-blue-200 bg-blue-50 p-6 dark:border-gray-800 dark:bg-blue-opaque">
+        <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 md:text-xl">
           {t('guestbook.form.title')}
         </h2>
         <p className="my-1 text-gray-800 dark:text-gray-200">
@@ -135,7 +135,7 @@ export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
         </p>
         {!session && (
           <button
-            className="flex items-center justify-center h-8 my-4 font-bold text-gray-900 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-100 w-28"
+            className="my-4 flex h-8 w-28 items-center justify-center rounded bg-gray-200 font-bold text-gray-900 dark:bg-gray-700 dark:text-gray-100"
             onClick={() => {
               signIn('google');
             }}>
@@ -149,10 +149,10 @@ export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
               aria-label="Your message"
               placeholder={t('guestbook.form.input')}
               required
-              className="block w-full py-2 pl-4 pr-32 mt-1 text-gray-900 bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500 rounded-md dark:bg-gray-800 dark:text-gray-100"
+              className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 pl-4 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-100"
             />
             <button
-              className="absolute flex items-center justify-center h-8 px-4 py-1 font-medium text-gray-900 bg-gray-100 rounded right-1 top-1 dark:bg-gray-700 dark:text-gray-100 w-28"
+              className="absolute right-1 top-1 flex h-8 w-28 items-center justify-center rounded bg-gray-100 px-4 py-1 font-medium text-gray-900 dark:bg-gray-700 dark:text-gray-100"
               type="submit">
               {form.state === Form.Loading ? (
                 <LoadingSpinner />

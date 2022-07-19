@@ -21,20 +21,20 @@ export default function BlogPostCard({ title, slug, gradient }: Props) {
     <Link href={`/blog/${slug}`}>
       <a
         className={cn(
-          'transform hover:scale-[1.01] transition-all',
-          'rounded-xl w-full md:w-1/3 bg-gradient-to-r p-1',
+          'transform transition-all hover:scale-[1.01]',
+          'w-full rounded-xl bg-gradient-to-r p-1 md:w-1/3',
           gradient
         )}>
-        <div className="flex flex-col justify-between h-full p-4 bg-white rounded-lg dark:bg-gray-800">
+        <div className="flex h-full flex-col justify-between rounded-lg bg-white p-4 dark:bg-gray-800">
           <div className="flex flex-col justify-between md:flex-row">
-            <h4 className="w-full mb-6 text-lg font-medium tracking-tight text-gray-800 md:text-lg sm:mb-10 dark:text-gray-100">
+            <h4 className="mb-6 w-full text-lg font-medium tracking-tight text-gray-800 dark:text-gray-100 sm:mb-10 md:text-lg">
               {title}
             </h4>
           </div>
-          <div className="flex items-center text-gray-800 dark:text-gray-200 capsize">
+          <div className="capsize flex items-center text-gray-800 dark:text-gray-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor">
@@ -51,7 +51,7 @@ export default function BlogPostCard({ title, slug, gradient }: Props) {
                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
               />
             </svg>
-            <span className="ml-2 align-baseline capsize">
+            <span className="capsize ml-2 align-baseline">
               {views ? new Number(views).toLocaleString() : '–––'}
             </span>
           </div>

@@ -8,42 +8,42 @@ import NowPlaying from '@/components/NowPlaying';
 export default function Footer(): JSX.Element {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800">
-      <footer className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-8">
-        <hr className="w-full mb-8 border border-gray-200 dark:border-gray-700" />
+    <div className="flex flex-col justify-center bg-gray-50 px-8 dark:bg-gray-800">
+      <footer className="mx-auto mb-8 flex w-full max-w-2xl flex-col items-start justify-center">
+        <hr className="mb-8 w-full border border-gray-200 dark:border-gray-700" />
         <NowPlaying />
-        <div className="w-full max-w-2xl pb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="grid w-full max-w-2xl grid-cols-1 gap-4 pb-12 sm:grid-cols-3">
           <div className="flex flex-col space-y-4">
             <Link href="/">
               <a
                 id="footer-home"
-                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
+                className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
                 {t('main.home')}
               </a>
             </Link>
             <Link href="/about">
               <a
                 id="footer-about"
-                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
+                className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
                 {t('main.about')}
               </a>
             </Link>
             <Link href="/projects">
               <a
                 id="footer-projects"
-                className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
+                className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
                 {t('main.projects')}
               </a>
             </Link>
           </div>
           <div className="flex flex-col space-y-4">
             <Link href="/blog">
-              <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
+              <a className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
                 Blog
               </a>
             </Link>
             <Link href="/guestbook">
-              <a className="text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50 transition">
+              <a className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
                 {t('guestbook.title')}
               </a>
             </Link>

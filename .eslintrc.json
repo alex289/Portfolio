@@ -3,7 +3,6 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "prettier",
-        "plugin:tailwind/recommended",
         "next/core-web-vitals"
     ],
     "plugins": [

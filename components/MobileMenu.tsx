@@ -55,7 +55,7 @@ export default function MobileMenu() {
         <ul
           className={cn(
             styles.menu,
-            'flex flex-col absolute bg-gray-100 dark:bg-gray-800 mt-4 md:hidden',
+            'absolute mt-4 flex flex-col bg-gray-100 dark:bg-gray-800 md:hidden',
             isMenuRendered && styles.menuRendered
           )}>
           <li
@@ -67,7 +67,7 @@ export default function MobileMenu() {
             <Link href="/">
               <a
                 id="mobile-nav-home"
-                className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+                className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
                 {t('main.home')}
               </a>
             </Link>
@@ -81,7 +81,7 @@ export default function MobileMenu() {
             <Link href="/about">
               <a
                 id="mobile-nav-about"
-                className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+                className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
                 {t('main.about')}
               </a>
             </Link>
@@ -95,7 +95,7 @@ export default function MobileMenu() {
             <Link href="/projects">
               <a
                 id="mobile-nav-projects"
-                className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+                className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
                 {t('main.projects')}
               </a>
             </Link>
@@ -109,7 +109,7 @@ export default function MobileMenu() {
             <Link href="/blog">
               <a
                 id="mobile-nav-blog"
-                className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+                className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
                 Blog
               </a>
             </Link>
@@ -123,7 +123,7 @@ export default function MobileMenu() {
             <Link href="/guestbook">
               <a
                 id="mobile-nav-guestbook"
-                className="flex w-auto p-1 pb-4 ml-4 text-lg sm:p-4">
+                className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
                 {t('guestbook.title')}
               </a>
             </Link>

@@ -14,8 +14,8 @@ export default function About() {
   );
   return (
     <Layout>
-      <div className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+      <div className="mx-auto mb-16 flex w-full max-w-2xl flex-col items-start justify-center">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           {t('main.about')}
         </h1>
         <h2 className="mb-16 text-gray-600 dark:text-[#c2c2c2]">
@@ -25,10 +25,10 @@ export default function About() {
           <p className="mb-6">{t('about-page.text-2')}</p>
           <p>{t('about-page.text-3')}</p>
         </h2>
-        <h1 className="mb-4 text-xl font-bold tracking-tight text-black md:text-3xl dark:text-white">
+        <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
           Links
         </h1>
-        <h2 className="mb-16 text-gray-600 dark:text-[#c2c2c2] prose dark:prose-dark">
+        <h2 className="prose mb-16 text-gray-600 dark:prose-dark dark:text-[#c2c2c2]">
           <ul className="list-disc">
             <li>
               Github: <Link href="https://github.com/alex289">@alex289</Link>
@@ -42,12 +42,12 @@ export default function About() {
           </ul>
         </h2>
 
-        <h1 className="mb-4 text-xl font-bold tracking-tight text-black md:text-3xl dark:text-white">
+        <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
           Timeline
         </h1>
         <ol className="relative mb-16 border-l border-gray-200 dark:border-gray-700">
           <li className="mb-10 ml-4">
-            <div className="absolute w-3 h-3 bg-gray-200 border border-white rounded-full -left-1.5 dark:border-gray-900 dark:bg-gray-700"></div>
+            <div className="absolute -left-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
             <time className="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-[#c2c2c2]">
               August 2021
             </time>
@@ -61,10 +61,10 @@ export default function About() {
               target="_blank"
               rel="noreferrer noopener"
               href="https://www.netgo.de/">
-              <div className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 focus:z-10 focus:ring-2 dark:bg-gray-800 dark:text-[#c2c2c2] dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+              <div className="inline-flex cursor-pointer items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:border-gray-600 dark:bg-gray-800 dark:text-[#c2c2c2] dark:hover:bg-gray-700 dark:hover:text-white">
                 {t('about-page.timeline.learn-more')}{' '}
                 <svg
-                  className="w-3 h-3 ml-2"
+                  className="ml-2 h-3 w-3"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +77,7 @@ export default function About() {
             </a>
           </li>
           <li className="ml-4">
-            <div className="absolute w-3 h-3 bg-gray-200 border border-white rounded-full -left-1.5 dark:border-gray-900 dark:bg-gray-700"></div>
+            <div className="absolute -left-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
             <time className="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-[#c2c2c2]">
               {t('about-page.timeline.1.date')}
             </time>
@@ -90,7 +90,7 @@ export default function About() {
           </li>
         </ol>
 
-        <h1 className="mb-4 text-xl font-bold tracking-tight text-black md:text-3xl dark:text-white">
+        <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
           Headshots
         </h1>
         <div className="flex space-x-8">
@@ -109,7 +109,7 @@ export default function About() {
               width={400}
               quality={100}
               src={avatar}
-              className="rounded-full filter grayscale"
+              className="rounded-full grayscale filter"
             />
           </a>
         </div>

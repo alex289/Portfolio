@@ -15,8 +15,8 @@ export default function Guestbook({
   const { t } = useTranslation();
   return (
     <Layout title={t('guestbook.title') + ' - Alexander Konietzko'}>
-      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+      <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           {t('guestbook.title')}
         </h1>
         <p className="mb-3 text-gray-600 dark:text-[#c2c2c2]">

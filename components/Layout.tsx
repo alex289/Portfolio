@@ -30,7 +30,7 @@ const Layout = ({
       <Navbar blogTranslation={blogTranslation} />
     </div>
     <main
-      className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800"
+      className="flex flex-col justify-center bg-gray-50 px-8 dark:bg-gray-800"
       id="skip">
       {children}
     </main>

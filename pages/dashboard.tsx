@@ -37,8 +37,8 @@ export default function Dashboard({ previewMode }: Props): JSX.Element {
 
   return (
     <Layout>
-      <div className="flex flex-col items-start justify-center w-full mx-auto mb-16 xl:w-6/12">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+      <div className="mx-auto mb-16 flex w-full flex-col items-start justify-center xl:w-6/12">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           Dashboard
         </h1>
         <p>
@@ -50,7 +50,7 @@ export default function Dashboard({ previewMode }: Props): JSX.Element {
           </button>
           )
         </p>
-        <div className="w-full my-2 grid gap-4 grid-cols-1 sm:grid-cols-2">
+        <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
           <Metric title="Status">
             <span className={data?.status ? 'text-green-600' : 'text-red-600'}>
               {data?.status}

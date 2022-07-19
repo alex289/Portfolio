@@ -24,17 +24,17 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <nav className="sticky z-50 flex items-center justify-between w-full max-w-4xl p-4 mx-auto my-0 text-gray-900 md:p-8 bg-gray-50 sticky-nav md:my-4 dark:bg-gray-800 dark:text-gray-100">
+    <nav className="sticky-nav sticky z-50 mx-auto my-0 flex w-full max-w-4xl items-center justify-between bg-gray-50 p-4 text-gray-900 dark:bg-gray-800 dark:text-gray-100 md:my-4 md:p-8">
       <div>
         <MobileMenu />
         <div>
           <Link href="/">
             <a
               id="nav-home"
-              className={`invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible ${
+              className={`invisible m-1 text-gray-900 dark:text-gray-100 sm:m-4 md:visible ${
                 router.asPath === '/' ? 'font-semibold' : ''
               }`}>
-              <span className="py-1 dark:link-underline link-underline-black">
+              <span className="dark:link-underline link-underline-black py-1">
                 {t('main.home')}
               </span>
             </a>
@@ -42,10 +42,10 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
           <Link href="/about">
             <a
               id="nav-about"
-              className={`invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible ${
+              className={`invisible m-1 text-gray-900 dark:text-gray-100 sm:m-4 md:visible ${
                 router.pathname === '/about' ? 'font-semibold' : ''
               }`}>
-              <span className="py-1 dark:link-underline link-underline-black">
+              <span className="dark:link-underline link-underline-black py-1">
                 {t('main.about')}
               </span>
             </a>
@@ -53,10 +53,10 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
           <Link href="/projects">
             <a
               id="nav-projects"
-              className={`invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible ${
+              className={`invisible m-1 text-gray-900 dark:text-gray-100 sm:m-4 md:visible ${
                 router.pathname === '/projects' ? 'font-semibold' : ''
               }`}>
-              <span className="py-1 dark:link-underline link-underline-black">
+              <span className="dark:link-underline link-underline-black py-1">
                 {t('main.projects')}
               </span>
             </a>
@@ -64,10 +64,10 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
           <Link href="/blog">
             <a
               id="nav-blog"
-              className={`invisible m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:visible ${
+              className={`invisible m-1 text-gray-900 dark:text-gray-100 sm:m-4 md:visible ${
                 router.pathname === '/blog' ? 'font-semibold' : ''
               }`}>
-              <span className="py-1 dark:link-underline link-underline-black">
+              <span className="dark:link-underline link-underline-black py-1">
                 Blog
               </span>
             </a>
@@ -75,10 +75,10 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
           <Link href="/guestbook">
             <a
               id="nav-guestbook"
-              className={`hidden m-1 text-gray-900 sm:m-4 dark:text-gray-100 md:inline ${
+              className={`m-1 hidden text-gray-900 dark:text-gray-100 sm:m-4 md:inline ${
                 router.pathname === '/guestbook' ? 'font-semibold' : ''
               }`}>
-              <span className="py-1 dark:link-underline link-underline-black">
+              <span className="dark:link-underline link-underline-black py-1">
                 {t('guestbook.title')}
               </span>
             </a>
@@ -90,7 +90,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
           id="dark-mode-toggle"
           aria-label="Toggle Dark Mode"
           type="button"
-          className="w-10 h-10 p-3 mr-1 bg-gray-200 rounded-lg dark:bg-gray-700 md:mr-3 ring-gray-300 hover:ring-4"
+          className="mr-1 h-10 w-10 rounded-lg bg-gray-200 p-3 ring-gray-300 hover:ring-4 dark:bg-gray-700 md:mr-3"
           onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
           {mounted && <ThemeToggleIcon theme={resolvedTheme} />}
         </button>
@@ -101,7 +101,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
           locale={locale === 'de' ? 'en' : 'de'}>
           <a
             id="switch-lang"
-            className="pb-1 mx-3 text-lg tracking-wide md:dark:link-underline md:link-underline-black">
+            className="md:dark:link-underline md:link-underline-black mx-3 pb-1 text-lg tracking-wide">
             {locale === 'de' ? 'EN' : 'DE'}
           </a>
         </Link>

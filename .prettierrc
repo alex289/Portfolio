@@ -1,7 +1,0 @@
-{
-  "endOfLine": "auto",
-  "bracketSameLine": true,
-  "jsxSingleQuote": false,
-  "singleQuote": true,
-  "parser": "typescript"
-}
