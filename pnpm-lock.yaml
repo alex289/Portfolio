@@ -2,14 +2,14 @@ lockfileVersion: 5.4
 
 specifiers:
   '@mdx-js/react': ^2.1.2
-  '@prisma/client': ^4.0.0
+  '@prisma/client': ^4.1.0
   '@sanity/core': ^2.30.2
   '@sanity/webhook': ^2.0.0
   '@tailwindcss/typography': ^0.5.4
-  '@types/node': ^18.0.5
+  '@types/node': ^18.0.6
   '@types/nprogress': ^0.2.0
   '@types/react': ^18.0.15
-  '@typescript-eslint/eslint-plugin': ^5.30.6
+  '@typescript-eslint/eslint-plugin': ^5.30.7
   autoprefixer: ^10.4.7
   axios: ^0.27.2
   classnames: ^2.3.1
@@ -17,7 +17,7 @@ specifiers:
   eslint: ^8.20.0
   eslint-config-next: 12.2.2
   eslint-config-prettier: ^8.5.0
-  motion: ^10.12.0
+  motion: ^10.13.1
   next: 12.2.2
   next-auth: ^4.10.0
   next-mdx-remote: ^4.0.3
@@ -28,7 +28,7 @@ specifiers:
   preact: ^10.10.0
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.12
-  prisma: ^4.0.0
+  prisma: ^4.1.0
   react: ^18.2.0
   react-dom: ^18.2.0
   reading-time: ^1.5.0
@@ -49,13 +49,13 @@ specifiers:
 
 dependencies:
   '@mdx-js/react': 2.1.2_react@18.2.0
-  '@prisma/client': 4.0.0_prisma@4.0.0
+  '@prisma/client': 4.1.0_prisma@4.1.0
   '@sanity/core': 2.30.2_7fl7opjcque4si57nioejnq6sy
   '@sanity/webhook': 2.0.0
   axios: 0.27.2
   classnames: 2.3.1
   date-fns: 2.28.0
-  motion: 10.12.0_biqbaboplfbrettd7655fr4n2y
+  motion: 10.13.1
   next: 12.2.2_4cc5zw5azim2bix77d63le72su
   next-auth: 4.10.0_biqbaboplfbrettd7655fr4n2y
   next-mdx-remote: 4.0.3_biqbaboplfbrettd7655fr4n2y
@@ -75,10 +75,10 @@ dependencies:
 
 devDependencies:
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
-  '@types/node': 18.0.5
+  '@types/node': 18.0.6
   '@types/nprogress': 0.2.0
   '@types/react': 18.0.15
-  '@typescript-eslint/eslint-plugin': 5.30.6_abk5i7tz6ur3qy3ufsag7eod2u
+  '@typescript-eslint/eslint-plugin': 5.30.7_abk5i7tz6ur3qy3ufsag7eod2u
   autoprefixer: 10.4.7_postcss@8.4.14
   eslint: 8.20.0
   eslint-config-next: 12.2.2_he2ccbldppg44uulnyq4rwocfa
@@ -86,7 +86,7 @@ devDependencies:
   postcss: 8.4.14
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.12_prettier@2.7.1
-  prisma: 4.0.0
+  prisma: 4.1.0
   reading-time: 1.5.0
   rehype-autolink-headings: 6.1.1
   rehype-code-titles: 1.1.0
@@ -1654,82 +1654,64 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@motionone/animation/10.12.0:
-    resolution: {integrity: sha512-SCWkVjMChQwA4Cnt1pdmhCi0OC4cAR+rqsskNEqmbgfG59zmn50TfOP6vgqjkYbaSZXXLeEb03Mez362jIEHRg==}
+  /@motionone/animation/10.13.1:
+    resolution: {integrity: sha512-dxQ+1wWxL6iFHDy1uv6hhcPjIdOg36eDT56jN4LI7Z5HZRyLpq8x1t7JFQclo/IEIb+6Bk4atmyinGFdXVECuA==}
     dependencies:
-      '@motionone/easing': 10.12.0
-      '@motionone/types': 10.12.0
-      '@motionone/utils': 10.12.0
+      '@motionone/easing': 10.13.1
+      '@motionone/types': 10.13.0
+      '@motionone/utils': 10.13.1
       tslib: 2.4.0
     dev: false
 
-  /@motionone/dom/10.12.0:
-    resolution: {integrity: sha512-UdPTtLMAktHiqV0atOczNYyDd/d8Cf5fFsd1tua03PqTwwCe/6lwhLSQ8a7TbnQ5SN0gm44N1slBfj+ORIhrqw==}
+  /@motionone/dom/10.13.1:
+    resolution: {integrity: sha512-zjfX+AGMIt/fIqd/SL1Lj93S6AiJsEA3oc5M9VkUr+Gz+juRmYN1vfvZd6MvEkSqEjwPQgcjN7rGZHrDB9APfQ==}
     dependencies:
-      '@motionone/animation': 10.12.0
-      '@motionone/generators': 10.12.0
-      '@motionone/types': 10.12.0
-      '@motionone/utils': 10.12.0
+      '@motionone/animation': 10.13.1
+      '@motionone/generators': 10.13.1
+      '@motionone/types': 10.13.0
+      '@motionone/utils': 10.13.1
       hey-listen: 1.0.8
       tslib: 2.4.0
     dev: false
 
-  /@motionone/easing/10.12.0:
-    resolution: {integrity: sha512-kdwcn1ja/0//BBHRElX3In1yfqMEhqUoL3G0njDan8R+gfPy3DanyuCtio4VruHQ1m3XN3LcrqavbClzcGo7IA==}
+  /@motionone/easing/10.13.1:
+    resolution: {integrity: sha512-INEsInHHDHVgx0dp5qlXi1lMXBqYicgLMMSn3zfGzaIvcaEbI1Uz8BoyNV4BiclTupG7RYIh+T6BU83ZcEe74g==}
     dependencies:
-      '@motionone/utils': 10.12.0
+      '@motionone/utils': 10.13.1
       tslib: 2.4.0
     dev: false
 
-  /@motionone/generators/10.12.0:
-    resolution: {integrity: sha512-QM8/ndOve80HLXImChwW8ogrEM/8m9xzZEl2Ci2ep1uGLAQ+ADiwzKtl11inGESrxiFDrUdD12WXacCn+y172Q==}
+  /@motionone/generators/10.13.1:
+    resolution: {integrity: sha512-+HK5u2YcNJCckTTqfOLgSVcrWv2z1dVwrSZEMVJuAh0EnWEWGDJRvMBoPc0cFf/osbkA2Rq9bH2+vP0Ex/D8uw==}
     dependencies:
-      '@motionone/types': 10.12.0
-      '@motionone/utils': 10.12.0
+      '@motionone/types': 10.13.0
+      '@motionone/utils': 10.13.1
       tslib: 2.4.0
     dev: false
 
-  /@motionone/react/10.12.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-IEPquRkGyK+j1kMVOxRd95zztmVL5MwsexXgmQsb7UgJyZ31aUJabYo3C1XZq9nZEJsaLRs0HxfV5ccJVY7zSA==}
-    peerDependencies:
-      react: ^17.0.2
-      react-dom: ^17.0.2
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
+  /@motionone/svelte/10.13.1:
+    resolution: {integrity: sha512-9d73nH4Uow0zC68ubSRYbmN/e2V7t16dSoDrBU1TfY2fue4ol+NJo8cd8ptT+5RRKmslmB3fg4swmDcGkOslJA==}
     dependencies:
-      '@motionone/dom': 10.12.0
-      hey-listen: 1.0.8
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
+      '@motionone/dom': 10.13.1
       tslib: 2.4.0
     dev: false
 
-  /@motionone/svelte/10.12.0:
-    resolution: {integrity: sha512-t+2OPn7V/VExQBDGuHt19Xtyhw7jgD7IOp3XVXY60oCsAkJSR4sht/we31/b+jhCv/uBTCrdqaljhn2zJAixAQ==}
-    dependencies:
-      '@motionone/dom': 10.12.0
-      tslib: 2.4.0
+  /@motionone/types/10.13.0:
+    resolution: {integrity: sha512-qegk4qg8U1N9ZwAJ187BG3TkZz1k9LP/pvNtCSlqdq/PMUDKlCFG4ZnjJ481P0IOH/vIw1OzIbKIuyg0A3rk9g==}
     dev: false
 
-  /@motionone/types/10.12.0:
-    resolution: {integrity: sha512-D9k7ijkAT6JJOCMUVn9IgJqWolp7N3oBbWRQTIRGGO41Bmr/JzLv4GzAb00PvkYAzZX+BpnSTKqXI19zrSjC5w==}
-    dev: false
-
-  /@motionone/utils/10.12.0:
-    resolution: {integrity: sha512-2g3tCqYYwb/tgzCDRbILbD5edXJB45HV51NbnhwKVOOl0PhFraRDtehzLKo9wLHdaTnO/IjVn6cHQsw6RjdolA==}
+  /@motionone/utils/10.13.1:
+    resolution: {integrity: sha512-TjDPTIppaf3ofBXQv4ZzAketJgN0sclALXfZ6mfrkjJkOy83mLls9744F+6S+VKCpBmvbZcBY4PQfrfhAfeMtA==}
     dependencies:
-      '@motionone/types': 10.12.0
+      '@motionone/types': 10.13.0
       hey-listen: 1.0.8
       tslib: 2.4.0
     dev: false
 
-  /@motionone/vue/10.12.0:
-    resolution: {integrity: sha512-MrhUk/P8OLCM9QlFrx7Qw0hIk5avkXpMOQ5jnrinx1rJRU6p7sY15k/ZXVS2DnVGVIAHbSLtcMVJjnhbeiNXKQ==}
+  /@motionone/vue/10.13.1:
+    resolution: {integrity: sha512-Zg0FnLWVLFhpAd3fh3avkTgbYITE75ldgwh2VMz346uwOpKz2gPHyYq5CmoW/wzUMvfCMfjy1dqmzZThii71ew==}
     dependencies:
-      '@motionone/dom': 10.12.0
+      '@motionone/dom': 10.13.1
       tslib: 2.4.0
     dev: false
 
@@ -1907,8 +1889,8 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: false
 
-  /@prisma/client/4.0.0_prisma@4.0.0:
-    resolution: {integrity: sha512-g1h2OGoRo7anBVQ9Cw3gsbjwPtvf7i0pkGxKeZICtwkvE5CZXW+xZF4FZdmrViYkKaAShbISL0teNpu9ecpf4g==}
+  /@prisma/client/4.1.0_prisma@4.1.0:
+    resolution: {integrity: sha512-MvfPGAd42vHTiCYxwS6N+2U3F+ukoJ48D2QRnX1zSPJHBkh1CBtshl75daKzvVfgQwSouzSQeugKDej5di+E/g==}
     engines: {node: '>=14.17'}
     requiresBuild: true
     peerDependencies:
@@ -1917,16 +1899,16 @@ packages:
       prisma:
         optional: true
     dependencies:
-      '@prisma/engines-version': 3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11
-      prisma: 4.0.0
+      '@prisma/engines-version': 4.1.0-48.8d8414deb360336e4698a65aa45a1fbaf1ce13d8
+      prisma: 4.1.0
     dev: false
 
-  /@prisma/engines-version/3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11:
-    resolution: {integrity: sha512-PiZhdD624SrYEjyLboI0X7OugNbxUzDJx9v/6ldTKuqNDVUCmRH/Z00XwDi/dgM4FlqOSO+YiUsSiSKjxxG8cw==}
+  /@prisma/engines-version/4.1.0-48.8d8414deb360336e4698a65aa45a1fbaf1ce13d8:
+    resolution: {integrity: sha512-cRRJwpHFGFJZvtHbY3GZjMffNBEjjZk68ztn+S2hDgPCGB4H66IK26roK94GJxBodSehwRJ0wGyebC2GoIH1JQ==}
     dev: false
 
-  /@prisma/engines/3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11:
-    resolution: {integrity: sha512-u/rG4lDHALolWBLr3yebZ+N2qImp3SDMcu7bHNJuRDaYvYEXy/MqfNRNEgd9GoPsXL3gofYf0VzJf2AmCG3YVw==}
+  /@prisma/engines/4.1.0:
+    resolution: {integrity: sha512-quqHXD3P83NBLVtRlts4SgKHmqgA8GMiyDTJ7af03Wg0gl6F5t65mBYvIuwmD+52vHm42JtIsp/fAO9YIV0JBA==}
     requiresBuild: true
 
   /@reach/auto-id/0.13.2_biqbaboplfbrettd7655fr4n2y:
@@ -2969,7 +2951,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 18.0.5
+      '@types/node': 18.0.6
     dev: false
 
   /@types/hast/2.3.4:
@@ -3023,8 +3005,8 @@ packages:
   /@types/ms/0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
-  /@types/node/18.0.5:
-    resolution: {integrity: sha512-En7tneq+j0qAiVwysBD79y86MT3ModuoIJbe7JXp+sb5UAjInSShmK3nXXMioBzfF7rXC12hv12d4IyCVwN4dA==}
+  /@types/node/18.0.6:
+    resolution: {integrity: sha512-/xUq6H2aQm261exT6iZTMifUySEt4GR5KX8eYyY+C4MSNPqSh9oNIP7tz2GLKTlFaiBbgZNxffoR3CVRG+cljw==}
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -3123,8 +3105,8 @@ packages:
     resolution: {integrity: sha512-t/Tvs5qR47OLOr+4E9ckN8AmP2Tf16gWq+/qA4iUGS/OOyHVO8wv2vjJuX8SNOUTJyWb+2t7wJm6cXILFnOROA==}
     dev: false
 
-  /@typescript-eslint/eslint-plugin/5.30.6_abk5i7tz6ur3qy3ufsag7eod2u:
-    resolution: {integrity: sha512-J4zYMIhgrx4MgnZrSDD7sEnQp7FmhKNOaqaOpaoQ/SfdMfRB/0yvK74hTnvH+VQxndZynqs5/Hn4t+2/j9bADg==}
+  /@typescript-eslint/eslint-plugin/5.30.7_abk5i7tz6ur3qy3ufsag7eod2u:
+    resolution: {integrity: sha512-l4L6Do+tfeM2OK0GJsU7TUcM/1oN/N25xHm3Jb4z3OiDU4Lj8dIuxX9LpVMS9riSXQs42D1ieX7b85/r16H9Fw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       '@typescript-eslint/parser': ^5.0.0
@@ -3135,9 +3117,9 @@ packages:
         optional: true
     dependencies:
       '@typescript-eslint/parser': 5.29.0_he2ccbldppg44uulnyq4rwocfa
-      '@typescript-eslint/scope-manager': 5.30.6
-      '@typescript-eslint/type-utils': 5.30.6_he2ccbldppg44uulnyq4rwocfa
-      '@typescript-eslint/utils': 5.30.6_he2ccbldppg44uulnyq4rwocfa
+      '@typescript-eslint/scope-manager': 5.30.7
+      '@typescript-eslint/type-utils': 5.30.7_he2ccbldppg44uulnyq4rwocfa
+      '@typescript-eslint/utils': 5.30.7_he2ccbldppg44uulnyq4rwocfa
       debug: 4.3.4
       eslint: 8.20.0
       functional-red-black-tree: 1.0.1
@@ -3178,16 +3160,16 @@ packages:
       '@typescript-eslint/visitor-keys': 5.29.0
     dev: true
 
-  /@typescript-eslint/scope-manager/5.30.6:
-    resolution: {integrity: sha512-Hkq5PhLgtVoW1obkqYH0i4iELctEKixkhWLPTYs55doGUKCASvkjOXOd/pisVeLdO24ZX9D6yymJ/twqpJiG3g==}
+  /@typescript-eslint/scope-manager/5.30.7:
+    resolution: {integrity: sha512-7BM1bwvdF1UUvt+b9smhqdc/eniOnCKxQT/kj3oXtj3LqnTWCAM0qHRHfyzCzhEfWX0zrW7KqXXeE4DlchZBKw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.30.6
-      '@typescript-eslint/visitor-keys': 5.30.6
+      '@typescript-eslint/types': 5.30.7
+      '@typescript-eslint/visitor-keys': 5.30.7
     dev: true
 
-  /@typescript-eslint/type-utils/5.30.6_he2ccbldppg44uulnyq4rwocfa:
-    resolution: {integrity: sha512-GFVVzs2j0QPpM+NTDMXtNmJKlF842lkZKDSanIxf+ArJsGeZUIaeT4jGg+gAgHt7AcQSFwW7htzF/rbAh2jaVA==}
+  /@typescript-eslint/type-utils/5.30.7_he2ccbldppg44uulnyq4rwocfa:
+    resolution: {integrity: sha512-nD5qAE2aJX/YLyKMvOU5jvJyku4QN5XBVsoTynFrjQZaDgDV6i7QHFiYCx10wvn7hFvfuqIRNBtsgaLe0DbWhw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '*'
@@ -3196,7 +3178,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/utils': 5.30.6_he2ccbldppg44uulnyq4rwocfa
+      '@typescript-eslint/utils': 5.30.7_he2ccbldppg44uulnyq4rwocfa
       debug: 4.3.4
       eslint: 8.20.0
       tsutils: 3.21.0_typescript@4.7.4
@@ -3210,8 +3192,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@typescript-eslint/types/5.30.6:
-    resolution: {integrity: sha512-HdnP8HioL1F7CwVmT4RaaMX57RrfqsOMclZc08wGMiDYJBsLGBM7JwXM4cZJmbWLzIR/pXg1kkrBBVpxTOwfUg==}
+  /@typescript-eslint/types/5.30.7:
+    resolution: {integrity: sha512-ocVkETUs82+U+HowkovV6uxf1AnVRKCmDRNUBUUo46/5SQv1owC/EBFkiu4MOHeZqhKz2ktZ3kvJJ1uFqQ8QPg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
@@ -3236,8 +3218,8 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/typescript-estree/5.30.6_typescript@4.7.4:
-    resolution: {integrity: sha512-Z7TgPoeYUm06smfEfYF0RBkpF8csMyVnqQbLYiGgmUSTaSXTP57bt8f0UFXstbGxKIreTwQCujtaH0LY9w9B+A==}
+  /@typescript-eslint/typescript-estree/5.30.7_typescript@4.7.4:
+    resolution: {integrity: sha512-tNslqXI1ZdmXXrHER83TJ8OTYl4epUzJC0aj2i4DMDT4iU+UqLT3EJeGQvJ17BMbm31x5scSwo3hPM0nqQ1AEA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
@@ -3245,8 +3227,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/types': 5.30.6
-      '@typescript-eslint/visitor-keys': 5.30.6
+      '@typescript-eslint/types': 5.30.7
+      '@typescript-eslint/visitor-keys': 5.30.7
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
@@ -3257,16 +3239,16 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/utils/5.30.6_he2ccbldppg44uulnyq4rwocfa:
-    resolution: {integrity: sha512-xFBLc/esUbLOJLk9jKv0E9gD/OH966M40aY9jJ8GiqpSkP2xOV908cokJqqhVd85WoIvHVHYXxSFE4cCSDzVvA==}
+  /@typescript-eslint/utils/5.30.7_he2ccbldppg44uulnyq4rwocfa:
+    resolution: {integrity: sha512-Z3pHdbFw+ftZiGUnm1GZhkJgVqsDL5CYW2yj+TB2mfXDFOMqtbzQi2dNJIyPqPbx9mv2kUxS1gU+r2gKlKi1rQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       '@types/json-schema': 7.0.11
-      '@typescript-eslint/scope-manager': 5.30.6
-      '@typescript-eslint/types': 5.30.6
-      '@typescript-eslint/typescript-estree': 5.30.6_typescript@4.7.4
+      '@typescript-eslint/scope-manager': 5.30.7
+      '@typescript-eslint/types': 5.30.7
+      '@typescript-eslint/typescript-estree': 5.30.7_typescript@4.7.4
       eslint: 8.20.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@8.20.0
@@ -3283,11 +3265,11 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@typescript-eslint/visitor-keys/5.30.6:
-    resolution: {integrity: sha512-41OiCjdL2mCaSDi2SvYbzFLlqqlm5v1ZW9Ym55wXKL/Rx6OOB1IbuFGo71Fj6Xy90gJDFTlgOS+vbmtGHPTQQA==}
+  /@typescript-eslint/visitor-keys/5.30.7:
+    resolution: {integrity: sha512-KrRXf8nnjvcpxDFOKej4xkD7657+PClJs5cJVSG7NNoCNnjEdc46juNAQt7AyuWctuCgs6mVRc1xGctEqrjxWw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.30.6
+      '@typescript-eslint/types': 5.30.7
       eslint-visitor-keys: 3.3.0
     dev: true
 
@@ -9469,18 +9451,15 @@ packages:
     resolution: {integrity: sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==}
     dev: false
 
-  /motion/10.12.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-6jVZCX07rS7PNFc2awK4vQPFJJs8MJJifVbSPGiLZyh4jTKo8lqa30Ve3CP4xu8nyCKKqPIBnmYgUtJPLjBfqg==}
+  /motion/10.13.1:
+    resolution: {integrity: sha512-MPTlDUiIhB5q/KGt3LPykAelJMZ6EM5xNr/zL21PlD68TLsNY0ox8rPiXfTUzjCh5BV04+8RLkjhnj/UNInH6w==}
     dependencies:
-      '@motionone/animation': 10.12.0
-      '@motionone/dom': 10.12.0
-      '@motionone/react': 10.12.0_biqbaboplfbrettd7655fr4n2y
-      '@motionone/svelte': 10.12.0
-      '@motionone/types': 10.12.0
-      '@motionone/vue': 10.12.0
-    transitivePeerDependencies:
-      - react
-      - react-dom
+      '@motionone/animation': 10.13.1
+      '@motionone/dom': 10.13.1
+      '@motionone/svelte': 10.13.1
+      '@motionone/types': 10.13.0
+      '@motionone/utils': 10.13.1
+      '@motionone/vue': 10.13.1
     dev: false
 
   /move-concurrently/1.0.1:
@@ -11185,13 +11164,13 @@ packages:
       parse-ms: 2.1.0
     dev: false
 
-  /prisma/4.0.0:
-    resolution: {integrity: sha512-Dtsar03XpCBkcEb2ooGWO/WcgblDTLzGhPcustbehwlFXuTMliMDRzXsfygsgYwQoZnAUKRd1rhpvBNEUziOVw==}
+  /prisma/4.1.0:
+    resolution: {integrity: sha512-iwqpAT6In1uvMSwQAM3PqmaBdhh2OaQ/2t+n3RjpW4vAKP3R7E1T34FZUU4zGOWtMWm5dt0sPThQkT/h87r6gw==}
     engines: {node: '>=14.17'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11
+      '@prisma/engines': 4.1.0
 
   /prismjs/1.27.0:
     resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==}
