@@ -11,7 +11,7 @@ const Metric = ({
     <div className="flex items-center text-gray-900 dark:text-gray-100">
       {title}
     </div>
-    <p className="spacing-sm mt-2 text-3xl font-bold text-black dark:text-white">
+    <p className="spacing-sm mt-2 text-3xl text-black dark:text-white">
       {children || '-'}
     </p>
   </div>
