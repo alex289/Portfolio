@@ -5,6 +5,7 @@ import fetcher from '@/lib/fetcher';
 
 import Layout from '@/components/Layout';
 import Metric from '@/components/Metric';
+import Tracks from '@/components/TopTrack';
 
 import type { GetStaticProps } from 'next';
 import type { healthData, Views } from '@/lib/types';
@@ -43,7 +44,7 @@ export default function Dashboard({ previewMode }: Props): JSX.Element {
   return (
     <Layout title="Dashboard - Alexander Konietzko">
       <div className="mx-auto mb-16 flex w-full flex-col items-start justify-center xl:w-6/12">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
           Dashboard
         </h1>
         <p className="mb-2">
@@ -87,6 +88,10 @@ export default function Dashboard({ previewMode }: Props): JSX.Element {
             {process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
           </Metric>
         </div>
+        <h2 className="mb-4 mt-16 text-3xl font-bold tracking-tight text-black dark:text-white">
+          Top Spotify Tracks
+        </h2>
+        <Tracks />
       </div>
     </Layout>
   );
