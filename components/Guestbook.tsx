@@ -4,14 +4,14 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import useSWR, { useSWRConfig } from 'swr';
 import { format } from 'date-fns';
 
-import fetcher from 'lib/fetcher';
+import fetcher from '@/lib/fetcher';
 import useTranslation from '@/lib/useTranslation';
 
 import SuccessMessage from '@/components/guestbook/SuccessMessage';
 import ErrorMessage from '@/components/guestbook/ErrorMessage';
 import LoadingSpinner from '@/components/guestbook/LoadingSpinner';
 
-import { Form, FormState } from 'lib/types';
+import { Form, FormState } from '@/lib/types';
 import { guestbook } from '@prisma/client';
 
 type ClickEvent = {

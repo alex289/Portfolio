@@ -7,7 +7,7 @@ import { postQuery, postSlugsQuery } from '@/lib/sanity/queries';
 import { sanityClient, getClient } from '@/lib/sanity/sanity-server';
 import { mdxToHtml } from '@/lib/mdx';
 
-import type { Post } from 'lib/types';
+import type { Post } from '@/lib/types';
 
 export default function BlogPosts({ post }: { post: Post }) {
   return (

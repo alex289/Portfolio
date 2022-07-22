@@ -1,5 +1,6 @@
 import { type NextRequest } from 'next/server';
-import { getNowPlaying } from 'lib/spotify';
+
+import { getNowPlaying } from '@/lib/spotify';
 
 export const config = {
   runtime: 'experimental-edge',
@@ -35,8 +36,7 @@ export default async function handler(req: NextRequest) {
   const isPlaying = song.is_playing;
   const title = song.item.name;
   const artist = song.item.artists
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .map((_artist: any) => _artist.name)
+    .map((_artist: { name: string }) => _artist.name)
     .join(', ');
   const album = song.item.album.name;
   const albumImageUrl = song.item.album.images[0].url;
