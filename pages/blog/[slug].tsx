@@ -14,12 +14,9 @@ export default function BlogPosts({ post }: { post: Post }) {
     <BlogLayout post={post}>
       <MDXRemote
         {...post.content}
-        components={
-          {
-            ...components,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          } as any
-        }
+        components={{
+          ...components,
+        }}
       />
     </BlogLayout>
   );

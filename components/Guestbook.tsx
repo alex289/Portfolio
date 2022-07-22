@@ -73,8 +73,7 @@ export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
   const { data: session } = useSession();
   const { mutate } = useSWRConfig();
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const inputEl = useRef<any>(null);
+  const inputEl = useRef<HTMLInputElement | null>(null);
   const { data: entries } = useSWR<guestbook[]>('/api/guestbook', fetcher, {
     fallbackData,
   });
@@ -82,6 +81,11 @@ export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
   const leaveEntry = async (e: ClickEvent) => {
     e.preventDefault();
     setForm({ state: Form.Loading });
+
+    if (inputEl === null || inputEl.current === null) {
+      setForm({ state: Form.Error });
+      return;
+    }
 
     if (inputEl.current.value.trim().length === 0) {
       setForm({ state: Form.Error, message: t('guestbook.error') });

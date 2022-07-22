@@ -9,12 +9,10 @@ import useTranslation from '@/lib/useTranslation';
 import { indexQuery } from '@/lib/sanity/queries';
 import { getClient } from '@/lib/sanity/sanity-server';
 
-import type { InferGetStaticPropsType } from 'next';
+import type { GetStaticProps } from 'next';
 import type { Post } from '@/lib/types';
 
-export default function Blog({
-  posts,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Blog({ posts }: { posts: Post[] }) {
   const { t } = useTranslation();
   const { locale } = useRouter();
   const [searchValue, setSearchValue] = useState('');
@@ -86,8 +84,8 @@ export default function Blog({
   );
 }
 
-export async function getStaticProps({ preview = false }) {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const posts: Post[] = await getClient(preview).fetch(indexQuery);
 
   return { props: { posts } };
-}
+};

@@ -1,12 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from 'next/link';
-import Image from 'next/future/image';
+import Image, { ImageProps } from 'next/future/image';
 
 import Step from '@/components/blog/MDXComponents/Step';
 import ProsCard from '@/components/blog/MDXComponents/ProsCard';
 import ConsCard from '@/components/blog/MDXComponents/ConsCard';
 import ImageWithTheme from '@/components/blog/MDXComponents/ImageWithTheme';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomLink = (props: any) => {
   const href = props.href;
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
@@ -22,7 +22,7 @@ const CustomLink = (props: any) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
-function RoundedImage(props: any) {
+function RoundedImage(props: ImageProps) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
 

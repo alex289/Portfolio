@@ -1,6 +1,8 @@
 import { sanityClient } from '@/lib/sanity/sanity-server';
 import { postSlugsQuery } from '@/lib/sanity/queries';
 
+import type { GetServerSideProps } from 'next';
+
 const createSitemap = (
   slugs: string[]
 ) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -16,8 +18,8 @@ const createSitemap = (
           .join('')}
     </urlset>
 `;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function getServerSideProps({ res }: any) {
+
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const allPosts = await sanityClient.fetch(postSlugsQuery);
   const allPages = [
     ...allPosts.map(
@@ -46,7 +48,7 @@ export async function getServerSideProps({ res }: any) {
   return {
     props: {},
   };
-}
+};
 
 export default function Sitemap() {
   return null;
