@@ -9,6 +9,7 @@ type Props = {
   description?: string;
   type?: string;
   date?: string;
+  tags?: string[];
 };
 
 const Meta = ({
@@ -16,6 +17,7 @@ const Meta = ({
   type = 'website',
   description = 'Software developer, Typescript enthusiast and dual student',
   date,
+  tags,
 }: Props): JSX.Element => {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
@@ -27,6 +29,7 @@ const Meta = ({
     <Head>
       <title>{title}</title>
       <meta name="title" content={title} />
+      <meta charSet="utf-8" />
       <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="robots" content="follow, index" />
       <meta
@@ -73,6 +76,8 @@ const Meta = ({
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
       {date && <meta property="article:published_time" content={date} />}
+      {tags && <meta property="article:tag" content={tags.join(', ')} />}
+      {tags && <meta property="keywords" content={tags.join(', ')} />}
       <meta name="application-name" content="Alexander Konietzko" />
       <meta
         name="keywords"
