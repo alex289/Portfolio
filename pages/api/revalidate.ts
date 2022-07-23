@@ -23,8 +23,11 @@ export default async function handler(
       res.revalidate(`/blog/${slug}`),
     ]);
     return res.status(200).json({ message: `Updated ${slug}` });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (err: any) {
-    return res.status(500).json({ message: err.message });
+  } catch (err) {
+    if (err instanceof Error) {
+      return res.status(500).json({ message: err.message });
+    } else {
+      return res.status(500).json({ message: 'Unknown error' });
+    }
   }
 }
