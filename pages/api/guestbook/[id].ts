@@ -1,6 +1,7 @@
-import { getSession } from 'next-auth/react';
+import { unstable_getServerSession } from 'next-auth/next';
 
 import prisma from '@/lib/prisma';
+import { authOptions } from '../auth/[...nextauth]';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -8,7 +9,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const session = await getSession({ req });
+  const session = await unstable_getServerSession(req, res, authOptions);
   const { id } = req.query;
 
   const entry = await prisma.guestbook.findUnique({

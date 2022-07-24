@@ -1,6 +1,6 @@
 import { getTopTracks } from '@/lib/spotify';
 
-import type{ NextApiRequest } from 'next';
+import type { NextApiRequest } from 'next';
 
 export const config = {
   runtime: 'experimental-edge',
