@@ -51,16 +51,17 @@ export default function About() {
             <time className="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-[#c2c2c2]">
               August 2021
             </time>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
               {t('about-page.timeline.2.title')}
-            </h3>
+            </h2>
             <p className="mb-4 text-base font-normal text-gray-500 dark:text-[#c2c2c2]">
               {t('about-page.timeline.2.description')}
             </p>
             <a
               target="_blank"
               rel="noreferrer noopener"
-              href="https://www.netgo.de/">
+              href="https://www.netgo.de/"
+              aria-label="Netgo homepage">
               <div className="inline-flex cursor-pointer items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:border-gray-600 dark:bg-gray-800 dark:text-[#c2c2c2] dark:hover:bg-gray-700 dark:hover:text-white">
                 {t('about-page.timeline.learn-more')}{' '}
                 <svg

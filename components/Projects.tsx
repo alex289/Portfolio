@@ -49,7 +49,8 @@ const Project = ({
                 <a
                   href={project.homepage}
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                  aria-label="homepage">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -76,7 +77,8 @@ const Project = ({
               <a
                 href={project.html_url}
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+                aria-label="github">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink"
