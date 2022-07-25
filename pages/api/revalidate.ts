@@ -7,7 +7,18 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (!isValidRequest(req, process.env.SANITY_STUDIO_REVALIDATE_SECRET ?? '')) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method not allowed' });
+  }
+
+  if (!process.env.SANITY_STUDIO_REVALIDATE_SECRET) {
+    return res
+      .status(500)
+      .json({ message: 'Missing sanity studio revalidate secret' });
+  }
+
+  req.body = req.body.toString();
+  if (!isValidRequest(req, process.env.SANITY_STUDIO_REVALIDATE_SECRET)) {
     return res.status(401).json({ message: 'Invalid request' });
   }
 
@@ -22,7 +33,7 @@ export default async function handler(
       res.revalidate('/blog'),
       res.revalidate(`/blog/${slug}`),
     ]);
-    return res.status(200).json({ message: `Updated ${slug}` });
+    return res.status(200).json({ message: `Revalidated '${slug}' (${id})` });
   } catch (err) {
     if (err instanceof Error) {
       return res.status(500).json({ message: err.message });
