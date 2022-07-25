@@ -25,7 +25,6 @@ specifiers:
   next-themes: ^0.2.0
   nprogress: ^0.2.0
   postcss: ^8.4.14
-  preact: ^10.10.0
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.12
   prisma: ^4.1.0
@@ -62,7 +61,6 @@ dependencies:
   next-sanity: 0.6.0_react@18.2.0
   next-themes: 0.2.0_53oqlnqnxhbetdy4ljlkkvmoby
   nprogress: 0.2.0
-  preact: 10.10.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   sanity: 3.0.0-dev-preview.11_giifbl4lw3ow53crw2xcwgesy4

@@ -102,10 +102,10 @@ export default function Dashboard({ previewMode }: Props): JSX.Element {
   );
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async ({ preview }) => {
   return {
     props: {
-      previewMode: context.preview ?? false,
+      previewMode: preview ?? false,
     },
   };
 };

@@ -97,7 +97,7 @@ export default function About() {
         <div className="flex space-x-8">
           <a href="/static/images/konietzko_alexander.jpg">
             <Image
-              alt="Lee Robinson headshot"
+              alt="Alexander Konietzko headshot"
               width={400}
               quality={100}
               src={avatar}
@@ -106,7 +106,7 @@ export default function About() {
           </a>
           <a href="/static/images/konietzko_alexander.jpg">
             <Image
-              alt="Lee Robinson headshot"
+              alt="Alexander Konietzko headshot"
               width={400}
               quality={100}
               src={avatar}
