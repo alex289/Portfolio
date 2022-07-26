@@ -1,3 +1,8 @@
+import {
+  BadRequestEdge,
+  isValidHttpMethod,
+  MethodNotAllowedEdge,
+} from '@/lib/api';
 import { BACKUP_REPOS_URL } from '@/lib/constants';
 
 import { type NextRequest } from 'next/server';
@@ -7,8 +12,8 @@ export const config = {
 };
 
 export default async function handler(req: NextRequest) {
-  if (req.method !== 'GET') {
-    return new Response('Method not allowed', { status: 405 });
+  if (!isValidHttpMethod(req.method, ['GET'])) {
+    return MethodNotAllowedEdge();
   }
 
   const per_page = req.nextUrl.searchParams.get('per_page') || '20';
@@ -21,6 +26,10 @@ export default async function handler(req: NextRequest) {
 
   if (!reposResponse.ok) {
     const fallbackResponse = await fetch(BACKUP_REPOS_URL);
+
+    if (!fallbackResponse.ok) {
+      return BadRequestEdge('Failed to fetch fallback data');
+    }
 
     repos = await fallbackResponse.json();
   }

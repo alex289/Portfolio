@@ -1,15 +1,29 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
 import prisma from '@/lib/prisma';
+import {
+  BadRequest,
+  isValidHttpMethod,
+  MethodNotAllowed,
+  ServerError,
+} from '@/lib/api';
+
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (!isValidHttpMethod(req.method, ['GET', 'POST'])) {
+    return MethodNotAllowed(res);
+  }
+
   try {
     const slug = req.query.slug?.toString();
 
-    if (req.method === 'POST' && slug) {
+    if (!slug) {
+      return BadRequest(res, 'Invalid slug');
+    }
+
+    if (req.method === 'POST') {
       const newOrUpdatedViews = await prisma.views.upsert({
         where: { slug },
         create: {
@@ -37,10 +51,6 @@ export default async function handler(
       return res.status(200).json({ total: views?.count.toString() });
     }
   } catch (e) {
-    if (e instanceof Error) {
-      return res.status(500).json({ message: e.message });
-    } else {
-      return res.status(500).json({ message: 'Unknown error' });
-    }
+    return ServerError(res, e);
   }
 }

@@ -1,11 +1,16 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
+import { isValidHttpMethod, MethodNotAllowed, ServerError } from '@/lib/api';
 import prisma from '@/lib/prisma';
 
+import type { NextApiRequest, NextApiResponse } from 'next';
+
 export default async function handler(
-  _req: NextApiRequest,
+  req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (!isValidHttpMethod(req.method, ['GET'])) {
+    return MethodNotAllowed(res);
+  }
+
   try {
     const totalViews = await prisma.views.aggregate({
       _sum: {
@@ -15,10 +20,6 @@ export default async function handler(
 
     return res.status(200).json({ total: totalViews._sum.count?.toString() });
   } catch (e) {
-    if (e instanceof Error) {
-      return res.status(500).json({ message: e.message });
-    } else {
-      return res.status(500).json({ message: 'Unknown error' });
-    }
+    return ServerError(res, e);
   }
 }
