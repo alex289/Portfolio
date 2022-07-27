@@ -53,7 +53,7 @@ function GuestbookEntry({ t, entry, user }: GuestBookEntryProps) {
         <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
           {format(new Date(entry.updated_at), 'd MMM yyyy, k:mm')}
         </p>
-        {user && entry.created_by === user.name && (
+        {user && entry.email === user.email && (
           <>
             <span className="text-gray-600 dark:text-[#c2c2c2]">/</span>
             <button
