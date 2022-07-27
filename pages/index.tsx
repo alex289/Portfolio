@@ -14,11 +14,11 @@ import Project from '@/components/Projects';
 import type { GetStaticProps } from 'next';
 import type { Projects } from '@/lib/types';
 
-export default function Index({
-  fallbackData,
-}: {
+type Props = {
   fallbackData: Projects[];
-}): JSX.Element {
+};
+
+export default function Index({ fallbackData }: Props) {
   const { t } = useTranslation();
   return (
     <Layout>

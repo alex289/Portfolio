@@ -34,7 +34,7 @@ const Meta = ({
       <meta name="robots" content="follow, index" />
       <meta
         name="viewport"
-        content="minimum-scale=1, initial-scale=1, width=device-width"
+        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
       />
       <link
         rel="preload"
@@ -48,10 +48,6 @@ const Meta = ({
         content="black-translucent"
       />
       <link rel="manifest" href="/site.webmanifest" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover"
-      />
       <meta name="description" content={description} />
       {mounted && (
         <meta
@@ -77,12 +73,15 @@ const Meta = ({
       <meta property="og:title" content={title} />
       {date && <meta property="article:published_time" content={date} />}
       {tags && <meta property="article:tag" content={tags.join(', ')} />}
-      {tags && <meta property="keywords" content={tags.join(', ')} />}
+      {tags ? (
+        <meta property="keywords" content={tags.join(', ')} />
+      ) : (
+        <meta
+          name="keywords"
+          content="Alexander Konietzko, Portfolio, NextJs, TailwindCss"
+        />
+      )}
       <meta name="application-name" content="Alexander Konietzko" />
-      <meta
-        name="keywords"
-        content="Alexander Konietzko, Portfolio, NextJs, TailwindCss"
-      />
       <meta name="author" content="Alexander Konietzko" />
       <meta name="HandheldFriendly" content="true" />
       <link
