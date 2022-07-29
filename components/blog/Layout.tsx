@@ -46,7 +46,7 @@ export default function BlogLayout({
             <ViewCounter slug={post.slug} />
           </p>
         </div>
-        <Suspense fallback={null}>
+        <Suspense>
           <div className="prose mt-4 w-full max-w-none dark:prose-dark">
             {children}
           </div>

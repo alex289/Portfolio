@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import { prisma } from '@/lib/prisma';
 import useTranslation from '@/lib/useTranslation';
 
 import Layout from '@/components/Layout';

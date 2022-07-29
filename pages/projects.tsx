@@ -34,7 +34,7 @@ export default function ProjectsPage({
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           {t('main.projects')}
         </h1>
-        <Suspense fallback={null}>
+        <Suspense>
           <h2 className="text-gray-600 dark:text-gray-200">
             <Project fallbackData={fallbackData} amount={10} />
           </h2>

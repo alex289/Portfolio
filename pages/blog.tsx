@@ -101,7 +101,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
             </div>
           </div>
         </div>
-        <Suspense fallback={null}>
+        <Suspense>
           <h2 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
             {t('blog.all-posts')}
           </h2>

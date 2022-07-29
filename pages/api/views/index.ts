@@ -1,5 +1,5 @@
 import { isValidHttpMethod, MethodNotAllowed, ServerError } from '@/lib/api';
-import prisma from '@/lib/prisma';
+import { prisma } from '@/lib/prisma';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 

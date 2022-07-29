@@ -22,7 +22,7 @@ export default function Index({ fallbackData }: Props) {
   const { t } = useTranslation();
   return (
     <Layout>
-      <Suspense fallback={null}>
+      <Suspense>
         <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
           <div className="flex flex-col-reverse items-start sm:flex-row">
             <div className="flex flex-col pr-8">
