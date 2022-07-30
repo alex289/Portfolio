@@ -55,7 +55,6 @@
     "@prisma/client": "^4.1.1",
     "@sanity/core": "^2.30.2",
     "@sanity/webhook": "^2.0.0",
-    "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "date-fns": "^2.29.1",
     "motion": "^10.13.1",
