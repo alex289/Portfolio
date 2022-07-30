@@ -25,7 +25,10 @@ export default function Dashboard({ previewMode }: Props): JSX.Element {
   });
 
   const { data } = useSWR<healthData>('/api/health', fetcher);
-  const { data: guestbookCount } = useSWR('/api/guestbook?count=true', fetcher);
+  const { data: guestbookCount } = useSWR<{ count: number }>(
+    '/api/guestbook?count=true',
+    fetcher
+  );
   const { data: viewsData } = useSWR<Views>('/api/views', fetcher);
 
   if (!session || !session.isAdmin) {
