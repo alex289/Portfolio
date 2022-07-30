@@ -32,4 +32,4 @@ export const postBySlugQuery = `
 }
 `;
 
-export const postUpdatedQuery = `*[_type == "post" && _id == $id].slug.current`;
+export const postUpdatedQuery = `*[_type == "post" && _id == $id][0] {"slug": slug.current, language}`;

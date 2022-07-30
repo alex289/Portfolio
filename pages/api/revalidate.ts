@@ -51,10 +51,17 @@ export default async function handler(
   }
 
   try {
-    const slug = await sanityClient.fetch(postUpdatedQuery, { id });
+    const post = await sanityClient.fetch(postUpdatedQuery, { id });
+    const pathToRevalidate = `${post.language === 'de' ? '/de' : ''}/blog/${
+      post.slug
+    }`;
+
     await res.revalidate('/blog');
-    await res.revalidate(`/blog/${slug}`);
-    return res.status(200).json({ message: `[Revalidated] '${slug}' (${id})` });
+    await res.revalidate(pathToRevalidate);
+
+    return res
+      .status(200)
+      .json({ message: `[Revalidated] '${pathToRevalidate}' (${id})` });
   } catch (err) {
     if (err instanceof Error) {
       return res.status(500).json({ message: err.message });
