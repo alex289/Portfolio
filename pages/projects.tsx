@@ -3,7 +3,7 @@ import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
 import useTranslation from '@/lib/useTranslation';
-import { BACKUP_REPOS_URL } from '@/lib/constants';
+import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 
 import Project from '@/components/Projects';
 import Layout from '@/components/Layout';
@@ -61,6 +61,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       fallbackData,
     },
-    revalidate: 60,
+    revalidate: DAY_IN_SECONDS,
   };
 };

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/future/image';
 
 import useTranslation from '@/lib/useTranslation';
-import { BACKUP_REPOS_URL } from '@/lib/constants';
+import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 
 import profilePic from '../public/static/images/konietzko_alexander.jpg';
 
@@ -139,6 +139,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       fallbackData,
     },
-    revalidate: 60,
+    revalidate: DAY_IN_SECONDS,
   };
 };
