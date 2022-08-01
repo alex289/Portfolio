@@ -34,11 +34,11 @@ const Layout = ({
     <a href="#skip" className="skip-nav">
       Skip to content
     </a>
-    <div className="sticky-nav bg-gray-50 dark:bg-gray-800">
+    <div className="sticky top-0 z-50 bg-gray-50 dark:bg-gray-800">
       <Navbar blogTranslation={blogTranslation} />
     </div>
     <main
-      className="flex flex-col justify-center bg-gray-50 px-8 dark:bg-gray-800"
+      className="flex flex-col justify-center bg-gray-50 px-8 dark:bg-gray-800 md:mt-6"
       id="skip">
       {children}
     </main>

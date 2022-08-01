@@ -24,7 +24,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <nav className="sticky-nav sticky z-50 mx-auto my-0 flex w-full max-w-4xl items-center justify-between bg-gray-50 p-4 text-gray-900 dark:bg-gray-800 dark:text-gray-100 md:my-4 md:p-8">
+    <nav className="sticky-nav sticky top-0 z-50 mx-auto my-0 flex w-full max-w-4xl items-center justify-between bg-gray-50 p-4 text-gray-900 dark:bg-gray-800 dark:text-gray-100 md:my-4 md:p-4">
       <div>
         <MobileMenu />
         <div>

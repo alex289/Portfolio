@@ -153,7 +153,8 @@ export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
               aria-label="Your message"
               placeholder={t('guestbook.form.input')}
               required
-              className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 pl-4 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-100"
+              type="text"
+              className="mt-1 block w-full rounded-md border border-blue-50 bg-white py-2 pl-4 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-blue-opaque dark:bg-gray-800 dark:text-gray-100"
             />
             <button
               className="absolute right-1 top-1 flex h-8 w-28 items-center justify-center rounded bg-gray-100 px-4 py-1 font-medium text-gray-900 dark:bg-gray-700 dark:text-gray-100"
