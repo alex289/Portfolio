@@ -1,4 +1,4 @@
-import { Suspense, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 
 import { useRouter } from 'next/router';
 
@@ -14,10 +14,19 @@ import type { Post } from '@/lib/types';
 
 export default function Blog({ posts }: { posts: Post[] }) {
   const { t } = useTranslation();
-  const { locale } = useRouter();
+  const { locale, query } = useRouter();
   const [searchValue, setSearchValue] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
   const [filterBy, setFilterBy] = useState<'name' | 'tag'>('name');
+
+  useEffect(() => {
+    if (query.search) {
+      setSearchValue(query.search.toString());
+    }
+    if (query.filter) {
+      setFilterBy(query.filter === 'tag' ? 'tag' : 'name');
+    }
+  }, [query]);
 
   const filteredBlogPosts = useMemo(() => {
     return posts
@@ -54,6 +63,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
             type="text"
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search articles"
+            defaultValue={searchValue}
             className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-800 dark:bg-gray-700 dark:text-gray-100"
           />
           <svg
