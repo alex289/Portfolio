@@ -133,6 +133,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const backupResponse = await fetch(BACKUP_REPOS_URL);
 
     fallbackData = await backupResponse.json();
+    fallbackData = fallbackData.slice(0, 3);
   }
 
   return {

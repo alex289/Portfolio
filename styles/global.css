@@ -198,3 +198,7 @@ pre {
 .step > h3 {
   @apply my-0;
 }
+
+.glass-bg {
+  @apply bg-gray-50 dark:bg-gray-800 md:bg-opacity-50 md:dark:bg-opacity-60 backdrop-blur-lg backdrop-saturate-150;
+}
