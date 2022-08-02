@@ -8,7 +8,6 @@
   }
   
   .burger svg {
-    margin-top: 0.5rem;
     transform: translate(-50%, -50%) scale(1);
     top: 50%;
     left: 50%;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
@@ -7,15 +7,15 @@ import useDelayedRender from 'use-delayed-render';
 
 import useTranslation from '@/lib/useTranslation';
 
-import MenuIcon from './icons/MenuIcon';
-import CrossIcon from './icons/CrossIcon';
-
 import styles from 'styles/mobile-menu.module.css';
 
-export default function MobileMenu() {
+type Props = {
+  isMenuOpen: boolean;
+};
+
+export default function MobileMenu({ isMenuOpen }: Props) {
   const router = useRouter();
   const { t } = useTranslation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
     isMenuOpen,
     {
@@ -23,16 +23,6 @@ export default function MobileMenu() {
       exitDelay: 300,
     }
   );
-
-  function toggleMenu() {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-      document.body.style.overflow = '';
-    } else {
-      setIsMenuOpen(true);
-      document.body.style.overflow = 'hidden';
-    }
-  }
 
   useEffect(() => {
     return function cleanup() {
@@ -42,20 +32,11 @@ export default function MobileMenu() {
 
   return (
     <>
-      <button
-        id="burger"
-        className={cn(styles.burger, 'visible md:hidden')}
-        aria-label="Toggle menu"
-        type="button"
-        onClick={toggleMenu}>
-        <MenuIcon data-hide={isMenuOpen} />
-        <CrossIcon data-hide={!isMenuOpen} />
-      </button>
       {isMenuMounted && (
         <ul
           className={cn(
             styles.menu,
-            'absolute mt-4 flex flex-col bg-gray-100 dark:bg-gray-800 md:hidden',
+            'mt-4 md:hidden',
             isMenuRendered && styles.menuRendered
           )}>
           <li
