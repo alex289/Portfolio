@@ -41,7 +41,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
   }
 
   return (
-    <nav className="glass-bg sticky top-0 z-50 mx-auto my-0 w-full max-w-4xl items-center justify-between px-4 pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:p-4">
+    <nav className="ticky top-0 z-50 mx-auto my-0 w-full max-w-4xl items-center justify-between px-4 pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:p-4">
       <div>
         <Link href="/">
           <a
