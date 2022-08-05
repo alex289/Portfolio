@@ -139,5 +139,8 @@ export default function Blog({ posts }: { posts: Post[] }) {
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const posts: Post[] = await getClient(preview).fetch(indexQuery);
 
-  return { props: { posts } };
+  return {
+    props: { posts },
+    revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 60,
+  };
 };

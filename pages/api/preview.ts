@@ -27,5 +27,5 @@ export default async function handler(
     res.writeHead(307, { Location: '/blog' });
   }
 
-  res.end();
+  return res.end();
 }

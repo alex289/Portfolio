@@ -68,7 +68,7 @@ jobs:
       env:
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
         NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
-        SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+        SANITY_API_WRITE_TOKEN: ${{ secrets.SANITY_API_WRITE_TOKEN }}
 
     - uses: actions/cache@v3
       with:
