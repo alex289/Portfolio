@@ -2,71 +2,17 @@ import { useState, useRef, Suspense } from 'react';
 
 import { signIn, signOut, useSession } from 'next-auth/react';
 import useSWR, { useSWRConfig } from 'swr';
-import { format } from 'date-fns';
 
 import fetcher from '@/lib/fetcher';
 import useTranslation from '@/lib/useTranslation';
 
+import GuestbookEntry from '@/components/guestbook/GuestbookEntry';
 import SuccessMessage from '@/components/guestbook/SuccessMessage';
 import ErrorMessage from '@/components/guestbook/ErrorMessage';
 import LoadingSpinner from '@/components/guestbook/LoadingSpinner';
 
-import { Form, FormState } from '@/lib/types';
+import { ClickEvent, Form, FormState } from '@/lib/types';
 import { guestbook } from '@prisma/client';
-
-type ClickEvent = {
-  preventDefault: () => void;
-};
-
-type GuestBookEntryProps = {
-  t: (key: string) => string;
-  entry: guestbook;
-  user:
-    | {
-        name?: string | null | undefined;
-        email?: string | null | undefined;
-        image?: string | null | undefined;
-      }
-    | undefined;
-};
-
-function GuestbookEntry({ t, entry, user }: GuestBookEntryProps) {
-  const { mutate } = useSWRConfig();
-  const deleteEntry = async (e: ClickEvent) => {
-    e.preventDefault();
-
-    await fetch(`/api/guestbook/${entry.id}`, {
-      method: 'DELETE',
-    });
-
-    mutate('/api/guestbook');
-  };
-
-  return (
-    <div className="flex flex-col space-y-2">
-      <div className="prose w-full dark:prose-dark">{entry.body}</div>
-      <div className="flex items-center space-x-3">
-        <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
-          {entry.created_by}
-        </p>
-        <span className=" text-gray-600 dark:text-[#c2c2c2]">/</span>
-        <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
-          {format(new Date(entry.updated_at), 'd MMM yyyy, k:mm')}
-        </p>
-        {user && entry.email === user.email && (
-          <>
-            <span className="text-gray-600 dark:text-[#c2c2c2]">/</span>
-            <button
-              className="text-sm text-red-600 dark:text-red-400"
-              onClick={deleteEntry}>
-              {t('guestbook.delete')}
-            </button>
-          </>
-        )}
-      </div>
-    </div>
-  );
-}
 
 export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
   const { t } = useTranslation();

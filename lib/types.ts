@@ -74,3 +74,7 @@ export type Post = {
   tags: string[];
   readingTime: string;
 };
+
+export type ClickEvent = {
+  preventDefault: () => void;
+};
