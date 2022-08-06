@@ -82,6 +82,7 @@
         "logout": "Logout",
         "logged-in-as": "Logged in as",
         "success": "Hooray! Thanks for leaving a comment.",
+        "no-comment": "No comments yet.",
         "form": {
             "placeholder": "Leave a comment",
             "submit": "Send"

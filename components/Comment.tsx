@@ -161,6 +161,7 @@ const Comment = ({ slug }: { slug: string }) => {
                 </div>
               </div>
             ))}
+            {entries && entries.length === 0 && <p>{t("comment.no-comment")}</p>}
         </Suspense>
       </div>
     </div>

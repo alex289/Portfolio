@@ -82,6 +82,7 @@
         "logout": "Ausloggen",
         "logged-in-as": "Eingeloggt als",
         "success": "Hurra! Danke für das Schreiben eines Kommentars.",
+        "no-comment": "Keine Kommentare bisher.",
         "form": {
             "placeholder": "Schreibe einen Kommentar",
             "submit": "Senden"
