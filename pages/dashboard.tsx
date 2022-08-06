@@ -29,6 +29,10 @@ export default function Dashboard({ previewMode }: Props): JSX.Element {
     '/api/guestbook?count=true',
     fetcher
   );
+  const { data: commentCount } = useSWR<{ count: number }>(
+    '/api/comment?count=true',
+    fetcher
+  );
   const { data: viewsData } = useSWR<Views>('/api/views', fetcher);
 
   if (!session || !session.isAdmin) {
@@ -87,6 +91,7 @@ export default function Dashboard({ previewMode }: Props): JSX.Element {
               Blog/Guestbook
             </h2>
             <Metric title="Blog total views">{viewsData?.total}</Metric>
+            <Metric title="Blog comments">{commentCount?.count}</Metric>
             <Metric title="Guestbook entries">{guestbookCount?.count}</Metric>
 
             <h2 className="mt-3 text-xl font-bold sm:col-span-2">Sanity</h2>
