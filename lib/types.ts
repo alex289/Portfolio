@@ -39,6 +39,7 @@ export type NowPlayingSong = {
 export type Song = {
   songUrl: string;
   artist: string;
+  cover: string;
   title: string;
 };
 

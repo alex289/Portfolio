@@ -7,7 +7,9 @@ const nextConfig = {
     defaultLocale: 'en',
     localeDetection: false,
   },
-  images: { domains: ['cdn.sanity.io', 'github-readme-stats.vercel.app'] },
+  images: {
+    domains: ['cdn.sanity.io', 'i.scdn.co', 'github-readme-stats.vercel.app'],
+  },
   experimental: {
     legacyBrowsers: false,
     browsersListForSwc: true,
