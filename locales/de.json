@@ -76,6 +76,19 @@
         "error": "Bitte gebe eine Nachricht ein.",
         "delete": "Löschen"
     },
+    "comment": {
+        "title": "Kommentare",
+        "login": "Einloggen",
+        "logout": "Ausloggen",
+        "logged-in-as": "Eingeloggt als",
+        "success": "Hurra! Danke für das Schreiben eines Kommentars.",
+        "form": {
+            "placeholder": "Schreibe einen Kommentar",
+            "submit": "Senden"
+        },
+        "error": "Bitte gebe einen Kommentar ein.",
+        "delete": "Löschen"
+    },
     "projects": {
         "not-found": "Keine Projekte gefunden",
         "see-more": "Alle Projekte"

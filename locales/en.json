@@ -76,6 +76,19 @@
         "error": "Please enter a message.",
         "delete": "Delete"
     },
+    "comment": {
+        "title": "Comments",
+        "login": "Login",
+        "logout": "Logout",
+        "logged-in-as": "Logged in as",
+        "success": "Hooray! Thanks for leaving a comment.",
+        "form": {
+            "placeholder": "Leave a comment",
+            "submit": "Send"
+        },
+        "error": "Please enter a message.",
+        "delete": "Delete"
+    },
     "projects": {
         "not-found": "No projects found",
         "see-more": "See all projects"
