@@ -3,6 +3,7 @@ import Image from 'next/future/image';
 import { parseISO, format } from 'date-fns';
 
 import Layout from '@/components/Layout';
+import Comment from '@/components/Comment';
 import ViewCounter from '@/components/blog/ViewCounter';
 
 import useTranslation from '@/lib/useTranslation';
@@ -69,6 +70,7 @@ export default function BlogLayout({
             </a>
           </div>
         </Suspense>
+        <Comment slug={post.slug} />
       </article>
     </Layout>
   );
