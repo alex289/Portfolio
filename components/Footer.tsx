@@ -10,7 +10,7 @@ export default function Footer(): JSX.Element {
   return (
     <div className="flex flex-col justify-center bg-gray-50 px-8 dark:bg-gray-800">
       <footer className="mx-auto mb-8 flex w-full max-w-2xl flex-col items-start justify-center">
-        <hr className="mb-8 w-full border border-gray-200 dark:border-gray-700" />
+        <hr className="mb-8 w-full border border-gray-200 bg-gray-200 dark:border-gray-700 dark:bg-gray-700" />
         <NowPlaying />
         <div className="grid w-full max-w-2xl grid-cols-1 gap-4 pb-12 sm:grid-cols-3">
           <div className="flex flex-col space-y-4">

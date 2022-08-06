@@ -32,7 +32,9 @@ export default async function handler(req: NextRequest) {
     }
 
     repos = await fallbackResponse.json();
-    repos = repos.slice(0, parseInt(per_page, 10));
+    repos = repos
+      .filter((repo: { fork: boolean }) => !repo.fork)
+      .slice(0, Number(per_page));
   }
 
   return new Response(JSON.stringify(repos), {

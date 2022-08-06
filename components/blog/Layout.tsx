@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/future/image';
 import { parseISO, format } from 'date-fns';
 
@@ -45,6 +46,15 @@ export default function BlogLayout({
             {` • `}
             <ViewCounter slug={post.slug} />
           </p>
+        </div>
+        <div className="mt-2 flex w-full text-xs">
+          {post.tags.map((tag) => (
+            <Link href={`/blog?filter=tag&search=${tag}`} key={tag}>
+              <a className="mx-2 rounded-xl border border-gray-600 px-2 py-1 hover:bg-gray-200 dark:border-gray-400 dark:hover:bg-gray-600">
+                {tag}
+              </a>
+            </Link>
+          ))}
         </div>
         <Suspense>
           <div className="prose mt-4 w-full max-w-none dark:prose-dark">
