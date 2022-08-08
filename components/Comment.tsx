@@ -1,8 +1,11 @@
 import { Suspense, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { comment } from '@prisma/client';
-import { format } from 'date-fns';
+import { formatDistanceToNow } from 'date-fns';
+import deLocale from 'date-fns/locale/de';
+import enLocale from 'date-fns/locale/en-US';
 import useSWR, { useSWRConfig } from 'swr';
 
 import fetcher from '@/lib/fetcher';
@@ -16,6 +19,7 @@ import { ClickEvent, Form, FormState } from '@/lib/types';
 
 const Comment = ({ slug }: { slug: string }) => {
   const { t } = useTranslation();
+  const { locale } = useRouter();
   const { data: session } = useSession();
   const { mutate } = useSWRConfig();
 
@@ -170,7 +174,10 @@ const Comment = ({ slug }: { slug: string }) => {
                   </p>
                   <span className=" text-gray-600 dark:text-[#c2c2c2]">/</span>
                   <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
-                    {format(new Date(entry.updated_at), 'd MMM yyyy, k:mm')}
+                    {formatDistanceToNow(new Date(entry.updated_at), {
+                      addSuffix: true,
+                      locale: locale === 'de' ? deLocale : enLocale,
+                    })}
                   </p>
                   {session?.user && entry.email === session?.user?.email && (
                     <>
