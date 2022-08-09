@@ -5,6 +5,8 @@ import {
   MethodNotAllowed,
   ServerError,
 } from '@/lib/api';
+import { previewClient } from '@/lib/sanity/sanity-server';
+import { postBySlugQuery } from '@/lib/sanity/queries';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -21,6 +23,14 @@ export default async function handler(
 
     if (!slug) {
       return BadRequest(res, 'Invalid slug');
+    }
+
+    const post = await previewClient.fetch(postBySlugQuery, {
+      slug,
+    });
+
+    if (!post) {
+      return res.status(401).json({ message: 'Invalid slug' });
     }
 
     if (req.method === 'POST') {

@@ -29,10 +29,10 @@
   "homepage": "https://alexanderkonietzko.vercel.app",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.4",
-    "@types/node": "^18.6.4",
+    "@types/node": "^18.6.5",
     "@types/nprogress": "^0.2.0",
-    "@types/react": "^18.0.16",
-    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@types/react": "^18.0.17",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
     "autoprefixer": "^10.4.8",
     "eslint": "^8.21.0",
     "eslint-config-next": "12.2.4",

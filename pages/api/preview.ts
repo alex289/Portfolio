@@ -22,9 +22,9 @@ export default async function handler(
       return res.status(401).json({ message: 'Invalid slug' });
     }
 
-    res.writeHead(307, { Location: `/blog/${post.slug}` });
+    res.redirect(307, `/blog/${post.slug}`);
   } else {
-    res.writeHead(307, { Location: '/blog' });
+    res.redirect(307, '/blog');
   }
 
   return res.end();

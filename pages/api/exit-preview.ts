@@ -5,6 +5,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   res.clearPreviewData();
-  res.writeHead(307, { Location: '/' });
+  res.redirect(307, '/');
   res.end();
 }
