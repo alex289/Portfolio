@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 import Meta from '@/components/Meta';
 import Navbar from '@/components/Navbar';
@@ -42,7 +42,9 @@ const Layout = ({
       id="skip">
       {children}
     </main>
-    <Footer></Footer>
+    <Suspense>
+      <Footer />
+    </Suspense>
   </div>
 );
 

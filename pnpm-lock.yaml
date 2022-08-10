@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@mdx-js/react': ^2.1.2
-  '@prisma/client': ^4.1.1
+  '@prisma/client': ^4.2.0
   '@sanity/core': ^2.30.3
   '@sanity/webhook': ^2.0.0
   '@tailwindcss/forms': ^0.5.2
@@ -21,13 +21,13 @@ specifiers:
   next: 12.2.4
   next-auth: ^4.10.3
   next-mdx-remote: ^4.1.0
-  next-sanity: ^0.6.0
+  next-sanity: ^0.6.2
   next-themes: ^0.2.0
   nprogress: ^0.2.0
   postcss: ^8.4.16
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.13
-  prisma: ^4.1.1
+  prisma: ^4.2.0
   react: ^18.2.0
   react-dom: ^18.2.0
   reading-time: ^1.5.0
@@ -48,7 +48,7 @@ specifiers:
 
 dependencies:
   '@mdx-js/react': 2.1.2_react@18.2.0
-  '@prisma/client': 4.1.1_prisma@4.1.1
+  '@prisma/client': 4.2.0_prisma@4.2.0
   '@sanity/core': 2.30.3_2xs23oyvoftipz4bkrawpfqnzq
   '@sanity/webhook': 2.0.0
   '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.8
@@ -58,7 +58,7 @@ dependencies:
   next: 12.2.4_4cc5zw5azim2bix77d63le72su
   next-auth: 4.10.3_biqbaboplfbrettd7655fr4n2y
   next-mdx-remote: 4.1.0_biqbaboplfbrettd7655fr4n2y
-  next-sanity: 0.6.0_react@18.2.0
+  next-sanity: 0.6.2_react@18.2.0
   next-themes: 0.2.0_vyccxgqxcnj5vudpssiumaxlme
   nprogress: 0.2.0
   react: 18.2.0
@@ -84,7 +84,7 @@ devDependencies:
   postcss: 8.4.16
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
-  prisma: 4.1.1
+  prisma: 4.2.0
   reading-time: 1.5.0
   rehype-autolink-headings: 6.1.1
   rehype-code-titles: 1.1.0
@@ -1884,8 +1884,8 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: false
 
-  /@prisma/client/4.1.1_prisma@4.1.1:
-    resolution: {integrity: sha512-2pXuIUYxHv5H9o6QTa1VIsl4yMgsAjKQOitlo8WVTB+vo73rmMJITBPavdGUZSWUc7adMkFzEV3y5rVTUQr77Q==}
+  /@prisma/client/4.2.0_prisma@4.2.0:
+    resolution: {integrity: sha512-Q/X8fi1UBufCrkdLk188sC/roiGxEm1V3qU4uEP5SyleO5n2A+FyC62S7+4I0hu57CU3c7Ls3YjqPiZyTHVGOw==}
     engines: {node: '>=14.17'}
     requiresBuild: true
     peerDependencies:
@@ -1894,16 +1894,16 @@ packages:
       prisma:
         optional: true
     dependencies:
-      '@prisma/engines-version': 4.1.0-48.8d8414deb360336e4698a65aa45a1fbaf1ce13d8
-      prisma: 4.1.1
+      '@prisma/engines-version': 4.2.0-33.2920a97877e12e055c1333079b8d19cee7f33826
+      prisma: 4.2.0
     dev: false
 
-  /@prisma/engines-version/4.1.0-48.8d8414deb360336e4698a65aa45a1fbaf1ce13d8:
-    resolution: {integrity: sha512-cRRJwpHFGFJZvtHbY3GZjMffNBEjjZk68ztn+S2hDgPCGB4H66IK26roK94GJxBodSehwRJ0wGyebC2GoIH1JQ==}
+  /@prisma/engines-version/4.2.0-33.2920a97877e12e055c1333079b8d19cee7f33826:
+    resolution: {integrity: sha512-tktkqdiwqE4QhmE088boPt+FwPj1Jub/zk+5F6sEfcRHzO5yz9jyMD5HFVtiwxZPLx/8Xg9ElnuTi8E5lWVQFQ==}
     dev: false
 
-  /@prisma/engines/4.1.1:
-    resolution: {integrity: sha512-DCw8L/SS0IXqmj5IW/fMxOXiifnsfjBzDfRhf0j3NFWqvMCh9OtfjmXQZxVgI2mwvJLc/5jzXhkiWT39qS09dA==}
+  /@prisma/engines/4.2.0:
+    resolution: {integrity: sha512-tefRwCVDwLqk0WrBLErYR26uKKxzLSlKvRyADFiQn/fizJhqk9nxMXH8F6SE4w6r/szUQTzIJ4vheJKQ4dYKpw==}
     requiresBuild: true
 
   /@reach/auto-id/0.13.2_biqbaboplfbrettd7655fr4n2y:
@@ -2058,7 +2058,7 @@ packages:
     dependencies:
       '@sanity/eventsource': 4.0.0
       '@sanity/generate-help-url': 3.0.0
-      get-it: 6.1.0
+      get-it: 6.1.1
       make-error: 1.3.6
       object-assign: 4.1.1
       rxjs: 6.6.7
@@ -2230,7 +2230,7 @@ packages:
     resolution: {integrity: sha512-3mgnk8McWphY8ZCmMSAqbPw1rO+BgpMOTlk9+8Yu//p6aovFcX9S6jqx+3JejiyvNV2Zz2OwtPrfHXP7qLiVjg==}
     engines: {node: '>=10'}
     dependencies:
-      '@sanity/types': 2.29.5
+      '@sanity/types': 2.30.3
       eventsource: 1.1.2
       fast-deep-equal: 3.1.3
       groq: 2.29.3
@@ -2534,17 +2534,6 @@ packages:
   /@sanity/timed-out/4.0.2:
     resolution: {integrity: sha512-NBDKGj14g9Z+bopIvZcQKWCzJq5JSrdmzRR1CS+iyA3Gm8SnIWBfZa7I3mTg2X6Nu8LQXG0EPKXdOGozLS4i3w==}
     engines: {node: '>=0.10.0'}
-    dev: false
-
-  /@sanity/types/2.29.5:
-    resolution: {integrity: sha512-opsUt96xJy6j8LVw8L96HMCyF84Li9p4CNUZEUyKEa63nfG4IYD6fNY5ISiBthkw1os/J6E5EQfjkvME84seQA==}
-    dependencies:
-      '@sanity/client': 3.3.3
-      '@sanity/color': 2.1.11
-      '@types/react': 17.0.47
-      rxjs: 6.6.7
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /@sanity/types/2.30.3:
@@ -6943,32 +6932,6 @@ packages:
       - supports-color
     dev: false
 
-  /get-it/6.1.0:
-    resolution: {integrity: sha512-hvk2h2hiOHji57MpBQ/o9CnJT7hpNII7Jio3AyY41I7AmkUVvnYrpQAPIQGc3j7R5QNYnhwyXmok+DSSdBLWbg==}
-    engines: {node: '>=12.0.0'}
-    dependencies:
-      '@sanity/timed-out': 4.0.2
-      create-error-class: 3.0.2
-      debug: 2.6.9
-      decompress-response: 6.0.0
-      follow-redirects: 1.15.1_debug@2.6.9
-      form-urlencoded: 2.0.9
-      into-stream: 3.1.0
-      is-plain-object: 2.0.4
-      is-retry-allowed: 1.2.0
-      is-stream: 1.1.0
-      nano-pubsub: 1.0.2
-      object-assign: 4.1.1
-      parse-headers: 2.0.5
-      progress-stream: 2.0.0
-      same-origin: 0.1.1
-      simple-concat: 1.0.1
-      tunnel-agent: 0.6.0
-      url-parse: 1.5.10
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /get-it/6.1.1:
     resolution: {integrity: sha512-2835L9lb4NAgjAbFOMMOm2XDSgj+lWmmCQv40A5rE7zZoIdM2+yk7Ie+sBD3T5lHW/Dw5IFFHyx16oQGpAo4hQ==}
     engines: {node: '>=12.0.0'}
@@ -9618,13 +9581,13 @@ packages:
       - supports-color
     dev: false
 
-  /next-sanity/0.6.0_react@18.2.0:
-    resolution: {integrity: sha512-Pcn5OnVWjKtjrecTXOvf2mZNdznmAcexbJrsEQmlAob877xey71iK09vdF5hhJzDPvRLqfXRG8nbJkwWmuPpzA==}
+  /next-sanity/0.6.2_react@18.2.0:
+    resolution: {integrity: sha512-1Au5eg9ydUZXwZk8t4VUkO4Rc6ZPmGSzeTbCQStwbRSAIznG5BaTVPkNMlM48FF0T6JQ67BvSSXsVHeLCcc57Q==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@sanity/client': 3.3.2
+      '@sanity/client': 3.3.3
       '@sanity/groq-store': 0.4.0
       groq: 2.29.3
       react: 18.2.0
@@ -11168,13 +11131,13 @@ packages:
       parse-ms: 2.1.0
     dev: false
 
-  /prisma/4.1.1:
-    resolution: {integrity: sha512-yw50J8If2dKP4wYIi695zthsCASQFHiogGvUHHWd3falx/rpsD6Sb1LMLRV9nO3iGG3lozxNJ2PSINxK7xwdpg==}
+  /prisma/4.2.0:
+    resolution: {integrity: sha512-EswC2+mFi2oKQ/IDVkokDxwAsuiuYH4gKGkNNMAQ+86f3qwOo4tiVubCRxrQp5d61F+Yf+30f8Sv0zwWMnj0XQ==}
     engines: {node: '>=14.17'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 4.1.1
+      '@prisma/engines': 4.2.0
 
   /prismjs/1.27.0:
     resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==}
