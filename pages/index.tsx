@@ -23,7 +23,7 @@ export default function Index({ fallbackData }: Props) {
   return (
     <Layout>
       <Suspense>
-        <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
+        <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center">
           <div className="flex flex-col-reverse items-start sm:flex-row">
             <div className="flex flex-col pr-8">
               <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">

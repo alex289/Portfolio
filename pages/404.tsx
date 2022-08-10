@@ -8,7 +8,7 @@ export default function NotFound(): JSX.Element {
   const { t } = useTranslation();
   return (
     <Layout title="404 - Alexander Konietzko">
-      <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
+      <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           404 – {t('404.title')}
         </h1>

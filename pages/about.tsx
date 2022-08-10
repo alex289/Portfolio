@@ -14,7 +14,7 @@ export default function About() {
   );
   return (
     <Layout title={t('main.about') + ' - Alexander Konietzko'}>
-      <div className="mx-auto mb-16 flex w-full max-w-2xl flex-col items-start justify-center">
+      <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           {t('main.about')}
         </h1>

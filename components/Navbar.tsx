@@ -41,12 +41,12 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
   }
 
   return (
-    <nav className="ticky top-0 z-50 mx-auto my-0 w-full max-w-4xl items-center justify-between px-4 pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:p-4">
+    <nav className="ticky top-0 z-50 mx-auto my-0 w-full max-w-3xl items-center justify-between pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:py-4">
       <div>
         <Link href="/">
           <a
             id="nav-home"
-            className={`invisible m-1 text-gray-900 dark:text-gray-100 sm:m-4 md:visible ${
+            className={`invisible mr-1 text-gray-900 dark:text-gray-100 sm:mr-4 md:visible ${
               router.asPath === '/' ? 'font-semibold' : ''
             }`}>
             <span className="dark:link-underline link-underline-black py-1">

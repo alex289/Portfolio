@@ -47,7 +47,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
     <Layout
       title="Blog – Alexander Konietzko"
       description="Thoughts on programming, tech, music, and my personal life.">
-      <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
+      <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           Blog
         </h1>
@@ -64,7 +64,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search articles"
             defaultValue={searchValue}
-            className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-800 dark:bg-gray-700 dark:text-gray-100"
+            className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-800 dark:bg-gray-700 dark:text-gray-100 dark:focus:border-blue-500"
           />
           <svg
             className="absolute right-12 top-3 h-5 w-5 cursor-pointer text-gray-400 dark:text-gray-300"
