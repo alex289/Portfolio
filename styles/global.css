@@ -48,11 +48,17 @@ html {
   min-height: 100vh;
 }
 
-@media screen and (min-width: 992px) {
-  .dashboard {
-    margin-left: 31%;
-    margin-right: 31%;
-  }
+#nprogress .bar {
+  background: #9daaf2 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #9daaf2, 0 0 5px #9daaf2 !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #9daaf2 !important;
+  border-left-color: #9daaf2 !important;
 }
 
 .skip-nav {
