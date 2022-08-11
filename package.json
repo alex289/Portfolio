@@ -32,6 +32,7 @@
     "@types/node": "^18.7.1",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.17",
+    "@types/rss": "^0.0.29",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "autoprefixer": "^10.4.8",
     "eslint": "^8.21.0",

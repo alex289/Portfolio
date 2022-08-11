@@ -10,6 +10,7 @@ specifiers:
   '@types/node': ^18.7.1
   '@types/nprogress': ^0.2.0
   '@types/react': ^18.0.17
+  '@types/rss': ^0.0.29
   '@typescript-eslint/eslint-plugin': ^5.33.0
   autoprefixer: ^10.4.8
   classnames: ^2.3.1
@@ -78,6 +79,7 @@ devDependencies:
   '@types/node': 18.7.1
   '@types/nprogress': 0.2.0
   '@types/react': 18.0.17
+  '@types/rss': 0.0.29
   '@typescript-eslint/eslint-plugin': 5.33.0_7npxne74daw7xswjimqfib54ka
   autoprefixer: 10.4.8_postcss@8.4.16
   eslint: 8.21.0
@@ -3088,6 +3090,10 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
       csstype: 3.1.0
+
+  /@types/rss/0.0.29:
+    resolution: {integrity: sha512-9hAYKyOcoxWqkJMue6bi0fcNXxjJiRutVvqyImy732LmTCxRz9BYPmSmujG7uddK0ZEP/35K3QVZ0sfAVyPnQw==}
+    dev: true
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
