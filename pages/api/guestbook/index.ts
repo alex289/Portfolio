@@ -66,6 +66,8 @@ export default async function handler(
     },
   });
 
+  await res.revalidate('/guestbook');
+
   return res.status(200).json({
     id: newEntry.id.toString(),
     body: newEntry.body,

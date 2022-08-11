@@ -56,6 +56,8 @@ export default async function handler(
       },
     });
 
+    await res.revalidate('/guestbook');
+
     return res.status(200).json({ message: `Deleted entry ${id}` });
   }
 
@@ -78,6 +80,8 @@ export default async function handler(
       updated_at: new Date().toISOString(),
     },
   });
+
+  await res.revalidate('/guestbook');
 
   return res.status(201).json({
     ...entry,
