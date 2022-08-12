@@ -121,8 +121,8 @@ export default function Blog({ posts }: { posts: Post[] }) {
           </div>
         </div>
         <Suspense>
-          <h2 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
-            {t('blog.all-posts')}
+          <h2 className="mt-8 mb-5 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
+            {t('blog.all-posts')} ({filteredBlogPosts.length})
           </h2>
           {!filteredBlogPosts.length && (
             <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">

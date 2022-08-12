@@ -51,6 +51,7 @@ export default function ProjectsPage({
                 width={495}
                 height={195}
                 unoptimized
+                priority
                 src={`https://github-readme-stats.vercel.app/api?username=alex289&show_icons=true&cache_seconds=43200${
                   resolvedTheme === 'dark' ? '&theme=discord_old_blurple' : ''
                 }${locale === 'de' ? '&locale=de' : ''}`}

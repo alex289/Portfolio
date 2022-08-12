@@ -21,7 +21,10 @@
     "TailwindCss",
     "Portfolio"
   ],
-  "author": "Alex289",
+  "author": {
+    "name": "Alexander Konietzko",
+    "url": "https://alexanderkonietzko.vercel.app"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Alex289/Portfolio/issues"
