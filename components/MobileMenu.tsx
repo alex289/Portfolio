@@ -100,7 +100,8 @@ export default function MobileMenu({ isMenuOpen }: Props) {
           <li
             className={cn(
               'ml-3 border-b border-gray-300 dark:border-gray-700',
-              router.pathname === '/guestbook' && 'font-semibold'
+              router.pathname === '/guestbook' &&
+                'font-semibold dark:text-primary'
             )}
             style={{ transitionDelay: '275ms' }}>
             <Link href="/guestbook">
