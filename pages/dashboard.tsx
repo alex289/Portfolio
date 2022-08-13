@@ -77,7 +77,7 @@ export default function Dashboard({ previewMode }: Props): JSX.Element {
 
             <h2 className="mt-3 text-xl font-bold sm:col-span-2">Health</h2>
             <Metric title="Uptime">{data?.uptime}</Metric>
-            <Metric title="Rss">{data?.mem.rss}</Metric>
+            <Metric title="RSS">{data?.mem.rss}</Metric>
             <Metric title="Heap total">{data?.mem.heapTotal}</Metric>
             <Metric title="Heap used">{data?.mem.heapUsed}</Metric>
             <Metric title="External">{data?.mem.external}</Metric>

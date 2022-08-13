@@ -42,7 +42,7 @@ export default function MobileMenu({ isMenuOpen }: Props) {
           <li
             className={cn(
               'ml-3 border-b border-gray-300 dark:border-gray-700',
-              router.asPath === '/' && 'font-semibold'
+              router.asPath === '/' && 'font-semibold dark:text-primary'
             )}
             style={{ transitionDelay: '150ms' }}>
             <Link href="/">
@@ -56,7 +56,7 @@ export default function MobileMenu({ isMenuOpen }: Props) {
           <li
             className={cn(
               'ml-3 border-b border-gray-300 dark:border-gray-700',
-              router.pathname === '/about' && 'font-semibold'
+              router.pathname === '/about' && 'font-semibold dark:text-primary'
             )}
             style={{ transitionDelay: '175ms' }}>
             <Link href="/about">
@@ -70,7 +70,8 @@ export default function MobileMenu({ isMenuOpen }: Props) {
           <li
             className={cn(
               'ml-3 border-b border-gray-300 dark:border-gray-700',
-              router.pathname === '/projects' && 'font-semibold'
+              router.pathname === '/projects' &&
+                'font-semibold dark:text-primary'
             )}
             style={{ transitionDelay: '200ms' }}>
             <Link href="/projects">
@@ -84,7 +85,8 @@ export default function MobileMenu({ isMenuOpen }: Props) {
           <li
             className={cn(
               'ml-3 border-b border-gray-300 dark:border-gray-700',
-              router.pathname === '/blog' && 'font-semibold'
+              router.pathname.includes('blog') &&
+                'font-semibold dark:text-primary'
             )}
             style={{ transitionDelay: '250ms' }}>
             <Link href="/blog">

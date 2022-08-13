@@ -76,7 +76,7 @@ export default function Footer(): JSX.Element {
           <ExternalLink
             href="https://tailwindcss.com/"
             color="text-primary hover:text-primary-dark">
-            TailwindCss
+            TailwindCSS
           </ExternalLink>
           . {t('footer.hosted')}
           <ExternalLink

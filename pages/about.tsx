@@ -31,7 +31,7 @@ export default function About() {
         <h2 className="prose mb-16 text-gray-600 dark:prose-dark dark:text-[#c2c2c2]">
           <ul className="list-disc">
             <li>
-              Github:{' '}
+              GitHub:{' '}
               <Link href="https://github.com/alex289">
                 <a className="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-dark">
                   @alex289
