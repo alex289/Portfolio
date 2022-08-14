@@ -14,7 +14,7 @@ export default function About() {
   );
   return (
     <Layout title={t('main.about') + ' - Alexander Konietzko'}>
-      <div className="mx-auto mb-16 flex w-full max-w-2xl flex-col items-start justify-center">
+      <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           {t('main.about')}
         </h1>
@@ -31,12 +31,19 @@ export default function About() {
         <h2 className="prose mb-16 text-gray-600 dark:prose-dark dark:text-[#c2c2c2]">
           <ul className="list-disc">
             <li>
-              Github: <Link href="https://github.com/alex289">@alex289</Link>
+              GitHub:{' '}
+              <Link href="https://github.com/alex289">
+                <a className="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-dark">
+                  @alex289
+                </a>
+              </Link>
             </li>
             <li>
               Website:{' '}
               <Link href="https://alexanderkonietzko.vercel.app">
-                https://alexanderkonietzko.vercel.app
+                <a className="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-dark">
+                  https://alexanderkonietzko.vercel.app
+                </a>
               </Link>
             </li>
           </ul>

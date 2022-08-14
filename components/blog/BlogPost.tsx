@@ -37,9 +37,7 @@ export default function BlogPost({ title, excerpt, slug, date, tags }: Props) {
           {tags &&
             tags.map((tag, key) => {
               return (
-                <div
-                  key={key}
-                  className="mx-2 text-purple-700 dark:text-purple-500">
+                <div key={key} className="mx-2 text-primary">
                   <Link href={`/blog?search=${tag}&filter=tag`} replace shallow>
                     {tag}
                   </Link>

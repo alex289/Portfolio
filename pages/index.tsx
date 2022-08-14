@@ -23,7 +23,7 @@ export default function Index({ fallbackData }: Props) {
   return (
     <Layout>
       <Suspense>
-        <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
+        <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center">
           <div className="flex flex-col-reverse items-start sm:flex-row">
             <div className="flex flex-col pr-8">
               <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
@@ -58,7 +58,7 @@ export default function Index({ fallbackData }: Props) {
             <BlogPostCard
               title={t('index-page.posts.1.title')}
               slug={t('index-page.posts.1.slug')}
-              gradient="from-[#D8B4FE] to-[#818CF8]"
+              gradient="from-[#D8B4FE] via-[#726dde] to-[#818CF8]"
             />
             <BlogPostCard
               title={t('index-page.posts.2.title')}
@@ -68,7 +68,7 @@ export default function Index({ fallbackData }: Props) {
             <BlogPostCard
               title={t('index-page.posts.3.title')}
               slug={t('index-page.posts.3.slug')}
-              gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
+              gradient="from-[#9333EA] via-[#818CF8] to-[#3B82F6]"
             />
           </div>
           <Link href="/blog">

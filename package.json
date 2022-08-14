@@ -17,11 +17,14 @@
     "url": "git+https://github.com/Alex289/Portfolio.git"
   },
   "keywords": [
-    "NextJs",
-    "TailwindCss",
+    "Next.js",
+    "TailwindCSS",
     "Portfolio"
   ],
-  "author": "Alex289",
+  "author": {
+    "name": "Alexander Konietzko",
+    "url": "https://alexanderkonietzko.vercel.app"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Alex289/Portfolio/issues"
@@ -32,6 +35,7 @@
     "@types/node": "^18.7.2",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.17",
+    "@types/rss": "^0.0.29",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "autoprefixer": "^10.4.8",
     "eslint": "^8.21.0",
@@ -51,6 +55,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.6",
     "@mdx-js/react": "^2.1.2",
     "@prisma/client": "^4.2.1",
     "@sanity/core": "^2.30.3",
@@ -58,6 +63,7 @@
     "@tailwindcss/forms": "^0.5.2",
     "classnames": "^2.3.1",
     "date-fns": "^2.29.1",
+    "jotai": "^1.7.8",
     "motion": "^10.13.2",
     "next": "12.2.5",
     "next-auth": "^4.10.3",
@@ -67,6 +73,7 @@
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rss": "^1.2.2",
     "sanity": "3.0.0-dev-preview.12",
     "sanity-plugin-markdown": "3.0.0-v3-studio.0",
     "sanity-plugin-media": "2.0.0-v3-studio.0",
@@ -76,7 +83,7 @@
     "use-delayed-render": "^0.0.7"
   },
   "nextBundleAnalysis": {
-    "budget": 133120,
+    "budget": 143360,
     "budgetPercentIncreaseRed": 20,
     "showDetails": true
   }

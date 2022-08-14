@@ -9,7 +9,7 @@ export default function Footer(): JSX.Element {
   const { t } = useTranslation();
   return (
     <div className="flex flex-col justify-center bg-gray-50 px-8 dark:bg-gray-800">
-      <footer className="mx-auto mb-8 flex w-full max-w-2xl flex-col items-start justify-center">
+      <footer className="mx-auto mb-8 flex w-full max-w-3xl flex-col items-start justify-center">
         <hr className="mb-8 w-full border border-gray-200 bg-gray-200 dark:border-gray-700 dark:bg-gray-700" />
         <NowPlaying />
         <div className="grid w-full max-w-2xl grid-cols-1 gap-4 pb-12 sm:grid-cols-3">
@@ -67,13 +67,24 @@ export default function Footer(): JSX.Element {
           className="mx-auto text-sm text-gray-500 dark:text-gray-300"
           id="powered-by">
           {t('footer.powered')}
-          <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink>{' '}
+          <ExternalLink
+            href="https://nextjs.org/"
+            color="text-primary hover:text-primary-dark">
+            Next.js
+          </ExternalLink>{' '}
           {t('footer.and')}
-          <ExternalLink href="https://tailwindcss.com/">
-            TailwindCss
+          <ExternalLink
+            href="https://tailwindcss.com/"
+            color="text-primary hover:text-primary-dark">
+            TailwindCSS
           </ExternalLink>
           . {t('footer.hosted')}
-          <ExternalLink href="https://vercel.com/">Vercel</ExternalLink>.
+          <ExternalLink
+            href="https://vercel.com/"
+            color="text-primary hover:text-primary-dark">
+            Vercel
+          </ExternalLink>
+          .
         </p>
       </footer>
     </div>

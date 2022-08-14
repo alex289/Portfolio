@@ -14,7 +14,7 @@
     },
     "index-page": {
         "title": "Software Entwickler und Student bei",
-        "intro": "Dabei ein schnelleres Web entwickeln. Ich lerne Web Entwicklung, Dotnet Core und React / Next.js.",
+        "intro": "Dabei ein schnelleres Web entwickeln. Ich lerne Web Entwicklung, .NET Core und React / Next.js.",
         "posts": {
             "read-all": "Lies alle Beiträge",
             "1": {
@@ -56,7 +56,7 @@
     "blog": {
         "description": "Ich schreibe Artikel seit 2022, meistens über Web-Entwicklung und irgendwelches Zeug. Bisher habe ich $AMOUNT Artikel auf meinem Blog geschrieben. Benutze die Suchleiste zum filtern von Artikeln.",
         "no-posts": "Keinen Beitrag gefunden.",
-        "all-posts": "Alle Beitrag",
+        "all-posts": "Alle Beiträge",
         "edit-post": "Änderung vorschlagen"
     },
     "guestbook": {
@@ -94,5 +94,13 @@
         "not-found": "Keine Projekte gefunden",
         "see-more": "Alle Projekte"
     },
-    "not-playing": "Spielt nichts"
+    "not-playing": "Spielt nichts",
+    "command-palette": {
+        "settings": "Einstellungen",
+        "socials": "Soziales",
+        "switch-theme": "Thema ändern",
+        "switch-language": "Sprache ändern (en)",
+        "search-placeholder": "Suchen...",
+        "no-results": "Keine Ergebnisse"
+    }
 }

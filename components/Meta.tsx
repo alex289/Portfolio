@@ -15,7 +15,7 @@ type Props = {
 const Meta = ({
   title = 'Alexander Konietzko',
   type = 'website',
-  description = 'Software developer, Typescript enthusiast and dual student',
+  description = 'Software developer, TypeScript enthusiast and dual student',
   date,
   tags,
 }: Props): JSX.Element => {
@@ -78,7 +78,7 @@ const Meta = ({
       ) : (
         <meta
           name="keywords"
-          content="Alexander Konietzko, Portfolio, NextJs, TailwindCss"
+          content="Alexander Konietzko, Portfolio, Next.js, TailwindCSS"
         />
       )}
       <meta name="application-name" content="Alexander Konietzko" />
