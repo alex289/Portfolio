@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alex289/Portfolio.git"
+    "url": "git+https://github.com/alex289/Portfolio.git"
   },
   "keywords": [
     "Next.js",
@@ -27,18 +27,18 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Alex289/Portfolio/issues"
+    "url": "https://github.com/alex289/Portfolio/issues"
   },
   "homepage": "https://alexanderkonietzko.vercel.app",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.4",
-    "@types/node": "^18.7.2",
+    "@types/node": "^18.7.3",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.17",
     "@types/rss": "^0.0.29",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "autoprefixer": "^10.4.8",
-    "eslint": "^8.21.0",
+    "eslint": "^8.22.0",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.16",
@@ -64,7 +64,7 @@
     "classnames": "^2.3.1",
     "date-fns": "^2.29.1",
     "jotai": "^1.7.8",
-    "motion": "^10.13.2",
+    "motion": "^10.13.3",
     "next": "12.2.5",
     "next-auth": "^4.10.3",
     "next-mdx-remote": "^4.1.0",

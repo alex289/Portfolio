@@ -35,7 +35,17 @@
         "text-1": "Hey, ich bin Alex. Ich bin $AGE Jahre \nalt und komme aus Deutschland. Ich lebe in NRW und in meiner Freizeit \nspiele ich Klavier, mache Sport oder genieße die Zeit mit Freunden und der Familie.",
         "text-2": "Ich hab angefangen mit Computern zu spielen als ich klein war und habe in der Schule \nmit dem programmieren angefangen. Nach meinem Abitur habe ich mein duales Studium bei \nNetgo begonnen wo ich arbeite und der Westfälische Hochschule wo ich studiere.",
         "text-3": "Ich lerne gerade .NET Core und Angular aber mein lieblings Framework ist \nNextJs. Irgendwann möchte ich einen eigenen Kubernetes Cluster bauen mit \nBackend Services, Datenbanken und einem soliden Frontend kombiniert \nduch Nginx.",
+        "website": "Webseite",
+        "tools": {
+            "title": "Werkzeuge",
+            "text": "Diese Werkzeuge benutze ich fast täglich. Ich mag es sehr neue Technologien zu finden die meinen Workflow verbessern.",
+            "tailwind": "Wenn es zu CSS kommt benutze ich fast nur TailwindCSS. Es eignet sich perfekt um eine Webseite einfach zu designen.",
+            "next": "Mein Go-To-Framework wenn es um das Bauen von Web-Applikationen kommt. Die Qualität der Codebase ist fantastisch.",
+            "vercel": "Die einfachste und schnellste Art eine Webseite zu veröffentlichen. Ich benutze es für alle meine Projekte.",
+            "vscode": "VS Code ist ein Texteditor den ich wegen seiner Erweiterungen und Anpassungen immer benutze."
+        },
         "timeline": {
+            "title": "Zeitstrahl",
             "learn-more": "Erfahre mehr",
             "1": {
                 "date": "Juli 2021",

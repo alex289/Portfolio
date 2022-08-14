@@ -6,6 +6,7 @@ import useTranslation from '@/lib/useTranslation';
 import avatar from '../public/static/images/konietzko_alexander.jpg';
 
 import Layout from '@/components/Layout';
+import Tools from '@/components/Tools';
 
 export default function About() {
   const { t } = useTranslation();
@@ -39,7 +40,7 @@ export default function About() {
               </Link>
             </li>
             <li>
-              Website:{' '}
+              {t('about-page.website')}:{' '}
               <Link href="https://alexanderkonietzko.vercel.app">
                 <a className="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-dark">
                   https://alexanderkonietzko.vercel.app
@@ -50,7 +51,15 @@ export default function About() {
         </h2>
 
         <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
-          Timeline
+          {t('about-page.tools.title')}
+        </h1>
+        <h2 className="mb-16 text-gray-600 dark:text-[#c2c2c2]">
+          <p>{t('about-page.tools.text')}</p>
+          <Tools />
+        </h2>
+
+        <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
+          {t('about-page.timeline.title')}
         </h1>
         <ol className="relative mb-16 border-l border-gray-200 dark:border-gray-700">
           <li className="mb-10 ml-4">

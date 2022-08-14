@@ -35,7 +35,17 @@
         "text-1": "Hey, I'm Alex. I'm $AGE years \nold and come from Germany. I live in NRW and spend my free time \nplaying piano, do sports or enjoying time with friends and family.",
         "text-2": "I started working with computers when I was young and started \nprogramming in school. After I graduated I began my dual study at \nNetgo GmbH where I work and Westfälische Hochschule where I study.",
         "text-3": "I'm currently learning .NET Core and Angular but my favourite framework is \nNextJs. In the future I want to build my own Kubernetes cluster with \nbackend services, database integration and a solid frontend combined \nby Nginx.",
+        "website": "Website",
+        "tools": {
+            "title": "Tools",
+            "text": "Those are the tools I almost use daily. I really enjoy finding new technologies improving my workflow.",
+            "tailwind": "When it comes to CSS, I always use TailwindCSS. It is a great tool for styling your website really fast.",
+            "next": "My go-to framework for building web applications. The quality of the codebase is fantastic.",
+            "vercel": "The most seamless way to deploy your website. I use it for all of my projects.",
+            "vscode": "VS Code is the text editor I reach for most often, given it's range of extensions."
+        },
         "timeline": {
+            "title": "Timeline",
             "learn-more": "Learn more",
             "1": {
                 "date": "July 2021",

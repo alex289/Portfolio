@@ -47,18 +47,18 @@ export default function Footer(): JSX.Element {
                 {t('guestbook.title')}
               </a>
             </Link>
-            <ExternalLink href="https://github.com/Alex289">
+            <ExternalLink href="https://github.com/alex289">
               GitHub
             </ExternalLink>
           </div>
           <div className="flex flex-col space-y-4">
-            <ExternalLink href="https://github.com/Alex289/dotfiles">
+            <ExternalLink href="https://github.com/alex289/dotfiles">
               {t('footer.my-setup')}
             </ExternalLink>
-            <ExternalLink href="https://github.com/Alex289/Portfolio">
+            <ExternalLink href="https://github.com/alex289/Portfolio">
               {t('footer.sourcecode')}
             </ExternalLink>
-            <ExternalLink href="https://github.com/Alex289/Alex289/issues/new?assignees=Alex289&labels=Contact&template=contact-template.md&title=%5BContact%5D+Your-title-here">
+            <ExternalLink href="https://github.com/alex289/Alex289/issues/new?assignees=alex289&labels=Contact&template=contact-template.md&title=%5BContact%5D+Your-title-here">
               {t('footer.contact')}
             </ExternalLink>
           </div>
