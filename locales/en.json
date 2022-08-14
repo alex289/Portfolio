@@ -94,5 +94,13 @@
         "not-found": "No projects found",
         "see-more": "See all projects"
     },
-    "not-playing": "Not Playing"
+    "not-playing": "Not Playing",
+    "command-palette": {
+        "settings": "Settings",
+        "socials": "Socials",
+        "switch-theme": "Switch theme",
+        "switch-language": "Change language (de)",
+        "search-placeholder": "Search...",
+        "no-results": "No results"
+    }
 }

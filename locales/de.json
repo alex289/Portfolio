@@ -94,5 +94,13 @@
         "not-found": "Keine Projekte gefunden",
         "see-more": "Alle Projekte"
     },
-    "not-playing": "Spielt nichts"
+    "not-playing": "Spielt nichts",
+    "command-palette": {
+        "settings": "Einstellungen",
+        "socials": "Soziales",
+        "switch-theme": "Thema ändern",
+        "switch-language": "Sprache ändern (en)",
+        "search-placeholder": "Suchen...",
+        "no-results": "Keine Ergebnisse"
+    }
 }

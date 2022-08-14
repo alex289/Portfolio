@@ -9,6 +9,7 @@ import NProgress from 'nprogress';
 import Analytics from '@/components/Analytics';
 const CommandPalette = dynamic(() => import('@/components/CommandPalette'), {
   suspense: true,
+  ssr: false,
 });
 
 import '@/styles/global.css';

@@ -2,9 +2,12 @@ import { Fragment, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { Combobox, Dialog, Transition } from '@headlessui/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { useTheme } from 'next-themes';
 import { atom, useAtom } from 'jotai';
 import cn from 'classnames';
+
+import useTranslation from '@/lib/useTranslation';
 
 export const isOpenAtom = atom(false);
 export const isCommandPaletteOpenAtom = atom((get) => get(isOpenAtom));
@@ -13,73 +16,99 @@ enum Actions {
   Router,
   Language,
   Theme,
+  Session,
 }
 
-const config = [
-  {
-    group: 'Navigation',
-    title: 'Home',
-    icon: null,
-    action: Actions.Router,
-    args: '/',
-  },
-  {
-    title: 'About',
-    icon: null,
-    action: Actions.Router,
-    args: '/about',
-  },
-  {
-    title: 'Projects',
-    icon: null,
-    action: Actions.Router,
-    args: '/projects',
-  },
-  {
-    title: 'Blog',
-    icon: null,
-    action: Actions.Router,
-    args: '/blog',
-  },
-  {
-    title: 'Guestbook',
-    icon: null,
-    action: Actions.Router,
-    args: '/guestbook',
-  },
-  {
-    group: 'Socials',
-    title: 'GitHub',
-    icon: null,
-    action: Actions.Router,
-    args: 'https://github.com/alex289',
-  },
-  {
-    title: 'Source Code',
-    icon: null,
-    action: Actions.Router,
-    args: 'https://github.com/alex289/Portfolio',
-  },
-  {
-    group: 'Settings',
-    title: 'Change language',
-    icon: null,
-    action: Actions.Language,
-    args: '',
-  },
-  {
-    title: 'Switch theme',
-    icon: null,
-    action: Actions.Theme,
-    args: '',
-  },
-];
-
 export default function CommandPalette() {
+  const { t } = useTranslation();
+  const { data: session } = useSession();
   const [isOpen, setIsOpen] = useAtom(isOpenAtom);
   const [search, setSearch] = useState('');
   const { theme, setTheme } = useTheme();
   const router = useRouter();
+
+  const config = useMemo(() => {
+    return [
+      {
+        group: 'Navigation',
+        title: t('main.home'),
+        icon: null,
+        action: Actions.Router,
+        args: '/',
+      },
+      {
+        title: t('main.about'),
+        icon: null,
+        action: Actions.Router,
+        args: '/about',
+      },
+      {
+        title: t('main.projects'),
+        icon: null,
+        action: Actions.Router,
+        args: '/projects',
+      },
+      {
+        title: 'Blog',
+        icon: null,
+        action: Actions.Router,
+        args: '/blog',
+      },
+      {
+        title: t('guestbook.title'),
+        icon: null,
+        action: Actions.Router,
+        args: '/guestbook',
+      },
+      {
+        group: t('command-palette.socials'),
+        title: 'GitHub',
+        icon: null,
+        action: Actions.Router,
+        args: 'https://github.com/alex289',
+      },
+      {
+        title: t('footer.sourcecode'),
+        icon: null,
+        action: Actions.Router,
+        args: 'https://github.com/alex289/Portfolio',
+      },
+      {
+        group: t('command-palette.settings'),
+        title: t('command-palette.switch-language'),
+        icon: null,
+        action: Actions.Language,
+        args: '',
+      },
+      {
+        title: t('command-palette.switch-theme'),
+        icon: null,
+        action: Actions.Theme,
+        args: '',
+      },
+      {
+        title: 'Login (Google)',
+        icon: null,
+        action: Actions.Session,
+        args: 'google',
+        disabled: session ? true : false,
+      },
+      {
+        title: 'Login (GitHub)',
+        icon: null,
+        action: Actions.Session,
+        args: 'github',
+        disabled: session ? true : false,
+      },
+      {
+        title: `Logout (${session?.user?.name})`,
+        icon: null,
+        action: Actions.Session,
+        args: '',
+        disabled: session ? false : true,
+      },
+    ];
+  }, [session, t]);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -102,10 +131,11 @@ export default function CommandPalette() {
 
   const filteredItems = useMemo(() => {
     return config.filter(({ title }) => title.toLowerCase().includes(search));
-  }, [search]);
+  }, [search, config]);
 
   function handleChange(value: string) {
     setIsOpen(false);
+    setSearch('');
 
     const action = Number(value[0]) as Actions;
     switch (action) {
@@ -120,6 +150,13 @@ export default function CommandPalette() {
         break;
       case Actions.Theme:
         setTheme(theme === 'light' ? 'dark' : 'light');
+        break;
+      case Actions.Session:
+        if (value.slice(2) === '') {
+          signOut();
+        } else {
+          signIn(value.slice(2));
+        }
         break;
     }
   }
@@ -172,30 +209,36 @@ export default function CommandPalette() {
                       {page.group}
                     </div>
                   )}
-                  <Combobox.Option value={`${page.action}:${page.args}`}>
-                    {({ active }) => (
-                      <div
-                        className={cn(
-                          'px-4 py-2',
-                          active ? 'bg-primary' : 'bg-gray-50 dark:bg-gray-800'
-                        )}>
-                        <p
+                  {!page.disabled && (
+                    <Combobox.Option value={`${page.action}:${page.args}`}>
+                      {({ active }) => (
+                        <div
                           className={cn(
-                            'flex flex-row pl-2',
+                            'px-4 py-2',
                             active
-                              ? 'text-white'
-                              : 'text-gray-500 dark:text-gray-400'
+                              ? 'bg-primary'
+                              : 'bg-gray-50 dark:bg-gray-800'
                           )}>
-                          {page.icon}
-                          {page.title}
-                        </p>
-                      </div>
-                    )}
-                  </Combobox.Option>
+                          <p
+                            className={cn(
+                              'flex flex-row pl-2',
+                              active
+                                ? 'text-white'
+                                : 'text-gray-500 dark:text-gray-400'
+                            )}>
+                            {page.icon}
+                            {page.title}
+                          </p>
+                        </div>
+                      )}
+                    </Combobox.Option>
+                  )}
                 </div>
               ))}
               {search && filteredItems.length === 0 && (
-                <p className="p-4 text-sm text-gray-500">No results</p>
+                <p className="p-4 text-sm text-gray-500">
+                  {t('command-palette.no-results')}
+                </p>
               )}
             </Combobox.Options>
           </Combobox>

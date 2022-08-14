@@ -83,7 +83,7 @@
     "use-delayed-render": "^0.0.7"
   },
   "nextBundleAnalysis": {
-    "budget": 133120,
+    "budget": 143360,
     "budgetPercentIncreaseRed": 20,
     "showDetails": true
   }
