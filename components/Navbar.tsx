@@ -116,7 +116,10 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
       <div className="flex justify-between">
         <button
           id="burger"
-          className={cn(styles.burger, 'visible md:hidden')}
+          className={cn(
+            styles.burger,
+            'umami--click--burger-button visible md:hidden'
+          )}
           aria-label="Toggle menu"
           type="button"
           onClick={toggleMenu}>
@@ -148,7 +151,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
             locale={locale === 'de' ? 'en' : 'de'}>
             <a
               id="switch-lang"
-              className="umami--click--lang-button md:dark:link-underline md:link-underline-black mx-3 pb-1 text-lg tracking-wide">
+              className="md:dark:link-underline md:link-underline-black mx-3 pb-1 text-lg tracking-wide">
               {locale === 'de' ? 'EN' : 'DE'}
             </a>
           </Link>
