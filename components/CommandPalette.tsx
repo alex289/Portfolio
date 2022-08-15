@@ -32,77 +32,65 @@ export default function CommandPalette() {
       {
         group: 'Navigation',
         title: t('main.home'),
-        icon: null,
         action: Actions.Router,
         args: '/',
       },
       {
         title: t('main.about'),
-        icon: null,
         action: Actions.Router,
         args: '/about',
       },
       {
         title: t('main.projects'),
-        icon: null,
         action: Actions.Router,
         args: '/projects',
       },
       {
         title: 'Blog',
-        icon: null,
         action: Actions.Router,
         args: '/blog',
       },
       {
         title: t('guestbook.title'),
-        icon: null,
         action: Actions.Router,
         args: '/guestbook',
       },
       {
         group: t('command-palette.socials'),
         title: 'GitHub',
-        icon: null,
         action: Actions.Router,
         args: 'https://github.com/alex289',
       },
       {
         title: t('footer.sourcecode'),
-        icon: null,
         action: Actions.Router,
         args: 'https://github.com/alex289/Portfolio',
       },
       {
         group: t('command-palette.settings'),
         title: t('command-palette.switch-language'),
-        icon: null,
         action: Actions.Language,
         args: '',
       },
       {
         title: t('command-palette.switch-theme'),
-        icon: null,
         action: Actions.Theme,
         args: '',
       },
       {
         title: 'Login (Google)',
-        icon: null,
         action: Actions.Session,
         args: 'google',
         disabled: session ? true : false,
       },
       {
         title: 'Login (GitHub)',
-        icon: null,
         action: Actions.Session,
         args: 'github',
         disabled: session ? true : false,
       },
       {
         title: `Logout (${session?.user?.name})`,
-        icon: null,
         action: Actions.Session,
         args: '',
         disabled: session ? false : true,
@@ -226,7 +214,6 @@ export default function CommandPalette() {
                                 ? 'text-white'
                                 : 'text-gray-500 dark:text-gray-400'
                             )}>
-                            {page.icon}
                             {page.title}
                           </p>
                         </div>

@@ -53,8 +53,10 @@ export default function About() {
         <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
           {t('about-page.tools.title')}
         </h1>
-        <h2 className="mb-16 text-gray-600 dark:text-[#c2c2c2]">
-          <p>{t('about-page.tools.text')}</p>
+        <h2 className="mb-16">
+          <p className="text-gray-500 dark:text-[#c2c2c2]">
+            {t('about-page.tools.text')}
+          </p>
           <Tools />
         </h2>
 
