@@ -12,7 +12,7 @@ export default function Footer(): JSX.Element {
       <footer className="mx-auto mb-8 flex w-full max-w-3xl flex-col items-start justify-center">
         <hr className="mb-8 w-full border border-gray-200 bg-gray-200 dark:border-gray-700 dark:bg-gray-700" />
         <NowPlaying />
-        <div className="grid w-full max-w-2xl grid-cols-1 gap-4 pb-12 sm:grid-cols-3">
+        <div className="grid w-full max-w-3xl grid-cols-1 gap-4 pb-12 sm:grid-cols-4">
           <div className="flex flex-col space-y-4">
             <Link href="/">
               <a
@@ -60,6 +60,15 @@ export default function Footer(): JSX.Element {
             </ExternalLink>
             <ExternalLink href="https://github.com/alex289/Alex289/issues/new?assignees=alex289&labels=Contact&template=contact-template.md&title=%5BContact%5D+Your-title-here">
               {t('footer.contact')}
+            </ExternalLink>
+          </div>
+          <div className="flex flex-col space-y-4">
+            <ExternalLink href="https://alexanderkonietzko-analytics.vercel.app/share/iGO3fY48/alexanderkonietzko">
+              {t('footer.analytics')}
+            </ExternalLink>
+            <ExternalLink href="/feed.xml">Feed</ExternalLink>
+            <ExternalLink href="/sitemap.xml">
+              {t('footer.sitemap')}
             </ExternalLink>
           </div>
         </div>

@@ -127,7 +127,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
           <button
             aria-label="Open Command Palette"
             type="button"
-            className="mr-3 hidden h-10 w-10 rounded-lg bg-gray-200 p-3 text-3xl ring-gray-300 hover:ring-4 dark:bg-gray-700 md:inline"
+            className="umami--click--cmd-button mr-3 hidden h-10 w-10 rounded-lg bg-gray-200 p-3 text-3xl ring-gray-300 hover:ring-4 dark:bg-gray-700 md:inline"
             onClick={() => setCommandPaletteOpen(true)}>
             <MacOptionIcon />
           </button>
@@ -135,7 +135,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
             id="dark-mode-toggle"
             aria-label="Toggle Dark Mode"
             type="button"
-            className="mr-1 h-10 w-10 rounded-lg bg-gray-200 p-3 ring-gray-300 hover:ring-4 dark:bg-gray-700 md:mr-3"
+            className="umami--click--theme-button mr-1 h-10 w-10 rounded-lg bg-gray-200 p-3 ring-gray-300 hover:ring-4 dark:bg-gray-700 md:mr-3"
             onClick={() =>
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
             }>
@@ -148,7 +148,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
             locale={locale === 'de' ? 'en' : 'de'}>
             <a
               id="switch-lang"
-              className="md:dark:link-underline md:link-underline-black mx-3 pb-1 text-lg tracking-wide">
+              className="umami--click--lang-button md:dark:link-underline md:link-underline-black mx-3 pb-1 text-lg tracking-wide">
               {locale === 'de' ? 'EN' : 'DE'}
             </a>
           </Link>
