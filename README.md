@@ -1,4 +1,4 @@
-![cover](https://repository-images.githubusercontent.com/386759878/9e991155-c521-4a40-855d-3fa47f53fb3a)
+![cover](https://repository-images.githubusercontent.com/386759878/da75b7f3-2f50-4797-a36a-0d6dd8f7c6b3)
 
 # Portfolio
 
