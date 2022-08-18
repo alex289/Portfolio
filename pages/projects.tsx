@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import Image from 'next/future/image';
-import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import { useTheme } from 'next-themes';
 
@@ -20,8 +19,7 @@ export default function ProjectsPage({
   fallbackData: Projects[];
 }) {
   const { resolvedTheme } = useTheme();
-  const { locale } = useRouter();
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const { data, error } = useSWR<Projects[]>('/api/repos', fetcher, {
     fallbackData,
   });

@@ -29,23 +29,16 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
   useEffect(() => setMounted(true), []);
 
   const router = useRouter();
-  const { locale } = router;
-
   const { resolvedTheme, setTheme } = useTheme();
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
 
   function toggleMenu() {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-      document.body.style.overflow = '';
-    } else {
-      setIsMenuOpen(true);
-      document.body.style.overflow = 'hidden';
-    }
+    setIsMenuOpen(!isMenuOpen);
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
   }
 
   return (
-    <nav className="ticky top-0 z-50 mx-auto my-0 w-full max-w-3xl items-center justify-between px-4 pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:py-4 xl:px-0">
+    <nav className="sticky top-0 z-50 mx-auto my-0 w-full max-w-3xl items-center justify-between px-4 pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:py-4 xl:px-0">
       <div>
         <Link href="/">
           <a

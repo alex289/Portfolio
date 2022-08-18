@@ -1,5 +1,3 @@
-import cn from 'classnames';
-
 import useTranslation from '@/lib/useTranslation';
 
 const Tools = () => {
@@ -77,11 +75,7 @@ const Tools = () => {
       {toolbox.map((tool) => (
         <a
           key={tool.name}
-          className={cn(
-            'flex items-center gap-6 hover:text-primary',
-            '-mx-4 my-10 rounded-lg px-4',
-            'cursor-pointer'
-          )}
+          className="-mx-4 my-10 flex cursor-pointer items-center gap-6 rounded-lg px-4 hover:text-primary"
           href={tool.link}
           target="_blank"
           rel="noopener noreferrer">

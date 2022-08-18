@@ -27,7 +27,7 @@ const useTranslation = (): UseTranslation => {
     return get(locales[locale || 'en'], key);
   };
 
-  return { t };
+  return { t, locale };
 };
 
 export default useTranslation;

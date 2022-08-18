@@ -6,6 +6,7 @@ export type LocalesJsonObject = {
 
 export type UseTranslation = {
   t: (key: string) => string;
+  locale: string | undefined;
 };
 
 export type Projects = {

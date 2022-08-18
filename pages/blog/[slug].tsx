@@ -7,6 +7,7 @@ import { postQuery, postSlugsQuery } from '@/lib/sanity/queries';
 import { sanityClient, getClient } from '@/lib/sanity/sanity-server';
 import { mdxToHtml } from '@/lib/mdx';
 
+import type { GetStaticProps } from 'next';
 import type { Post } from '@/lib/types';
 
 export default function BlogPosts({ post }: { post: Post }) {
@@ -35,21 +36,13 @@ export async function getStaticPaths() {
   };
 }
 
-type getStaticPropsParams = {
-  params: {
-    slug: string;
-  };
-  locale: string;
-  preview: boolean;
-};
-
-export async function getStaticProps({
+export const getStaticProps: GetStaticProps = async ({
   params,
   locale,
   preview = false,
-}: getStaticPropsParams) {
+}) => {
   const { post } = await getClient(preview).fetch(postQuery, {
-    slug: params.slug,
+    slug: params?.slug,
   });
 
   if (!post || post.language !== locale) {
@@ -69,4 +62,4 @@ export async function getStaticProps({
       },
     },
   };
-}
+};

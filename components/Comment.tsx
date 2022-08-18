@@ -1,5 +1,4 @@
 import { Suspense, useRef, useState } from 'react';
-import { useRouter } from 'next/router';
 
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { comment } from '@prisma/client';
@@ -18,8 +17,7 @@ import SuccessMessage from '@/components/guestbook/SuccessMessage';
 import { ClickEvent, Form, FormState } from '@/lib/types';
 
 const Comment = ({ slug }: { slug: string }) => {
-  const { t } = useTranslation();
-  const { locale } = useRouter();
+  const { t, locale } = useTranslation();
   const { data: session } = useSession();
   const { mutate } = useSWRConfig();
 

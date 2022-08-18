@@ -1,4 +1,4 @@
-import type { AppProps } from 'next/app';
+import { Suspense } from 'react';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
 
@@ -12,9 +12,10 @@ const CommandPalette = dynamic(() => import('@/components/CommandPalette'), {
   ssr: false,
 });
 
+import type { AppProps } from 'next/app';
+
 import '@/styles/global.css';
 import 'nprogress/nprogress.css';
-import { Suspense } from 'react';
 
 NProgress.configure({ showSpinner: false });
 Router.events.on('routeChangeStart', (_url, { shallow }) => {

@@ -7,7 +7,7 @@ import useDelayedRender from 'use-delayed-render';
 
 import useTranslation from '@/lib/useTranslation';
 
-import styles from 'styles/mobile-menu.module.css';
+import styles from '@/styles/mobile-menu.module.css';
 
 type Props = {
   isMenuOpen: boolean;

@@ -19,11 +19,10 @@ const Meta = ({
   date,
   tags,
 }: Props): JSX.Element => {
-  const router = useRouter();
+  const { asPath } = useRouter();
+  const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-
-  const { theme } = useTheme();
 
   return (
     <Head>
@@ -63,11 +62,11 @@ const Meta = ({
       <meta property="og:site_name" content="Alexander Konietzko" />
       <meta
         property="og:url"
-        content={`https://alexanderkonietzko.vercel.app${router.asPath}`}
+        content={`https://alexanderkonietzko.vercel.app${asPath}`}
       />
       <link
         rel="canonical"
-        href={`https://alexanderkonietzko.vercel.app${router.asPath}`}
+        href={`https://alexanderkonietzko.vercel.app${asPath}`}
       />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />

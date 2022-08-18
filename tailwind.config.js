@@ -31,9 +31,9 @@ module.exports = {
           css: {
             color: theme('colors.gray.700'),
             a: {
-              color: theme('colors.blue.500'),
+              color: theme('colors.primary'),
               '&:hover': {
-                color: theme('colors.blue.700'),
+                color: theme('colors.primary-dark'),
               },
               code: { color: theme('colors.blue.400') },
             },
@@ -52,9 +52,9 @@ module.exports = {
           css: {
             color: theme('colors.gray.200'),
             a: {
-              color: theme('colors.blue.400'),
+              color: theme('colors.primary'),
               '&:hover': {
-                color: theme('colors.blue.600'),
+                color: theme('colors.primary-dark'),
               },
               code: { color: theme('colors.blue.400') },
             },

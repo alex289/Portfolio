@@ -13,8 +13,8 @@ import type { GetStaticProps } from 'next';
 import type { Post } from '@/lib/types';
 
 export default function Blog({ posts }: { posts: Post[] }) {
-  const { t } = useTranslation();
-  const { locale, query } = useRouter();
+  const { t, locale } = useTranslation();
+  const { query } = useRouter();
   const [searchValue, setSearchValue] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
   const [filterBy, setFilterBy] = useState<'name' | 'tag'>('name');
