@@ -4,18 +4,20 @@ import { markdownSchema } from 'sanity-plugin-markdown';
 import { media } from 'sanity-plugin-media';
 import { visionTool } from '@sanity/vision';
 
+import { sanityConfig } from './lib/sanity/sanity-config';
+
 export default createConfig({
   name: 'default',
   title: 'alexanderkonietzko.vercel.app',
-  projectId: 'evkyvibr',
-  dataset: 'production',
+  projectId: sanityConfig.projectId,
+  dataset: sanityConfig.dataset,
   plugins: [
     deskTool(),
     markdownSchema(),
     media(),
     visionTool({
-      defaultApiVersion: '2022-08-15',
-      defaultDataset: 'production',
+      defaultApiVersion: sanityConfig.apiVersion,
+      defaultDataset: sanityConfig.dataset,
     }),
   ],
   schema: {

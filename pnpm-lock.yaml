@@ -8,23 +8,23 @@ specifiers:
   '@sanity/webhook': ^2.0.0
   '@tailwindcss/forms': ^0.5.2
   '@tailwindcss/typography': ^0.5.4
-  '@types/node': ^18.7.6
+  '@types/node': ^18.7.8
   '@types/nprogress': ^0.2.0
   '@types/react': ^18.0.17
   '@types/rss': ^0.0.29
   '@typescript-eslint/eslint-plugin': ^5.33.1
   autoprefixer: ^10.4.8
   classnames: ^2.3.1
-  date-fns: ^2.29.1
+  date-fns: ^2.29.2
   eslint: ^8.22.0
   eslint-config-next: 12.2.5
   eslint-config-prettier: ^8.5.0
-  jotai: ^1.7.8
+  jotai: ^1.8.0
   motion: ^10.14.0
   next: 12.2.5
   next-auth: ^4.10.3
   next-mdx-remote: ^4.1.0
-  next-sanity: ^0.8.1
+  next-sanity: ^0.8.2
   next-themes: ^0.2.0
   nprogress: ^0.2.0
   postcss: ^8.4.16
@@ -36,7 +36,7 @@ specifiers:
   reading-time: ^1.5.0
   rehype-autolink-headings: ^6.1.1
   rehype-code-titles: ^1.1.0
-  rehype-prism-plus: ^1.4.2
+  rehype-prism-plus: ^1.4.3
   rehype-slug: ^5.0.1
   remark-gfm: ^3.0.1
   rss: ^1.2.2
@@ -58,13 +58,13 @@ dependencies:
   '@sanity/webhook': 2.0.0
   '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.8
   classnames: 2.3.1
-  date-fns: 2.29.1
-  jotai: 1.7.8_byq7oc57qftat37gkdlgphtura
+  date-fns: 2.29.2
+  jotai: 1.8.0_byq7oc57qftat37gkdlgphtura
   motion: 10.14.0
   next: 12.2.5_twoewwu6sg7cdf3ao6njtbftne
   next-auth: 4.10.3_biqbaboplfbrettd7655fr4n2y
   next-mdx-remote: 4.1.0_biqbaboplfbrettd7655fr4n2y
-  next-sanity: 0.8.1_react@18.2.0
+  next-sanity: 0.8.2_react@18.2.0
   next-themes: 0.2.0_3xcjr4wz26biff45sz3jtokgje
   nprogress: 0.2.0
   react: 18.2.0
@@ -80,7 +80,7 @@ dependencies:
 
 devDependencies:
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.8
-  '@types/node': 18.7.6
+  '@types/node': 18.7.8
   '@types/nprogress': 0.2.0
   '@types/react': 18.0.17
   '@types/rss': 0.0.29
@@ -96,7 +96,7 @@ devDependencies:
   reading-time: 1.5.0
   rehype-autolink-headings: 6.1.1
   rehype-code-titles: 1.1.0
-  rehype-prism-plus: 1.4.2
+  rehype-prism-plus: 1.4.3
   rehype-slug: 5.0.1
   remark-gfm: 3.0.1
   tailwindcss: 3.1.8_postcss@8.4.16
@@ -1208,15 +1208,15 @@ packages:
     resolution: {integrity: sha512-wtMYcV5GIDIhVyF/jjmdwq1GdlK07dRL40XMns73VbrFI7FteRltxv48bhYVZPcLkRXb0SHjpDS/icj9/yzbVA==}
     dev: false
 
-  /@sanity/groq-store/0.4.0:
-    resolution: {integrity: sha512-3mgnk8McWphY8ZCmMSAqbPw1rO+BgpMOTlk9+8Yu//p6aovFcX9S6jqx+3JejiyvNV2Zz2OwtPrfHXP7qLiVjg==}
-    engines: {node: '>=10'}
+  /@sanity/groq-store/0.4.1:
+    resolution: {integrity: sha512-duLH/moE5TxJkUfwDiCCeHzRfltV/vzT4Qle48CdaWqT90CMJ+6m31PC4J3FG1uzNWFc82rOP6SG5nfww9ea4Q==}
+    engines: {node: '>=14'}
     dependencies:
       '@sanity/types': 2.30.5
       eventsource: 1.1.2
       fast-deep-equal: 3.1.3
       groq: 2.29.3
-      groq-js: 0.4.0-beta.2
+      groq-js: 1.0.1
       mendoza: 2.1.1
       simple-get: 4.0.1
       split2: 4.1.0
@@ -1454,7 +1454,7 @@ packages:
     resolution: {integrity: sha512-UEaVWdoZyiZ4nYRIwqUemN/aMj+8xGk6vdS4nnfdog4e9fOAwmwMXi2KVxSUuB2tWQ6/2T+ek9kXLgnCHfQzvA==}
     dependencies:
       '@sanity/types': 3.0.0-dev-preview.15
-      date-fns: 2.29.1
+      date-fns: 2.29.2
       lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
@@ -1759,7 +1759,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 18.7.6
+      '@types/node': 18.7.8
     dev: false
 
   /@types/hast/2.3.4:
@@ -1814,8 +1814,8 @@ packages:
   /@types/ms/0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
-  /@types/node/18.7.6:
-    resolution: {integrity: sha512-EdxgKRXgYsNITy5mjjXjVE/CS8YENSdhiagGrLqjG0pvA2owgJ6i4l7wy/PFZGC0B1/H20lWKN7ONVDNYDZm7A==}
+  /@types/node/18.7.8:
+    resolution: {integrity: sha512-/YP55EMK2341JkODUb8DM9O0x1SIz2aBvyF33Uf1c76St3VpsMXEIW0nxuKkq/5cxnbz0RD9cfwNZHEAZQD3ag==}
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -2832,8 +2832,8 @@ packages:
     resolution: {integrity: sha512-qTcEYLen3r7ojZNgVUaRggOI+KM7jrKxXeSHhogh/TWxYMeONEMqY+hmkobiYQozsGIyg9OYVzO4ZIfoB4I0pQ==}
     dev: false
 
-  /date-fns/2.29.1:
-    resolution: {integrity: sha512-dlLD5rKaKxpFdnjrs+5azHDFOPEu4ANy/LTh04A1DTzMM7qoajmKCBc8pkKRFT41CNzw+4gQh79X5C+Jq27HAw==}
+  /date-fns/2.29.2:
+    resolution: {integrity: sha512-0VNbwmWJDS/G3ySwFSJA3ayhbURMTJLtwM2DTxf9CWondCnh6DTNlO9JgRSq6ibf4eD0lfMJNBxUdEAHHix+bA==}
     engines: {node: '>=0.11'}
     dev: false
 
@@ -4215,8 +4215,8 @@ packages:
     resolution: {integrity: sha512-qJeuEgziddryH1ClsJvMoZM9aXNQbBViNZZrJwhHKr2wU8HGGM7uNWNVFglWXMX60MMaa2SClX3UohP76Ut68g==}
     dev: false
 
-  /groq-js/0.4.0-beta.2:
-    resolution: {integrity: sha512-jb9Jy8MQc6JvSHJCdhp5zxjgg0aeYJLkfDU/IWwA9edeTBKRcYdVWf4MSgVyCL2ggxVEVTj9b4HJj76IKnYVMA==}
+  /groq-js/1.0.1:
+    resolution: {integrity: sha512-bv2UkWYkaQkZAEbsfKy+bqdeFAzrQnWZ7zYislCGANzhZSqBVf0uRKeY8r/nXdBiMwuMDA6TxHgwG2FJVKAy6Q==}
     dev: false
 
   /groq/2.29.3:
@@ -4774,8 +4774,8 @@ packages:
     resolution: {integrity: sha512-+/hpTbRcCw9YC0TOfN1W47pej4a9lRmltdOVdRLz5FP5UvUq3CenhXjQK7u/8NdMIIShMXYAh9VLPhc7TjhvFw==}
     dev: false
 
-  /jotai/1.7.8_byq7oc57qftat37gkdlgphtura:
-    resolution: {integrity: sha512-rXwWz6uLqyZUCRzWIPiYTjI1hjskVxVpDN3lBoOHi66z6uQFkFmKwR8YhcQd+Ex4lODlReuKNIx6WwsF9aKy3g==}
+  /jotai/1.8.0_byq7oc57qftat37gkdlgphtura:
+    resolution: {integrity: sha512-B77a5hIDGCxePYrYBpHP6YePGyNwivA+vXO6QME+8+t3V0y+OHwwnHu4Wy/LWEChE/G8vI+K7P2tlToT8Zmjng==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@babel/core': '*'
@@ -5920,14 +5920,14 @@ packages:
       - supports-color
     dev: false
 
-  /next-sanity/0.8.1_react@18.2.0:
-    resolution: {integrity: sha512-yufrHxz1xsttMjS5Vw2i2LIXJt/MC/J/tI2Fxo5h2IxSC+ZJiOnQwYwnFciTM5ooPFSTPwnjSt6uV9YKX7V+aw==}
+  /next-sanity/0.8.2_react@18.2.0:
+    resolution: {integrity: sha512-IFiJ/7/IiFDICADdyuR9X5lnNdyILyMiAfgDtQ+XdyD8ct1B2z/eMEgGx8rpBw7hYTvRyXLaxcw4yiEpeUKr7w==}
     engines: {node: '>=12'}
     peerDependencies:
       react: ^16.3 || ^17 || ^18
     dependencies:
       '@sanity/client': 3.3.3
-      '@sanity/groq-store': 0.4.0
+      '@sanity/groq-store': 0.4.1
       groq: 2.29.3
       react: 18.2.0
     transitivePeerDependencies:
@@ -7118,8 +7118,8 @@ packages:
       unified: 10.1.2
     dev: true
 
-  /rehype-prism-plus/1.4.2:
-    resolution: {integrity: sha512-RQNQJIRiejJ6lUh8nm04jEoR0bSsWl2i4R0MXpJtvlRzwTU1D7qdHGT0veCIvuhXPRP4G7Obo4VGwOVAfOtXZw==}
+  /rehype-prism-plus/1.4.3:
+    resolution: {integrity: sha512-kdSrqPVY6OJx+nCPgdZeEEysKqquj2uzD9ygRd7XBH2DK4QCv4ihh9VV+YffjR16/xFgL+2bo9MDtVWjQbf5KA==}
     dependencies:
       hast-util-to-string: 2.0.0
       parse-numeric-range: 1.3.0
@@ -7371,7 +7371,7 @@ packages:
       '@sanity/ui': 0.37.12_2qpntmkb2tecmgal3aq2m37jiu
       '@tanem/react-nprogress': 5.0.7_biqbaboplfbrettd7655fr4n2y
       copy-to-clipboard: 3.3.1
-      date-fns: 2.29.1
+      date-fns: 2.29.2
       filesize: 8.0.7
       groq: 2.29.3
       is-hotkey: 0.2.0
@@ -7447,7 +7447,7 @@ packages:
       color2k: 2.0.0
       configstore: 5.0.1
       dataloader: 2.1.0
-      date-fns: 2.29.1
+      date-fns: 2.29.2
       debug: 3.2.7
       diff-match-patch: 1.0.5
       esbuild: 0.14.47
