@@ -84,4 +84,4 @@ const securityHeaders = [
   },
 ];
 
-module.exports = nextConfig;
+export default nextConfig;
