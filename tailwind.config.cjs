@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./pages/**/*.tsx', './components/**/*.tsx'],
   darkMode: 'class',

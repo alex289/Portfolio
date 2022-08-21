@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest) {
   const tracks = items.slice(0, 10).map((track: ResponseTrackType) => ({
     artist: track.artists.map((_artist) => _artist.name).join(', '),
     songUrl: track.external_urls.spotify,
-    cover: track.album.images[1].url,
+    cover: track.album.images[1]?.url,
     title: track.name,
   }));
 

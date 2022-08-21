@@ -4,5 +4,5 @@ module.exports = {
   singleQuote: true,
   parser: 'typescript',
   plugins: [require('prettier-plugin-tailwindcss')],
-  tailwindConfig: './tailwind.config.js',
+  tailwindConfig: './tailwind.config.cjs',
 };
