@@ -10,14 +10,12 @@ import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 import Project from '@/components/Projects';
 import Layout from '@/components/Layout';
 
-import type { GetStaticProps } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import type { Projects } from '@/lib/types';
 
-export default function ProjectsPage({
-  fallbackData,
-}: {
+const ProjectsPage: NextPage<{
   fallbackData: Projects[];
-}) {
+}> = ({ fallbackData }) => {
   const { resolvedTheme } = useTheme();
   const { t, locale } = useTranslation();
   const { data, error } = useSWR<Projects[]>('/api/repos', fetcher, {
@@ -63,7 +61,9 @@ export default function ProjectsPage({
       </div>
     </Layout>
   );
-}
+};
+
+export default ProjectsPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const reposResponse = await fetch(

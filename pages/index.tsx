@@ -11,14 +11,14 @@ import Layout from '@/components/Layout';
 import BlogPostCard from '@/components/blog/BlogPostCard';
 import Project from '@/components/Projects';
 
-import type { GetStaticProps } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import type { Projects } from '@/lib/types';
 
 type Props = {
   fallbackData: Projects[];
 };
 
-export default function Index({ fallbackData }: Props) {
+const Index: NextPage<Props> = ({ fallbackData }) => {
   const { t } = useTranslation();
   return (
     <Layout>
@@ -120,7 +120,9 @@ export default function Index({ fallbackData }: Props) {
       </Suspense>
     </Layout>
   );
-}
+};
+
+export default Index;
 
 export const getStaticProps: GetStaticProps = async () => {
   const reposResponse = await fetch(

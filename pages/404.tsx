@@ -4,7 +4,9 @@ import useTranslation from '@/lib/useTranslation';
 
 import Layout from '@/components/Layout';
 
-export default function NotFound(): JSX.Element {
+import type { NextPage } from 'next';
+
+const NotFound: NextPage = () => {
   const { t } = useTranslation();
   return (
     <Layout title="404 - Alexander Konietzko">
@@ -23,4 +25,6 @@ export default function NotFound(): JSX.Element {
       </div>
     </Layout>
   );
-}
+};
+
+export default NotFound;

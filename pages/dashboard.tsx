@@ -9,14 +9,14 @@ import Layout from '@/components/Layout';
 import Metric from '@/components/Metric';
 import Tracks from '@/components/TopTrack';
 
-import type { GetStaticProps } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import type { healthData, Views } from '@/lib/types';
 
 type Props = {
   previewMode: boolean;
 };
 
-export default function Dashboard({ previewMode }: Props): JSX.Element {
+const Dashboard: NextPage<Props> = ({ previewMode }) => {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
@@ -108,7 +108,9 @@ export default function Dashboard({ previewMode }: Props): JSX.Element {
       </Suspense>
     </Layout>
   );
-}
+};
+
+export default Dashboard;
 
 export const getStaticProps: GetStaticProps = async ({ preview }) => {
   return {

@@ -7,10 +7,10 @@ import { postQuery, postSlugsQuery } from '@/lib/sanity/queries';
 import { sanityClient, getClient } from '@/lib/sanity/sanity-server';
 import { mdxToHtml } from '@/lib/mdx';
 
-import type { GetStaticProps } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import type { Post } from '@/lib/types';
 
-export default function BlogPosts({ post }: { post: Post }) {
+const BlogPosts: NextPage<{ post: Post }> = ({ post }) => {
   return (
     <BlogLayout post={post}>
       <MDXRemote
@@ -21,7 +21,9 @@ export default function BlogPosts({ post }: { post: Post }) {
       />
     </BlogLayout>
   );
-}
+};
+
+export default BlogPosts;
 
 export async function getStaticPaths() {
   const paths = await sanityClient.fetch(postSlugsQuery);

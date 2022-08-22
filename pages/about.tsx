@@ -8,7 +8,9 @@ import avatar from '../public/static/images/konietzko_alexander.jpg';
 import Layout from '@/components/Layout';
 import Tools from '@/components/Tools';
 
-export default function About() {
+import type { NextPage } from 'next';
+
+const About: NextPage = () => {
   const { t } = useTranslation();
   const age = Math.floor(
     (new Date().getTime() - new Date('2002-09-28').getTime()) / 3.15576e10
@@ -135,4 +137,6 @@ export default function About() {
       </div>
     </Layout>
   );
-}
+};
+
+export default About;

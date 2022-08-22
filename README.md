@@ -33,10 +33,10 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 ## Running Locally
 
 ```bash
-$ git clone https://github.com/alex289/Portfolio.git
-$ cd Portfolio
-$ pnpm i
-$ pnpm dev
+git clone https://github.com/alex289/Portfolio.git
+cd Portfolio
+pnpm i
+pnpm dev
 ```
 
 Create a `.env` file  similar to [`.env.example`](https://github.com/alex289/Portfolio/blob/main/.env.example)

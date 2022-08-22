@@ -4,14 +4,12 @@ import useTranslation from '@/lib/useTranslation';
 import Layout from '@/components/Layout';
 import { Guestbook as GuestbookComponent } from '@/components/Guestbook';
 
-import type { GetStaticProps } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import type { guestbook } from '@prisma/client';
 
-export default function Guestbook({
-  fallbackData,
-}: {
+const Guestbook: NextPage<{
   fallbackData: guestbook[];
-}) {
+}> = ({ fallbackData }) => {
   const { t } = useTranslation();
   return (
     <Layout title={t('guestbook.title') + ' - Alexander Konietzko'}>
@@ -26,7 +24,9 @@ export default function Guestbook({
       </div>
     </Layout>
   );
-}
+};
+
+export default Guestbook;
 
 export const getStaticProps: GetStaticProps = async () => {
   const entries = await prisma.guestbook.findMany({
