@@ -33,8 +33,13 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
   const { t, locale } = useTranslation();
 
   function toggleMenu() {
-    setIsMenuOpen(!isMenuOpen);
-    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+      document.body.style.overflow = '';
+    } else {
+      setIsMenuOpen(true);
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   return (
