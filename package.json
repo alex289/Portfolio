@@ -32,11 +32,11 @@
   "homepage": "https://alexanderkonietzko.vercel.app",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.4",
-    "@types/node": "^18.7.12",
+    "@types/node": "^18.7.13",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.17",
     "@types/rss": "^0.0.29",
-    "@typescript-eslint/eslint-plugin": "^5.34.0",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
     "autoprefixer": "^10.4.8",
     "eslint": "^8.22.0",
     "eslint-config-next": "12.2.5",
@@ -52,7 +52,7 @@
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
     "tailwindcss": "^3.1.8",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.2"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
@@ -63,7 +63,7 @@
     "@tailwindcss/forms": "^0.5.2",
     "classnames": "^2.3.1",
     "date-fns": "^2.29.2",
-    "jotai": "^1.8.0",
+    "jotai": "^1.8.1",
     "motion": "^10.14.1",
     "next": "12.2.5",
     "next-auth": "^4.10.3",
