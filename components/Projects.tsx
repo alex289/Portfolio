@@ -53,23 +53,16 @@ const Project = ({
                   aria-label="homepage">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    aria-hidden="true"
-                    role="img"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
                     className="default-transition default-focus relative inline-flex h-10 w-10 justify-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-400 hover:bg-gray-200 hover:text-gray-700 dark:border-gray-500 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white sm:w-10"
-                    width="1em"
-                    height="1em"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24">
-                    <g
-                      fill="none"
-                      stroke="currentColor"
+                    stroke="currentColor">
+                    <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth="2">
-                      <path d="m3 9l9-7l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                      <path d="M9 22V12h6v10"></path>
-                    </g>
+                      d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                    />
                   </svg>
                 </a>
               )}
