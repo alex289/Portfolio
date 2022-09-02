@@ -128,7 +128,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
           <button
             aria-label="Open Command Palette"
             type="button"
-            className="umami--click--cmd-button mr-3 hidden h-10 w-10 rounded-lg bg-gray-200 p-3 text-3xl ring-gray-300 hover:ring-4 dark:bg-gray-700 md:inline"
+            className="umami--click--cmd-button mr-3 h-10 w-10 rounded-lg bg-gray-200 p-3 text-3xl ring-gray-300 hover:ring-4 dark:bg-gray-700"
             onClick={() => setCommandPaletteOpen(true)}>
             <MacOptionIcon />
           </button>
