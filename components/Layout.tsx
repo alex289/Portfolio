@@ -1,10 +1,15 @@
 import { ReactNode, Suspense } from 'react';
+import dynamic from 'next/dynamic';
 
 import Meta from '@/components/Meta';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { useAtom } from 'jotai';
 import { isCommandPaletteOpenAtom } from './CommandPalette';
+
+const Footer = dynamic(() => import('@/components/Footer'), {
+  ssr: false,
+  suspense: true,
+});
 
 type Props = {
   children: ReactNode;
