@@ -6,8 +6,8 @@ specifiers:
   '@prisma/client': ^4.3.1
   '@sanity/vision': 3.0.0-dev-preview.15
   '@sanity/webhook': ^2.0.0
-  '@tailwindcss/forms': ^0.5.2
-  '@tailwindcss/typography': ^0.5.6
+  '@tailwindcss/forms': ^0.5.3
+  '@tailwindcss/typography': ^0.5.7
   '@types/node': ^18.7.14
   '@types/nprogress': ^0.2.0
   '@types/react': ^18.0.18
@@ -56,7 +56,7 @@ dependencies:
   '@prisma/client': 4.3.1_prisma@4.3.1
   '@sanity/vision': 3.0.0-dev-preview.15_n2awpmuxsqfmzezyhmmquejdbi
   '@sanity/webhook': 2.0.0
-  '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.8
+  '@tailwindcss/forms': 0.5.3_tailwindcss@3.1.8
   classnames: 2.3.1
   date-fns: 2.29.2
   jotai: 1.8.2_byq7oc57qftat37gkdlgphtura
@@ -79,7 +79,7 @@ dependencies:
   use-delayed-render: 0.0.7_react@18.2.0
 
 devDependencies:
-  '@tailwindcss/typography': 0.5.6_tailwindcss@3.1.8
+  '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
   '@types/node': 18.7.14
   '@types/nprogress': 0.2.0
   '@types/react': 18.0.18
@@ -1616,8 +1616,8 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@tailwindcss/forms/0.5.2_tailwindcss@3.1.8:
-    resolution: {integrity: sha512-pSrFeJB6Bg1Mrg9CdQW3+hqZXAKsBrSG9MAfFLKy1pVA4Mb4W7C0k7mEhlmS2Dfo/otxrQOET7NJiJ9RrS563w==}
+  /@tailwindcss/forms/0.5.3_tailwindcss@3.1.8:
+    resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
     dependencies:
@@ -1625,8 +1625,8 @@ packages:
       tailwindcss: 3.1.8_postcss@8.4.16
     dev: false
 
-  /@tailwindcss/typography/0.5.6_tailwindcss@3.1.8:
-    resolution: {integrity: sha512-d7gNgMl43SmUlC3H7UFWuDVtgU6Slr0h4k0idVfwZ/gFRpjTgFpkD3WIs8AhvwELmWvhI8GwklAeInrhXxFu7A==}
+  /@tailwindcss/typography/0.5.7_tailwindcss@3.1.8:
+    resolution: {integrity: sha512-JTTSTrgZfp6Ki4svhPA4mkd9nmQ/j9EfE7SbHJ1cLtthKkpW2OxsFXzSmxbhYbEkfNIyAyhle5p4SYyKRbz/jg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
