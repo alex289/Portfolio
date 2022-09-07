@@ -71,7 +71,7 @@ const Comment = ({ slug }: { slug: string }) => {
     });
   };
 
-  const deleteEntry = async (e: ClickEvent, entryId: bigint) => {
+  const deleteEntry = async (e: ClickEvent, entryId: number) => {
     e.preventDefault();
 
     await fetch(`/api/comment/${entryId}`, {
