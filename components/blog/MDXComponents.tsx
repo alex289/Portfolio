@@ -24,7 +24,8 @@ const CustomLink = (props: any) => {
 };
 
 function RoundedImage(props: ImageProps) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+  // eslint-disable-next-line jsx-a11y/alt-text
+  return <Image className="rounded-lg" {...props} />;
 }
 
 const MDXComponents = {
