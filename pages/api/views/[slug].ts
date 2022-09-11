@@ -25,32 +25,6 @@ export default async function handler(
       return BadRequest(res, 'Invalid slug');
     }
 
-    const post = await previewClient.fetch(postBySlugQuery, {
-      slug,
-    });
-
-    if (!post) {
-      return res.status(401).json({ message: 'Invalid slug' });
-    }
-
-    if (req.method === 'POST') {
-      const newOrUpdatedViews = await prisma.views.upsert({
-        where: { slug },
-        create: {
-          slug,
-        },
-        update: {
-          count: {
-            increment: 1,
-          },
-        },
-      });
-
-      return res.status(200).json({
-        total: newOrUpdatedViews.count.toString(),
-      });
-    }
-
     if (req.method === 'GET') {
       const views = await prisma.views.findUnique({
         where: {
@@ -58,8 +32,36 @@ export default async function handler(
         },
       });
 
-      return res.status(200).json({ total: views?.count.toString() });
+      if (!views) {
+        return res.status(404).json({ message: 'Post not found' });
+      }
+
+      return res.status(200).json({ total: views.count.toString() });
     }
+
+    const post = await previewClient.fetch(postBySlugQuery, {
+      slug,
+    });
+
+    if (!post) {
+      return BadRequest(res, 'Post not found');
+    }
+
+    const newOrUpdatedViews = await prisma.views.upsert({
+      where: { slug },
+      create: {
+        slug,
+      },
+      update: {
+        count: {
+          increment: 1,
+        },
+      },
+    });
+
+    return res.status(200).json({
+      total: newOrUpdatedViews.count.toString(),
+    });
   } catch (e) {
     return ServerError(res, e);
   }
