@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState } from 'react';
+import { FormEvent, Suspense, useRef, useState } from 'react';
 
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { comment } from '@prisma/client';
@@ -14,7 +14,7 @@ import ErrorMessage from '@/components/guestbook/ErrorMessage';
 import LoadingSpinner from '@/components/guestbook/LoadingSpinner';
 import SuccessMessage from '@/components/guestbook/SuccessMessage';
 
-import { ClickEvent, Form, FormState } from '@/lib/types';
+import { Form, FormState } from '@/lib/types';
 
 const Comment = ({ slug }: { slug: string }) => {
   const { t, locale } = useTranslation();
@@ -29,7 +29,7 @@ const Comment = ({ slug }: { slug: string }) => {
     fetcher
   );
 
-  const onSubmit = async (e: ClickEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setForm({ state: Form.Loading });
 
@@ -71,9 +71,7 @@ const Comment = ({ slug }: { slug: string }) => {
     });
   };
 
-  const deleteEntry = async (e: ClickEvent, entryId: number) => {
-    e.preventDefault();
-
+  const deleteEntry = async (entryId: number) => {
     await fetch(`/api/comment/${entryId}`, {
       method: 'DELETE',
     });
@@ -184,7 +182,7 @@ const Comment = ({ slug }: { slug: string }) => {
                       </span>
                       <button
                         className="text-sm text-red-600 dark:text-red-400"
-                        onClick={(e) => deleteEntry(e, entry.id)}>
+                        onClick={() => deleteEntry(entry.id)}>
                         {t('guestbook.delete')}
                       </button>
                     </>

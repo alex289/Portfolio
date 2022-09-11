@@ -56,6 +56,12 @@ export default function CommandPalette() {
         args: '/guestbook',
       },
       {
+        title: 'Dashboard',
+        action: Actions.Router,
+        args: '/dashboard',
+        disabled: !session?.isAdmin ?? true,
+      },
+      {
         group: t('command-palette.socials'),
         title: 'GitHub',
         action: Actions.Router,

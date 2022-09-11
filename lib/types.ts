@@ -17,17 +17,6 @@ export type Projects = {
   language: string;
 };
 
-export type healthData = {
-  status: string;
-  env: string;
-  uptime: string;
-  mem: NodeJS.MemoryUsage;
-  vercel: {
-    deployed: boolean;
-    env: string;
-  };
-};
-
 export type NowPlayingSong = {
   album: string;
   albumImageUrl: string;
@@ -75,8 +64,4 @@ export type Post = {
   translation: string;
   tags: string[];
   readingTime: string;
-};
-
-export type ClickEvent = {
-  preventDefault: () => void;
 };

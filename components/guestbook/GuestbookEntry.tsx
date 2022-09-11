@@ -2,8 +2,6 @@ import { guestbook } from '@prisma/client';
 import { useSWRConfig } from 'swr';
 import { format } from 'date-fns';
 
-import type { ClickEvent } from '@/lib/types';
-
 type GuestBookEntryProps = {
   t: (key: string) => string;
   entry: guestbook;
@@ -22,9 +20,7 @@ export default function GuestbookEntry({
   user,
 }: GuestBookEntryProps) {
   const { mutate } = useSWRConfig();
-  const deleteEntry = async (e: ClickEvent) => {
-    e.preventDefault();
-
+  const deleteEntry = async () => {
     await fetch(`/api/guestbook/${entry.id}`, {
       method: 'DELETE',
     });

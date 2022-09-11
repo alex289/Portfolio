@@ -1,4 +1,4 @@
-import { useState, useRef, Suspense } from 'react';
+import { useState, useRef, Suspense, FormEvent } from 'react';
 
 import { signIn, signOut, useSession } from 'next-auth/react';
 import useSWR, { useSWRConfig } from 'swr';
@@ -11,7 +11,7 @@ import SuccessMessage from '@/components/guestbook/SuccessMessage';
 import ErrorMessage from '@/components/guestbook/ErrorMessage';
 import LoadingSpinner from '@/components/guestbook/LoadingSpinner';
 
-import { ClickEvent, Form, FormState } from '@/lib/types';
+import { Form, FormState } from '@/lib/types';
 import { guestbook } from '@prisma/client';
 
 export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
@@ -24,7 +24,7 @@ export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
     fallbackData,
   });
 
-  const leaveEntry = async (e: ClickEvent) => {
+  const leaveEntry = async (e: FormEvent) => {
     e.preventDefault();
     setForm({ state: Form.Loading });
 
