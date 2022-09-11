@@ -7,7 +7,6 @@ import { useAtom } from 'jotai';
 import { isCommandPaletteOpenAtom } from './CommandPalette';
 
 const Footer = dynamic(() => import('@/components/Footer'), {
-  ssr: false,
   suspense: true,
 });
 

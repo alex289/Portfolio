@@ -9,7 +9,6 @@ import NProgress from 'nprogress';
 import Analytics from '@/components/Analytics';
 const CommandPalette = dynamic(() => import('@/components/CommandPalette'), {
   suspense: true,
-  ssr: false,
 });
 
 import type { AppProps } from 'next/app';
@@ -29,7 +28,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function App({
   Component,
-  pageProps
+  pageProps,
 }: AppProps<{ session: Session }>): JSX.Element {
   return (
     <SessionProvider session={pageProps.session}>

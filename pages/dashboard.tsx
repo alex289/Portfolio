@@ -10,7 +10,7 @@ import Metric from '@/components/Metric';
 import Tracks from '@/components/TopTrack';
 
 import type { GetStaticProps, NextPage } from 'next';
-import type { healthData, Views } from '@/lib/types';
+import type { Views } from '@/lib/types';
 
 type Props = {
   previewMode: boolean;
@@ -24,7 +24,6 @@ const Dashboard: NextPage<Props> = ({ previewMode }) => {
     },
   });
 
-  const { data } = useSWR<healthData>('/api/health', fetcher);
   const { data: guestbookCount } = useSWR<{ count: number }>(
     '/api/guestbook?count=true',
     fetcher
@@ -67,26 +66,6 @@ const Dashboard: NextPage<Props> = ({ previewMode }) => {
             )
           </p>
           <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-            <Metric title="Status">
-              <span
-                className={data?.status ? 'text-green-600' : 'text-red-600'}>
-                {data?.status}
-              </span>
-            </Metric>
-            <Metric title="Environment">{data?.env}</Metric>
-
-            <h2 className="mt-3 text-xl font-bold sm:col-span-2">Health</h2>
-            <Metric title="Uptime">{data?.uptime}</Metric>
-            <Metric title="RSS">{data?.mem.rss}</Metric>
-            <Metric title="Heap total">{data?.mem.heapTotal}</Metric>
-            <Metric title="Heap used">{data?.mem.heapUsed}</Metric>
-            <Metric title="External">{data?.mem.external}</Metric>
-            <Metric title="Array buffers">{data?.mem.arrayBuffers}</Metric>
-
-            <h2 className="mt-3 text-xl font-bold sm:col-span-2">Deployment</h2>
-            <Metric title="Deployed">{data?.vercel.deployed.toString()}</Metric>
-            <Metric title="Vercel environment">{data?.vercel.env}</Metric>
-
             <h2 className="mt-3 text-xl font-bold sm:col-span-2">
               Blog/Guestbook
             </h2>
