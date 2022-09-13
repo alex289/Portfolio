@@ -5,7 +5,7 @@ import {
   MethodNotAllowed,
   ServerError,
 } from '@/lib/api';
-import { previewClient } from '@/lib/sanity/sanity-server';
+import { getClient } from '@/lib/sanity/sanity-server';
 import { postBySlugQuery } from '@/lib/sanity/queries';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -39,7 +39,7 @@ export default async function handler(
       return res.status(200).json({ total: views.count.toString() });
     }
 
-    const post = await previewClient.fetch(postBySlugQuery, {
+    const post = await getClient(req.preview ?? false).fetch(postBySlugQuery, {
       slug,
     });
 
