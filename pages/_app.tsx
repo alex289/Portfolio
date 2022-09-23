@@ -11,7 +11,7 @@ const CommandPalette = dynamic(() => import('@/components/CommandPalette'), {
   suspense: true,
 });
 
-import type { AppProps } from 'next/app';
+import type { AppType } from 'next/app';
 import type { Session } from 'next-auth';
 
 import '@/styles/global.css';
@@ -26,12 +26,12 @@ Router.events.on('routeChangeStart', (_url, { shallow }) => {
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-export default function App({
+const App: AppType<{ session: Session | null }> = ({
   Component,
-  pageProps,
-}: AppProps<{ session: Session }>): JSX.Element {
+  pageProps: { session, ...pageProps },
+}) => {
   return (
-    <SessionProvider session={pageProps.session}>
+    <SessionProvider session={session}>
       <ThemeProvider attribute="class">
         <Suspense>
           <CommandPalette />
@@ -41,4 +41,6 @@ export default function App({
       </ThemeProvider>
     </SessionProvider>
   );
-}
+};
+
+export default App;
