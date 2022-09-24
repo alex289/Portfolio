@@ -24,7 +24,7 @@ export default async function handler(req: NextRequest) {
 
   let repos = await reposResponse.json();
 
-  if (!reposResponse.ok) {
+  if (reposResponse.ok) {
     const fallbackResponse = await fetch(BACKUP_REPOS_URL);
 
     if (!fallbackResponse.ok) {
@@ -32,10 +32,11 @@ export default async function handler(req: NextRequest) {
     }
 
     repos = await fallbackResponse.json();
-    repos = repos
-      .filter((repo: { fork: boolean }) => !repo.fork)
-      .slice(0, Number(per_page));
   }
+
+  repos = repos
+    .filter((repo: { fork: boolean }) => !repo.fork)
+    .slice(0, Number(per_page));
 
   return new Response(JSON.stringify(repos), {
     status: 200,
