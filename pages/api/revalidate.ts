@@ -2,7 +2,12 @@ import { isValidSignature, SIGNATURE_HEADER_NAME } from '@sanity/webhook';
 
 import { sanityClient } from '@/lib/sanity/sanity-server';
 import { postUpdatedQuery } from '@/lib/sanity/queries';
-import { BadRequest, isValidHttpMethod, MethodNotAllowed } from '@/lib/api';
+import {
+  BadRequest,
+  isValidHttpMethod,
+  MethodNotAllowed,
+  ServerError,
+} from '@/lib/api';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -63,11 +68,7 @@ export default async function handler(
       .status(200)
       .json({ message: `[Revalidated] '${pathToRevalidate}' (${id})` });
   } catch (err) {
-    if (err instanceof Error) {
-      return res.status(500).json({ message: err.message });
-    } else {
-      return res.status(500).json({ message: 'Unknown error' });
-    }
+    return ServerError(res, err);
   }
 }
 
