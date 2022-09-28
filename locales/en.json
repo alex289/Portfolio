@@ -44,6 +44,7 @@
             "tailwind": "When it comes to CSS, I always use TailwindCSS. It is a great tool for styling your website really fast.",
             "next": "My go-to framework for building web applications. The quality of the codebase is fantastic.",
             "vercel": "The most seamless way to deploy your website. I use it for all of my projects.",
+            "planetscale": "The MySQL-compatible serverless database platform. My go-to database host.",
             "vscode": "VS Code is the text editor I reach for most often, given it's range of extensions."
         },
         "timeline": {
