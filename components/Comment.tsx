@@ -163,7 +163,9 @@ const Comment = ({ slug }: { slug: string }) => {
               <div
                 className="flex flex-col space-y-2"
                 key={entry.id.toString()}>
-                <div className="prose w-full dark:prose-dark">{entry.body}</div>
+                <div className="prose w-full break-words dark:prose-dark">
+                  {entry.body}
+                </div>
                 <div className="flex items-center space-x-3">
                   <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
                     {entry.created_by}
