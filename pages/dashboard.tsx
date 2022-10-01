@@ -4,6 +4,8 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
+import { getClient } from '@/lib/sanity/sanity-server';
+import { postAmountQuery } from '@/lib/sanity/queries';
 
 import Layout from '@/components/Layout';
 import Metric from '@/components/Metric';
@@ -14,9 +16,10 @@ import type { Views } from '@/lib/types';
 
 type Props = {
   previewMode: boolean;
+  postsCount: number;
 };
 
-const Dashboard: NextPage<Props> = ({ previewMode }) => {
+const Dashboard: NextPage<Props> = ({ previewMode, postsCount }) => {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
@@ -78,6 +81,7 @@ const Dashboard: NextPage<Props> = ({ previewMode }) => {
             <Metric title="Sanity project id">
               {process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             </Metric>
+            <Metric title="Posts count">{postsCount}</Metric>
           </div>
           <h2 className="mb-4 mt-16 text-3xl font-bold tracking-tight text-black dark:text-white">
             Top Spotify Tracks
@@ -92,9 +96,11 @@ const Dashboard: NextPage<Props> = ({ previewMode }) => {
 export default Dashboard;
 
 export const getStaticProps: GetStaticProps = async ({ preview }) => {
+  const postsCount = await getClient(preview ?? false).fetch(postAmountQuery);
   return {
     props: {
       previewMode: preview ?? false,
+      postsCount,
     },
   };
 };
