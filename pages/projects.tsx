@@ -1,9 +1,7 @@
 import { Suspense } from 'react';
 import Image from 'next/future/image';
-import useSWR from 'swr';
 import { useTheme } from 'next-themes';
 
-import fetcher from '@/lib/fetcher';
 import useTranslation from '@/lib/useTranslation';
 import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 
@@ -18,16 +16,6 @@ const ProjectsPage: NextPage<{
 }> = ({ fallbackData }) => {
   const { resolvedTheme } = useTheme();
   const { t, locale } = useTranslation();
-  const { data, error } = useSWR<Projects[]>('/api/repos', fetcher, {
-    fallbackData,
-  });
-
-  if (error) {
-    return <Layout>Failed to load</Layout>;
-  }
-  if (!data) {
-    return <Layout>Loading...</Layout>;
-  }
 
   return (
     <Layout title={t('main.projects') + ' - Alexander Konietzko'}>

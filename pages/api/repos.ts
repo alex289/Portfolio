@@ -24,7 +24,7 @@ export default async function handler(req: NextRequest) {
 
   let repos = await reposResponse.json();
 
-  if (reposResponse.ok) {
+  if (!reposResponse.ok) {
     const fallbackResponse = await fetch(BACKUP_REPOS_URL);
 
     if (!fallbackResponse.ok) {
