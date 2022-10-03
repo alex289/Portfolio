@@ -34,4 +34,4 @@ export const postBySlugQuery = `
 
 export const postUpdatedQuery = `*[_type == "post" && _id == $id][0] {"slug": slug.current, language}`;
 
-export const postAmountQuery = `count(*[_type == 'post' && language == 'en'])`;
+export const postAmountQuery = `count(*[_type == 'post' && language == $language])`;

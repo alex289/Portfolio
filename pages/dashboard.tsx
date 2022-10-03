@@ -95,8 +95,10 @@ const Dashboard: NextPage<Props> = ({ previewMode, postsCount }) => {
 
 export default Dashboard;
 
-export const getStaticProps: GetStaticProps = async ({ preview }) => {
-  const postsCount = await getClient(preview ?? false).fetch(postAmountQuery);
+export const getStaticProps: GetStaticProps = async ({ preview, locale }) => {
+  const postsCount = await getClient(preview ?? false).fetch(postAmountQuery, {
+    language: locale,
+  });
   return {
     props: {
       previewMode: preview ?? false,
