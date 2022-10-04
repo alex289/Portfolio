@@ -89,6 +89,23 @@
         "error": "Please enter a message.",
         "delete": "Delete"
     },
+    "dashboard": {
+        "unauthorized": "You are not authorized to view this page.",
+        "logout": "Logout",
+        "logged-in": "Logged in as",
+        "blog-guestbook": "Blog/Guestbook",
+        "top-tracks": "Top Spotify Tracks",
+        "metrics": {
+            "blog-views": "Blog views",
+            "blog-comments": "Blog comments",
+            "guestbook-entries": "Guestbook entries",
+            "preview-mode": "Preview mode",
+            "preview-active": "Active",
+            "preview-inactive": "Inactive",
+            "sanity-project": "Sanity project Id",
+            "posts-count": "Amount of all posts (EN)"
+        }
+    },
     "comment": {
         "title": "Comments",
         "login": "Login",

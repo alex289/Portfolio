@@ -4,6 +4,7 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
+import useTranslation from '@/lib/useTranslation';
 import { getClient } from '@/lib/sanity/sanity-server';
 import { postAmountQuery } from '@/lib/sanity/queries';
 
@@ -20,6 +21,7 @@ type Props = {
 };
 
 const Dashboard: NextPage<Props> = ({ previewMode, postsCount }) => {
+  const { t } = useTranslation();
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
@@ -40,13 +42,8 @@ const Dashboard: NextPage<Props> = ({ previewMode, postsCount }) => {
   if (!session || !session.isAdmin) {
     return (
       <Layout>
-        <div className="mx-auto my-10 text-lg font-bold">
-          Not authenticated/authorized
-          <div
-            className="mt-2 cursor-pointer text-sm font-normal"
-            onClick={() => signOut({ callbackUrl: '/' })}>
-            Logout
-          </div>
+        <div className="mx-auto my-10 h-[30em] text-lg font-bold">
+          {t('dashboard.unauthorized')}
         </div>
       </Layout>
     );
@@ -60,31 +57,43 @@ const Dashboard: NextPage<Props> = ({ previewMode, postsCount }) => {
             Dashboard
           </h1>
           <p className="mb-2">
-            Logged in as {session.user?.email} (
+            {t('dashboard.logged-in')} {session.user?.email} (
             <button
               onClick={() => signOut({ callbackUrl: '/' })}
               className="underline">
-              Logout
+              {t('dashboard.logout')}
             </button>
             )
           </p>
           <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
             <h2 className="mt-3 text-xl font-bold sm:col-span-2">
-              Blog/Guestbook
+              {t('dashboard.blog-guestbook')}
             </h2>
-            <Metric title="Blog total views">{viewsData?.total}</Metric>
-            <Metric title="Blog comments">{commentCount?.count}</Metric>
-            <Metric title="Guestbook entries">{guestbookCount?.count}</Metric>
+            <Metric title={t('dashboard.metrics.blog-views')}>
+              {viewsData?.total}
+            </Metric>
+            <Metric title={t('dashboard.metrics.blog-comments')}>
+              {commentCount?.count}
+            </Metric>
+            <Metric title={t('dashboard.metrics.guestbook-entries')}>
+              {guestbookCount?.count}
+            </Metric>
 
             <h2 className="mt-3 text-xl font-bold sm:col-span-2">Sanity</h2>
-            <Metric title="Preview mode">{previewMode.toString()}</Metric>
-            <Metric title="Sanity project id">
+            <Metric title={t('dashboard.metrics.preview-mode')}>
+              {previewMode
+                ? t('dashboard.metrics.preview-active')
+                : t('dashboard.metrics.preview-inactive')}
+            </Metric>
+            <Metric title={t('dashboard.metrics.sanity-project')}>
               {process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             </Metric>
-            <Metric title="Posts count">{postsCount}</Metric>
+            <Metric title={t('dashboard.metrics.posts-count')}>
+              {postsCount}
+            </Metric>
           </div>
           <h2 className="mb-4 mt-16 text-3xl font-bold tracking-tight text-black dark:text-white">
-            Top Spotify Tracks
+            {t('dashboard.top-tracks')}
           </h2>
           <Tracks />
         </div>
