@@ -15,15 +15,15 @@ jobs:
         node-version: [16.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
     - name: Cache next build
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       id: restore-build-cache
       env:
         cache-name: cache-next-build
@@ -34,7 +34,7 @@ jobs:
     - name: Setup pnpm
       uses: pnpm/action-setup@v2.2.2
       with:
-        version: 7.1.7
+        version: 7.13.2
         run_install: false
 
     - name: Get pnpm store directory
@@ -51,14 +51,16 @@ jobs:
           ${{ runner.os }}-pnpm-store-
 
     - name: Install dependencies
-      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
       run: pnpm i --frozen-lockfile
+
+    - name: Format
+      run: pnpm run format:check
 
     - name: Generate prisma schema
       run: pnpm exec prisma generate
 
-    - name: Format
-      run: pnpm format
+    - name: Typecheck
+      run: pnpm typecheck
 
     - name: Lint
       run: pnpm lint

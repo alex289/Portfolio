@@ -10,7 +10,9 @@
     "lint": "next lint",
     "format": "prettier --write pages/** components/** lib/**",
     "sanity:start": "sanity start",
-    "sanity:deploy": "sanity deploy"
+    "sanity:deploy": "sanity deploy",
+    "format:check": "prettier --check pages/** components/** lib/**",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
