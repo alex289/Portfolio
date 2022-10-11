@@ -8,10 +8,10 @@
     "build": "next build",
     "export": "next export",
     "lint": "next lint",
-    "format": "prettier --write pages/** components/** lib/**",
+    "format": "prettier --write **/*.tsx **/*.ts",
     "sanity:start": "sanity start",
     "sanity:deploy": "sanity deploy",
-    "format:check": "prettier --check pages/** components/** lib/**",
+    "format:check": "prettier --check **/*.tsx **/*.ts",
     "typecheck": "tsc --noEmit"
   },
   "repository": {

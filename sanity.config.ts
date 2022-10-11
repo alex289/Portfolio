@@ -7,15 +7,15 @@ import { visionTool } from '@sanity/vision';
 export default createConfig({
   name: 'default',
   title: 'alexanderkonietzko.vercel.app',
-  projectId: "evkyvibr",
-  dataset: "production",
+  projectId: 'evkyvibr',
+  dataset: 'production',
   plugins: [
     deskTool(),
     markdownSchema(),
     media(),
     visionTool({
-      defaultApiVersion: "2022-08-15",
-      defaultDataset: "production",
+      defaultApiVersion: '2022-08-15',
+      defaultDataset: 'production',
     }),
   ],
   schema: {
