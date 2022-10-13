@@ -19,7 +19,7 @@ const Meta = ({
   date,
   tags,
 }: Props): JSX.Element => {
-  const { asPath } = useRouter();
+  const { asPath, locale } = useRouter();
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -59,11 +59,15 @@ const Meta = ({
       <meta property="og:site_name" content="Alexander Konietzko" />
       <meta
         property="og:url"
-        content={`https://alexanderkonietzko.vercel.app${asPath}`}
+        content={`https://alexanderkonietzko.vercel.app${
+          locale === 'de' ? '/de' : ''
+        }${asPath.replace(/\/+$/, '')}`}
       />
       <link
         rel="canonical"
-        href={`https://alexanderkonietzko.vercel.app${asPath}`}
+        href={`https://alexanderkonietzko.vercel.app${
+          locale === 'de' ? '/de' : ''
+        }${asPath.replace(/\/+$/, '')}`}
       />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
@@ -100,7 +104,7 @@ const Meta = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:url"
-        content="https://alexanderkonietzko.vercel.app/"
+        content="https://alexanderkonietzko.vercel.app"
       />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
