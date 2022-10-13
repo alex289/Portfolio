@@ -52,7 +52,12 @@ const Meta = ({
           content={theme === 'light' ? '#f9fafb' : '#222222'}
         />
       )}
-      <meta property="og:image" content={`/api/og?title=${title}`} />
+      <meta
+        property="og:image"
+        content={`/api/og${
+          title !== 'Alexander Konietzko' ? '?title=' + title : ''
+        }`}
+      />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Alexander Konietzko" />
       <meta property="og:url" content="https://alexanderkonietzko.vercel.app" />
@@ -96,7 +101,12 @@ const Meta = ({
       />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`/api/og?title=${title}`} />
+      <meta
+        name="twitter:image"
+        content={`/api/og${
+          title !== 'Alexander Konietzko' ? '?title=' + title : ''
+        }`}
+      />
       <meta
         name="google-site-verification"
         content="64Pb4e1oRhhlHgM6aJGvqSunCfPa38sJ5ZHPfLNtzts"
