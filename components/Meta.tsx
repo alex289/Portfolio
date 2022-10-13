@@ -2,7 +2,6 @@ import Head from 'next/head';
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 
 type Props = {
   title?: string;
@@ -19,7 +18,6 @@ const Meta = ({
   date,
   tags,
 }: Props): JSX.Element => {
-  const { asPath, locale } = useRouter();
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -57,18 +55,8 @@ const Meta = ({
       <meta property="og:image" content={`/api/og?title=${title}`} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Alexander Konietzko" />
-      <meta
-        property="og:url"
-        content={`https://alexanderkonietzko.vercel.app${
-          locale === 'de' ? '/de' : ''
-        }${asPath.replace(/\/+$/, '')}`}
-      />
-      <link
-        rel="canonical"
-        href={`https://alexanderkonietzko.vercel.app${
-          locale === 'de' ? '/de' : ''
-        }${asPath.replace(/\/+$/, '')}`}
-      />
+      <meta property="og:url" content="https://alexanderkonietzko.vercel.app" />
+      <link rel="canonical" href="https://alexanderkonietzko.vercel.app" />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
       {date && <meta property="article:published_time" content={date} />}
