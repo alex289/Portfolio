@@ -52,18 +52,17 @@ const Meta = ({
           content={theme === 'light' ? '#f9fafb' : '#222222'}
         />
       )}
+      <meta property="og:type" content={type} />
+      <meta property="og:site_name" content="Alexander Konietzko" />
+      <meta property="og:url" content="https://alexanderkonietzko.vercel.app" />
+      <meta property="og:description" content={description} />
+      <meta property="og:title" content={title} />
       <meta
         property="og:image"
         content={`/api/og${
           title !== 'Alexander Konietzko' ? '?title=' + title : ''
         }`}
       />
-      <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="Alexander Konietzko" />
-      <meta property="og:url" content="https://alexanderkonietzko.vercel.app" />
-      <link rel="canonical" href="https://alexanderkonietzko.vercel.app" />
-      <meta property="og:description" content={description} />
-      <meta property="og:title" content={title} />
       {date && <meta property="article:published_time" content={date} />}
       {tags && <meta property="article:tag" content={tags.join(', ')} />}
       {tags ? (
@@ -102,7 +101,7 @@ const Meta = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta
-        name="twitter:image"
+        name="twitter:image:src"
         content={`/api/og${
           title !== 'Alexander Konietzko' ? '?title=' + title : ''
         }`}
