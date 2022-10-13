@@ -33,7 +33,7 @@ const Meta = ({
       <meta name="robots" content="follow, index" />
       <meta
         name="viewport"
-        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+        content="initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
       />
       <link
         rel="preload"
@@ -54,10 +54,7 @@ const Meta = ({
           content={theme === 'light' ? '#f9fafb' : '#222222'}
         />
       )}
-      <meta
-        property="og:image"
-        content="https://repository-images.githubusercontent.com/386759878/9e991155-c521-4a40-855d-3fa47f53fb3a"
-      />
+      <meta property="og:image" content={`/api/og?title=${title}`} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Alexander Konietzko" />
       <meta
@@ -107,10 +104,7 @@ const Meta = ({
       />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta
-        name="twitter:image"
-        content="https://repository-images.githubusercontent.com/386759878/9e991155-c521-4a40-855d-3fa47f53fb3a"
-      />
+      <meta name="twitter:image" content={`/api/og?title=${title}`} />
       <meta
         name="google-site-verification"
         content="64Pb4e1oRhhlHgM6aJGvqSunCfPa38sJ5ZHPfLNtzts"
