@@ -59,7 +59,7 @@ export default function CommandPalette() {
         title: 'Dashboard',
         action: Actions.Router,
         args: '/dashboard',
-        disabled: !session?.isAdmin ?? true,
+        disabled: !session?.user?.isAdmin ?? true,
       },
       {
         group: t('command-palette.socials'),

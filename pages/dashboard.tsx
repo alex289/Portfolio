@@ -39,7 +39,7 @@ const Dashboard: NextPage<Props> = ({ previewMode, postsCount }) => {
   );
   const { data: viewsData } = useSWR<Views>('/api/views', fetcher);
 
-  if (!session || !session.isAdmin) {
+  if (!session || !session.user.isAdmin) {
     return (
       <Layout>
         <div className="mx-auto my-10 h-[30em] text-lg font-bold">

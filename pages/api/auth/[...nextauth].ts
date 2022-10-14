@@ -23,7 +23,7 @@ export const authOptions: NextAuthOptions = {
     session: async ({ session, token }) => {
       token.image = token.picture;
       session.user = token;
-      session.isAdmin = token.email === process.env.ADMIN_EMAIL;
+      session.user.isAdmin = token.email === process.env.ADMIN_EMAIL;
 
       return session;
     },
