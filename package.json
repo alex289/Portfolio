@@ -34,7 +34,7 @@
   "homepage": "https://alexanderkonietzko.vercel.app",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.7",
-    "@types/node": "^18.8.5",
+    "@types/node": "^18.11.0",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.21",
     "@types/rss": "^0.0.29",
@@ -63,7 +63,7 @@
     "@sanity/vision": "3.0.0-dev-preview.20",
     "@sanity/webhook": "^2.0.0",
     "@tailwindcss/forms": "^0.5.3",
-    "@vercel/og": "^0.0.18",
+    "@vercel/og": "^0.0.19",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "jotai": "^1.8.5",
