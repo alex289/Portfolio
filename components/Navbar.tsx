@@ -45,64 +45,69 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
   return (
     <nav className="sticky top-0 z-50 mx-auto my-0 w-full max-w-3xl items-center justify-between px-4 pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:py-4 xl:px-0">
       <div>
-        <Link
-          href="/"
-          id="nav-home"
-          className={`invisible mr-1 text-gray-900 sm:mr-4 md:visible ${
-            router.asPath === '/'
-              ? 'font-semibold dark:text-primary'
-              : 'dark:text-gray-100'
-          }`}>
-          <span className="dark:link-underline link-underline-black py-1">
-            {t('main.home')}
+        <Link href="/">
+          <span
+            id="nav-home"
+            className={`invisible mr-1 text-gray-900 sm:mr-4 md:visible ${
+              router.asPath === '/'
+                ? 'font-semibold dark:text-primary'
+                : 'dark:text-gray-100'
+            }`}>
+            <span className="dark:link-underline link-underline-black py-1">
+              {t('main.home')}
+            </span>
           </span>
         </Link>
-        <Link
-          href="/about"
-          id="nav-about"
-          className={`invisible m-1 text-gray-900  sm:m-4 md:visible ${
-            router.pathname === '/about'
-              ? 'font-semibold dark:text-primary'
-              : 'dark:text-gray-100'
-          }`}>
-          <span className="dark:link-underline link-underline-black py-1">
-            {t('main.about')}
+        <Link href="/about">
+          <span
+            id="nav-about"
+            className={`invisible m-1 text-gray-900  sm:m-4 md:visible ${
+              router.pathname === '/about'
+                ? 'font-semibold dark:text-primary'
+                : 'dark:text-gray-100'
+            }`}>
+            <span className="dark:link-underline link-underline-black py-1">
+              {t('main.about')}
+            </span>
           </span>
         </Link>
-        <Link
-          href="/projects"
-          id="nav-projects"
-          className={`invisible m-1 text-gray-900 sm:m-4 md:visible ${
-            router.pathname === '/projects'
-              ? 'font-semibold dark:text-primary'
-              : 'dark:text-gray-100'
-          }`}>
-          <span className="dark:link-underline link-underline-black py-1">
-            {t('main.projects')}
+        <Link href="/projects">
+          <span
+            id="nav-projects"
+            className={`invisible m-1 text-gray-900 sm:m-4 md:visible ${
+              router.pathname === '/projects'
+                ? 'font-semibold dark:text-primary'
+                : 'dark:text-gray-100'
+            }`}>
+            <span className="dark:link-underline link-underline-black py-1">
+              {t('main.projects')}
+            </span>
           </span>
         </Link>
-        <Link
-          href="/blog"
-          id="nav-blog"
-          className={`invisible m-1 text-gray-900 sm:m-4 md:visible ${
-            router.pathname.includes('blog')
-              ? 'font-semibold dark:text-primary'
-              : 'dark:text-gray-100'
-          }`}>
-          <span className="dark:link-underline link-underline-black py-1">
-            Blog
+        <Link href="/blog">
+          <span
+            id="nav-blog"
+            className={`invisible m-1 text-gray-900 sm:m-4 md:visible ${
+              router.pathname.includes('blog')
+                ? 'font-semibold dark:text-primary'
+                : 'dark:text-gray-100'
+            }`}>
+            <span className="dark:link-underline link-underline-black py-1">
+              Blog
+            </span>
           </span>
         </Link>
-        <Link
-          href="/guestbook"
-          id="nav-guestbook"
-          className={`m-1 hidden text-gray-900 sm:m-4 md:inline ${
-            router.pathname === '/guestbook'
-              ? 'font-semibold dark:text-primary'
-              : 'dark:text-gray-100'
-          }`}>
-          <span className="dark:link-underline link-underline-black py-1">
-            {t('guestbook.title')}
+        <Link href="/guestbook">
+          <span
+            id="nav-guestbook"
+            className={`m-1 hidden text-gray-900 sm:m-4 md:inline ${
+              router.pathname === '/guestbook'
+                ? 'font-semibold dark:text-primary'
+                : 'dark:text-gray-100'
+            }`}>
+            <span className="dark:link-underline link-underline-black py-1">
+              {t('guestbook.title')}
+            </span>
           </span>
         </Link>
       </div>

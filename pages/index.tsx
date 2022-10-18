@@ -71,10 +71,8 @@ const Index: NextPage<Props> = ({ fallbackData }) => {
               gradient="from-[#9333EA] via-[#818CF8] to-[#3B82F6]"
             />
           </div>
-          <Link
-            href="/blog"
-            className="rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
-            <div className="mt-8 mb-16 flex h-6">
+          <Link href="/blog">
+            <div className="mt-8 mb-16 flex h-6 cursor-pointer rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
               {t('index-page.posts.read-all')}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,10 +98,8 @@ const Index: NextPage<Props> = ({ fallbackData }) => {
           <h2 className="text-gray-600 dark:text-gray-200">
             <Project fallbackData={fallbackData} />
           </h2>
-          <Link
-            href="/projects"
-            className="mt-4 mb-16 h-6 rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
-            <div className="flex">
+          <Link href="/projects">
+            <div className="mt-4 mb-16 flex h-6 cursor-pointer rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
               {t('projects.see-more')}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
