@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image, { ImageProps } from 'next/future/image';
+import Image, { ImageProps } from 'next/image';
 
 import Step from '@/components/blog/MDXComponents/Step';
 import ProsCard from '@/components/blog/MDXComponents/ProsCard';
@@ -14,8 +14,8 @@ const CustomLink = (props: any) => {
 
   if (isInternalLink) {
     return (
-      <Link href={href}>
-        <a {...props}>{props.children}</a>
+      <Link href={href} {...props}>
+        {props.children}
       </Link>
     );
   }

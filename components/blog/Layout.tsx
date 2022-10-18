@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { parseISO, format } from 'date-fns';
 
 import Layout from '@/components/Layout';
@@ -50,10 +50,11 @@ export default function BlogLayout({
         </div>
         <div className="mt-2 flex w-full text-xs">
           {post.tags.map((tag) => (
-            <Link href={`/blog?filter=tag&search=${tag}`} key={tag}>
-              <a className="mx-2 rounded-xl border border-gray-600 px-2 py-1 hover:bg-gray-200 dark:border-gray-400 dark:hover:bg-gray-600">
-                {tag}
-              </a>
+            <Link
+              href={`/blog?filter=tag&search=${tag}`}
+              key={tag}
+              className="mx-2 rounded-xl border border-gray-600 px-2 py-1 hover:bg-gray-200 dark:border-gray-400 dark:hover:bg-gray-600">
+              {tag}
             </Link>
           ))}
         </div>

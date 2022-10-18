@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { useTheme } from 'next-themes';
 
 import useTranslation from '@/lib/useTranslation';

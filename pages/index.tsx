@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 import useTranslation from '@/lib/useTranslation';
 import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
@@ -71,23 +71,23 @@ const Index: NextPage<Props> = ({ fallbackData }) => {
               gradient="from-[#9333EA] via-[#818CF8] to-[#3B82F6]"
             />
           </div>
-          <Link href="/blog">
-            <a className="mt-8 mb-16 flex h-6 rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
-              {t('index-page.posts.read-all')}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="ml-1 h-6 w-6">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </a>
+          <Link
+            href="/blog"
+            className="mt-8 mb-16 flex h-6 rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
+            {t('index-page.posts.read-all')}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="ml-1 h-6 w-6">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+              />
+            </svg>
           </Link>
 
           <h3
@@ -98,23 +98,23 @@ const Index: NextPage<Props> = ({ fallbackData }) => {
           <h2 className="text-gray-600 dark:text-gray-200">
             <Project fallbackData={fallbackData} />
           </h2>
-          <Link href="/projects">
-            <a className="mt-4 mb-16 flex h-6 rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
-              {t('projects.see-more')}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="ml-1 h-6 w-6">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </a>
+          <Link
+            href="/projects"
+            className="mt-4 mb-16 flex h-6 rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
+            {t('projects.see-more')}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="ml-1 h-6 w-6">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+              />
+            </svg>
           </Link>
         </div>
       </Suspense>

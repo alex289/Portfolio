@@ -14,38 +14,35 @@ export default function Footer(): JSX.Element {
         <NowPlaying />
         <div className="grid w-full max-w-3xl grid-cols-1 gap-4 pb-12 sm:grid-cols-4">
           <div className="flex flex-col space-y-4">
-            <Link href="/">
-              <a
-                id="footer-home"
-                className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
-                {t('main.home')}
-              </a>
+            <Link
+              href="/"
+              id="footer-home"
+              className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
+              {t('main.home')}
             </Link>
-            <Link href="/about">
-              <a
-                id="footer-about"
-                className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
-                {t('main.about')}
-              </a>
+            <Link
+              href="/about"
+              id="footer-about"
+              className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
+              {t('main.about')}
             </Link>
-            <Link href="/projects">
-              <a
-                id="footer-projects"
-                className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
-                {t('main.projects')}
-              </a>
+            <Link
+              href="/projects"
+              id="footer-projects"
+              className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
+              {t('main.projects')}
             </Link>
           </div>
           <div className="flex flex-col space-y-4">
-            <Link href="/blog">
-              <a className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
-                Blog
-              </a>
+            <Link
+              href="/blog"
+              className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
+              Blog
             </Link>
-            <Link href="/guestbook">
-              <a className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
-                {t('guestbook.title')}
-              </a>
+            <Link
+              href="/guestbook"
+              className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
+              {t('guestbook.title')}
             </Link>
             <ExternalLink href="https://github.com/alex289">
               GitHub
