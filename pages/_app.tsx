@@ -1,10 +1,12 @@
 import { Suspense } from 'react';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
+import { IBM_Plex_Sans } from '@next/font/google';
 
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 import NProgress from 'nprogress';
+import cn from 'classnames';
 
 import Analytics from '@/components/Analytics';
 const CommandPalette = dynamic(() => import('@/components/CommandPalette'), {
@@ -26,6 +28,8 @@ Router.events.on('routeChangeStart', (_url, { shallow }) => {
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
+const normal = IBM_Plex_Sans({ variant: '400' });
+
 const App: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
@@ -33,11 +37,13 @@ const App: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <ThemeProvider attribute="class">
-        <Suspense>
-          <CommandPalette />
-        </Suspense>
-        <Analytics />
-        <Component {...pageProps} />
+        <div className={cn(normal.className)}>
+          <Suspense>
+            <CommandPalette />
+          </Suspense>
+          <Analytics />
+          <Component {...pageProps} />
+        </div>
       </ThemeProvider>
     </SessionProvider>
   );

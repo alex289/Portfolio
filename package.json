@@ -59,6 +59,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.3",
     "@mdx-js/react": "^2.1.5",
+    "@next/font": "12.3.2-canary.31",
     "@prisma/client": "^4.5.0",
     "@sanity/vision": "3.0.0-dev-preview.20",
     "@sanity/webhook": "^2.0.0",
