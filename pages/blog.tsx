@@ -1,4 +1,5 @@
 import { Suspense, useEffect, useMemo, useState } from 'react';
+import dynamic from 'next/dynamic';
 
 import { useRouter } from 'next/router';
 
@@ -9,6 +10,8 @@ import useTranslation from '@/lib/useTranslation';
 import { indexQuery } from '@/lib/sanity/queries';
 import { getClient } from '@/lib/sanity/sanity-server';
 
+const BlogFilter = dynamic(() => import('@/components/blog/BlogFilter'));
+
 import type { GetStaticProps, NextPage } from 'next';
 import type { Post } from '@/lib/types';
 
@@ -16,7 +19,6 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
   const { t, locale } = useTranslation();
   const { query } = useRouter();
   const [searchValue, setSearchValue] = useState('');
-  const [showDropdown, setShowDropdown] = useState(false);
   const [filterBy, setFilterBy] = useState<'name' | 'tag'>('name');
 
   useEffect(() => {
@@ -66,20 +68,8 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
             defaultValue={searchValue}
             className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 focus:border-primary focus:ring-primary dark:border-gray-800 dark:bg-gray-700 dark:text-gray-100 dark:focus:border-blue-500"
           />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            onClick={() => setShowDropdown(!showDropdown)}
-            stroke="currentColor"
-            className="absolute right-12 top-3 h-5 w-5 cursor-pointer text-gray-400 dark:text-gray-300">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z"
-            />
-          </svg>
+
+          <BlogFilter filterBy={filterBy} setFilter={setFilterBy} />
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -94,37 +84,6 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
             />
           </svg>
-
-          <div
-            className={`absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-gray-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-800 dark:ring-gray-700 ${
-              !showDropdown && 'hidden'
-            }`}>
-            <div className="py-1">
-              <p className="text-semibold mb-1 block border-b px-4 py-2 text-sm text-gray-700 dark:border-gray-300 dark:text-gray-200">
-                Filter
-              </p>
-              <div
-                className={`block cursor-pointer px-4 py-2 text-sm text-gray-700 dark:text-gray-200 ${
-                  filterBy === 'name' && 'font-bold'
-                }`}
-                onClick={() => {
-                  setFilterBy('name');
-                  setShowDropdown(false);
-                }}>
-                Name
-              </div>
-              <div
-                className={`block cursor-pointer px-4 py-2 text-sm text-gray-700 dark:text-gray-200 ${
-                  filterBy === 'tag' && 'font-bold'
-                }`}
-                onClick={() => {
-                  setFilterBy('tag');
-                  setShowDropdown(false);
-                }}>
-                Tag
-              </div>
-            </div>
-          </div>
         </div>
         <Suspense>
           <h2 className="mt-8 mb-5 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
