@@ -10,10 +10,6 @@ const nextConfig = {
   images: {
     domains: ['cdn.sanity.io', 'i.scdn.co', 'github-readme-stats.vercel.app'],
   },
-  experimental: {
-    legacyBrowsers: false,
-    browsersListForSwc: true,
-  },
   async redirects() {
     return [
       {

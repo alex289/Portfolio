@@ -17,10 +17,10 @@ const NotFound: NextPage = () => {
         <p className="mb-8 text-gray-600 dark:text-gray-400">
           {t('404.description')}
         </p>
-        <Link href="/">
-          <div className="mx-auto w-64 rounded-md bg-gray-200 p-1 py-3 text-center font-bold text-black hover:bg-[#c9c9c9] dark:bg-gray-700 dark:text-white hover:dark:bg-gray-600 sm:p-4">
-            {t('404.return-home')}
-          </div>
+        <Link
+          href="/"
+          className="mx-auto w-64 rounded-md bg-gray-200 p-1 py-3 text-center font-bold text-black hover:bg-[#c9c9c9] dark:bg-gray-700 dark:text-white hover:dark:bg-gray-600 sm:p-4">
+          {t('404.return-home')}
         </Link>
       </div>
     </Layout>
