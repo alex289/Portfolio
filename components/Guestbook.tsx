@@ -14,7 +14,11 @@ import LoadingSpinner from '@/components/guestbook/LoadingSpinner';
 import { Form, FormState } from '@/lib/types';
 import { guestbook } from '@prisma/client';
 
-export function Guestbook({ fallbackData }: { fallbackData: guestbook[] }) {
+export default function Guestbook({
+  fallbackData,
+}: {
+  fallbackData: guestbook[];
+}) {
   const { t } = useTranslation();
   const { data: session } = useSession();
   const { mutate } = useSWRConfig();
