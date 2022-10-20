@@ -1,13 +1,19 @@
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+
 import { prisma } from '@/lib/prisma';
 import useTranslation from '@/lib/useTranslation';
 
 import Layout from '@/components/Layout';
-import { Guestbook as GuestbookComponent } from '@/components/Guestbook';
+
+const Guestbook = dynamic(() => import('@/components/Guestbook'), {
+  suspense: true,
+});
 
 import type { GetStaticProps, NextPage } from 'next';
 import type { guestbook } from '@prisma/client';
 
-const Guestbook: NextPage<{
+const GuestbookPage: NextPage<{
   fallbackData: guestbook[];
 }> = ({ fallbackData }) => {
   const { t } = useTranslation();
@@ -20,13 +26,15 @@ const Guestbook: NextPage<{
         <p className="mb-3 text-gray-600 dark:text-[#c2c2c2]">
           {t('guestbook.description')}
         </p>
-        <GuestbookComponent fallbackData={fallbackData} />
+        <Suspense>
+          <Guestbook fallbackData={fallbackData} />
+        </Suspense>
       </div>
     </Layout>
   );
 };
 
-export default Guestbook;
+export default GuestbookPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const entries = await prisma.guestbook.findMany({

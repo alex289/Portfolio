@@ -4,13 +4,18 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
 import Layout from '@/components/Layout';
-import BlogPost from '@/components/blog/BlogPost';
 
 import useTranslation from '@/lib/useTranslation';
 import { indexQuery } from '@/lib/sanity/queries';
 import { getClient } from '@/lib/sanity/sanity-server';
 
-const BlogFilter = dynamic(() => import('@/components/blog/BlogFilter'));
+const BlogPost = dynamic(() => import('@/components/blog/BlogPost'), {
+  suspense: true,
+});
+
+const BlogFilter = dynamic(() => import('@/components/blog/BlogFilter'), {
+  suspense: true,
+});
 
 import type { GetStaticProps, NextPage } from 'next';
 import type { Post } from '@/lib/types';
@@ -69,7 +74,9 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
             className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 focus:border-primary focus:ring-primary dark:border-gray-800 dark:bg-gray-700 dark:text-gray-100 dark:focus:border-blue-500"
           />
 
-          <BlogFilter filterBy={filterBy} setFilter={setFilterBy} />
+          <Suspense>
+            <BlogFilter filterBy={filterBy} setFilter={setFilterBy} />
+          </Suspense>
 
           <svg
             xmlns="http://www.w3.org/2000/svg"

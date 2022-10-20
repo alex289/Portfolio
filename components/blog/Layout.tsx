@@ -1,14 +1,21 @@
+import { PropsWithChildren, Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
 import { parseISO, format } from 'date-fns';
 
 import Layout from '@/components/Layout';
-import Comment from '@/components/Comment';
-import ViewCounter from '@/components/blog/ViewCounter';
 
 import useTranslation from '@/lib/useTranslation';
 
-import { PropsWithChildren, Suspense } from 'react';
+const Comment = dynamic(() => import('@/components/Comment'), {
+  suspense: true,
+});
+const ViewCounter = dynamic(() => import('@/components/blog/ViewCounter'), {
+  suspense: true,
+});
+
 import type { Post } from '@/lib/types';
 
 export default function BlogLayout({
@@ -45,7 +52,9 @@ export default function BlogLayout({
           <p className="min-w-32 mt-2 text-sm text-gray-600 dark:text-[#c2c2c2] md:mt-0">
             {post.readingTime}
             {` • `}
-            <ViewCounter slug={post.slug} />
+            <Suspense>
+              <ViewCounter slug={post.slug} />
+            </Suspense>
           </p>
         </div>
         <div className="mt-2 flex w-full text-xs">
@@ -70,8 +79,8 @@ export default function BlogLayout({
               {t('blog.edit-post')}
             </a>
           </div>
+          <Comment slug={post.slug} />
         </Suspense>
-        <Comment slug={post.slug} />
       </article>
     </Layout>
   );
