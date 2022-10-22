@@ -41,7 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "autoprefixer": "^10.4.12",
     "eslint": "^8.25.0",
-    "eslint-config-next": "12.3.1",
+    "eslint-config-next": "12.3.2-canary.33",
     "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",

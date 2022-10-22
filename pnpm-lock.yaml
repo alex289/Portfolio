@@ -19,7 +19,7 @@ specifiers:
   classnames: ^2.3.2
   date-fns: ^2.29.3
   eslint: ^8.25.0
-  eslint-config-next: 12.3.1
+  eslint-config-next: 12.3.2-canary.33
   eslint-config-prettier: ^8.5.0
   jotai: ^1.8.6
   motion: ^10.14.2
@@ -91,7 +91,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.40.1_boj7ac6k3sghdvqicw2budpc74
   autoprefixer: 10.4.12_postcss@8.4.18
   eslint: 8.25.0
-  eslint-config-next: 12.3.1_z4bbprzjrhnsfa24uvmcbu7f5q
+  eslint-config-next: 12.3.2-canary.33_z4bbprzjrhnsfa24uvmcbu7f5q
   eslint-config-prettier: 8.5.0_eslint@8.25.0
   postcss: 8.4.18
   prettier: 2.7.1
@@ -819,8 +819,8 @@ packages:
     resolution: {integrity: sha512-0M2KVKVBPaRTAKfr9XwO7ORlfHN0JACmyCP+FEFXbIg00GTQ5QaGu2/hUe+ZncFoT5vwj4tVaYCPPkbN1OCt7A==}
     dev: false
 
-  /@next/eslint-plugin-next/12.3.1:
-    resolution: {integrity: sha512-sw+lTf6r6P0j+g/n9y4qdWWI2syPqZx+uc0+B/fRENqfR3KpSid6MIKqc9gNwGhJASazEQ5b3w8h4cAET213jw==}
+  /@next/eslint-plugin-next/12.3.2-canary.33:
+    resolution: {integrity: sha512-keD1Z04rsgnosvgdb3DnqwzCNuBluRUJntoFVKYnwGnrVcnZnLPVXn2TeqsJ9SxpGEukPbWecpsc46fpPhvlCw==}
     dependencies:
       glob: 7.1.7
     dev: true
@@ -3496,8 +3496,8 @@ packages:
       source-map: 0.6.1
     dev: false
 
-  /eslint-config-next/12.3.1_z4bbprzjrhnsfa24uvmcbu7f5q:
-    resolution: {integrity: sha512-EN/xwKPU6jz1G0Qi6Bd/BqMnHLyRAL0VsaQaWA7F3KkjAgZHi4f1uL1JKGWNxdQpHTW/sdGONBd0bzxUka/DJg==}
+  /eslint-config-next/12.3.2-canary.33_z4bbprzjrhnsfa24uvmcbu7f5q:
+    resolution: {integrity: sha512-cJ+49ltWaS46Uhy+Hrjr5075lfUY2LzQFTLB4XYPGmfvlhbkJdQBWKyDNnsGAobOKxdObpGzPfdqgXq+cc9e1A==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -3505,7 +3505,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 12.3.1
+      '@next/eslint-plugin-next': 12.3.2-canary.33
       '@rushstack/eslint-patch': 1.1.3
       '@typescript-eslint/parser': 5.29.0_z4bbprzjrhnsfa24uvmcbu7f5q
       eslint: 8.25.0
