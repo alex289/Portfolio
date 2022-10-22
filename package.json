@@ -59,7 +59,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.3",
     "@mdx-js/react": "^2.1.5",
-    "@next/font": "12.3.2-canary.31",
+    "@next/font": "12.3.2-canary.33",
     "@prisma/client": "^4.5.0",
     "@sanity/vision": "3.0.0-dev-preview.20",
     "@sanity/webhook": "^2.0.0",
@@ -69,7 +69,7 @@
     "date-fns": "^2.29.3",
     "jotai": "^1.8.6",
     "motion": "^10.14.2",
-    "next": "12.3.2-canary.31",
+    "next": "12.3.2-canary.33",
     "next-auth": "^4.14.0",
     "next-mdx-remote": "^4.1.0",
     "next-sanity": "^1.0.0",
