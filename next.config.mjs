@@ -2,6 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    fontLoaders: [
+      { loader: '@next/font/google', options: { subsets: ['latin'] } },
+    ],
+  },
   i18n: {
     locales: ['en', 'de'],
     defaultLocale: 'en',
@@ -9,10 +14,6 @@ const nextConfig = {
   },
   images: {
     domains: ['cdn.sanity.io', 'i.scdn.co', 'github-readme-stats.vercel.app'],
-  },
-  experimental: {
-    legacyBrowsers: false,
-    browsersListForSwc: true,
   },
   async redirects() {
     return [

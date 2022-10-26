@@ -1,15 +1,4 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
-    "cleanUrls": true,
-    "headers": [
-        {
-          "source": "/static/fonts/ibm-plex-sans-var.woff2",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "public, max-age=31536000, immutable"
-            }
-          ]
-        }
-      ]
+    "cleanUrls": true
 }

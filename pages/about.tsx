@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 import useTranslation from '@/lib/useTranslation';
 
@@ -35,18 +35,18 @@ const About: NextPage = () => {
           <ul className="list-disc">
             <li>
               GitHub:{' '}
-              <Link href="https://github.com/alex289">
-                <a className="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-dark">
-                  @alex289
-                </a>
+              <Link
+                href="https://github.com/alex289"
+                className="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-dark">
+                @alex289
               </Link>
             </li>
             <li>
               {t('about-page.website')}:{' '}
-              <Link href="https://alexanderkonietzko.vercel.app">
-                <a className="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-dark">
-                  https://alexanderkonietzko.vercel.app
-                </a>
+              <Link
+                href="https://alexanderkonietzko.vercel.app"
+                className="text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-dark">
+                https://alexanderkonietzko.vercel.app
               </Link>
             </li>
           </ul>

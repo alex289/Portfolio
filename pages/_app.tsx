@@ -1,12 +1,13 @@
 import { Suspense } from 'react';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
+import { Inter } from '@next/font/google';
 
+import { Analytics } from '@vercel/analytics/react';
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 import NProgress from 'nprogress';
 
-import Analytics from '@/components/Analytics';
 const CommandPalette = dynamic(() => import('@/components/CommandPalette'), {
   suspense: true,
 });
@@ -26,6 +27,8 @@ Router.events.on('routeChangeStart', (_url, { shallow }) => {
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
+const normal = Inter();
+
 const App: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
@@ -33,11 +36,13 @@ const App: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <ThemeProvider attribute="class">
-        <Suspense>
-          <CommandPalette />
-        </Suspense>
-        <Analytics />
-        <Component {...pageProps} />
+        <div className={normal.className}>
+          <Suspense>
+            <CommandPalette />
+          </Suspense>
+          <Component {...pageProps} />
+          <Analytics />
+        </div>
       </ThemeProvider>
     </SessionProvider>
   );

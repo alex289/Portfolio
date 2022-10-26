@@ -45,12 +45,11 @@ export default function MobileMenu({ isMenuOpen }: Props) {
               router.asPath === '/' && 'font-semibold dark:text-primary'
             )}
             style={{ transitionDelay: '150ms' }}>
-            <Link href="/">
-              <a
-                id="mobile-nav-home"
-                className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
-                {t('main.home')}
-              </a>
+            <Link
+              href="/"
+              id="mobile-nav-home"
+              className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
+              {t('main.home')}
             </Link>
           </li>
           <li
@@ -59,12 +58,11 @@ export default function MobileMenu({ isMenuOpen }: Props) {
               router.pathname === '/about' && 'font-semibold dark:text-primary'
             )}
             style={{ transitionDelay: '175ms' }}>
-            <Link href="/about">
-              <a
-                id="mobile-nav-about"
-                className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
-                {t('main.about')}
-              </a>
+            <Link
+              href="/about"
+              id="mobile-nav-about"
+              className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
+              {t('main.about')}
             </Link>
           </li>
           <li
@@ -74,12 +72,11 @@ export default function MobileMenu({ isMenuOpen }: Props) {
                 'font-semibold dark:text-primary'
             )}
             style={{ transitionDelay: '200ms' }}>
-            <Link href="/projects">
-              <a
-                id="mobile-nav-projects"
-                className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
-                {t('main.projects')}
-              </a>
+            <Link
+              href="/projects"
+              id="mobile-nav-projects"
+              className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
+              {t('main.projects')}
             </Link>
           </li>
           <li
@@ -89,12 +86,11 @@ export default function MobileMenu({ isMenuOpen }: Props) {
                 'font-semibold dark:text-primary'
             )}
             style={{ transitionDelay: '250ms' }}>
-            <Link href="/blog">
-              <a
-                id="mobile-nav-blog"
-                className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
-                Blog
-              </a>
+            <Link
+              href="/blog"
+              id="mobile-nav-blog"
+              className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
+              Blog
             </Link>
           </li>
           <li
@@ -104,12 +100,11 @@ export default function MobileMenu({ isMenuOpen }: Props) {
                 'font-semibold dark:text-primary'
             )}
             style={{ transitionDelay: '275ms' }}>
-            <Link href="/guestbook">
-              <a
-                id="mobile-nav-guestbook"
-                className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
-                {t('guestbook.title')}
-              </a>
+            <Link
+              href="/guestbook"
+              id="mobile-nav-guestbook"
+              className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
+              {t('guestbook.title')}
             </Link>
           </li>
         </ul>
