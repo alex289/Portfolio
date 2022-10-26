@@ -14,7 +14,6 @@ specifiers:
   '@types/react': ^18.0.23
   '@types/rss': ^0.0.29
   '@typescript-eslint/eslint-plugin': ^5.41.0
-  '@vercel/analytics': ^0.1.1
   '@vercel/og': ^0.0.20
   autoprefixer: ^10.4.12
   classnames: ^2.3.2
@@ -61,7 +60,6 @@ dependencies:
   '@sanity/vision': 3.0.0-dev-preview.22_6idvmujqv3bmwm76ill6lq5qaa
   '@sanity/webhook': 2.0.0
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.1
-  '@vercel/analytics': 0.1.1_react@18.2.0
   '@vercel/og': 0.0.20
   classnames: 2.3.2
   date-fns: 2.29.3
@@ -2101,14 +2099,6 @@ packages:
     transitivePeerDependencies:
       - '@types/react'
       - supports-color
-    dev: false
-
-  /@vercel/analytics/0.1.1_react@18.2.0:
-    resolution: {integrity: sha512-34on7YtVt/yT8+QX7c5K2bcKYXnax06sQiK2PUdlQ1ABg5699mPdLGOSpS1gF//kR1s9oig4MCJ+N9nOjpaS6g==}
-    peerDependencies:
-      react: ^16.8||^17||^18
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /@vercel/og/0.0.20:

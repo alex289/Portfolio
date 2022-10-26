@@ -3,11 +3,11 @@ import Router from 'next/router';
 import dynamic from 'next/dynamic';
 import { Inter } from '@next/font/google';
 
-import { Analytics } from '@vercel/analytics/react';
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 import NProgress from 'nprogress';
 
+import Analytics from '@/components/Analytics';
 const CommandPalette = dynamic(() => import('@/components/CommandPalette'), {
   suspense: true,
 });
