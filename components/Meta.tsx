@@ -52,7 +52,7 @@ const Meta = ({
       <meta property="og:title" content={title} />
       <meta
         property="og:image"
-        content={`/api/og${
+        content={`${process.env.VERCEL_URL ?? ''}/api/og${
           title !== 'Alexander Konietzko' ? '?title=' + title : ''
         }`}
       />
@@ -95,7 +95,7 @@ const Meta = ({
       <meta name="twitter:description" content={description} />
       <meta
         name="twitter:image:src"
-        content={`/api/og${
+        content={`${process.env.VERCEL_URL ?? ''}/api/og${
           title !== 'Alexander Konietzko' ? '?title=' + title : ''
         }`}
       />
