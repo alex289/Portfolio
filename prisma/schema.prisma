@@ -11,11 +11,11 @@ datasource db {
 
 model views {
     slug  String @id @db.VarChar(128)
-    count Int    @default(1)
+    count Int    @default(1) @db.UnsignedInt
 }
 
 model guestbook {
-    id         Int      @id @default(autoincrement())
+    id         Int      @id @default(autoincrement()) @db.UnsignedInt
     email      String   @db.VarChar(256)
     body       String   @db.VarChar(500)
     created_by String   @db.VarChar(256)
@@ -24,7 +24,7 @@ model guestbook {
 }
 
 model comment {
-    id         Int      @id @default(autoincrement())
+    id         Int      @id @default(autoincrement()) @db.UnsignedInt
     post       String   @db.VarChar(256)
     email      String   @db.VarChar(256)
     body       String   @db.VarChar(500)
