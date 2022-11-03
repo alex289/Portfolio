@@ -2,16 +2,16 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "personal portfolio website",
+  "packageManager": "pnpm@7.13.0",
   "scripts": {
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
-    "export": "next export",
     "lint": "next lint",
     "format": "prettier --write **/*.tsx **/*.ts",
+    "format:check": "prettier --check **/*.tsx **/*.ts",
     "sanity:start": "sanity build && sanity start",
     "sanity:deploy": "sanity deploy",
-    "format:check": "prettier --check **/*.tsx **/*.ts",
     "typecheck": "tsc --noEmit"
   },
   "repository": {
