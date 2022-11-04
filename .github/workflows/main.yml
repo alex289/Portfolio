@@ -72,9 +72,6 @@ jobs:
     - name: Typecheck
       run: pnpm typecheck
 
-    - name: Lint
-      run: pnpm turbo lint
-
     - name: Build and lint
       run: pnpm turbo build lint
       env:
