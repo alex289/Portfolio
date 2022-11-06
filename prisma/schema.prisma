@@ -31,4 +31,6 @@ model comment {
     created_by String   @db.VarChar(256)
     created_at DateTime @default(now()) @db.DateTime(6)
     updated_at DateTime @default(now()) @db.DateTime(6)
+
+    @@index([post], name: "post")
 }
