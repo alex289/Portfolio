@@ -70,7 +70,6 @@
         "description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written $AMOUNT articles on my blog. Use the search below to filter by title.",
         "no-posts": "No posts found.",
         "all-posts": "All Posts",
-        "edit-post": "Suggest Change",
         "filter": {
             "by-name": "By name",
             "by-tag": "By tag"

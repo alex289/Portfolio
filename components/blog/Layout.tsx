@@ -71,14 +71,6 @@ export default function BlogLayout({
           <div className="prose mt-4 w-full max-w-none dark:prose-dark">
             {children}
           </div>
-          <div className="mt-4 text-sm text-gray-700 dark:text-[#c2c2c2]">
-            <a
-              href="https://github.com/alex289/portfolio/issues"
-              target="_blank"
-              rel="noopener noreferrer">
-              {t('blog.edit-post')}
-            </a>
-          </div>
           <Comment slug={post.slug} />
         </Suspense>
       </article>

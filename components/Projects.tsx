@@ -35,7 +35,7 @@ const Project = ({
           <div
             key={index}
             id={project.name}
-            className="my-3 grid gap-4 rounded-lg border border-gray-200 p-6 shadow hover:border-primary dark:border-gray-700 dark:hover:border-primary md:grid-cols-2 lg:grid-cols-5">
+            className="my-3 grid grid-cols-2 gap-4 rounded-lg border border-gray-200 p-6 shadow hover:border-primary dark:border-gray-700 dark:hover:border-primary md:grid-cols-5">
             <div className="flex flex-row">
               <p className="font-semibold text-gray-500 dark:text-white">
                 {project.name}
