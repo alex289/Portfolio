@@ -1,10 +1,10 @@
-import { createConfig } from 'sanity';
+import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { markdownSchema } from 'sanity-plugin-markdown';
 import { media } from 'sanity-plugin-media';
 import { visionTool } from '@sanity/vision';
 
-export default createConfig({
+export default defineConfig({
   name: 'default',
   title: 'alexanderkonietzko.vercel.app',
   projectId: 'evkyvibr',
