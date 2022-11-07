@@ -7,8 +7,6 @@ import { parseISO, format } from 'date-fns';
 
 import Layout from '@/components/Layout';
 
-import useTranslation from '@/lib/useTranslation';
-
 const Comment = dynamic(() => import('@/components/Comment'), {
   suspense: true,
 });
@@ -22,7 +20,6 @@ export default function BlogLayout({
   children,
   post,
 }: PropsWithChildren<{ post: Post }>) {
-  const { t } = useTranslation();
   return (
     <Layout
       title={`${post.title} – Alexander Konietzko`}
