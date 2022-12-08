@@ -66,10 +66,10 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
         </p>
         <div className="relative mb-4 w-full">
           <input
-            aria-label="Search articles"
+            aria-label={t('blog.search')}
             type="text"
             onChange={(e) => setSearchValue(e.target.value)}
-            placeholder="Search articles"
+            placeholder={t('blog.search')}
             defaultValue={searchValue}
             className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 focus:border-primary focus:ring-primary dark:border-gray-800 dark:bg-gray-700 dark:text-gray-100 dark:focus:border-blue-500"
           />
