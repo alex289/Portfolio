@@ -1,8 +1,5 @@
 import Head from 'next/head';
 
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
-
 type Props = {
   title?: string;
   description?: string;
@@ -18,10 +15,6 @@ const Meta = ({
   date,
   tags,
 }: Props): JSX.Element => {
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
   return (
     <Head>
       <title>{title}</title>
@@ -39,12 +32,16 @@ const Meta = ({
       />
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="description" content={description} />
-      {mounted && (
-        <meta
-          name="theme-color"
-          content={theme === 'light' ? '#f9fafb' : '#222222'}
-        />
-      )}
+      <meta
+        name="theme-color"
+        content="#f9fafb"
+        media="(prefers-color-scheme: light)"
+      />
+      <meta
+        name="theme-color"
+        content="#222222"
+        media="(prefers-color-scheme: dark)"
+      />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Alexander Konietzko" />
       <meta property="og:url" content="https://alexanderkonietzko.vercel.app" />
