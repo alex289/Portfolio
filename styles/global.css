@@ -189,9 +189,7 @@ pre {
   @apply mt-0 rounded-t-none;
 }
 
-.highlight-line {
-  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-blue-500 dark:bg-gray-800;
-}
+
 
 .step > h3 {
   @apply my-0;
@@ -199,4 +197,28 @@ pre {
 
 .frost-effect {
   @apply bg-gray-50 dark:bg-gray-800 bg-opacity-50 dark:bg-opacity-60 backdrop-blur-lg backdrop-saturate-150;
+}
+
+
+.code-line {
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+  border-left: 4px solid rgba(0, 0, 0, 0);
+}
+
+.highlight-line {
+  @apply block px-4 -mx-4 bg-gray-200 border-l-4 border-blue-500 dark:bg-gray-800;
+}
+
+.line-number::before {
+  display: inline-block;
+  width: 1rem;
+  text-align: right;
+  margin-right: 16px;
+  margin-left: -8px;
+  color: rgb(156, 163, 175);
+  content: attr(line);
 }

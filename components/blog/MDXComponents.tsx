@@ -5,7 +5,6 @@ import Step from '@/components/blog/MDXComponents/Step';
 import ProsCard from '@/components/blog/MDXComponents/ProsCard';
 import ConsCard from '@/components/blog/MDXComponents/ConsCard';
 import ImageWithTheme from '@/components/blog/MDXComponents/ImageWithTheme';
-import CodeBlock from '@/components/blog/MDXComponents/CodeBlock';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomLink = (props: any) => {
@@ -35,7 +34,6 @@ const MDXComponents = {
   ConsCard,
   ProsCard,
   Step,
-  pre: CodeBlock,
 };
 
 export default MDXComponents;
