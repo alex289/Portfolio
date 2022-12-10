@@ -5,7 +5,7 @@ import { comment } from '@prisma/client';
 import { formatDistanceToNow } from 'date-fns';
 import deLocale from 'date-fns/locale/de';
 import enLocale from 'date-fns/locale/en-US';
-import useSWR, { useSWRConfig } from 'swr';
+import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
 import useTranslation from '@/lib/useTranslation';
@@ -19,12 +19,11 @@ import { Form, FormState } from '@/lib/types';
 const Comment = ({ slug }: { slug: string }) => {
   const { t, locale } = useTranslation();
   const { data: session } = useSession();
-  const { mutate } = useSWRConfig();
 
   const inputEl = useRef<HTMLInputElement | null>(null);
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
 
-  const { data: entries } = useSWR<comment[]>(
+  const { data: entries, mutate } = useSWR<comment[]>(
     `/api/comment?post=${slug}`,
     fetcher
   );
@@ -64,7 +63,7 @@ const Comment = ({ slug }: { slug: string }) => {
     }
 
     inputEl.current.value = '';
-    mutate(`/api/comment?post=${slug}`);
+    mutate();
     setForm({
       state: Form.Success,
       message: t('comment.success'),
@@ -76,7 +75,7 @@ const Comment = ({ slug }: { slug: string }) => {
       method: 'DELETE',
     });
 
-    mutate(`/api/comment?post=${slug}`);
+    mutate();
   };
 
   return (

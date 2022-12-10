@@ -1,7 +1,7 @@
 import { useState, useRef, Suspense, FormEvent } from 'react';
 
 import { signIn, signOut, useSession } from 'next-auth/react';
-import useSWR, { useSWRConfig } from 'swr';
+import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
 import useTranslation from '@/lib/useTranslation';
@@ -21,12 +21,15 @@ export default function Guestbook({
 }) {
   const { t } = useTranslation();
   const { data: session } = useSession();
-  const { mutate } = useSWRConfig();
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
   const inputEl = useRef<HTMLInputElement | null>(null);
-  const { data: entries } = useSWR<guestbook[]>('/api/guestbook', fetcher, {
-    fallbackData,
-  });
+  const { data: entries, mutate } = useSWR<guestbook[]>(
+    '/api/guestbook',
+    fetcher,
+    {
+      fallbackData,
+    }
+  );
 
   const leaveEntry = async (e: FormEvent) => {
     e.preventDefault();
@@ -62,7 +65,7 @@ export default function Guestbook({
     }
 
     inputEl.current.value = '';
-    mutate('/api/guestbook');
+    mutate();
     setForm({
       state: Form.Success,
       message: t('guestbook.success'),

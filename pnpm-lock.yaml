@@ -47,7 +47,7 @@ specifiers:
   sanity-plugin-media: 2.0.2
   sharp: ^0.31.2
   styled-components: ^5.3.6
-  swr: ^1.3.0
+  swr: ^2.0.0
   tailwindcss: ^3.2.4
   turbo: ^1.6.3
   typescript: ^4.9.4
@@ -80,7 +80,7 @@ dependencies:
   sanity-plugin-media: 2.0.2_n37kvbtjdxuspm5b3bwpyx6l7i
   sharp: 0.31.2
   styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
-  swr: 1.3.0_react@18.2.0
+  swr: 2.0.0_react@18.2.0
   use-delayed-render: 0.0.7_react@18.2.0
 
 devDependencies:
@@ -7839,12 +7839,14 @@ packages:
       react: 18.2.0
     dev: false
 
-  /swr/1.3.0_react@18.2.0:
-    resolution: {integrity: sha512-dkghQrOl2ORX9HYrMDtPa7LTVHJjCTeZoB1dqTbnnEDlSvN8JEKpYIYurDfvbQFUUS8Cg8PceFVZNkW0KNNYPw==}
+  /swr/2.0.0_react@18.2.0:
+    resolution: {integrity: sha512-IhUx5yPkX+Fut3h0SqZycnaNLXLXsb2ECFq0Y29cxnK7d8r7auY2JWNbCW3IX+EqXUg3rwNJFlhrw5Ye/b6k7w==}
+    engines: {pnpm: '7'}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
   /symbol-tree/3.2.4:
