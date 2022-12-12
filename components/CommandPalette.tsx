@@ -6,6 +6,21 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import { useTheme } from 'next-themes';
 import { atom, useAtom } from 'jotai';
 import cn from 'classnames';
+import {
+  AdjustmentsVerticalIcon,
+  BookOpenIcon,
+  CodeBracketIcon,
+  CubeTransparentIcon,
+  HomeIcon,
+  IdentificationIcon,
+  LanguageIcon,
+  LinkIcon,
+  MoonIcon,
+  PencilSquareIcon,
+  PowerIcon,
+  SunIcon,
+  UserIcon,
+} from '@heroicons/react/24/outline';
 
 import useTranslation from '@/lib/useTranslation';
 
@@ -34,75 +49,93 @@ export default function CommandPalette() {
         title: t('main.home'),
         action: Actions.Router,
         args: '/',
+        icon: <HomeIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: t('main.about'),
         action: Actions.Router,
         args: '/about',
+        icon: <IdentificationIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: t('main.projects'),
         action: Actions.Router,
         args: '/projects',
+        icon: <CubeTransparentIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: 'Blog',
         action: Actions.Router,
         args: '/blog',
+        icon: <BookOpenIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: t('guestbook.title'),
         action: Actions.Router,
         args: '/guestbook',
+        icon: <PencilSquareIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: 'Dashboard',
         action: Actions.Router,
         args: '/dashboard',
         disabled: !session?.user?.isAdmin ?? true,
+        icon: <AdjustmentsVerticalIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         group: t('command-palette.socials'),
         title: 'GitHub',
         action: Actions.Router,
         args: 'https://github.com/alex289',
+        icon: <LinkIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: t('footer.sourcecode'),
         action: Actions.Router,
         args: 'https://github.com/alex289/Portfolio',
+        icon: <CodeBracketIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         group: t('command-palette.settings'),
         title: t('command-palette.switch-language'),
         action: Actions.Language,
         args: '',
+        icon: <LanguageIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: t('command-palette.switch-theme'),
         action: Actions.Theme,
         args: '',
+        icon:
+          theme === 'light' ? (
+            <MoonIcon className="mr-2 mt-[0.12rem] h-5 w-5" />
+          ) : (
+            <SunIcon className="mr-2 mt-[0.12rem] h-5 w-5" />
+          ),
       },
       {
         title: 'Login (Google)',
         action: Actions.Session,
         args: 'google',
         disabled: session ? true : false,
+        icon: <UserIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: 'Login (GitHub)',
         action: Actions.Session,
         args: 'github',
         disabled: session ? true : false,
+        icon: <UserIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: `Logout (${session?.user?.name})`,
         action: Actions.Session,
         args: '',
         disabled: session ? false : true,
+        icon: <PowerIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
     ];
-  }, [session, t]);
+  }, [session, t, theme]);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -215,12 +248,15 @@ export default function CommandPalette() {
                           )}>
                           <p
                             className={cn(
-                              'flex flex-row pl-2',
+                              'flex flex-row pl-1',
                               active
                                 ? 'text-white'
                                 : 'text-gray-500 dark:text-gray-400'
                             )}>
-                            {page.title}
+                            <div className="flex">
+                              {page.icon}
+                              {page.title}
+                            </div>
                           </p>
                         </div>
                       )}

@@ -59,6 +59,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.5",
+    "@heroicons/react": "^2.0.13",
     "@mdx-js/react": "^2.1.5",
     "@next/font": "13.0.6",
     "@prisma/client": "^4.7.1",
