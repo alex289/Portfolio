@@ -241,18 +241,12 @@ export default function CommandPalette() {
                       {({ active }) => (
                         <div
                           className={cn(
-                            'px-4 py-2',
+                            'cursor-pointer border-l-2 px-4 py-2',
                             active
-                              ? 'bg-primary'
-                              : 'bg-gray-50 dark:bg-gray-800'
+                              ? 'border-l-primary bg-gray-200 dark:bg-gray-700'
+                              : 'border-gray-50 bg-gray-50 dark:border-gray-800 dark:bg-gray-800'
                           )}>
-                          <p
-                            className={cn(
-                              'flex flex-row pl-1',
-                              active
-                                ? 'text-white'
-                                : 'text-gray-500 dark:text-gray-400'
-                            )}>
+                          <p className="flex flex-row pl-1 text-gray-500 dark:text-gray-400">
                             <div className="flex">
                               {page.icon}
                               {page.title}
