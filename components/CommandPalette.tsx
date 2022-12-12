@@ -157,7 +157,9 @@ export default function CommandPalette() {
   }, [isOpen, setIsOpen]);
 
   const filteredItems = useMemo(() => {
-    return config.filter(({ title }) => title.toLowerCase().includes(search));
+    return config.filter(({ title }) =>
+      title.toLowerCase().includes(search.toLowerCase())
+    );
   }, [search, config]);
 
   function handleChange(value: string) {
@@ -241,17 +243,17 @@ export default function CommandPalette() {
                       {({ active }) => (
                         <div
                           className={cn(
-                            'cursor-pointer border-l-2 px-4 py-2',
+                            'cursor-pointer px-4 py-2 md:border-l-2',
                             active
-                              ? 'border-l-primary bg-gray-200 dark:bg-gray-700'
+                              ? 'border-l-primary md:bg-gray-200 md:dark:bg-gray-700'
                               : 'border-gray-50 bg-gray-50 dark:border-gray-800 dark:bg-gray-800'
                           )}>
-                          <p className="flex flex-row pl-1 text-gray-500 dark:text-gray-400">
+                          <div className="flex flex-row pl-1 text-gray-500 dark:text-gray-400">
                             <div className="flex">
                               {page.icon}
                               {page.title}
                             </div>
-                          </p>
+                          </div>
                         </div>
                       )}
                     </Combobox.Option>
