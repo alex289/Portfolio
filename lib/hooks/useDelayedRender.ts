@@ -7,8 +7,7 @@ interface Options {
 }
 
 const useDelayedRender = (active = false, options: Options = {}) => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [, force] = useState<any>();
+  const [, force] = useState<object>();
   const mounted = useRef(active);
   const rendered = useRef(false);
   const renderTimer = useRef<NodeJS.Timeout | null>(null);
