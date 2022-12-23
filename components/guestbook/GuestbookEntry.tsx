@@ -7,6 +7,7 @@ type GuestBookEntryProps = {
   entry: guestbook;
   user:
     | {
+        isAdmin?: boolean | null | undefined;
         name?: string | null | undefined;
         email?: string | null | undefined;
         image?: string | null | undefined;
@@ -41,7 +42,7 @@ export default function GuestbookEntry({
         <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
           {format(new Date(entry.updated_at), 'd MMM yyyy, k:mm')}
         </p>
-        {user && entry.email === user.email && (
+        {user && (entry.email === user.email || user.isAdmin) && (
           <>
             <span className="text-gray-600 dark:text-[#c2c2c2]">/</span>
             <button

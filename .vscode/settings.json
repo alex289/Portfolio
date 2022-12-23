@@ -2,7 +2,8 @@
    "files.exclude": {
       ".next": true,
       ".sanity": true,
-      ".turbo": true
+      ".turbo": true,
+      "dist": true
    },
    "editor.formatOnSave": true,
    "typescript.tsdk": "node_modules/typescript/lib"

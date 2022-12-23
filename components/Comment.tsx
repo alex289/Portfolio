@@ -176,18 +176,20 @@ const Comment = ({ slug }: { slug: string }) => {
                       locale: locale === 'de' ? deLocale : enLocale,
                     })}
                   </p>
-                  {session?.user && entry.email === session?.user?.email && (
-                    <>
-                      <span className="text-gray-600 dark:text-[#c2c2c2]">
-                        /
-                      </span>
-                      <button
-                        className="text-sm text-red-600 dark:text-red-400"
-                        onClick={() => deleteEntry(entry.id)}>
-                        {t('guestbook.delete')}
-                      </button>
-                    </>
-                  )}
+                  {session?.user &&
+                    (entry.email === session?.user?.email ||
+                      session.user.isAdmin) && (
+                      <>
+                        <span className="text-gray-600 dark:text-[#c2c2c2]">
+                          /
+                        </span>
+                        <button
+                          className="text-sm text-red-600 dark:text-red-400"
+                          onClick={() => deleteEntry(entry.id)}>
+                          {t('guestbook.delete')}
+                        </button>
+                      </>
+                    )}
                 </div>
               </div>
             ))}
