@@ -129,6 +129,7 @@ export default function Guestbook({
               aria-label="Your message"
               placeholder={t('guestbook.form.input')}
               required
+              maxLength={100}
               type="text"
               className="mt-1 block w-full rounded-md border border-blue-50 bg-white py-2 pl-4 pr-32 text-gray-900 focus:border-primary focus:ring-primary dark:border-blue-opaque dark:bg-gray-800 dark:text-gray-100"
             />

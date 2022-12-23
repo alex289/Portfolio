@@ -2,7 +2,6 @@
    "files.exclude": {
       ".next": true,
       ".sanity": true,
-      ".turbo": true,
       "dist": true
    },
    "editor.formatOnSave": true,

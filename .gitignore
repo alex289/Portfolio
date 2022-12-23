@@ -24,4 +24,3 @@ yarn-error.log*
 # Sanity
 .sanity
 /dist
-.turbo

@@ -66,14 +66,17 @@ jobs:
     - name: Format
       run: pnpm run format:check
 
+    - name: Lint
+      run: pnpm run lint
+
     - name: Generate prisma schema
       run: pnpm exec prisma generate
 
     - name: Typecheck
       run: pnpm typecheck
 
-    - name: Build and lint
-      run: pnpm turbo build lint
+    - name: Build
+      run: pnpm build
       env:
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
         NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
