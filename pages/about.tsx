@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
 import avatar from '../public/static/images/konietzko_alexander.jpg';
 

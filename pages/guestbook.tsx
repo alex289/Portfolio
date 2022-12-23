@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 
 import { prisma } from '@/lib/prisma';
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
 import Layout from '@/components/Layout';
 

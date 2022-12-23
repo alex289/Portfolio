@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import cn from 'classnames';
-import useDelayedRender from 'use-delayed-render';
 
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
 import styles from '@/styles/mobile-menu.module.css';
+import useDelayedRender from '@/lib/hooks/useDelayedRender';
 
 type Props = {
   isMenuOpen: boolean;

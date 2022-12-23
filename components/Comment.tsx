@@ -8,13 +8,13 @@ import enLocale from 'date-fns/locale/en-US';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
 import ErrorMessage from '@/components/guestbook/ErrorMessage';
 import LoadingSpinner from '@/components/guestbook/LoadingSpinner';
 import SuccessMessage from '@/components/guestbook/SuccessMessage';
 
-import { Form, FormState } from '@/lib/types';
+import { Form, type FormState } from '@/lib/types';
 
 const Comment = ({ slug }: { slug: string }) => {
   const { t, locale } = useTranslation();

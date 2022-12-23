@@ -15,16 +15,6 @@ const nextConfig = {
   images: {
     domains: ['cdn.sanity.io', 'i.scdn.co', 'github-readme-stats.vercel.app'],
   },
-  async redirects() {
-    return [
-      {
-        source: '/analytics',
-        destination:
-          'https://alexanderkonietzko-analytics.vercel.app/share/iGO3fY48/alexanderkonietzko',
-        permanent: true,
-      },
-    ];
-  },
   async headers() {
     return [
       {

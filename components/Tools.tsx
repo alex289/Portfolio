@@ -1,4 +1,4 @@
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
 const Tools = () => {
   const { t } = useTranslation();

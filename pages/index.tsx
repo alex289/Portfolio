@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 
 import profilePic from '../public/static/images/konietzko_alexander.jpg';

@@ -4,7 +4,7 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 import { getClient } from '@/lib/sanity/sanity-server';
 import { postAmountQuery } from '@/lib/sanity/queries';
 

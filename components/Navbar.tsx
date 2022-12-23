@@ -6,7 +6,7 @@ import cn from 'classnames';
 import { useTheme } from 'next-themes';
 import { useAtom } from 'jotai';
 
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
 import MobileMenu from '@/components/MobileMenu';
 import { isOpenAtom } from '@/components/CommandPalette';

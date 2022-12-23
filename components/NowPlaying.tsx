@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { animate } from 'motion';
 
 import fetcher from '@/lib/fetcher';
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
-import { NowPlayingSong } from '@/lib/types';
+import type { NowPlayingSong } from '@/lib/types';
 
 function AnimatedBars() {
   useEffect(() => {

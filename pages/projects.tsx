@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 
 import Project from '@/components/Projects';

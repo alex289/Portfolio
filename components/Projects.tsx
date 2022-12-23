@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 import fetcher from '@/lib/fetcher';
 
 import type { Projects } from '@/lib/types';

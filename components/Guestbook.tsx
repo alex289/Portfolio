@@ -4,15 +4,15 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
 import GuestbookEntry from '@/components/guestbook/GuestbookEntry';
 import SuccessMessage from '@/components/guestbook/SuccessMessage';
 import ErrorMessage from '@/components/guestbook/ErrorMessage';
 import LoadingSpinner from '@/components/guestbook/LoadingSpinner';
 
-import { Form, FormState } from '@/lib/types';
-import { guestbook } from '@prisma/client';
+import { Form, type FormState } from '@/lib/types';
+import type { guestbook } from '@prisma/client';
 
 export default function Guestbook({
   fallbackData,

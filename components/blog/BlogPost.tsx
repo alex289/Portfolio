@@ -4,7 +4,7 @@ import { parseISO, format } from 'date-fns';
 
 import fetcher from '@/lib/fetcher';
 
-import { Views } from '@/lib/types';
+import type { Views } from '@/lib/types';
 
 type Props = {
   title: string;

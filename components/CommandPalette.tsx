@@ -22,7 +22,7 @@ import {
   UserIcon,
 } from '@heroicons/react/24/outline';
 
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
 export const isOpenAtom = atom(false);
 export const isCommandPaletteOpenAtom = atom((get) => get(isOpenAtom));

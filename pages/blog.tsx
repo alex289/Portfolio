@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 import Layout from '@/components/Layout';
 
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 import { indexQuery } from '@/lib/sanity/queries';
 import { getClient } from '@/lib/sanity/sanity-server';
 

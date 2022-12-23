@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import cn from 'classnames';
 
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
 type Props = {
   filterBy: 'name' | 'tag';

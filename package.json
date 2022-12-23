@@ -84,8 +84,7 @@
     "sanity-plugin-media": "2.0.2",
     "sharp": "^0.31.3",
     "styled-components": "^5.3.6",
-    "swr": "^2.0.0",
-    "use-delayed-render": "^0.0.7"
+    "swr": "^2.0.0"
   },
   "nextBundleAnalysis": {
     "budget": 143360,

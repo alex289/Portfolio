@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import useTranslation from '@/lib/useTranslation';
+import useTranslation from '@/lib/hooks/useTranslation';
 
 import ExternalLink from '@/components/ExternalLink';
 import NowPlaying from '@/components/NowPlaying';
