@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import useSWR from 'swr';
-import { parseISO, format } from 'date-fns';
 
 import fetcher from '@/lib/fetcher';
 
@@ -15,6 +16,7 @@ type Props = {
 };
 
 export default function BlogPost({ title, excerpt, slug, date, tags }: Props) {
+  const { locale } = useRouter();
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
   const views = data?.total;
 
@@ -29,7 +31,14 @@ export default function BlogPost({ title, excerpt, slug, date, tags }: Props) {
           </Link>
           <p className="mb-4 min-w-fit max-w-full text-left text-gray-900 dark:text-[#c2c2c2] md:mb-0 md:text-right">
             {`${views ? new Number(views).toLocaleString() : '–––'} views`} |{' '}
-            {format(parseISO(date), 'MMMM dd, yyyy')}
+            {new Date(date).toLocaleDateString(
+              locale === 'de' ? 'de-DE' : 'en-US',
+              {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              }
+            )}
           </p>
         </div>
         <p className="text-gray-600 dark:text-[#c2c2c2]">{excerpt}</p>

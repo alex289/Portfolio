@@ -2,8 +2,7 @@ import { PropsWithChildren, Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-
-import { parseISO, format } from 'date-fns';
+import { useRouter } from 'next/router';
 
 import Layout from '@/components/Layout';
 
@@ -20,6 +19,8 @@ export default function BlogLayout({
   children,
   post,
 }: PropsWithChildren<{ post: Post }>) {
+  const { locale } = useRouter();
+
   return (
     <Layout
       title={`${post.title} – Alexander Konietzko`}
@@ -43,7 +44,14 @@ export default function BlogLayout({
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-[#c2c2c2]">
               {'Alexander Konietzko / '}
-              {format(parseISO(post.date), 'MMMM dd, yyyy')}
+              {new Date(post.date).toLocaleDateString(
+                locale === 'de' ? 'de-DE' : 'en-US',
+                {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                }
+              )}
             </p>
           </div>
           <p className="min-w-32 mt-2 text-sm text-gray-600 dark:text-[#c2c2c2] md:mt-0">

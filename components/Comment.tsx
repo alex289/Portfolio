@@ -2,9 +2,6 @@ import { FormEvent, Suspense, useRef, useState } from 'react';
 
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { comment } from '@prisma/client';
-import { formatDistanceToNow } from 'date-fns';
-import deLocale from 'date-fns/locale/de';
-import enLocale from 'date-fns/locale/en-US';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
@@ -171,10 +168,14 @@ const Comment = ({ slug }: { slug: string }) => {
                   </p>
                   <span className=" text-gray-600 dark:text-[#c2c2c2]">/</span>
                   <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
-                    {formatDistanceToNow(new Date(entry.updated_at), {
-                      addSuffix: true,
-                      locale: locale === 'de' ? deLocale : enLocale,
-                    })}
+                    {new Date(entry.updated_at).toLocaleDateString(
+                      locale === 'de' ? 'de-DE' : 'en-US',
+                      {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      }
+                    )}
                   </p>
                   {session?.user &&
                     (entry.email === session?.user?.email ||

@@ -1,6 +1,7 @@
+import { useRouter } from 'next/router';
+
 import { guestbook } from '@prisma/client';
 import { useSWRConfig } from 'swr';
-import { format } from 'date-fns';
 
 type GuestBookEntryProps = {
   t: (key: string) => string;
@@ -21,6 +22,7 @@ export default function GuestbookEntry({
   user,
 }: GuestBookEntryProps) {
   const { mutate } = useSWRConfig();
+  const { locale } = useRouter();
   const deleteEntry = async () => {
     await fetch(`/api/guestbook/${entry.id}`, {
       method: 'DELETE',
@@ -40,7 +42,16 @@ export default function GuestbookEntry({
         </p>
         <span className=" text-gray-600 dark:text-[#c2c2c2]">/</span>
         <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
-          {format(new Date(entry.updated_at), 'd MMM yyyy, k:mm')}
+          {new Date(entry.updated_at).toLocaleDateString(
+            locale === 'de' ? 'de-DE' : 'en-US',
+            {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+              hour: 'numeric',
+              minute: 'numeric',
+            }
+          )}
         </p>
         {user && (entry.email === user.email || user.isAdmin) && (
           <>
