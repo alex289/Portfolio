@@ -15,6 +15,11 @@ const nextConfig = {
   images: {
     domains: ['cdn.sanity.io', 'i.scdn.co', 'github-readme-stats.vercel.app'],
   },
+  modularizeImports: {
+    '@heroicons/react/24/outline': {
+      transform: '@heroicons/react/24/outline/{{member}}',
+    },
+  },
   async headers() {
     return [
       {
