@@ -35,7 +35,7 @@ const Project = ({
           <div
             key={index}
             id={project.name}
-            className="my-3 grid grid-cols-2 gap-4 rounded-lg border border-gray-200 p-6 shadow hover:border-primary dark:border-gray-700 dark:hover:border-primary md:grid-cols-5">
+            className="my-3 grid grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow hover:border-primary dark:border-gray-700 dark:bg-gray-800 dark:hover:border-primary md:grid-cols-5">
             <div className="flex flex-row">
               <p className="font-semibold text-gray-500 dark:text-white">
                 {project.name}
@@ -56,7 +56,7 @@ const Project = ({
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
-                    className="default-transition default-focus relative inline-flex h-10 w-10 justify-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-400 hover:bg-gray-200 hover:text-gray-700 dark:border-gray-500 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white sm:w-10"
+                    className="default-transition default-focus relative inline-flex h-10 w-10 justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-400 hover:bg-gray-50 hover:text-gray-700 dark:border-gray-500 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white sm:w-10"
                     stroke="currentColor">
                     <path
                       strokeLinecap="round"
@@ -77,7 +77,7 @@ const Project = ({
                   xmlnsXlink="http://www.w3.org/1999/xlink"
                   aria-hidden="true"
                   role="img"
-                  className="default-transition default-focus relative inline-flex h-10 w-10 justify-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-400 hover:bg-gray-200 hover:text-gray-700 dark:border-gray-500 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white sm:w-10"
+                  className="default-transition default-focus relative inline-flex h-10 w-10 justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-400 hover:bg-gray-50 hover:text-gray-700 dark:border-gray-500 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white sm:w-10"
                   width="1em"
                   height="1em"
                   preserveAspectRatio="xMidYMid meet"

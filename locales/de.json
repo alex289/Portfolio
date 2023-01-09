@@ -136,5 +136,13 @@
         "switch-language": "Sprache ändern (en)",
         "search-placeholder": "Suchen...",
         "no-results": "Keine Ergebnisse"
+    },
+    "stats": {
+        "title": "Meine Github Statistiken",
+        "stars": "Insgesamt erhaltene Sterne",
+        "commits": "Anzahl Commits",
+        "prs": "PRs Insgesamt",
+        "issues": "Anzahl Issues",
+        "contributed": "Beigetragen zu"
     }
 }
