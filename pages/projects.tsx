@@ -1,21 +1,27 @@
 import { Suspense } from 'react';
-import Image from 'next/image';
-import { useTheme } from 'next-themes';
+import useSWR from 'swr';
 
 import useTranslation from '@/lib/hooks/useTranslation';
+import fetcher from '@/lib/fetcher';
 import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 
 import Project from '@/components/Projects';
 import Layout from '@/components/Layout';
 
+import CommitsIcon from '@/components/icons/CommitsIcon';
+import PullRequestIcon from '@/components/icons/PullRequestIcon';
+import StarIcon from '@/components/icons/StarIcon';
+import IssuesIcon from '@/components/icons/IssuesIcon';
+import ContributionsIcon from '@/components/icons/ContributionsIcon';
+
 import type { GetStaticProps, NextPage } from 'next';
-import type { Projects } from '@/lib/types';
+import type { Projects, Stats } from '@/lib/types';
 
 const ProjectsPage: NextPage<{
   fallbackData: Projects[];
 }> = ({ fallbackData }) => {
-  const { resolvedTheme } = useTheme();
-  const { t, locale } = useTranslation();
+  const { data } = useSWR<Stats>('/api/stats', fetcher);
+  const { t } = useTranslation();
 
   return (
     <Layout title={t('main.projects') + ' - Alexander Konietzko'}>
@@ -24,24 +30,58 @@ const ProjectsPage: NextPage<{
           {t('main.projects')}
         </h1>
         <Suspense>
-          <div className="mb-4 w-full">
-            <a
-              href="https://github.com/alex289"
-              target="_blank"
-              rel="noreferrer noopener">
-              <Image
-                alt="GitHub Stats"
-                className="mx-auto"
-                width={495}
-                height={195}
-                unoptimized
-                priority
-                src={`https://github-readme-stats.vercel.app/api?username=alex289&show_icons=true&cache_seconds=43200&count_private=true${
-                  resolvedTheme === 'dark' ? '&theme=discord_old_blurple' : ''
-                }${locale === 'de' ? '&locale=de' : ''}`}
-              />
-            </a>
-          </div>
+          <a
+            href="https://github.com/alex289"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mx-auto mb-4 flex flex-col rounded-lg border border-gray-200 bg-white p-6 shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <ul className="flex flex-col">
+              <li className="mb-4">
+                <span className="text-lg font-semibold">
+                  {t('stats.title')}
+                </span>
+              </li>
+              <li className="mb-2 flex justify-between">
+                <span className="flex items-center">
+                  <StarIcon className="mr-2 h-5 w-5 text-primary" />{' '}
+                  {t('stats.stars')}:
+                </span>
+                <span className="ml-20 sm:ml-40">{data?.stars ?? '-'}</span>
+              </li>
+              <li className="mb-2 flex justify-between">
+                <span className="flex items-center">
+                  <CommitsIcon className="mr-2 h-5 w-5 text-primary" />{' '}
+                  {t('stats.commits')}:
+                </span>
+                <span className="ml-20 sm:ml-40">
+                  {data?.totalCommits ?? '-'}
+                </span>
+              </li>
+              <li className="mb-2 flex justify-between">
+                <span className="flex items-center">
+                  <PullRequestIcon className="mr-2 h-5 w-5 text-primary" />{' '}
+                  {t('stats.prs')}:
+                </span>
+                <span className="ml-20 sm:ml-40">{data?.prs ?? '-'}</span>
+              </li>
+              <li className="mb-2 flex justify-between">
+                <span className="flex items-center">
+                  <IssuesIcon className="mr-2 h-5 w-5 text-primary" />{' '}
+                  {t('stats.issues')}:
+                </span>
+                <span className="ml-20 sm:ml-40">{data?.issues ?? '-'}</span>
+              </li>
+              <li className="flex justify-between">
+                <span className="flex items-center">
+                  <ContributionsIcon className="mr-2 h-5 w-5 text-primary" />{' '}
+                  {t('stats.contributed')}:
+                </span>
+                <span className="ml-20 sm:ml-40">
+                  {data?.contributions ?? '-'}
+                </span>
+              </li>
+            </ul>
+          </a>
           <h2 className="text-gray-600 dark:text-gray-200">
             <Project fallbackData={fallbackData} amount={10} />
           </h2>
