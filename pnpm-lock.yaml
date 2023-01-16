@@ -35,6 +35,7 @@ specifiers:
   prisma: ^4.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-wrap-balancer: ^0.3.0
   reading-time: ^1.5.0
   rehype-autolink-headings: ^6.1.1
   rehype-code-titles: ^1.1.0
@@ -72,6 +73,7 @@ dependencies:
   nprogress: 0.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-wrap-balancer: 0.3.0_react@18.2.0
   rss: 1.2.2
   sanity: 3.2.3_wm6cv4qzooxlf2asepxq6u4y3i
   sanity-plugin-markdown: 4.0.0_6nmsqav45jstm4kdjkq453exhu
@@ -6751,6 +6753,14 @@ packages:
       '@virtuoso.dev/urx': 0.2.13
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /react-wrap-balancer/0.3.0_react@18.2.0:
+    resolution: {integrity: sha512-UlnQvCvSRW0jh8uILic2LJs4tV0KjOO+P70ookE5qRpfZvsKmY8KLcV8s7TBPB6cuVYkoH7+fbqankFrFata8w==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react/18.2.0:

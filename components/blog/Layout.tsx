@@ -4,6 +4,8 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
+import Balancer from 'react-wrap-balancer';
+
 import Layout from '@/components/Layout';
 
 const Comment = dynamic(() => import('@/components/Comment'), {
@@ -31,7 +33,7 @@ export default function BlogLayout({
       tags={post.tags}>
       <article className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-          {post.title}
+          <Balancer>{post.title}</Balancer>
         </h1>
         <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
           <div className="flex items-center">
