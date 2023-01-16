@@ -1,9 +1,9 @@
 {
-   "files.exclude": {
-      ".next": true,
-      ".sanity": true,
-      "dist": true
-   },
-   "editor.formatOnSave": true,
-   "typescript.tsdk": "node_modules/typescript/lib"
+  "files.exclude": {
+    ".next": true,
+    ".sanity": true,
+    "dist": true
+  },
+  "editor.formatOnSave": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

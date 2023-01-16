@@ -3,7 +3,8 @@ module.exports = {
   endOfLine: 'auto',
   bracketSameLine: true,
   singleQuote: true,
-  parser: 'typescript',
+  bracketSpacing: true,
+  semi: true,
   plugins: [require.resolve('prettier-plugin-tailwindcss')],
   tailwindConfig: './tailwind.config.cjs',
 };

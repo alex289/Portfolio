@@ -1,20 +1,18 @@
 {
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "project": "./tsconfig.json"
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier",
-        "next/core-web-vitals"
-    ],
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "semi": "warn",
-        "eqeqeq": "warn",
-        "curly": "warn"
-    }
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "next/core-web-vitals"
+  ],
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "semi": "warn",
+    "eqeqeq": "warn",
+    "curly": "warn"
+  }
 }

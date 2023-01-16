@@ -8,8 +8,8 @@
     "start": "next start",
     "build": "next build",
     "lint": "next lint",
-    "format": "prettier --write **/*.tsx **/*.ts",
-    "format:check": "prettier --check **/*.tsx **/*.ts",
+    "format": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
+    "format:check": "prettier --check \"**/*.{css,js,json,jsx,ts,tsx}\"",
     "sanity:start": "sanity build && sanity preview",
     "sanity:deploy": "sanity deploy",
     "typecheck": "tsc --noEmit"
