@@ -21,6 +21,7 @@ specifiers:
   eslint: ^8.31.0
   eslint-config-next: 13.1.2
   eslint-config-prettier: ^8.6.0
+  framer-motion: ^8.4.3
   jotai: ^1.13.0
   motion: ^10.15.5
   next: 13.1.2
@@ -63,6 +64,7 @@ dependencies:
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
   '@vercel/og': 0.0.27
   classnames: 2.3.2
+  framer-motion: 8.4.3_biqbaboplfbrettd7655fr4n2y
   jotai: 1.13.0_2exiyaescjxorpwwmy4ejghgte
   motion: 10.15.5
   next: 13.1.2_pjwopsidmaokadturxaafygjp4
@@ -3917,6 +3919,21 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       style-value-types: 5.1.2
+      tslib: 2.4.0
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
+
+  /framer-motion/8.4.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-UMfJ8hEOlIObdJgI+U/VgaSSKY+W9/E0YtnFHPDsIE9rNPglaFZ+oycB0gj8ERuRBInGaIgNCFsil8iaJHZFgA==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@motionone/dom': 10.15.5
+      hey-listen: 1.0.8
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       tslib: 2.4.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
