@@ -79,7 +79,7 @@
   "guestbook": {
     "title": "Guestbook",
     "description": "Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!",
-    "login": "Login",
+    "login": "Sign in with ",
     "logout": "Logout",
     "logged-in-as": "Logged in as",
     "form": {
@@ -112,7 +112,7 @@
   },
   "comment": {
     "title": "Comments",
-    "login": "Login",
+    "login": "Sign in with ",
     "logout": "Logout",
     "logged-in-as": "Logged in as",
     "success": "Hooray! Thanks for leaving a comment.",

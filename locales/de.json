@@ -79,7 +79,7 @@
   "guestbook": {
     "title": "Gästebuch",
     "description": "Schreibe einen Kommentar über irgendwas - Komplimente, Informationen, Weisheiten, oder etwas lustiges. Überrasch mich!",
-    "login": "Einloggen",
+    "login": "Anmelden mit ",
     "logout": "Ausloggen",
     "logged-in-as": "Eingeloggt als",
     "form": {
@@ -112,7 +112,7 @@
   },
   "comment": {
     "title": "Kommentare",
-    "login": "Einloggen",
+    "login": "Anmelden mit ",
     "logout": "Ausloggen",
     "logged-in-as": "Eingeloggt als",
     "success": "Hurra! Danke für das Schreiben eines Kommentars.",
