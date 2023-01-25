@@ -47,17 +47,25 @@
       "planetscale": "The MySQL-compatible serverless database platform. My go-to database host.",
       "vscode": "VS Code is the text editor I reach for most often, given it's range of extensions."
     },
+    "uses": {
+      "title": "My Gear",
+      "text": "Here's what tech I'm currently using for coding. Most of have been accumulated over the past few years.",
+      "office": "Computer / Office",
+      "other-tech": "Other tech",
+      "and": "and",
+      "configuration": "Configuration"
+    },
     "timeline": {
       "title": "Timeline",
-      "learn-more": "Learn more",
+      "learn-more": "Learn more about netgo",
       "1": {
         "date": "July 2021",
         "title": "Graduation from school",
         "description": "I finished my school :D"
       },
       "2": {
-        "title": "Dual study at Netgo / Westfälische Hochschule",
-        "description": "I started my first job as a software engineer at Netgo. Combined with this I studied software systems (Informatics, B. SC.)."
+        "title": "Dual study at netgo / Westfälische Hochschule",
+        "description": "I started my first job as a software engineer trainee at netgo. In combination I studied software systems (Informatics, B. SC.)."
       }
     }
   },

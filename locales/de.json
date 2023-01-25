@@ -47,17 +47,25 @@
       "planetscale": "Die MySQL-kompatible serverlose Datenbankplattform. Mein Go-to-Datenbankhost.",
       "vscode": "VS Code ist ein Texteditor den ich wegen seiner Erweiterungen und Anpassungen immer benutze."
     },
+    "uses": {
+      "title": "Mein Ausrüstung",
+      "text": "Hier ist die Ausrüstung die ich zum Coden benutze. Das meiset davon habe ich in den letzten paar Jahren erworben.",
+      "office": "Computer / Büro",
+      "other-tech": "Andere Technologien",
+      "and": "und",
+      "configuration": "Konfiguration"
+    },
     "timeline": {
       "title": "Zeitstrahl",
-      "learn-more": "Erfahre mehr",
+      "learn-more": "Erfahre mehr über netgo",
       "1": {
         "date": "Juli 2021",
         "title": "Abschluss am Gymnasium",
         "description": "Mit einem Abitur abgeschlossen :D"
       },
       "2": {
-        "title": "Duales Studium bei Netgo und der Westfälischen Hochschule",
-        "description": "Ich habe eine Ausbildung als Entwickler bei Netgo angefangen. Gleichzeitig dazu habe ich ein Informatik Studium begonnen (Softwaresysteme, B. SC.)."
+        "title": "Duales Studium bei netgo und der Westfälischen Hochschule",
+        "description": "Ich habe eine Ausbildung als Entwickler bei netgo angefangen. Gleichzeitig dazu habe ich ein Informatik Studium begonnen (Softwaresysteme, B. SC.)."
       }
     }
   },
