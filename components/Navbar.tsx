@@ -5,6 +5,7 @@ import Link from 'next/link';
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
 import { useAtom } from 'jotai';
+import { Command, X } from 'lucide-react';
 
 import useTranslation from '@/lib/hooks/useTranslation';
 
@@ -13,8 +14,6 @@ import { isOpenAtom } from '@/components/CommandPalette';
 
 import ThemeToggleIcon from '@/components/icons/ThemeIcon';
 import MenuIcon from '@/components/icons/MenuIcon';
-import CrossIcon from '@/components/icons/CrossIcon';
-import MacOptionIcon from '@/components/icons/MacOptionIcon';
 
 import styles from 'styles/mobile-menu.module.css';
 
@@ -117,7 +116,10 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
           type="button"
           onClick={toggleMenu}>
           <MenuIcon data-hide={isMenuOpen} />
-          <CrossIcon data-hide={!isMenuOpen} />
+          <X
+            data-hide={!isMenuOpen}
+            className="absolute h-5 w-5 text-gray-900 dark:text-gray-100"
+          />
         </button>
         <div>
           <button
@@ -125,7 +127,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
             type="button"
             className="umami--click--cmd-button mr-3 h-10 w-10 rounded-lg bg-gray-200 p-3 text-3xl ring-gray-300 hover:ring-4 dark:bg-gray-700"
             onClick={() => setCommandPaletteOpen(true)}>
-            <MacOptionIcon />
+            <Command className="h-4 w-4 text-gray-800 dark:text-gray-200" />
           </button>
           <button
             id="dark-mode-toggle"

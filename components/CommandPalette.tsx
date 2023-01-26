@@ -6,23 +6,23 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import { useTheme } from 'next-themes';
 import { atom, useAtom } from 'jotai';
 import cn from 'classnames';
-import {
-  AdjustmentsVerticalIcon,
-  BookOpenIcon,
-  CodeBracketIcon,
-  CubeTransparentIcon,
-  HomeIcon,
-  IdentificationIcon,
-  LanguageIcon,
-  LinkIcon,
-  MoonIcon,
-  PencilSquareIcon,
-  PowerIcon,
-  SunIcon,
-  UserIcon,
-} from '@heroicons/react/24/outline';
 
 import useTranslation from '@/lib/hooks/useTranslation';
+import {
+  BarChart3,
+  BookOpen,
+  Code2,
+  Edit,
+  Fingerprint,
+  Folder,
+  Home,
+  Languages,
+  Link,
+  Moon,
+  Power,
+  Sun,
+  User,
+} from 'lucide-react';
 
 export const isOpenAtom = atom(false);
 export const isCommandPaletteOpenAtom = atom((get) => get(isOpenAtom));
@@ -49,58 +49,71 @@ export default function CommandPalette() {
         title: t('main.home'),
         action: Actions.Router,
         args: '/',
-        icon: <HomeIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: <Home strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: t('main.about'),
         action: Actions.Router,
         args: '/about',
-        icon: <IdentificationIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: (
+          <Fingerprint
+            strokeWidth={1.5}
+            className="mr-2 mt-[0.12rem] h-5 w-5"
+          />
+        ),
       },
       {
         title: t('main.projects'),
         action: Actions.Router,
         args: '/projects',
-        icon: <CubeTransparentIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: (
+          <Folder strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
+        ),
       },
       {
         title: 'Blog',
         action: Actions.Router,
         args: '/blog',
-        icon: <BookOpenIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: (
+          <BookOpen strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
+        ),
       },
       {
         title: t('guestbook.title'),
         action: Actions.Router,
         args: '/guestbook',
-        icon: <PencilSquareIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: <Edit strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: 'Dashboard',
         action: Actions.Router,
         args: '/dashboard',
         disabled: !session?.user?.isAdmin ?? true,
-        icon: <AdjustmentsVerticalIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: (
+          <BarChart3 strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
+        ),
       },
       {
         group: t('command-palette.socials'),
         title: 'GitHub',
         action: Actions.Router,
         args: 'https://github.com/alex289',
-        icon: <LinkIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: <Link strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: t('footer.sourcecode'),
         action: Actions.Router,
         args: 'https://github.com/alex289/Portfolio',
-        icon: <CodeBracketIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: <Code2 strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         group: t('command-palette.settings'),
         title: t('command-palette.switch-language'),
         action: Actions.Language,
         args: '',
-        icon: <LanguageIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: (
+          <Languages strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
+        ),
       },
       {
         title: t('command-palette.switch-theme'),
@@ -108,9 +121,9 @@ export default function CommandPalette() {
         args: '',
         icon:
           theme === 'light' ? (
-            <MoonIcon className="mr-2 mt-[0.12rem] h-5 w-5" />
+            <Moon strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
           ) : (
-            <SunIcon className="mr-2 mt-[0.12rem] h-5 w-5" />
+            <Sun strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
           ),
       },
       {
@@ -118,21 +131,21 @@ export default function CommandPalette() {
         action: Actions.Session,
         args: 'google',
         disabled: session ? true : false,
-        icon: <UserIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: <User strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: 'Login (GitHub)',
         action: Actions.Session,
         args: 'github',
         disabled: session ? true : false,
-        icon: <UserIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: <User strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: `Logout (${session?.user?.name})`,
         action: Actions.Session,
         args: '',
         disabled: session ? false : true,
-        icon: <PowerIcon className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        icon: <Power strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
     ];
   }, [session, t, theme]);
@@ -194,7 +207,7 @@ export default function CommandPalette() {
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
         onClose={() => setIsOpen(false)}
-        className={cn('fixed inset-0 overflow-y-auto p-4 pt-[25vh]')}>
+        className="fixed inset-0 overflow-y-auto p-4 pt-[25vh]">
         <Transition.Child
           enter="duration-300 ease-out"
           enterFrom="opacity-0"
@@ -243,9 +256,9 @@ export default function CommandPalette() {
                       {({ active }) => (
                         <div
                           className={cn(
-                            'cursor-pointer px-4 py-2 md:border-l-2',
+                            'cursor-pointer px-4 py-2 sm:border-l-2',
                             active
-                              ? 'border-l-primary md:bg-gray-200 md:dark:bg-gray-700'
+                              ? 'border-l-primary sm:bg-gray-200 sm:dark:bg-gray-700'
                               : 'border-gray-50 bg-gray-50 dark:border-gray-800 dark:bg-gray-800'
                           )}>
                           <div className="flex flex-row pl-1 text-gray-500 dark:text-gray-400">

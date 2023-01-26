@@ -58,7 +58,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
-    "@heroicons/react": "^2.0.13",
     "@mdx-js/react": "^2.2.1",
     "@next/font": "13.1.4",
     "@prisma/client": "^4.9.0",
@@ -67,8 +66,8 @@
     "@tailwindcss/forms": "^0.5.3",
     "@vercel/og": "^0.0.27",
     "classnames": "^2.3.2",
-    "framer-motion": "^8.5.0",
     "jotai": "^1.13.1",
+    "lucide-react": "^0.105.0",
     "motion": "^10.15.5",
     "next": "13.1.4",
     "next-auth": "^4.18.8",

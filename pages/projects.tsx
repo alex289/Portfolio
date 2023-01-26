@@ -1,5 +1,7 @@
 import { Suspense } from 'react';
+
 import useSWR from 'swr';
+import { AlertCircle, Book, GitPullRequest, History, Star } from 'lucide-react';
 
 import useTranslation from '@/lib/hooks/useTranslation';
 import fetcher from '@/lib/fetcher';
@@ -7,12 +9,6 @@ import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 
 import Project from '@/components/Projects';
 import Layout from '@/components/Layout';
-
-import CommitsIcon from '@/components/icons/CommitsIcon';
-import PullRequestIcon from '@/components/icons/PullRequestIcon';
-import StarIcon from '@/components/icons/StarIcon';
-import IssuesIcon from '@/components/icons/IssuesIcon';
-import ContributionsIcon from '@/components/icons/ContributionsIcon';
 
 import type { GetStaticProps, NextPage } from 'next';
 import type { Projects, Stats } from '@/lib/types';
@@ -43,14 +39,14 @@ const ProjectsPage: NextPage<{
               </li>
               <li className="mb-2 flex justify-between">
                 <span className="flex items-center">
-                  <StarIcon className="mr-2 h-5 w-5 text-primary" />{' '}
+                  <Star className="mr-2 h-5 w-5 text-primary" />
                   {t('stats.stars')}:
                 </span>
                 <span className="ml-20 sm:ml-40">{data?.stars ?? '-'}</span>
               </li>
               <li className="mb-2 flex justify-between">
                 <span className="flex items-center">
-                  <CommitsIcon className="mr-2 h-5 w-5 text-primary" />{' '}
+                  <History className="mr-2 h-5 w-5 text-primary" />{' '}
                   {t('stats.commits')}:
                 </span>
                 <span className="ml-20 sm:ml-40">
@@ -59,21 +55,21 @@ const ProjectsPage: NextPage<{
               </li>
               <li className="mb-2 flex justify-between">
                 <span className="flex items-center">
-                  <PullRequestIcon className="mr-2 h-5 w-5 text-primary" />{' '}
+                  <GitPullRequest className="mr-2 h-5 w-5 text-primary" />{' '}
                   {t('stats.prs')}:
                 </span>
                 <span className="ml-20 sm:ml-40">{data?.prs ?? '-'}</span>
               </li>
               <li className="mb-2 flex justify-between">
                 <span className="flex items-center">
-                  <IssuesIcon className="mr-2 h-5 w-5 text-primary" />{' '}
+                  <AlertCircle className="mr-2 h-5 w-5 text-primary" />{' '}
                   {t('stats.issues')}:
                 </span>
                 <span className="ml-20 sm:ml-40">{data?.issues ?? '-'}</span>
               </li>
               <li className="flex justify-between">
                 <span className="flex items-center">
-                  <ContributionsIcon className="mr-2 h-5 w-5 text-primary" />{' '}
+                  <Book className="mr-2 h-5 w-5 text-primary" />{' '}
                   {t('stats.contributed')}:
                 </span>
                 <span className="ml-20 sm:ml-40">

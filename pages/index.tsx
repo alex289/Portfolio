@@ -2,14 +2,10 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 import useTranslation from '@/lib/hooks/useTranslation';
-import {
-  BACKUP_REPOS_URL,
-  DAY_IN_SECONDS,
-  FADE_DOWN_ANIMATION_VARIANTS,
-} from '@/lib/constants';
+import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 
 import profilePic from '../public/static/images/konietzko_alexander.jpg';
 
@@ -29,38 +25,19 @@ const Index: NextPage<Props> = ({ fallbackData }) => {
   return (
     <Layout>
       <Suspense>
-        <motion.div
-          className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center"
-          initial="hidden"
-          whileInView="show"
-          animate="show"
-          viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            show: {
-              transition: {
-                staggerChildren: 0.15,
-              },
-            },
-          }}>
+        <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center">
           <div className="flex flex-col-reverse items-start sm:flex-row">
             <div className="flex flex-col pr-8">
-              <motion.h1
-                className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl"
-                variants={FADE_DOWN_ANIMATION_VARIANTS}>
+              <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
                 Alexander Konietzko
-              </motion.h1>
-              <motion.h2
-                className="mb-4 text-gray-700 dark:text-gray-200"
-                variants={FADE_DOWN_ANIMATION_VARIANTS}>
+              </h1>
+              <h2 className="mb-4 text-gray-700 dark:text-gray-200">
                 {t('index-page.title')}{' '}
                 <span className="font-semibold">Netgo</span>
-              </motion.h2>
-              <motion.p
-                className="mb-16 text-gray-600 dark:text-gray-300"
-                variants={FADE_DOWN_ANIMATION_VARIANTS}>
+              </h2>
+              <p className="mb-16 text-gray-600 dark:text-gray-300">
                 {t('index-page.intro')}
-              </motion.p>
+              </p>
             </div>
             <div className="relative mb-8 mr-auto w-[80px] sm:mb-0 sm:w-[176px]">
               <Image
@@ -100,19 +77,7 @@ const Index: NextPage<Props> = ({ fallbackData }) => {
             href="/blog"
             className="mt-8 mb-16 flex h-6 cursor-pointer items-center rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
             {t('index-page.posts.read-all')}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="ml-1 h-6 w-6">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
+            <ArrowRight strokeWidth={1.5} className="ml-1" />
           </Link>
 
           <h3
@@ -127,21 +92,9 @@ const Index: NextPage<Props> = ({ fallbackData }) => {
             href="/projects"
             className="mt-4 mb-16 flex h-6 cursor-pointer items-center rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
             {t('projects.see-more')}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="ml-1 h-6 w-6">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
+            <ArrowRight strokeWidth={1.5} className="ml-1" />
           </Link>
-        </motion.div>
+        </div>
       </Suspense>
     </Layout>
   );

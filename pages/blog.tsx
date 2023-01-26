@@ -1,7 +1,8 @@
 import { Suspense, useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
-
 import { useRouter } from 'next/router';
+
+import { Search } from 'lucide-react';
 
 import Layout from '@/components/Layout';
 
@@ -78,19 +79,10 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
             <BlogFilter filterBy={filterBy} setFilter={setFilterBy} />
           </Suspense>
 
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
+          <Search
             strokeWidth={1.5}
-            stroke="currentColor"
-            className="absolute right-3 top-3 h-5 w-5 cursor-pointer text-gray-400 dark:text-gray-300">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-            />
-          </svg>
+            className="absolute right-3 top-3 h-5 w-5 cursor-pointer text-gray-400 dark:text-gray-300"
+          />
         </div>
         <Suspense>
           <h2 className="mt-8 mb-5 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
