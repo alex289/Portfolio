@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import useSWR from 'swr';
-import cn from 'classnames';
+import { clsx } from 'clsx';
 
 import fetcher from '@/lib/fetcher';
 
@@ -21,7 +21,7 @@ export default function BlogPostCard({ title, slug, gradient }: Props) {
   return (
     <Link
       href={`/blog/${slug}`}
-      className={cn(
+      className={clsx(
         'transform transition-all hover:scale-[1.01]',
         'w-full rounded-xl bg-gradient-to-r p-1 md:w-1/3',
         gradient

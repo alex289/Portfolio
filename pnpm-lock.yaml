@@ -16,7 +16,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.48.2
   '@vercel/og': ^0.0.27
   autoprefixer: ^10.4.13
-  classnames: ^2.3.2
+  clsx: ^1.2.1
   eslint: ^8.32.0
   eslint-config-next: 13.1.4
   eslint-config-prettier: ^8.6.0
@@ -61,7 +61,7 @@ dependencies:
   '@sanity/webhook': 2.0.0
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
   '@vercel/og': 0.0.27
-  classnames: 2.3.2
+  clsx: 1.2.1
   jotai: 1.13.1_2exiyaescjxorpwwmy4ejghgte
   lucide-react: 0.105.0_react@18.2.0
   motion: 10.15.5
@@ -2678,6 +2678,11 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+    dev: false
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
     dev: false
 
   /codemirror-spell-checker/1.1.2:

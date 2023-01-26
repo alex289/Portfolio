@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import cn from 'classnames';
+import { clsx } from 'clsx';
 import { useTheme } from 'next-themes';
 import { useAtom } from 'jotai';
 import { Command, X } from 'lucide-react';
@@ -108,7 +108,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
       <div className="flex justify-between">
         <button
           id="burger"
-          className={cn(
+          className={clsx(
             styles.burger,
             'umami--click--burger-button visible md:hidden'
           )}
