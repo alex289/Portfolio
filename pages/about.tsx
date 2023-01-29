@@ -7,8 +7,8 @@ import useTranslation from '@/lib/hooks/useTranslation';
 
 import avatar from '../public/static/images/konietzko_alexander.jpg';
 
-import Layout from '@/components/Layout';
-import Tools from '@/components/Tools';
+import Layout from '@/old-components/Layout';
+import Tools from '@/old-components/Tools';
 
 import type { NextPage } from 'next';
 

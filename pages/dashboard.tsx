@@ -8,9 +8,9 @@ import useTranslation from '@/lib/hooks/useTranslation';
 import { getClient } from '@/lib/sanity/sanity-server';
 import { postAmountQuery } from '@/lib/sanity/queries';
 
-import Layout from '@/components/Layout';
-import Metric from '@/components/Metric';
-import Tracks from '@/components/TopTrack';
+import Layout from '@/old-components/Layout';
+import Metric from '@/old-components/Metric';
+import Tracks from '@/old-components/TopTrack';
 
 import type { GetStaticProps, NextPage } from 'next';
 import type { Views } from '@/lib/types';

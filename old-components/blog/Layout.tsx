@@ -6,12 +6,12 @@ import { useRouter } from 'next/router';
 
 import Balancer from 'react-wrap-balancer';
 
-import Layout from '@/components/Layout';
+import Layout from '@/old-components/Layout';
 
-const Comment = dynamic(() => import('@/components/Comment'), {
+const Comment = dynamic(() => import('@/old-components/Comment'), {
   suspense: true,
 });
-const ViewCounter = dynamic(() => import('@/components/blog/ViewCounter'), {
+const ViewCounter = dynamic(() => import('@/old-components/blog/ViewCounter'), {
   suspense: true,
 });
 

@@ -7,10 +7,13 @@ import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 import NProgress from 'nprogress';
 
-import Analytics from '@/components/Analytics';
-const CommandPalette = dynamic(() => import('@/components/CommandPalette'), {
-  suspense: true,
-});
+import Analytics from '@/old-components/Analytics';
+const CommandPalette = dynamic(
+  () => import('@/old-components/CommandPalette'),
+  {
+    suspense: true,
+  }
+);
 
 import type { AppType } from 'next/app';
 import type { Session } from 'next-auth';

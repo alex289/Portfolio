@@ -8,10 +8,10 @@ import useSWR from 'swr';
 import fetcher from '@/lib/fetcher';
 import useTranslation from '@/lib/hooks/useTranslation';
 
-import ErrorMessage from '@/components/guestbook/ErrorMessage';
-import SuccessMessage from '@/components/guestbook/SuccessMessage';
-import GoogleIcon from '@/components/icons/GoogleIcon';
-import GitHubIcon from '@/components/icons/GitHubIcon';
+import ErrorMessage from '@/old-components/guestbook/ErrorMessage';
+import SuccessMessage from '@/old-components/guestbook/SuccessMessage';
+import GoogleIcon from '@/old-components/icons/GoogleIcon';
+import GitHubIcon from '@/old-components/icons/GitHubIcon';
 
 import { Form, type FormState } from '@/lib/types';
 

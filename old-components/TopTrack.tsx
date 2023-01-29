@@ -2,7 +2,7 @@ import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
 
-import Track from '@/components/Track';
+import Track from '@/old-components/Track';
 
 import type { TopTracks } from '@/lib/types';
 

@@ -4,9 +4,9 @@ import dynamic from 'next/dynamic';
 import { prisma } from '@/lib/prisma';
 import useTranslation from '@/lib/hooks/useTranslation';
 
-import Layout from '@/components/Layout';
+import Layout from '@/old-components/Layout';
 
-const Guestbook = dynamic(() => import('@/components/Guestbook'), {
+const Guestbook = dynamic(() => import('@/old-components/Guestbook'), {
   suspense: true,
 });
 

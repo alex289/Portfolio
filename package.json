@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
+  "private": true,
   "description": "personal portfolio website",
   "packageManager": "pnpm@7.13.0",
   "scripts": {
@@ -10,8 +11,6 @@
     "lint": "next lint",
     "format": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
     "format:check": "prettier --check \"**/*.{css,js,json,jsx,ts,tsx}\"",
-    "sanity:start": "sanity build && sanity preview",
-    "sanity:deploy": "sanity deploy",
     "typecheck": "tsc --noEmit"
   },
   "repository": {
@@ -37,7 +36,6 @@
     "@types/node": "^18.11.18",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.27",
-    "@types/rss": "^0.0.30",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.32.0",
@@ -58,32 +56,21 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.8",
-    "@mdx-js/react": "^2.2.1",
     "@next/font": "13.1.6",
     "@prisma/client": "^4.9.0",
-    "@sanity/vision": "3.2.5",
-    "@sanity/webhook": "^2.0.0",
     "@tailwindcss/forms": "^0.5.3",
     "@vercel/og": "^0.0.27",
     "clsx": "^1.2.1",
-    "jotai": "^1.13.1",
     "lucide-react": "^0.107.0",
     "motion": "^10.15.5",
     "next": "13.1.6",
     "next-auth": "^4.19.0",
-    "next-mdx-remote": "^4.3.0",
-    "next-sanity": "^4.1.2",
     "next-themes": "^0.2.1",
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-wrap-balancer": "^0.4.0",
-    "rss": "^1.2.2",
-    "sanity": "3.2.5",
-    "sanity-plugin-markdown": "4.0.0",
-    "sanity-plugin-media": "2.0.4",
     "sharp": "^0.31.3",
-    "styled-components": "^5.3.6",
     "swr": "^2.0.3"
   },
   "nextBundleAnalysis": {

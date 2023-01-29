@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image, { ImageProps } from 'next/image';
 
-import Step from '@/components/blog/MDXComponents/Step';
-import ProsCard from '@/components/blog/MDXComponents/ProsCard';
-import ConsCard from '@/components/blog/MDXComponents/ConsCard';
-import ImageWithTheme from '@/components/blog/MDXComponents/ImageWithTheme';
+import Step from '@/old-components/blog/MDXComponents/Step';
+import ProsCard from '@/old-components/blog/MDXComponents/ProsCard';
+import ConsCard from '@/old-components/blog/MDXComponents/ConsCard';
+import ImageWithTheme from '@/old-components/blog/MDXComponents/ImageWithTheme';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomLink = (props: any) => {

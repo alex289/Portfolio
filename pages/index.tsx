@@ -9,9 +9,9 @@ import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 
 import profilePic from '../public/static/images/konietzko_alexander.jpg';
 
-import Layout from '@/components/Layout';
-import BlogPostCard from '@/components/blog/BlogPostCard';
-import Project from '@/components/Projects';
+import Layout from '@/old-components/Layout';
+import BlogPostCard from '@/old-components/blog/BlogPostCard';
+import Project from '@/old-components/Projects';
 
 import type { GetStaticProps, NextPage } from 'next';
 import type { Projects } from '@/lib/types';

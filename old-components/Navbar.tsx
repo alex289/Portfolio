@@ -9,11 +9,11 @@ import { Command, X } from 'lucide-react';
 
 import useTranslation from '@/lib/hooks/useTranslation';
 
-import MobileMenu from '@/components/MobileMenu';
-import { isOpenAtom } from '@/components/CommandPalette';
+import MobileMenu from '@/old-components/MobileMenu';
+import { isOpenAtom } from '@/old-components/CommandPalette';
 
-import ThemeToggleIcon from '@/components/icons/ThemeIcon';
-import MenuIcon from '@/components/icons/MenuIcon';
+import ThemeToggleIcon from '@/old-components/icons/ThemeIcon';
+import MenuIcon from '@/old-components/icons/MenuIcon';
 
 import styles from 'styles/mobile-menu.module.css';
 

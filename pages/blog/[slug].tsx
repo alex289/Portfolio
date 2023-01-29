@@ -1,7 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote';
 
-import components from '@/components/blog/MDXComponents';
-import BlogLayout from '@/components/blog/Layout';
+import components from '@/old-components/blog/MDXComponents';
+import BlogLayout from '@/old-components/blog/Layout';
 
 import { postQuery, postSlugsQuery } from '@/lib/sanity/queries';
 import { sanityClient, getClient } from '@/lib/sanity/sanity-server';

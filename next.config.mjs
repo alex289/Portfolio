@@ -3,17 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } },
-    ],
-  },
-  i18n: {
-    locales: ['en', 'de'],
-    defaultLocale: 'en',
-    localeDetection: false,
+    appDir: true,
   },
   images: {
-    domains: ['cdn.sanity.io', 'i.scdn.co', 'github-readme-stats.vercel.app'],
+    domains: ['i.scdn.co'],
   },
   async headers() {
     return [
@@ -27,7 +20,7 @@ const nextConfig = {
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' data: https://alexanderkonietzko-analytics.vercel.app/umami.js;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://alexanderkonietzko-analytics.vercel.app/umami.js cdn.vercel-insights.com vercel.live;
   child-src 'self';
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;

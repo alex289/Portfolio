@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import useTranslation from '@/lib/hooks/useTranslation';
 
-import Layout from '@/components/Layout';
+import Layout from '@/old-components/Layout';
 
 import type { NextPage } from 'next';
 

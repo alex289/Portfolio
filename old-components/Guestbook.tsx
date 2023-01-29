@@ -7,11 +7,11 @@ import useSWR from 'swr';
 import fetcher from '@/lib/fetcher';
 import useTranslation from '@/lib/hooks/useTranslation';
 
-import GuestbookEntry from '@/components/guestbook/GuestbookEntry';
-import SuccessMessage from '@/components/guestbook/SuccessMessage';
-import ErrorMessage from '@/components/guestbook/ErrorMessage';
-import GoogleIcon from '@/components/icons/GoogleIcon';
-import GitHubIcon from '@/components/icons/GitHubIcon';
+import GuestbookEntry from '@/old-components/guestbook/GuestbookEntry';
+import SuccessMessage from '@/old-components/guestbook/SuccessMessage';
+import ErrorMessage from '@/old-components/guestbook/ErrorMessage';
+import GoogleIcon from '@/old-components/icons/GoogleIcon';
+import GitHubIcon from '@/old-components/icons/GitHubIcon';
 
 import { Form, type FormState } from '@/lib/types';
 import type { guestbook } from '@prisma/client';

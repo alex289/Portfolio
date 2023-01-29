@@ -1,12 +1,12 @@
 import { ReactNode, Suspense } from 'react';
 import dynamic from 'next/dynamic';
 
-import Meta from '@/components/Meta';
-import Navbar from '@/components/Navbar';
+import Meta from '@/old-components/Meta';
+import Navbar from '@/old-components/Navbar';
 import { useAtom } from 'jotai';
 import { isCommandPaletteOpenAtom } from './CommandPalette';
 
-const Footer = dynamic(() => import('@/components/Footer'), {
+const Footer = dynamic(() => import('@/old-components/Footer'), {
   suspense: true,
 });
 

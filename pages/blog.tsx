@@ -4,17 +4,17 @@ import { useRouter } from 'next/router';
 
 import { Search } from 'lucide-react';
 
-import Layout from '@/components/Layout';
+import Layout from '@/old-components/Layout';
 
 import useTranslation from '@/lib/hooks/useTranslation';
 import { indexQuery } from '@/lib/sanity/queries';
 import { getClient } from '@/lib/sanity/sanity-server';
 
-const BlogPost = dynamic(() => import('@/components/blog/BlogPost'), {
+const BlogPost = dynamic(() => import('@/old-components/blog/BlogPost'), {
   suspense: true,
 });
 
-const BlogFilter = dynamic(() => import('@/components/blog/BlogFilter'), {
+const BlogFilter = dynamic(() => import('@/old-components/blog/BlogFilter'), {
   suspense: true,
 });
 

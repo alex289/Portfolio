@@ -7,8 +7,8 @@ import useTranslation from '@/lib/hooks/useTranslation';
 import fetcher from '@/lib/fetcher';
 import { BACKUP_REPOS_URL, DAY_IN_SECONDS } from '@/lib/constants';
 
-import Project from '@/components/Projects';
-import Layout from '@/components/Layout';
+import Project from '@/old-components/Projects';
+import Layout from '@/old-components/Layout';
 
 import type { GetStaticProps, NextPage } from 'next';
 import type { Projects, Stats } from '@/lib/types';
