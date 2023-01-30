@@ -1,9 +1,15 @@
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import en from '@/locales/en.json';
 import de from '@/locales/de.json';
 
-import type { LocalesJsonObject, UseTranslation } from '@/lib/types';
+type LocalesJsonObject = {
+  [x: string]: string | LocalesJsonObject;
+};
+type UseTranslation = {
+  t: (key: string) => string;
+  locale: string | undefined;
+};
 
 const locales: { [x: string]: LocalesJsonObject } = {
   en,
@@ -20,8 +26,8 @@ const get = (obj: any, path: string) => {
 };
 
 const useTranslation = (): UseTranslation => {
-  const router = useRouter();
-  const { locale } = router;
+  const pathname = usePathname();
+  const locale = pathname?.split('/')[1] ?? 'en';
 
   const t = (key: string): string => {
     return get(locales[locale || 'en'], key);

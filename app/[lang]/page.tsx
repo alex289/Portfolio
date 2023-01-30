@@ -1,3 +1,5 @@
+'use client';
+
 const Index = () => {
   return (
     <div className="flex h-screen justify-center">

@@ -18,6 +18,10 @@ type ResponseTrackType = {
   };
 };
 
+export const config = {
+  runtime: 'edge',
+};
+
 export default async function handler(req: NextApiRequest) {
   if (!isValidHttpMethod(req.method, ['GET'])) {
     return MethodNotAllowedEdge();
@@ -41,7 +45,3 @@ export default async function handler(req: NextApiRequest) {
     },
   });
 }
-
-export const config = {
-  runtime: 'edge',
-};

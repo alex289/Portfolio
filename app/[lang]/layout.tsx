@@ -2,8 +2,6 @@ import '@/styles/global.css';
 
 import { Inter } from '@next/font/google';
 
-import clsx from 'clsx';
-
 import globalMetadata from '@/app/metadata';
 import AnalyticsWrapper from '@/components/analytics';
 import { ServerThemeProvider } from '@wits/next-themes';
@@ -14,20 +12,17 @@ export const metadata = globalMetadata;
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
   return (
     <ServerThemeProvider attribute="class">
-      <html
-        lang="en"
-        className={clsx(
-          'bg-white text-black dark:bg-[#111010] dark:text-white',
-          inter.className
-        )}>
-        <body className="mx-4 mb-40 mt-8 flex max-w-4xl flex-col antialiased md:mt-20 md:flex-row lg:mx-auto lg:mt-32">
+      <html lang={params.lang} className={inter.className}>
+        <body className="antialiased">
           <ProviderWrapper>
-            <main className="mt-6 flex min-w-0 flex-auto flex-col px-2 md:mt-0 md:px-0">
+            <main className="">
               {children}
               <AnalyticsWrapper />
             </main>

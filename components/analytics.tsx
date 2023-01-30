@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
 
 const AnalyticsWrapper = () => {
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV !== 'production') {
     return <></>;
   }
 
