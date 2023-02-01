@@ -8,6 +8,7 @@ import globalMetadata from '@/app/metadata';
 import AnalyticsWrapper from '@/components/analytics';
 import ProviderWrapper from '@/components/theme';
 import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
 
 const inter = Inter();
 export const metadata = globalMetadata;
@@ -30,10 +31,11 @@ export default function RootLayout({
               Skip to content
             </a>
             <Navbar />
-            <main className="" id="skip">
+            <main className="mx-auto mb-16 max-w-3xl" id="skip">
               {children}
               <AnalyticsWrapper />
             </main>
+            <Footer />
           </ProviderWrapper>
         </body>
       </html>

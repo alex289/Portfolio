@@ -4,12 +4,12 @@ specifiers:
   '@formatjs/intl-localematcher': ^0.2.32
   '@headlessui/react': ^1.7.8
   '@next/font': 13.1.6
+  '@planetscale/database': ^1.5.0
   '@prisma/client': ^4.9.0
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': ^0.5.9
   '@types/negotiator': ^0.6.1
   '@types/node': ^18.11.18
-  '@types/nprogress': ^0.2.0
   '@types/react': ^18.0.27
   '@typescript-eslint/eslint-plugin': ^5.49.0
   '@vercel/analytics': ^0.1.8
@@ -21,13 +21,14 @@ specifiers:
   eslint: ^8.32.0
   eslint-config-next: 13.1.6
   eslint-config-prettier: ^8.6.0
+  kysely: ^0.23.4
+  kysely-planetscale: ^1.2.1
   lucide-react: ^0.107.0
   motion: ^10.15.5
   negotiator: ^0.6.3
   next: 13.1.6
   next-auth: ^4.19.0
   next-contentlayer: ^0.3.0
-  nprogress: ^0.2.0
   postcss: ^8.4.21
   prettier: ^2.8.3
   prettier-plugin-tailwindcss: ^0.2.2
@@ -52,6 +53,7 @@ dependencies:
   '@formatjs/intl-localematcher': 0.2.32
   '@headlessui/react': 1.7.8_biqbaboplfbrettd7655fr4n2y
   '@next/font': 13.1.6
+  '@planetscale/database': 1.5.0
   '@prisma/client': 4.9.0_prisma@4.9.0
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
   '@vercel/analytics': 0.1.8_react@18.2.0
@@ -59,13 +61,14 @@ dependencies:
   '@wits/next-themes': 0.2.16_3vryta7zmbcsw4rrqf4axjqggm
   clsx: 1.2.1
   contentlayer: 0.3.0_esbuild@0.17.5
+  kysely: 0.23.4
+  kysely-planetscale: 1.2.1_3b4ga6arylazwmj6lzyyulo5vq
   lucide-react: 0.107.0_react@18.2.0
   motion: 10.15.5
   negotiator: 0.6.3
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.19.0_3vryta7zmbcsw4rrqf4axjqggm
   next-contentlayer: 0.3.0_3mkdr3jyqjw7jzr42p6fulhhma
-  nprogress: 0.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-wrap-balancer: 0.4.0_react@18.2.0
@@ -78,7 +81,6 @@ devDependencies:
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.4
   '@types/negotiator': 0.6.1
   '@types/node': 18.11.18
-  '@types/nprogress': 0.2.0
   '@types/react': 18.0.27
   '@typescript-eslint/eslint-plugin': 5.49.0_spmu3iu4ncpk7bzptvsx33pf6y
   autoprefixer: 10.4.13_postcss@8.4.21
@@ -1028,6 +1030,11 @@ packages:
       tslib: 2.4.0
     dev: true
 
+  /@planetscale/database/1.5.0:
+    resolution: {integrity: sha512-Qwh7Or1W5dB5mZ9EQqDkgvkDKhBBmQe58KIVUy0SGocNtr5fP4JAWtvZ6EdLAV6C6hVpzNlCA2xIg9lKTswm1Q==}
+    engines: {node: '>=16'}
+    dev: false
+
   /@prisma/client/4.9.0_prisma@4.9.0:
     resolution: {integrity: sha512-bz6QARw54sWcbyR1lLnF2QHvRW5R/Jxnbbmwh3u+969vUKXtBkXgSgjDA85nji31ZBlf7+FrHDy5x+5ydGyQDg==}
     engines: {node: '>=14.17'}
@@ -1194,10 +1201,6 @@ packages:
 
   /@types/node/18.11.18:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
-
-  /@types/nprogress/0.2.0:
-    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
-    dev: true
 
   /@types/parse5/6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
@@ -1861,6 +1864,11 @@ packages:
   /data-uri-to-buffer/4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
+    dev: false
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
     dev: false
 
   /debug/2.6.9:
@@ -3195,6 +3203,22 @@ packages:
     resolution: {integrity: sha512-8QADVssbrFjivHWQU7KkMgptGTl6WAcSdlbBPY4uNF+mWr6DGcKrvY2w4FQJoXch7+fKMjj0dRrL75vk3k23OA==}
     engines: {node: '>=6'}
 
+  /kysely-planetscale/1.2.1_3b4ga6arylazwmj6lzyyulo5vq:
+    resolution: {integrity: sha512-tPgyTSSkU0dwFbwSnWITU4VcuuQfsBA+HfGMYPFcUDBIjMDrzWE4Lbky7ue1NqqF58GyYPn9kOm2e61T9BVwww==}
+    peerDependencies:
+      '@planetscale/database': '*'
+      kysely: '*'
+    dependencies:
+      '@planetscale/database': 1.5.0
+      date-fns: 2.29.3
+      kysely: 0.23.4
+    dev: false
+
+  /kysely/0.23.4:
+    resolution: {integrity: sha512-3icLnj1fahUtZsP9zzOvF4DcdhekGsLX4ZaoBaIz0ZeHegyRDdbwpJD7zezAJ+KwQZNDeKchel6MikFNLsSZIA==}
+    engines: {node: '>=14.0.0'}
+    dev: false
+
   /language-subtag-registry/0.3.21:
     resolution: {integrity: sha512-L0IqwlIXjilBVVYKFT37X9Ih11Um5NEl9cbJIuU/SwP/zEEAbBPOnEeeuxVMf45ydWQRDQN3Nqc96OgbH1K+Pg==}
     dev: true
@@ -4034,10 +4058,6 @@ packages:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /nprogress/0.2.0:
-    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
-    dev: false
 
   /oauth/0.9.15:
     resolution: {integrity: sha512-a5ERWK1kh38ExDEfoO6qUHJb32rd7aYmPHuyCu3Fta/cnICvYmgd2uhuKXvPD+PXB+gCEYYEaQdIRAjCOwAKNA==}
