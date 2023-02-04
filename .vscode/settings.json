@@ -1,6 +1,7 @@
 {
   "files.exclude": {
-    ".next": true
+    ".next": true,
+    ".contentlayer": true
   },
   "editor.formatOnSave": true,
   "typescript.tsdk": "node_modules/.pnpm/typescript@4.9.4/node_modules/typescript/lib",
