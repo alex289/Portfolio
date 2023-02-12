@@ -1,13 +1,11 @@
-'use client';
-
-import useTranslation from '@/lib/i18n/use-translation';
 import Link from 'next/link';
 import Image from 'next/image';
 import avatar from '@/public/static/images/konietzko_alexander.jpg';
 import { ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const AboutPage = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const age = Math.floor(
     (new Date().getTime() - new Date('2002-09-28').getTime()) / 3.15576e10
   );

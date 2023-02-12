@@ -3,14 +3,14 @@
 import useSWR from 'swr';
 import { AlertCircle, Book, GitPullRequest, History, Star } from 'lucide-react';
 
-import useTranslation from '@/lib/i18n/use-translation';
 import fetcher from '@/lib/fetcher';
 
 import type { Stats } from '@/lib/types';
+import { useTranslations } from 'next-intl';
 
 const ProjectsPage = () => {
   const { data } = useSWR<Stats>('/api/stats', fetcher);
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center">

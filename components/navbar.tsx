@@ -1,23 +1,21 @@
 'use client';
 
-import useTranslation from '@/lib/i18n/use-translation';
+import { useEffect, useState } from 'react';
+
+import { useLocale, useTranslations } from 'next-intl';
+import { useUnlocalizedPathname } from 'next-intl/client';
 import { useTheme } from '@wits/next-themes';
+import { Command } from 'lucide-react';
 import clsx from 'clsx';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { Command } from 'lucide-react';
+
 import ThemeToggleIcon from './icons/theme-icon';
 
 const Navbar = () => {
-  const path = usePathname()
-    ?.replace('de/', '')
-    .replace('de', '')
-    .replace('en/', '')
-    .replace('en', '');
-  console.log(path);
   const { resolvedTheme, setTheme } = useTheme();
-  const { t, locale } = useTranslation();
+  const t = useTranslations();
+  const locale = useLocale();
+  const path = useUnlocalizedPathname();
 
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);

@@ -1,12 +1,13 @@
 'use client';
 
+import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-import useTranslation from '@/lib/i18n/use-translation';
 import NowPlaying from './now-playing';
 
-export default function Footer(): JSX.Element {
-  const { t, locale } = useTranslation();
+export default function Footer() {
+  const t = useTranslations();
+  const locale = useLocale();
 
   const links = [
     {

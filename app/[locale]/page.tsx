@@ -1,12 +1,14 @@
-'use client';
-import useTranslation from '@/lib/i18n/use-translation';
 import Image from 'next/image';
-import profilePic from '@/public/static/images/konietzko_alexander.jpg';
-import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
+import { useLocale, useTranslations } from 'next-intl';
+import { ArrowRight } from 'lucide-react';
+
+import profilePic from '@/public/static/images/konietzko_alexander.jpg';
+
 const Index = () => {
-  const { t, locale } = useTranslation();
+  const t = useTranslations();
+  const locale = useLocale();
   return (
     <>
       <div className="flex flex-col-reverse items-start sm:flex-row">

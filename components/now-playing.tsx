@@ -1,9 +1,10 @@
-import useSWR from 'swr';
 import { useEffect } from 'react';
+
+import useSWR from 'swr';
 import { animate } from 'motion';
+import { useTranslations } from 'next-intl';
 
 import fetcher from '@/lib/fetcher';
-import useTranslation from '@/lib/i18n/use-translation';
 
 import type { NowPlayingSong } from '@/lib/types';
 
@@ -78,7 +79,7 @@ function AnimatedBars() {
 
 export default function NowPlaying() {
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher);
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <div className="mb-8 flex w-full flex-row-reverse items-center space-x-0 sm:flex-row sm:space-x-2">
