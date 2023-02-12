@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const withNextIntl = require('next-intl/plugin')();
-const withContentlayer = require('contentlayer/next');
+const { withContentlayer } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -74,4 +74,4 @@ const securityHeaders = [
   },
 ];
 
-export default withNextIntl(withContentlayer(nextConfig));
+module.exports = withNextIntl(withContentlayer(nextConfig));
