@@ -33,7 +33,7 @@ const About: NextPage = () => {
         <h1 className="text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
           Links
         </h1>
-        <div className="prose mb-10 text-gray-600 dark:text-[#c2c2c2] dark:prose-dark">
+        <div className="prose mb-10 text-gray-600 dark:prose-dark dark:text-[#c2c2c2]">
           <ul className="list-disc">
             <li>
               GitHub:{' '}
@@ -126,7 +126,7 @@ const About: NextPage = () => {
         <p className="text-gray-500 dark:text-[#c2c2c2]">
           {t('about-page.uses.text')}
         </p>
-        <div className="prose mb-16 text-gray-600 dark:text-[#c2c2c2] dark:prose-dark">
+        <div className="prose mb-16 text-gray-600 dark:prose-dark dark:text-[#c2c2c2]">
           <h3 className="text-lg font-bold tracking-tight text-black dark:text-white md:text-xl">
             {t('about-page.uses.office')}
           </h3>
