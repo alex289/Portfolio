@@ -64,4 +64,15 @@ const Index = () => {
   );
 };
 
+export function generateStaticParams() {
+  return [
+    {
+      locale: 'en',
+    },
+    {
+      locale: 'de',
+    },
+  ];
+}
+
 export default Index;
