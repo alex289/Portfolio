@@ -1,4 +1,4 @@
-import { createIntlMiddleware } from 'next-intl/server';
+import createIntlMiddleware from 'next-intl/middleware';
 
 export default createIntlMiddleware({
   locales: ['en', 'de'],
@@ -6,5 +6,5 @@ export default createIntlMiddleware({
 });
 
 export const config = {
-  matcher: ['/((?!_next).*)', '/((?!api).*)'],
+  matcher: ['/((?!api|_next|static).*)'],
 };

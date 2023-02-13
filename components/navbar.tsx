@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { useUnlocalizedPathname } from 'next-intl/client';
+import { usePathname } from 'next-intl/client';
 import { useTheme } from '@wits/next-themes';
 import { Command } from 'lucide-react';
 import clsx from 'clsx';
@@ -15,7 +15,7 @@ const Navbar = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const t = useTranslations();
   const locale = useLocale();
-  const path = useUnlocalizedPathname();
+  const path = usePathname();
 
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);

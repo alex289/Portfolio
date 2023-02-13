@@ -11,7 +11,7 @@ import AnalyticsWrapper from '@/components/analytics';
 import ProviderWrapper from '@/components/theme';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import { NextIntlClientProvider } from 'next-intl/client';
+import { NextIntlClientProvider } from 'next-intl';
 
 const inter = Inter();
 export const metadata = globalMetadata;
