@@ -74,4 +74,4 @@ const securityHeaders = [
   },
 ];
 
-module.exports = withNextIntl(withContentlayer(nextConfig));
+module.exports = withContentlayer(withNextIntl(nextConfig));

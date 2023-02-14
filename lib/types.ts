@@ -16,3 +16,11 @@ export type Stats = {
   prs: number;
   issues: number;
 };
+
+export type Projects = {
+  name: string;
+  html_url: string;
+  homepage: string;
+  description: string;
+  language: string;
+};

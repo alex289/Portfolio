@@ -1,13 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
 
 import profilePic from '@/public/static/images/konietzko_alexander.jpg';
+import Project from '@/components/projects';
+import { getProjects } from '@/lib/projects';
+import { getTranslations } from 'next-intl/server';
 
-const Index = () => {
-  const t = useTranslations();
+const Index = async () => {
+  const [projects, t] = await Promise.all([getProjects(3), getTranslations()]);
   const locale = useLocale();
   return (
     <>
@@ -54,6 +57,8 @@ const Index = () => {
         {t('main.projects')}
       </h3>
 
+      <Project projects={projects} notFoundText={t('projects.not-found')} />
+
       <Link
         href={`/${locale}/projects`}
         className="mt-4 mb-16 flex h-6 cursor-pointer items-center rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
@@ -63,16 +68,5 @@ const Index = () => {
     </>
   );
 };
-
-export function generateStaticParams() {
-  return [
-    {
-      locale: 'en',
-    },
-    {
-      locale: 'de',
-    },
-  ];
-}
 
 export default Index;
