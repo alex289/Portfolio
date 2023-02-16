@@ -1,0 +1,185 @@
+diff --git a/dist/index-cjs.cjs b/dist/index-cjs.cjs
+index b9f9e666f4ab9cb7cd203f930907c8b5d38cf7a4..69c5e8216f115686ca25aa1fa6988c1fdd41c4f5 100644
+--- a/dist/index-cjs.cjs
++++ b/dist/index-cjs.cjs
+@@ -52,15 +52,6 @@ module.exports.createContentlayerPlugin =
+                     // ignored: /node_modules([\\]+|\/)+(?!\.contentlayer)/,
+                     ignored: ['**/node_modules/!(.contentlayer)/**/*'],
+                 };
+-                // NOTE workaround for https://github.com/vercel/next.js/issues/17806#issuecomment-913437792
+-                // https://github.com/contentlayerdev/contentlayer/issues/121
+-                config.module.rules.push({
+-                    test: /\.m?js$/,
+-                    type: 'javascript/auto',
+-                    resolve: {
+-                        fullySpecified: false,
+-                    },
+-                });
+                 if (typeof nextConfig.webpack === 'function') {
+                     return nextConfig.webpack(config, options);
+                 }
+diff --git a/dist/index-cjs.js b/dist/index-cjs.js
+index 0c2580c021d8df569d6bc78d8499927dbdf256b1..58c2402881e5beac39cd4aa7b0cefeebf395fcb3 100644
+--- a/dist/index-cjs.js
++++ b/dist/index-cjs.js
+@@ -53,15 +53,6 @@ module.exports.createContentlayerPlugin =
+                     // ignored: /node_modules([\\]+|\/)+(?!\.contentlayer)/,
+                     ignored: ['**/node_modules/!(.contentlayer)/**/*'],
+                 };
+-                // NOTE workaround for https://github.com/vercel/next.js/issues/17806#issuecomment-913437792
+-                // https://github.com/contentlayerdev/contentlayer/issues/121
+-                config.module.rules.push({
+-                    test: /\.m?js$/,
+-                    type: 'javascript/auto',
+-                    resolve: {
+-                        fullySpecified: false,
+-                    },
+-                });
+                 if (typeof nextConfig.webpack === 'function') {
+                     return nextConfig.webpack(config, options);
+                 }
+diff --git a/dist/index.js b/dist/index.js
+index 9a53bb4b69522307904bafd60481f8ada8513897..f79c2d2108b5d8653754d13cb72d8d6db2f4b8ae 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -50,15 +50,6 @@ export const createContentlayerPlugin = (pluginOptions = defaultPluginOptions) =
+                 // ignored: /node_modules([\\]+|\/)+(?!\.contentlayer)/,
+                 ignored: ['**/node_modules/!(.contentlayer)/**/*'],
+             };
+-            // NOTE workaround for https://github.com/vercel/next.js/issues/17806#issuecomment-913437792
+-            // https://github.com/contentlayerdev/contentlayer/issues/121
+-            config.module.rules.push({
+-                test: /\.m?js$/,
+-                type: 'javascript/auto',
+-                resolve: {
+-                    fullySpecified: false,
+-                },
+-            });
+             if (typeof nextConfig.webpack === 'function') {
+                 return nextConfig.webpack(config, options);
+             }
+diff --git a/package.json b/package.json
+index 62b7c920245adac441c7243c0ff168def5f47961..dd1f211809290afc2b739f280b46e5e2588c3f34 100644
+--- a/package.json
++++ b/package.json
+@@ -61,5 +61,10 @@
+   },
+   "bug": {
+     "url": "https://github.com/contentlayerdev/contentlayer/issues"
++  },
++  "pnpm": {
++    "patchedDependencies": {
++      "next-contentlayer@0.3.0": "patches/next-contentlayer@0.3.0.patch"
++    }
+   }
+ }
+\ No newline at end of file
+diff --git a/patches/next-contentlayer@0.3.0.patch b/patches/next-contentlayer@0.3.0.patch
+new file mode 100644
+index 0000000000000000000000000000000000000000..a761fa9a944a97a9194728f2a43f14f7e5977b15
+--- /dev/null
++++ b/patches/next-contentlayer@0.3.0.patch
+@@ -0,0 +1,81 @@
++diff --git a/dist/index-cjs.cjs b/dist/index-cjs.cjs
++index b9f9e666f4ab9cb7cd203f930907c8b5d38cf7a4..69c5e8216f115686ca25aa1fa6988c1fdd41c4f5 100644
++--- a/dist/index-cjs.cjs
+++++ b/dist/index-cjs.cjs
++@@ -52,15 +52,6 @@ module.exports.createContentlayerPlugin =
++                     // ignored: /node_modules([\\]+|\/)+(?!\.contentlayer)/,
++                     ignored: ['**/node_modules/!(.contentlayer)/**/*'],
++                 };
++-                // NOTE workaround for https://github.com/vercel/next.js/issues/17806#issuecomment-913437792
++-                // https://github.com/contentlayerdev/contentlayer/issues/121
++-                config.module.rules.push({
++-                    test: /\.m?js$/,
++-                    type: 'javascript/auto',
++-                    resolve: {
++-                        fullySpecified: false,
++-                    },
++-                });
++                 if (typeof nextConfig.webpack === 'function') {
++                     return nextConfig.webpack(config, options);
++                 }
++diff --git a/dist/index-cjs.js b/dist/index-cjs.js
++index 0c2580c021d8df569d6bc78d8499927dbdf256b1..58c2402881e5beac39cd4aa7b0cefeebf395fcb3 100644
++--- a/dist/index-cjs.js
+++++ b/dist/index-cjs.js
++@@ -53,15 +53,6 @@ module.exports.createContentlayerPlugin =
++                     // ignored: /node_modules([\\]+|\/)+(?!\.contentlayer)/,
++                     ignored: ['**/node_modules/!(.contentlayer)/**/*'],
++                 };
++-                // NOTE workaround for https://github.com/vercel/next.js/issues/17806#issuecomment-913437792
++-                // https://github.com/contentlayerdev/contentlayer/issues/121
++-                config.module.rules.push({
++-                    test: /\.m?js$/,
++-                    type: 'javascript/auto',
++-                    resolve: {
++-                        fullySpecified: false,
++-                    },
++-                });
++                 if (typeof nextConfig.webpack === 'function') {
++                     return nextConfig.webpack(config, options);
++                 }
++diff --git a/dist/index.js b/dist/index.js
++index 9a53bb4b69522307904bafd60481f8ada8513897..f79c2d2108b5d8653754d13cb72d8d6db2f4b8ae 100644
++--- a/dist/index.js
+++++ b/dist/index.js
++@@ -50,15 +50,6 @@ export const createContentlayerPlugin = (pluginOptions = defaultPluginOptions) =
++                 // ignored: /node_modules([\\]+|\/)+(?!\.contentlayer)/,
++                 ignored: ['**/node_modules/!(.contentlayer)/**/*'],
++             };
++-            // NOTE workaround for https://github.com/vercel/next.js/issues/17806#issuecomment-913437792
++-            // https://github.com/contentlayerdev/contentlayer/issues/121
++-            config.module.rules.push({
++-                test: /\.m?js$/,
++-                type: 'javascript/auto',
++-                resolve: {
++-                    fullySpecified: false,
++-                },
++-            });
++             if (typeof nextConfig.webpack === 'function') {
++                 return nextConfig.webpack(config, options);
++             }
++diff --git a/src/index.ts b/src/index.ts
++index f3781a20e235a7b81afe4a891a9e75e4c9c01cc0..6f12769748cf26564ac2e219fee94beebeb6ac13 100644
++--- a/src/index.ts
+++++ b/src/index.ts
++@@ -61,16 +61,6 @@ export const createContentlayerPlugin =
++           ignored: ['**/node_modules/!(.contentlayer)/**/*'],
++         }
++ 
++-        // NOTE workaround for https://github.com/vercel/next.js/issues/17806#issuecomment-913437792
++-        // https://github.com/contentlayerdev/contentlayer/issues/121
++-        config.module.rules.push({
++-          test: /\.m?js$/,
++-          type: 'javascript/auto',
++-          resolve: {
++-            fullySpecified: false,
++-          },
++-        })
++-
++         if (typeof nextConfig.webpack === 'function') {
++           return nextConfig.webpack(config, options)
++         }
+\ No newline at end of file
+diff --git a/src/index.ts b/src/index.ts
+index f3781a20e235a7b81afe4a891a9e75e4c9c01cc0..6f12769748cf26564ac2e219fee94beebeb6ac13 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -61,16 +61,6 @@ export const createContentlayerPlugin =
+           ignored: ['**/node_modules/!(.contentlayer)/**/*'],
+         }
+ 
+-        // NOTE workaround for https://github.com/vercel/next.js/issues/17806#issuecomment-913437792
+-        // https://github.com/contentlayerdev/contentlayer/issues/121
+-        config.module.rules.push({
+-          test: /\.m?js$/,
+-          type: 'javascript/auto',
+-          resolve: {
+-            fullySpecified: false,
+-          },
+-        })
+-
+         if (typeof nextConfig.webpack === 'function') {
+           return nextConfig.webpack(config, options)
+         }

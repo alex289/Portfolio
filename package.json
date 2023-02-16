@@ -83,5 +83,10 @@
     "budget": 143360,
     "budgetPercentIncreaseRed": 20,
     "showDetails": true
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "next-contentlayer@0.3.0": "patches/next-contentlayer@0.3.0.patch"
+    }
   }
 }
