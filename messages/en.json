@@ -88,7 +88,7 @@
     "title": "Guestbook",
     "description": "Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!",
     "login": "Sign in with ",
-    "logout": "Logout",
+    "logout": "Sign out",
     "logged-in-as": "Logged in as",
     "form": {
       "title": "Sign the Guestbook",
@@ -103,7 +103,7 @@
   },
   "dashboard": {
     "unauthorized": "You are not authorized to view this page.",
-    "logout": "Logout",
+    "logout": "Sign out",
     "logged-in": "Logged in as",
     "blog-guestbook": "Blog/Guestbook",
     "top-tracks": "Top Spotify Tracks",
@@ -117,20 +117,6 @@
       "sanity-project": "Sanity project Id",
       "posts-count": "Amount of all posts (EN)"
     }
-  },
-  "comment": {
-    "title": "Comments",
-    "login": "Sign in with ",
-    "logout": "Logout",
-    "logged-in-as": "Logged in as",
-    "success": "Hooray! Thanks for leaving a comment.",
-    "no-comment": "No comments yet.",
-    "form": {
-      "placeholder": "Leave a comment",
-      "submit": "Send"
-    },
-    "error": "Please enter a message.",
-    "delete": "Delete"
   },
   "projects": {
     "not-found": "No projects found",

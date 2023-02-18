@@ -16,7 +16,7 @@ const Project = ({
           <div
             key={index}
             id={project.name}
-            className="hover:border-primary dark:hover:border-primary my-3 grid grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800 md:grid-cols-5">
+            className="my-3 grid grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow hover:border-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-indigo-500 md:grid-cols-5">
             <div className="flex flex-row">
               <p className="font-semibold text-gray-500 dark:text-white">
                 {project.name}

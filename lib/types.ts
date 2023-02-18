@@ -24,3 +24,15 @@ export type Projects = {
   description: string;
   language: string;
 };
+
+export enum Form {
+  Initial,
+  Loading,
+  Success,
+  Error,
+}
+
+export type FormState = {
+  state: Form;
+  message?: string;
+};

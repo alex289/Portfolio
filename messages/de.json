@@ -118,20 +118,6 @@
       "posts-count": "Anzahl aller Beiträge (DE)"
     }
   },
-  "comment": {
-    "title": "Kommentare",
-    "login": "Anmelden mit ",
-    "logout": "Ausloggen",
-    "logged-in-as": "Eingeloggt als",
-    "success": "Hurra! Danke für das Schreiben eines Kommentars.",
-    "no-comment": "Keine Kommentare bisher.",
-    "form": {
-      "placeholder": "Schreibe einen Kommentar",
-      "submit": "Senden"
-    },
-    "error": "Bitte gebe einen Kommentar ein.",
-    "delete": "Löschen"
-  },
   "projects": {
     "not-found": "Keine Projekte gefunden",
     "see-more": "Alle Projekte"

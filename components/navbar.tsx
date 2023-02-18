@@ -58,7 +58,7 @@ const Navbar = () => {
         {NavLinks.map(({ href, text, id }) => (
           <Link
             key={id}
-            href={`/${locale}/${href}`}
+            href={`/${locale}${href}`}
             id={id}
             className={clsx(
               'invisible mr-1 text-gray-900 sm:mr-8 md:visible',

@@ -24,6 +24,11 @@ export const MethodNotAllowedEdge = () => {
   });
 };
 
+export const BadRequest = (res: NextApiResponse, message?: string) => {
+  res.setHeader('Content-Type', 'application/json');
+  return res.status(400).json({ message: message || 'Bad request' });
+};
+
 export const BadRequestEdge = (message?: string) => {
   return new Response(JSON.stringify({ message: message || 'Bad request' }), {
     status: 400,
@@ -31,4 +36,9 @@ export const BadRequestEdge = (message?: string) => {
       'Content-Type': 'application/json',
     },
   });
+};
+
+export const Unauthorized = (res: NextApiResponse) => {
+  res.setHeader('Content-Type', 'application/json');
+  return res.status(401).json({ message: 'Unauthorized' });
 };
