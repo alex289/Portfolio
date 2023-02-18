@@ -31,7 +31,7 @@ export default function GuestbookEntry({
 
   return (
     <div className="flex flex-col space-y-2">
-      <div className="dark:prose-dark prose w-full break-words">
+      <div className="prose w-full break-words dark:text-gray-200">
         {entry.body}
       </div>
       <div className="flex items-center space-x-3">

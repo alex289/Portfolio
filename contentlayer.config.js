@@ -10,15 +10,6 @@ const computedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.flattenedPath,
   },
-  tweetIds: {
-    type: 'array',
-    resolve: (doc) => {
-      const tweetMatches = doc.body.raw.match(
-        /<StaticTweet\sid="[0-9]+"\s\/>/g
-      );
-      return tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]) || [];
-    },
-  },
 };
 
 export const Blog = defineDocumentType(() => ({

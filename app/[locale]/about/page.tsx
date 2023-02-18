@@ -24,7 +24,7 @@ const AboutPage = () => {
       <h1 className="text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
         Links
       </h1>
-      <div className="dark:prose-dark prose mb-10 text-gray-600 dark:text-[#c2c2c2]">
+      <div className="prose mb-10 text-gray-600 dark:text-[#c2c2c2]">
         <ul className="list-disc">
           <li>
             GitHub:{' '}

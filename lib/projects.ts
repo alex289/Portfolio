@@ -80,11 +80,17 @@ export const getStats = async () => {
 
 export const getProjects = async (perPage = 10) => {
   const reposResponse = await fetch(
-    `https://api.github.com/users/alex289/repos?per_page=${perPage}&sort=pushed`
+    `https://api.github.com/users/alex289/repos?per_page=${perPage}&sort=pushed`,
+    {
+      next: { revalidate: 60 * 60 * 24 },
+      headers: {
+        Authorization: `bearer ${process.env.GITHUB_API_TOKEN}`,
+      },
+    }
   );
 
   if (!reposResponse.ok) {
-    return null;
+    return [];
   }
 
   return (await reposResponse.json()) as Projects[];
