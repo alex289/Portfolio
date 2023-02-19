@@ -42,3 +42,12 @@ export const Unauthorized = (res: NextApiResponse) => {
   res.setHeader('Content-Type', 'application/json');
   return res.status(401).json({ message: 'Unauthorized' });
 };
+
+export const ServerError = (res: NextApiResponse, error: unknown) => {
+  res.setHeader('Content-Type', 'application/json');
+  if (error instanceof Error) {
+    return res.status(500).json({ message: error.message });
+  } else {
+    return res.status(500).json({ message: 'Unknown error' });
+  }
+};

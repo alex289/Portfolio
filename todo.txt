@@ -1,0 +1,8 @@
+- Dashboard
+- Change locale on blog posts
+- Command menu
+- app dir api routes
+- Sort imports
+- Refactor messages
+- Add metadata
+- Remake og image design
