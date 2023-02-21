@@ -9,6 +9,7 @@ import { SignOutButton } from '@/components/sign-out';
 
 import Metric from '@/components/metric';
 import Track from '@/components/track';
+import { redirect } from 'next/navigation';
 
 const getViewsCount = async () => {
   const { sum } = queryBuilder.fn;
@@ -40,6 +41,10 @@ const DashboardPage = async () => {
       getGuestbookEntriesCount(),
       getTopTracks(),
     ]);
+
+  if (!session) {
+    return redirect('/api/auth/signin?callbackUrl=/dashboard');
+  }
 
   if (!session || !session.user.isAdmin) {
     return (
