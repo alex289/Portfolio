@@ -109,12 +109,7 @@
     "top-tracks": "Top Spotify Tracks",
     "metrics": {
       "blog-views": "Blog views",
-      "blog-comments": "Blog comments",
       "guestbook-entries": "Guestbook entries",
-      "preview-mode": "Preview mode",
-      "preview-active": "Active",
-      "preview-inactive": "Inactive",
-      "sanity-project": "Sanity project Id",
       "posts-count": "Amount of all posts (EN)"
     }
   },

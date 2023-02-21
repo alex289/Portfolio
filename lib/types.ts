@@ -36,3 +36,29 @@ export type FormState = {
   state: Form;
   message?: string;
 };
+
+export type Song = {
+  songUrl: string;
+  artist: string;
+  cover: string;
+  title: string;
+};
+
+export type TopTracks = {
+  tracks: Song[];
+};
+
+export type ResponseTrackType = {
+  artists: {
+    name: string;
+  }[];
+  name: string;
+  external_urls: {
+    spotify: string;
+  };
+  album: {
+    images: {
+      url: string;
+    }[];
+  };
+};

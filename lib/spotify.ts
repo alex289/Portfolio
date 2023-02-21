@@ -1,3 +1,5 @@
+import { ResponseTrackType, TopTracks } from './types';
+
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
@@ -35,9 +37,21 @@ export const getNowPlaying = async () => {
 export const getTopTracks = async () => {
   const { access_token } = await getAccessToken();
 
-  return fetch(TOP_TRACKS_ENDPOINT, {
+  const response = await fetch(TOP_TRACKS_ENDPOINT, {
+    next: { revalidate: 60 * 60 * 24 },
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
   });
+
+  const { items } = await response.json();
+
+  const tracks = items.slice(0, 10).map((track: ResponseTrackType) => ({
+    artist: track.artists.map((_artist) => _artist.name).join(', '),
+    songUrl: track.external_urls.spotify,
+    cover: track.album.images[1]?.url,
+    title: track.name,
+  }));
+
+  return { tracks } as TopTracks;
 };

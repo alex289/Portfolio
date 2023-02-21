@@ -109,12 +109,7 @@
     "top-tracks": "Top Spotify Lieder",
     "metrics": {
       "blog-views": "Blog Aufrufe",
-      "blog-comments": "Blog Kommentare",
       "guestbook-entries": "Gästebuch Einträge",
-      "preview-mode": "Vorschau Modus",
-      "preview-active": "Aktiv",
-      "preview-inactive": "Inaktiv",
-      "sanity-project": "Sanity Projekt Id",
       "posts-count": "Anzahl aller Beiträge (DE)"
     }
   },
