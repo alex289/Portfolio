@@ -1,7 +1,8 @@
 'use client';
 
-import { Session } from 'next-auth';
 import { useRouter } from 'next/navigation';
+
+import type { Session } from 'next-auth';
 
 type GuestBookEntryProps = {
   entry: {

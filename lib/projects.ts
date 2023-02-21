@@ -1,4 +1,4 @@
-import { Projects, Stats } from './types';
+import type { Projects, Stats } from './types';
 
 export const getStats = async () => {
   const reposResponse = await fetch('https://api.github.com/graphql', {

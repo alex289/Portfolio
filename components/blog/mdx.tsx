@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Image, { ImageProps } from 'next/image';
+import Image, { type ImageProps } from 'next/image';
+
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

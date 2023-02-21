@@ -1,7 +1,9 @@
 import { AlertCircle, Book, GitPullRequest, History, Star } from 'lucide-react';
 
 import { getTranslations } from 'next-intl/server';
+
 import { getProjects, getStats } from '@/lib/projects';
+
 import Project from '@/components/projects';
 
 const ProjectsPage = async () => {

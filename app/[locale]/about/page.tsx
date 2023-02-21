@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import avatar from '@/public/static/images/konietzko_alexander.jpg';
+
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+
+import avatar from '@/public/static/images/konietzko_alexander.jpg';
 
 const AboutPage = () => {
   const t = useTranslations();

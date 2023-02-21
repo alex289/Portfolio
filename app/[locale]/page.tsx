@@ -3,11 +3,12 @@ import Link from 'next/link';
 
 import { useLocale } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+
+import { getProjects } from '@/lib/projects';
 
 import profilePic from '@/public/static/images/konietzko_alexander.jpg';
 import Project from '@/components/projects';
-import { getProjects } from '@/lib/projects';
-import { getTranslations } from 'next-intl/server';
 
 const Index = async () => {
   const [projects, t] = await Promise.all([getProjects(3), getTranslations()]);

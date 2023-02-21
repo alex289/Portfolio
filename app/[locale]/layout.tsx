@@ -4,13 +4,13 @@ import { Inter } from '@next/font/google';
 import { notFound } from 'next/navigation';
 
 import { ServerThemeProvider } from '@wits/next-themes';
+import { NextIntlClientProvider } from 'next-intl';
 import { useLocale } from 'next-intl';
 
 import AnalyticsWrapper from '@/components/analytics';
 import ProviderWrapper from '@/components/theme';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import { NextIntlClientProvider } from 'next-intl';
 
 const inter = Inter();
 

@@ -1,5 +1,6 @@
-import type { Projects } from '@/lib/types';
 import { Github, Home } from 'lucide-react';
+
+import type { Projects } from '@/lib/types';
 
 const Project = ({
   projects,
