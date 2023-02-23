@@ -8,3 +8,5 @@
 - Command menu
 - Fix mobile ui
 - Update database
+ - migrate db (remove comments)
+ - https://planetscale.com/docs/concepts/query-caching-with-planetscale-boost
