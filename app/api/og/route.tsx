@@ -1,9 +1,11 @@
-import { ImageResponse } from '@vercel/og';
+// import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
 export const config = {
   runtime: 'edge',
 };
+
+// waiting for https://github.com/vercel/satori/issues/410
 
 export function GET(req: NextRequest) {
   try {
@@ -14,7 +16,7 @@ export function GET(req: NextRequest) {
       ? searchParams.get('title')?.slice(0, 100)
       : 'Alexander Konietzko';
 
-    return new ImageResponse(
+    /* return new ImageResponse(
       (
         <div
           style={{
@@ -63,7 +65,9 @@ export function GET(req: NextRequest) {
         width: 1200,
         height: 630,
       }
-    );
+    );*/
+
+    return new Response('Not implemented yet');
   } catch (e) {
     return new Response(`Failed to generate the image`, {
       status: 500,

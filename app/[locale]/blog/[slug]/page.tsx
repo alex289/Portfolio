@@ -26,6 +26,12 @@ export default async function Blog({ params }: { params: { slug: string } }) {
 
   return (
     <section className="mx-auto mb-16 flex w-full max-w-4xl flex-col items-start justify-center">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(post.structuredData),
+        }}
+      />
       <h1 className="mb-4 text-4xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
         <Balancer>{post.title}</Balancer>
       </h1>
