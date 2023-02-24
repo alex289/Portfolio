@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 
 import { ArrowRight } from 'lucide-react';
@@ -30,35 +29,42 @@ const AboutPage = () => {
         <ul className="list-disc">
           <li>
             GitHub:{' '}
-            <Link
-              href="https://github.com/alex289"
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
               className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
               @alex289
-            </Link>
+            </a>
           </li>
           <li>
             Twitter:{' '}
-            <Link
+            <a
               href="https://twitter.com/_alex289"
+              target="_blank"
+              rel="noreferrer noopener"
               className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
               @_alex289
-            </Link>
+            </a>
           </li>
           <li>
             {t('about-page.website')}:{' '}
-            <Link
+            <a
               href="https://alexanderkonietzko.vercel.app"
+              target="_blank"
+              rel="noreferrer noopener"
               className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
               https://alexanderkonietzko.vercel.app
-            </Link>
+            </a>
           </li>
           <li>
             Quicklinks:{' '}
-            <Link
+            <a
               href="https://alexanderkonietzko-links.vercel.app"
+              target="_blank"
+              rel="noreferrer noopener"
               className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
               https://alexanderkonietzko-links.vercel.app
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
@@ -137,11 +143,13 @@ const AboutPage = () => {
         <ul className="list-disc">
           <li>
             Editor: VSCode {t('about-page.uses.and')} Neovim (
-            <Link
+            <a
               href="https://github.com/alex289/dotfiles"
+              target="_blank"
+              rel="noreferrer noopener"
               className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
               {t('about-page.uses.configuration')}
-            </Link>
+            </a>
             )
           </li>
           <li>Terminal: ITerm2 / zsh</li>

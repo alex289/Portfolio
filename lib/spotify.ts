@@ -14,6 +14,7 @@ const getAccessToken = async () => {
     `${TOKEN_ENDPOINT}?grant_type=refresh_token&refresh_token=${refresh_token}`,
     {
       method: 'POST',
+      next: { revalidate: 60 * 60 },
       headers: {
         Authorization: `Basic ${basic}`,
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -30,6 +31,7 @@ export const getNowPlaying = async () => {
   return fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
+      cache: 'no-store',
     },
   });
 };

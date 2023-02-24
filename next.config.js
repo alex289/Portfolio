@@ -8,6 +8,7 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     appDir: true,
+    typedRoutes: true,
     fontLoaders: [
       { loader: '@next/font/google', options: { subsets: ['latin'] } },
     ],

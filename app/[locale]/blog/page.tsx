@@ -15,8 +15,8 @@ const BlogPage = () => {
   const locale = useLocale();
 
   const searchParams = useSearchParams();
-  const searchQuery = searchParams.get('search');
-  const filterQuery = searchParams.get('filter');
+  const searchQuery = searchParams?.get('search');
+  const filterQuery = searchParams?.get('filter');
 
   const [searchValue, setSearchValue] = useState('');
   const [filterBy, setFilterBy] = useState<'name' | 'tag'>('name');

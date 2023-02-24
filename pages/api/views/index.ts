@@ -1,7 +1,7 @@
 import { ServerError } from '@/lib/api';
 import { queryBuilder } from '@/lib/db';
 
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next/types';
 
 export default async function handler(
   req: NextApiRequest,

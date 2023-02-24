@@ -1,4 +1,4 @@
-import type { NextApiResponse } from 'next';
+import type { NextApiResponse } from 'next/types';
 
 export function isValidHttpMethod(
   method: string | undefined,
