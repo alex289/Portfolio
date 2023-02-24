@@ -1,17 +1,24 @@
-import { ServerError } from '@/lib/api';
 import { queryBuilder } from '@/lib/db';
 
-import type { NextApiRequest, NextApiResponse } from 'next/types';
-
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET() {
   try {
     const data = await queryBuilder
       .selectFrom('views')
       .select(['slug', 'count'])
       .execute();
 
-    return res.status(200).json(data);
+    return new Response(JSON.stringify(data), {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
   } catch (e) {
-    return ServerError(res, e);
+    return new Response(JSON.stringify(e), {
+      status: 500,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
   }
 }
