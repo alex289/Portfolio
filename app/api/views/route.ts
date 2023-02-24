@@ -3,10 +3,7 @@ import { queryBuilder } from '@/lib/db';
 
 import type { NextApiRequest, NextApiResponse } from 'next/types';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export async function GET(req: NextApiRequest, res: NextApiResponse) {
   try {
     const data = await queryBuilder
       .selectFrom('views')

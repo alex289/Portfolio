@@ -29,7 +29,7 @@ specifiers:
   lucide-react: ^0.115.0
   motion: ^10.15.5
   next: 13.2.1
-  next-auth: ^4.19.2
+  next-auth: 0.0.0-pr.6777.c5550344
   next-contentlayer: ^0.3.0
   next-intl: 2.11.0-beta.15
   postcss: ^8.4.21
@@ -66,7 +66,7 @@ dependencies:
   lucide-react: 0.115.0_react@18.2.0
   motion: 10.15.5
   next: 13.2.1_rfdx5ocjtvb4b2h5j5ipjicct4
-  next-auth: 4.19.2_qgtcjgzkkjtbiyvnx7d32fl5vu
+  next-auth: 0.0.0-pr.6777.c5550344_qgtcjgzkkjtbiyvnx7d32fl5vu
   next-contentlayer: 0.3.0_qccyitiq23ipyr22jgwty67c6y_o2kiirusdw5ktjehkap2hbutge
   next-intl: 2.11.0-beta.15_next@13.2.1+react@18.2.0
   react: 18.2.0
@@ -104,14 +104,14 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       core-js-pure: 3.23.3
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.11
     dev: true
 
-  /@babel/runtime/7.18.6:
-    resolution: {integrity: sha512-t9wi7/AW6XtKahAe20Yw0/mMljKq0B1r2fPdvaAdV/KPDZewFXdaaa6K7lxmZBZ8FBNpCiAT6iHPmd6QO9bKfQ==}
+  /@babel/runtime/7.21.0:
+    resolution: {integrity: sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.11
 
   /@contentlayer/cli/0.3.0_esbuild@0.17.5:
     resolution: {integrity: sha512-Mqb6NlIKINt2qsPKft+o8m5tJhJXVgVSd0zP1BH+CQRmvR/zwTT3maz1bDCPHBYGKgGCQKtvgM66IjvH+dmC6Q==}
@@ -1542,7 +1542,7 @@ packages:
     resolution: {integrity: sha512-o/HelwhuKpTj/frsOsbNLNgnNGVIFsVP/SW2BSF14gVl7kAfMOJ6/8wUAUvG1R1NHKrfG+2sHZTu0yauT1qBrA==}
     engines: {node: '>=6.0'}
     dependencies:
-      '@babel/runtime': 7.18.6
+      '@babel/runtime': 7.21.0
       '@babel/runtime-corejs3': 7.18.3
     dev: true
 
@@ -2268,7 +2268,7 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
     dependencies:
-      '@babel/runtime': 7.18.6
+      '@babel/runtime': 7.21.0
       aria-query: 4.2.2
       array-includes: 3.1.5
       ast-types-flow: 0.0.7
@@ -3189,8 +3189,8 @@ packages:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
 
-  /jose/4.9.3:
-    resolution: {integrity: sha512-f8E/z+T3Q0kA9txzH2DKvH/ds2uggcw0m3vVPSB9HrSkrQ7mojjifvS7aR8cw+lQl2Fcmx9npwaHpM/M3GD8UQ==}
+  /jose/4.12.0:
+    resolution: {integrity: sha512-wW1u3cK81b+SFcHjGC8zw87yuyUweEFe0UJirrXEw1NasW00eF7sZjeG3SLBGz001ozxQ46Y9sofDvhBmWFtXQ==}
     dev: false
 
   /js-sdsl/4.1.4:
@@ -3548,7 +3548,7 @@ packages:
     peerDependencies:
       esbuild: 0.*
     dependencies:
-      '@babel/runtime': 7.18.6
+      '@babel/runtime': 7.21.0
       '@esbuild-plugins/node-resolve': 0.1.4_esbuild@0.17.5
       '@fal-works/esbuild-plugin-global-externals': 2.1.2
       '@mdx-js/esbuild': 2.2.1_esbuild@0.17.5
@@ -3963,8 +3963,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /next-auth/4.19.2_qgtcjgzkkjtbiyvnx7d32fl5vu:
-    resolution: {integrity: sha512-6V2YG3IJQVhgCAH7mvT3yopTW92gMdUrcwGX7NQ0dCreT/+axGua/JmVdarjec0C/oJukKpIYRgjMlV+L5ZQOQ==}
+  /next-auth/0.0.0-pr.6777.c5550344_qgtcjgzkkjtbiyvnx7d32fl5vu:
+    resolution: {integrity: sha512-HpAlneVJ4SzSgE7Rku0scwWQN+0N2UGKdpeH9gPTRzC8QTYUnEJUqbL7HMXMUyZBC52Pk/ovsvEgO+ozxp50XQ==}
     peerDependencies:
       next: ^12.2.5 || ^13
       nodemailer: ^6.6.5
@@ -3974,13 +3974,13 @@ packages:
       nodemailer:
         optional: true
     dependencies:
-      '@babel/runtime': 7.18.6
+      '@babel/runtime': 7.21.0
       '@panva/hkdf': 1.0.2
       cookie: 0.5.0
-      jose: 4.9.3
+      jose: 4.12.0
       next: 13.2.1_rfdx5ocjtvb4b2h5j5ipjicct4
       oauth: 0.9.15
-      openid-client: 5.1.7
+      openid-client: 5.4.0
       preact: 10.10.0
       preact-render-to-string: 5.2.0_preact@10.10.0
       react: 18.2.0
@@ -4211,11 +4211,10 @@ packages:
       is-wsl: 2.2.0
     dev: true
 
-  /openid-client/5.1.7:
-    resolution: {integrity: sha512-VNtf/q+fv2Jiqi0ViLVmN3gGMSHF+YUGW6baKA/naoPKkKw4JdvghaP/kXQ/bzRRDWk6VmpCYDcR934UdDs8ug==}
-    engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
+  /openid-client/5.4.0:
+    resolution: {integrity: sha512-hgJa2aQKcM2hn3eyVtN12tEA45ECjTJPXCgUh5YzTzy9qwapCvmDTVPWOcWVL0d34zeQoQ/hbG9lJhl3AYxJlQ==}
     dependencies:
-      jose: 4.9.3
+      jose: 4.12.0
       lru-cache: 6.0.0
       object-hash: 2.2.0
       oidc-token-hash: 5.0.1
@@ -4671,8 +4670,8 @@ packages:
     resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
     dev: true
 
-  /regenerator-runtime/0.13.9:
-    resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
+  /regenerator-runtime/0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
 
   /regexp.prototype.flags/1.4.3:
     resolution: {integrity: sha512-fjggEOO3slI6Wvgjwflkc4NFRCTZAu5CnNfBd5qOMYhWdn67nJBBu34/TkD++eeFmd8C9r9jfXJ27+nSiRkSUA==}

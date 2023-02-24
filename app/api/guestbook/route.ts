@@ -1,24 +1,12 @@
 import { getServerSession } from 'next-auth/next';
 
-import { authOptions } from '../auth/[...nextauth]';
 import { queryBuilder } from '@/lib/db';
-import {
-  BadRequest,
-  isValidHttpMethod,
-  MethodNotAllowed,
-  Unauthorized,
-} from '@/lib/api';
+import { BadRequest, Unauthorized } from '@/lib/api';
 
 import type { NextApiRequest, NextApiResponse } from 'next/types';
+import { authOptions } from '../auth/[...nextauth]/route';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (!isValidHttpMethod(req.method, ['POST'])) {
-    return MethodNotAllowed(res);
-  }
-
+export async function POST(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession(req, res, authOptions);
 
   if (!session || !session.user || !session.user.email || !session.user.name) {

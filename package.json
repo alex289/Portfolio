@@ -67,7 +67,7 @@
     "lucide-react": "^0.115.0",
     "motion": "^10.15.5",
     "next": "13.2.1",
-    "next-auth": "^4.19.2",
+    "next-auth": "0.0.0-pr.6777.c5550344",
     "next-contentlayer": "^0.3.0",
     "next-intl": "2.11.0-beta.15",
     "react": "^18.2.0",

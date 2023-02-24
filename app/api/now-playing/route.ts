@@ -1,17 +1,10 @@
 import { getNowPlaying } from '@/lib/spotify';
-import { isValidHttpMethod, MethodNotAllowedEdge } from '@/lib/api';
-
-import { type NextRequest } from 'next/server';
 
 export const config = {
   runtime: 'edge',
 };
 
-export default async function handler(req: NextRequest) {
-  if (!isValidHttpMethod(req.method, ['GET'])) {
-    return MethodNotAllowedEdge();
-  }
-
+export async function GET() {
   const response = await getNowPlaying();
 
   if (response.status === 204 || response.status > 400) {

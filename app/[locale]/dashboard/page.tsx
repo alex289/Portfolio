@@ -2,7 +2,6 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { getServerSession } from 'next-auth';
 import { allBlogs } from '@/.contentlayer/generated';
 
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { queryBuilder } from '@/lib/db';
 import { getTopTracks } from '@/lib/spotify';
 import { SignOutButton } from '@/components/sign-out';
@@ -10,6 +9,7 @@ import { SignOutButton } from '@/components/sign-out';
 import Metric from '@/components/metric';
 import Track from '@/components/track';
 import { redirect } from 'next/navigation';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 const getViewsCount = async () => {
   const { sum } = queryBuilder.fn;

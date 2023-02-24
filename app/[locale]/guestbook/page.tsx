@@ -2,10 +2,10 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { getServerSession } from 'next-auth';
 
 import { queryBuilder } from '@/lib/db';
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
 import GuestbookForm from '@/components/guestbook/guestbook-form';
 import GuestbookEntry from '@/components/guestbook/guestbook-entry';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 async function getGuestbook() {
   const data = await queryBuilder

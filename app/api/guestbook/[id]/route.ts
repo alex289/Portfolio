@@ -1,24 +1,15 @@
 import { getServerSession } from 'next-auth/next';
 
-import { authOptions } from '../auth/[...nextauth]';
 import { queryBuilder } from '@/lib/db';
-import {
-  BadRequest,
-  isValidHttpMethod,
-  MethodNotAllowed,
-  Unauthorized,
-} from '@/lib/api';
+import { BadRequest, Unauthorized } from '@/lib/api';
 
 import type { NextApiRequest, NextApiResponse } from 'next/types';
+import { authOptions } from '../../auth/[...nextauth]/route';
 
-export default async function handler(
+export default async function DELETE(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (!isValidHttpMethod(req.method, ['DELETE'])) {
-    return MethodNotAllowed(res);
-  }
-
   const session = await getServerSession(req, res, authOptions);
   const { id } = req.query;
 

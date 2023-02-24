@@ -2,8 +2,10 @@
 - Add metadata
 - Remake og image design
 
-- app dir api routes
 - Refactor messages
+- Add a loading skeleton
+- edge runtime?
+- Performance improvements
 
 - Command menu
 - Fix mobile ui
