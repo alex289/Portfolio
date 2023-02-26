@@ -61,12 +61,12 @@ export default function Footer() {
       text: 'GitHub',
     },
     {
-      href: 'https://github.com/alex289/Alex289/issues/new?assignees=alex289&labels=Contact&template=contact-template.md&title=%5BContact%5D+Your-title-here',
+      href: 'mailto:me@alexanderkonietzko.com',
       id: 'footer.contact',
       text: t('footer.contact'),
     },
     {
-      href: 'ttps://alexanderkonietzko.vercel.app/sitemap.xml',
+      href: 'https://alexanderkonietzko.vercel.app/sitemap.xml',
       id: 'footer.sitemap',
       text: t('footer.sitemap'),
     },
@@ -78,7 +78,16 @@ export default function Footer() {
         <NowPlaying />
         <div className="grid w-full max-w-3xl grid-cols-1 gap-4 pb-12 sm:grid-cols-4 sm:grid-rows-3">
           {links.map((link) =>
-            link.href.startsWith('https://') ? (
+            link.href.startsWith('/') ? (
+              <Link
+                key={link.id}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                href={`/${locale}/${link.href}` as any}
+                id={link.id}
+                className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
+                {link.text}
+              </Link>
+            ) : (
               <a
                 key={link.id}
                 href={link.href}
@@ -88,15 +97,6 @@ export default function Footer() {
                 className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
                 {link.text}
               </a>
-            ) : (
-              <Link
-                key={link.id}
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                href={`/${locale}/${link.href}` as any}
-                id={link.id}
-                className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
-                {link.text}
-              </Link>
             )
           )}
         </div>

@@ -1,6 +1,7 @@
 - Change locale on blog posts
 - Add metadata
 - Remake og image design
+- Migrate blog posts
 
 - Refactor messages
 - Add a loading skeleton
