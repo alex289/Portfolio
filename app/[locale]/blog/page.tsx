@@ -42,7 +42,8 @@ const BlogPage = () => {
           );
         }
       })
-      .filter((post) => post.language === locale);
+      .filter((post) => post.language === locale)
+      .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
   }, [filterBy, searchValue, locale]);
 
   return (

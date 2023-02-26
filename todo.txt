@@ -1,5 +1,4 @@
 - Remake og image design
-- Migrate blog posts
 
 - Refactor messages
 - Performance improvements

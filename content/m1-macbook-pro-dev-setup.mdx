@@ -1,0 +1,171 @@
+---
+title: 'M1 MacBook Pro Dev Setup'
+publishedAt: '2023-01-08'
+summary: 'I recently got a M1 MacBook Pro and wanted to share how I set it up for development'
+language: 'en'
+translation: 'm1-macbook-pro-code-setup'
+tags:
+  - Setup
+  - MacOS
+---
+
+<Image
+  alt={`MacBook Desktop`}
+  src={`/images/m1-macbook-pro-dev-setup/desktop.png`}
+  width={3024}
+  height={1964}
+  priority
+/>
+
+I recently got a M1 MacBook Pro and wanted to share how I set it up for development.
+
+## Table of contents
+
+- [Inspiration](#inspiration)
+- [Essentials](#essentials)
+- [Apps & Programs](#apps--programs)
+- [Terminal](#terminal)
+- [Useful packages](#useful-packages)
+- [System Configuration](#system-configuration)
+
+## Inspiration
+
+Before setting my machin up and knowing what good apps are out there I checked out these tutorials. Make sure to check them out.
+
+- [MacOS Setup by Thvu](https://thvu.notion.site/MacOS-Setup-622eb7a2f0184c079a7c42827dbd26e0#7457a164b0ed4db38cabf02b398538b0)
+- [Setting up new M1 Pro MacBook Pro 14” by Andres Vidoza
+  ](https://www.youtube.com/watch?v=hafaO6hU96E)
+- [Setting up a Mac for Development by CodingGarden](https://www.youtube.com/watch?v=2_ZbslLnshw)
+
+## Essentials
+
+> Before starting the actual setup please make sure your machine has the latest version and got all updates.
+
+- Enable the firewall in the system settings! This is very important
+- Install XCode
+
+```bash
+xcode-select --install
+```
+
+- Install the package manager [Homebrew](https://brew.sh)
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+- Install the essential environments and CLIs you need
+
+```bash
+brew install git node neovim
+```
+
+- I really recommend signing your git commits. Read [here](https://withblue.ink/2020/05/17/how-and-why-to-sign-git-commits.html) why and how to do it.
+- Now its time to create a `~/code` or `~/dev` folder and clone all your project repos locally.
+
+## Apps & Programs
+
+Install all apps and programs you need with brew. This is a list of all things I installed:
+
+```bash
+brew install --cask iterm2 visual-studio-code google-chrome notion spotify rectangle alt-tab devtoys postman stats 1password
+```
+
+- [iTerm2](https://iterm2.com) - Terminal emulator
+- [Visual Studio Code](https://code.visualstudio.com) - Code editor
+- [Google Chrome](https://www.google.com/chrome) - Browser for developing
+- [Notion](https://www.notion.so/de-de) - Tool for creating notes, docs and more
+- [Spotify](https://spotify.com) - Music provider
+- [Rectangle](https://rectangleapp.com) - Window management tool for MacOS
+- [Alt-Tab](https://alt-tab-macos.netlify.app) - Windows alt-tab on MacOS
+- [Devtoys](https://github.com/ObuchiYuki/DevToysMac) - Useful developer tools
+- [Postman](https://www.postman.com) - API building and testing platform
+- [Stats](https://github.com/exelban/stats) - System monitor in your menu bar
+- [Raycast](https://www.raycast.com) - Better Spotlight
+- [1Password](https://1password.com) - Password management
+
+## Terminal
+
+> This requires the zsh command line which is the default on MacBooks since 2019.
+
+- Install [Oh My Zsh](https://ohmyz.sh)
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+- Install the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme
+
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+- Install and set a [nerd font](https://www.nerdfonts.com) of your choice
+- Restart your terminal and configure Powerlevel10k
+
+```bash
+p10k configure
+```
+
+- Update your `~/.zshrc` to your liking. I have an example of what you can do in my [dotfiles repo](https://github.com/alex289/dotfiles/tree/main/mac).
+
+## Useful packages
+
+> Install all of these with `brew`.
+
+- bat - view file contents in your terminal
+- exa - better ls
+- neovim - terminal code editor. I use the [AstroNvim](https://astronvim.github.io) configuration
+- tmux - Terminal multiplexer
+- zoxide - autojumper
+
+The configuration and use of all of these can be seen in my [dotfiles repo](https://github.com/alex289/dotfiles/tree/main/mac).
+
+### Npm packages
+
+- Eslint
+- npm-check-updates
+- pnpm
+- prettier
+- serve
+- typescript
+- yarn
+- case-police
+
+## System configuration
+
+- Show file name extensions by default
+
+```bash
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+```
+
+- Show all file extensions
+
+```bash
+defaults write -g AppleShowAllExtensions -bool true
+```
+
+- Show path bar and status bar
+
+```bash
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+```
+
+- Dont write DS_Store
+
+```bash
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+```
+
+- Show all hidden files
+
+```bash
+defaults write com.apple.Finder AppleShowAllFiles true
+```
+
+## Conclusion
+
+I hope you liked my setup. Let me know your feedback in the comments. ❤️
