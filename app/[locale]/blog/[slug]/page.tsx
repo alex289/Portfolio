@@ -9,12 +9,56 @@ import { getLocale } from 'next-intl/server';
 import ViewCounter from '@/components/blog/views-counter';
 import { Mdx } from 'components/blog/mdx';
 
+import type { Metadata } from 'next/types';
+
 // export async function generateStaticParams() {
 //   return allBlogs.map((post) => ({
 //     locale: post.language,
 //     slug: post.slug,
 //   }));
 // }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata | undefined> {
+  const post = allBlogs.find((post) => post.slug === params.slug);
+  if (!post) {
+    return;
+  }
+
+  const {
+    title,
+    publishedAt: publishedTime,
+    summary: description,
+    slug,
+  } = post;
+  const ogImage = `https://alexanderkonietzko.vercel.app/api/og?title=${title}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      publishedTime,
+      url: `https://alexanderkonietzko.vercel.app/blog/${slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
+}
 
 export default async function Blog({ params }: { params: { slug: string } }) {
   const locale = await getLocale();

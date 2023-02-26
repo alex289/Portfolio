@@ -6,6 +6,15 @@ import { getProjects, getStats } from '@/lib/projects';
 
 import Project from '@/components/projects';
 
+import type { Metadata } from 'next/types';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
+  return {
+    title: t('main.projects'),
+  };
+}
+
 const ProjectsPage = async () => {
   const [stats, projects, t] = await Promise.all([
     getStats(),

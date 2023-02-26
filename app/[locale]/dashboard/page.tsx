@@ -11,6 +11,12 @@ import Track from '@/components/track';
 import { redirect } from 'next/navigation';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
+import type { Metadata } from 'next/types';
+
+export const metadata: Metadata = {
+  title: 'Dashboard',
+};
+
 const getViewsCount = async () => {
   const { sum } = queryBuilder.fn;
   const data = await queryBuilder

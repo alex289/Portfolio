@@ -7,6 +7,15 @@ import GuestbookForm from '@/components/guestbook/guestbook-form';
 import GuestbookEntry from '@/components/guestbook/guestbook-entry';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
+import type { Metadata } from 'next/types';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
+  return {
+    title: t('guestbook.title'),
+  };
+}
+
 async function getGuestbook() {
   const data = await queryBuilder
     .selectFrom('guestbook')

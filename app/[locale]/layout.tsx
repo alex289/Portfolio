@@ -1,6 +1,6 @@
 import '@/styles/global.css';
 
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 
 import { ServerThemeProvider } from '@wits/next-themes';
@@ -12,7 +12,77 @@ import ProviderWrapper from '@/components/theme';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
+import type { Metadata } from 'next/types';
+
 const inter = Inter();
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Alexander Konietzko',
+    template: '%s | Alexander Konietzko',
+  },
+  authors: [{ name: 'Alexander Konietzko' }],
+  applicationName: 'Alexander Konietzko',
+  description: 'Software developer, TypeScript enthusiast and dual student',
+  openGraph: {
+    title: 'Alexander Konietzko',
+    description: 'Software developer, TypeScript enthusiast and dual student',
+    url: 'https://alexanderkonietzko.vercel.app',
+    siteName: 'Alexander Konietzko',
+    images: [
+      {
+        url: 'https://alexanderkonietzko.vercel.app/api/og',
+        width: 1920,
+        height: 1080,
+      },
+    ],
+    locale: 'en-US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    title: 'Alexander Konietzko',
+    card: 'summary_large_image',
+    description: 'Software developer, TypeScript enthusiast and dual student',
+    images: ['https://alexanderkonietzko.vercel.app/api/og'],
+  },
+  icons: {
+    shortcut: '/static/favicon.ico',
+    apple: '/static/icon/apple-touch-icon.png',
+    other: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        url: '/static/icon/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        url: '/static/icon/favicon-16x16.png',
+      },
+    ],
+  },
+  manifest: '/static/site.webmanifest',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
+  verification: {
+    google: '64Pb4e1oRhhlHgM6aJGvqSunCfPa38sJ5ZHPfLNtzts',
+  },
+};
 
 export default async function RootLayout({
   children,

@@ -1,5 +1,9 @@
 import { queryBuilder } from '@/lib/db';
 
+export const config = {
+  runtime: 'edge',
+};
+
 export async function GET() {
   try {
     const data = await queryBuilder

@@ -2,8 +2,18 @@ import Image from 'next/image';
 
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 import avatar from '@/public/static/images/konietzko_alexander.jpg';
+
+import type { Metadata } from 'next/types';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
+  return {
+    title: t('main.about'),
+  };
+}
 
 const AboutPage = () => {
   const t = useTranslations();
