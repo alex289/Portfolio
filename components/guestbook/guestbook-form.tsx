@@ -41,7 +41,7 @@ export default function GuestbookForm({
 
     const res = await fetch('/api/guestbook', {
       body: JSON.stringify({
-        body: inputEl.current.value,
+        value: inputEl.current.value,
       }),
       headers: {
         'Content-Type': 'application/json',

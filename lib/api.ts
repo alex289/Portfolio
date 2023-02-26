@@ -1,11 +1,4 @@
-import type { NextApiResponse } from 'next/types';
-
-export const BadRequest = (res: NextApiResponse, message?: string) => {
-  res.setHeader('Content-Type', 'application/json');
-  return res.status(400).json({ message: message || 'Bad request' });
-};
-
-export const BadRequestEdge = (message?: string) => {
+export const BadRequest = (message?: string) => {
   return new Response(JSON.stringify({ message: message || 'Bad request' }), {
     status: 400,
     headers: {
@@ -14,16 +7,11 @@ export const BadRequestEdge = (message?: string) => {
   });
 };
 
-export const Unauthorized = (res: NextApiResponse) => {
-  res.setHeader('Content-Type', 'application/json');
-  return res.status(401).json({ message: 'Unauthorized' });
-};
-
-export const ServerError = (res: NextApiResponse, error: unknown) => {
-  res.setHeader('Content-Type', 'application/json');
-  if (error instanceof Error) {
-    return res.status(500).json({ message: error.message });
-  } else {
-    return res.status(500).json({ message: 'Unknown error' });
-  }
+export const Unauthorized = () => {
+  return new Response(JSON.stringify({ message: 'Unauthorized' }), {
+    status: 401,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 };
