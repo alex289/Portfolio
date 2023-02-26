@@ -81,8 +81,7 @@ export default function Footer() {
             link.href.startsWith('/') ? (
               <Link
                 key={link.id}
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                href={`/${locale}/${link.href}` as any}
+                href={`/${locale}/${link.href}`}
                 id={link.id}
                 className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
                 {link.text}

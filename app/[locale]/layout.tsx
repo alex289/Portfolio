@@ -14,7 +14,7 @@ import Footer from '@/components/footer';
 
 import type { Metadata } from 'next/types';
 
-const inter = Inter();
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {

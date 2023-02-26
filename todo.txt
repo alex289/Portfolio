@@ -1,4 +1,3 @@
-- Change locale on blog posts
 - Remake og image design
 - Migrate blog posts
 

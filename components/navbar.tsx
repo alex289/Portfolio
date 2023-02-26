@@ -1,13 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from 'next-intl/client';
 import { useTheme } from '@wits/next-themes';
 import { Command } from 'lucide-react';
+import { allBlogs } from 'contentlayer/generated';
 import clsx from 'clsx';
-import Link from 'next/link';
 
 import ThemeToggleIcon from './icons/theme-icon';
 
@@ -16,6 +17,16 @@ const Navbar = () => {
   const t = useTranslations();
   const locale = useLocale();
   const path = usePathname();
+
+  const getTranslationPath = () => {
+    const nextLocale = locale === 'de' ? 'en' : 'de';
+    if (path?.includes('/blog/')) {
+      const slug = path.substring(path.lastIndexOf('/') + 1);
+      const post = allBlogs.find((post) => post.slug === slug);
+      return `/${nextLocale}/blog/${post?.translation}`;
+    }
+    return `/${nextLocale}${path}`;
+  };
 
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -91,7 +102,7 @@ const Navbar = () => {
             {mounted && <ThemeToggleIcon theme={resolvedTheme} />}
           </button>
           <Link
-            href={`/${locale === 'de' ? 'en' : 'de'}${path}`}
+            href={getTranslationPath()}
             scroll={false}
             shallow
             locale={locale === 'de' ? 'en' : 'de'}
