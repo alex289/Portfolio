@@ -35,6 +35,7 @@ export async function generateMetadata({
     summary: description,
     slug,
     language,
+    tags,
   } = post;
 
   const formattedDate = new Date(publishedTime).toLocaleDateString(
@@ -53,6 +54,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    keywords: tags,
     openGraph: {
       title,
       description,

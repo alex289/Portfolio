@@ -17,13 +17,13 @@ export default function PostCard({ title, excerpt, slug, date, tags }: Props) {
   const locale = useLocale();
 
   return (
-    <Link
-      href={`/${locale}/blog/${slug}`}
-      className="mb-8 w-full md:rounded-md md:p-3 md:hover:bg-gray-200 md:dark:hover:bg-gray-700">
+    <div className="mb-8 w-full md:rounded-md md:p-3 md:hover:bg-gray-200 md:dark:hover:bg-gray-700">
       <div className="flex flex-col justify-between md:flex-row">
-        <div className="mb-2 w-full cursor-pointer text-lg font-medium text-gray-900 dark:text-gray-100 md:text-xl">
+        <Link
+          href={`/${locale}/blog/${slug}`}
+          className="mb-2 w-full cursor-pointer text-lg font-medium text-gray-900 dark:text-gray-100 md:text-xl">
           {title}
-        </div>
+        </Link>
         <p className="mb-4 min-w-fit max-w-full text-left text-gray-900 dark:text-[#c2c2c2] md:mb-0 md:text-right">
           <ViewCounter slug={slug} trackView={false} /> |{' '}
           {new Date(date).toLocaleDateString(
@@ -55,6 +55,6 @@ export default function PostCard({ title, excerpt, slug, date, tags }: Props) {
             );
           })}
       </div>
-    </Link>
+    </div>
   );
 }
