@@ -35,17 +35,17 @@ const GuestbookPage = async () => {
   const [entries, session, t, locale] = await Promise.all([
     getGuestbook(),
     getServerSession(authOptions),
-    getTranslations(),
+    getTranslations('guestbook'),
     getLocale(),
   ]);
 
   return (
     <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
       <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-        {t('guestbook.title')}
+        {t('title')}
       </h1>
       <p className="mb-3 text-gray-600 dark:text-[#c2c2c2]">
-        {t('guestbook.description')}
+        {t('description')}
       </p>
 
       <GuestbookForm session={session} />
@@ -57,7 +57,7 @@ const GuestbookPage = async () => {
               entry={entry}
               session={session}
               locale={locale}
-              deleteText={t('guestbook.delete')}
+              deleteText={t('delete')}
             />
           ))}
       </div>

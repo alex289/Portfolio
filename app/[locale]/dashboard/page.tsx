@@ -41,7 +41,7 @@ const DashboardPage = async () => {
   const [session, t, locale, viewsCount, guesbookEntriesCount, topTracks] =
     await Promise.all([
       getServerSession(authOptions),
-      getTranslations(),
+      getTranslations('dashboard'),
       getLocale(),
       getViewsCount(),
       getGuestbookEntriesCount(),
@@ -55,7 +55,7 @@ const DashboardPage = async () => {
   if (!session || !session.user.isAdmin) {
     return (
       <div className="mx-auto my-10 h-[30em] text-lg font-bold">
-        {t('dashboard.unauthorized')}
+        {t('unauthorized')}
       </div>
     );
   }
@@ -66,23 +66,23 @@ const DashboardPage = async () => {
         Dashboard
       </h1>
       <p className="mb-2">
-        {t('dashboard.logged-in')} {session.user?.email} (
+        {t('logged-in')} {session.user?.email} (
         <SignOutButton />)
       </p>
       <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
         <h2 className="mt-3 text-xl font-bold sm:col-span-2">
-          {t('dashboard.blog-guestbook')}
+          {t('blog-guestbook')}
         </h2>
-        <Metric title={t('dashboard.metrics.blog-views')}>{viewsCount}</Metric>
-        <Metric title={t('dashboard.metrics.posts-count')}>
+        <Metric title={t('metrics.blog-views')}>{viewsCount}</Metric>
+        <Metric title={t('metrics.posts-count')}>
           {allBlogs.filter((x) => x.language === locale)?.length}
         </Metric>
-        <Metric title={t('dashboard.metrics.guestbook-entries')}>
+        <Metric title={t('metrics.guestbook-entries')}>
           {guesbookEntriesCount}
         </Metric>
       </div>
       <h2 className="mb-4 mt-16 text-3xl font-bold tracking-tight text-black dark:text-white">
-        {t('dashboard.top-tracks')}
+        {t('top-tracks')}
       </h2>
       {topTracks.tracks.map((track, index) => (
         <Track ranking={index + 1} key={track.songUrl} {...track} />
