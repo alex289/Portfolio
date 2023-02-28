@@ -1,73 +1,82 @@
-// import { ImageResponse } from '@vercel/og';
+/* eslint-disable @next/next/no-img-element */
+import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
 export const config = {
   runtime: 'edge',
 };
 
-// waiting for https://github.com/vercel/satori/issues/410
-
 export function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
 
     const hasTitle = searchParams.has('title');
-    const title = hasTitle
-      ? searchParams.get('title')?.slice(0, 100)
-      : 'Alexander Konietzko';
+    const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : '';
 
-    /* return new ImageResponse(
+    const hasHeaderInformation = searchParams.has('header');
+    const header = hasHeaderInformation
+      ? searchParams.get('header')?.slice(0, 100)
+      : '';
+
+    return new ImageResponse(
       (
         <div
           style={{
             height: '100%',
             width: '100%',
+            backgroundColor: '#222222',
+            color: '#eaeaea',
+            fontSize: 35,
             display: 'flex',
-            textAlign: 'center',
-            alignItems: 'center',
-            justifyContent: 'center',
             flexDirection: 'column',
-            flexWrap: 'nowrap',
-            backgroundColor: 'white',
-            backgroundImage:
-              'radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
-            backgroundSize: '100px 100px',
           }}>
+          {hasHeaderInformation && (
+            <div
+              style={{
+                paddingTop: '2em',
+                paddingLeft: '2em',
+              }}>
+              {header}
+            </div>
+          )}
+
           <div
             style={{
+              marginTop: '2.5em',
+              marginBottom: 'auto',
+              fontSize: 100,
+              paddingLeft: '1em',
+              paddingRight: '1em',
+              color: '#818cf8',
+              fontWeight: 800,
+            }}>
+            {title}
+          </div>
+
+          <div
+            style={{
+              marginBottom: '2em',
+              marginLeft: '2em',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
             }}>
-            <svg
-              height={80}
-              viewBox="0 0 75 65"
-              fill="black"
-              style={{ margin: '0 75px' }}>
-              <path d="M37.59.25l36.95 64H.64l36.95-64z"></path>
-            </svg>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              fontSize: 40,
-              fontStyle: 'normal',
-              color: 'black',
-              marginTop: 30,
-              lineHeight: 1.8,
-              whiteSpace: 'pre-wrap',
-            }}>
-            <b>{title}</b>
+            Alexander Konietzko
+            <img
+              src="https://alexanderkonietzko.vercel.app/static/images/konietzko_alexander.png"
+              alt="Alexander Konietzko"
+              style={{
+                width: '3em',
+                marginLeft: 'auto',
+                marginRight: '2em',
+              }}></img>
           </div>
         </div>
       ),
       {
-        width: 1200,
-        height: 630,
+        width: 1920,
+        height: 1080,
       }
-    );*/
-
-    return new Response('Not implemented yet');
+    );
   } catch (e) {
     return new Response(`Failed to generate the image`, {
       status: 500,

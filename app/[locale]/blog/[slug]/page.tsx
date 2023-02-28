@@ -31,10 +31,24 @@ export async function generateMetadata({
   const {
     title,
     publishedAt: publishedTime,
+    readingTime,
     summary: description,
     slug,
+    language,
   } = post;
-  const ogImage = `https://alexanderkonietzko.vercel.app/api/og?title=${title}`;
+
+  const formattedDate = new Date(publishedTime).toLocaleDateString(
+    language === 'de' ? 'de-DE' : 'en-US',
+    {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    }
+  );
+
+  const ogImage = `https://alexanderkonietzko.vercel.app/api/og?title=${title}&header=${
+    formattedDate + ' • ' + readingTime
+  }`;
 
   return {
     title,

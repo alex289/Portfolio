@@ -89,7 +89,6 @@
     "description": "Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!",
     "login": "Sign in with ",
     "logout": "Sign out",
-    "logged-in-as": "Logged in as",
     "form": {
       "title": "Sign the Guestbook",
       "description": "Share a message for a future visitor of my site.",

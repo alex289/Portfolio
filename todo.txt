@@ -1,8 +1,9 @@
-- Remake og image design
-
 - Refactor messages
 - Performance improvements
 - Refactor blog page (Add metadata)
+
+- about page tools
+- 404 page
 
 - Command menu
 - Fix mobile ui

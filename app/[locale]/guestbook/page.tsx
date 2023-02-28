@@ -57,6 +57,7 @@ const GuestbookPage = async () => {
               entry={entry}
               session={session}
               locale={locale}
+              deleteText={t('guestbook.delete')}
             />
           ))}
       </div>

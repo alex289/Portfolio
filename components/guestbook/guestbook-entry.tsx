@@ -14,12 +14,14 @@ type GuestBookEntryProps = {
   };
   session: Session | null;
   locale: string;
+  deleteText: string;
 };
 
 export default function GuestbookEntry({
   entry,
   session,
   locale,
+  deleteText,
 }: GuestBookEntryProps) {
   const router = useRouter();
   const deleteEntry = async () => {
@@ -65,7 +67,7 @@ export default function GuestbookEntry({
               <button
                 className="text-sm text-red-600 dark:text-red-400"
                 onClick={deleteEntry}>
-                Delete
+                {deleteText}
               </button>
             </>
           )}
