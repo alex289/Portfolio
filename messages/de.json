@@ -34,7 +34,7 @@
     }
   },
   "about-page": {
-    "text-1": "Hey, ich bin Alex. Ich bin $AGE Jahre \nalt und komme aus Deutschland. Ich lebe in NRW und in meiner Freizeit \nspiele ich Klavier, mache Sport oder genieße die Zeit mit Freunden und der Familie.",
+    "text-1": "Hey, ich bin Alex. Ich bin {age} Jahre \nalt und komme aus Deutschland. Ich lebe in NRW und in meiner Freizeit \nspiele ich Klavier, mache Sport oder genieße die Zeit mit Freunden und der Familie.",
     "text-2": "Ich hab angefangen mit Computern zu spielen als ich klein war und habe in der Schule \nmit dem programmieren angefangen. Nach meinem Abitur habe ich mein duales Studium bei \nNetgo begonnen wo ich arbeite und der Westfälische Hochschule wo ich studiere.",
     "text-3": "Ich lerne gerade .NET Core und Angular aber mein lieblings Framework ist \nNextJs. Irgendwann möchte ich einen eigenen Kubernetes Cluster bauen mit \nBackend Services, Datenbanken und einem soliden Frontend kombiniert \nduch Nginx.",
     "website": "Webseite",
@@ -80,7 +80,7 @@
     "return-home": "Zurück zur Startseite"
   },
   "blog": {
-    "description": "Ich schreibe Artikel seit 2022, meistens über Web-Entwicklung und irgendwelches Zeug. Bisher habe ich $AMOUNT Artikel auf meinem Blog geschrieben. Benutze die Suchleiste zum filtern von Artikeln.",
+    "description": "Ich schreibe Artikel seit 2022, meistens über Web-Entwicklung und irgendwelches Zeug. Bisher habe ich {amount} Artikel auf meinem Blog geschrieben. Benutze die Suchleiste zum filtern von Artikeln.",
     "no-posts": "Keinen Beitrag gefunden.",
     "all-posts": "Alle Beiträge",
     "search": "Suchen",

@@ -4,13 +4,14 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 import { Search } from 'lucide-react';
-import { allBlogs } from 'contentlayer/generated';
+
 import { useLocale, useTranslations } from 'next-intl';
 
 import PostFilter from '@/components/blog/post-filter';
 import PostCard from '@/components/blog/post-card';
+import { Blog } from '@/.contentlayer/generated';
 
-const PostList = () => {
+const PostList = ({ allBlogs }: { allBlogs: Blog[] }) => {
   const t = useTranslations('blog');
   const locale = useLocale();
 
@@ -44,7 +45,7 @@ const PostList = () => {
       })
       .filter((post) => post.language === locale)
       .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-  }, [filterBy, searchValue, locale]);
+  }, [allBlogs, filterBy, searchValue, locale]);
 
   return (
     <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
@@ -52,10 +53,9 @@ const PostList = () => {
         Blog
       </h1>
       <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
-        {t('description').replace(
-          '$AMOUNT',
-          allBlogs.filter((post) => post.language === locale).length.toString()
-        )}
+        {t('description', {
+          amount: allBlogs.filter((post) => post.language === locale).length,
+        })}
       </p>
       <div className="relative mb-4 w-full">
         <input

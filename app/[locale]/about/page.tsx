@@ -26,9 +26,7 @@ const AboutPage = () => {
         {t('main.about')}
       </h1>
       <div className="mb-16 text-gray-600 dark:text-[#c2c2c2]">
-        <p className="mb-6">
-          {t('about-page.text-1')?.replace('$AGE', age.toString())}
-        </p>
+        <p className="mb-6">{t('about-page.text-1', { age })}</p>
         <p className="mb-6">{t('about-page.text-2')}</p>
         <p>{t('about-page.text-3')}</p>
       </div>

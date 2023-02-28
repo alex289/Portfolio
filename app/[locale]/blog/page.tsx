@@ -1,4 +1,5 @@
 import PostList from '@/components/blog/post-list';
+import { allBlogs } from 'contentlayer/generated';
 import type { Metadata } from 'next/types';
 
 export const metadata: Metadata = {
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const BlogPage = () => {
-  return <PostList />;
+  return <PostList allBlogs={allBlogs} />;
 };
 
 export default BlogPage;
