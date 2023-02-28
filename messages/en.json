@@ -74,6 +74,11 @@
     "description": "Why show a generic 404 when I can make it sound mysterious? It seems \nyou've found something that used to exist, or you spelled \nsomething wrong. I'm guessing you spelled something wrong. Can \nyou double check that URL?",
     "return-home": "Return Home"
   },
+  "error": {
+    "title": "Something went wrong",
+    "description": "I'm sorry, but something went wrong. Please try again later.",
+    "return-home": "Return home"
+  },
   "blog": {
     "description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written $AMOUNT articles on my blog. Use the search below to filter by title.",
     "no-posts": "No posts found.",

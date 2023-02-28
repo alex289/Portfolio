@@ -74,6 +74,11 @@
     "description": "Wozu einen 404 Fehler zeigen wenn ich es mysteriös machen kann? Es scheint als würde das nicht existieren was du suchst, oder du hast es falsch geschrieben. Ich glaub du hast was falsch geschrieben. Kannst du das nochmal prüfen?",
     "return-home": "Zurück zur Startseite"
   },
+  "error": {
+    "title": "Etwas ist schief gelaufen",
+    "description": "Es scheint als wäre etwas schief gelaufen. Bitte versuche es später nochmal.",
+    "return-home": "Zurück zur Startseite"
+  },
   "blog": {
     "description": "Ich schreibe Artikel seit 2022, meistens über Web-Entwicklung und irgendwelches Zeug. Bisher habe ich $AMOUNT Artikel auf meinem Blog geschrieben. Benutze die Suchleiste zum filtern von Artikeln.",
     "no-posts": "Keinen Beitrag gefunden.",
