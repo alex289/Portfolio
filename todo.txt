@@ -1,6 +1,3 @@
-- about page tools
-- featured blog posts
-
 - Command menu
 - Fix mobile ui
 - Update database

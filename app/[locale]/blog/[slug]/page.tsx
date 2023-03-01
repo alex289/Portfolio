@@ -10,6 +10,7 @@ import ViewCounter from '@/components/blog/views-counter';
 import { Mdx } from 'components/blog/mdx';
 
 import type { Metadata } from 'next/types';
+import clsx from 'clsx';
 
 // export async function generateStaticParams() {
 //   return allBlogs.map((post) => ({
@@ -127,7 +128,10 @@ export default async function Blog({ params }: { params: { slug: string } }) {
           <Link
             href={`/blog?filter=tag&search=${tag}`}
             key={tag}
-            className="mx-2 rounded-xl border border-gray-600 px-2 py-1 hover:bg-gray-200 dark:border-gray-400 dark:hover:bg-gray-600">
+            className={clsx(
+              'mx-2 mt-1 rounded border border-indigo-500 py-1 px-3 text-indigo-500',
+              'hover:border-indigo-600 hover:text-indigo-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400'
+            )}>
             {tag}
           </Link>
         ))}

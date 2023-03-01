@@ -4,6 +4,8 @@ import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
+import Tools from '@/components/tools';
+
 import avatar from '@/public/static/images/konietzko_alexander.jpg';
 
 import type { Metadata } from 'next/types';
@@ -33,7 +35,7 @@ const AboutPage = () => {
       <h1 className="text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
         Links
       </h1>
-      <div className="prose mb-10 text-gray-600 dark:text-[#c2c2c2]">
+      <div className="prose mb-16 text-gray-600 dark:text-[#c2c2c2]">
         <ul className="list-disc">
           <li>
             GitHub:{' '}
@@ -120,11 +122,11 @@ const AboutPage = () => {
       <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
         {t('about-page.tools.title')}
       </h1>
-      <div className="mb-10">
+      <div className="mb-16">
         <p className="text-gray-500 dark:text-[#c2c2c2]">
           {t('about-page.tools.text')}
         </p>
-        Tools
+        <Tools />
       </div>
 
       <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">

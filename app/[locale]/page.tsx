@@ -9,6 +9,7 @@ import { getProjects } from '@/lib/projects';
 
 import profilePic from '@/public/static/images/konietzko_alexander.jpg';
 import Project from '@/components/projects';
+import FeaturedPost from '@/components/blog/featured-post';
 
 const Index = async () => {
   const [projects, t] = await Promise.all([getProjects(3), getTranslations()]);
@@ -44,6 +45,24 @@ const Index = async () => {
       <h3 className="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
         Featured Posts
       </h3>
+
+      <div className="flex flex-col gap-6 md:flex-row">
+        <FeaturedPost
+          title={t('index-page.posts.1.title')}
+          slug={t('index-page.posts.1.slug')}
+          gradient="from-[#D8B4FE] via-[#726dde] to-[#818CF8]"
+        />
+        <FeaturedPost
+          title={t('index-page.posts.2.title')}
+          slug={t('index-page.posts.2.slug')}
+          gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
+        />
+        <FeaturedPost
+          title={t('index-page.posts.3.title')}
+          slug={t('index-page.posts.3.slug')}
+          gradient="from-[#9333EA] via-[#818CF8] to-[#3B82F6]"
+        />
+      </div>
 
       <Link
         href={`/${locale}/blog`}
