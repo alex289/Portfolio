@@ -18,6 +18,25 @@ const nextConfig = {
         source: '/:path*',
         headers: securityHeaders,
       },
+      {
+        source: '/((?!_next|assets|favicon.ico).*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: [
+              `s-maxage=` + 86400000 / 1000,
+              `stale-while-revalidate=` + 31536000000 / 1000,
+            ].join(', '),
+          },
+        ],
+
+        missing: [
+          {
+            type: 'header',
+            key: 'Next-Router-Prefetch',
+          },
+        ],
+      },
     ];
   },
 };

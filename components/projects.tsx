@@ -23,7 +23,12 @@ const Project = ({
                 {project.name}
               </p>
             </div>
-            <p className="col-span-2">{project.description}</p>
+            <p
+              className={`col-span-2 ${
+                project.description.length > 65 && 'truncate'
+              }`}>
+              {project.description}
+            </p>
             <sub className="md:mx-4 md:hidden">{project.language}</sub>
             <p className="hidden md:mx-4 md:inline">{project.language}</p>
             <div className="flex flex-row justify-end gap-x-4">
