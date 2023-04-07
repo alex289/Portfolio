@@ -7,3 +7,6 @@ Waiting Todos:
 - rss feed
 - generateStaticParams
 - scroll positions support
+
+Test out:
+- https://github.com/konstantin-paulus/reveal-on-scroll-react

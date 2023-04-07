@@ -114,7 +114,9 @@ export default async function RootLayout({
                 Skip to content
               </a>
               <Navbar />
-              <main className="mx-auto mb-16 max-w-3xl" id="skip">
+              <main
+                className="mx-auto mb-16 flex max-w-3xl flex-col justify-center px-8 dark:bg-gray-800 md:mt-6 md:px-0"
+                id="skip">
                 {children}
                 <AnalyticsWrapper />
               </main>
