@@ -12,7 +12,7 @@ type Props = {
 
 export default function ViewCounter({ slug }: Props) {
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
-  const views = new Number(data?.total);
+  const views = data?.total ?? -1;
 
   useEffect(() => {
     const registerView = () =>
