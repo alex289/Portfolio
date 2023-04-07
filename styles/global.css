@@ -56,7 +56,7 @@ html {
 }
 
 .skip-nav {
-  @apply absolute left-1/4 -top-8 -translate-y-12 transform px-4 py-2 transition-transform duration-200 focus:translate-y-3;
+  @apply absolute -top-8 left-1/4 -translate-y-12 transform px-4 py-2 transition-transform duration-200 focus:translate-y-3;
 }
 
 .prose .anchor {

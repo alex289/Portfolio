@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
@@ -27,7 +27,7 @@ Router.events.on('routeChangeStart', (_url, { shallow }) => {
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-const normal = Inter();
+const normal = Inter({ subsets: ['latin'] });
 
 const App: AppType<{ session: Session | null }> = ({
   Component,

@@ -85,7 +85,7 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
           />
         </div>
         <Suspense>
-          <h2 className="mt-8 mb-5 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
+          <h2 className="mb-5 mt-8 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
             {t('blog.all-posts')} ({filteredBlogPosts.length})
           </h2>
           {!filteredBlogPosts.length && (
