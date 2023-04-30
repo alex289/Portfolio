@@ -1,4 +1,4 @@
-import { env } from '@/env.mjs';
+import env from '@/env.js';
 import type { Projects, Stats } from './types';
 
 export const getStats = async () => {

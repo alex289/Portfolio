@@ -1,7 +1,8 @@
-import { createEnv } from '@t3-oss/env-nextjs';
-import { z } from 'zod';
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { createEnv } = require('@t3-oss/env-nextjs');
+const { z } = require('zod');
 
-export const env = createEnv({
+const env = createEnv({
   clientPrefix: 'PUBLIC_',
   server: {
     DATABASE_URL: z.string().url(),
@@ -45,3 +46,5 @@ export const env = createEnv({
     NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL,
   },
 });
+
+module.exports = env;

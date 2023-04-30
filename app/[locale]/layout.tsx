@@ -12,7 +12,7 @@ import AnalyticsWrapper from '@/components/analytics';
 import ProviderWrapper from '@/components/theme';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import { env } from '@/env.mjs';
+import env from '@/env.js';
 
 import type { Metadata } from 'next/types';
 

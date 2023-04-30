@@ -26,7 +26,7 @@ specifiers:
   next: 13.3.2
   next-auth: 4.22.1
   next-contentlayer: ^0.3.2
-  next-intl: 2.14.0-beta.2
+  next-intl: 2.14.0-beta.3
   postcss: ^8.4.23
   prettier: ^2.8.8
   prettier-plugin-tailwindcss: ^0.2.8
@@ -64,7 +64,7 @@ dependencies:
   next: 13.3.2_rfdx5ocjtvb4b2h5j5ipjicct4
   next-auth: 4.22.1_gcoziurebgu6zyuvqklu6y76di
   next-contentlayer: 0.3.2_l4y2pn42ryq3xqutp7mbtwwcoa
-  next-intl: 2.14.0-beta.2_next@13.3.2+react@18.2.0
+  next-intl: 2.14.0-beta.3_next@13.3.2+react@18.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-wrap-balancer: 0.4.1_react@18.2.0
@@ -4052,8 +4052,8 @@ packages:
       - supports-color
     dev: false
 
-  /next-intl/2.14.0-beta.2_next@13.3.2+react@18.2.0:
-    resolution: {integrity: sha512-FDZlTXL6zetJOXETRvZ6g9nlJnZ2K9g7Yza3qbpcSkL5ATO7NnOVpJfcX2EaU0sfKqrC21Lcq1b9MM379vcwCw==}
+  /next-intl/2.14.0-beta.3_next@13.3.2+react@18.2.0:
+    resolution: {integrity: sha512-E6W3rGlNnFmWz7Ukvyj5aPoY4jSagMQAAL36zf3X8I/Vk4ciOWcx9XJ0NBs7irEM6e0uk/WLjyVt1bNlOgyqWQ==}
     engines: {node: '>=10'}
     peerDependencies:
       next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0

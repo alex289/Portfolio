@@ -9,7 +9,7 @@ import clsx from 'clsx';
 
 import ViewCounter from '@/components/blog/views-counter';
 import { Mdx } from 'components/blog/mdx';
-import { env } from '@/env.mjs';
+import env from '@/env.js';
 
 import type { Metadata } from 'next/types';
 

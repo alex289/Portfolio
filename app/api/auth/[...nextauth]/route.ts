@@ -1,7 +1,7 @@
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
-import { env } from '@/env.mjs';
+import env from '@/env.js';
 
 export const authOptions: NextAuthOptions = {
   secret: env.NEXTAUTH_SECRET,

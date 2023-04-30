@@ -1,4 +1,4 @@
-import { env } from '@/env.mjs';
+import env from '@/env.js';
 import { guestbook, views } from '@prisma/client';
 import { Generated, Kysely } from 'kysely';
 import { PlanetScaleDialect } from 'kysely-planetscale';
