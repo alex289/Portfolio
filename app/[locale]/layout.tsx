@@ -6,14 +6,15 @@ import { notFound } from 'next/navigation';
 import { ServerThemeProvider } from '@wits/next-themes';
 import { NextIntlClientProvider } from 'next-intl';
 import { useLocale } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 
 import AnalyticsWrapper from '@/components/analytics';
 import ProviderWrapper from '@/components/theme';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
+import { env } from '@/env.mjs';
 
 import type { Metadata } from 'next/types';
-import { getLocale } from 'next-intl/server';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,11 +31,11 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: 'Alexander Konietzko',
       description: 'Software developer, TypeScript enthusiast and dual student',
-      url: 'https://alexanderkonietzko.vercel.app',
+      url: env.NEXT_PUBLIC_VERCEL_URL,
       siteName: 'Alexander Konietzko',
       images: [
         {
-          url: 'https://alexanderkonietzko.vercel.app/api/og',
+          url: `${env.NEXT_PUBLIC_VERCEL_URL}/api/og`,
           width: 1920,
           height: 1080,
         },
@@ -57,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: 'Alexander Konietzko',
       card: 'summary_large_image',
       description: 'Software developer, TypeScript enthusiast and dual student',
-      images: ['https://alexanderkonietzko.vercel.app/api/og'],
+      images: [`${env.NEXT_PUBLIC_VERCEL_URL}/api/og`],
     },
     icons: {
       shortcut: '/static/favicon.ico',

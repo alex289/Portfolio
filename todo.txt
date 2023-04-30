@@ -1,6 +1,7 @@
 - Command menu
 - Fix mobile ui
 - Update database
+- checkout clerk
 
 Waiting Todos:
 - Global 404 page

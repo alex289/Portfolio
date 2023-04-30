@@ -21,7 +21,7 @@ export const env = createEnv({
     NEXT_PUBLIC_VERCEL_URL: z
       .string()
       .url()
-      .transform((url) => 'https://' + url)
+      .transform((url) => (url.startsWith('http') ? '' : 'https://') + url)
       .default('http://localhost:3000'),
   },
   runtimeEnv: {

@@ -5,12 +5,13 @@ import { notFound } from 'next/navigation';
 import Balancer from 'react-wrap-balancer';
 import { allBlogs } from 'contentlayer/generated';
 import { getLocale } from 'next-intl/server';
+import clsx from 'clsx';
 
 import ViewCounter from '@/components/blog/views-counter';
 import { Mdx } from 'components/blog/mdx';
+import { env } from '@/env.mjs';
 
 import type { Metadata } from 'next/types';
-import clsx from 'clsx';
 
 // export async function generateStaticParams() {
 //   return allBlogs.map((post) => ({
@@ -48,7 +49,7 @@ export async function generateMetadata({
     }
   );
 
-  const ogImage = `https://alexanderkonietzko.vercel.app/api/og?title=${title}&header=${
+  const ogImage = `${env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${title}&header=${
     formattedDate + ' • ' + readingTime
   }`;
 
@@ -61,7 +62,7 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `https://alexanderkonietzko.vercel.app/blog/${slug}`,
+      url: `${env.NEXT_PUBLIC_VERCEL_URL}/blog/${slug}`,
       images: [
         {
           url: ogImage,
