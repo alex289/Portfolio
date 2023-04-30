@@ -79,20 +79,20 @@ export default function GuestbookForm({
         <div className="my-1 flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
-            className="mr-2 mb-2 inline-flex items-center rounded-lg bg-[#24292F] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#24292F]/90 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 dark:hover:bg-[#050708]/30 dark:focus:ring-gray-500"
+            className="mb-2 mr-2 inline-flex items-center rounded-lg bg-[#24292F] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#24292F]/90 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 dark:hover:bg-[#050708]/30 dark:focus:ring-gray-500"
             onClick={() => {
               signIn('github');
             }}>
-            <GitHubIcon className="mr-2 -ml-1 h-4 w-4" />
+            <GitHubIcon className="-ml-1 mr-2 h-4 w-4" />
             {t('guestbook.login')}GitHub
           </button>
           <button
             type="button"
-            className="dark:focus:ring-[#4285F4]/55 mr-2 mb-2 inline-flex items-center rounded-lg bg-[#4285F4] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#4285F4]/90 focus:outline-none focus:ring-4 focus:ring-[#4285F4]/50"
+            className="dark:focus:ring-[#4285F4]/55 mb-2 mr-2 inline-flex items-center rounded-lg bg-[#4285F4] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#4285F4]/90 focus:outline-none focus:ring-4 focus:ring-[#4285F4]/50"
             onClick={() => {
               signIn('google');
             }}>
-            <GoogleIcon className="mr-2 -ml-1 h-4 w-4" />
+            <GoogleIcon className="-ml-1 mr-2 h-4 w-4" />
             {t('guestbook.login')}Google
           </button>
         </div>

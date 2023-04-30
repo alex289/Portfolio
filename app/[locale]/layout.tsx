@@ -110,7 +110,7 @@ export default async function RootLayout({
             <ProviderWrapper>
               <a
                 href="#skip"
-                className="absolute left-1/4 -top-8 -translate-y-12 transform px-4 py-2 transition-transform duration-200 focus:translate-y-3">
+                className="absolute -top-8 left-1/4 -translate-y-12 transform px-4 py-2 transition-transform duration-200 focus:translate-y-3">
                 Skip to content
               </a>
               <Navbar />

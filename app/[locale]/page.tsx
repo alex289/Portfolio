@@ -66,7 +66,7 @@ const Index = async () => {
 
       <Link
         href={`/${locale}/blog`}
-        className="mt-8 mb-16 flex h-6 cursor-pointer items-center rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
+        className="mb-16 mt-8 flex h-6 cursor-pointer items-center rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
         {t('index-page.posts.read-all')}
         <ArrowRight strokeWidth={1.5} className="ml-1" />
       </Link>
@@ -81,7 +81,7 @@ const Index = async () => {
 
       <Link
         href={`/${locale}/projects`}
-        className="mt-4 mb-16 flex h-6 cursor-pointer items-center rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
+        className="mb-16 mt-4 flex h-6 cursor-pointer items-center rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">
         {t('projects.see-more')}
         <ArrowRight strokeWidth={1.5} className="ml-1" />
       </Link>
