@@ -26,7 +26,7 @@ export const env = createEnv({
           return;
         }
 
-        return 'https://' + url + '.vercel.app';
+        return 'https://' + url;
       }),
   },
   runtimeEnv: {
