@@ -1,6 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { env } from './env.mjs';
 
+console.log(env.NEXT_PUBLIC_VERCEL_URL);
+
 import withNextIntl from 'next-intl/plugin';
 import { withContentlayer } from 'next-contentlayer';
 

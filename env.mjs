@@ -6,7 +6,7 @@ export const env = createEnv({
   server: {
     DATABASE_URL: z.string().url(),
     ADMIN_EMAIL: z.string().email(),
-    NEXTAUTH_URL: z.string().url(),
+    NEXTAUTH_URL: z.string().url().optional(),
     NEXTAUTH_SECRET: z.string(),
     GOOGLE_CLIENT_ID: z.string(),
     GOOGLE_CLIENT_SECRET: z.string(),
@@ -20,9 +20,14 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_VERCEL_URL: z
       .string()
-      .url()
-      .transform((url) => (url.startsWith('http') ? '' : 'https://') + url)
-      .default('http://localhost:3000'),
+      .default('http://localhost:3000')
+      .transform((url) => {
+        if (url === 'http://localhost:3000') {
+          return;
+        }
+
+        return 'https://' + url + '.vercel.app';
+      }),
   },
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
