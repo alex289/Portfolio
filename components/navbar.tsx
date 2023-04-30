@@ -28,7 +28,8 @@ const Navbar = () => {
       const post = allBlogs.find((post) => post.slug === slug);
       return `/${nextLocale}/blog/${post?.translation}`;
     }
-    return `/${nextLocale}${path}`;
+    const correctPath = path?.replace('/de', '').replace('/en', '');
+    return `/${nextLocale}${correctPath}`;
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);

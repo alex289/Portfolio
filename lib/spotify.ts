@@ -1,8 +1,9 @@
+import { env } from '@/env.mjs';
 import { ResponseTrackType, TopTracks } from './types';
 
-const client_id = process.env.SPOTIFY_CLIENT_ID;
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
-const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
+const client_id = env.SPOTIFY_CLIENT_ID;
+const client_secret = env.SPOTIFY_CLIENT_SECRET;
+const refresh_token = env.SPOTIFY_REFRESH_TOKEN;
 
 const basic = btoa(`${client_id}:${client_secret}`);
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;

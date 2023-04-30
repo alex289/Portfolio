@@ -1,3 +1,4 @@
+import { env } from '@/env.mjs';
 import type { Projects, Stats } from './types';
 
 export const getStats = async () => {
@@ -6,7 +7,7 @@ export const getStats = async () => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `bearer ${process.env.GITHUB_API_TOKEN}`,
+      Authorization: `bearer ${env.GITHUB_API_TOKEN}`,
     },
     body: JSON.stringify({
       query: `
@@ -84,7 +85,7 @@ export const getProjects = async (perPage = 10) => {
     {
       next: { revalidate: 60 * 60 * 24 },
       headers: {
-        Authorization: `bearer ${process.env.GITHUB_API_TOKEN}`,
+        Authorization: `bearer ${env.GITHUB_API_TOKEN}`,
       },
     }
   );

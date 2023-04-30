@@ -55,6 +55,7 @@
     "@headlessui/react": "^1.7.14",
     "@planetscale/database": "^1.7.0",
     "@prisma/client": "^4.13.0",
+    "@t3-oss/env-nextjs": "^0.2.2",
     "@tailwindcss/forms": "^0.5.3",
     "@vercel/analytics": "^1.0.0",
     "@vercel/og": "^0.5.4",
@@ -75,7 +76,8 @@
     "rehype-pretty-code": "^0.9.5",
     "sharp": "^0.32.1",
     "shiki": "^0.14.2",
-    "swr": "^2.1.5"
+    "swr": "^2.1.5",
+    "zod": "^3.21.4"
   },
   "nextBundleAnalysis": {
     "budget": 143360,

@@ -4,6 +4,7 @@ specifiers:
   '@headlessui/react': ^1.7.14
   '@planetscale/database': ^1.7.0
   '@prisma/client': ^4.13.0
+  '@t3-oss/env-nextjs': ^0.2.2
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': ^0.5.9
   '@types/node': ^18.16.3
@@ -43,11 +44,13 @@ specifiers:
   swr: ^2.1.5
   tailwindcss: ^3.3.2
   typescript: ^5.0.4
+  zod: ^3.21.4
 
 dependencies:
   '@headlessui/react': 1.7.14_biqbaboplfbrettd7655fr4n2y
   '@planetscale/database': 1.7.0
   '@prisma/client': 4.13.0_prisma@4.13.0
+  '@t3-oss/env-nextjs': 0.2.2_zod@3.21.4
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.3.2
   '@vercel/analytics': 1.0.0_react@18.2.0
   '@vercel/og': 0.5.4
@@ -69,6 +72,7 @@ dependencies:
   sharp: 0.32.1
   shiki: 0.14.2
   swr: 2.1.5_react@18.2.0
+  zod: 3.21.4
 
 devDependencies:
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.3.2
@@ -1166,6 +1170,23 @@ packages:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
       tslib: 2.4.0
+    dev: false
+
+  /@t3-oss/env-core/0.2.2_zod@3.21.4:
+    resolution: {integrity: sha512-Jiuph14/L3L9EDaU0O0YiLeaKUcWA9c3mWYuKem8+L64i3Iwz+IbKdl5Jp4cx+JbOsS/aptwGZplnxSHhm2gMQ==}
+    peerDependencies:
+      zod: ^3.0.0
+    dependencies:
+      zod: 3.21.4
+    dev: false
+
+  /@t3-oss/env-nextjs/0.2.2_zod@3.21.4:
+    resolution: {integrity: sha512-9LnVpTkf/8WkggyVN6Liz9Ma9a7fLzV00b5BngWj3HI3iWDfddsWaqCf/H0f46Bgu29NubP3Bwajf1JieVrxFA==}
+    peerDependencies:
+      zod: ^3.0.0
+    dependencies:
+      '@t3-oss/env-core': 0.2.2_zod@3.21.4
+      zod: 3.21.4
     dev: false
 
   /@tailwindcss/forms/0.5.3_tailwindcss@3.3.2:

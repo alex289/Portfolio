@@ -1,6 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const withNextIntl = require('next-intl/plugin')();
-const { withContentlayer } = require('next-contentlayer');
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { env } from './env.mjs';
+
+import withNextIntl from 'next-intl/plugin';
+import { withContentlayer } from 'next-contentlayer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -90,4 +92,4 @@ const securityHeaders = [
   },
 ];
 
-module.exports = withContentlayer(withNextIntl(nextConfig));
+export default withContentlayer(withNextIntl()(nextConfig));
