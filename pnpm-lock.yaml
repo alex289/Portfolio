@@ -12,7 +12,6 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.59.2
   '@vercel/analytics': ^1.0.0
   '@vercel/og': ^0.5.4
-  '@wits/next-themes': ^0.2.16
   autoprefixer: ^10.4.14
   clsx: ^1.2.1
   contentlayer: ^0.3.2
@@ -27,6 +26,7 @@ specifiers:
   next-auth: 4.22.1
   next-contentlayer: ^0.3.2
   next-intl: 2.14.0-beta.3
+  next-themes: ^0.2.1
   postcss: ^8.4.23
   prettier: ^2.8.8
   prettier-plugin-tailwindcss: ^0.2.8
@@ -54,7 +54,6 @@ dependencies:
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.3.2
   '@vercel/analytics': 1.0.0_react@18.2.0
   '@vercel/og': 0.5.4
-  '@wits/next-themes': 0.2.16_vwuoxxmoeydgew5hhkavebkk4e
   clsx: 1.2.1
   contentlayer: 0.3.2_esbuild@0.17.5
   kysely: 0.24.2
@@ -65,6 +64,7 @@ dependencies:
   next-auth: 4.22.1_vwuoxxmoeydgew5hhkavebkk4e
   next-contentlayer: 0.3.2_p6xzlgnsfmz7pf3rq5bsjavpf4
   next-intl: 2.14.0-beta.3_next@13.3.4+react@18.2.0
+  next-themes: 0.2.1_vwuoxxmoeydgew5hhkavebkk4e
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-wrap-balancer: 0.4.1_react@18.2.0
@@ -1481,18 +1481,6 @@ packages:
       '@resvg/resvg-wasm': 2.4.1
       satori: 0.7.2
       yoga-wasm-web: 0.3.3
-    dev: false
-
-  /@wits/next-themes/0.2.16_vwuoxxmoeydgew5hhkavebkk4e:
-    resolution: {integrity: sha512-tf2C7fE28JSOdE5fi4cUV3V5HT7viBahG6sh6G2V/VdzPinaXX5J5hTWuOhmfUnWuitU1JU7N1wIQe1q17SLUA==}
-    peerDependencies:
-      next: '*'
-      react: '*'
-      react-dom: '*'
-    dependencies:
-      next: 13.3.4_rfdx5ocjtvb4b2h5j5ipjicct4
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.0:
@@ -4065,6 +4053,18 @@ packages:
       react: 18.2.0
       server-only: 0.0.1
       use-intl: 2.13.1_react@18.2.0
+    dev: false
+
+  /next-themes/0.2.1_vwuoxxmoeydgew5hhkavebkk4e:
+    resolution: {integrity: sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      next: 13.3.4_rfdx5ocjtvb4b2h5j5ipjicct4
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /next/13.3.4_rfdx5ocjtvb4b2h5j5ipjicct4:

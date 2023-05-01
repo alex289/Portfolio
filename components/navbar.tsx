@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from 'next-intl/client';
-import { useTheme } from '@wits/next-themes';
+import { useTheme } from 'next-themes';
 import { Command, X } from 'lucide-react';
 import { allBlogs } from 'contentlayer/generated';
 import clsx from 'clsx';

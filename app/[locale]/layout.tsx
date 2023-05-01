@@ -3,13 +3,12 @@ import '@/styles/global.css';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 
-import { ServerThemeProvider } from '@wits/next-themes';
 import { NextIntlClientProvider } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { getLocale } from 'next-intl/server';
 
 import AnalyticsWrapper from '@/components/analytics';
-import ProviderWrapper from '@/components/theme';
+import { Providers } from '@/components/providers';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import env from '@/env.js';
@@ -79,6 +78,10 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
     },
     manifest: '/static/site.webmanifest',
+    themeColor: [
+      { media: '(prefers-color-scheme: light)', color: '#f9fafb' },
+      { media: '(prefers-color-scheme: dark)', color: '#222222' },
+    ],
     viewport: {
       width: 'device-width',
       initialScale: 1,
@@ -104,28 +107,29 @@ export default async function RootLayout({
   }
 
   return (
-    <ServerThemeProvider attribute="class">
-      <html lang={params.locale} className={inter.className}>
-        <body className="bg-gray-50 dark:bg-gray-800">
-          <NextIntlClientProvider messages={messages} locale={params.locale}>
-            <ProviderWrapper>
-              <a
-                href="#skip"
-                className="absolute -top-8 left-1/4 -translate-y-12 transform px-4 py-2 transition-transform duration-200 focus:translate-y-3">
-                Skip to content
-              </a>
-              <Navbar />
-              <main
-                className="mx-auto mb-16 flex max-w-3xl flex-col justify-center px-8 dark:bg-gray-800 md:mt-6 md:px-0"
-                id="skip">
-                {children}
-                <AnalyticsWrapper />
-              </main>
-              <Footer />
-            </ProviderWrapper>
-          </NextIntlClientProvider>
-        </body>
-      </html>
-    </ServerThemeProvider>
+    <html
+      lang={params.locale}
+      className={inter.className}
+      suppressHydrationWarning>
+      <body className="bg-gray-50 dark:bg-gray-800">
+        <NextIntlClientProvider messages={messages} locale={params.locale}>
+          <Providers>
+            <a
+              href="#skip"
+              className="absolute -top-8 left-1/4 -translate-y-12 transform px-4 py-2 transition-transform duration-200 focus:translate-y-3">
+              Skip to content
+            </a>
+            <Navbar />
+            <main
+              className="mx-auto mb-16 flex max-w-3xl flex-col justify-center px-8 dark:bg-gray-800 md:mt-6 md:px-0"
+              id="skip">
+              {children}
+              <AnalyticsWrapper />
+            </main>
+            <Footer />
+          </Providers>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
