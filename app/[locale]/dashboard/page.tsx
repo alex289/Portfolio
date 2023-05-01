@@ -28,10 +28,10 @@ const getViewsCount = async () => {
 };
 
 const getGuestbookEntriesCount = async () => {
-  const { sum } = queryBuilder.fn;
+  const { count } = queryBuilder.fn;
   const data = await queryBuilder
     .selectFrom('guestbook')
-    .select(sum<number>('id').as('total'))
+    .select(count<number>('id').as('total'))
     .execute();
 
   return data[0]?.total ?? 0;

@@ -1,13 +1,16 @@
 - Command menu
-- Fix mobile ui
-- Update database
-- checkout clerk
 
 Waiting Todos:
-- Global 404 page
 - rss feed
 - generateStaticParams
 - scroll positions support
 
 Test out:
 - https://github.com/konstantin-paulus/reveal-on-scroll-react
+- clerk
+
+Fix:
+- Global 404 page
+
+Before completion:
+- Update database
