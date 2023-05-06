@@ -5,10 +5,6 @@ Waiting Todos:
 - generateStaticParams
 - scroll positions support
 
-Test out:
-- https://github.com/konstantin-paulus/reveal-on-scroll-react
-- clerk
-
 Fix:
 - Global 404 page
 

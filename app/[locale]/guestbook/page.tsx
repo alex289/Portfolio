@@ -25,7 +25,7 @@ async function getGuestbook() {
     .execute();
 
   return data.map((entry) => {
-    return { ...entry, updated_at: entry.updated_at.toString() };
+    return { ...entry, updated_at: entry.updated_at.toISOString() };
   });
 }
 
