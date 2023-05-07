@@ -25,10 +25,7 @@ export default function GuestbookEntry({
 }: GuestBookEntryProps) {
   const router = useRouter();
   const deleteEntry = async () => {
-    await fetch(`/api/guestbook`, {
-      body: JSON.stringify({
-        id: entry.id,
-      }),
+    await fetch(`/api/guestbook?id=${entry.id}`, {
       headers: {
         'Content-Type': 'application/json',
       },

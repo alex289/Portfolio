@@ -53,11 +53,7 @@ const DashboardPage = async () => {
   }
 
   if (!session || !session.user.isAdmin) {
-    return (
-      <div className="mx-auto my-10 h-[30em] text-lg font-bold">
-        {t('unauthorized')}
-      </div>
-    );
+    return redirect('/');
   }
 
   return (

@@ -50,7 +50,8 @@ export async function POST(req: Request) {
 
 export async function DELETE(req: Request) {
   const session = await getServerSession(authOptions);
-  const { id } = await req.json();
+  const { searchParams } = new URL(req.url);
+  const id = searchParams.get('id');
 
   if (!id || !Number(id)) {
     return BadRequest('Invalid id');

@@ -29,8 +29,6 @@ async function getGuestbook() {
   });
 }
 
-export const dynamic = 'force-dynamic';
-
 const GuestbookPage = async () => {
   const [entries, session, t, locale] = await Promise.all([
     getGuestbook(),

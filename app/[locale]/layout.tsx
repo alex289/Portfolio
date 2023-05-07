@@ -2,16 +2,22 @@ import '@/styles/global.css';
 
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { getLocale } from 'next-intl/server';
+import { getServerSession } from 'next-auth';
 
 import AnalyticsWrapper from '@/components/analytics';
 import { Providers } from '@/components/providers';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
+
 import env from '@/env.js';
+import { authOptions } from '../api/auth/[...nextauth]/route';
+
+const CommandPalette = dynamic(() => import('@/components/command-palette'));
 
 import type { Metadata } from 'next/types';
 
@@ -101,6 +107,7 @@ export default async function RootLayout({
 }) {
   const locale = useLocale();
   const messages = (await import(`../../messages/${locale}.json`)).default;
+  const session = await getServerSession(authOptions);
 
   if (locale !== params.locale) {
     notFound();
@@ -119,6 +126,7 @@ export default async function RootLayout({
               className="absolute -top-8 left-1/4 -translate-y-12 transform px-4 py-2 transition-transform duration-200 focus:translate-y-3">
               Skip to content
             </a>
+            <CommandPalette session={session} />
             <Navbar />
             <main
               className="mx-auto mb-16 flex max-w-3xl flex-col justify-center px-8 dark:bg-gray-800 md:mt-6 md:px-0"

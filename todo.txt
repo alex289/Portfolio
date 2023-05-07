@@ -1,7 +1,4 @@
-- Command menu
-
 Waiting Todos:
-- rss feed
 - generateStaticParams
 - scroll positions support
 

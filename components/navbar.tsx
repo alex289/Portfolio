@@ -9,13 +9,16 @@ import { useTheme } from 'next-themes';
 import { Command, X } from 'lucide-react';
 import { allBlogs } from 'contentlayer/generated';
 import clsx from 'clsx';
+import { useAtom } from 'jotai';
 
+import { isOpenAtom } from './command-palette';
 import ThemeToggleIcon from './icons/theme-icon';
 import MobileMenu from './mobile-menu';
 import styles from '@/styles/mobile-menu.module.css';
 import MenuIcon from './icons/menu-icon';
 
 const Navbar = () => {
+  const [commandPaletteOpen, setCommandPaletteOpen] = useAtom(isOpenAtom);
   const { resolvedTheme, setTheme } = useTheme();
   const t = useTranslations();
   const locale = useLocale();
@@ -75,10 +78,15 @@ const Navbar = () => {
   }
 
   return (
-    <div className="sticky top-0 z-50 bg-gray-50 bg-opacity-50 backdrop-blur-lg backdrop-saturate-150 dark:bg-gray-800 dark:bg-opacity-60">
+    <div
+      className={clsx(
+        !commandPaletteOpen && 'z-50',
+        'sticky top-0 bg-gray-50 bg-opacity-50 backdrop-blur-lg backdrop-saturate-150 dark:bg-gray-800 dark:bg-opacity-60'
+      )}>
       <nav
         className={clsx(
-          'sticky top-0 z-50 mx-auto my-0 w-full max-w-3xl items-center justify-between px-4 pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:py-4 xl:px-0'
+          !commandPaletteOpen && 'z-50',
+          'sticky top-0 mx-auto my-0 w-full max-w-3xl items-center justify-between px-4 pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:py-4 xl:px-0'
         )}>
         <div>
           {NavLinks.map(({ href, text, id }) => (
@@ -120,6 +128,7 @@ const Navbar = () => {
             <button
               aria-label="Open Command Palette"
               type="button"
+              onClick={() => setCommandPaletteOpen(true)}
               className="umami--click--cmd-button mr-3 h-10 w-10 rounded-lg bg-gray-200 p-3 text-3xl ring-gray-300 hover:ring-4 dark:bg-gray-700">
               <Command className="h-4 w-4 text-gray-800 dark:text-gray-200" />
             </button>
