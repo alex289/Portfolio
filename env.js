@@ -24,7 +24,7 @@ const env = createEnv({
       .default('http://localhost:3000')
       .transform((url) => {
         if (url === 'http://localhost:3000') {
-          return;
+          return url;
         }
 
         return 'https://' + url;

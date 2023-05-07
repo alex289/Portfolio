@@ -1,3 +1,5 @@
+import env from '@/env';
+
 export default function robots() {
   return {
     rules: [
@@ -5,7 +7,7 @@ export default function robots() {
         userAgent: '*',
       },
     ],
-    sitemap: 'https://alexanderkonietzko.vercel.app/sitemap.xml',
-    host: 'https://alexanderkonietzko.vercel.app',
+    sitemap: `${env.NEXT_PUBLIC_VERCEL_URL}/sitemap.xml`,
+    host: `${env.NEXT_PUBLIC_VERCEL_URL}`,
   };
 }

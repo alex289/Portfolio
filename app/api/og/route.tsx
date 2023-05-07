@@ -2,6 +2,8 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
+import env from '@/env';
+
 export const runtime = 'edge';
 
 export function GET(req: NextRequest) {
@@ -60,7 +62,7 @@ export function GET(req: NextRequest) {
             }}>
             Alexander Konietzko
             <img
-              src="https://alexanderkonietzko.vercel.app/static/images/konietzko_alexander.png"
+              src={`${env.NEXT_PUBLIC_VERCEL_URL}/static/images/konietzko_alexander.png`}
               alt="Alexander Konietzko"
               style={{
                 width: '3em',

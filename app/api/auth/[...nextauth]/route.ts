@@ -8,7 +8,7 @@ export const authOptions: NextAuthOptions = {
   theme: {
     colorScheme: 'auto',
     brandColor: '',
-    logo: 'https://alexanderkonietzko.vercel.app/static/images/konietzko_alexander.png',
+    logo: `${env.NEXT_PUBLIC_VERCEL_URL}/static/images/konietzko_alexander.png`,
   },
   providers: [
     GithubProvider({

@@ -6,5 +6,5 @@ export default createIntlMiddleware({
 });
 
 export const config = {
-  matcher: ['/((?!api|_next|static|images).*)'],
+  matcher: ['/((?!api|_next|static|images|sitemap|robots).*)'],
 };

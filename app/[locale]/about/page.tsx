@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
+import env from '@/env';
 import Tools from '@/components/tools';
 
 import avatar from '@/public/static/images/konietzko_alexander.jpg';
@@ -59,11 +60,11 @@ const AboutPage = () => {
           <li>
             {t('about-page.website')}:{' '}
             <a
-              href="https://alexanderkonietzko.vercel.app"
+              href={env.NEXT_PUBLIC_VERCEL_URL}
               target="_blank"
               rel="noreferrer noopener"
               className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
-              https://alexanderkonietzko.vercel.app
+              {env.NEXT_PUBLIC_VERCEL_URL}
             </a>
           </li>
           <li>

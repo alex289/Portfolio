@@ -66,7 +66,7 @@ export default function Footer() {
       text: t('footer.contact'),
     },
     {
-      href: 'https://alexanderkonietzko.vercel.app/sitemap.xml',
+      href: 'sitemap.xml',
       id: 'footer.sitemap',
       text: t('footer.sitemap'),
     },
