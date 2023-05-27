@@ -26,6 +26,7 @@ const inter = Inter({ subsets: ['latin'] });
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
+    metadataBase: new URL(env.NEXT_PUBLIC_VERCEL_URL),
     title: {
       default: 'Alexander Konietzko',
       template: '%s | Alexander Konietzko',
