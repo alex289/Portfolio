@@ -1,8 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { fontFamily } = require('tailwindcss/defaultTheme');
+import typography from '@tailwindcss/typography';
+import forms from '@tailwindcss/forms';
+import { fontFamily } from 'tailwindcss/defaultTheme';
+import type { Config } from 'tailwindcss';
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./app/**/*.tsx', './content/**/*.tsx', './components/**/*.tsx'],
   darkMode: 'class',
   theme: {
@@ -27,5 +28,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
-};
+  plugins: [typography, forms],
+} satisfies Config;
