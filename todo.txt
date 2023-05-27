@@ -2,8 +2,5 @@ Waiting Todos:
 - generateStaticParams
 - scroll positions support
 
-Fix:
-- Global 404 page
-
 Before completion:
 - Update database
