@@ -78,6 +78,9 @@ jobs:
       - name: Generate prisma schema
         run: pnpm exec prisma generate
 
+      - name: Contentlayer build
+        run: pnpm contentlayer build
+
       - name: Typecheck
         run: pnpm typecheck
 
