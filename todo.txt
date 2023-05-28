@@ -1,6 +1,2 @@
 Waiting Todos:
 - generateStaticParams
-- scroll positions support
-
-Before completion:
-- Update database

@@ -85,10 +85,7 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
     },
     manifest: '/static/site.webmanifest',
-    themeColor: [
-      { media: '(prefers-color-scheme: light)', color: '#f9fafb' },
-      { media: '(prefers-color-scheme: dark)', color: '#222222' },
-    ],
+    themeColor: "#f9fafb",
     viewport: {
       width: 'device-width',
       initialScale: 1,

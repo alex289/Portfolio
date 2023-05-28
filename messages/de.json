@@ -132,7 +132,7 @@
   },
   "stats": {
     "title": "Meine GitHub Statistiken",
-    "stars": "Insgesamt erhaltene Sterne",
+    "stars": "Anzahl Sterne",
     "commits": "Anzahl Commits",
     "prs": "PRs Insgesamt",
     "issues": "Anzahl Issues",
