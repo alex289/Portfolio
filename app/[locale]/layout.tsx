@@ -85,7 +85,7 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
     },
     manifest: '/static/site.webmanifest',
-    themeColor: "#f9fafb",
+    themeColor: '#f9fafb',
     viewport: {
       width: 'device-width',
       initialScale: 1,
