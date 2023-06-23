@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 
 import Balancer from 'react-wrap-balancer';
 import { allBlogs } from 'contentlayer/generated';
-import { getLocale } from 'next-intl/server';
 import clsx from 'clsx';
 
 import ViewCounter from '@/components/blog/views-counter';
@@ -78,8 +77,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({ params }: { params: { slug: string } }) {
-  const locale = await getLocale();
+export default async function Blog({
+  params,
+}: {
+  params: { slug: string; locale: string };
+}) {
   const post = allBlogs.find((post) => post.slug === params.slug);
 
   if (!post) {
@@ -109,7 +111,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
           <p className="ml-2 text-sm text-gray-700 dark:text-[#c2c2c2]">
             {'Alexander Konietzko / '}
             {new Date(post.publishedAt).toLocaleDateString(
-              locale === 'de' ? 'de-DE' : 'en-US',
+              params.locale === 'de' ? 'de-DE' : 'en-US',
               {
                 year: 'numeric',
                 month: 'short',

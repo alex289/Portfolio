@@ -1,4 +1,4 @@
-import { getLocale, getTranslations } from 'next-intl/server';
+import { getTranslator } from 'next-intl/server';
 import { getServerSession } from 'next-auth';
 import { allBlogs } from '@/.contentlayer/generated';
 
@@ -12,6 +12,12 @@ import { redirect } from 'next/navigation';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 import type { Metadata } from 'next/types';
+
+type DashboardProps = {
+  params: {
+    locale: string;
+  };
+};
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -37,12 +43,11 @@ const getGuestbookEntriesCount = async () => {
   return data[0]?.total ?? 0;
 };
 
-const DashboardPage = async () => {
-  const [session, t, locale, viewsCount, guesbookEntriesCount, topTracks] =
+const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
+  const [session, t, viewsCount, guesbookEntriesCount, topTracks] =
     await Promise.all([
       getServerSession(authOptions),
-      getTranslations('dashboard'),
-      getLocale(),
+      getTranslator(locale, 'dashboard'),
       getViewsCount(),
       getGuestbookEntriesCount(),
       getTopTracks(),

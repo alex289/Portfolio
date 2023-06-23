@@ -1,4 +1,4 @@
-import { getLocale, getTranslations } from 'next-intl/server';
+import { getTranslator } from 'next-intl/server';
 import { getServerSession } from 'next-auth';
 
 import { queryBuilder } from '@/lib/db';
@@ -9,8 +9,16 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 import type { Metadata } from 'next/types';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations();
+type GuestbookProps = {
+  params: {
+    locale: string;
+  };
+};
+
+export async function generateMetadata({
+  params: { locale },
+}: GuestbookProps): Promise<Metadata> {
+  const t = await getTranslator(locale);
   return {
     title: t('guestbook.title'),
   };
@@ -29,12 +37,11 @@ async function getGuestbook() {
   });
 }
 
-const GuestbookPage = async () => {
-  const [entries, session, t, locale] = await Promise.all([
+const GuestbookPage = async ({ params: { locale } }: GuestbookProps) => {
+  const [entries, session, t] = await Promise.all([
     getGuestbook(),
     getServerSession(authOptions),
-    getTranslations('guestbook'),
-    getLocale(),
+    getTranslator(locale, 'guestbook'),
   ]);
 
   return (

@@ -6,7 +6,6 @@ import dynamic from 'next/dynamic';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { useLocale } from 'next-intl';
-import { getLocale } from 'next-intl/server';
 import { getServerSession } from 'next-auth';
 
 import AnalyticsWrapper from '@/components/analytics';
@@ -23,8 +22,15 @@ import type { Metadata } from 'next/types';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const locale = await getLocale();
+type LayoutProps = {
+  params: {
+    locale: string;
+  };
+};
+
+export async function generateMetadata({
+  params: { locale },
+}: LayoutProps): Promise<Metadata> {
   return {
     metadataBase: new URL(env.NEXT_PUBLIC_VERCEL_URL),
     title: {

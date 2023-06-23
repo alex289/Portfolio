@@ -1,6 +1,6 @@
 import { AlertCircle, Book, GitPullRequest, History, Star } from 'lucide-react';
 
-import { getTranslations } from 'next-intl/server';
+import { getTranslator } from 'next-intl/server';
 
 import { getProjects, getStats } from '@/lib/projects';
 
@@ -8,18 +8,26 @@ import Project from '@/components/projects';
 
 import type { Metadata } from 'next/types';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations();
+type ProjectsProps = {
+  params: {
+    locale: string;
+  };
+};
+
+export async function generateMetadata({
+  params: { locale },
+}: ProjectsProps): Promise<Metadata> {
+  const t = await getTranslator(locale);
   return {
     title: t('main.projects'),
   };
 }
 
-const ProjectsPage = async () => {
+const ProjectsPage = async ({ params: { locale } }: ProjectsProps) => {
   const [stats, projects, t] = await Promise.all([
     getStats(),
     getProjects(),
-    getTranslations(),
+    getTranslator(locale),
   ]);
 
   return (

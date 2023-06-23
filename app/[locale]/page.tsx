@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { useLocale } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
+import { getTranslator } from 'next-intl/server';
 
 import { getProjects } from '@/lib/projects';
 
@@ -11,9 +10,17 @@ import profilePic from '@/public/static/images/konietzko_alexander.jpg';
 import Project from '@/components/projects';
 import FeaturedPost from '@/components/blog/featured-post';
 
-const Index = async () => {
-  const [projects, t] = await Promise.all([getProjects(3), getTranslations()]);
-  const locale = useLocale();
+type IndexProps = {
+  params: {
+    locale: string;
+  };
+};
+
+const Index = async ({ params: { locale } }: IndexProps) => {
+  const [projects, t] = await Promise.all([
+    getProjects(3),
+    getTranslator(locale),
+  ]);
   return (
     <>
       <div className="flex flex-col-reverse items-start sm:flex-row">
