@@ -143,6 +143,9 @@ table {
 [data-rehype-pretty-code-fragment] .line--highlighted {
   @apply bg-slate-500 bg-opacity-10;
 }
+[data-rehype-pretty-code-fragment] pre {
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity)) !important;
+}
 [data-rehype-pretty-code-fragment] .line-highlighted span {
   @apply relative;
 }
