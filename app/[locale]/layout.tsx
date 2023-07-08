@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
 import { NextIntlClientProvider } from 'next-intl';
-import { useLocale } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 import { getServerSession } from 'next-auth';
 
 import AnalyticsWrapper from '@/components/analytics';
@@ -109,7 +109,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const locale = useLocale();
+  const locale = getLocale();
   const messages = (await import(`../../messages/${locale}.json`)).default;
   const session = await getServerSession(authOptions);
 
