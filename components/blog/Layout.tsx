@@ -52,7 +52,7 @@ export default function BlogLayout({
                   year: 'numeric',
                   month: 'short',
                   day: 'numeric',
-                }
+                },
               )}
             </p>
           </div>

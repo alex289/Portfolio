@@ -75,7 +75,7 @@ export default async function handler(req: NextRequest) {
   user.repositories.nodes.forEach(
     (repo: { stargazers: { totalCount: number } }) => {
       count += repo.stargazers.totalCount;
-    }
+    },
   );
 
   const stats = {

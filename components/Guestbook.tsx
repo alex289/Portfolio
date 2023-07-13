@@ -30,7 +30,7 @@ export default function Guestbook({
     fetcher,
     {
       fallbackData,
-    }
+    },
   );
 
   const leaveEntry = async (e: FormEvent) => {

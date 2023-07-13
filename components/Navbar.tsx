@@ -110,7 +110,7 @@ const Navbar = ({ blogTranslation }: Props): JSX.Element => {
           id="burger"
           className={clsx(
             styles.burger,
-            'umami--click--burger-button visible md:hidden'
+            'umami--click--burger-button visible md:hidden',
           )}
           aria-label="Toggle menu"
           type="button"

@@ -36,7 +36,7 @@ export default function BlogPost({ title, excerpt, slug, date, tags }: Props) {
               year: 'numeric',
               month: 'short',
               day: 'numeric',
-            }
+            },
           )}
         </p>
       </div>

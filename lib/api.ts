@@ -2,7 +2,7 @@ import type { NextApiResponse } from 'next';
 
 export function isValidHttpMethod(
   method: string | undefined,
-  allowedMethods: string[]
+  allowedMethods: string[],
 ): boolean {
   if (!method) {
     return false;

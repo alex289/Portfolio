@@ -19,7 +19,7 @@ const Project = ({
     fetcher,
     {
       fallbackData,
-    }
+    },
   );
 
   if (error) {

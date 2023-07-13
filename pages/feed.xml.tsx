@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   res.setHeader('Content-Type', 'text/xml');
   res.setHeader(
     'Cache-Control',
-    'public, s-maxage=1200, stale-while-revalidate=600'
+    'public, s-maxage=1200, stale-while-revalidate=600',
   );
   res.write(feed.xml({ indent: true }));
   res.end();

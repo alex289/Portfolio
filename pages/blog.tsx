@@ -44,7 +44,7 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
         }
         if (filterBy === 'tag') {
           return post.tags.some((tag) =>
-            tag.toLowerCase().includes(searchValue.toLowerCase())
+            tag.toLowerCase().includes(searchValue.toLowerCase()),
           );
         }
       })
@@ -62,7 +62,7 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
         <p className="mb-4 text-gray-600 dark:text-[#c2c2c2]">
           {t('blog.description').replace(
             '$AMOUNT',
-            posts.filter((post) => post.language === locale).length.toString()
+            posts.filter((post) => post.language === locale).length.toString(),
           )}
         </p>
         <div className="relative mb-4 w-full">

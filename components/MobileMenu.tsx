@@ -21,7 +21,7 @@ export default function MobileMenu({ isMenuOpen }: Props) {
     {
       enterDelay: 20,
       exitDelay: 300,
-    }
+    },
   );
 
   useEffect(() => {
@@ -37,12 +37,12 @@ export default function MobileMenu({ isMenuOpen }: Props) {
           className={clsx(
             styles.menu,
             'mt-4 md:hidden',
-            isMenuRendered && styles.menuRendered
+            isMenuRendered && styles.menuRendered,
           )}>
           <li
             className={clsx(
               'ml-3 border-b border-gray-300 dark:border-gray-700',
-              router.asPath === '/' && 'font-semibold dark:text-primary'
+              router.asPath === '/' && 'font-semibold dark:text-primary',
             )}
             style={{ transitionDelay: '150ms' }}>
             <Link
@@ -55,7 +55,7 @@ export default function MobileMenu({ isMenuOpen }: Props) {
           <li
             className={clsx(
               'ml-3 border-b border-gray-300 dark:border-gray-700',
-              router.pathname === '/about' && 'font-semibold dark:text-primary'
+              router.pathname === '/about' && 'font-semibold dark:text-primary',
             )}
             style={{ transitionDelay: '175ms' }}>
             <Link
@@ -69,7 +69,7 @@ export default function MobileMenu({ isMenuOpen }: Props) {
             className={clsx(
               'ml-3 border-b border-gray-300 dark:border-gray-700',
               router.pathname === '/projects' &&
-                'font-semibold dark:text-primary'
+                'font-semibold dark:text-primary',
             )}
             style={{ transitionDelay: '200ms' }}>
             <Link
@@ -83,7 +83,7 @@ export default function MobileMenu({ isMenuOpen }: Props) {
             className={clsx(
               'ml-3 border-b border-gray-300 dark:border-gray-700',
               router.pathname.includes('blog') &&
-                'font-semibold dark:text-primary'
+                'font-semibold dark:text-primary',
             )}
             style={{ transitionDelay: '250ms' }}>
             <Link
@@ -97,7 +97,7 @@ export default function MobileMenu({ isMenuOpen }: Props) {
             className={clsx(
               'ml-3 border-b border-gray-300 dark:border-gray-700',
               router.pathname === '/guestbook' &&
-                'font-semibold dark:text-primary'
+                'font-semibold dark:text-primary',
             )}
             style={{ transitionDelay: '275ms' }}>
             <Link

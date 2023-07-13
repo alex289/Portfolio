@@ -58,6 +58,6 @@ export default async function handler(req: NextRequest) {
         'content-type': 'application/json',
         'cache-control': 'public, s-maxage=60, stale-while-revalidate=30',
       },
-    }
+    },
   );
 }

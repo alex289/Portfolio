@@ -19,7 +19,7 @@ export default async function handler(req: NextRequest) {
   const per_page = req.nextUrl.searchParams.get('per_page') || '20';
 
   const reposResponse = await fetch(
-    `https://api.github.com/users/alex289/repos?per_page=${per_page}&sort=pushed`
+    `https://api.github.com/users/alex289/repos?per_page=${per_page}&sort=pushed`,
   );
 
   let repos = await reposResponse.json();

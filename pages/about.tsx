@@ -15,7 +15,7 @@ import type { NextPage } from 'next';
 const About: NextPage = () => {
   const { t } = useTranslation();
   const age = Math.floor(
-    (new Date().getTime() - new Date('2002-09-28').getTime()) / 3.15576e10
+    (new Date().getTime() - new Date('2002-09-28').getTime()) / 3.15576e10,
   );
   return (
     <Layout title={t('main.about') + ' - Alexander Konietzko'}>

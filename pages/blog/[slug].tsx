@@ -32,7 +32,7 @@ export async function getStaticPaths() {
       ({ slug, language }: { slug: string; language: string }) => ({
         params: { slug },
         locale: language,
-      })
+      }),
     ),
     fallback: 'blocking',
   };

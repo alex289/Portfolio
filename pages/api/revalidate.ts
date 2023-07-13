@@ -21,7 +21,7 @@ async function stringifyRequest(req: NextApiRequest) {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   if (!isValidHttpMethod(req.method, ['POST'])) {
     return MethodNotAllowed(res);
@@ -44,7 +44,7 @@ export default async function handler(
     !isValidSignature(
       stringifiedRequest,
       signature,
-      process.env.SANITY_STUDIO_REVALIDATE_SECRET
+      process.env.SANITY_STUDIO_REVALIDATE_SECRET,
     )
   ) {
     return res.status(401).json({ message: 'Invalid request' });

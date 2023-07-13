@@ -24,7 +24,7 @@ const Comment = ({ slug }: { slug: string }) => {
 
   const { data: entries, mutate } = useSWR<comment[]>(
     `/api/comment?post=${slug}`,
-    fetcher
+    fetcher,
   );
 
   const onSubmit = async (e: FormEvent) => {
@@ -166,7 +166,7 @@ const Comment = ({ slug }: { slug: string }) => {
                         year: 'numeric',
                         month: 'short',
                         day: 'numeric',
-                      }
+                      },
                     )}
                   </p>
                   {session?.user &&

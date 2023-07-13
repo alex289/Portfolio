@@ -4,7 +4,7 @@ import { postSlugsQuery } from '@/lib/sanity/queries';
 import type { GetServerSideProps } from 'next';
 
 const createSitemap = (
-  slugs: string[]
+  slugs: string[],
 ) => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         ${slugs
@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const allPages = [
     ...allPosts.map(
       ({ slug, language }: { slug: string; language: string }) =>
-        `${language !== 'en' ? language + '/' : ''}blog/${slug}`
+        `${language !== 'en' ? language + '/' : ''}blog/${slug}`,
     ),
     ...['', 'blog', 'dashboard', 'guestbook', 'projects', 'about'],
     ...[
@@ -40,7 +40,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   res.setHeader('Content-Type', 'text/xml');
   res.setHeader(
     'Cache-Control',
-    'public, s-maxage=1200, stale-while-revalidate=600'
+    'public, s-maxage=1200, stale-while-revalidate=600',
   );
   res.write(createSitemap(allPages));
   res.end();

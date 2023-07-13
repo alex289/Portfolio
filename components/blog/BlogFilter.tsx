@@ -40,7 +40,7 @@ export default function BlogFilter({ filterBy, setFilter }: Props) {
                       ? 'bg-primary text-white'
                       : 'text-gray-900 dark:bg-gray-700 dark:text-gray-100',
                     filterBy === 'name' && 'font-bold',
-                    'group flex w-full items-center rounded-md px-2 py-2 text-sm'
+                    'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                   )}>
                   {t('blog.filter.by-name')}
                 </button>
@@ -55,7 +55,7 @@ export default function BlogFilter({ filterBy, setFilter }: Props) {
                       ? 'bg-primary text-white'
                       : 'text-gray-900 dark:bg-gray-700 dark:text-gray-100',
                     filterBy === 'tag' && 'font-bold',
-                    'group flex w-full items-center rounded-md px-2 py-2 text-sm'
+                    'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                   )}>
                   {t('blog.filter.by-tag')}
                 </button>

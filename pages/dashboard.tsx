@@ -31,11 +31,11 @@ const Dashboard: NextPage<Props> = ({ previewMode, postsCount }) => {
 
   const { data: guestbookCount } = useSWR<{ count: number }>(
     '/api/guestbook?count=true',
-    fetcher
+    fetcher,
   );
   const { data: commentCount } = useSWR<{ count: number }>(
     '/api/comment?count=true',
-    fetcher
+    fetcher,
   );
   const { data: viewsData } = useSWR<Views>('/api/views', fetcher);
 
