@@ -75,7 +75,7 @@ export function GET(req: NextRequest) {
       {
         width: 1920,
         height: 1080,
-      }
+      },
     );
   } catch (e) {
     return new Response(`Failed to generate the image`, {

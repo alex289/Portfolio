@@ -96,7 +96,7 @@ export default function Footer() {
                 className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
                 {link.text}
               </a>
-            )
+            ),
           )}
         </div>
         <p

@@ -29,7 +29,7 @@ export async function generateMetadata({
 const AboutPage = () => {
   const t = useTranslations();
   const age = Math.floor(
-    (new Date().getTime() - new Date('2002-09-28').getTime()) / 3.15576e10
+    (new Date().getTime() - new Date('2002-09-28').getTime()) / 3.15576e10,
   );
   return (
     <>

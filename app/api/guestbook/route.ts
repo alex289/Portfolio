@@ -44,7 +44,7 @@ export async function POST(req: Request) {
       headers: {
         'Content-Type': 'application/json',
       },
-    }
+    },
   );
 }
 

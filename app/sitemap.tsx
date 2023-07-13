@@ -11,7 +11,7 @@ export default async function sitemap() {
     (route) => ({
       url: `${env.NEXT_PUBLIC_VERCEL_URL}${route}`,
       lastModified: new Date().toISOString().split('T')[0],
-    })
+    }),
   );
 
   return [...routes, ...blogs];

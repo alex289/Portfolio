@@ -20,7 +20,7 @@ const getAccessToken = async () => {
         Authorization: `Basic ${basic}`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-    }
+    },
   );
 
   return response.json();

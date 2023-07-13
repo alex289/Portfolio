@@ -32,7 +32,7 @@ export default function PostCard({ title, excerpt, slug, date, tags }: Props) {
               year: 'numeric',
               month: 'short',
               day: 'numeric',
-            }
+            },
           )}
         </p>
       </div>
@@ -45,7 +45,7 @@ export default function PostCard({ title, excerpt, slug, date, tags }: Props) {
                 key={key}
                 className={clsx(
                   'mx-2 mt-1 rounded border border-indigo-500 px-3 py-1 text-sm text-indigo-500',
-                  'hover:border-indigo-600 hover:text-indigo-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400'
+                  'hover:border-indigo-600 hover:text-indigo-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400',
                 )}
                 href={`/${locale}/blog?search=${tag}&filter=tag`}
                 replace

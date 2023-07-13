@@ -63,7 +63,7 @@ export const getStats = async () => {
   user.repositories.nodes.forEach(
     (repo: { stargazers: { totalCount: number } }) => {
       count += repo.stargazers.totalCount;
-    }
+    },
   );
 
   return {
@@ -87,7 +87,7 @@ export const getProjects = async (perPage = 10) => {
       headers: {
         Authorization: `bearer ${env.GITHUB_API_TOKEN}`,
       },
-    }
+    },
   );
 
   if (!reposResponse.ok) {

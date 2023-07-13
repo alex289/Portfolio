@@ -54,7 +54,7 @@ export default function GuestbookEntry({
               day: 'numeric',
               hour: 'numeric',
               minute: 'numeric',
-            }
+            },
           )}
         </p>
         {session?.user &&

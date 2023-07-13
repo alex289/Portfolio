@@ -18,7 +18,7 @@ function ThemeColorSetter({ children }: { children: ReactNode }) {
     if (metaThemeColor) {
       metaThemeColor.setAttribute(
         'content',
-        theme === 'light' ? '#f9fafb' : '#222222'
+        theme === 'light' ? '#f9fafb' : '#222222',
       );
     }
   }, [theme]);

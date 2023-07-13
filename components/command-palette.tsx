@@ -179,7 +179,7 @@ export default function CommandPalette({
 
   const filteredItems = useMemo(() => {
     return config.filter(({ title }) =>
-      title.toLowerCase().includes(search.toLowerCase())
+      title.toLowerCase().includes(search.toLowerCase()),
     );
   }, [search, config]);
 
@@ -235,14 +235,14 @@ export default function CommandPalette({
             onChange={handleChange}
             className={clsx(
               'relative mx-auto max-w-xl overflow-hidden rounded-xl shadow-2xl',
-              'divide-y divide-gray-200 bg-gray-50 ring-1 ring-black/5 dark:divide-gray-700 dark:bg-gray-800'
+              'divide-y divide-gray-200 bg-gray-50 ring-1 ring-black/5 dark:divide-gray-700 dark:bg-gray-800',
             )}>
             <div className="flex items-center px-4">
               <Combobox.Input
                 onChange={(e) => setSearch(e.target.value)}
                 className={clsx(
                   'h-12 w-full border-0 bg-transparent text-gray-800 dark:text-gray-400',
-                  'placeholder-gray-400 focus:ring-0'
+                  'placeholder-gray-400 focus:ring-0',
                 )}
                 autoComplete="false"
                 placeholder="Search..."
@@ -264,7 +264,7 @@ export default function CommandPalette({
                             'cursor-pointer px-4 py-2 sm:border-l-2',
                             active
                               ? 'border-l-indigo-500 sm:bg-gray-200 sm:dark:bg-gray-700'
-                              : 'border-gray-50 bg-gray-50 dark:border-gray-800 dark:bg-gray-800'
+                              : 'border-gray-50 bg-gray-50 dark:border-gray-800 dark:bg-gray-800',
                           )}>
                           <div className="flex flex-row pl-1 text-gray-500 dark:text-gray-400">
                             <div className="flex">

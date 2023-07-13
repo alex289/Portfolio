@@ -23,7 +23,7 @@ export default function FeaturedPost({
       className={clsx(
         'transform transition-all hover:scale-[1.01]',
         'w-full rounded-xl bg-gradient-to-r p-1 md:w-1/3',
-        gradient
+        gradient,
       )}>
       <div className="flex h-full flex-col justify-between rounded-lg bg-white p-4 dark:bg-gray-800">
         <div className="flex flex-col justify-between md:flex-row">

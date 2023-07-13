@@ -23,7 +23,7 @@ export default function MobileMenu({ isMenuOpen, toggle }: Props) {
     {
       enterDelay: 20,
       exitDelay: 300,
-    }
+    },
   );
 
   useEffect(() => {
@@ -81,14 +81,14 @@ export default function MobileMenu({ isMenuOpen, toggle }: Props) {
           className={clsx(
             styles.menu,
             'mt-4 md:hidden',
-            isMenuRendered && styles.menuRendered
+            isMenuRendered && styles.menuRendered,
           )}>
           {NavLinks.map((link) => (
             <li
               key={link.id}
               className={clsx(
                 'ml-3 border-b border-gray-300 dark:border-gray-700',
-                path === link.href && 'font-semibold dark:text-indigo-500'
+                path === link.href && 'font-semibold dark:text-indigo-500',
               )}
               style={{ transitionDelay: link.transitionDelay }}>
               <div

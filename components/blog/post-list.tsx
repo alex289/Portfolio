@@ -39,7 +39,7 @@ const PostList = ({ allBlogs }: { allBlogs: Blog[] }) => {
         }
         if (filterBy === 'tag') {
           return post.tags.some((tag) =>
-            tag.toLowerCase().includes(searchValue.toLowerCase())
+            tag.toLowerCase().includes(searchValue.toLowerCase()),
           );
         }
       })

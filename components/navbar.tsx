@@ -81,12 +81,12 @@ const Navbar = () => {
     <div
       className={clsx(
         !commandPaletteOpen && 'z-50',
-        'sticky top-0 bg-gray-50 bg-opacity-50 backdrop-blur-lg backdrop-saturate-150 dark:bg-gray-800 dark:bg-opacity-60'
+        'sticky top-0 bg-gray-50 bg-opacity-50 backdrop-blur-lg backdrop-saturate-150 dark:bg-gray-800 dark:bg-opacity-60',
       )}>
       <nav
         className={clsx(
           !commandPaletteOpen && 'z-50',
-          'sticky top-0 mx-auto my-0 w-full max-w-3xl items-center justify-between px-4 pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:py-4 xl:px-0'
+          'sticky top-0 mx-auto my-0 w-full max-w-3xl items-center justify-between px-4 pb-6 pt-1 text-gray-900 dark:text-gray-100 md:my-4 md:flex md:py-4 xl:px-0',
         )}>
         <div>
           {NavLinks.map(({ href, text, id }) => (
@@ -98,7 +98,7 @@ const Navbar = () => {
                 'invisible mr-1 text-gray-900 sm:mr-8 md:visible',
                 href === path || (path?.startsWith('/blog') && href === '/blog')
                   ? 'font-semibold dark:text-indigo-500'
-                  : 'dark:text-gray-100'
+                  : 'dark:text-gray-100',
               )}>
               <span className="dark:link-underline link-underline-black py-1">
                 {text}
@@ -112,7 +112,7 @@ const Navbar = () => {
             id="burger"
             className={clsx(
               styles.burger,
-              'umami--click--burger-button visible md:hidden'
+              'umami--click--burger-button visible md:hidden',
             )}
             aria-label="Toggle menu"
             type="button"
