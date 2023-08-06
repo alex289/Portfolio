@@ -13,8 +13,8 @@ const AnalyticsWrapper = () => {
       <Script
         async
         defer
-        data-website-id="d406befc-fba6-40d7-84e5-f3cce8f829af"
-        src="https://alexanderkonietzko-analytics.vercel.app/umami.js"
+        data-website-id="1eb6c13b-1d82-4897-ad01-27a318a59e41"
+        src="https://alexanderkonietzko-analytics.vercel.app/script.js"
       />
       <Analytics />
     </>

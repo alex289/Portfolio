@@ -26,7 +26,7 @@ export default function Footer() {
       text: t('footer.my-setup'),
     },
     {
-      href: 'https://alexanderkonietzko-analytics.vercel.app/share/iGO3fY48/alexanderkonietzko',
+      href: 'https://alexanderkonietzko-analytics.vercel.app/share/umAbxBDxID0MgUDd/Portfolio',
       id: 'footer.analytics',
       text: t('footer.analytics'),
     },

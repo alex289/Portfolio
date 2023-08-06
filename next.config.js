@@ -42,7 +42,7 @@ const nextConfig = {
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://alexanderkonietzko-analytics.vercel.app/umami.js cdn.vercel-insights.com vercel.live;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://alexanderkonietzko-analytics.vercel.app/script.js cdn.vercel-insights.com vercel.live;
   child-src 'self';
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
