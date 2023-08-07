@@ -64,7 +64,7 @@
     "jotai": "^2.3.0",
     "kysely": "^0.26.1",
     "kysely-planetscale": "^1.4.0",
-    "lucide-react": "^0.264.0",
+    "lucide-react": "^0.263.0",
     "motion": "^10.16.2",
     "next": "13.4.13",
     "next-auth": "4.22.4",
