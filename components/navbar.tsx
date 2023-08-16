@@ -81,7 +81,7 @@ const Navbar = () => {
     <div
       className={clsx(
         !commandPaletteOpen && 'z-50',
-        'sticky top-0 bg-gray-50 bg-opacity-50 backdrop-blur-lg backdrop-saturate-150 dark:bg-gray-800 dark:bg-opacity-60',
+        'sticky top-0 bg-gray-50 bg-opacity-50 backdrop-blur-lg dark:bg-gray-800 dark:bg-opacity-60',
       )}>
       <nav
         className={clsx(
