@@ -17,7 +17,7 @@ export default function PostCard({ title, excerpt, slug, date, tags }: Props) {
   const locale = useLocale();
 
   return (
-    <div className="mb-8 w-full md:rounded-md md:p-3 md:hover:bg-gray-200 md:dark:hover:bg-gray-700">
+    <div className="mb-8 w-full transition-all md:rounded-md md:p-3 md:hover:bg-gray-200 md:dark:hover:bg-gray-700">
       <div className="flex flex-col justify-between md:flex-row">
         <Link
           href={`/${locale}/blog/${slug}`}

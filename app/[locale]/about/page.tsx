@@ -214,7 +214,7 @@ const AboutPage = () => {
             width={400}
             quality={100}
             src={avatar}
-            className="rounded-full grayscale filter"
+            className="rounded-full grayscale"
           />
         </a>
       </div>

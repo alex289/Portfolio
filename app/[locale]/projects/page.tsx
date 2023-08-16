@@ -39,7 +39,7 @@ const ProjectsPage = async ({ params: { locale } }: ProjectsProps) => {
         href="https://github.com/alex289"
         target="_blank"
         rel="noreferrer noopener"
-        className="mx-auto mb-4 flex flex-col rounded-lg border border-gray-200 bg-white p-6 shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        className="mx-auto mb-4 flex flex-col rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
         <ul className="flex flex-col">
           <li className="mb-4">
             <span className="text-lg font-semibold">{t('stats.title')}</span>
