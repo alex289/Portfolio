@@ -90,9 +90,12 @@ export default async function Blog({
 
   return (
     <section className="mx-auto mb-16 flex w-full max-w-4xl flex-col items-start justify-center">
-      <script type="application/ld+json" suppressHydrationWarning>
-        {JSON.stringify(post.structuredData)}
-      </script>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(post.structuredData),
+        }}></script>
       <h1 className="mb-4 text-4xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
         <Balancer>{post.title}</Balancer>
       </h1>
