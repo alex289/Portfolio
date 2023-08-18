@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   title: 'Dashboard',
 };
 
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'de' }];
+}
+
 const getViewsCount = async () => {
   const { sum } = queryBuilder.fn;
   const data = await queryBuilder

@@ -16,6 +16,10 @@ type IndexProps = {
   };
 };
 
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'de' }];
+}
+
 const Index = async ({ params: { locale } }: IndexProps) => {
   const [projects, t] = await Promise.all([
     getProjects(3),

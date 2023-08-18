@@ -17,6 +17,10 @@ type AboutPageProps = {
   };
 };
 
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'de' }];
+}
+
 export async function generateMetadata({
   params: { locale },
 }: AboutPageProps): Promise<Metadata> {

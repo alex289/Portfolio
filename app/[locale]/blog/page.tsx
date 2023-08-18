@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: 'Blog',
 };
 
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'de' }];
+}
+
 const BlogPage = () => {
   return <PostList allBlogs={allBlogs} />;
 };

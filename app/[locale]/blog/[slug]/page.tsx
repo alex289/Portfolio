@@ -12,12 +12,12 @@ import env from '@/env.js';
 
 import type { Metadata } from 'next/types';
 
-// export async function generateStaticParams() {
-//   return allBlogs.map((post) => ({
-//     locale: post.language,
-//     slug: post.slug,
-//   }));
-// }
+export async function generateStaticParams() {
+  return allBlogs.map((post) => ({
+    locale: post.language,
+    slug: post.slug,
+  }));
+}
 
 export async function generateMetadata({
   params,

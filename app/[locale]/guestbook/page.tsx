@@ -15,6 +15,10 @@ type GuestbookProps = {
   };
 };
 
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'de' }];
+}
+
 export async function generateMetadata({
   params: { locale },
 }: GuestbookProps): Promise<Metadata> {
