@@ -1,12 +1,15 @@
 'use client';
 
-import { ThemeProvider, useTheme } from 'next-themes';
 import { ReactNode, useEffect } from 'react';
+import { Provider as JotaiProvider } from 'jotai';
+import { ThemeProvider, useTheme } from 'next-themes';
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider attribute="class">
-      <ThemeColorSetter>{children}</ThemeColorSetter>
+      <JotaiProvider>
+        <ThemeColorSetter>{children}</ThemeColorSetter>
+      </JotaiProvider>
     </ThemeProvider>
   );
 }
