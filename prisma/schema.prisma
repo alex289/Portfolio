@@ -8,6 +8,12 @@ datasource db {
     relationMode = "prisma"
 }
 
+generator kysely {
+    provider = "prisma-kysely"
+    output   = "../types"
+    fileName = "db-types.ts"
+}
+
 model views {
     slug  String @id @db.VarChar(128)
     count Int    @default(1) @db.UnsignedInt
