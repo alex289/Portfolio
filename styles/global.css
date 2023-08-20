@@ -69,6 +69,10 @@ html {
   @apply rounded-lg border border-neutral-100 bg-neutral-100 px-1 py-0.5 text-neutral-800 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200;
 }
 
+code[data-theme] {
+  @apply bg-transparent !important;
+}
+
 .prose pre code {
   @apply p-0 text-neutral-800 dark:text-neutral-200;
   border: initial;
@@ -142,9 +146,6 @@ table {
 }
 [data-rehype-pretty-code-fragment] .line--highlighted {
   @apply bg-slate-500 bg-opacity-10;
-}
-[data-rehype-pretty-code-fragment] pre {
-  background-color: rgb(23 23 23 / var(--tw-bg-opacity)) !important;
 }
 [data-rehype-pretty-code-fragment] .line-highlighted span {
   @apply relative;
