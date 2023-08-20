@@ -1,7 +1,6 @@
 'use client';
 
 import { Fragment, useEffect, useMemo, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
 
 import { Combobox, Dialog, Transition } from '@headlessui/react';
 import { signIn, signOut } from 'next-auth/react';
@@ -11,7 +10,7 @@ import { clsx } from 'clsx';
 
 import {
   BarChart3,
-  BookOpen,
+  Book,
   Code2,
   Edit,
   Fingerprint,
@@ -29,6 +28,7 @@ import { useLocale, useTranslations } from 'next-intl';
 export const isOpenAtom = atom(false);
 
 import type { Session } from 'next-auth';
+import { usePathname, useRouter } from 'next-intl/client';
 
 enum Actions {
   Router,
@@ -82,9 +82,7 @@ export default function CommandPalette({
         title: 'Blog',
         action: Actions.Router,
         args: '/blog',
-        icon: (
-          <BookOpen strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
-        ),
+        icon: <Book strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: t('guestbook.title'),
@@ -193,7 +191,7 @@ export default function CommandPalette({
         router.push(value.slice(2));
         break;
       case Actions.Language:
-        router.replace(pathname.replace(locale, locale === 'de' ? 'en' : 'de'));
+        router.replace(pathname, { locale: locale === 'de' ? 'en' : 'de' });
         break;
       case Actions.Theme:
         setTheme(theme === 'light' ? 'dark' : 'light');

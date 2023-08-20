@@ -165,7 +165,7 @@ const AboutPage = () => {
         </h3>
         <ul className="list-disc">
           <li>
-            Editor: VSCode {t('about-page.uses.and')} Neovim (
+            Editor: VSCode, Neovim {t('about-page.uses.and')} JetBrains Rider (
             <a
               href="https://github.com/alex289/dotfiles"
               target="_blank"
@@ -187,6 +187,7 @@ const AboutPage = () => {
           <li>Spotify</li>
           <li>Alt-tab</li>
           <li>Postman</li>
+          <li>Docker</li>
         </ul>
 
         <h3 className="text-lg font-bold tracking-tight text-black dark:text-white md:text-xl">

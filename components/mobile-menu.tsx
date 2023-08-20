@@ -66,12 +66,10 @@ export default function MobileMenu({ isMenuOpen, toggle }: Props) {
   ];
 
   function go(href: string) {
-    router.push(href);
-
-    setTimeout(() => {
-      toggle();
-      scroll(0, 0);
-    }, 300);
+    router.push(href, {
+      scroll: true,
+    });
+    toggle();
   }
 
   return (
@@ -87,7 +85,7 @@ export default function MobileMenu({ isMenuOpen, toggle }: Props) {
             <li
               key={link.id}
               className={clsx(
-                'ml-3 border-b border-gray-300 dark:border-gray-700',
+                'ml-3 cursor-pointer border-b border-gray-300 dark:border-gray-700',
                 path === link.href && 'font-semibold dark:text-indigo-500',
               )}
               style={{ transitionDelay: link.transitionDelay }}>

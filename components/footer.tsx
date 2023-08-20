@@ -81,7 +81,7 @@ export default function Footer() {
             link.href.startsWith('/') ? (
               <Link
                 key={link.id}
-                href={`/${locale}/${link.href}`}
+                href={`/${locale}${link.href}`}
                 id={link.id}
                 className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
                 {link.text}
