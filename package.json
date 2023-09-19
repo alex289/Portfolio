@@ -58,7 +58,6 @@
     "@t3-oss/env-nextjs": "^0.6.1",
     "@tailwindcss/forms": "^0.5.6",
     "@vercel/analytics": "^1.0.2",
-    "@vercel/og": "^0.5.14",
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "jotai": "^2.4.2",
@@ -80,17 +79,6 @@
     "shiki": "^0.14.4",
     "swr": "^2.2.2",
     "zod": "^3.22.2"
-  },
-  "pnpm": {
-    "overrides": {
-      "@opentelemetry/api": "1.4.1",
-      "@opentelemetry/core": "1.13.0",
-      "@opentelemetry/exporter-trace-otlp-grpc": "0.39.1",
-      "@opentelemetry/resources": "1.13.0",
-      "@opentelemetry/sdk-trace-base": "1.13.0",
-      "@opentelemetry/sdk-trace-node": "1.13.0",
-      "@opentelemetry/semantic-conventions": "1.13.0"
-    }
   },
   "nextBundleAnalysis": {
     "budget": 143360,
