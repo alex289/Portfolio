@@ -26,7 +26,7 @@
 }
 
 ::selection {
-  background-color: #47a3f3;
+  @apply bg-indigo-700;
   color: #fefefe;
 }
 
