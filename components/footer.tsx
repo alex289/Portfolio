@@ -46,7 +46,7 @@ export default function Footer() {
       text: t('footer.sourcecode'),
     },
     {
-      href: 'https://alexanderkonietzko.vercel.app/feed.xml',
+      href: 'feed.xml',
       id: 'footer.feed',
       text: 'Feed',
     },
