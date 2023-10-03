@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { usePathname } from 'next-intl/client';
 import { useTheme } from 'next-themes';
 import { Command, X } from 'lucide-react';
 import { allBlogs } from 'contentlayer/generated';
@@ -16,6 +15,7 @@ import ThemeToggleIcon from './icons/theme-icon';
 import MobileMenu from './mobile-menu';
 import styles from '@/styles/mobile-menu.module.css';
 import MenuIcon from './icons/menu-icon';
+import { usePathname } from '@/lib/navigation';
 
 const Navbar = () => {
   const [commandPaletteOpen, setCommandPaletteOpen] = useAtom(isOpenAtom);

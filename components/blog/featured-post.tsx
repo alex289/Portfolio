@@ -1,10 +1,10 @@
 import { clsx } from 'clsx';
-import Link from 'next-intl/link';
 import Balancer from 'react-wrap-balancer';
 
 import { Eye } from 'lucide-react';
 
 import ViewCounter from './views-counter';
+import { Link } from '@/lib/navigation';
 
 type FeaturedPostProps = {
   title: string;

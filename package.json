@@ -68,7 +68,7 @@
     "next": "13.5.4",
     "next-auth": "4.23.2",
     "next-contentlayer": "^0.3.4",
-    "next-intl": "3.0.0-beta.19",
+    "next-intl": "3.0.0-rc.2",
     "next-themes": "^0.2.1",
     "prisma-kysely": "^1.7.1",
     "react": "^18.2.0",

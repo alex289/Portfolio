@@ -25,10 +25,11 @@ import {
 } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
+import { usePathname, useRouter } from '@/lib/navigation';
+
 export const isOpenAtom = atom(false);
 
 import type { Session } from 'next-auth';
-import { usePathname, useRouter } from 'next-intl/client';
 
 enum Actions {
   Router,

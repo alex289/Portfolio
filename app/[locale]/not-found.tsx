@@ -1,6 +1,8 @@
 'use client';
 
-import { Link, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
+
+import { Link } from '@/lib/navigation';
 
 export default function Error() {
   const t = useTranslations('404');

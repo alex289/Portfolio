@@ -3,11 +3,12 @@
 import { useEffect } from 'react';
 
 import { clsx } from 'clsx';
+import { useTranslations } from 'next-intl';
+
+import useDelayedRender from '@/lib/use-delayed-render';
+import { usePathname, useRouter } from '@/lib/navigation';
 
 import styles from '@/styles/mobile-menu.module.css';
-import { useTranslations } from 'next-intl';
-import useDelayedRender from '@/lib/use-delayed-render';
-import { usePathname, useRouter } from 'next-intl/client';
 
 type Props = {
   isMenuOpen: boolean;
