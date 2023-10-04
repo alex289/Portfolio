@@ -99,7 +99,7 @@ export default async function Blog({
       <h1 className="mb-4 text-4xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
         <Balancer>{post.title}</Balancer>
       </h1>
-      <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
+      <div className="mt-2 flex w-full flex-col items-start justify-between sm:flex-row sm:items-center">
         <div className="flex items-center">
           <Image
             alt="Alexander Konietzko"
