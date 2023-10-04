@@ -1,0 +1,141 @@
+{
+  "main": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects"
+  },
+  "footer": {
+    "my-setup": "My dotfiles",
+    "sourcecode": "Source code",
+    "contact": "Contact",
+    "analytics": "Analytics",
+    "sitemap": "Sitemap",
+    "powered": "Powered by ",
+    "and": "and ",
+    "hosted": "Hosted on "
+  },
+  "index-page": {
+    "title": "Software Engineer and Student at",
+    "intro": "Trying to build a faster web. Learning about web development, .NET Core and React / Next.js.",
+    "posts": {
+      "read-all": "Read all posts",
+      "1": {
+        "title": "Initial Commit",
+        "slug": "initial-commit"
+      },
+      "2": {
+        "title": "The Best PowerShell Terminal Setup",
+        "slug": "terminal-setup"
+      },
+      "3": {
+        "title": "How to Deploy a Fullstack Web App on Vercel?",
+        "slug": "vercel-deployment"
+      }
+    }
+  },
+  "about-page": {
+    "text-1": "Hey, I'm Alex. I'm {age} years \nold and come from Germany. I live in NRW and spend my free time \nplaying piano, do sports or enjoying time with friends and family.",
+    "text-2": "I started working with computers when I was young and started \nprogramming in school. After I graduated I began my dual study at \nNetgo GmbH where I work and Westfälische Hochschule where I study.",
+    "text-3": "I'm currently learning .NET Core and Angular but my favourite framework is \nNextJs. In the future I want to build my own Kubernetes cluster with \nbackend services, database integration and a solid frontend combined \nby Nginx.",
+    "website": "Website",
+    "tools": {
+      "title": "Tools",
+      "text": "Those are the tools I almost use daily. I really enjoy finding new technologies improving my workflow.",
+      "tailwind": "When it comes to CSS, I always use TailwindCSS. It is a great tool for styling your website really fast.",
+      "next": "My go-to framework for building web applications. The quality of the codebase is fantastic.",
+      "vercel": "The most seamless way to deploy your website. I use it for all of my projects.",
+      "planetscale": "The MySQL-compatible serverless database platform. My go-to database host.",
+      "vscode": "VS Code is the text editor I reach for most often, given it's range of extensions."
+    },
+    "uses": {
+      "title": "My Gear",
+      "text": "Here's what tech I'm currently using for coding. Most of have been accumulated over the past few years.",
+      "office": "Computer / Office",
+      "other-tech": "Other tech",
+      "and": "and",
+      "configuration": "Configuration"
+    },
+    "timeline": {
+      "title": "Timeline",
+      "learn-more": "Learn more about netgo",
+      "1": {
+        "date": "July 2021",
+        "title": "Graduation from school",
+        "description": "I finished my school :D"
+      },
+      "2": {
+        "title": "Dual study at netgo / Westfälische Hochschule",
+        "description": "I started my first job as a software engineer trainee at netgo. In combination I studied software systems (Informatics, B. SC.)."
+      }
+    }
+  },
+  "404": {
+    "title": "Page not found",
+    "description": "Why show a generic 404 when I can make it sound mysterious? It seems \nyou've found something that used to exist, or you spelled \nsomething wrong. I'm guessing you spelled something wrong. Can \nyou double check that URL?",
+    "return-home": "Return Home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "I'm sorry, but something went wrong. Please try again later.",
+    "return-home": "Return home"
+  },
+  "blog": {
+    "description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written {amount} articles on my blog. Use the search below to filter by title.",
+    "no-posts": "No posts found.",
+    "all-posts": "All Posts",
+    "search": "Search",
+    "filter": {
+      "by-name": "By name",
+      "by-tag": "By tag"
+    }
+  },
+  "guestbook": {
+    "title": "Guestbook",
+    "description": "Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!",
+    "login": "Sign in with ",
+    "logout": "Sign out",
+    "form": {
+      "title": "Sign the Guestbook",
+      "description": "Share a message for a future visitor of my site.",
+      "input": "Your message...",
+      "submit": "Send",
+      "info": "Your information is only used to display your name and reply by email."
+    },
+    "success": "Hooray! Thanks for signing my Guestbook.",
+    "error": "Please enter a message.",
+    "delete": "Delete"
+  },
+  "dashboard": {
+    "unauthorized": "You are not authorized to view this page.",
+    "logout": "Sign out",
+    "logged-in": "Logged in as",
+    "blog-guestbook": "Blog/Guestbook",
+    "top-tracks": "Top Spotify Tracks",
+    "metrics": {
+      "blog-views": "Blog views",
+      "guestbook-entries": "Guestbook entries",
+      "posts-count": "Amount of all posts (EN)"
+    }
+  },
+  "projects": {
+    "not-found": "No projects found",
+    "see-more": "See all projects"
+  },
+  "not-playing": "Not Playing",
+  "command-palette": {
+    "settings": "Settings",
+    "socials": "Socials",
+    "switch-theme": "Switch theme",
+    "switch-language": "Change language (de)",
+    "search-placeholder": "Search...",
+    "no-results": "No results"
+  },
+  "stats": {
+    "title": "My GitHub Stats",
+    "stars": "Total Stars Earned",
+    "commits": "Total Commits",
+    "prs": "Total PRs",
+    "issues": "Total Issues",
+    "contributed": "Contributed to"
+  }
+}

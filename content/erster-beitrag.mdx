@@ -1,0 +1,69 @@
+---
+title: 'Erster Beitrag'
+publishedAt: '2022-04-01'
+summary: 'Mein erster Beitrag. Wie habe ich meine Plattform erstellt?'
+language: 'de'
+translation: 'initial-commit'
+tags:
+  - NextJs
+  - Tailwind
+  - Vercel
+---
+
+<Image
+  alt={`Next.js`}
+  src={`/images/initial-commit/nextjs-logo.png`}
+  width={1000}
+  height={600}
+  priority
+/>
+
+Diese Webseite ist keine statische Seite, sondern eine voll-funktionale Blog Plattform.
+Sehr inspiriert von [leerob](https://github.com/leerob/leerob.io) ❤.
+
+### Überblick 📝
+
+Die größten verwendeten Bibliotheken und Frameworks, die in diesem Projekt verwendet werden
+
+- Framework: [Next.js](https://nextjs.org/)
+- Datenbank: [PlanetScale](https://planetscale.com)
+- ORM: [Prisma](https://prisma.io/)
+- Authentifizierung: [NextAuth.js](https://next-auth.js.org/)
+- Veröffentlichung: [Vercel](https://vercel.com)
+- Inhalt: [Sanity](https://sanity.io)
+- Styling: [Tailwind CSS](https://tailwindcss.com/)
+
+### Tests 🧪
+
+Um sicherzustellen, dass alles so funktioniert wie es soll teste ich meine App mit [Cypress](https://www.cypress.io/) und [Github Workflows](https://docs.github.com/en/actions/using-workflows).
+Außerdem verwende ich [Checkly](https://www.checklyhq.com/) um die stetige Laufzeit meiner Seite zu prüfen.
+
+Für eine bessere Developer Experience benutze ich [Eslint](https://eslint.org/) und [Prettier](https://prettier.io/).
+
+### Features ✨
+
+- Übersetzung (Deutsch und Englisch)
+- Responsive design
+- Suchmaschinenoptimierung
+- Spotify Integration
+- Dashboard (Nur Admins)
+
+### Wie klont man meine Seite? 📥
+
+Erfordert Git, Nodejs (v16) und yarn.
+Erstelle eine `.env` Datei wie hier: [.env.example](https://github.com/Alex289/Portfolio/blob/main/.env.example)
+
+```bash
+$ git clone https://github.com/Alex289/Portfolio
+$ cd Portfolio
+$ yarn
+
+Um den lokalen Server zu starten:
+$ yarn dev
+```
+
+Bitte entferne meine persönlichen Informationen bevor du diese Seite veröffentlichst.
+
+### Fazit 👏🏼
+
+Ich hoffe dir hat meine Seite gefallen. Über Feedback würde ich mich freuen: [hier](https://github.com/Alex289/Portfolio/issues/new)

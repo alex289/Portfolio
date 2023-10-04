@@ -1,9 +1,9 @@
 {
   "files.exclude": {
     ".next": true,
-    ".sanity": true,
-    "dist": true
+    ".contentlayer": true
   },
   "editor.formatOnSave": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "i18n-ally.localesPaths": ["messages"]
 }

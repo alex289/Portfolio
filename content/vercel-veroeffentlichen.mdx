@@ -1,0 +1,59 @@
+---
+title: 'Wie Veröffentlicht man eine Fullstack Web App auf Vercel?'
+publishedAt: '2022-07-11'
+summary: 'Das Vercel-Ökosystem hat viele Vorteile, um eine Web-App auf einfachste und kostengünstigste Weise bereitzustellen'
+language: 'de'
+translation: 'vercel-deployment'
+tags:
+  - Vercel
+  - Nextjs
+  - PlanetScale
+---
+
+<Image
+  alt={`Vercel Logo`}
+  src={`/images/vercel-deployment/vercel-logo.png`}
+  width={1672}
+  height={979}
+  priority
+/>
+
+## Inhaltsverzeichnis 📃
+
+- Eine fullstack App mit Nextjs schreiben
+- Gratis Datenbankservice PlanetScale
+- Hilfreiche Libaries
+- Veröffentliche deine App bei Vercel
+
+## Eine fullstack App mit Nextjs schreiben
+
+[Nextjs](https://nextjs.org/) ist eins der besten Frameworks 2022 und hat alles was du brauchst um eine fullstack App zu entwickeln. Mit SSG und SSR, Api-Routen und eingebauten Optimierungs-Komponenten kannst du alles entwicklen und dabei einfach und performant bleiben.
+
+Wenn du dich schon mit Nextjs auskennst empfehle ich dir den [T3-Stack](https://github.com/t3-oss/create-t3-app) anzusehen. Dieser Stack ist das perfekte Template mit allen wichtigen Dingen wie Authentifizierung und Datenbank Verbindungen.
+
+## Gratis Datenbankservice PlanetScale
+
+[PlanetScale](https://planetscale.com/) ist eine leicht nutzbare MySQL-kompatible serverlose Datenbank-Plattform. Es unterstützt viele Programmiersprachen und Tools und hat tolle Feature wie Branching und Skalierbarkeit. Dabei reicht das Free-Tier für alle persönlichen Projekte aus.
+
+Außerdem gibt es ein [Tutorial](https://docs.planetscale.com/tutorials/deploy-to-vercel) für das Nutzen mit Vercel und unterstützt [Prisma](https://www.prisma.io/) das auch im eben erwähnten T3-Stack enthalten ist#.
+
+## Hilfreiche Libaries
+
+Viele Applikationen brauchen einige Funktionen die von Paketen bereitgestellt werden die Nextjs unterstützen:
+
+- [Prisma](https://www.prisma.io/) - Ein Datenbank data-driven ORM
+- [Tailwind](https://tailwindcss.com/) - Ein einfach nutzbares utility-first CSS Framework
+- [NextAuth](https://next-auth.js.org/) - Ein flexibler und sicherer authentifizierungs Provider
+- [SWR](https://swr.vercel.app/) - Eine leichte react hook zum Abruf von Daten
+
+## Veröffentliche deine App bei Vercel
+
+Jetzt bist du bereit deine App zu veröffentlichen. Erstelle einen Account bei [Vercel](https://vercel.com/) und veröffentliche deine App mit einem Repository auf GitHub/Gitlab/Bitbucket oder mit dem [Vercel CLI](https://vercel.com/docs/cli). Außerdem schau dir die verfügbaren [Integrationen](https://vercel.com/integrations) an die bei Dingen wie beispielsweise Umgebungsvariablen von CMS zur Verfügung stellen helfen können.
+
+## Fazit 🔚
+
+Ich hoffe ich konnte dir dabei helfen eine robuste und performante App zu entwickeln und zu veröffentliche. Ohne etwas dabei auszugeben!
+
+Wenn du noch Hilfe brauchst benutz doch mein Template. Veröffentliche es mit ein paar Klicks mit dem Knopf hier:
+
+[![Veröffentlichen mit Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAlex289%2FNextJs-Boilerplate)

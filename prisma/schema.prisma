@@ -8,6 +8,12 @@ datasource db {
     relationMode = "prisma"
 }
 
+generator kysely {
+    provider = "prisma-kysely"
+    output   = "../types"
+    fileName = "db-types.ts"
+}
+
 model views {
     slug  String @id @db.VarChar(128)
     count Int    @default(1) @db.UnsignedInt
@@ -20,16 +26,4 @@ model guestbook {
     created_by String   @db.VarChar(256)
     created_at DateTime @default(now()) @db.DateTime(6)
     updated_at DateTime @default(now()) @db.DateTime(6)
-}
-
-model comment {
-    id         Int      @id @default(autoincrement()) @db.UnsignedInt
-    post       String   @db.VarChar(256)
-    email      String   @db.VarChar(256)
-    body       String   @db.VarChar(500)
-    created_by String   @db.VarChar(256)
-    created_at DateTime @default(now()) @db.DateTime(6)
-    updated_at DateTime @default(now()) @db.DateTime(6)
-
-    @@index([post], name: "post")
 }
