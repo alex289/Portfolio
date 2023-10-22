@@ -1,6 +1,6 @@
 import { getTranslator } from 'next-intl/server';
 import { getServerSession } from 'next-auth';
-import { allBlogs } from '@/.contentlayer/generated';
+import { allBlogs } from '.contentlayer/generated';
 
 import { queryBuilder } from '@/lib/db';
 import { getTopTracks } from '@/lib/spotify';

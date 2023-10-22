@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
+      "@/*": ["./src/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "target": "es2017",
@@ -30,7 +30,7 @@
   "include": [
     ".eslintrc.cjs",
     "next-env.d.ts",
-    "types/**/*.d.ts",
+    "src/types/**/*.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.mjs",

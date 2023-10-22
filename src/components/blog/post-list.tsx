@@ -9,7 +9,7 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import PostFilter from '@/components/blog/post-filter';
 import PostCard from '@/components/blog/post-card';
-import { type Blog } from '@/.contentlayer/generated';
+import { type Blog } from '.contentlayer/generated';
 
 const PostList = ({ allBlogs }: { allBlogs: Blog[] }) => {
   const t = useTranslations('blog');

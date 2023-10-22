@@ -14,7 +14,9 @@ import Footer from '@/components/footer';
 import env from '@/env.js';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 
-const CommandPalette = dynamic(() => import('@/components/command-palette'));
+const CommandPalette = dynamic(
+  () => import('@/components/command-palette'),
+);
 
 import type { Metadata } from 'next/types';
 
@@ -107,7 +109,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const messages = (await import(`../../messages/${params.locale}.json`))
+  const messages = (await import(`../../../messages/${params.locale}.json`))
     .default;
   const session = await getServerSession(authOptions);
 
