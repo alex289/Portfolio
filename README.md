@@ -16,13 +16,13 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 
 ## Overview
 
-- `content/*` - MDX data that is used for my blog
-- `lib/*` - Short for "library", a collection of helpful utilities or code for external services.
-- `app/*` - The actual pages.
+- `src/content/*` - MDX data that is used for my blog
+- `src/lib/*` - Short for "library", a collection of helpful utilities or code for external services.
+- `src/app/*` - The actual pages.
 - `public/*` - Static assets including fonts and images.
 - `prisma/*` - My Prisma schema, which uses a PlanetScale MySQL database.
-- `styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
-- `messages/*` - All translations objects
+- `src/styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
+- `src/messages/*` - All translations objects
 
 ## Running Locally
 
