@@ -5,5 +5,5 @@
   },
   "editor.formatOnSave": true,
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "i18n-ally.localesPaths": ["messages"]
+  "i18n-ally.localesPaths": ["src/messages"]
 }

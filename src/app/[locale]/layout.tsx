@@ -2,6 +2,7 @@ import '@/styles/global.css';
 
 import { Inter } from 'next/font/google';
 import dynamic from 'next/dynamic';
+import { notFound } from 'next/navigation';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getServerSession } from 'next-auth';
@@ -14,9 +15,7 @@ import Footer from '@/components/footer';
 import env from '@/env.js';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 
-const CommandPalette = dynamic(
-  () => import('@/components/command-palette'),
-);
+const CommandPalette = dynamic(() => import('@/components/command-palette'));
 
 import type { Metadata } from 'next/types';
 
@@ -109,8 +108,12 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const messages = (await import(`../../../messages/${params.locale}.json`))
-    .default;
+  let messages;
+  try {
+    messages = (await import(`../../messages/${params.locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
   const session = await getServerSession(authOptions);
 
   return (
@@ -119,7 +122,11 @@ export default async function RootLayout({
       className={inter.className}
       suppressHydrationWarning>
       <body className="bg-gray-50 dark:bg-gray-800">
-        <NextIntlClientProvider messages={messages} locale={params.locale}>
+        <NextIntlClientProvider
+          messages={messages}
+          locale={params.locale}
+          timeZone="Europe/Berlin"
+          now={new Date()}>
           <Providers>
             <a
               href="#skip"
