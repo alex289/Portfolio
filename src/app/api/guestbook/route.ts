@@ -1,12 +1,9 @@
-import { getServerSession } from 'next-auth/next';
-
 import { queryBuilder } from '@/lib/db';
 import { BadRequest, Unauthorized } from '@/lib/api';
-
-import { authOptions } from '../auth/[...nextauth]/route';
+import { getServerAuthSession } from '@/lib/auth';
 
 export async function POST(req: Request) {
-  const session = await getServerSession(authOptions);
+  const session = await getServerAuthSession();
 
   if (!session || !session.user || !session.user.email || !session.user.name) {
     return Unauthorized();
@@ -49,7 +46,7 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  const session = await getServerSession(authOptions);
+  const session = await getServerAuthSession();
   const { searchParams } = new URL(req.url);
   const id = searchParams.get('id');
 

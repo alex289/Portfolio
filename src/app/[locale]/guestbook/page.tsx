@@ -1,11 +1,10 @@
 import { getTranslator } from 'next-intl/server';
-import { getServerSession } from 'next-auth';
 
 import { queryBuilder } from '@/lib/db';
+import { getServerAuthSession } from '@/lib/auth';
 
 import GuestbookForm from '@/components/guestbook/guestbook-form';
 import GuestbookEntry from '@/components/guestbook/guestbook-entry';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 import type { Metadata } from 'next/types';
 
@@ -44,7 +43,7 @@ async function getGuestbook() {
 const GuestbookPage = async ({ params: { locale } }: GuestbookProps) => {
   const [entries, session, t] = await Promise.all([
     getGuestbook(),
-    getServerSession(authOptions),
+    getServerAuthSession(),
     getTranslator(locale, 'guestbook'),
   ]);
 

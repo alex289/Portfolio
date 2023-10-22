@@ -11,7 +11,9 @@
     "lint": "next lint",
     "format": "prettier --write \"**/*.{css,js,mjs,cjs,json,jsx,ts,tsx}\"",
     "format:check": "prettier --check \"**/*.{css,js,mjs,cjs,json,jsx,ts,tsx}\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio"
   },
   "repository": {
     "type": "git",

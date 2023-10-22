@@ -44,6 +44,8 @@ const env = createEnv({
     GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
     NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL,
   },
+  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
+  emptyStringAsUndefined: true,
 });
 
 module.exports = env;

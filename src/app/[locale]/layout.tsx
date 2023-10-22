@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 
 import { NextIntlClientProvider } from 'next-intl';
-import { getServerSession } from 'next-auth';
 
 import AnalyticsWrapper from '@/components/analytics';
 import { Providers } from '@/components/providers';
@@ -13,7 +12,7 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
 import env from '@/env.js';
-import { authOptions } from '../api/auth/[...nextauth]/route';
+import { getServerAuthSession } from '@/lib/auth';
 
 const CommandPalette = dynamic(() => import('@/components/command-palette'));
 
@@ -114,7 +113,7 @@ export default async function RootLayout({
   } catch (error) {
     notFound();
   }
-  const session = await getServerSession(authOptions);
+  const session = await getServerAuthSession();
 
   return (
     <html

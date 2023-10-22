@@ -1,5 +1,5 @@
 import { getTranslator } from 'next-intl/server';
-import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 import { allBlogs } from '.contentlayer/generated';
 
 import { queryBuilder } from '@/lib/db';
@@ -8,8 +8,7 @@ import { SignOutButton } from '@/components/sign-out';
 
 import Metric from '@/components/metric';
 import Track from '@/components/track';
-import { redirect } from 'next/navigation';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { getServerAuthSession } from '@/lib/auth';
 
 import type { Metadata } from 'next/types';
 
@@ -50,7 +49,7 @@ const getGuestbookEntriesCount = async () => {
 const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
   const [session, t, viewsCount, guesbookEntriesCount, topTracks] =
     await Promise.all([
-      getServerSession(authOptions),
+      getServerAuthSession(),
       getTranslator(locale, 'dashboard'),
       getViewsCount(),
       getGuestbookEntriesCount(),
