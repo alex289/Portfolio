@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect } from 'react';
+import { type ReactNode, useEffect } from 'react';
 import { Provider as JotaiProvider } from 'jotai';
 import { ThemeProvider, useTheme } from 'next-themes';
 

@@ -1,5 +1,5 @@
 import env from '@/env.js';
-import { DB } from '@/types/db-types';
+import { type DB } from '@/types/db-types';
 import { Kysely } from 'kysely';
 import { PlanetScaleDialect } from 'kysely-planetscale';
 

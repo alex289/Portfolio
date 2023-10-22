@@ -5,8 +5,9 @@
       "@/*": ["./*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
-    "target": "es5",
+    "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "checkJs": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
