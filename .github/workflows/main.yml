@@ -50,7 +50,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.2
         with:
-          version: 7.13.0
+          version: 8.9.2
           run_install: false
 
       - name: Get pnpm store directory
