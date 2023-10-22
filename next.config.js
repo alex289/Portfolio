@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const env = require('./src/env.js');
-const withNextIntl = require('next-intl/plugin')("src/i18n.ts");
+const withNextIntl = require('next-intl/plugin')('src/i18n.ts');
 const { withContentlayer } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
