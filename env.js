@@ -3,7 +3,6 @@ const { createEnv } = require('@t3-oss/env-nextjs');
 const { z } = require('zod');
 
 const env = createEnv({
-  clientPrefix: 'PUBLIC_',
   server: {
     DATABASE_URL: z.string().url(),
     ADMIN_EMAIL: z.string().email(),
