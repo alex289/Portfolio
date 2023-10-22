@@ -32,7 +32,7 @@ const Project = ({
             <sub className="md:mx-4 md:hidden">{project.language}</sub>
             <p className="hidden md:mx-4 md:inline">{project.language}</p>
             <div className="flex flex-row justify-end gap-x-4">
-              {project.homepage !== '' && (
+              {project.homepage && project.homepage !== '' && (
                 <a
                   href={project.homepage}
                   target="_blank"
