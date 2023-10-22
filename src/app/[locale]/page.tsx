@@ -6,7 +6,7 @@ import { getTranslator } from 'next-intl/server';
 
 import { getProjects } from '@/lib/projects';
 
-import profilePic from '@/public/static/images/konietzko_alexander.jpg';
+import profilePic from 'public/static/images/konietzko_alexander.jpg';
 import Project from '@/components/projects';
 import FeaturedPost from '@/components/blog/featured-post';
 

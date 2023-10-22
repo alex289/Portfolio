@@ -7,7 +7,7 @@ import { getTranslator } from 'next-intl/server';
 import env from '@/env';
 import Tools from '@/components/tools';
 
-import avatar from '@/public/static/images/konietzko_alexander.jpg';
+import avatar from 'public/static/images/konietzko_alexander.jpg';
 
 import type { Metadata } from 'next/types';
 
