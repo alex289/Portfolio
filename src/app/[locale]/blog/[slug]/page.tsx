@@ -12,21 +12,21 @@ import env from '@/env.js';
 
 import type { Metadata } from 'next/types';
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return allBlogs.map((post) => ({
     locale: post.language,
     slug: post.slug,
   }));
 }
 
-export async function generateMetadata({
+export function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}): Promise<Metadata | undefined> {
+}): Metadata | undefined {
   const post = allBlogs.find((post) => post.slug === params.slug);
   if (!post) {
-    return;
+    return undefined;
   }
 
   const {
@@ -77,7 +77,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({
+export default function Blog({
   params,
 }: {
   params: { slug: string; locale: string };

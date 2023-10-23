@@ -29,7 +29,7 @@ export default function GuestbookForm({
     e.preventDefault();
     setForm({ state: Form.Loading });
 
-    if (inputEl === null || inputEl.current === null) {
+    if (inputEl?.current === null) {
       setForm({ state: Form.Error });
       return;
     }
@@ -49,7 +49,7 @@ export default function GuestbookForm({
       method: 'POST',
     });
 
-    const { error } = await res.json();
+    const { error } = (await res.json()) as { error: string };
     if (error) {
       setForm({
         state: Form.Error,
@@ -81,7 +81,7 @@ export default function GuestbookForm({
             type="button"
             className="mb-2 mr-2 inline-flex items-center rounded-lg bg-[#24292F] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#24292F]/90 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 dark:hover:bg-[#050708]/30 dark:focus:ring-gray-500"
             onClick={() => {
-              signIn('github');
+              void signIn('github');
             }}>
             <GitHubIcon className="-ml-1 mr-2 h-4 w-4" />
             {t('guestbook.login')}GitHub
@@ -90,7 +90,7 @@ export default function GuestbookForm({
             type="button"
             className="dark:focus:ring-[#4285F4]/55 mb-2 mr-2 inline-flex items-center rounded-lg bg-[#4285F4] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#4285F4]/90 focus:outline-none focus:ring-4 focus:ring-[#4285F4]/50"
             onClick={() => {
-              signIn('google');
+              void signIn('google');
             }}>
             <GoogleIcon className="-ml-1 mr-2 h-4 w-4" />
             {t('guestbook.login')}Google
@@ -127,10 +127,10 @@ export default function GuestbookForm({
         </form>
       )}
       {form.state === Form.Error && (
-        <ErrorMessage>{form.message as string}</ErrorMessage>
+        <ErrorMessage>{form.message!}</ErrorMessage>
       )}
       {form.state === Form.Success && (
-        <SuccessMessage>{form.message as string}</SuccessMessage>
+        <SuccessMessage>{form.message!}</SuccessMessage>
       )}
       {(form.state === Form.Initial || form.state === Form.Loading) && (
         <p className="text-sm text-gray-800 dark:text-gray-200">

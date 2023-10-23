@@ -1,13 +1,13 @@
-export type NowPlayingSong = {
+export interface NowPlayingSong {
   album: string;
   albumImageUrl: string;
   artist: string;
   isPlaying: boolean;
   songUrl: string;
   title: string;
-};
+}
 
-export type Stats = {
+export interface Stats {
   stars: number;
   totalCommits: number;
   totalRepos: number;
@@ -15,15 +15,15 @@ export type Stats = {
   contributions: number;
   prs: number;
   issues: number;
-};
+}
 
-export type Projects = {
+export interface Projects {
   name: string;
   html_url: string;
   homepage: string;
   description: string;
   language: string;
-};
+}
 
 export enum Form {
   Initial,
@@ -32,23 +32,23 @@ export enum Form {
   Error,
 }
 
-export type FormState = {
+export interface FormState {
   state: Form;
   message?: string;
-};
+}
 
-export type Song = {
+export interface Song {
   songUrl: string;
   artist: string;
   cover: string;
   title: string;
-};
+}
 
-export type TopTracks = {
+export interface TopTracks {
   tracks: Song[];
-};
+}
 
-export type ResponseTrackType = {
+export interface ResponseTrackType {
   artists: {
     name: string;
   }[];
@@ -61,4 +61,4 @@ export type ResponseTrackType = {
       url: string;
     }[];
   };
-};
+}

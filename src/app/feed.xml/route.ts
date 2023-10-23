@@ -22,7 +22,7 @@ allBlogs.map((post) => {
   });
 });
 
-export async function GET() {
+export function GET() {
   return new Response(feed.xml({ indent: true }), {
     headers: {
       'Content-Type': 'text/xml',

@@ -1,5 +1,5 @@
 export const BadRequest = (message?: string) => {
-  return new Response(JSON.stringify({ message: message || 'Bad request' }), {
+  return new Response(JSON.stringify({ message: message ?? 'Bad request' }), {
     status: 400,
     headers: {
       'Content-Type': 'application/json',

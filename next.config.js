@@ -11,6 +11,7 @@ const nextConfig = {
   images: {
     domains: ['i.scdn.co'],
   },
+  // eslint-disable-next-line @typescript-eslint/require-await
   async headers() {
     return [
       {

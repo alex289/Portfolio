@@ -12,35 +12,33 @@ import { getServerAuthSession } from '@/lib/auth';
 
 import type { Metadata } from 'next/types';
 
-type DashboardProps = {
+interface DashboardProps {
   params: {
     locale: string;
   };
-};
+}
 
 export const metadata: Metadata = {
   title: 'Dashboard',
 };
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'de' }];
 }
 
 const getViewsCount = async () => {
-  const { sum } = queryBuilder.fn;
   const data = await queryBuilder
     .selectFrom('views')
-    .select(sum<number>('views.count').as('total'))
+    .select(queryBuilder.fn.sum<number>('views.count').as('total'))
     .execute();
 
   return data[0]?.total ?? 0;
 };
 
 const getGuestbookEntriesCount = async () => {
-  const { count } = queryBuilder.fn;
   const data = await queryBuilder
     .selectFrom('guestbook')
-    .select(count<number>('id').as('total'))
+    .select(queryBuilder.fn.count<number>('id').as('total'))
     .execute();
 
   return data[0]?.total ?? 0;

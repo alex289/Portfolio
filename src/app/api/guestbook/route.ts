@@ -10,7 +10,7 @@ export async function POST(req: Request) {
   }
 
   const { email, name } = session.user;
-  const { value } = await req.json();
+  const { value } = (await req.json()) as { value: string };
 
   if (typeof value !== 'string' || value.trim().length === 0 || !value) {
     return BadRequest('Invalid body');

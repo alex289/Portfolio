@@ -6,11 +6,11 @@ import { Eye } from 'lucide-react';
 import ViewCounter from './views-counter';
 import { Link } from '@/lib/navigation';
 
-type FeaturedPostProps = {
+interface FeaturedPostProps {
   title: string;
   slug: string;
   gradient: string;
-};
+}
 
 export default function FeaturedPost({
   title,

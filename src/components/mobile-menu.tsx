@@ -10,10 +10,10 @@ import { usePathname, useRouter } from '@/lib/navigation';
 
 import styles from '@/styles/mobile-menu.module.css';
 
-type Props = {
+interface Props {
   isMenuOpen: boolean;
   toggle: () => void;
-};
+}
 
 export default function MobileMenu({ isMenuOpen, toggle }: Props) {
   const path = usePathname();

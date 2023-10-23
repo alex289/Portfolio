@@ -5,10 +5,10 @@ import { Filter } from 'lucide-react';
 import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
 
-type Props = {
+interface Props {
   filterBy: 'name' | 'tag';
   setFilter: (filter: 'name' | 'tag') => void;
-};
+}
 
 export default function PostFilter({ filterBy, setFilter }: Props) {
   const t = useTranslations();

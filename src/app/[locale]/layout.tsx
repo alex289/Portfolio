@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 
-import { NextIntlClientProvider } from 'next-intl';
+import { type AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
 
 import AnalyticsWrapper from '@/components/analytics';
 import { Providers } from '@/components/providers';
@@ -20,15 +20,15 @@ import type { Metadata } from 'next/types';
 
 const inter = Inter({ subsets: ['latin'] });
 
-type LayoutProps = {
+interface LayoutProps {
   params: {
     locale: string;
   };
-};
+}
 
-export async function generateMetadata({
+export function generateMetadata({
   params: { locale },
-}: LayoutProps): Promise<Metadata> {
+}: LayoutProps): Metadata {
   return {
     metadataBase: new URL(env.NEXT_PUBLIC_VERCEL_URL),
     title: {
@@ -107,9 +107,13 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  let messages;
+  let messages: AbstractIntlMessages;
   try {
-    messages = (await import(`../../messages/${params.locale}.json`)).default;
+    messages = (
+      (await import(`../../messages/${params.locale}.json`)) as {
+        default: AbstractIntlMessages;
+      }
+    ).default;
   } catch (error) {
     notFound();
   }

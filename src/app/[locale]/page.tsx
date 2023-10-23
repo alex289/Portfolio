@@ -4,19 +4,19 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { getTranslator } from 'next-intl/server';
 
-import { getProjects } from '@/lib/projects';
+import { getProjects } from '@/lib/github';
 
 import profilePic from 'public/static/images/konietzko_alexander.jpg';
 import Project from '@/components/projects';
 import FeaturedPost from '@/components/blog/featured-post';
 
-type IndexProps = {
+interface IndexProps {
   params: {
     locale: string;
   };
-};
+}
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'de' }];
 }
 

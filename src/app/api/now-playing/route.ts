@@ -2,6 +2,25 @@ import { getNowPlaying } from '@/lib/spotify';
 
 export const runtime = 'edge';
 
+interface SongResponse {
+  item: {
+    name: string;
+    artists: {
+      name: string;
+    }[];
+    album: {
+      name: string;
+      images: {
+        url: string;
+      }[];
+    };
+    external_urls: {
+      spotify: string;
+    };
+  };
+  is_playing: boolean;
+}
+
 export async function GET() {
   const response = await getNowPlaying();
 
@@ -14,7 +33,7 @@ export async function GET() {
     });
   }
 
-  const song = await response.json();
+  const song = (await response.json()) as SongResponse;
 
   if (song.item === null) {
     return new Response(JSON.stringify({ isPlaying: false }), {
@@ -31,7 +50,7 @@ export async function GET() {
     .map((_artist: { name: string }) => _artist.name)
     .join(', ');
   const album = song.item.album.name;
-  const albumImageUrl = song.item.album.images[0].url;
+  const albumImageUrl = song.item.album.images[0]?.url ?? '';
   const songUrl = song.item.external_urls.spotify;
 
   return new Response(

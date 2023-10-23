@@ -8,13 +8,13 @@ import GuestbookEntry from '@/components/guestbook/guestbook-entry';
 
 import type { Metadata } from 'next/types';
 
-type GuestbookProps = {
+interface GuestbookProps {
   params: {
     locale: string;
   };
-};
+}
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'de' }];
 }
 
@@ -58,16 +58,15 @@ const GuestbookPage = async ({ params: { locale } }: GuestbookProps) => {
 
       <GuestbookForm session={session} />
       <div className="mt-4 space-y-8">
-        {entries &&
-          entries.map((entry) => (
-            <GuestbookEntry
-              key={entry.id.toString()}
-              entry={entry}
-              session={session}
-              locale={locale}
-              deleteText={t('delete')}
-            />
-          ))}
+        {entries?.map((entry) => (
+          <GuestbookEntry
+            key={entry.id.toString()}
+            entry={entry}
+            session={session}
+            locale={locale}
+            deleteText={t('delete')}
+          />
+        ))}
       </div>
     </div>
   );

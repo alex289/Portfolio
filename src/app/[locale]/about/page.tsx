@@ -11,13 +11,13 @@ import avatar from 'public/static/images/konietzko_alexander.jpg';
 
 import type { Metadata } from 'next/types';
 
-type AboutPageProps = {
+interface AboutPageProps {
   params: {
     locale: string;
   };
-};
+}
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'de' }];
 }
 

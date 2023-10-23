@@ -2,19 +2,19 @@ import { AlertCircle, Book, GitPullRequest, History, Star } from 'lucide-react';
 
 import { getTranslator } from 'next-intl/server';
 
-import { getProjects, getStats } from '@/lib/projects';
+import { getProjects, getStats } from '@/lib/github';
 
 import Project from '@/components/projects';
 
 import type { Metadata } from 'next/types';
 
-type ProjectsProps = {
+interface ProjectsProps {
   params: {
     locale: string;
   };
-};
+}
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'de' }];
 }
 

@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 
 import type { Session } from 'next-auth';
 
-type GuestBookEntryProps = {
+interface GuestBookEntryProps {
   entry: {
     id: number;
     email: string;
@@ -15,7 +15,7 @@ type GuestBookEntryProps = {
   session: Session | null;
   locale: string;
   deleteText: string;
-};
+}
 
 export default function GuestbookEntry({
   entry,

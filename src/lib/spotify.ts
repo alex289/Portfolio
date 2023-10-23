@@ -23,7 +23,7 @@ const getAccessToken = async () => {
     },
   );
 
-  return response.json();
+  return (await response.json()) as { access_token: string };
 };
 
 export const getNowPlaying = async () => {
@@ -47,7 +47,7 @@ export const getTopTracks = async () => {
     },
   });
 
-  const { items } = await response.json();
+  const { items } = (await response.json()) as { items: ResponseTrackType[] };
 
   const tracks = items.slice(0, 10).map((track: ResponseTrackType) => ({
     artist: track.artists.map((_artist) => _artist.name).join(', '),

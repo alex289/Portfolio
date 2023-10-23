@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Blog',
 };
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'de' }];
 }
 

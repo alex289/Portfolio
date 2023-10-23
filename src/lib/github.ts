@@ -1,13 +1,47 @@
 import env from '@/env.js';
 import type { Projects, Stats } from './types';
 
+interface ReposResponse {
+  data: {
+    user: {
+      repositories: {
+        totalCount: number;
+        nodes: {
+          stargazers: {
+            totalCount: number;
+          };
+        }[];
+      };
+      contributionsCollection: {
+        totalCommitContributions: number;
+        restrictedContributionsCount: number;
+      };
+      followers: {
+        totalCount: number;
+      };
+      repositoriesContributedTo: {
+        totalCount: number;
+      };
+      pullRequests: {
+        totalCount: number;
+      };
+      openIssues: {
+        totalCount: number;
+      };
+      closedIssues: {
+        totalCount: number;
+      };
+    };
+  };
+}
+
 export const getStats = async () => {
   const reposResponse = await fetch('https://api.github.com/graphql', {
     next: { revalidate: 60 * 60 * 24 },
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `bearer ${env.GITHUB_API_TOKEN}`,
+      Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
     },
     body: JSON.stringify({
       query: `
@@ -56,7 +90,7 @@ export const getStats = async () => {
     return null;
   }
 
-  const data = await reposResponse.json();
+  const data = (await reposResponse.json()) as ReposResponse;
   const user = data.data.user;
 
   let count = 0;
@@ -85,7 +119,7 @@ export const getProjects = async (perPage = 10) => {
     {
       next: { revalidate: 60 * 60 * 24 },
       headers: {
-        Authorization: `bearer ${env.GITHUB_API_TOKEN}`,
+        Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
       },
     },
   );

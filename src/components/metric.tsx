@@ -12,7 +12,7 @@ const Metric = ({
       {title}
     </div>
     <p className="spacing-sm mt-2 text-3xl text-black dark:text-white">
-      {children || '-'}
+      {children ?? '-'}
     </p>
   </div>
 );

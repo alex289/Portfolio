@@ -2,9 +2,9 @@ import Link from 'next/link';
 import Image, { type ImageProps } from 'next/image';
 
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import { type AnchorHTMLAttributes } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CustomLink = (props: any) => {
+const CustomLink = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
   const href = props.href;
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
@@ -20,8 +20,8 @@ const CustomLink = (props: any) => {
 };
 
 function RoundedImage(props: ImageProps) {
-  // eslint-disable-next-line jsx-a11y/alt-text
-  return <Image className="rounded-lg" {...props} />;
+  const { alt, ...rest } = props;
+  return <Image alt={alt} className="rounded-lg" {...rest} />;
 }
 
 const components = {

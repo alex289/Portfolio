@@ -199,9 +199,9 @@ export default function CommandPalette({
         break;
       case Actions.Session:
         if (value.slice(2) === '') {
-          signOut();
+          void signOut();
         } else {
-          signIn(value.slice(2));
+          void signIn(value.slice(2));
         }
         break;
     }

@@ -5,20 +5,20 @@ import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
 
-type Props = {
+interface Props {
   slug: string;
   trackView: boolean;
-};
+}
 
-type PostView = {
+interface PostView {
   slug: string;
   count: string;
-};
+}
 
 export default function ViewCounter({ slug, trackView }: Props) {
   const { data } = useSWR<PostView[]>(`/api/views`, fetcher);
-  const viewsForSlug = data && data.find((view) => view.slug === slug);
-  const views = new Number(viewsForSlug?.count || 0);
+  const viewsForSlug = data?.find((view) => view.slug === slug);
+  const views = new Number(viewsForSlug?.count ?? 0);
 
   useEffect(() => {
     const registerView = () =>
@@ -27,7 +27,7 @@ export default function ViewCounter({ slug, trackView }: Props) {
       });
 
     if (process.env.NODE_ENV === 'production' && trackView) {
-      registerView();
+      void registerView();
     }
   }, [slug, trackView]);
 
