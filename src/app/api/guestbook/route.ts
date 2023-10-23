@@ -66,19 +66,18 @@ export async function DELETE(req: Request) {
     return BadRequest('Entry not found');
   }
 
-  if (
-    !session ||
-    !session.user ||
-    session.user.email !== entry.email ||
-    !session.user.isAdmin
-  ) {
+  if (!session || !session.user || !session.user.email) {
+    return Unauthorized();
+  }
+
+  if (session.user.email !== entry.email && !session.user.isAdmin) {
     return Unauthorized();
   }
 
   await queryBuilder
     .deleteFrom('guestbook')
     .where('id', '=', Number(id))
-    .where('email', '=', session.user.email)
+    .where('email', '=', entry.email)
     .execute();
 
   return new Response(JSON.stringify({ message: `Deleted entry ${id}` }), {
