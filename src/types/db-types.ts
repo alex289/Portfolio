@@ -4,19 +4,19 @@ export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
   : ColumnType<T, T | undefined, T>;
 export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 
-export interface guestbook {
+export type guestbook = {
   id: Generated<number>;
   email: string;
   body: string;
   created_by: string;
   created_at: Generated<Timestamp>;
   updated_at: Generated<Timestamp>;
-}
-export interface views {
+};
+export type views = {
   slug: string;
   count: Generated<number>;
-}
-export interface DB {
+};
+export type DB = {
   guestbook: guestbook;
   views: views;
-}
+};
