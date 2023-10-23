@@ -72,14 +72,14 @@ jobs:
       - name: Format
         run: pnpm run format:check
 
-      - name: Lint
-        run: pnpm run lint
-
       - name: Generate prisma schema
         run: pnpm exec prisma generate
 
       - name: Contentlayer build
         run: pnpm contentlayer build
+
+      - name: Lint
+        run: pnpm run lint
 
       - name: Typecheck
         run: pnpm typecheck
