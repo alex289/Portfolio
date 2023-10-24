@@ -110,10 +110,8 @@ const Navbar = () => {
         <div className="flex justify-between">
           <button
             id="burger"
-            className={clsx(
-              styles.burger,
-              'umami--click--burger-button visible md:hidden',
-            )}
+            data-umami-event="mobile-menu-click"
+            className={clsx(styles.burger, 'visible md:hidden')}
             aria-label="Toggle menu"
             type="button"
             onClick={toggleMenu}>
@@ -129,14 +127,16 @@ const Navbar = () => {
               aria-label="Open Command Palette"
               type="button"
               onClick={() => setCommandPaletteOpen(true)}
-              className="umami--click--cmd-button mr-3 h-10 w-10 rounded-lg bg-gray-200 p-3 text-3xl ring-gray-300 hover:ring-4 dark:bg-gray-700">
+              data-umami-event="command-palette-click"
+              className="mr-3 h-10 w-10 rounded-lg bg-gray-200 p-3 text-3xl ring-gray-300 hover:ring-4 dark:bg-gray-700">
               <Command className="h-4 w-4 text-gray-800 dark:text-gray-200" />
             </button>
             <button
               id="dark-mode-toggle"
               aria-label="Toggle Dark Mode"
               type="button"
-              className="umami--click--theme-button mr-1 h-10 w-10 rounded-lg bg-gray-200 p-3 ring-gray-300 hover:ring-4 dark:bg-gray-700 md:mr-3"
+              data-umami-event="theme-switcher-click"
+              className="mr-1 h-10 w-10 rounded-lg bg-gray-200 p-3 ring-gray-300 hover:ring-4 dark:bg-gray-700 md:mr-3"
               onClick={() =>
                 setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
               }>
