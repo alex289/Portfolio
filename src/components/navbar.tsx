@@ -147,6 +147,7 @@ const Navbar = () => {
               scroll={false}
               shallow
               locale={locale === 'de' ? 'en' : 'de'}
+              data-umami-event="language-switcher-click"
               id="switch-lang"
               className="md:dark:link-underline md:link-underline-black mx-3 pb-1 text-lg tracking-wide">
               {locale === 'de' ? 'EN' : 'DE'}
