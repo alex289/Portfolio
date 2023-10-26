@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { ImageResponse, type NextRequest } from 'next/server';
+import { type NextRequest } from 'next/server';
+import { ImageResponse } from 'next/og';
 
 import env from '@/env';
 

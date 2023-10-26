@@ -9,7 +9,12 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['i.scdn.co'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.scdn.co',
+      },
+    ],
   },
   // eslint-disable-next-line @typescript-eslint/require-await
   async headers() {

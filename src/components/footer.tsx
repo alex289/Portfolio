@@ -46,7 +46,7 @@ export default function Footer() {
       text: t('footer.sourcecode'),
     },
     {
-      href: 'feed.xml',
+      href: '/feed.xml',
       id: 'footer.feed',
       text: 'Feed',
       noTranslate: true,
@@ -67,7 +67,7 @@ export default function Footer() {
       text: t('footer.contact'),
     },
     {
-      href: 'sitemap.xml',
+      href: '/sitemap.xml',
       id: 'footer.sitemap',
       text: t('footer.sitemap'),
       noTranslate: true,
@@ -83,10 +83,12 @@ export default function Footer() {
             link.href.startsWith('/') ? (
               <Link
                 key={link.id}
-                href={`/${link.noTranslate !== false && locale}${link.href}`}
+                href={`${link.noTranslate !== true ? '/' + locale : ''}${
+                  link.href
+                }`}
                 id={link.id}
                 className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
-                {link.text}
+                {link.text} test
               </Link>
             ) : (
               <a

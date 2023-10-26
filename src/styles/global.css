@@ -159,3 +159,37 @@ table {
 [data-rehype-pretty-code-title] + pre {
   @apply mt-0 rounded-t-none border-t-0;
 }
+
+/* [data-line] {
+  @apply border-l-2 border-l-transparent px-6;
+} */
+
+[data-highlighted-line] {
+  background: rgba(200, 200, 255, 0.1);
+  @apply border-l-blue-400;
+}
+
+[data-highlighted-chars] {
+  @apply rounded bg-zinc-600/50;
+  box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+}
+
+[data-chars-id] {
+  @apply border-b-2 p-1 shadow-none;
+}
+
+[data-chars-id] span {
+  @apply !text-inherit;
+}
+
+[data-chars-id='v'] {
+  @apply border-b-pink-600 bg-rose-800/50 font-bold !text-pink-300;
+}
+
+[data-chars-id='s'] {
+  @apply border-b-yellow-600 bg-yellow-800/50 font-bold !text-yellow-300;
+}
+
+[data-chars-id='i'] {
+  @apply border-b-purple-600 bg-purple-800/50 font-bold !text-purple-200;
+}

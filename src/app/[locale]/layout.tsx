@@ -16,7 +16,7 @@ import { getServerAuthSession } from '@/lib/auth';
 
 const CommandPalette = dynamic(() => import('@/components/command-palette'));
 
-import type { Metadata } from 'next/types';
+import type { Metadata, Viewport } from 'next/types';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -89,16 +89,21 @@ export function generateMetadata({
       ],
     },
     manifest: '/static/site.webmanifest',
-    themeColor: '#f9fafb',
-    viewport: {
-      width: 'device-width',
-      initialScale: 1,
-    },
     verification: {
       google: '64Pb4e1oRhhlHgM6aJGvqSunCfPa38sJ5ZHPfLNtzts',
     },
   };
 }
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f9fafb' },
+    { media: '(prefers-color-scheme: dark)', color: '#222222' },
+  ],
+  initialScale: 1,
+  width: 'device-width',
+  colorScheme: 'light dark',
+};
 
 export default async function RootLayout({
   children,
