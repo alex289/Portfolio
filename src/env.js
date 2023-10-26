@@ -18,7 +18,7 @@ const env = createEnv({
     GITHUB_API_TOKEN: z.string(),
   },
   client: {
-    NEXT_PUBLIC_VERCEL_URL: z
+    NEXT_PUBLIC_WEBSITE_URL: z
       .string()
       .default('http://localhost:3000')
       .transform((url) => {
@@ -42,7 +42,7 @@ const env = createEnv({
     SPOTIFY_CLIENT_SECRET: process.env.SPOTIFY_CLIENT_SECRET,
     SPOTIFY_REFRESH_TOKEN: process.env.SPOTIFY_REFRESH_TOKEN,
     GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
-    NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL,
+    NEXT_PUBLIC_WEBSITE_URL: process.env.NEXT_PUBLIC_WEBSITE_URL,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   emptyStringAsUndefined: true,

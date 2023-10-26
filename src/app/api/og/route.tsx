@@ -62,7 +62,7 @@ export function GET(req: NextRequest) {
             }}>
             Alexander Konietzko
             <img
-              src={`${env.NEXT_PUBLIC_VERCEL_URL}/static/images/konietzko_alexander.png`}
+              src={`${env.NEXT_PUBLIC_WEBSITE_URL}/static/images/konietzko_alexander.png`}
               alt="Alexander Konietzko"
               style={{
                 width: '3em',

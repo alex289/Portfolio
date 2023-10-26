@@ -48,9 +48,9 @@ export function generateMetadata({
     },
   );
 
-  const ogImage = `${env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${title}&header=${
-    formattedDate + ' • ' + readingTime
-  }`;
+  const ogImage = `${
+    env.NEXT_PUBLIC_WEBSITE_URL
+  }/api/og?title=${title}&header=${formattedDate + ' • ' + readingTime}`;
 
   return {
     title,
@@ -61,7 +61,7 @@ export function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `${env.NEXT_PUBLIC_VERCEL_URL}/blog/${slug}`,
+      url: `${env.NEXT_PUBLIC_WEBSITE_URL}/blog/${slug}`,
       images: [
         {
           url: ogImage,

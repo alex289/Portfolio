@@ -6,15 +6,15 @@ import env from '@/env';
 const feed = new RSS({
   title: 'Alexander Konietzko',
   description: 'Blog of Alexander Konietzko',
-  site_url: env.NEXT_PUBLIC_VERCEL_URL,
-  feed_url: `${env.NEXT_PUBLIC_VERCEL_URL}/feed.xml`,
+  site_url: env.NEXT_PUBLIC_WEBSITE_URL,
+  feed_url: `${env.NEXT_PUBLIC_WEBSITE_URL}/feed.xml`,
 });
 
 allBlogs.map((post) => {
   feed.item({
     title: post.title,
-    guid: `${env.NEXT_PUBLIC_VERCEL_URL}/${post.language}/blog/${post.slug}`,
-    url: `${env.NEXT_PUBLIC_VERCEL_URL}/${post.language}/blog/${post.slug}`,
+    guid: `${env.NEXT_PUBLIC_WEBSITE_URL}/${post.language}/blog/${post.slug}`,
+    url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${post.language}/blog/${post.slug}`,
     date: post.publishedAt,
     description: post.summary,
     author: 'Alexander Konietzko',

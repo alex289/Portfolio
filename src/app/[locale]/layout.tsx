@@ -30,7 +30,7 @@ export function generateMetadata({
   params: { locale },
 }: LayoutProps): Metadata {
   return {
-    metadataBase: new URL(env.NEXT_PUBLIC_VERCEL_URL),
+    metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
     title: {
       default: 'Alexander Konietzko',
       template: '%s | Alexander Konietzko',
@@ -41,11 +41,11 @@ export function generateMetadata({
     openGraph: {
       title: 'Alexander Konietzko',
       description: 'Software developer, TypeScript enthusiast and dual student',
-      url: env.NEXT_PUBLIC_VERCEL_URL,
+      url: env.NEXT_PUBLIC_WEBSITE_URL,
       siteName: 'Alexander Konietzko',
       images: [
         {
-          url: `${env.NEXT_PUBLIC_VERCEL_URL}/api/og`,
+          url: `${env.NEXT_PUBLIC_WEBSITE_URL}/api/og`,
           width: 1920,
           height: 1080,
         },
@@ -68,7 +68,7 @@ export function generateMetadata({
       title: 'Alexander Konietzko',
       card: 'summary_large_image',
       description: 'Software developer, TypeScript enthusiast and dual student',
-      images: [`${env.NEXT_PUBLIC_VERCEL_URL}/api/og`],
+      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og`],
     },
     icons: {
       shortcut: '/static/favicon.ico',

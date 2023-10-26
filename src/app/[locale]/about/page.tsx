@@ -72,11 +72,11 @@ const AboutPage = () => {
           <li>
             {t('about-page.website')}:{' '}
             <a
-              href={env.NEXT_PUBLIC_VERCEL_URL}
+              href={env.NEXT_PUBLIC_WEBSITE_URL}
               target="_blank"
               rel="noreferrer noopener"
               className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
-              {env.NEXT_PUBLIC_VERCEL_URL}
+              {env.NEXT_PUBLIC_WEBSITE_URL}
             </a>
           </li>
           <li>
