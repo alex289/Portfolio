@@ -88,7 +88,7 @@ export default function Footer() {
                 }`}
                 id={link.id}
                 className="text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-50">
-                {link.text} test
+                {link.text}
               </Link>
             ) : (
               <a
