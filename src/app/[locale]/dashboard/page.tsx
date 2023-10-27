@@ -8,7 +8,7 @@ import { SignOutButton } from '@/components/sign-out';
 
 import Metric from '@/components/metric';
 import Track from '@/components/track';
-import { getServerAuthSession } from '@/lib/auth';
+import { auth } from '@/lib/auth';
 
 import type { Metadata } from 'next/types';
 
@@ -47,7 +47,7 @@ const getGuestbookEntriesCount = async () => {
 const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
   const [session, t, viewsCount, guesbookEntriesCount, topTracks] =
     await Promise.all([
-      getServerAuthSession(),
+      auth(),
       getTranslator(locale, 'dashboard'),
       getViewsCount(),
       getGuestbookEntriesCount(),

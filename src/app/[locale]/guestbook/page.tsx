@@ -1,7 +1,7 @@
 import { getTranslator } from 'next-intl/server';
 
 import { queryBuilder } from '@/lib/db';
-import { getServerAuthSession } from '@/lib/auth';
+import { auth } from '@/lib/auth';
 
 import GuestbookForm from '@/components/guestbook/guestbook-form';
 import GuestbookEntry from '@/components/guestbook/guestbook-entry';
@@ -43,7 +43,7 @@ async function getGuestbook() {
 const GuestbookPage = async ({ params: { locale } }: GuestbookProps) => {
   const [entries, session, t] = await Promise.all([
     getGuestbook(),
-    getServerAuthSession(),
+    auth(),
     getTranslator(locale, 'guestbook'),
   ]);
 

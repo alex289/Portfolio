@@ -1,9 +1,20 @@
-import { getServerSession, type NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 import env from '@/env.js';
+import NextAuth, { type Session } from 'next-auth';
+import { type NextRequest } from 'next/server';
 
-export const authOptions: NextAuthOptions = {
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+export const {
+  handlers: { GET, POST },
+  auth,
+}: {
+  auth: () => Promise<Session | null>;
+  handlers: {
+    GET: (req: NextRequest) => Promise<Response>;
+    POST: (req: NextRequest) => Promise<Response>;
+  };
+} = NextAuth({
   secret: env.NEXTAUTH_SECRET,
   theme: {
     colorScheme: 'auto',
@@ -29,6 +40,4 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
-};
-
-export const getServerAuthSession = () => getServerSession(authOptions);
+});

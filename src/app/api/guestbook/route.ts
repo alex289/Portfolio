@@ -1,9 +1,9 @@
 import { queryBuilder } from '@/lib/db';
 import { BadRequest, Unauthorized } from '@/lib/api';
-import { getServerAuthSession } from '@/lib/auth';
+import { auth } from '@/lib/auth';
 
 export async function POST(req: Request) {
-  const session = await getServerAuthSession();
+  const session = await auth();
 
   if (!session || !session.user || !session.user.email || !session.user.name) {
     return Unauthorized();
@@ -46,7 +46,7 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  const session = await getServerAuthSession();
+  const session = await auth();
   const { searchParams } = new URL(req.url);
   const id = searchParams.get('id');
 

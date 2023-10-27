@@ -12,7 +12,7 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
 import env from '@/env.js';
-import { getServerAuthSession } from '@/lib/auth';
+import { auth } from '@/lib/auth';
 
 const CommandPalette = dynamic(() => import('@/components/command-palette'));
 
@@ -122,7 +122,7 @@ export default async function RootLayout({
   } catch (error) {
     notFound();
   }
-  const session = await getServerAuthSession();
+  const session = await auth();
 
   return (
     <html
