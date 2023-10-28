@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   slug: string;
@@ -16,6 +17,7 @@ interface PostView {
 }
 
 export default function ViewCounter({ slug, trackView }: Props) {
+  const t = useTranslations('blog');
   const { data } = useSWR<PostView[]>(`/api/views`, fetcher);
   const viewsForSlug = data?.find((view) => view.slug === slug);
   const views = new Number(viewsForSlug?.count ?? 0);
@@ -33,7 +35,7 @@ export default function ViewCounter({ slug, trackView }: Props) {
 
   return (
     <span className="tracking-tighter">
-      {data ? `${views.toLocaleString()} views` : ''}
+      {data ? `${views.toLocaleString()} ${t('views')}` : ''}
     </span>
   );
 }

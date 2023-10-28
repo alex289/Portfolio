@@ -87,7 +87,8 @@
     "filter": {
       "by-name": "By name",
       "by-tag": "By tag"
-    }
+    },
+    "views": "views"
   },
   "guestbook": {
     "title": "Guestbook",

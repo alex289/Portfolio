@@ -87,7 +87,8 @@
     "filter": {
       "by-name": "Nach Name",
       "by-tag": "Nach Tag"
-    }
+    },
+    "views": "Aufrufe"
   },
   "guestbook": {
     "title": "Gästebuch",

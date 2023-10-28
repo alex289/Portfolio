@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import Balancer from 'react-wrap-balancer';
@@ -11,6 +10,7 @@ import { Mdx } from '@/components/blog/mdx';
 import env from '@/env.js';
 
 import type { Metadata } from 'next/types';
+import { getFormatter, getNow } from 'next-intl/server';
 
 export function generateStaticParams() {
   return allBlogs.map((post) => ({
@@ -77,11 +77,13 @@ export function generateMetadata({
   };
 }
 
-export default function Blog({
+export default async function Blog({
   params,
 }: {
   params: { slug: string; locale: string };
 }) {
+  const now = await getNow(params.locale);
+  const formatter = await getFormatter(params.locale);
   const post = allBlogs.find((post) => post.slug === params.slug);
 
   if (!post) {
@@ -101,23 +103,13 @@ export default function Blog({
       </h1>
       <div className="mt-2 flex w-full flex-col items-start justify-between sm:flex-row sm:items-center">
         <div className="flex items-center">
-          <Image
-            alt="Alexander Konietzko"
-            height={24}
-            width={24}
-            src="/static/images/konietzko_alexander.jpg"
-            className="rounded-full"
-          />
           <p className="ml-2 text-sm text-gray-700 dark:text-[#c2c2c2]">
-            {'Alexander Konietzko / '}
-            {new Date(post.publishedAt).toLocaleDateString(
-              params.locale === 'de' ? 'de-DE' : 'en-US',
-              {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              },
-            )}
+            {formatter.dateTime(new Date(post.publishedAt), {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            })}{' '}
+            ({formatter.relativeTime(new Date(post.publishedAt), now)})
           </p>
         </div>
         <p className="min-w-32 mt-2 text-sm text-gray-600 dark:text-[#c2c2c2] md:mt-0">
