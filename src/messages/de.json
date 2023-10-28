@@ -92,7 +92,6 @@
   },
   "guestbook": {
     "title": "Gästebuch",
-    "description": "Schreibe einen Kommentar über irgendwas - Komplimente, Informationen, Weisheiten, oder etwas lustiges. Überrasch mich!",
     "login": "Anmelden mit ",
     "logout": "Ausloggen",
     "form": {
@@ -100,7 +99,7 @@
       "description": "Teile eine Nachricht für zukünftige Besucher.",
       "input": "Deine Nachricht...",
       "submit": "Senden",
-      "info": "Deine Informationen werden nur für die Anzeige deines Namens und zum antworten per Email benutzt."
+      "info": "Deine Informationen werden nur für die Anzeige deines Namens benutzt."
     },
     "success": "Hurra! Danke für das Schreiben in mein Gästebuch.",
     "error": "Bitte gebe eine Nachricht ein.",

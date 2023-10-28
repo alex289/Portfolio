@@ -92,7 +92,6 @@
   },
   "guestbook": {
     "title": "Guestbook",
-    "description": "Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!",
     "login": "Sign in with ",
     "logout": "Sign out",
     "form": {
@@ -100,7 +99,7 @@
       "description": "Share a message for a future visitor of my site.",
       "input": "Your message...",
       "submit": "Send",
-      "info": "Your information is only used to display your name and reply by email."
+      "info": "Your information is only used to display your name."
     },
     "success": "Hooray! Thanks for signing my Guestbook.",
     "error": "Please enter a message.",

@@ -7,6 +7,7 @@ import GuestbookForm from '@/components/guestbook/guestbook-form';
 import GuestbookEntry from '@/components/guestbook/guestbook-entry';
 
 import type { Metadata } from 'next/types';
+import { Suspense } from 'react';
 
 interface GuestbookProps {
   params: {
@@ -40,7 +41,18 @@ async function getGuestbook() {
   });
 }
 
-const GuestbookPage = async ({ params: { locale } }: GuestbookProps) => {
+const GuestbookPage = ({ params: { locale } }: GuestbookProps) => {
+  return (
+    <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
+      <Suspense>
+        <GuestbookFormWrapper />
+        <GuestbookEntries locale={locale} />
+      </Suspense>
+    </div>
+  );
+};
+
+async function GuestbookEntries({ locale }: { locale: string }) {
   const [entries, session, t] = await Promise.all([
     getGuestbook(),
     auth(),
@@ -48,28 +60,23 @@ const GuestbookPage = async ({ params: { locale } }: GuestbookProps) => {
   ]);
 
   return (
-    <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
-      <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-        {t('title')}
-      </h1>
-      <p className="mb-3 text-gray-600 dark:text-[#c2c2c2]">
-        {t('description')}
-      </p>
-
-      <GuestbookForm session={session} />
-      <div className="mt-4 space-y-8">
-        {entries?.map((entry) => (
-          <GuestbookEntry
-            key={entry.id.toString()}
-            entry={entry}
-            session={session}
-            locale={locale}
-            deleteText={t('delete')}
-          />
-        ))}
-      </div>
+    <div className="mt-4 space-y-8">
+      {entries?.map((entry) => (
+        <GuestbookEntry
+          key={entry.id.toString()}
+          entry={entry}
+          session={session}
+          locale={locale}
+          deleteText={t('delete')}
+        />
+      ))}
     </div>
   );
-};
+}
+
+async function GuestbookFormWrapper() {
+  const session = await auth();
+  return <GuestbookForm session={session} />;
+}
 
 export default GuestbookPage;
