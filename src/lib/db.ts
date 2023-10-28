@@ -1,3 +1,5 @@
+import 'server-only';
+
 import env from '@/env.js';
 import { type DB } from '@/types/db-types';
 import { Kysely } from 'kysely';

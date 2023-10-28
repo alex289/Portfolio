@@ -165,7 +165,7 @@ const AboutPage = () => {
         </h3>
         <ul className="list-disc">
           <li>
-            Editor: VSCode, Neovim {t('about-page.uses.and')} JetBrains Rider (
+            Editor: VS Code, Neovim {t('about-page.uses.and')} JetBrains Rider (
             <a
               href="https://github.com/alex289/dotfiles"
               target="_blank"
@@ -194,7 +194,7 @@ const AboutPage = () => {
           {t('about-page.uses.other-tech')}
         </h3>
         <ul className="list-disc">
-          <li>Apple Airpods Pro</li>
+          <li>Apple AirPods Pro</li>
           <li>Apple Watch</li>
           <li>Apple iPhone</li>
         </ul>

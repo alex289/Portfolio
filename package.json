@@ -81,6 +81,7 @@
     "react-wrap-balancer": "^1.1.0",
     "rehype-pretty-code": "^0.10.1",
     "rss": "^1.2.2",
+    "server-only": "^0.0.1",
     "sharp": "^0.32.6",
     "shiki": "^0.14.5",
     "swr": "^2.2.4",
