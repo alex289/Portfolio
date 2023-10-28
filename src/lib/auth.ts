@@ -15,7 +15,6 @@ export const {
     POST: (req: NextRequest) => Promise<Response>;
   };
 } = NextAuth({
-  secret: env.NEXTAUTH_SECRET,
   theme: {
     colorScheme: 'auto',
     brandColor: '',
