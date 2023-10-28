@@ -1,9 +1,9 @@
 import '@/styles/global.css';
 
-import { Inter } from 'next/font/google';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 
+import { GeistSans, GeistMono } from 'geist/font';
 import { type AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
 
 import AnalyticsWrapper from '@/components/analytics';
@@ -17,8 +17,7 @@ import { auth } from '@/lib/auth';
 const CommandPalette = dynamic(() => import('@/components/command-palette'));
 
 import type { Metadata, Viewport } from 'next/types';
-
-const inter = Inter({ subsets: ['latin'] });
+import clsx from 'clsx';
 
 interface LayoutProps {
   params: {
@@ -127,7 +126,7 @@ export default async function RootLayout({
   return (
     <html
       lang={params.locale}
-      className={inter.className}
+      className={clsx(GeistSans.variable, GeistMono.variable)}
       suppressHydrationWarning>
       <body className="bg-gray-50 dark:bg-gray-800">
         <NextIntlClientProvider

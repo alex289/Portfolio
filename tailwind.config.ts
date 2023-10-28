@@ -1,6 +1,5 @@
 import typography from '@tailwindcss/typography';
 import forms from '@tailwindcss/forms';
-import { fontFamily } from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -28,7 +27,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', ...fontFamily.sans],
+        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)'],
       },
     },
   },
