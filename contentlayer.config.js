@@ -90,10 +90,18 @@ export default makeSource({
             }
           },
           onVisitHighlightedLine(node) {
-            node.properties.className = 'line--highlighted';
+            if (node.properties.className) {
+              node.properties.className.push('line--highlighted');
+            } else {
+              node.properties.className = ['line--highlighted'];
+            }
           },
           onVisitHighlightedWord(node) {
-            node.properties.className = ['word--highlighted'];
+            if (node.properties.className) {
+              node.properties.className.push('word--highlighted');
+            } else {
+              node.properties.className = ['word--highlighted'];
+            }
           },
         },
       ],
