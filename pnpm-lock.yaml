@@ -57,8 +57,8 @@ dependencies:
     specifier: ^0.3.4
     version: 0.3.4(contentlayer@0.3.4)(esbuild@0.18.13)(next@14.0.1)(react-dom@18.2.0)(react@18.2.0)
   next-intl:
-    specifier: 3.0.0-rc.6
-    version: 3.0.0-rc.6(next@14.0.1)(react@18.2.0)
+    specifier: 3.0.0-rc.9
+    version: 3.0.0-rc.9(next@14.0.1)(react@18.2.0)
   next-themes:
     specifier: ^0.2.1
     version: 0.2.1(next@14.0.1)(react-dom@18.2.0)(react@18.2.0)
@@ -5022,17 +5022,16 @@ packages:
       - supports-color
     dev: false
 
-  /next-intl@3.0.0-rc.6(next@14.0.1)(react@18.2.0):
-    resolution: {integrity: sha512-Eymf9lfxiqYO6w4YkSe1gQqZMF6Y9AQIAn49uBv8z6JPSEgyelZezt7n/6qECugTVA1rbH/BslrM/jBjMvXXEQ==}
+  /next-intl@3.0.0-rc.9(next@14.0.1)(react@18.2.0):
+    resolution: {integrity: sha512-MrHY5nhrVWPeqia7+1Fn2S4/qUgk05+3Ay+Fi1WTwsgT6eSrMv6+RfPmO6ITbKs0/xQ3T3miqjZcy1WWmGEnmg==}
     peerDependencies:
-      next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
+      next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@formatjs/intl-localematcher': 0.2.32
       negotiator: 0.6.3
       next: 14.0.1(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
-      server-only: 0.0.1
       use-intl: 3.0.0-rc.6(react@18.2.0)
     dev: false
 

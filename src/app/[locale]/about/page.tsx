@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { getTranslator } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import env from '@/env';
 import Tools from '@/components/tools';
@@ -24,9 +24,9 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params: { locale },
 }: AboutPageProps): Promise<Metadata> {
-  const t = await getTranslator(locale);
+  const t = await getTranslations({ locale, namespace: 'main' });
   return {
-    title: t('main.about'),
+    title: t('about'),
   };
 }
 

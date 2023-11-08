@@ -4,13 +4,17 @@ import { notFound } from 'next/navigation';
 import Balancer from 'react-wrap-balancer';
 import { allBlogs } from 'contentlayer/generated';
 import clsx from 'clsx';
+import {
+  getFormatter,
+  getNow,
+  unstable_setRequestLocale,
+} from 'next-intl/server';
 
 import ViewCounter from '@/components/blog/views-counter';
 import { Mdx } from '@/components/blog/mdx';
 import env from '@/env.js';
 
 import type { Metadata } from 'next/types';
-import { getFormatter, getNow } from 'next-intl/server';
 
 export const dynamic = 'force-static';
 
@@ -84,8 +88,10 @@ export default async function Blog({
 }: {
   params: { slug: string; locale: string };
 }) {
-  const now = await getNow(params.locale);
-  const formatter = await getFormatter(params.locale);
+  unstable_setRequestLocale(params.locale);
+
+  const now = await getNow({ locale: params.locale });
+  const formatter = await getFormatter({ locale: params.locale });
   const post = allBlogs.find((post) => post.slug === params.slug);
 
   if (!post) {

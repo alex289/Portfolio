@@ -1,4 +1,4 @@
-import { getTranslator } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
 import { allBlogs } from '.contentlayer/generated';
 
@@ -48,7 +48,7 @@ const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
   const [session, t, viewsCount, guesbookEntriesCount, topTracks] =
     await Promise.all([
       auth(),
-      getTranslator(locale, 'dashboard'),
+      getTranslations({ locale, namespace: 'dashboard' }),
       getViewsCount(),
       getGuestbookEntriesCount(),
       getTopTracks(),

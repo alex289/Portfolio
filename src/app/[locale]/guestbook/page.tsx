@@ -1,4 +1,4 @@
-import { getTranslator } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import { queryBuilder } from '@/lib/db';
 import { auth } from '@/lib/auth';
@@ -22,9 +22,9 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params: { locale },
 }: GuestbookProps): Promise<Metadata> {
-  const t = await getTranslator(locale);
+  const t = await getTranslations({ locale, namespace: 'guestbook' });
   return {
-    title: t('guestbook.title'),
+    title: t('title'),
   };
 }
 
@@ -56,7 +56,7 @@ async function GuestbookEntries({ locale }: { locale: string }) {
   const [entries, session, t] = await Promise.all([
     getGuestbook(),
     auth(),
-    getTranslator(locale, 'guestbook'),
+    getTranslations({ locale, namespace: 'guestbook' }),
   ]);
 
   return (

@@ -1,6 +1,6 @@
 import { AlertCircle, Book, GitPullRequest, History, Star } from 'lucide-react';
 
-import { getTranslator } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import { getProjects, getStats } from '@/lib/github';
 
@@ -21,7 +21,7 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params: { locale },
 }: ProjectsProps): Promise<Metadata> {
-  const t = await getTranslator(locale);
+  const t = await getTranslations({ locale });
   return {
     title: t('main.projects'),
   };
@@ -31,7 +31,7 @@ const ProjectsPage = async ({ params: { locale } }: ProjectsProps) => {
   const [stats, projects, t] = await Promise.all([
     getStats(),
     getProjects(),
-    getTranslator(locale),
+    getTranslations({ locale }),
   ]);
 
   return (

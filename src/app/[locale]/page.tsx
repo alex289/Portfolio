@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { ArrowRight } from 'lucide-react';
-import { getTranslator } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import { getProjects } from '@/lib/github';
 
@@ -23,7 +23,7 @@ export function generateStaticParams() {
 const Index = async ({ params: { locale } }: IndexProps) => {
   const [projects, t] = await Promise.all([
     getProjects(3),
-    getTranslator(locale),
+    getTranslations({ locale }),
   ]);
   return (
     <>
