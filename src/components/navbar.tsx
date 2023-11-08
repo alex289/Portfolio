@@ -8,17 +8,17 @@ import { useTheme } from 'next-themes';
 import { Command, X } from 'lucide-react';
 import { allBlogs } from 'contentlayer/generated';
 import clsx from 'clsx';
-import { useAtom } from 'jotai';
 
-import { isOpenAtom } from './command-palette';
 import ThemeToggleIcon from './icons/theme-icon';
 import MobileMenu from './mobile-menu';
 import styles from '@/styles/mobile-menu.module.css';
 import MenuIcon from './icons/menu-icon';
 import { usePathname } from '@/lib/navigation';
+import { useUrlState } from '@/lib/use-url-state';
 
 const Navbar = () => {
-  const [commandPaletteOpen, setCommandPaletteOpen] = useAtom(isOpenAtom);
+  const [commandPaletteOpen, setCommandPaletteOpen] =
+    useUrlState<boolean>('menu');
   const { resolvedTheme, setTheme } = useTheme();
   const t = useTranslations();
   const locale = useLocale();

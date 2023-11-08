@@ -5,7 +5,6 @@ import { Fragment, useEffect, useMemo, useState } from 'react';
 import { Combobox, Dialog, Transition } from '@headlessui/react';
 import { signIn, signOut } from 'next-auth/react';
 import { useTheme } from 'next-themes';
-import { atom, useAtom } from 'jotai';
 import { clsx } from 'clsx';
 
 import {
@@ -27,9 +26,8 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import { usePathname, useRouter } from '@/lib/navigation';
 
-export const isOpenAtom = atom(false);
-
 import type { Session } from 'next-auth';
+import { useUrlState } from '@/lib/use-url-state';
 
 enum Actions {
   Router,
@@ -44,7 +42,7 @@ export default function CommandPalette({
   session: Session | null;
 }) {
   const t = useTranslations();
-  const [isOpen, setIsOpen] = useAtom(isOpenAtom);
+  const [isOpen, setIsOpen] = useUrlState<boolean>('menu');
   const [search, setSearch] = useState('');
   const { theme, setTheme } = useTheme();
   const router = useRouter();
@@ -208,7 +206,7 @@ export default function CommandPalette({
   }
 
   return (
-    <Transition.Root show={isOpen} as={Fragment}>
+    <Transition.Root show={!!isOpen ?? false} as={Fragment}>
       <Dialog
         onClose={() => setIsOpen(false)}
         className="fixed inset-0 overflow-y-auto p-4 pt-[25vh]">

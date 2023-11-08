@@ -65,7 +65,6 @@
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "geist": "^1.0.0",
-    "jotai": "^2.5.0",
     "kysely": "^0.26.3",
     "kysely-planetscale": "^1.4.0",
     "lucide-react": "^0.291.0",
