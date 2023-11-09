@@ -3,7 +3,8 @@ import '@/styles/global.css';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 
-import { GeistSans, GeistMono } from 'geist/font';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import { type AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
 
 import AnalyticsWrapper from '@/components/analytics';
