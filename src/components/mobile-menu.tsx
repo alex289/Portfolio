@@ -67,9 +67,7 @@ export default function MobileMenu({ isMenuOpen, toggle }: Props) {
   ];
 
   function go(href: string) {
-    router.push(href, {
-      scroll: true,
-    });
+    router.push(href);
     toggle();
   }
 
