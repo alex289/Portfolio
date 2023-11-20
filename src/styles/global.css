@@ -83,6 +83,16 @@ code[data-theme] {
   @apply m-0;
 }
 
+.prose h2,
+h3,
+h4 {
+  @apply font-medium tracking-tight !important;
+}
+
+.prose strong {
+  @apply font-medium;
+}
+
 .prose > :first-child {
   /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;
@@ -109,11 +119,6 @@ input[type='email'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}
-
-.prose .tweet a {
-  text-decoration: inherit;
-  font-weight: inherit;
 }
 
 table {
