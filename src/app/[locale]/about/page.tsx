@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-import env from '@/env';
+import env from '@/env.mjs';
 import Tools from '@/components/tools';
 
 import avatar from 'public/static/images/konietzko_alexander.jpg';

@@ -25,6 +25,24 @@
   }
 }
 
+:root {
+  --sh-class: #2d5e9d;
+  --sh-identifier: #354150;
+  --sh-sign: #8996a3;
+  --sh-string: #008378;
+  --sh-keyword: #f47067;
+  --sh-comment: #a19595;
+  --sh-jsxliterals: #6266d1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sh-class: #4c97f8;
+    --sh-identifier: white;
+    --sh-string: #00a99a;
+  }
+}
+
 ::selection {
   @apply bg-indigo-700;
   color: #fefefe;
@@ -34,167 +52,6 @@ html {
   min-width: 360px;
 }
 
-.prose .anchor {
-  @apply invisible absolute no-underline;
-
-  margin-left: -1em;
-  padding-right: 0.5em;
-  width: 80%;
-  max-width: 700px;
-  cursor: pointer;
-}
-
-.anchor:hover {
-  @apply visible;
-}
-
-.prose a {
-  @apply text-indigo-400 decoration-indigo-400 decoration-[0.1em] underline-offset-2 transition-all dark:text-indigo-500 dark:decoration-indigo-500;
-}
-
-.prose .anchor:after {
-  @apply text-indigo-300 dark:text-indigo-700;
-  content: '#';
-}
-
-.prose *:hover > .anchor {
-  @apply visible;
-}
-
-.prose pre {
-  @apply border border-neutral-800 bg-neutral-900;
-}
-
-.prose code {
-  @apply rounded-lg border border-neutral-100 bg-neutral-100 px-1 py-0.5 text-neutral-800 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200;
-}
-
-code[data-theme] {
-  @apply bg-transparent !important;
-}
-
-.prose pre code {
-  @apply p-0 text-neutral-800 dark:text-neutral-200;
-  border: initial;
-}
-
-.prose img {
-  /* Don't apply styles to next/image */
-  @apply m-0;
-}
-
-.prose h2,
-h3,
-h4 {
-  @apply font-medium tracking-tighter !important;
-}
-
-.prose strong {
-  @apply font-medium;
-}
-
-.prose > :first-child {
-  /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
-}
-
-code[class*='language-'],
-pre[class*='language-'] {
-  @apply text-neutral-50;
-}
-
-pre::-webkit-scrollbar {
-  display: none;
-}
-
-pre {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-/* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-table {
-  display: block;
-  max-width: fit-content;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-.prose .callout > p {
-  margin: 0 !important;
-}
-
-[data-rehype-pretty-code-fragment] code {
-  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
-  counter-reset: line;
-  box-decoration-break: clone;
-}
-[data-rehype-pretty-code-fragment] .line {
-  @apply py-1;
-}
-[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
-  counter-increment: line;
-  content: counter(line);
-  display: inline-block;
-  width: 1rem;
-  margin-right: 1rem;
-  text-align: right;
-  color: gray;
-}
-[data-rehype-pretty-code-fragment] .line--highlighted {
-  @apply bg-slate-500 bg-opacity-10;
-}
-[data-rehype-pretty-code-fragment] .line-highlighted span {
-  @apply relative;
-}
-[data-rehype-pretty-code-fragment] .word--highlighted {
-  @apply rounded-md bg-slate-500 bg-opacity-10 p-1;
-}
-[data-rehype-pretty-code-title] {
-  @apply rounded-t-lg border border-[#333333] bg-[#1c1c1c] px-4 py-3 font-mono text-xs font-medium text-neutral-200;
-}
-[data-rehype-pretty-code-title] + pre {
-  @apply mt-0 rounded-t-none border-t-0;
-}
-
-/* [data-line] {
-  @apply border-l-2 border-l-transparent px-6;
-} */
-
-[data-highlighted-line] {
-  background: rgba(200, 200, 255, 0.1);
-  @apply border-l-blue-400;
-}
-
-[data-highlighted-chars] {
-  @apply rounded bg-zinc-600/50;
-  box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
-}
-
-[data-chars-id] {
-  @apply border-b-2 p-1 shadow-none;
-}
-
-[data-chars-id] span {
-  @apply !text-inherit;
-}
-
-[data-chars-id='v'] {
-  @apply border-b-pink-600 bg-rose-800/50 font-bold !text-pink-300;
-}
-
-[data-chars-id='s'] {
-  @apply border-b-yellow-600 bg-yellow-800/50 font-bold !text-yellow-300;
-}
-
-[data-chars-id='i'] {
-  @apply border-b-purple-600 bg-purple-800/50 font-bold !text-purple-200;
+.title {
+  text-wrap: balance;
 }

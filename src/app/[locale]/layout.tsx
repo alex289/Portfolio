@@ -12,7 +12,7 @@ import { Providers } from '@/components/providers';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
-import env from '@/env.js';
+import env from '@/env.mjs';
 import { auth } from '@/lib/auth';
 
 const CommandPalette = dynamic(() => import('@/components/command-palette'));

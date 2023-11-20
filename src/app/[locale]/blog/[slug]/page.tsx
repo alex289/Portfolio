@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import Balancer from 'react-wrap-balancer';
-import { allBlogs } from 'contentlayer/generated';
 import clsx from 'clsx';
 import {
   getFormatter,
@@ -11,13 +9,14 @@ import {
 } from 'next-intl/server';
 
 import ViewCounter from '@/components/blog/views-counter';
-import { Mdx } from '@/components/blog/mdx';
-import env from '@/env.js';
+import env from '@/env.mjs';
 
 import type { Metadata } from 'next/types';
+import { getBlogPosts } from '@/lib/blog';
+import { CustomMDX } from '@/components/blog/mdx';
 
 export function generateStaticParams() {
-  return allBlogs.map((post) => ({
+  return getBlogPosts().map((post) => ({
     locale: post.language,
     slug: post.slug,
   }));
@@ -28,7 +27,7 @@ export function generateMetadata({
 }: {
   params: { slug: string };
 }): Metadata | undefined {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
     return undefined;
   }
@@ -90,7 +89,7 @@ export default async function Blog({
 
   const now = await getNow({ locale: params.locale });
   const formatter = await getFormatter({ locale: params.locale });
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
@@ -98,14 +97,8 @@ export default async function Blog({
 
   return (
     <section className="mx-auto mb-16 flex w-full max-w-4xl flex-col items-start justify-center">
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(post.structuredData),
-        }}></script>
-      <h1 className="mb-4 text-4xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-        <Balancer>{post.title}</Balancer>
+      <h1 className="title mb-4 text-4xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
+        {post.title}
       </h1>
       <div className="mt-2 flex w-full flex-col items-start justify-between sm:flex-row sm:items-center">
         <div className="flex items-center">
@@ -138,7 +131,7 @@ export default async function Blog({
         ))}
       </div>
       <div className="prose prose-neutral mt-4 w-full max-w-none dark:prose-invert">
-        <Mdx code={post.body.code} />
+        <CustomMDX source={post.content} />
       </div>
     </section>
   );

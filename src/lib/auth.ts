@@ -1,6 +1,6 @@
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
-import env from '@/env.js';
+import env from '@/env.mjs';
 import NextAuth, { type Session } from 'next-auth';
 import { type NextRequest } from 'next/server';
 

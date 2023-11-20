@@ -11,7 +11,6 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 - **ORM**: [Prisma](https://prisma.io/)
 - **Authentication**: [NextAuth.js](https://next-auth.js.org/)
 - **Deployment**: [Vercel](https://vercel.com)
-- **CMS**: [Contentlayer](https://www.contentlayer.dev)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
 ## Overview

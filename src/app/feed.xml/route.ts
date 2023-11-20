@@ -1,7 +1,7 @@
 import RSS from 'rss';
 
-import { allBlogs } from 'contentlayer/generated';
-import env from '@/env';
+import env from '@/env.mjs';
+import { getBlogPosts } from '@/lib/blog';
 
 const feed = new RSS({
   title: 'Alexander Konietzko',
@@ -10,7 +10,7 @@ const feed = new RSS({
   feed_url: `${env.NEXT_PUBLIC_WEBSITE_URL}/feed.xml`,
 });
 
-allBlogs.map((post) => {
+getBlogPosts().map((post) => {
   feed.item({
     title: post.title,
     guid: `${env.NEXT_PUBLIC_WEBSITE_URL}/${post.language}/blog/${post.slug}`,

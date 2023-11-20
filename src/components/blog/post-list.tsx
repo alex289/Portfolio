@@ -9,9 +9,9 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import PostFilter from '@/components/blog/post-filter';
 import PostCard from '@/components/blog/post-card';
-import { type Blog } from '.contentlayer/generated';
+import { BlogPost } from '@/lib/types';
 
-const PostList = ({ allBlogs }: { allBlogs: Blog[] }) => {
+const PostList = ({ allBlogs }: { allBlogs: BlogPost[] }) => {
   const t = useTranslations('blog');
   const locale = useLocale();
 

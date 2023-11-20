@@ -1,5 +1,5 @@
 import PostList from '@/components/blog/post-list';
-import { allBlogs } from 'contentlayer/generated';
+import { getBlogPosts } from '@/lib/blog';
 import type { Metadata } from 'next/types';
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export function generateStaticParams() {
 }
 
 const BlogPage = () => {
-  return <PostList allBlogs={allBlogs} />;
+  return <PostList allBlogs={getBlogPosts()} />;
 };
 
 export default BlogPage;

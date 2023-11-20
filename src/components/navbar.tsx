@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { Command, X } from 'lucide-react';
-import { allBlogs } from 'contentlayer/generated';
 import clsx from 'clsx';
 
 import ThemeToggleIcon from './icons/theme-icon';
@@ -15,6 +14,7 @@ import styles from '@/styles/mobile-menu.module.css';
 import MenuIcon from './icons/menu-icon';
 import { usePathname } from '@/lib/navigation';
 import { useUrlState } from '@/lib/use-url-state';
+import { getBlogPosts } from '@/lib/blog';
 
 const Navbar = () => {
   const [commandPaletteOpen, setCommandPaletteOpen] =
@@ -28,8 +28,8 @@ const Navbar = () => {
     const nextLocale = locale === 'de' ? 'en' : 'de';
     if (path?.includes('/blog/')) {
       const slug = path.substring(path.lastIndexOf('/') + 1);
-      const post = allBlogs.find((post) => post.slug === slug);
-      return `/${nextLocale}/blog/${post?.translation}`;
+      // const post = getBlogPosts().find((post) => post.slug === slug);
+      // return `/${nextLocale}/blog/${post?.metadata.translation}`;
     }
     const correctPath = path?.replace('/de', '').replace('/en', '');
     return `/${nextLocale}${correctPath}`;

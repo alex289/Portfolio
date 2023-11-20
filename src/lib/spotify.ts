@@ -1,4 +1,4 @@
-import env from '@/env.js';
+import env from '@/env.mjs';
 import { type ResponseTrackType, type TopTracks } from './types';
 
 const client_id = env.SPOTIFY_CLIENT_ID;
