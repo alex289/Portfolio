@@ -16,8 +16,6 @@ import env from '@/env.js';
 
 import type { Metadata } from 'next/types';
 
-export const dynamic = 'force-static';
-
 export function generateStaticParams() {
   return allBlogs.map((post) => ({
     locale: post.language,

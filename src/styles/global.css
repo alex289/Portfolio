@@ -86,7 +86,7 @@ code[data-theme] {
 .prose h2,
 h3,
 h4 {
-  @apply font-medium tracking-tight !important;
+  @apply font-medium tracking-tighter !important;
 }
 
 .prose strong {
