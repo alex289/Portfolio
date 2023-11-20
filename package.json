@@ -62,6 +62,7 @@
     "@t3-oss/env-nextjs": "^0.7.1",
     "@tailwindcss/forms": "^0.5.7",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^0.0.4",
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "geist": "^1.1.0",

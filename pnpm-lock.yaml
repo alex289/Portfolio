@@ -23,6 +23,9 @@ dependencies:
   '@vercel/analytics':
     specifier: ^1.1.1
     version: 1.1.1
+  '@vercel/speed-insights':
+    specifier: ^0.0.4
+    version: 0.0.4
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
@@ -1766,6 +1769,11 @@ packages:
     resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
     dependencies:
       server-only: 0.0.1
+    dev: false
+
+  /@vercel/speed-insights@0.0.4:
+    resolution: {integrity: sha512-ZKjaAKvMmiKqz2PmwnLO/Ma6ckM6f6R3yAlfBw8JWeoCf0zj8UdiV2eTrDQtKnXrBeNTasH/D0CN/mO6qD1XNg==}
+    requiresBuild: true
     dev: false
 
   /acorn-jsx@5.3.2(acorn@8.10.0):
