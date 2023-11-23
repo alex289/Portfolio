@@ -1,25 +1,24 @@
 import '@/styles/global.css';
 
+import clsx from 'clsx';
+import { GeistMono } from 'geist/font/mono';
+import { GeistSans } from 'geist/font/sans';
+import { NextIntlClientProvider } from 'next-intl';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
-import { type AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
-
-import AnalyticsWrapper from '@/components/analytics';
-import { Providers } from '@/components/providers';
-import Navbar from '@/components/navbar';
-import Footer from '@/components/footer';
-
 import env from '@/env.mjs';
+import AnalyticsWrapper from '@/components/analytics';
+import Footer from '@/components/footer';
+import Navbar from '@/components/navbar';
+import { Providers } from '@/components/providers';
 import { auth } from '@/lib/auth';
+import { getBlogPosts } from '@/lib/blog';
+
+import type { AbstractIntlMessages } from 'next-intl';
+import type { Metadata, Viewport } from 'next/types';
 
 const CommandPalette = dynamic(() => import('@/components/command-palette'));
-
-import type { Metadata, Viewport } from 'next/types';
-import clsx from 'clsx';
-import { getBlogPosts } from '@/lib/blog';
 
 interface LayoutProps {
   params: {

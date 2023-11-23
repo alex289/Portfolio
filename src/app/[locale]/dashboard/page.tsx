@@ -1,16 +1,15 @@
 import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
 
-import { queryBuilder } from '@/lib/db';
-import { getTopTracks } from '@/lib/spotify';
-import { SignOutButton } from '@/components/sign-out';
-
 import Metric from '@/components/metric';
+import { SignOutButton } from '@/components/sign-out';
 import Track from '@/components/track';
 import { auth } from '@/lib/auth';
+import { getBlogPosts } from '@/lib/blog';
+import { queryBuilder } from '@/lib/db';
+import { getTopTracks } from '@/lib/spotify';
 
 import type { Metadata } from 'next/types';
-import { getBlogPosts } from '@/lib/blog';
 
 interface DashboardProps {
   params: {

@@ -1,10 +1,8 @@
 import { AlertCircle, Book, GitPullRequest, History, Star } from 'lucide-react';
-
 import { getTranslations } from 'next-intl/server';
 
-import { getProjects, getStats } from '@/lib/github';
-
 import Project from '@/components/projects';
+import { getProjects, getStats } from '@/lib/github';
 
 import type { Metadata } from 'next/types';
 

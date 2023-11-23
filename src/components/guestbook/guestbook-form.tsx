@@ -1,19 +1,20 @@
 'use client';
 
-import { useState, useRef, type FormEvent } from 'react';
-import { useRouter } from 'next/navigation';
-
-import { signIn, signOut } from 'next-auth/react';
 import { ArrowRight, Loader2 } from 'lucide-react';
+import { signIn, signOut } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
+import { useRef, useState } from 'react';
 
-import ErrorMessage from './error-message';
-import SuccessMessage from './success-message';
+import { Form } from '@/lib/types';
 import GitHubIcon from '../icons/github-icon';
 import GoogleIcon from '../icons/google-icon';
+import ErrorMessage from './error-message';
+import SuccessMessage from './success-message';
 
+import type { FormState } from '@/lib/types';
 import type { Session } from 'next-auth';
-import { Form, type FormState } from '@/lib/types';
+import type { FormEvent } from 'react';
 
 export default function GuestbookForm({
   session,

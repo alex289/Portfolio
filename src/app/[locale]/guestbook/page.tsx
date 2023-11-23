@@ -1,13 +1,12 @@
 import { getTranslations } from 'next-intl/server';
+import { Suspense } from 'react';
 
-import { queryBuilder } from '@/lib/db';
-import { auth } from '@/lib/auth';
-
-import GuestbookForm from '@/components/guestbook/guestbook-form';
 import GuestbookEntry from '@/components/guestbook/guestbook-entry';
+import GuestbookForm from '@/components/guestbook/guestbook-form';
+import { auth } from '@/lib/auth';
+import { queryBuilder } from '@/lib/db';
 
 import type { Metadata } from 'next/types';
-import { Suspense } from 'react';
 
 interface GuestbookProps {
   params: {

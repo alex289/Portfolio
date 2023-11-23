@@ -1,14 +1,13 @@
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import Image from 'next/image';
 import Link from 'next/link';
-import Image, { type ImageProps } from 'next/image';
-
-import { MDXRemote, type MDXRemoteProps } from 'next-mdx-remote/rsc';
-import {
-  type ReactNode,
-  type AnchorHTMLAttributes,
-  createElement,
-} from 'react';
+import { createElement } from 'react';
 // @ts-expect-error - No types available
 import { highlight } from 'sugar-high';
+
+import type { MDXRemoteProps } from 'next-mdx-remote/rsc';
+import type { ImageProps } from 'next/image';
+import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
 const CustomLink = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
   const href = props.href;

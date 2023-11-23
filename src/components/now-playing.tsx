@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
-
-import useSWR from 'swr';
 import { animate } from 'motion';
 import { useTranslations } from 'next-intl';
+import { useEffect } from 'react';
+import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
 

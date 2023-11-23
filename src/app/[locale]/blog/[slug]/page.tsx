@@ -1,20 +1,19 @@
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-
-import Balancer from 'react-wrap-balancer';
 import clsx from 'clsx';
 import {
   getFormatter,
   getNow,
   unstable_setRequestLocale,
 } from 'next-intl/server';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import Balancer from 'react-wrap-balancer';
 
-import ViewCounter from '@/components/blog/views-counter';
 import env from '@/env.mjs';
+import { CustomMDX } from '@/components/blog/mdx';
+import ViewCounter from '@/components/blog/views-counter';
+import { getBlogPosts } from '@/lib/blog';
 
 import type { Metadata } from 'next/types';
-import { getBlogPosts } from '@/lib/blog';
-import { CustomMDX } from '@/components/blog/mdx';
 
 export const dynamic = 'force-static';
 

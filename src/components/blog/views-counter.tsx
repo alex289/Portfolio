@@ -1,10 +1,10 @@
 'use client';
-import { useEffect } from 'react';
 
+import { useTranslations } from 'next-intl';
+import { useEffect } from 'react';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
-import { useTranslations } from 'next-intl';
 
 interface Props {
   slug: string;

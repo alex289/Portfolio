@@ -34,6 +34,7 @@
   },
   "homepage": "https://alexanderkonietzko.vercel.app",
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "@tailwindcss/typography": "^0.5.10",
     "@types/eslint": "^8.44.7",
     "@types/node": "^20.9.4",

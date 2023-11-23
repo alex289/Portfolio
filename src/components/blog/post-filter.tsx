@@ -1,9 +1,8 @@
-import { Fragment } from 'react';
-
 import { Menu, Transition } from '@headlessui/react';
-import { Filter } from 'lucide-react';
 import { clsx } from 'clsx';
+import { Filter } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { Fragment } from 'react';
 
 interface Props {
   filterBy: 'name' | 'tag';

@@ -1,8 +1,11 @@
-import GoogleProvider from 'next-auth/providers/google';
+import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
-import env from '@/env.mjs';
-import NextAuth, { type Session } from 'next-auth';
+import GoogleProvider from 'next-auth/providers/google';
 import { type NextRequest } from 'next/server';
+
+import env from '@/env.mjs';
+
+import type { Session } from 'next-auth';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 export const {
