@@ -19,6 +19,7 @@ const CommandPalette = dynamic(() => import('@/components/command-palette'));
 
 import type { Metadata, Viewport } from 'next/types';
 import clsx from 'clsx';
+import { getBlogPosts } from '@/lib/blog';
 
 interface LayoutProps {
   params: {
@@ -142,7 +143,7 @@ export default async function RootLayout({
               Skip to content
             </a>
             <CommandPalette session={session} />
-            <Navbar />
+            <Navbar posts={getBlogPosts()} />
             <main
               className="mx-auto mb-16 flex max-w-3xl flex-col justify-center px-8 dark:bg-gray-800 md:mt-6 md:px-0"
               id="skip">

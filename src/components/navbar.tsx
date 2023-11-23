@@ -14,9 +14,9 @@ import styles from '@/styles/mobile-menu.module.css';
 import MenuIcon from './icons/menu-icon';
 import { usePathname } from '@/lib/navigation';
 import { useUrlState } from '@/lib/use-url-state';
-import { getBlogPosts } from '@/lib/blog';
+import type { BlogPost } from '@/lib/types';
 
-const Navbar = () => {
+const Navbar = ({ posts }: { posts: BlogPost[] }) => {
   const [commandPaletteOpen, setCommandPaletteOpen] =
     useUrlState<boolean>('menu');
   const { resolvedTheme, setTheme } = useTheme();
@@ -28,8 +28,8 @@ const Navbar = () => {
     const nextLocale = locale === 'de' ? 'en' : 'de';
     if (path?.includes('/blog/')) {
       const slug = path.substring(path.lastIndexOf('/') + 1);
-      // const post = getBlogPosts().find((post) => post.slug === slug);
-      // return `/${nextLocale}/blog/${post?.metadata.translation}`;
+      const post = posts.find((post) => post.slug === slug);
+      return `/${nextLocale}/blog/${post?.translation}`;
     }
     const correctPath = path?.replace('/de', '').replace('/en', '');
     return `/${nextLocale}${correctPath}`;

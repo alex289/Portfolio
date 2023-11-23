@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 
 import matter from 'gray-matter';
-import { BlogPost } from './types';
+import { type BlogPost } from './types';
+import readingTime from 'reading-time';
 
 function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx');
@@ -14,7 +15,7 @@ function readMDXFile(filePath: string) {
   return matter(rawContent);
 }
 
-function getMDXData(dir: string) {
+function getMDXData(dir: string): BlogPost[] {
   const mdxFiles = getMDXFiles(dir);
 
   return mdxFiles.map((file) => {
@@ -22,31 +23,19 @@ function getMDXData(dir: string) {
     const slug = path.basename(file, path.extname(file));
 
     return {
-      metadata: {
-        ...data,
-      },
-      slug,
       content,
+      slug,
+      title: data.title as string,
+      translation: data.translation as string,
+      publishedAt: data.publishedAt as string,
+      summary: data.summary as string,
+      language: data.language as string,
+      tags: data.tags as string[],
+      readingTime: readingTime(content).text,
     };
   });
 }
 
 export function getBlogPosts() {
-  const posts = getMDXData(path.join(process.cwd(), 'src/content'));
-
-  const formattedPosts: BlogPost[] = posts.map((post) => {
-    return {
-      content: post.content,
-      title: post.metadata.title,
-      translation: post.metadata.translation,
-      publishedAt: post.metadata.publishedAt,
-      summary: post.metadata.summary,
-      language: post.metadata.language,
-      tags: post.metadata.tags,
-      slug: post.slug,
-      readingTime: '',
-    };
-  });
-
-  return formattedPosts;
+  return getMDXData(path.join(process.cwd(), 'src/content'));
 }

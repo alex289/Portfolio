@@ -15,6 +15,8 @@ import type { Metadata } from 'next/types';
 import { getBlogPosts } from '@/lib/blog';
 import { CustomMDX } from '@/components/blog/mdx';
 
+export const dynamic = 'force-static';
+
 export function generateStaticParams() {
   return getBlogPosts().map((post) => ({
     locale: post.language,
@@ -131,7 +133,7 @@ export default async function Blog({
         ))}
       </div>
       <div className="prose prose-neutral mt-4 w-full max-w-none dark:prose-invert">
-        <CustomMDX source={post.content} />
+        <CustomMDX content={post.content} />
       </div>
     </section>
   );
