@@ -80,6 +80,16 @@ jobs:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
       - name: Analyze bundle
         run: pnpm add -D gzip-size@6 mkdirp && node .github/report-bundle-size.js
 
