@@ -1,6 +1,7 @@
 'use client';
 
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 
 const AnalyticsWrapper = () => {
@@ -17,6 +18,7 @@ const AnalyticsWrapper = () => {
         src="https://alexanderkonietzko-analytics.vercel.app/script.js"
       />
       <Analytics />
+      <SpeedInsights />
     </>
   );
 };

@@ -12,7 +12,7 @@ const config = {
     'next/core-web-vitals',
   ],
   plugins: ['@typescript-eslint'],
-  ignorePatterns: ['contentlayer.config.js', 'db-types.ts'],
+  ignorePatterns: ['db-types.ts'],
   rules: {
     semi: 'warn',
     eqeqeq: 'warn',

@@ -1,8 +1,8 @@
-import env from '@/env';
-import { allBlogs } from 'contentlayer/generated';
+import env from '@/env.mjs';
+import { getBlogPosts } from '@/lib/blog';
 
 export default function sitemap() {
-  const blogs = allBlogs.map((post) => ({
+  const blogs = getBlogPosts().map((post) => ({
     url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${post.language}/blog/${post.slug}`,
     lastModified: post.publishedAt,
   }));

@@ -1,11 +1,8 @@
 'use client';
 
-import {
-  type ReadonlyURLSearchParams,
-  useRouter,
-  useSearchParams,
-  usePathname,
-} from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+
+import type { ReadonlyURLSearchParams } from 'next/navigation';
 
 const createUrl = (
   pathname: string,

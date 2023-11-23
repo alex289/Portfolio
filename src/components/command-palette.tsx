@@ -1,12 +1,7 @@
 'use client';
 
-import { Fragment, useEffect, useMemo, useState } from 'react';
-
 import { Combobox, Dialog, Transition } from '@headlessui/react';
-import { signIn, signOut } from 'next-auth/react';
-import { useTheme } from 'next-themes';
 import { clsx } from 'clsx';
-
 import {
   BarChart3,
   Book,
@@ -22,12 +17,15 @@ import {
   Sun,
   User,
 } from 'lucide-react';
+import { signIn, signOut } from 'next-auth/react';
 import { useLocale, useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 
 import { usePathname, useRouter } from '@/lib/navigation';
+import { useUrlState } from '@/lib/use-url-state';
 
 import type { Session } from 'next-auth';
-import { useUrlState } from '@/lib/use-url-state';
 
 enum Actions {
   Router,

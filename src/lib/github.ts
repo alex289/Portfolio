@@ -1,4 +1,5 @@
-import env from '@/env.js';
+import env from '@/env.mjs';
+
 import type { Projects, Stats } from './types';
 
 interface ReposResponse {

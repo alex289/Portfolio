@@ -1,25 +1,24 @@
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-
-import Balancer from 'react-wrap-balancer';
-import { allBlogs } from 'contentlayer/generated';
 import clsx from 'clsx';
 import {
   getFormatter,
   getNow,
   unstable_setRequestLocale,
 } from 'next-intl/server';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import Balancer from 'react-wrap-balancer';
 
+import env from '@/env.mjs';
+import { CustomMDX } from '@/components/blog/mdx';
 import ViewCounter from '@/components/blog/views-counter';
-import { Mdx } from '@/components/blog/mdx';
-import env from '@/env.js';
+import { getBlogPosts } from '@/lib/blog';
 
 import type { Metadata } from 'next/types';
 
 export const dynamic = 'force-static';
 
 export function generateStaticParams() {
-  return allBlogs.map((post) => ({
+  return getBlogPosts().map((post) => ({
     locale: post.language,
     slug: post.slug,
   }));
@@ -30,7 +29,7 @@ export function generateMetadata({
 }: {
   params: { slug: string };
 }): Metadata | undefined {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
     return undefined;
   }
@@ -92,11 +91,20 @@ export default async function Blog({
 
   const now = await getNow({ locale: params.locale });
   const formatter = await getFormatter({ locale: params.locale });
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
   }
+
+  const formattedDate = new Date(post?.publishedAt).toLocaleDateString(
+    params.locale === 'de' ? 'de-DE' : 'en-US',
+    {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    },
+  );
 
   return (
     <section className="mx-auto mb-16 flex w-full max-w-4xl flex-col items-start justify-center">
@@ -104,8 +112,24 @@ export default async function Blog({
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(post.structuredData),
-        }}></script>
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.title,
+            datePublished: post.publishedAt,
+            dateModified: post.publishedAt,
+            description: post.summary,
+            image: `https://${env.NEXT_PUBLIC_WEBSITE_URL}/og?title=${
+              post.title
+            }&header=${formattedDate + ' • ' + post.readingTime}`,
+            url: `https://${env.NEXT_PUBLIC_WEBSITE_URL}/${post.language}/blog/${post.slug}`,
+            author: {
+              '@type': 'Person',
+              name: 'Alexander Konietzko',
+            },
+          }),
+        }}
+      />
       <h1 className="mb-4 text-4xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
         <Balancer>{post.title}</Balancer>
       </h1>
@@ -140,7 +164,7 @@ export default async function Blog({
         ))}
       </div>
       <div className="prose prose-neutral mt-4 w-full max-w-none dark:prose-invert">
-        <Mdx code={post.body.code} />
+        <CustomMDX content={post.content} />
       </div>
     </section>
   );

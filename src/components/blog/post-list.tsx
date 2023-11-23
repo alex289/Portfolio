@@ -1,17 +1,16 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
-
 import { Search } from 'lucide-react';
-
 import { useLocale, useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useMemo, useState } from 'react';
 
-import PostFilter from '@/components/blog/post-filter';
 import PostCard from '@/components/blog/post-card';
-import { type Blog } from '.contentlayer/generated';
+import PostFilter from '@/components/blog/post-filter';
 
-const PostList = ({ allBlogs }: { allBlogs: Blog[] }) => {
+import type { BlogPost } from '@/lib/types';
+
+const PostList = ({ allBlogs }: { allBlogs: BlogPost[] }) => {
   const t = useTranslations('blog');
   const locale = useLocale();
 

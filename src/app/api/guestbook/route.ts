@@ -1,6 +1,6 @@
-import { queryBuilder } from '@/lib/db';
 import { BadRequest, Unauthorized } from '@/lib/api';
 import { auth } from '@/lib/auth';
+import { queryBuilder } from '@/lib/db';
 
 export async function POST(req: Request) {
   const session = await auth();

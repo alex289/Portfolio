@@ -1,14 +1,13 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import profilePic from 'public/static/images/konietzko_alexander.jpg';
 
 import { ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { getProjects } from '@/lib/github';
-
-import profilePic from 'public/static/images/konietzko_alexander.jpg';
-import Project from '@/components/projects';
 import FeaturedPost from '@/components/blog/featured-post';
+import Project from '@/components/projects';
+import { getProjects } from '@/lib/github';
 
 interface IndexProps {
   params: {

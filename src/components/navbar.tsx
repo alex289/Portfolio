@@ -1,22 +1,23 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import styles from '@/styles/mobile-menu.module.css';
 
+import clsx from 'clsx';
+import { Command, X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
-import { Command, X } from 'lucide-react';
-import { allBlogs } from 'contentlayer/generated';
-import clsx from 'clsx';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-import ThemeToggleIcon from './icons/theme-icon';
-import MobileMenu from './mobile-menu';
-import styles from '@/styles/mobile-menu.module.css';
-import MenuIcon from './icons/menu-icon';
 import { usePathname } from '@/lib/navigation';
 import { useUrlState } from '@/lib/use-url-state';
+import MenuIcon from './icons/menu-icon';
+import ThemeToggleIcon from './icons/theme-icon';
+import MobileMenu from './mobile-menu';
 
-const Navbar = () => {
+import type { BlogPost } from '@/lib/types';
+
+const Navbar = ({ posts }: { posts: BlogPost[] }) => {
   const [commandPaletteOpen, setCommandPaletteOpen] =
     useUrlState<boolean>('menu');
   const { resolvedTheme, setTheme } = useTheme();
@@ -28,7 +29,7 @@ const Navbar = () => {
     const nextLocale = locale === 'de' ? 'en' : 'de';
     if (path?.includes('/blog/')) {
       const slug = path.substring(path.lastIndexOf('/') + 1);
-      const post = allBlogs.find((post) => post.slug === slug);
+      const post = posts.find((post) => post.slug === slug);
       return `/${nextLocale}/blog/${post?.translation}`;
     }
     const correctPath = path?.replace('/de', '').replace('/en', '');

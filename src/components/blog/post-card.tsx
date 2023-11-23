@@ -1,7 +1,6 @@
-import Link from 'next/link';
-
 import clsx from 'clsx';
 import { useLocale } from 'next-intl';
+import Link from 'next/link';
 
 import ViewCounter from './views-counter';
 

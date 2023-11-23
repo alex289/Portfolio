@@ -1,24 +1,24 @@
 import '@/styles/global.css';
 
+import clsx from 'clsx';
+import { GeistMono } from 'geist/font/mono';
+import { GeistSans } from 'geist/font/sans';
+import { NextIntlClientProvider } from 'next-intl';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
-import { type AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
-
+import env from '@/env.mjs';
 import AnalyticsWrapper from '@/components/analytics';
-import { Providers } from '@/components/providers';
-import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-
-import env from '@/env.js';
+import Navbar from '@/components/navbar';
+import { Providers } from '@/components/providers';
 import { auth } from '@/lib/auth';
+import { getBlogPosts } from '@/lib/blog';
+
+import type { AbstractIntlMessages } from 'next-intl';
+import type { Metadata, Viewport } from 'next/types';
 
 const CommandPalette = dynamic(() => import('@/components/command-palette'));
-
-import type { Metadata, Viewport } from 'next/types';
-import clsx from 'clsx';
 
 interface LayoutProps {
   params: {
@@ -142,7 +142,7 @@ export default async function RootLayout({
               Skip to content
             </a>
             <CommandPalette session={session} />
-            <Navbar />
+            <Navbar posts={getBlogPosts()} />
             <main
               className="mx-auto mb-16 flex max-w-3xl flex-col justify-center px-8 dark:bg-gray-800 md:mt-6 md:px-0"
               id="skip">

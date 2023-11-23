@@ -1,10 +1,9 @@
 import { clsx } from 'clsx';
+import { Eye } from 'lucide-react';
 import Balancer from 'react-wrap-balancer';
 
-import { Eye } from 'lucide-react';
-
-import ViewCounter from './views-counter';
 import { Link } from '@/lib/navigation';
+import ViewCounter from './views-counter';
 
 interface FeaturedPostProps {
   title: string;

@@ -1,7 +1,5 @@
+import { getBlogPosts } from '@/lib/blog';
 import { queryBuilder } from '@/lib/db';
-import { allBlogs } from 'contentlayer/generated';
-
-export const runtime = 'edge';
 
 export async function POST(
   _request: Request,
@@ -16,7 +14,7 @@ export async function POST(
     });
   }
 
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
     return new Response(JSON.stringify({ error: 'Post not found' }), {

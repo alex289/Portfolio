@@ -1,14 +1,13 @@
 import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
-import { allBlogs } from '.contentlayer/generated';
-
-import { queryBuilder } from '@/lib/db';
-import { getTopTracks } from '@/lib/spotify';
-import { SignOutButton } from '@/components/sign-out';
 
 import Metric from '@/components/metric';
+import { SignOutButton } from '@/components/sign-out';
 import Track from '@/components/track';
 import { auth } from '@/lib/auth';
+import { getBlogPosts } from '@/lib/blog';
+import { queryBuilder } from '@/lib/db';
+import { getTopTracks } from '@/lib/spotify';
 
 import type { Metadata } from 'next/types';
 
@@ -77,7 +76,7 @@ const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
         </h2>
         <Metric title={t('metrics.blog-views')}>{viewsCount}</Metric>
         <Metric title={t('metrics.posts-count')}>
-          {allBlogs.filter((x) => x.language === locale)?.length}
+          {getBlogPosts().filter((x) => x.language === locale)?.length}
         </Metric>
         <Metric title={t('metrics.guestbook-entries')}>
           {guesbookEntriesCount}

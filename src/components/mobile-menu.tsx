@@ -1,14 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
+import styles from '@/styles/mobile-menu.module.css';
 
 import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
+import { useEffect } from 'react';
 
-import useDelayedRender from '@/lib/use-delayed-render';
 import { usePathname, useRouter } from '@/lib/navigation';
-
-import styles from '@/styles/mobile-menu.module.css';
+import useDelayedRender from '@/lib/use-delayed-render';
 
 interface Props {
   isMenuOpen: boolean;
