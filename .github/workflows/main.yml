@@ -81,7 +81,7 @@ jobs:
           key: ${{ github.sha }}-${{ github.run_number }}
 
       - name: Analyze bundle
-        run: p add -D gzip-size@6 mkdirp && node .github/report-bundle-size.js
+        run: pnpm add -D gzip-size@6 mkdirp && node .github/report-bundle-size.js
 
       - name: Upload bundle
         uses: actions/upload-artifact@v2
