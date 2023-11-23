@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import Balancer from 'react-wrap-balancer';
 import clsx from 'clsx';
 import {
   getFormatter,
@@ -97,10 +98,41 @@ export default async function Blog({
     notFound();
   }
 
+  const formattedDate = new Date(post?.publishedAt).toLocaleDateString(
+    params.locale === 'de' ? 'de-DE' : 'en-US',
+    {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    },
+  );
+
   return (
     <section className="mx-auto mb-16 flex w-full max-w-4xl flex-col items-start justify-center">
-      <h1 className="title mb-4 text-4xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-        {post.title}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.title,
+            datePublished: post.publishedAt,
+            dateModified: post.publishedAt,
+            description: post.summary,
+            image: `https://${env.NEXT_PUBLIC_WEBSITE_URL}/og?title=${
+              post.title
+            }&header=${formattedDate + ' • ' + post.readingTime}`,
+            url: `https://${env.NEXT_PUBLIC_WEBSITE_URL}/${post.language}/blog/${post.slug}`,
+            author: {
+              '@type': 'Person',
+              name: 'Alexander Konietzko',
+            },
+          }),
+        }}
+      />
+      <h1 className="mb-4 text-4xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
+        <Balancer>{post.title}</Balancer>
       </h1>
       <div className="mt-2 flex w-full flex-col items-start justify-between sm:flex-row sm:items-center">
         <div className="flex items-center">

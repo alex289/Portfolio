@@ -128,14 +128,14 @@ function slugify(str: ReactNode) {
     str!
       .toString()
       .toLowerCase()
-      .trim() // Remove whitespace from both ends of a string
-      .replace(/\s+/g, '-') // Replace spaces with -
-      .replace(/&/g, '-and-') // Replace & with 'and'
+      .trim()
+      .replace(/\s+/g, '-')
+      .replace(/&/g, '-and-')
       // eslint-disable-next-line no-useless-escape
-      .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
+      .replace(/[^\w\-]+/g, '')
       // eslint-disable-next-line no-useless-escape
       .replace(/\-\-+/g, '-')
-  ); // Replace multiple - with single -
+  );
 }
 
 function createHeading(level: number) {
@@ -157,7 +157,6 @@ function createHeading(level: number) {
   };
 }
 
-// get the type of MDXRemoteProps.components
 type MDXRemoteComponents = MDXRemoteProps['components'];
 
 const components = {

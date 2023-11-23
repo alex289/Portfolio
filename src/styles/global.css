@@ -51,10 +51,6 @@ html {
   min-width: 360px;
 }
 
-.title {
-  text-wrap: balance;
-}
-
 .prose .anchor {
   @apply invisible absolute no-underline;
 
