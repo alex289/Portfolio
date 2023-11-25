@@ -1,10 +1,8 @@
 {
   "files.exclude": {
-    ".next": true,
-    ".contentlayer": true
+    ".next": true
   },
   "editor.formatOnSave": true,
-  "typescript.tsdk": "node_modules/.pnpm/typescript@5.2.2/node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "i18n-ally.localesPaths": ["src/messages"],
   "i18n-ally.keystyle": "nested"
