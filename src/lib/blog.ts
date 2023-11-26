@@ -32,7 +32,7 @@ function getMDXData(dir: string): BlogPost[] {
       summary: data.summary as string,
       language: data.language as string,
       tags: data.tags as string[],
-      readingTime: readingTime(content).text,
+      readingTime: Math.round(readingTime(content).minutes),
     };
   });
 }

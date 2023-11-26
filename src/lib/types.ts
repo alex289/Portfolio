@@ -72,5 +72,5 @@ export interface BlogPost {
   language: string;
   tags: string[];
   slug: string;
-  readingTime: string;
+  readingTime: number;
 }

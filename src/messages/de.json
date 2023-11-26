@@ -88,7 +88,8 @@
       "by-name": "Nach Name",
       "by-tag": "Nach Tag"
     },
-    "views": "Aufrufe"
+    "views": "Aufrufe",
+    "reading-time": "{minutes} {minutes, plural, =0 {Minuten} =1 {Minute} other {Minuten}} Lesezeit"
   },
   "guestbook": {
     "title": "Gästebuch",

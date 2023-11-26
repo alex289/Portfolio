@@ -10,6 +10,7 @@ import Balancer from 'react-wrap-balancer';
 
 import env from '@/env.mjs';
 import { CustomMDX } from '@/components/blog/mdx';
+import ReadingTime from '@/components/blog/reading-time';
 import ViewCounter from '@/components/blog/views-counter';
 import { getBlogPosts } from '@/lib/blog';
 
@@ -145,13 +146,13 @@ export default async function Blog({
           </p>
         </div>
         <p className="min-w-32 mt-2 text-sm text-gray-600 dark:text-[#c2c2c2] md:mt-0">
-          {post.readingTime}
+          <ReadingTime readingMinutes={post.readingTime} />
           {` • `}
           <ViewCounter slug={post.slug} trackView={true} />
         </p>
       </div>
       <div className="mt-2 flex w-full text-xs">
-        {post.tags.map((tag) => (
+        {post.tags?.map((tag) => (
           <Link
             href={`/blog?filter=tag&search=${tag}`}
             key={tag}
