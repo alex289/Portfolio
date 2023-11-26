@@ -36,7 +36,7 @@ export default function PostCard({ title, excerpt, slug, date, tags }: Props) {
         </p>
       </div>
       <p className="text-gray-600 dark:text-[#c2c2c2]">{excerpt}</p>
-      <div className="mt-1 flex">
+      <div className="mt-2 flex">
         {tags?.map((tag, key) => {
           return (
             <Link

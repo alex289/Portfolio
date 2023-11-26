@@ -145,7 +145,7 @@ export default async function Blog({
             ({formatter.relativeTime(new Date(post.publishedAt), now)})
           </p>
         </div>
-        <p className="min-w-32 mt-2 text-sm text-gray-600 dark:text-[#c2c2c2] md:mt-0">
+        <p className="ml-2 min-w-32 mt-2 text-sm text-gray-600 dark:text-[#c2c2c2] md:mt-0">
           <ReadingTime readingMinutes={post.readingTime} />
           {` • `}
           <ViewCounter slug={post.slug} trackView={true} />
