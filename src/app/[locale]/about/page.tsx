@@ -152,7 +152,7 @@ const AboutPage = () => {
           {t('about-page.uses.office')}
         </h3>
         <ul className="list-disc">
-          <li>14&quot; MacBook Pro (2021)</li>
+          <li>14&quot; MacBook Pro, M1 Pro, 16GB RAM (2021)</li>
           <li>Logitech MX Master 3 Mouse</li>
           <li>
             Keychron K2 Keyboard (RGB Backlight, Gateron G Pro Brown Switches)
@@ -181,11 +181,11 @@ const AboutPage = () => {
           Software
         </h3>
         <ul className="list-disc">
+          <li>Arc</li>
           <li>Raycast</li>
           <li>Rectagle</li>
           <li>Spotify</li>
           <li>Alt-tab</li>
-          <li>Postman</li>
           <li>Docker</li>
         </ul>
 
@@ -193,9 +193,9 @@ const AboutPage = () => {
           {t('about-page.uses.other-tech')}
         </h3>
         <ul className="list-disc">
+          <li>Apple iPhone 15 Pro</li>
           <li>Apple AirPods Pro</li>
-          <li>Apple Watch</li>
-          <li>Apple iPhone</li>
+          <li>Apple Watch Series 5</li>
         </ul>
       </div>
 

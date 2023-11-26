@@ -84,8 +84,8 @@ dependencies:
     specifier: ^0.32.6
     version: 0.32.6
   sugar-high:
-    specifier: ^0.5.4
-    version: 0.5.4
+    specifier: ^0.5.5
+    version: 0.5.5
   swr:
     specifier: ^2.2.4
     version: 2.2.4(react@18.2.0)
@@ -5315,8 +5315,8 @@ packages:
       pirates: 4.0.6
       ts-interface-checker: 0.1.13
 
-  /sugar-high@0.5.4:
-    resolution: {integrity: sha512-PyigJHrh6M9O5eakeBWrWicyvW/4k1KGHklD5Ndl+EiGHL3h5ScEPBIZYPYfih325F4mM5uQ7J5ZviUJzKnmCA==}
+  /sugar-high@0.5.5:
+    resolution: {integrity: sha512-XSLoBuGEfKk3PbN94+3aZefhoSH5n+qXTxcfFs+Ip0EdaY/fdohyyfugW0sJPrgdUfTk4DIxpPsUCq492aLOrw==}
     dev: false
 
   /supports-color@5.5.0:

@@ -2,7 +2,6 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 import Link from 'next/link';
 import { createElement } from 'react';
-// @ts-expect-error - No types available
 import { highlight } from 'sugar-high';
 
 import type { MDXRemoteProps } from 'next-mdx-remote/rsc';
@@ -91,9 +90,7 @@ function ConsCard({ title, cons }: { title: string; cons: string[] }) {
 }
 
 function Code({ children, ...props }: { children: ReactNode }) {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-  const codeHTML = highlight(children);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const codeHTML = highlight(children?.toString() ?? '');
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
