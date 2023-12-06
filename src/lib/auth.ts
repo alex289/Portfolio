@@ -37,7 +37,11 @@ export const {
     session: ({ session, token }) => {
       token.image = token.picture;
       token.isAdmin = token.email === env.ADMIN_EMAIL;
-      session.user = token as typeof session.user;
+      session.user = {
+        ...token,
+        id: token.sub!,
+        isAdmin: token.isAdmin as boolean,
+      };
 
       return session;
     },
