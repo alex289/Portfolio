@@ -52,6 +52,7 @@ const AboutPage = () => {
           <li>
             GitHub:{' '}
             <a
+              href="https://github.com/alex289"
               target="_blank"
               rel="noreferrer noopener"
               className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
