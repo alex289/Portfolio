@@ -66,7 +66,7 @@
     "gray-matter": "^4.0.3",
     "kysely": "^0.26.3",
     "kysely-planetscale": "^1.4.0",
-    "lucide-react": "^0.301.0",
+    "lucide-react": "^0.302.0",
     "motion": "^10.16.4",
     "next": "14.0.5-canary.26",
     "next-auth": "5.0.0-beta.4",
