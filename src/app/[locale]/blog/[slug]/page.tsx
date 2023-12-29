@@ -152,7 +152,7 @@ export default async function Blog({
         <p className="ml-2 min-w-32 mt-2 text-sm text-gray-600 dark:text-[#c2c2c2] md:mt-0">
           <ReadingTime readingMinutes={post.readingTime} />
           {` • `}
-          <ViewCounter slug={post.slug} trackView={true} />
+          <ViewCounter slug={post.slug + '-' + post.id} trackView={true} />
         </p>
       </div>
       <div className="mt-2 flex w-full text-xs">

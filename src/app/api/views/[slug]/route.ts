@@ -14,7 +14,9 @@ export async function POST(
     });
   }
 
-  const post = getBlogPosts().find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find(
+    (post) => post.id === Number(params.slug.split('-').pop()),
+  );
 
   if (!post) {
     return new Response(JSON.stringify({ error: 'Post not found' }), {
@@ -27,7 +29,7 @@ export async function POST(
 
   const data = await queryBuilder
     .selectFrom('views')
-    .where('slug', '=', params.slug)
+    .where('slug', 'like', '%-' + post.id)
     .select(['count'])
     .execute();
 
