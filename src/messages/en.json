@@ -137,6 +137,7 @@
     "commits": "Total Commits",
     "prs": "Total PRs",
     "issues": "Total Issues",
-    "contributed": "Contributed to"
+    "contributed": "Contributed to",
+    "top-languages": "Top Languages"
   }
 }

@@ -6,6 +6,7 @@ import withNextIntl from 'next-intl/plugin';
 const nextConfig = {
   experimental: {
     ppr: true,
+    useLightningcss: true,
   },
   reactStrictMode: true,
   swcMinify: true,

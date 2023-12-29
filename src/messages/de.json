@@ -137,6 +137,7 @@
     "commits": "Anzahl Commits",
     "prs": "PRs Insgesamt",
     "issues": "Anzahl Issues",
-    "contributed": "Beigetragen zu"
+    "contributed": "Beigetragen zu",
+    "top-languages": "Meist benutzte Sprachen"
   }
 }

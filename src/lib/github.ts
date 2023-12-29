@@ -11,6 +11,10 @@ interface ReposResponse {
           stargazers: {
             totalCount: number;
           };
+          primaryLanguage: {
+            name: string;
+            color: string;
+          };
         }[];
       };
       contributionsCollection: {
@@ -76,6 +80,10 @@ export const getStats = async () => {
                 stargazers {
                   totalCount
                 }
+                primaryLanguage {
+                  name,
+                  color
+                }
               }
             }
           }
@@ -101,6 +109,30 @@ export const getStats = async () => {
     },
   );
 
+  const languageCounts: Record<string, { count: number; color: string }> = {};
+
+  user.repositories.nodes.forEach((repo) => {
+    const languageName = repo.primaryLanguage?.name;
+    const languageColor = repo.primaryLanguage?.color;
+
+    if (languageName) {
+      if (!languageCounts[languageName]) {
+        languageCounts[languageName] = { count: 0, color: languageColor || '' };
+      }
+
+      languageCounts[languageName]!.count += 1;
+    }
+  });
+
+  const topLanguages = Object.entries(languageCounts)
+    .map(([name, { count, color }]) => ({
+      name,
+      count,
+      color,
+    }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 5);
+
   return {
     stars: count,
     totalCommits:
@@ -111,6 +143,7 @@ export const getStats = async () => {
     contributions: user.repositoriesContributedTo.totalCount,
     prs: user.pullRequests.totalCount,
     issues: user.openIssues.totalCount + user.closedIssues.totalCount,
+    topLanguages: topLanguages,
   } as Stats;
 };
 

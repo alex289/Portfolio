@@ -15,6 +15,11 @@ export interface Stats {
   contributions: number;
   prs: number;
   issues: number;
+  topLanguages: {
+    name: string;
+    count: number;
+    color: string;
+  }[];
 }
 
 export interface Projects {
