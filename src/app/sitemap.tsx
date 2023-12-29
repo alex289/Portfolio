@@ -3,7 +3,7 @@ import { getBlogPosts } from '@/lib/blog';
 
 export default function sitemap() {
   const blogs = getBlogPosts().map((post) => ({
-    url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${post.language}/blog/${post.slug}`,
+    url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${post.language}/blog/${post.slug}-${post.id}`,
     lastModified: post.publishedAt,
   }));
 
