@@ -21,17 +21,19 @@ export const dynamic = 'force-static';
 export function generateStaticParams() {
   return getBlogPosts().map((post) => ({
     locale: post.language,
-    slug: post.slug,
+    slug: post.slug + '-' + post.id,
   }));
 }
 
 export function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string; locale: string };
 }): Metadata | undefined {
-  const post = getBlogPosts().find((post) => post.slug === params.slug);
-  if (!post) {
+  const post = getBlogPosts().find(
+    (post) => post.id === Number(params.slug.split('-').pop()),
+  );
+  if (!post || post.language !== params.locale) {
     return undefined;
   }
 
@@ -92,9 +94,11 @@ export default async function Blog({
 
   const now = await getNow({ locale: params.locale });
   const formatter = await getFormatter({ locale: params.locale });
-  const post = getBlogPosts().find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find(
+    (post) => post.id === Number(params.slug.split('-').pop()),
+  );
 
-  if (!post) {
+  if (!post || post.language !== params.locale) {
     notFound();
   }
 

@@ -21,15 +21,18 @@
       "read-all": "Lies alle Beiträge",
       "1": {
         "title": "Erster Beitrag",
-        "slug": "erster-beitrag"
+        "slug": "erster-beitrag",
+        "postId": "1"
       },
       "2": {
         "title": "Das Beste PowerShell Terminal Setup",
-        "slug": "terminal-einrichtung"
+        "slug": "terminal-einrichtung",
+        "postId": "4"
       },
       "3": {
         "title": "Wie Veröffentlicht man eine Fullstack Web App auf Vercel?",
-        "slug": "vercel-veroeffentlichen"
+        "slug": "vercel-veroeffentlichen",
+        "postId": "7"
       }
     }
   },

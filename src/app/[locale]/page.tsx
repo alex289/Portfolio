@@ -60,16 +60,19 @@ const Index = async ({ params: { locale } }: IndexProps) => {
         <FeaturedPost
           title={t('index-page.posts.1.title')}
           slug={t('index-page.posts.1.slug')}
+          postId={Number(t('index-page.posts.1.postId'))}
           gradient="from-[#D8B4FE] via-[#726dde] to-[#818CF8]"
         />
         <FeaturedPost
           title={t('index-page.posts.2.title')}
           slug={t('index-page.posts.2.slug')}
+          postId={Number(t('index-page.posts.2.postId'))}
           gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
         />
         <FeaturedPost
           title={t('index-page.posts.3.title')}
           slug={t('index-page.posts.3.slug')}
+          postId={Number(t('index-page.posts.3.postId'))}
           gradient="from-[#9333EA] via-[#818CF8] to-[#3B82F6]"
         />
       </div>

@@ -7,18 +7,20 @@ import ViewCounter from './views-counter';
 
 interface FeaturedPostProps {
   title: string;
+  postId: number;
   slug: string;
   gradient: string;
 }
 
 export default function FeaturedPost({
   title,
+  postId,
   slug,
   gradient,
 }: FeaturedPostProps) {
   return (
     <Link
-      href={`/blog/${slug}`}
+      href={`/blog/${slug}-${postId}`}
       className={clsx(
         'transform transition-all hover:scale-[1.01]',
         'w-full rounded-xl bg-gradient-to-r p-1 md:w-1/3',

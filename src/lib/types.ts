@@ -69,6 +69,7 @@ export interface ResponseTrackType {
 }
 
 export interface BlogPost {
+  id: number;
   content: string;
   title: string;
   translation: string;

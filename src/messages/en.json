@@ -21,15 +21,18 @@
       "read-all": "Read all posts",
       "1": {
         "title": "Initial Commit",
-        "slug": "initial-commit"
+        "slug": "initial-commit",
+        "postId": "1"
       },
       "2": {
         "title": "The Best PowerShell Terminal Setup",
-        "slug": "terminal-setup"
+        "slug": "terminal-setup",
+        "postId": "5"
       },
       "3": {
         "title": "How to Deploy a Fullstack Web App on Vercel?",
-        "slug": "vercel-deployment"
+        "slug": "vercel-deployment",
+        "postId": "6"
       }
     }
   },

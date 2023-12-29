@@ -29,8 +29,13 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
     const nextLocale = locale === 'de' ? 'en' : 'de';
     if (path?.includes('/blog/')) {
       const slug = path.substring(path.lastIndexOf('/') + 1);
-      const post = posts.find((post) => post.slug === slug);
-      return `/${nextLocale}/blog/${post?.translation}`;
+      const currentPost = posts.find(
+        (post) => post.id === Number(slug.split('-').pop()),
+      );
+      const translatedPost = posts.find(
+        (post) => post.slug === currentPost?.translation,
+      );
+      return `/${nextLocale}/blog/${currentPost?.translation}-${translatedPost?.id}`;
     }
     const correctPath = path?.replace('/de', '').replace('/en', '');
     return `/${nextLocale}${correctPath}`;

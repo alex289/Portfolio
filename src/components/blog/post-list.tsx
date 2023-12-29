@@ -82,14 +82,7 @@ const PostList = ({ allBlogs }: { allBlogs: BlogPost[] }) => {
         </p>
       )}
       {filteredBlogPosts.map((post) => (
-        <PostCard
-          key={post.title}
-          slug={post.slug}
-          title={post.title}
-          excerpt={post.summary}
-          date={post.publishedAt}
-          tags={post.tags}
-        />
+        <PostCard post={post} key={post.slug} />
       ))}
     </div>
   );
