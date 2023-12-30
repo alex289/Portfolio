@@ -18,7 +18,7 @@ export default function PostCard({ post }: { post: BlogPost }) {
           {post.title}
         </Link>
         <p className="mb-4 min-w-fit max-w-full text-left text-gray-900 dark:text-[#c2c2c2] md:mb-0 md:text-right">
-          <ViewCounter slug={post.slug + '-' + post.id} trackView={false} /> |{' '}
+          <ViewCounter slug={post.slug} trackView={false} /> |{' '}
           {new Date(post.publishedAt).toLocaleDateString(
             locale === 'de' ? 'de-DE' : 'en-US',
             {

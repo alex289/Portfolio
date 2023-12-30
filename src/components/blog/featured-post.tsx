@@ -36,7 +36,7 @@ export default function FeaturedPost({
           <Eye strokeWidth={1.5} className="h-6 w-6" />
 
           <span className="capsize ml-2 align-baseline">
-            <ViewCounter slug={slug + '-' + postId} trackView={false} />
+            <ViewCounter slug={slug} trackView={false} />
           </span>
         </div>
       </div>

@@ -29,7 +29,7 @@ export async function POST(
 
   const data = await queryBuilder
     .selectFrom('views')
-    .where('slug', 'like', '%-' + post.id)
+    .where('slug', '=', post.slug)
     .select(['count'])
     .execute();
 

@@ -19,14 +19,12 @@ function readMDXFile(filePath: string) {
 function getMDXData(dir: string): BlogPost[] {
   const mdxFiles = getMDXFiles(dir);
 
-  let id = 0;
-
   return mdxFiles.map((file) => {
     const { data, content } = readMDXFile(path.join(dir, file));
     const slug = path.basename(file, path.extname(file));
 
     return {
-      id: id++,
+      id: data.id as number,
       content,
       slug,
       title: data.title as string,
