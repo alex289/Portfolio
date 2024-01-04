@@ -4,8 +4,7 @@ import { type NextRequest } from 'next/server';
 
 import env from '@/env.mjs';
 
-// Vercels edge function size limit is 1 MB but this is 1.15 MB for some reason
-// export const runtime = 'edge';
+export const runtime = 'edge';
 
 export function GET(req: NextRequest) {
   try {
