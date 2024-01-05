@@ -183,12 +183,20 @@ export default function CommandPalette({
     setSearch('');
 
     const action = Number(value[0]) as Actions;
+    const valuePath = value.slice(2) as typeof pathname;
+
     switch (action) {
       case Actions.Router:
-        router.push(value.slice(2));
+        if (valuePath !== '/blog/[slug]') {
+          router.push(valuePath);
+        }
         break;
       case Actions.Language:
-        router.replace(pathname, { locale: locale === 'de' ? 'en' : 'de' });
+        if (pathname !== '/blog/[slug]') {
+          router.replace(pathname, {
+            locale: locale === 'de' ? 'en' : 'de',
+          });
+        }
         break;
       case Actions.Theme:
         setTheme(theme === 'light' ? 'dark' : 'light');

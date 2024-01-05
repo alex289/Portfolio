@@ -65,9 +65,11 @@ export default function MobileMenu({ isMenuOpen, toggle }: Props) {
     },
   ];
 
-  function go(href: string) {
-    router.push(href);
-    toggle();
+  function go(href: typeof path) {
+    if (href !== '/blog/[slug]') {
+      router.push(href);
+      toggle();
+    }
   }
 
   return (
@@ -88,7 +90,7 @@ export default function MobileMenu({ isMenuOpen, toggle }: Props) {
               )}
               style={{ transitionDelay: link.transitionDelay }}>
               <div
-                onClick={() => go(link.href)}
+                onClick={() => go(link.href as typeof path)}
                 id={link.id}
                 className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
                 {link.text}

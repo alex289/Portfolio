@@ -18,7 +18,10 @@ export default function FeaturedPost({
 }: FeaturedPostProps) {
   return (
     <Link
-      href={`/blog/${slug}`}
+      href={{
+        pathname: '/blog/[slug]',
+        params: { slug },
+      }}
       className={clsx(
         'transform transition-all hover:scale-[1.01]',
         'w-full rounded-xl bg-gradient-to-r p-1 md:w-1/3',
