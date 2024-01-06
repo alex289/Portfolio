@@ -151,7 +151,7 @@ export const getProjects = async (perPage = 10) => {
   const reposResponse = await fetch(
     `https://api.github.com/users/alex289/repos?per_page=${perPage}&sort=pushed`,
     {
-      next: { revalidate: 60 * 60 * 24 },
+      next: { revalidate: 3600 }, // 1 hour
       headers: {
         Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
       },
