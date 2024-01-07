@@ -2,7 +2,7 @@ import env from '@/env.mjs';
 
 import type { Projects, Stats } from './types';
 
-interface ReposResponse {
+interface StatsResponse {
   data: {
     user: {
       repositories: {
@@ -40,9 +40,28 @@ interface ReposResponse {
   };
 }
 
+interface RepoResponse {
+  data: {
+    user: {
+      repositories: {
+        nodes: {
+          name: string;
+          url: string;
+          description: string;
+          homepageUrl: string;
+          primaryLanguage: {
+            name: string;
+            color: string;
+          };
+        }[];
+      };
+    };
+  };
+}
+
 export const getStats = async () => {
-  const reposResponse = await fetch('https://api.github.com/graphql', {
-    next: { revalidate: 60 * 60 * 24 },
+  const statsResponse = await fetch('https://api.github.com/graphql', {
+    next: { revalidate: 3600 }, // 1 hour
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -95,11 +114,11 @@ export const getStats = async () => {
     }),
   });
 
-  if (!reposResponse.ok) {
+  if (!statsResponse.ok) {
     return null;
   }
 
-  const data = (await reposResponse.json()) as ReposResponse;
+  const data = (await statsResponse.json()) as StatsResponse;
   const user = data.data.user;
 
   let count = 0;
@@ -148,19 +167,56 @@ export const getStats = async () => {
 };
 
 export const getProjects = async (perPage = 10) => {
-  const reposResponse = await fetch(
-    `https://api.github.com/users/alex289/repos?per_page=${perPage}&sort=pushed`,
-    {
-      next: { revalidate: 3600 }, // 1 hour
-      headers: {
-        Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
-      },
+  const reposResponse = await fetch('https://api.github.com/graphql', {
+    next: { revalidate: 3600 }, // 1 hour
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
     },
-  );
+    body: JSON.stringify({
+      query: `
+        query projectsInfo($login: String!, $perPage: Int!) {
+          user(login: $login) {
+            repositories(first: $perPage, orderBy: {field: PUSHED_AT, direction: DESC}) {
+              nodes {
+                name
+                url
+                description
+                homepageUrl
+                primaryLanguage {
+                  name
+                  color
+                }
+              }
+            }
+          }
+        }
+        `,
+      variables: {
+        login: 'alex289',
+        perPage: perPage,
+      },
+    }),
+  });
 
   if (!reposResponse.ok) {
     return [];
   }
 
-  return (await reposResponse.json()) as Projects[];
+  const data = (await reposResponse.json()) as RepoResponse;
+
+  return data.data.user.repositories.nodes.map(
+    (repo) =>
+      ({
+        name: repo.name,
+        url: repo.url,
+        homepage: repo.homepageUrl,
+        description: repo.description || '',
+        language: {
+          name: repo.primaryLanguage?.name || '',
+          color: repo.primaryLanguage?.color || '',
+        },
+      }) as Projects,
+  );
 };

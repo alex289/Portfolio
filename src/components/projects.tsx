@@ -17,7 +17,7 @@ const Project = ({
           <div
             key={index}
             id={project.name}
-            className="my-3 grid grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow hover:border-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-indigo-500 md:grid-cols-5">
+            className="my-3 grid grid-cols-2 gap-3 rounded-lg border border-gray-200 bg-white p-6 shadow hover:border-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-indigo-500 md:grid-cols-5">
             <div className="flex flex-row">
               <p className="font-semibold text-gray-500 dark:text-white">
                 {project.name}
@@ -29,8 +29,22 @@ const Project = ({
               }`}>
               {project.description}
             </p>
-            <sub className="md:mx-4 md:hidden">{project.language}</sub>
-            <p className="hidden md:mx-4 md:inline">{project.language}</p>
+            <sub className="md:mx-4 md:hidden flex items-center">
+              {project.language.color !== '' && (
+                <div
+                  className="inline-block w-3 h-3 rounded-full mr-2"
+                  style={{ backgroundColor: project.language.color }}></div>
+              )}
+              {project.language.name}
+            </sub>
+            <div className="hidden md:mx-4 md:flex items-center">
+              {project.language.color !== '' && (
+                <div
+                  className="inline-block w-3 h-3 rounded-full mr-2"
+                  style={{ backgroundColor: project.language.color }}></div>
+              )}
+              {project.language.name}
+            </div>
             <div className="flex flex-row justify-end gap-x-4">
               {project.homepage && project.homepage !== '' && (
                 <a
@@ -46,7 +60,7 @@ const Project = ({
               )}
 
               <a
-                href={project.html_url}
+                href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="github">

@@ -24,10 +24,13 @@ export interface Stats {
 
 export interface Projects {
   name: string;
-  html_url: string;
+  url: string;
   homepage: string;
   description: string;
-  language: string;
+  language: {
+    name: string;
+    color: string;
+  };
 }
 
 export enum Form {
