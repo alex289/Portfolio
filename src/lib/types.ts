@@ -27,6 +27,7 @@ export interface Projects {
   url: string;
   homepage: string;
   description: string;
+  stargazerCount: number;
   language: {
     name: string;
     color: string;

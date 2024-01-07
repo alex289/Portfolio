@@ -111,7 +111,11 @@ const ProjectsPage = async ({ params: { locale } }: ProjectsProps) => {
       </div>
 
       <h2 className="text-gray-600 dark:text-gray-200">
-        <Project projects={projects} notFoundText={t('projects.not-found')} />
+        <Project projects={projects} />
+
+        {projects?.length === 0 && (
+          <div className="w-[100rem]">{t('projects.not-found')}</div>
+        )}
       </h2>
     </div>
   );

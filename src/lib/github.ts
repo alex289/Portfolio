@@ -49,6 +49,7 @@ interface RepoResponse {
           url: string;
           description: string;
           homepageUrl: string;
+          stargazerCount: number;
           primaryLanguage: {
             name: string;
             color: string;
@@ -184,6 +185,7 @@ export const getProjects = async (perPage = 10) => {
                 url
                 description
                 homepageUrl
+                stargazerCount
                 primaryLanguage {
                   name
                   color
@@ -213,6 +215,7 @@ export const getProjects = async (perPage = 10) => {
         url: repo.url,
         homepage: repo.homepageUrl,
         description: repo.description || '',
+        stargazerCount: repo.stargazerCount,
         language: {
           name: repo.primaryLanguage?.name || '',
           color: repo.primaryLanguage?.color || '',
