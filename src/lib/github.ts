@@ -179,7 +179,7 @@ export const getProjects = async (perPage = 10) => {
       query: `
         query projectsInfo($login: String!, $perPage: Int!) {
           user(login: $login) {
-            repositories(first: $perPage, orderBy: {field: PUSHED_AT, direction: DESC}) {
+            repositories(first: $perPage, orderBy: {field: PUSHED_AT, direction: DESC}, privacy: PUBLIC) {
               nodes {
                 name
                 url
