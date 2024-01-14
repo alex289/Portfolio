@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { createElement } from 'react';
 import { highlight } from 'sugar-high';
 
+import CodeBlock from './code-block';
+
 import type { MDXRemoteProps } from 'next-mdx-remote/rsc';
 import type { ImageProps } from 'next/image';
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
@@ -169,6 +171,7 @@ const components = {
   ConsCard,
   code: Code,
   Table,
+  pre: CodeBlock,
 } as MDXRemoteComponents;
 
 export function CustomMDX({ content }: { content: string }) {

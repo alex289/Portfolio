@@ -35,7 +35,7 @@ const Project = ({ projects }: { projects: Projects[] | null }) => {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="github">
+                  aria-label="GitHub">
                   <Github className="default-transition default-focus relative inline-flex h-10 w-10 justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-400 hover:bg-gray-50 hover:text-gray-700 dark:border-gray-500 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white sm:w-10" />
                 </a>
               </div>
