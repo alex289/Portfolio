@@ -1,8 +1,7 @@
-import { env } from 'process';
-
 import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
+import env from '@/env.mjs';
 import GuestbookEntry from '@/components/guestbook/guestbook-entry';
 import GuestbookForm from '@/components/guestbook/guestbook-form';
 import { auth } from '@/lib/auth';
