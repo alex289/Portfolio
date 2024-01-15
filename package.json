@@ -48,7 +48,7 @@
     "postcss": "^8.4.33",
     "prettier": "^3.2.2",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "prisma": "^5.7.1",
+    "prisma": "^5.8.0",
     "reading-time": "^1.5.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
@@ -56,7 +56,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@planetscale/database": "^1.13.0",
-    "@prisma/client": "^5.7.1",
+    "@prisma/client": "^5.8.0",
     "@t3-oss/env-nextjs": "^0.7.3",
     "@tailwindcss/forms": "^0.5.7",
     "@vercel/analytics": "^1.1.1",
@@ -68,7 +68,7 @@
     "kysely-planetscale": "^1.4.0",
     "lucide-react": "^0.309.0",
     "motion": "^10.17.0",
-    "next": "14.0.5-canary.43",
+    "next": "14.0.5-canary.58",
     "next-auth": "5.0.0-beta.4",
     "next-intl": "3.4.2",
     "next-mdx-remote": "^4.4.1",
