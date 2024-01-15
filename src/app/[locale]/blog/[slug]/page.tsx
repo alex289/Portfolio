@@ -98,7 +98,7 @@ export default async function Blog({
     notFound();
   }
 
-  const formattedDate = new Date(post?.publishedAt).toLocaleDateString(
+  const formattedDate = new Date(post.publishedAt).toLocaleDateString(
     params.locale === 'de' ? 'de-DE' : 'en-US',
     {
       year: 'numeric',
@@ -152,7 +152,7 @@ export default async function Blog({
         </p>
       </div>
       <div className="mt-2 flex w-full text-xs">
-        {post.tags?.map((tag) => (
+        {post.tags.map((tag) => (
           <Link
             href={`/blog?filter=tag&search=${tag}`}
             key={tag}

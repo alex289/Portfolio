@@ -88,7 +88,7 @@ const Index = async ({ params: { locale } }: IndexProps) => {
       </h3>
 
       <Project projects={projects} />
-      {projects?.length === 0 && t('projects.not-found')}
+      {projects.length === 0 && t('projects.not-found')}
 
       <Link
         href={`/${locale}/projects`}

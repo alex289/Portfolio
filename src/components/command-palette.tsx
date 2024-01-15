@@ -91,7 +91,7 @@ export default function CommandPalette({
         title: 'Dashboard',
         action: Actions.Router,
         args: '/dashboard',
-        disabled: !session?.user?.isAdmin ?? true,
+        disabled: !session?.user.isAdmin || true,
         icon: (
           <BarChart3 strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
         ),
@@ -144,7 +144,7 @@ export default function CommandPalette({
         icon: <User strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
-        title: `Logout (${session?.user?.name})`,
+        title: `Logout (${session?.user.name})`,
         action: Actions.Session,
         args: '',
         disabled: session ? false : true,
@@ -212,7 +212,7 @@ export default function CommandPalette({
   }
 
   return (
-    <Transition.Root show={!!isOpen ?? false} as={Fragment}>
+    <Transition.Root show={!!isOpen || false} as={Fragment}>
       <Dialog
         onClose={() => setIsOpen(false)}
         className="fixed inset-0 overflow-y-auto p-4 pt-[25vh]">
