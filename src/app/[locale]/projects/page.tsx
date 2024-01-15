@@ -1,6 +1,7 @@
 import { AlertCircle, Book, GitPullRequest, History, Star } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
+import env from '@/env.mjs';
 import Project from '@/components/projects';
 import { getProjects, getStats } from '@/lib/github';
 
@@ -22,6 +23,16 @@ export async function generateMetadata({
   const t = await getTranslations({ locale });
   return {
     title: t('main.projects'),
+    openGraph: {
+      images: [
+        `${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${t('main.projects')}`,
+      ],
+    },
+    twitter: {
+      images: [
+        `${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${t('main.projects')}`,
+      ],
+    },
   };
 }
 

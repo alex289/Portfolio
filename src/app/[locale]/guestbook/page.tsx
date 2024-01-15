@@ -1,3 +1,5 @@
+import { env } from 'process';
+
 import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
@@ -24,6 +26,12 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'guestbook' });
   return {
     title: t('title'),
+    openGraph: {
+      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${t('title')}`],
+    },
+    twitter: {
+      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${t('title')}`],
+    },
   };
 }
 

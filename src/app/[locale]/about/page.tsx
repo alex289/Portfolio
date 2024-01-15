@@ -26,6 +26,12 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'main' });
   return {
     title: t('about'),
+    openGraph: {
+      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${t('about')}`],
+    },
+    twitter: {
+      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${t('about')}`],
+    },
   };
 }
 

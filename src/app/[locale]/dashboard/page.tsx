@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
 
+import env from '@/env.mjs';
 import Metric from '@/components/metric';
 import { SignOutButton } from '@/components/sign-out';
 import Track from '@/components/track';
@@ -17,12 +18,20 @@ interface DashboardProps {
   };
 }
 
-export const metadata: Metadata = {
-  title: 'Dashboard',
-};
-
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'de' }];
+}
+
+export function generateMetadata(): Metadata {
+  return {
+    title: 'Dashboard',
+    openGraph: {
+      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=Dashboard`],
+    },
+    twitter: {
+      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=Dashboard`],
+    },
+  };
 }
 
 const getViewsCount = async () => {

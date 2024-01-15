@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import {
   getFormatter,
   getNow,
+  getTranslations,
   unstable_setRequestLocale,
 } from 'next-intl/server';
 import Link from 'next/link';
@@ -25,11 +26,13 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata | undefined {
+  params: { slug: string; locale: string };
+}): Promise<Metadata | undefined> {
+  const t = await getTranslations({ locale: params.locale, namespace: 'blog' });
+
   const post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
     return undefined;
@@ -54,9 +57,11 @@ export function generateMetadata({
     },
   );
 
+  const readingTimeText = t('reading-time', { minutes: readingTime });
+
   const ogImage = `${
     env.NEXT_PUBLIC_WEBSITE_URL
-  }/api/og?title=${title}&header=${formattedDate + ' • ' + readingTime}`;
+  }/api/og?title=${title}&header=${formattedDate + ' • ' + readingTimeText}`;
 
   return {
     title,
