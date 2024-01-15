@@ -14,7 +14,7 @@ interface StatsResponse {
           primaryLanguage: {
             name: string;
             color: string;
-          } | null;
+          };
         }[];
       };
       contributionsCollection: {
@@ -53,7 +53,7 @@ interface RepoResponse {
           primaryLanguage: {
             name: string;
             color: string;
-          } | null;
+          };
         }[];
       };
     };
@@ -137,7 +137,7 @@ export const getStats = async () => {
 
     if (languageName) {
       if (!languageCounts[languageName]) {
-        languageCounts[languageName] = { count: 0, color: languageColor ?? '' };
+        languageCounts[languageName] = { count: 0, color: languageColor || '' };
       }
 
       languageCounts[languageName]!.count += 1;
@@ -217,8 +217,8 @@ export const getProjects = async (perPage = 10) => {
         description: repo.description || '',
         stargazerCount: repo.stargazerCount,
         language: {
-          name: repo.primaryLanguage?.name ?? '',
-          color: repo.primaryLanguage?.color ?? '',
+          name: repo.primaryLanguage?.name || '',
+          color: repo.primaryLanguage?.color || '',
         },
       }) as Projects,
   );

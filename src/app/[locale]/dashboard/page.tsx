@@ -57,7 +57,7 @@ const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
     return redirect('/api/auth/signin?callbackUrl=/dashboard');
   }
 
-  if (!session.user.isAdmin) {
+  if (!session || !session.user.isAdmin) {
     return redirect('/');
   }
 
@@ -67,7 +67,7 @@ const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
         Dashboard
       </h1>
       <p className="mb-2">
-        {t('logged-in')} {session.user.email} (
+        {t('logged-in')} {session.user?.email} (
         <SignOutButton />)
       </p>
       <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
@@ -76,7 +76,7 @@ const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
         </h2>
         <Metric title={t('metrics.blog-views')}>{viewsCount}</Metric>
         <Metric title={t('metrics.posts-count')}>
-          {getBlogPosts().filter((x) => x.language === locale).length}
+          {getBlogPosts().filter((x) => x.language === locale)?.length}
         </Metric>
         <Metric title={t('metrics.guestbook-entries')}>
           {guesbookEntriesCount}

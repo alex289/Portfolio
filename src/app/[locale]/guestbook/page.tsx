@@ -60,7 +60,7 @@ async function GuestbookEntries({ locale }: { locale: string }) {
 
   return (
     <div className="mt-4 space-y-8">
-      {entries.map((entry) => (
+      {entries?.map((entry) => (
         <GuestbookEntry
           key={entry.id.toString()}
           entry={entry}

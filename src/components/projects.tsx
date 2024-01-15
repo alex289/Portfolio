@@ -7,7 +7,7 @@ const Project = ({ projects }: { projects: Projects[] | null }) => {
     <>
       {projects &&
         projects.length > 0 &&
-        projects.map((project: Projects, index: number) => (
+        projects?.map((project: Projects, index: number) => (
           <div
             key={index}
             id={project.name}

@@ -5,7 +5,7 @@ import { queryBuilder } from '@/lib/db';
 export async function POST(req: Request) {
   const session = await auth();
 
-  if (!session?.user.email || !session.user.name) {
+  if (!session || !session.user || !session.user.email || !session.user.name) {
     return Unauthorized();
   }
 
@@ -66,7 +66,7 @@ export async function DELETE(req: Request) {
     return BadRequest('Entry not found');
   }
 
-  if (!session?.user.email) {
+  if (!session || !session.user || !session.user.email) {
     return Unauthorized();
   }
 

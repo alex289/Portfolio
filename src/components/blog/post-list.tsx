@@ -15,8 +15,8 @@ const PostList = ({ allBlogs }: { allBlogs: BlogPost[] }) => {
   const locale = useLocale();
 
   const searchParams = useSearchParams();
-  const searchQuery = searchParams.get('search');
-  const filterQuery = searchParams.get('filter');
+  const searchQuery = searchParams?.get('search');
+  const filterQuery = searchParams?.get('filter');
 
   const [searchValue, setSearchValue] = useState('');
   const [filterBy, setFilterBy] = useState<'name' | 'tag'>('name');
@@ -36,11 +36,11 @@ const PostList = ({ allBlogs }: { allBlogs: BlogPost[] }) => {
         if (filterBy === 'name') {
           return post.title.toLowerCase().includes(searchValue.toLowerCase());
         }
-
-        // filterBy === 'tag'
-        return post.tags.some((tag) =>
-          tag.toLowerCase().includes(searchValue.toLowerCase()),
-        );
+        if (filterBy === 'tag') {
+          return post.tags.some((tag) =>
+            tag.toLowerCase().includes(searchValue.toLowerCase()),
+          );
+        }
       })
       .filter((post) => post.language === locale)
       .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));

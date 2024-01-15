@@ -31,7 +31,6 @@ const config = {
         checksVoidReturn: { attributes: false },
       },
     ],
-    '@typescript-eslint/no-unnecessary-condition': 'warn',
   },
 };
 
