@@ -157,10 +157,10 @@ export default async function Blog({
             href={`/blog?filter=tag&search=${tag}`}
             key={tag}
             className={clsx(
-              'mx-2 mt-1 rounded border border-indigo-500 px-3 py-1 text-indigo-500',
+              'mx-2 mt-1 rounded-full border border-indigo-500 px-2.5 py-0.5 text-xs text-indigo-500',
               'hover:border-indigo-600 hover:text-indigo-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400',
             )}>
-            {tag}
+            #{tag}
           </Link>
         ))}
       </div>
