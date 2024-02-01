@@ -51,11 +51,11 @@ dependencies:
     specifier: 14.1.1-canary.27
     version: 14.1.1-canary.27(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
   next-auth:
-    specifier: 5.0.0-beta.5
-    version: 5.0.0-beta.5(next@14.1.1-canary.27)(react@18.2.0)
+    specifier: 5.0.0-beta.4
+    version: 5.0.0-beta.4(next@14.1.1-canary.27)(react@18.2.0)
   next-intl:
-    specifier: 3.5.3
-    version: 3.5.3(next@14.1.1-canary.27)(react@18.2.0)
+    specifier: 3.5.4
+    version: 3.5.4(next@14.1.1-canary.27)(react@18.2.0)
   next-mdx-remote:
     specifier: ^4.4.1
     version: 4.4.1(react-dom@18.2.0)(react@18.2.0)
@@ -104,11 +104,11 @@ devDependencies:
     specifier: ^8.56.2
     version: 8.56.2
   '@types/node':
-    specifier: ^20.11.14
-    version: 20.11.14
+    specifier: ^20.11.15
+    version: 20.11.15
   '@types/react':
-    specifier: ^18.2.49
-    version: 18.2.49
+    specifier: ^18.2.51
+    version: 18.2.51
   '@types/rss':
     specifier: ^0.0.32
     version: 0.0.32
@@ -172,8 +172,8 @@ packages:
     hasBin: true
     dev: false
 
-  /@auth/core@0.21.0:
-    resolution: {integrity: sha512-jUWYs8gjy2GvtP9dd/4S9KcwZ660Cm/IkybiAq96/2Ooku9SKk5SUG+UTEwkyLuaQ38ZgfwggfpDOgzsXEcufA==}
+  /@auth/core@0.18.4:
+    resolution: {integrity: sha512-GsNhsP1xE/3FoNS3dVkPjqRljLNJ4iyL2OLv3klQGNvw3bMpROFcK4lqhx7+pPHiamnVaYt2vg1xbB+lsNaevg==}
     peerDependencies:
       nodemailer: ^6.8.0
     peerDependenciesMeta:
@@ -181,7 +181,6 @@ packages:
         optional: true
     dependencies:
       '@panva/hkdf': 1.1.1
-      '@types/cookie': 0.6.0
       cookie: 0.6.0
       jose: 5.2.0
       oauth4webapi: 2.8.1
@@ -832,7 +831,7 @@ packages:
       react: '>=16'
     dependencies:
       '@types/mdx': 2.0.10
-      '@types/react': 18.2.49
+      '@types/react': 18.2.51
       react: 18.2.0
     dev: false
 
@@ -1261,14 +1260,10 @@ packages:
       '@types/estree': 1.0.5
     dev: false
 
-  /@types/cookie@0.6.0:
-    resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
-    dev: false
-
   /@types/cross-spawn@6.0.2:
     resolution: {integrity: sha512-KuwNhp3eza+Rhu8IFI5HUXRP0LIhqH5cAjubUvGXXthh4YYBuP2ntwEX+Cz8GJoZUHlKo247wPWOfA9LYEq4cw==}
     dependencies:
-      '@types/node': 20.11.14
+      '@types/node': 20.11.15
     dev: false
 
   /@types/debug@4.1.8:
@@ -1325,8 +1320,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
-  /@types/node@20.11.14:
-    resolution: {integrity: sha512-w3yWCcwULefjP9DmDDsgUskrMoOy5Z8MiwKHr1FvqGPtx7CvJzQvxD7eKpxNtklQxLruxSXWddyeRtyud0RcXQ==}
+  /@types/node@20.11.15:
+    resolution: {integrity: sha512-gscmuADZfvNULx1eyirVbr3kVOVZtpQtzKMCZpeSZcN6MfbkRXAR4s9/gsQ4CzxLHw6EStDtKLNtSDL3vbq05A==}
     dependencies:
       undici-types: 5.26.5
 
@@ -1337,8 +1332,8 @@ packages:
   /@types/prop-types@15.7.11:
     resolution: {integrity: sha512-ga8y9v9uyeiLdpKddhxYQkxNDrfvuPrlFb0N1qnZZByvcElJaXthF1UhvCh9TLWJBEHeNtdnbysW7Y6Uq8CVng==}
 
-  /@types/react@18.2.49:
-    resolution: {integrity: sha512-nEJonYlS7+LUVdqRBHldXLRa7ZDeOm/rJbJwGbjmn2hqhmdO4C6vSgvhhNv2qBDhGSv2oLuUA+f5JtyUJDY6bA==}
+  /@types/react@18.2.51:
+    resolution: {integrity: sha512-XeoMaU4CzyjdRr3c4IQQtiH7Rpo18V07rYZUucEZQwOUEtGgTXv7e6igQiQ+xnV6MbMe1qjEmKdgMNnfppnXfg==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -4261,8 +4256,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /next-auth@5.0.0-beta.5(next@14.1.1-canary.27)(react@18.2.0):
-    resolution: {integrity: sha512-tEYIPhm/i0byW4xf9Ldlsnh7ckBQfNvMjOA3B3eXQX9taAQWb8earravSn1fjk4fKfKvaOApFJkks0VeI7Vy/A==}
+  /next-auth@5.0.0-beta.4(next@14.1.1-canary.27)(react@18.2.0):
+    resolution: {integrity: sha512-vgocjvwPA8gxd/zrIP/vr9lJ/HeNe+C56lPP1D3sdyenHt8KncQV6ro7q0xCsDp1fcOKx7WAWVZH5o8aMxDzgw==}
     peerDependencies:
       next: ^14
       nodemailer: ^6.6.5
@@ -4271,13 +4266,13 @@ packages:
       nodemailer:
         optional: true
     dependencies:
-      '@auth/core': 0.21.0
+      '@auth/core': 0.18.4
       next: 14.1.1-canary.27(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
     dev: false
 
-  /next-intl@3.5.3(next@14.1.1-canary.27)(react@18.2.0):
-    resolution: {integrity: sha512-umcOmNX2cpbX/iMdhKOv/cEg4mJDda0KjrOFB8leINxwONe5VDuFJ3sw0RbE9wseN9P+CRGYZwWuuGHO1TLZMg==}
+  /next-intl@3.5.4(next@14.1.1-canary.27)(react@18.2.0):
+    resolution: {integrity: sha512-BKS3Iwgw/P/xQh6vl94naBNlHwPrbB2OSerze6OwZx0xaCzzOtDbB3Rq8saVw0vZrhxRHQaZTDaqmvkGUnyMcg==}
     peerDependencies:
       next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -4286,7 +4281,7 @@ packages:
       negotiator: 0.6.3
       next: 14.1.1-canary.27(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
-      use-intl: 3.5.3(react@18.2.0)
+      use-intl: 3.5.4(react@18.2.0)
     dev: false
 
   /next-mdx-remote@4.4.1(react-dom@18.2.0)(react@18.2.0):
@@ -5835,8 +5830,8 @@ packages:
       punycode: 2.3.0
     dev: true
 
-  /use-intl@3.5.3(react@18.2.0):
-    resolution: {integrity: sha512-aM/OmcoTdRz4YazQAbKlMIscDp9kzvM8EYkQRluf7VZtCPtKHC6HYSKzrxuSHNZP1E8TVsFiHUGrb2dkBoyCYA==}
+  /use-intl@3.5.4(react@18.2.0):
+    resolution: {integrity: sha512-JYTDmLyZ1WjlDr0RoBusIuS0puVCHsQ7CgGoMn8bP90TxaSojOKo09UM6qbiISPcmBHMJlemRo3V3wAcchD3Gw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
