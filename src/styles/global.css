@@ -33,6 +33,8 @@
   --sh-keyword: #e02518;
   --sh-comment: #a19595;
   --sh-jsxliterals: #6266d1;
+  --sh-property: #e25a1c;
+  --sh-entity: #e25a1c;
 }
 
 html.dark {
