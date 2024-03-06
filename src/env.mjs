@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 const env = createEnv({
   server: {
-    DATABASE_URL: z.string().url(),
+    POSTGRES_URL: z.string().url(),
     ADMIN_EMAIL: z.string().email(),
     GOOGLE_CLIENT_ID: z.string(),
     GOOGLE_CLIENT_SECRET: z.string(),
@@ -27,7 +27,7 @@ const env = createEnv({
       }),
   },
   runtimeEnv: {
-    DATABASE_URL: process.env.DATABASE_URL,
+    POSTGRES_URL: process.env.POSTGRES_URL,
     ADMIN_EMAIL: process.env.ADMIN_EMAIL,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,

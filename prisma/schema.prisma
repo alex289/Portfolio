@@ -3,9 +3,8 @@ generator client {
 }
 
 datasource db {
-    provider     = "mysql"
-    url          = env("DATABASE_URL")
-    relationMode = "prisma"
+    provider = "postgres"
+    url      = env("POSTGRES_URL")
 }
 
 generator kysely {
@@ -16,14 +15,14 @@ generator kysely {
 
 model views {
     slug  String @id @db.VarChar(128)
-    count Int    @default(1) @db.UnsignedInt
+    count Int    @default(1)
 }
 
 model guestbook {
-    id         Int      @id @default(autoincrement()) @db.UnsignedInt
+    id         Int      @id @default(autoincrement())
     email      String   @db.VarChar(256)
     body       String   @db.VarChar(500)
     created_by String   @db.VarChar(256)
-    created_at DateTime @default(now()) @db.DateTime(6)
-    updated_at DateTime @default(now()) @db.DateTime(6)
+    created_at DateTime @default(now())
+    updated_at DateTime @default(now())
 }

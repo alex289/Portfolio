@@ -12,7 +12,7 @@ permissions:
   pull-requests: write
 
 env:
-  DATABASE_URL: mysql://some_db@localhost:3306/portfolcio?sslaccept=strict
+  POSTGRES_URL: mysql://some_db@localhost:3306/portfolcio?sslaccept=strict
   ADMIN_EMAIL: some@thing.com
   AUTH_SECRET: something
   GOOGLE_CLIENT_ID: something

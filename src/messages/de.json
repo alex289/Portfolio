@@ -44,7 +44,6 @@
       "tailwind": "Wenn es zu CSS kommt benutze ich fast nur TailwindCSS. Es eignet sich perfekt um eine Webseite einfach zu designen.",
       "next": "Mein Go-To-Framework wenn es um das Bauen von Web-Applikationen kommt. Die Qualität der Codebase ist fantastisch.",
       "vercel": "Die einfachste und schnellste Art eine Webseite zu veröffentlichen. Ich benutze es für alle meine Projekte.",
-      "planetscale": "Die MySQL-kompatible serverlose Datenbankplattform. Mein Go-to-Datenbankhost.",
       "vscode": "VS Code ist ein Texteditor den ich wegen seiner Erweiterungen und Anpassungen immer benutze."
     },
     "uses": {

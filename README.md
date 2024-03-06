@@ -7,7 +7,7 @@ My own personal portfolio website
 Inspired by [leerob](https://github.com/leerob/leerob.io)
 
 - **Framework**: [Next.js](https://nextjs.org/)
-- **Database**: [PlanetScale](https://planetscale.com)
+- **Database**: [Vercel Postgres](https://vercel.com)
 - **ORM**: [Prisma](https://prisma.io/)
 - **Authentication**: [NextAuth.js](https://next-auth.js.org/)
 - **Deployment**: [Vercel](https://vercel.com)
@@ -19,7 +19,7 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 - `src/lib/*` - Short for "library", a collection of helpful utilities or code for external services.
 - `src/app/*` - The actual pages.
 - `public/*` - Static assets including fonts and images.
-- `prisma/*` - My Prisma schema, which uses a PlanetScale MySQL database.
+- `prisma/*` - My Prisma schema, which uses Vercels Postgres database.
 - `src/styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
 - `src/messages/*` - All translations objects
 
