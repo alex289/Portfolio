@@ -9,7 +9,7 @@ export const pathnames = {
   '/': '/',
   '/about': '/about',
   '/blog': '/blog',
-  '/blog/[slug]': '/news/[slug]',
+  '/blog/[slug]': '/blog/[slug]',
   '/dashboard': '/dashboard',
   '/guestbook': '/guestbook',
   '/projects': '/projects',
