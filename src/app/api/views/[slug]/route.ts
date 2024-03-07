@@ -31,13 +31,20 @@ export async function POST(
     .select(['count'])
     .execute();
 
-  const views = !data.length ? 0 : Number(data[0]?.count);
+  const views = data.length ? Number(data[0]?.count) : 0;
 
-  await queryBuilder
-    .insertInto('views')
-    .values({ slug: params.slug, count: 1 })
-    .onDuplicateKeyUpdate({ count: views + 1 })
-    .execute();
+  if (views === 0) {
+    await queryBuilder
+      .insertInto('views')
+      .values({ slug: params.slug, count: 1 })
+      .execute();
+  } else {
+    await queryBuilder
+      .updateTable('views')
+      .set({ count: views + 1 })
+      .where('slug', '=', params.slug)
+      .execute();
+  }
 
   return new Response(null, {
     status: 200,
