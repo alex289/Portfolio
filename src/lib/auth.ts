@@ -1,22 +1,13 @@
+import { type Session } from '@auth/core/types';
 import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
-import { type NextRequest } from 'next/server';
 
 import env from '@/env.mjs';
 
-import type { Session } from 'next-auth';
-
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 export const {
   handlers: { GET, POST },
   auth,
-}: {
-  auth: () => Promise<Session | null>;
-  handlers: {
-    GET: (req: NextRequest) => Promise<Response>;
-    POST: (req: NextRequest) => Promise<Response>;
-  };
 } = NextAuth({
   theme: {
     colorScheme: 'auto',
@@ -34,16 +25,12 @@ export const {
     }),
   ],
   callbacks: {
-    session: ({ session, token }) => {
-      token.image = token.picture;
-      token.isAdmin = token.email === env.ADMIN_EMAIL;
-      session.user = {
-        ...token,
-        id: token.sub!,
-        isAdmin: token.isAdmin as boolean,
-      };
-
-      return session;
-    },
+    session: ({ session }: { session: Session }) => ({
+      ...session,
+      user: {
+        ...session.user,
+        isAdmin: session.user?.email === env.ADMIN_EMAIL,
+      },
+    }),
   },
 });

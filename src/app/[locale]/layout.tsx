@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { GeistMono } from 'geist/font/mono';
 import { GeistSans } from 'geist/font/sans';
 import { NextIntlClientProvider } from 'next-intl';
+import { ThemeProvider } from 'next-themes';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 
@@ -11,7 +12,6 @@ import env from '@/env.mjs';
 import AnalyticsWrapper from '@/components/analytics';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
-import { Providers } from '@/components/providers';
 import { auth } from '@/lib/auth';
 import { getBlogPosts } from '@/lib/blog';
 
@@ -135,7 +135,7 @@ export default async function RootLayout({
           locale={params.locale}
           timeZone="Europe/Berlin"
           now={new Date()}>
-          <Providers>
+          <ThemeProvider attribute="class">
             <a
               href="#skip"
               className="absolute -top-8 left-1/4 -translate-y-12 px-4 py-2 transition-transform duration-200 focus:translate-y-3">
@@ -150,7 +150,7 @@ export default async function RootLayout({
               <AnalyticsWrapper />
             </main>
             <Footer />
-          </Providers>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

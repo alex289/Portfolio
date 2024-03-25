@@ -66,7 +66,7 @@ const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
     return redirect('/api/auth/signin?callbackUrl=/dashboard');
   }
 
-  if (!session || !session.user.isAdmin) {
+  if (!session?.user?.isAdmin) {
     return redirect('/');
   }
 

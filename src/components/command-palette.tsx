@@ -25,7 +25,7 @@ import { Fragment, useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter } from '@/lib/navigation';
 import { useUrlState } from '@/lib/use-url-state';
 
-import type { Session } from 'next-auth';
+import type { Session } from '@auth/core/types';
 
 enum Actions {
   Router,

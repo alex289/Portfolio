@@ -1,6 +1,6 @@
-import { type DefaultSession } from 'next-auth';
+import { type DefaultSession } from '@auth/core/types';
 
-declare module 'next-auth' {
+declare module '@auth/core/types' {
   interface Session {
     user: {
       isAdmin: boolean;
