@@ -3,7 +3,7 @@
     ".next": true
   },
   "editor.formatOnSave": true,
-  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
   "i18n-ally.localesPaths": ["src/messages"],
   "i18n-ally.keystyle": "nested"
 }
