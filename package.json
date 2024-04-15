@@ -1,7 +1,6 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "type": "module",
   "private": true,
   "description": "personal portfolio website",
   "packageManager": "pnpm@8.9.2",
