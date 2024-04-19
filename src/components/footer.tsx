@@ -132,6 +132,9 @@ export default function Footer() {
           </a>
           .
         </p>
+        <p className="mx-auto text-sm text-gray-500 dark:text-gray-300">
+          © {new Date().getFullYear()} Alexander Konietzko
+        </p>
       </footer>
     </div>
   );
