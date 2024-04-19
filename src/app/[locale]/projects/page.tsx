@@ -1,4 +1,11 @@
-import { AlertCircle, Book, GitPullRequest, History, Star } from 'lucide-react';
+import {
+  AlertCircle,
+  ArrowRight,
+  Book,
+  GitPullRequest,
+  History,
+  Star,
+} from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 import env from '@/env.mjs';
@@ -127,6 +134,16 @@ const ProjectsPage = async ({ params: { locale } }: ProjectsProps) => {
         {projects?.length === 0 && (
           <div className="w-[100rem]">{t('projects.not-found')}</div>
         )}
+
+        <a
+          href="https://github.com/alex289?tab=repositories"
+          target="_blank"
+          rel="noreferrer noopener">
+          <button className="flex items-center mt-6">
+            {t('projects.all-repos')}
+            <ArrowRight strokeWidth={1.5} className="ml-1" />
+          </button>
+        </a>
       </h2>
     </div>
   );

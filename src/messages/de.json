@@ -119,7 +119,8 @@
   },
   "projects": {
     "not-found": "Keine Projekte gefunden",
-    "see-more": "Alle Projekte"
+    "see-more": "Alle Projekte",
+    "all-repos": "Alle Repositories"
   },
   "not-playing": "Spielt nichts",
   "command-palette": {
