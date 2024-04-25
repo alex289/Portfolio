@@ -96,10 +96,6 @@ export function generateMetadata({
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f9fafb' },
-    { media: '(prefers-color-scheme: dark)', color: '#222222' },
-  ],
   initialScale: 1,
   width: 'device-width',
   colorScheme: 'light dark',

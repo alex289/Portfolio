@@ -39,6 +39,20 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const themeColor = window.document.querySelector('meta[name=theme-color]');
+    if (themeColor) {
+      themeColor.setAttribute(
+        'content',
+        resolvedTheme === 'dark' ? '#222222' : '#f9fafb',
+      );
+    } else {
+      const newThemeColor = window.document.createElement('meta');
+      newThemeColor.name = 'theme-color';
+      newThemeColor.content = resolvedTheme === 'dark' ? '#222222' : '#f9fafb';
+      window.document.head.appendChild(newThemeColor);
+    }
+  }, [resolvedTheme]);
 
   const NavLinks = [
     {
