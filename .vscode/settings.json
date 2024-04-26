@@ -5,5 +5,10 @@
   "editor.formatOnSave": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "i18n-ally.localesPaths": ["src/messages"],
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.keystyle": "nested",
+  "workbench.editor.customLabels.patterns": {
+    "**/src/app/**/page.tsx": "${dirname} - Page",
+    "**/src/app/**/layout.tsx": "${dirname} - Layout",
+    "**/src/app/**/route.ts": "${dirname} - Route"
+  }
 }
