@@ -1,3 +1,4 @@
+import { count } from 'drizzle-orm';
 import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
 
@@ -7,7 +8,8 @@ import { SignOutButton } from '@/components/sign-out';
 import Track from '@/components/track';
 import { auth } from '@/lib/auth';
 import { getBlogPosts } from '@/lib/blog';
-import { queryBuilder } from '@/lib/db';
+import { db } from '@/lib/db';
+import { guestbook, views } from '@/lib/db/schema';
 import { getTopTracks } from '@/lib/spotify';
 
 import type { Metadata } from 'next/types';
@@ -35,18 +37,22 @@ export function generateMetadata(): Metadata {
 }
 
 const getViewsCount = async () => {
-  const data = await queryBuilder
-    .selectFrom('views')
-    .select(queryBuilder.fn.sum<number>('views.count').as('total'))
+  const data = await db
+    .select({
+      total: count(views.count),
+    })
+    .from(views)
     .execute();
 
   return data[0]?.total ?? 0;
 };
 
 const getGuestbookEntriesCount = async () => {
-  const data = await queryBuilder
-    .selectFrom('guestbook')
-    .select(queryBuilder.fn.count<number>('id').as('total'))
+  const data = await db
+    .select({
+      total: count(guestbook.id),
+    })
+    .from(guestbook)
     .execute();
 
   return data[0]?.total ?? 0;

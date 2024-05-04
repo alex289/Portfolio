@@ -1,3 +1,4 @@
+import { desc } from 'drizzle-orm';
 import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
@@ -5,7 +6,8 @@ import env from '@/env.mjs';
 import GuestbookEntry from '@/components/guestbook/guestbook-entry';
 import GuestbookForm from '@/components/guestbook/guestbook-form';
 import { auth } from '@/lib/auth';
-import { queryBuilder } from '@/lib/db';
+import { db } from '@/lib/db';
+import { guestbook } from '@/lib/db/schema';
 
 import type { Metadata } from 'next/types';
 
@@ -35,10 +37,16 @@ export async function generateMetadata({
 }
 
 async function getGuestbook() {
-  const data = await queryBuilder
-    .selectFrom('guestbook')
-    .select(['id', 'body', 'email', 'created_by', 'updated_at'])
-    .orderBy('updated_at', 'desc')
+  const data = await db
+    .select({
+      id: guestbook.id,
+      body: guestbook.body,
+      email: guestbook.email,
+      created_by: guestbook.created_by,
+      updated_at: guestbook.updated_at,
+    })
+    .from(guestbook)
+    .orderBy(desc(guestbook.updated_at))
     .limit(100)
     .execute();
 

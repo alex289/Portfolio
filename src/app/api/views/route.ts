@@ -1,13 +1,10 @@
-import { queryBuilder } from '@/lib/db';
+import { db } from '@/lib/db';
 
 export const runtime = 'edge';
 
 export async function GET() {
   try {
-    const data = await queryBuilder
-      .selectFrom('views')
-      .select(['slug', 'count'])
-      .execute();
+    const data = await db.query.views.findMany();
 
     return new Response(JSON.stringify(data), {
       status: 200,

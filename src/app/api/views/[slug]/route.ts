@@ -1,5 +1,8 @@
+import { eq } from 'drizzle-orm';
+
 import { getBlogPosts } from '@/lib/blog';
-import { queryBuilder } from '@/lib/db';
+import { db } from '@/lib/db';
+import { views } from '@/lib/db/schema';
 
 export async function POST(
   _request: Request,
@@ -25,24 +28,21 @@ export async function POST(
     });
   }
 
-  const data = await queryBuilder
-    .selectFrom('views')
-    .where('slug', '=', params.slug)
-    .select(['count'])
+  const data = await db
+    .select()
+    .from(views)
+    .where(eq(views.slug, params.slug))
     .execute();
 
-  const views = data.length ? Number(data[0]?.count) : 0;
+  const actualViews = data.length ? Number(data[0]?.count) : 0;
 
-  if (views === 0) {
-    await queryBuilder
-      .insertInto('views')
-      .values({ slug: params.slug, count: 1 })
-      .execute();
+  if (actualViews === 0) {
+    await db.insert(views).values({ slug: params.slug, count: 1 }).execute();
   } else {
-    await queryBuilder
-      .updateTable('views')
-      .set({ count: views + 1 })
-      .where('slug', '=', params.slug)
+    await db
+      .update(views)
+      .set({ count: actualViews + 1 })
+      .where(eq(views.slug, params.slug))
       .execute();
   }
 

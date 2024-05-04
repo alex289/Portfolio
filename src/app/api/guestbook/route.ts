@@ -1,6 +1,9 @@
+import { and, eq } from 'drizzle-orm';
+
 import { BadRequest, Unauthorized } from '@/lib/api';
 import { auth } from '@/lib/auth';
-import { queryBuilder } from '@/lib/db';
+import { db } from '@/lib/db';
+import { guestbook } from '@/lib/db/schema';
 
 export async function POST(req: Request) {
   const session = await auth();
@@ -16,14 +19,14 @@ export async function POST(req: Request) {
     return BadRequest('Invalid body');
   }
 
-  const newEntry = await queryBuilder
-    .insertInto('guestbook')
+  const newEntry = await db
+    .insert(guestbook)
     .values({
       email,
       body: (value || '').slice(0, 500),
       created_by: name,
     })
-    .execute();
+    .returning();
 
   if (!newEntry[0]) {
     return BadRequest('Could not create entry');
@@ -31,7 +34,7 @@ export async function POST(req: Request) {
 
   return new Response(
     JSON.stringify({
-      id: Number(newEntry[0].insertId),
+      id: Number(newEntry[0].id),
       body: (value || '').slice(0, 500),
       created_by: name,
       updated_at: Date.now(),
@@ -54,10 +57,10 @@ export async function DELETE(req: Request) {
     return BadRequest('Invalid id');
   }
 
-  const entryResult = await queryBuilder
-    .selectFrom('guestbook')
-    .selectAll()
-    .where('id', '=', Number(id))
+  const entryResult = await db
+    .select()
+    .from(guestbook)
+    .where(eq(guestbook.id, Number(id)))
     .execute();
 
   const entry = entryResult[0];
@@ -74,10 +77,9 @@ export async function DELETE(req: Request) {
     return Unauthorized();
   }
 
-  await queryBuilder
-    .deleteFrom('guestbook')
-    .where('id', '=', Number(id))
-    .where('email', '=', entry.email)
+  await db
+    .delete(guestbook)
+    .where(and(eq(guestbook.id, Number(id)), eq(guestbook.email, entry.email)))
     .execute();
 
   return new Response(JSON.stringify({ message: `Deleted entry ${id}` }), {
