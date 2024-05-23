@@ -92,6 +92,16 @@ export function generateMetadata({
     verification: {
       google: '64Pb4e1oRhhlHgM6aJGvqSunCfPa38sJ5ZHPfLNtzts',
     },
+    alternates: {
+      canonical: env.NEXT_PUBLIC_WEBSITE_URL,
+      languages: {
+        en: `${env.NEXT_PUBLIC_WEBSITE_URL}/en`,
+        de: `${env.NEXT_PUBLIC_WEBSITE_URL}/de`,
+      },
+      types: {
+        'application/rss+xml': `${env.NEXT_PUBLIC_WEBSITE_URL}/feed.xml`,
+      },
+    },
   };
 }
 
