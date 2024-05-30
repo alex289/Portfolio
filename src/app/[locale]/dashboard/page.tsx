@@ -1,4 +1,4 @@
-import { count } from 'drizzle-orm';
+import { count, sum } from 'drizzle-orm';
 import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
 
@@ -39,7 +39,7 @@ export function generateMetadata(): Metadata {
 const getViewsCount = async () => {
   const data = await db
     .select({
-      total: count(views.count),
+      total: sum(views.count),
     })
     .from(views)
     .execute();
@@ -86,9 +86,7 @@ const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
         <SignOutButton />)
       </p>
       <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-        <h2 className="mt-3 text-xl font-bold sm:col-span-2">
-          {t('blog-guestbook')}
-        </h2>
+        <h2 className="mt-3 text-xl font-bold sm:col-span-2">{t('stats')}</h2>
         <Metric title={t('metrics.blog-views')}>{viewsCount}</Metric>
         <Metric title={t('metrics.posts-count')}>
           {getBlogPosts().filter((x) => x.language === locale)?.length}
