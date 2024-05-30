@@ -1,50 +1,45 @@
 'use client';
 
-import { Search } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useMemo } from 'react';
 
 import PostCard from '@/components/blog/post-card';
-import PostFilter from '@/components/blog/post-filter';
+import { usePathname } from '@/lib/navigation';
 
 import type { BlogPost } from '@/lib/types';
 
 const PostList = ({ allBlogs }: { allBlogs: BlogPost[] }) => {
   const t = useTranslations('blog');
   const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const searchParams = useSearchParams();
   const searchQuery = searchParams?.get('search');
-  const filterQuery = searchParams?.get('filter');
-
-  const [searchValue, setSearchValue] = useState('');
-  const [filterBy, setFilterBy] = useState<'name' | 'tag'>('name');
-
-  useEffect(() => {
-    if (searchQuery) {
-      setSearchValue(searchQuery);
-    }
-    if (filterQuery) {
-      setFilterBy(filterQuery === 'tag' ? 'tag' : 'name');
-    }
-  }, [searchQuery, filterQuery]);
 
   const filteredBlogPosts = useMemo(() => {
     return allBlogs
       .filter((post) => {
-        if (filterBy === 'name') {
-          return post.title.toLowerCase().includes(searchValue.toLowerCase());
-        }
-        if (filterBy === 'tag') {
-          return post.tags.some((tag) =>
-            tag.toLowerCase().includes(searchValue.toLowerCase()),
-          );
-        }
+        return (
+          post.title
+            .toLowerCase()
+            .includes((searchQuery ?? '').toLowerCase()) ||
+          post.tags.some((tag) =>
+            tag.toLowerCase().includes((searchQuery ?? '').toLowerCase()),
+          )
+        );
       })
       .filter((post) => post.language === locale)
       .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-  }, [allBlogs, filterBy, searchValue, locale]);
+  }, [allBlogs, searchQuery, locale]);
+
+  const updateSearchParams = (name: string, value: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set(name, value);
+
+    router.push(`/${locale}/${pathname}?${params.toString()}`);
+  };
 
   return (
     <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
@@ -60,17 +55,10 @@ const PostList = ({ allBlogs }: { allBlogs: BlogPost[] }) => {
         <input
           aria-label={t('search')}
           type="text"
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={(e) => updateSearchParams('search', e.target.value)}
           placeholder={t('search')}
-          defaultValue={searchValue}
+          defaultValue={searchQuery ?? ''}
           className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-800 dark:bg-gray-700 dark:text-gray-100 dark:focus:border-blue-500"
-        />
-
-        <PostFilter filterBy={filterBy} setFilter={setFilterBy} />
-
-        <Search
-          strokeWidth={1.5}
-          className="absolute right-3 top-3 h-5 w-5 cursor-pointer text-gray-400 dark:text-gray-300"
         />
       </div>
       <h2 className="mb-5 mt-8 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
