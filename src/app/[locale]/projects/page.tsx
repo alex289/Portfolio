@@ -128,7 +128,7 @@ const ProjectsPage = async ({ params: { locale } }: ProjectsProps) => {
         </a>
       </div>
 
-      <h2 className="text-gray-600 dark:text-gray-200">
+      <h2 className="text-gray-600 dark:text-gray-200 md:w-[48rem]">
         <Project projects={projects} />
 
         {projects?.length === 0 && (

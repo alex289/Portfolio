@@ -262,8 +262,7 @@ export default function CommandPalette({
             )}>
             <div className="flex items-center px-4">
               <ComboboxInput
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-                onChange={(event) => setSearch(event.target.value as string)}
+                onChange={(event) => setSearch(event.target.value)}
                 autoFocus
                 className={clsx(
                   'h-12 w-full border-0 bg-transparent text-gray-800 dark:text-gray-400',
