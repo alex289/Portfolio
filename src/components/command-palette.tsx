@@ -235,14 +235,17 @@ export default function CommandPalette({
         onClose={() => setIsOpen(false)}
         className="fixed inset-0 overflow-y-auto p-4 pt-[25vh]">
         <TransitionChild
-          as="div"
           enter="duration-300 ease-out"
           enterFrom="opacity-0"
           enterTo="opacity-100"
           leave="duration-200 ease-in"
           leaveFrom="opacity-100"
           leaveTo="opacity-0">
-          <div className="fixed inset-0 bg-zinc-900/75" aria-hidden="true" />
+          <div
+            className="fixed inset-0 bg-zinc-900/75"
+            aria-hidden="true"
+            onClick={() => setIsOpen(false)}
+          />
         </TransitionChild>
         <TransitionChild
           as="div"
