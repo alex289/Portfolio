@@ -1,6 +1,14 @@
 'use client';
 
-import { Combobox, Dialog, Transition } from '@headlessui/react';
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxOption,
+  ComboboxOptions,
+  Dialog,
+  Transition,
+  TransitionChild,
+} from '@headlessui/react';
 import { clsx } from 'clsx';
 import {
   BarChart3,
@@ -20,7 +28,7 @@ import {
 import { signIn, signOut } from 'next-auth/react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { usePathname, useRouter } from '@/lib/navigation';
 import { useUrlState } from '@/lib/use-url-state';
@@ -179,11 +187,20 @@ export default function CommandPalette({
   }, [search, config]);
 
   function handleChange(value: string) {
+    if (!value || value === '') {
+      setSearch('');
+      return;
+    }
+
     setIsOpen(false);
     setSearch('');
 
     const action = Number(value[0]) as Actions;
     const valuePath = value.slice(2) as typeof pathname;
+
+    const url = new URL(window.location.href);
+    // eslint-disable-next-line drizzle/enforce-delete-with-where
+    url.searchParams.delete('menu');
 
     switch (action) {
       case Actions.Router:
@@ -203,29 +220,32 @@ export default function CommandPalette({
         break;
       case Actions.Session:
         if (value.slice(2) === '') {
-          void signOut();
+          void signOut({ callbackUrl: url.toString() });
         } else {
-          void signIn(value.slice(2));
+          void signIn(value.slice(2), { callbackUrl: url.toString() });
         }
         break;
     }
   }
 
   return (
-    <Transition.Root show={!!isOpen ?? false} as={Fragment}>
+    <Transition show={!!isOpen ?? false} appear>
       <Dialog
+        as="div"
         onClose={() => setIsOpen(false)}
         className="fixed inset-0 overflow-y-auto p-4 pt-[25vh]">
-        <Transition.Child
+        <TransitionChild
+          as="div"
           enter="duration-300 ease-out"
           enterFrom="opacity-0"
           enterTo="opacity-100"
           leave="duration-200 ease-in"
           leaveFrom="opacity-100"
           leaveTo="opacity-0">
-          <Dialog.Overlay className="fixed inset-0 bg-zinc-900/75" />
-        </Transition.Child>
-        <Transition.Child
+          <div className="fixed inset-0 bg-zinc-900/75" aria-hidden="true" />
+        </TransitionChild>
+        <TransitionChild
+          as="div"
           enter="duration-300 ease-out"
           enterFrom="opacity-0 scale-95"
           enterTo="opacity-100 scale-100"
@@ -241,8 +261,9 @@ export default function CommandPalette({
               'divide-y divide-gray-200 bg-gray-50 ring-1 ring-black/5 dark:divide-gray-700 dark:bg-gray-800',
             )}>
             <div className="flex items-center px-4">
-              <Combobox.Input
-                onChange={(e) => setSearch(e.target.value)}
+              <ComboboxInput
+                onChange={(event) => setSearch(event.target.value)}
+                autoFocus
                 className={clsx(
                   'h-12 w-full border-0 bg-transparent text-gray-800 dark:text-gray-400',
                   'placeholder-gray-400 focus:ring-0',
@@ -251,7 +272,9 @@ export default function CommandPalette({
                 placeholder="Search..."
               />
             </div>
-            <Combobox.Options static className="max-h-96 overflow-y-auto pb-4">
+            <ComboboxOptions
+              static
+              className="empty:hidden max-h-96 overflow-y-auto pb-4">
               {filteredItems.map((page) => (
                 <div key={page.title}>
                   {page.group && (
@@ -260,24 +283,20 @@ export default function CommandPalette({
                     </div>
                   )}
                   {!page.disabled && (
-                    <Combobox.Option value={`${page.action}:${page.args}`}>
-                      {({ active }) => (
-                        <div
-                          className={clsx(
-                            'cursor-pointer px-4 py-2 sm:border-l-2',
-                            active
-                              ? 'border-l-indigo-500 sm:bg-gray-200 sm:dark:bg-gray-700'
-                              : 'border-gray-50 bg-gray-50 dark:border-gray-800 dark:bg-gray-800',
-                          )}>
-                          <div className="flex flex-row pl-1 text-gray-500 dark:text-gray-400">
-                            <div className="flex">
-                              {page.icon}
-                              {page.title}
-                            </div>
-                          </div>
+                    <ComboboxOption
+                      value={`${page.action}:${page.args}`}
+                      className={clsx(
+                        'cursor-pointer px-4 py-2 sm:border-l-2',
+                        'data-[focus]:border-l-indigo-500 dark:data-[focus]:border-l-indigo-500 data-[focus]:sm:bg-gray-200 data-[focus]:sm:dark:bg-gray-700',
+                        'border-gray-50 bg-gray-50 dark:border-gray-800 dark:bg-gray-800',
+                      )}>
+                      <div className="flex flex-row pl-1 text-gray-500 dark:text-gray-400">
+                        <div className="flex">
+                          {page.icon}
+                          {page.title}
                         </div>
-                      )}
-                    </Combobox.Option>
+                      </div>
+                    </ComboboxOption>
                   )}
                 </div>
               ))}
@@ -286,10 +305,10 @@ export default function CommandPalette({
                   {t('command-palette.no-results')}
                 </p>
               )}
-            </Combobox.Options>
+            </ComboboxOptions>
           </Combobox>
-        </Transition.Child>
+        </TransitionChild>
       </Dialog>
-    </Transition.Root>
+    </Transition>
   );
 }

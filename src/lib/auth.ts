@@ -1,4 +1,3 @@
-import { type Session } from '@auth/core/types';
 import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
@@ -25,12 +24,15 @@ export const {
     }),
   ],
   callbacks: {
-    session: ({ session }: { session: Session }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        isAdmin: session.user?.email === env.ADMIN_EMAIL,
-      },
-    }),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    session({ session, token, user }) {
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          isAdmin: session.user?.email === env.ADMIN_EMAIL,
+        },
+      };
+    },
   },
 });

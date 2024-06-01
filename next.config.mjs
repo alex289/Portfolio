@@ -8,7 +8,6 @@ const nextConfig = {
     ppr: true,
   },
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     remotePatterns: [
       {
