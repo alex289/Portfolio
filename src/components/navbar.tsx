@@ -7,9 +7,9 @@ import { Command, X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import { usePathname } from '@/lib/navigation';
 import { useUrlState } from '@/lib/use-url-state';
 import MenuIcon from './icons/menu-icon';
 import ThemeToggleIcon from './icons/theme-icon';
