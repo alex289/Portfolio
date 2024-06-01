@@ -70,7 +70,7 @@
     "kysely": "^0.27.3",
     "lucide-react": "^0.381.0",
     "motion": "^10.17.0",
-    "next": "14.2.3",
+    "next": "14.3.0-canary.58",
     "next-auth": "5.0.0-beta.18",
     "next-intl": "3.14.1",
     "next-mdx-remote": "^5.0.0",

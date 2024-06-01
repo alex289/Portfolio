@@ -4,9 +4,9 @@ import withNextIntl from 'next-intl/plugin';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // experimental: {
-  //   ppr: true,
-  // },
+  experimental: {
+    ppr: true,
+  },
   reactStrictMode: true,
   images: {
     remotePatterns: [
