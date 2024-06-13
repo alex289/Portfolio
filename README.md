@@ -8,7 +8,7 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Database**: [Vercel Postgres](https://vercel.com)
-- **ORM**: [Prisma](https://prisma.io/)
+- **ORM**: [Drizzle](https://orm.drizzle.team/)
 - **Authentication**: [NextAuth.js](https://next-auth.js.org/)
 - **Deployment**: [Vercel](https://vercel.com)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
@@ -19,7 +19,6 @@ Inspired by [leerob](https://github.com/leerob/leerob.io)
 - `src/lib/*` - Short for "library", a collection of helpful utilities or code for external services.
 - `src/app/*` - The actual pages.
 - `public/*` - Static assets including fonts and images.
-- `prisma/*` - My Prisma schema, which uses Vercels Postgres database.
 - `src/styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
 - `src/messages/*` - All translations objects
 
