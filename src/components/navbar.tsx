@@ -24,6 +24,7 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
   const t = useTranslations();
   const locale = useLocale();
   const path = usePathname();
+  console.log(path);
 
   const getTranslationPath = () => {
     const nextLocale = locale === 'de' ? 'en' : 'de';
@@ -111,7 +112,7 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
               id={id}
               className={clsx(
                 'invisible mr-1 text-gray-900 sm:mr-8 md:visible',
-                href === path || (path?.startsWith('/blog') && href === '/blog')
+                path?.includes(href) && !(path.length > 3 && href === '/')
                   ? 'font-semibold dark:text-indigo-500'
                   : 'dark:text-gray-100',
               )}>
