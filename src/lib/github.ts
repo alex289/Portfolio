@@ -140,7 +140,7 @@ export const getStats = async () => {
         languageCounts[languageName] = { count: 0, color: languageColor || '' };
       }
 
-      languageCounts[languageName]!.count += 1;
+      languageCounts[languageName].count += 1;
     }
   });
 
