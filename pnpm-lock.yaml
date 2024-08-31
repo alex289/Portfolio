@@ -44,9 +44,6 @@ importers:
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
-      kysely:
-        specifier: ^0.27.4
-        version: 0.27.4
       lucide-react:
         specifier: ^0.419.0
         version: 0.419.0(react@18.3.1)
@@ -5568,7 +5565,8 @@ snapshots:
 
   kind-of@6.0.3: {}
 
-  kysely@0.27.4: {}
+  kysely@0.27.4:
+    optional: true
 
   language-subtag-registry@0.3.23: {}
 

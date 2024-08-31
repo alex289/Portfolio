@@ -11,7 +11,7 @@ const config = {
     'prettier',
     'next/core-web-vitals',
   ],
-  // @ts-ignore
+  // @ts-expect-error Something is wrong with the type here
   plugins: ['@typescript-eslint', 'drizzle'],
   ignorePatterns: ['db-types.ts'],
   rules: {
