@@ -99,7 +99,7 @@ export default function CommandPalette({
         title: 'Dashboard',
         action: Actions.Router,
         args: '/dashboard',
-        disabled: !session?.user?.isAdmin ?? true,
+        disabled: !session?.user?.isAdmin,
         icon: (
           <BarChart3 strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
         ),
@@ -229,7 +229,7 @@ export default function CommandPalette({
   }
 
   return (
-    <Transition show={!!isOpen ?? false} appear>
+    <Transition show={isOpen ? isOpen === 'true' : false} appear>
       <Dialog
         as="div"
         onClose={() => setIsOpen(false)}
