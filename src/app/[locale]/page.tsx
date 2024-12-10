@@ -10,16 +10,15 @@ import Project from '@/components/projects';
 import { getProjects } from '@/lib/github';
 
 interface IndexProps {
-  params: {
-    locale: string;
-  };
+  params: Promise<{ locale: string }>;
 }
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'de' }];
 }
 
-const Index = async ({ params: { locale } }: IndexProps) => {
+const Index = async ({ params }: IndexProps) => {
+  const locale = (await params).locale;
   const [projects, t] = await Promise.all([
     getProjects(3),
     getTranslations({ locale }),
@@ -88,7 +87,7 @@ const Index = async ({ params: { locale } }: IndexProps) => {
       </h3>
 
       <Project projects={projects} />
-      {projects?.length === 0 && t('projects.not-found')}
+      {projects.length === 0 && t('projects.not-found')}
 
       <Link
         href={`/${locale}/projects`}

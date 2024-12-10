@@ -132,8 +132,8 @@ export const getStats = async () => {
   const languageCounts: Record<string, { count: number; color: string }> = {};
 
   user.repositories.nodes.forEach((repo) => {
-    const languageName = repo.primaryLanguage?.name;
-    const languageColor = repo.primaryLanguage?.color;
+    const languageName = repo.primaryLanguage.name;
+    const languageColor = repo.primaryLanguage.color;
 
     if (languageName) {
       if (!languageCounts[languageName]) {
@@ -217,8 +217,8 @@ export const getProjects = async (perPage = 10) => {
         description: repo.description || '',
         stargazerCount: repo.stargazerCount,
         language: {
-          name: repo.primaryLanguage?.name || '',
-          color: repo.primaryLanguage?.color || '',
+          name: repo.primaryLanguage.name || '',
+          color: repo.primaryLanguage.color || '',
         },
       }) as Projects,
   );

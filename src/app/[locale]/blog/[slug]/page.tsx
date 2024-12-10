@@ -3,7 +3,7 @@ import {
   getFormatter,
   getNow,
   getTranslations,
-  unstable_setRequestLocale,
+  setRequestLocale,
 } from 'next-intl/server';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -29,11 +29,13 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata | undefined> {
-  const t = await getTranslations({ locale: params.locale, namespace: 'blog' });
+  const paramSlug = (await params).slug;
+  const locale = (await params).locale;
+  const t = await getTranslations({ locale: locale, namespace: 'blog' });
 
-  const post = getBlogPosts().find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find((post) => post.slug === paramSlug);
   if (!post) {
     return undefined;
   }
@@ -91,20 +93,22 @@ export async function generateMetadata({
 export default async function Blog({
   params,
 }: {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }) {
-  unstable_setRequestLocale(params.locale);
+  const locale = (await params).locale;
+  const slug = (await params).slug;
+  setRequestLocale(locale);
 
-  const now = await getNow({ locale: params.locale });
-  const formatter = await getFormatter({ locale: params.locale });
-  const post = getBlogPosts().find((post) => post.slug === params.slug);
+  const now = await getNow({ locale: locale });
+  const formatter = await getFormatter({ locale: locale });
+  const post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
   }
 
-  const formattedDate = new Date(post?.publishedAt).toLocaleDateString(
-    params.locale === 'de' ? 'de-DE' : 'en-US',
+  const formattedDate = new Date(post.publishedAt).toLocaleDateString(
+    locale === 'de' ? 'de-DE' : 'en-US',
     {
       year: 'numeric',
       month: 'short',
@@ -157,7 +161,7 @@ export default async function Blog({
         </p>
       </div>
       <div className="mt-2 flex w-full text-xs">
-        {post.tags?.map((tag) => (
+        {post.tags.map((tag) => (
           <Link
             href={`/blog?filter=tag&search=${tag}`}
             key={tag}
