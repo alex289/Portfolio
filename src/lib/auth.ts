@@ -30,7 +30,7 @@ export const {
         ...session,
         user: {
           ...session.user,
-          isAdmin: session.user?.email === env.ADMIN_EMAIL,
+          isAdmin: session.user.email === env.ADMIN_EMAIL,
         },
       };
     },

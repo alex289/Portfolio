@@ -122,7 +122,7 @@ function Table({ data }: { data: { headers: string[]; rows: unknown[][] } }) {
 
 function slugify(str: ReactNode) {
   return (
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     str!
       .toString()
       .toLowerCase()
@@ -137,7 +137,6 @@ function slugify(str: ReactNode) {
 }
 
 function createHeading(level: number) {
-  // eslint-disable-next-line react/display-name
   return ({ children }: { children: ReactNode }) => {
     const slug = slugify(children);
     return createElement(

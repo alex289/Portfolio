@@ -125,7 +125,7 @@ export default async function RootLayout({
         default: AbstractIntlMessages;
       }
     ).default;
-  } catch (error) {
+  } catch {
     notFound();
   }
   const session = await auth();

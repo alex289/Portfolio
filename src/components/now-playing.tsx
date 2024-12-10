@@ -1,4 +1,4 @@
-import { animate } from 'motion';
+import { useAnimate } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import useSWR from 'swr';
@@ -8,9 +8,12 @@ import fetcher from '@/lib/fetcher';
 import type { NowPlayingSong } from '@/lib/types';
 
 function AnimatedBars() {
+  const [scope1, animate1] = useAnimate();
+  const [scope2, animate2] = useAnimate();
+  const [scope3, animate3] = useAnimate();
+
   useEffect(() => {
-    animate(
-      '#bar1',
+    animate1(
       {
         transform: [
           'scaleY(1.0) translateY(0rem)',
@@ -24,8 +27,7 @@ function AnimatedBars() {
         easing: ['ease-in-out'],
       },
     );
-    animate(
-      '#bar2',
+    animate2(
       {
         transform: [
           'scaleY(1.0) translateY(0rem)',
@@ -40,8 +42,7 @@ function AnimatedBars() {
         easing: ['ease-in-out'],
       },
     );
-    animate(
-      '#bar3',
+    animate3(
       {
         transform: [
           'scaleY(1.0)  translateY(0rem)',
@@ -61,15 +62,15 @@ function AnimatedBars() {
   return (
     <div className="flex w-auto items-end overflow-hidden">
       <span
-        id="bar1"
+        ref={scope1}
         className="mr-[3px] h-2 w-1 bg-gray-300 opacity-75 dark:bg-gray-500"
       />
       <span
-        id="bar2"
+        ref={scope2}
         className="mr-[3px] h-1 w-1 bg-gray-300 dark:bg-gray-500"
       />
       <span
-        id="bar3"
+        ref={scope3}
         className="h-3 w-1 bg-gray-300 opacity-80 dark:bg-gray-500"
       />
     </div>

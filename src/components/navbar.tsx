@@ -28,12 +28,12 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
 
   const getTranslationPath = () => {
     const nextLocale = locale === 'de' ? 'en' : 'de';
-    if (path?.includes('/blog/')) {
+    if (path.includes('/blog/')) {
       const slug = path.substring(path.lastIndexOf('/') + 1);
       const post = posts.find((post) => post.slug === slug);
       return `/${nextLocale}/blog/${post?.translation}`;
     }
-    const correctPath = path?.replace('/de', '').replace('/en', '');
+    const correctPath = path.replace('/de', '').replace('/en', '');
     return `/${nextLocale}${correctPath}`;
   };
 
@@ -112,7 +112,7 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
               id={id}
               className={clsx(
                 'invisible mr-1 text-gray-900 sm:mr-8 md:visible',
-                path?.includes(href) && !(path.length > 3 && href === '/')
+                path.includes(href) && !(path.length > 3 && href === '/')
                   ? 'font-semibold dark:text-indigo-500'
                   : 'dark:text-gray-100',
               )}>

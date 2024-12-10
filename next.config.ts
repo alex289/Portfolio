@@ -1,4 +1,5 @@
 import { type NextConfig } from 'next';
+
 import './src/env.mjs';
 
 import withNextIntl from 'next-intl/plugin';

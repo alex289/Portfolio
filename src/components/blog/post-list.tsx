@@ -16,7 +16,7 @@ const PostList = ({ allBlogs }: { allBlogs: BlogPost[] }) => {
   const pathname = usePathname();
 
   const searchParams = useSearchParams();
-  const searchQuery = searchParams?.get('search');
+  const searchQuery = searchParams.get('search');
 
   const filteredBlogPosts = useMemo(() => {
     return allBlogs
