@@ -1,4 +1,4 @@
-function GoogleIcon(props: JSX.IntrinsicElements['svg']) {
+function GoogleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

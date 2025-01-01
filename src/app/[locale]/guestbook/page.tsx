@@ -12,9 +12,7 @@ import { guestbook } from '@/lib/db/schema';
 import type { Metadata } from 'next/types';
 
 interface GuestbookProps {
-  params: {
-    locale: string;
-  };
+  params: Promise<{ locale: string }>;
 }
 
 export function generateStaticParams() {
@@ -22,8 +20,9 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: GuestbookProps): Promise<Metadata> {
+  const locale = (await params).locale;
   const t = await getTranslations({ locale, namespace: 'guestbook' });
   return {
     title: t('title'),
@@ -55,18 +54,19 @@ async function getGuestbook() {
   });
 }
 
-const GuestbookPage = ({ params: { locale } }: GuestbookProps) => {
+const GuestbookPage = ({ params }: GuestbookProps) => {
   return (
     <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
       <Suspense>
         <GuestbookFormWrapper />
-        <GuestbookEntries locale={locale} />
+        <GuestbookEntries params={params} />
       </Suspense>
     </div>
   );
 };
 
-async function GuestbookEntries({ locale }: { locale: string }) {
+async function GuestbookEntries({ params }: GuestbookProps) {
+  const locale = (await params).locale;
   const [entries, session, t] = await Promise.all([
     getGuestbook(),
     auth(),
@@ -75,7 +75,7 @@ async function GuestbookEntries({ locale }: { locale: string }) {
 
   return (
     <div className="mt-4 space-y-8">
-      {entries?.map((entry) => (
+      {entries.map((entry) => (
         <GuestbookEntry
           key={entry.id.toString()}
           entry={entry}

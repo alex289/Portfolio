@@ -1,4 +1,4 @@
-function GitHubIcon(props: JSX.IntrinsicElements['svg']) {
+function GitHubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

@@ -30,7 +30,7 @@ export default function GuestbookForm({
     e.preventDefault();
     setForm({ state: Form.Loading });
 
-    if (inputEl?.current === null) {
+    if (inputEl.current === null) {
       setForm({ state: Form.Error });
       return;
     }
@@ -133,10 +133,10 @@ export default function GuestbookForm({
           </form>
         )}
         {form.state === Form.Error && (
-          <ErrorMessage>{form.message!}</ErrorMessage>
+          <ErrorMessage>{form.message ?? ''}</ErrorMessage>
         )}
         {form.state === Form.Success && (
-          <SuccessMessage>{form.message!}</SuccessMessage>
+          <SuccessMessage>{form.message ?? ''}</SuccessMessage>
         )}
         {(form.state === Form.Initial || form.state === Form.Loading) && (
           <p className="text-sm text-gray-800 dark:text-gray-200">

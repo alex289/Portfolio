@@ -1,12 +1,10 @@
+import { type NextConfig } from 'next';
+
 import './src/env.mjs';
 
 import withNextIntl from 'next-intl/plugin';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    ppr: true,
-  },
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -16,7 +14,6 @@ const nextConfig = {
       },
     ],
   },
-  // eslint-disable-next-line @typescript-eslint/require-await
   async headers() {
     return [
       {
