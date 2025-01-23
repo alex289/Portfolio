@@ -14,7 +14,7 @@ interface StatsResponse {
           primaryLanguage: {
             name: string;
             color: string;
-          };
+          } | null;
         }[];
       };
       contributionsCollection: {
@@ -132,8 +132,8 @@ export const getStats = async () => {
   const languageCounts: Record<string, { count: number; color: string }> = {};
 
   user.repositories.nodes.forEach((repo) => {
-    const languageName = repo.primaryLanguage.name;
-    const languageColor = repo.primaryLanguage.color;
+    const languageName = repo.primaryLanguage?.name;
+    const languageColor = repo.primaryLanguage?.color;
 
     if (languageName) {
       if (!languageCounts[languageName]) {
