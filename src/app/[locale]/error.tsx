@@ -17,7 +17,7 @@ export default function Error() {
       </p>
       <Link
         href="/"
-        className="mx-auto w-64 rounded-md bg-gray-200 p-1 py-3 text-center font-bold text-black hover:bg-[#c9c9c9] dark:bg-gray-700 dark:text-white hover:dark:bg-gray-600 sm:p-4">
+        className="mx-auto w-64 rounded-md bg-gray-200 p-1 py-3 text-center font-bold text-black hover:bg-[#c9c9c9] dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 sm:p-4">
         {t('return-home')}
       </Link>
     </div>
