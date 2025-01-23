@@ -43,7 +43,7 @@ const Index = async ({ params }: IndexProps) => {
             height={500}
             width={500}
             src={profilePic}
-            placeholder="blur-sm"
+            placeholder="blur"
             sizes="30vw"
             priority
             className="rounded-full"

@@ -71,7 +71,7 @@ const DashboardPage = async ({ params }: DashboardProps) => {
     return redirect('/api/auth/signin?callbackUrl=/dashboard');
   }
 
-  if (!session.user?.isAdmin) {
+  if (!session.user.isAdmin) {
     return redirect('/');
   }
 
