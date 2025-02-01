@@ -7,11 +7,11 @@ const Project = ({ projects }: { projects: Projects[] | null }) => {
     <>
       {projects &&
         projects.length > 0 &&
-        projects?.map((project: Projects, index: number) => (
+        projects.map((project: Projects, index: number) => (
           <div
             key={index}
             id={project.name}
-            className="my-3 rounded-lg border border-gray-200 bg-white p-6 shadow hover:border-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-indigo-500">
+            className="my-3 rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:border-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-indigo-500">
             <div className="flex justify-between">
               <div className="flex items-center text-lg font-semibold tracking-tight">
                 {project.name}

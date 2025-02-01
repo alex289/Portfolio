@@ -20,7 +20,7 @@ export default function Track(track: Song & { ranking: number }) {
         </div>
         <div className="flex flex-col pl-3">
           <a
-            className="w-60 truncate font-medium text-gray-900 group-hover:text-[#1bd760] dark:text-gray-100 group-hover:dark:text-[#1bd760] sm:w-96 md:w-full"
+            className="w-60 truncate font-medium text-gray-900 group-hover:text-[#1bd760] dark:text-gray-100 dark:group-hover:text-[#1bd760] sm:w-96 md:w-full"
             href={track.songUrl}
             target="_blank"
             rel="noopener noreferrer">

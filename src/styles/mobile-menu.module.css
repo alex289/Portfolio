@@ -52,9 +52,13 @@
 }
 
 .menuRendered li {
-  @apply w-full border-gray-200 dark:border-gray-600;
+  border-color: #eaeaea;
+  width: 100%;
   transform: translateX(0);
   opacity: 1;
+  &:is(.dark *) {
+    border-color: #444444;
+  }
 }
 
 .menu > * + * {

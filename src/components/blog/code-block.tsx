@@ -38,9 +38,9 @@ const CodeBlock = (props: { children: React.ReactNode }) => {
         aria-label="Copy code"
         type="button"
         className={clsx(
-          'absolute right-3 top-3 w-7 h-7 p-1 rounded border-2 transition duration-200 border- bg-gray-200 dark:bg-gray-700',
+          'absolute right-3 top-3 w-7 h-7 p-1 rounded-sm border-2 transition duration-200 border- bg-gray-200 dark:bg-gray-700',
           copied
-            ? 'focus:outline-none focus:border-green-500 border-green-500 dark:border-green-400 dark:focus:border-green-400'
+            ? 'focus:outline-hidden focus:border-green-500 border-green-500 dark:border-green-400 dark:focus:border-green-400'
             : 'border-gray-300 dark:border-gray-300',
           hovered ? 'opacity-100' : 'opacity-0',
         )}

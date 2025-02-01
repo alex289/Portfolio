@@ -32,7 +32,7 @@ function RoundedImage(props: ImageProps) {
 
 function Callout(props: { emoji: ReactNode; children: ReactNode }) {
   return (
-    <div className="mb-8 flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 px-4 py-3 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100">
+    <div className="mb-8 flex items-center rounded-sm border border-neutral-200 bg-neutral-50 p-1 px-4 py-3 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100">
       <div className="mr-4 flex w-4 items-center">{props.emoji}</div>
       <div className="callout w-full">{props.children}</div>
     </div>
@@ -122,7 +122,7 @@ function Table({ data }: { data: { headers: string[]; rows: unknown[][] } }) {
 
 function slugify(str: ReactNode) {
   return (
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     str!
       .toString()
       .toLowerCase()
@@ -137,7 +137,6 @@ function slugify(str: ReactNode) {
 }
 
 function createHeading(level: number) {
-  // eslint-disable-next-line react/display-name
   return ({ children }: { children: ReactNode }) => {
     const slug = slugify(children);
     return createElement(

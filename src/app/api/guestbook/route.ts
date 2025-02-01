@@ -8,7 +8,7 @@ import { guestbook } from '@/lib/db/schema';
 export async function POST(req: Request) {
   const session = await auth();
 
-  if (!session?.user?.email || !session.user.name) {
+  if (!session?.user.email || !session.user.name) {
     return Unauthorized();
   }
 
@@ -69,7 +69,7 @@ export async function DELETE(req: Request) {
     return BadRequest('Entry not found');
   }
 
-  if (!session?.user?.email) {
+  if (!session?.user.email) {
     return Unauthorized();
   }
 

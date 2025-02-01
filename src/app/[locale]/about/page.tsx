@@ -11,9 +11,7 @@ import Tools from '@/components/tools';
 import type { Metadata } from 'next/types';
 
 interface AboutPageProps {
-  params: {
-    locale: string;
-  };
+  params: Promise<{ locale: string }>;
 }
 
 export function generateStaticParams() {
@@ -21,8 +19,9 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: AboutPageProps): Promise<Metadata> {
+  const locale = (await params).locale;
   const t = await getTranslations({ locale, namespace: 'main' });
   return {
     title: t('about'),
