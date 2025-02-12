@@ -12,7 +12,6 @@ permissions:
   pull-requests: write
 
 env:
-  POSTGRES_URL: postgres://default:blabla@blabla.eu-central-1.aws.neon.tech/verceldb?sslmode=require
   ADMIN_EMAIL: some@thing.com
   AUTH_SECRET: something
   GOOGLE_CLIENT_ID: something
@@ -62,6 +61,8 @@ jobs:
 
       - name: Build
         run: pnpm build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - uses: actions/cache@v4
         with:
