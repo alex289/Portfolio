@@ -127,7 +127,7 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
           <button
             id="burger"
             data-umami-event="mobile-menu-click"
-            className={clsx(styles.burger, 'visible md:hidden')}
+            className={clsx(styles.burger, 'visible md:hidden cursor-pointer')}
             aria-label="Toggle menu"
             type="button"
             onClick={toggleMenu}>
@@ -144,7 +144,7 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
               type="button"
               onClick={() => setCommandPaletteOpen(true)}
               data-umami-event="command-palette-click"
-              className="mr-3 h-10 w-10 rounded-lg bg-gray-200 p-3 text-3xl ring-gray-300 hover:ring-4 dark:bg-gray-700">
+              className="mr-3 h-10 w-10 cursor-pointer rounded-lg bg-gray-200 p-3 text-3xl ring-gray-300 hover:ring-4 dark:bg-gray-700">
               <Command className="h-4 w-4 text-gray-800 dark:text-gray-200" />
             </button>
             <button
@@ -152,7 +152,7 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
               aria-label="Toggle Dark Mode"
               type="button"
               data-umami-event="theme-switcher-click"
-              className="mr-1 h-10 w-10 rounded-lg bg-gray-200 p-3 ring-gray-300 hover:ring-4 dark:bg-gray-700 md:mr-3"
+              className="mr-1 cursor-pointer h-10 w-10 rounded-lg bg-gray-200 p-3 ring-gray-300 hover:ring-4 dark:bg-gray-700 md:mr-3"
               onClick={() =>
                 setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
               }>
@@ -164,7 +164,7 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
               shallow
               data-umami-event="language-switcher-click"
               id="switch-lang"
-              className="md:dark:link-underline md:link-underline-black mx-3 pb-1 text-lg tracking-wide">
+              className="md:dark:link-underline cursor-pointer md:link-underline-black mx-3 pb-1 text-lg tracking-wide">
               {locale === 'de' ? 'EN' : 'DE'}
             </Link>
           </div>

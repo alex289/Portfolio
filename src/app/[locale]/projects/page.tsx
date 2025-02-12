@@ -139,7 +139,7 @@ const ProjectsPage = async ({ params }: ProjectsProps) => {
           href="https://github.com/alex289?tab=repositories"
           target="_blank"
           rel="noreferrer noopener">
-          <button className="flex items-center mt-6">
+          <button className="flex items-center mt-6 cursor-pointer">
             {t('projects.all-repos')}
             <ArrowRight strokeWidth={1.5} className="ml-1" />
           </button>
