@@ -21,7 +21,7 @@ function AnimatedBars() {
       {
         duration: 1.0,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: 'easeInOut',
       },
     );
     animate(
@@ -37,7 +37,7 @@ function AnimatedBars() {
         delay: 0.2,
         duration: 1.5,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: 'easeInOut',
       },
     );
     animate(
@@ -53,7 +53,7 @@ function AnimatedBars() {
         delay: 0.3,
         duration: 1.5,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: 'easeInOut',
       },
     );
   }, []);
