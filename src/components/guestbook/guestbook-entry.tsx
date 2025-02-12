@@ -62,7 +62,7 @@ export default function GuestbookEntry({
             <>
               <span className="text-gray-600 dark:text-[#c2c2c2]">/</span>
               <button
-                className="text-sm text-red-600 dark:text-red-400"
+                className="text-sm text-red-600 dark:text-red-400 cursor-pointer"
                 onClick={deleteEntry}>
                 {deleteText}
               </button>
