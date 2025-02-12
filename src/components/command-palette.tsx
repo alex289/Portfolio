@@ -33,7 +33,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter } from '@/lib/navigation';
 import { useUrlState } from '@/lib/use-url-state';
 
-import type { Session } from '@auth/core/types';
+import type { Session } from 'next-auth';
 
 enum Actions {
   Router,
@@ -99,7 +99,7 @@ export default function CommandPalette({
         title: 'Dashboard',
         action: Actions.Router,
         args: '/dashboard',
-        disabled: !session?.user?.isAdmin,
+        disabled: !session?.user.isAdmin,
         icon: (
           <BarChart3 strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
         ),
@@ -152,7 +152,7 @@ export default function CommandPalette({
         icon: <User strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
-        title: `Logout (${session?.user?.name})`,
+        title: `Logout (${session?.user.name})`,
         action: Actions.Session,
         args: '',
         disabled: session ? false : true,
@@ -290,7 +290,7 @@ export default function CommandPalette({
                       value={`${page.action}:${page.args}`}
                       className={clsx(
                         'cursor-pointer px-4 py-2 sm:border-l-2',
-                        'data-[focus]:border-l-indigo-500 dark:data-[focus]:border-l-indigo-500 data-[focus]:sm:bg-gray-200 data-[focus]:sm:dark:bg-gray-700',
+                        'data-focus:border-l-indigo-500 dark:data-focus:border-l-indigo-500 sm:data-focus:bg-gray-200 sm:dark:data-focus:bg-gray-700',
                         'border-gray-50 bg-gray-50 dark:border-gray-800 dark:bg-gray-800',
                       )}>
                       <div className="flex flex-row pl-1 text-gray-500 dark:text-gray-400">

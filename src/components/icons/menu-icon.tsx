@@ -1,4 +1,4 @@
-function MenuIcon(props: JSX.IntrinsicElements['svg']) {
+function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       className="absolute h-5 w-5 text-gray-900 dark:text-gray-100"

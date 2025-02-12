@@ -14,7 +14,7 @@ interface StatsResponse {
           primaryLanguage: {
             name: string;
             color: string;
-          };
+          } | null;
         }[];
       };
       contributionsCollection: {
@@ -217,8 +217,8 @@ export const getProjects = async (perPage = 10) => {
         description: repo.description || '',
         stargazerCount: repo.stargazerCount,
         language: {
-          name: repo.primaryLanguage?.name || '',
-          color: repo.primaryLanguage?.color || '',
+          name: repo.primaryLanguage.name || '',
+          color: repo.primaryLanguage.color || '',
         },
       }) as Projects,
   );

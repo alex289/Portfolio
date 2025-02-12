@@ -20,15 +20,12 @@ import type { Metadata, Viewport } from 'next/types';
 
 const CommandPalette = dynamic(() => import('@/components/command-palette'));
 
-interface LayoutProps {
-  params: {
-    locale: string;
-  };
-}
-
-export function generateMetadata({
-  params: { locale },
-}: LayoutProps): Metadata {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const locale = (await params).locale;
   return {
     metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
     title: {
@@ -116,29 +113,30 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const locale = (await params).locale;
   let messages: AbstractIntlMessages;
   try {
     messages = (
-      (await import(`../../messages/${params.locale}.json`)) as {
+      (await import(`../../messages/${locale}.json`)) as {
         default: AbstractIntlMessages;
       }
     ).default;
-  } catch (error) {
+  } catch {
     notFound();
   }
   const session = await auth();
 
   return (
     <html
-      lang={params.locale}
+      lang={locale}
       className={clsx(GeistSans.variable, GeistMono.variable)}
       suppressHydrationWarning>
       <body className="bg-gray-50 dark:bg-gray-800">
         <NextIntlClientProvider
           messages={messages}
-          locale={params.locale}
+          locale={locale}
           timeZone="Europe/Berlin"
           now={new Date()}>
           <ThemeProvider attribute="class">

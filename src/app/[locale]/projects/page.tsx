@@ -15,9 +15,7 @@ import { getProjects, getStats } from '@/lib/github';
 import type { Metadata } from 'next/types';
 
 interface ProjectsProps {
-  params: {
-    locale: string;
-  };
+  params: Promise<{ locale: string }>;
 }
 
 export function generateStaticParams() {
@@ -25,8 +23,9 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: ProjectsProps): Promise<Metadata> {
+  const locale = (await params).locale;
   const t = await getTranslations({ locale });
   return {
     title: t('main.projects'),
@@ -43,7 +42,8 @@ export async function generateMetadata({
   };
 }
 
-const ProjectsPage = async ({ params: { locale } }: ProjectsProps) => {
+const ProjectsPage = async ({ params }: ProjectsProps) => {
+  const locale = (await params).locale;
   const [stats, projects, t] = await Promise.all([
     getStats(),
     getProjects(),
@@ -131,7 +131,7 @@ const ProjectsPage = async ({ params: { locale } }: ProjectsProps) => {
       <h2 className="text-gray-600 dark:text-gray-200 md:w-[48rem]">
         <Project projects={projects} />
 
-        {projects?.length === 0 && (
+        {projects.length === 0 && (
           <div className="w-[100rem]">{t('projects.not-found')}</div>
         )}
 
@@ -139,7 +139,7 @@ const ProjectsPage = async ({ params: { locale } }: ProjectsProps) => {
           href="https://github.com/alex289?tab=repositories"
           target="_blank"
           rel="noreferrer noopener">
-          <button className="flex items-center mt-6">
+          <button className="flex items-center mt-6 cursor-pointer">
             {t('projects.all-repos')}
             <ArrowRight strokeWidth={1.5} className="ml-1" />
           </button>

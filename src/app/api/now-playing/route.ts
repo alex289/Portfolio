@@ -17,7 +17,7 @@ interface SongResponse {
     external_urls: {
       spotify: string;
     };
-  };
+  } | null;
   is_playing: boolean;
 }
 

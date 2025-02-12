@@ -15,9 +15,7 @@ import { getTopTracks } from '@/lib/spotify';
 import type { Metadata } from 'next/types';
 
 interface DashboardProps {
-  params: {
-    locale: string;
-  };
+  params: Promise<{ locale: string }>;
 }
 
 export function generateStaticParams() {
@@ -58,7 +56,8 @@ const getGuestbookEntriesCount = async () => {
   return data[0]?.total ?? 0;
 };
 
-const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
+const DashboardPage = async ({ params }: DashboardProps) => {
+  const locale = (await params).locale;
   const [session, t, viewsCount, guesbookEntriesCount, topTracks] =
     await Promise.all([
       auth(),
@@ -72,7 +71,7 @@ const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
     return redirect('/api/auth/signin?callbackUrl=/dashboard');
   }
 
-  if (!session?.user?.isAdmin) {
+  if (!session.user.isAdmin) {
     return redirect('/');
   }
 
@@ -82,14 +81,14 @@ const DashboardPage = async ({ params: { locale } }: DashboardProps) => {
         Dashboard
       </h1>
       <p className="mb-2">
-        {t('logged-in')} {session.user?.email} (
+        {t('logged-in')} {session.user.email} (
         <SignOutButton />)
       </p>
       <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
         <h2 className="mt-3 text-xl font-bold sm:col-span-2">{t('stats')}</h2>
         <Metric title={t('metrics.blog-views')}>{viewsCount}</Metric>
         <Metric title={t('metrics.posts-count')}>
-          {getBlogPosts().filter((x) => x.language === locale)?.length}
+          {getBlogPosts().filter((x) => x.language === locale).length}
         </Metric>
         <Metric title={t('metrics.guestbook-entries')}>
           {guesbookEntriesCount}
