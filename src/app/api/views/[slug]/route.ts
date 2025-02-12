@@ -6,9 +6,9 @@ import { views } from '@/lib/db/schema';
 
 export async function POST(
   _request: Request,
-  { params }: { params: Promise<{ locale: string }> },
+  { params }: { params: Promise<{ slug: string }> },
 ) {
-  const slug = (await params).locale;
+  const slug = (await params).slug;
   if (!slug) {
     return new Response(JSON.stringify({ error: 'No slug provided' }), {
       status: 400,
