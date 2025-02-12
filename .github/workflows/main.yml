@@ -12,7 +12,7 @@ permissions:
   pull-requests: write
 
 env:
-  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  POSTGRES_URL: ${{ secrets.DATABASE_URL }}
   ADMIN_EMAIL: some@thing.com
   AUTH_SECRET: something
   GOOGLE_CLIENT_ID: something
