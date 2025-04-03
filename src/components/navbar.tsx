@@ -24,7 +24,6 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
   const t = useTranslations();
   const locale = useLocale();
   const path = usePathname();
-  console.log(path);
 
   const getTranslationPath = () => {
     const nextLocale = locale === 'de' ? 'en' : 'de';

@@ -1,11 +1,11 @@
 'use client';
 
+import { usePathname } from '@/i18n/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useMemo } from 'react';
 
 import PostCard from '@/components/blog/post-card';
-import { usePathname } from '@/lib/navigation';
 
 import type { BlogPost } from '@/lib/types';
 

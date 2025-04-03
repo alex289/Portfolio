@@ -1,3 +1,5 @@
+import { routing } from '@/i18n/routing';
+
 import env from '@/env.mjs';
 import PostList from '@/components/blog/post-list';
 import { getBlogPosts } from '@/lib/blog';
@@ -5,7 +7,7 @@ import { getBlogPosts } from '@/lib/blog';
 import type { Metadata } from 'next/types';
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'de' }];
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export function generateMetadata(): Metadata {

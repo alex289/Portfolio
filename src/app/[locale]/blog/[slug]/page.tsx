@@ -1,3 +1,4 @@
+import { type routing } from '@/i18n/routing';
 import clsx from 'clsx';
 import {
   getFormatter,
@@ -32,7 +33,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata | undefined> {
   const paramSlug = (await params).slug;
-  const locale = (await params).locale;
+  const locale = (await params).locale as (typeof routing.locales)[number];
   const t = await getTranslations({ locale: locale, namespace: 'blog' });
 
   const post = getBlogPosts().find((post) => post.slug === paramSlug);
@@ -95,7 +96,7 @@ export default async function Blog({
 }: {
   params: Promise<{ slug: string; locale: string }>;
 }) {
-  const locale = (await params).locale;
+  const locale = (await params).locale as (typeof routing.locales)[number];
   const slug = (await params).slug;
   setRequestLocale(locale);
 

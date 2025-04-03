@@ -1,5 +1,6 @@
 import avatar from 'public/static/images/konietzko_alexander.jpg';
 
+import { routing } from '@/i18n/routing';
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -15,13 +16,13 @@ interface AboutPageProps {
 }
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'de' }];
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params,
 }: AboutPageProps): Promise<Metadata> {
-  const locale = (await params).locale;
+  const locale = (await params).locale as (typeof routing.locales)[number];
   const t = await getTranslations({ locale, namespace: 'main' });
   return {
     title: t('about'),

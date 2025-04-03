@@ -1,3 +1,4 @@
+import { routing } from '@/i18n/routing';
 import { count, sum } from 'drizzle-orm';
 import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
@@ -19,7 +20,7 @@ interface DashboardProps {
 }
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'de' }];
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export function generateMetadata(): Metadata {
@@ -57,7 +58,7 @@ const getGuestbookEntriesCount = async () => {
 };
 
 const DashboardPage = async ({ params }: DashboardProps) => {
-  const locale = (await params).locale;
+  const locale = (await params).locale as (typeof routing.locales)[number];
   const [session, t, viewsCount, guesbookEntriesCount, topTracks] =
     await Promise.all([
       auth(),

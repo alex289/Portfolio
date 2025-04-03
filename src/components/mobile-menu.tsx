@@ -2,11 +2,11 @@
 
 import styles from '@/styles/mobile-menu.module.css';
 
+import { usePathname, useRouter } from '@/i18n/navigation';
 import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 
-import { usePathname, useRouter } from '@/lib/navigation';
 import useDelayedRender from '@/lib/use-delayed-render';
 
 interface Props {

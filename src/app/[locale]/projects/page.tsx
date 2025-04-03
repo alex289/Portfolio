@@ -1,3 +1,4 @@
+import { routing } from '@/i18n/routing';
 import {
   AlertCircle,
   ArrowRight,
@@ -19,13 +20,13 @@ interface ProjectsProps {
 }
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'de' }];
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params,
 }: ProjectsProps): Promise<Metadata> {
-  const locale = (await params).locale;
+  const locale = (await params).locale as (typeof routing.locales)[number];
   const t = await getTranslations({ locale });
   return {
     title: t('main.projects'),
@@ -43,7 +44,7 @@ export async function generateMetadata({
 }
 
 const ProjectsPage = async ({ params }: ProjectsProps) => {
-  const locale = (await params).locale;
+  const locale = (await params).locale as (typeof routing.locales)[number];
   const [stats, projects, t] = await Promise.all([
     getStats(),
     getProjects(),
