@@ -1,9 +1,10 @@
 import '@/styles/global.css';
 
+import { routing } from '@/i18n/routing';
 import clsx from 'clsx';
 import { GeistMono } from 'geist/font/mono';
 import { GeistSans } from 'geist/font/sans';
-import { NextIntlClientProvider } from 'next-intl';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
@@ -15,7 +16,6 @@ import Navbar from '@/components/navbar';
 import { auth } from '@/lib/auth';
 import { getBlogPosts } from '@/lib/blog';
 
-import type { AbstractIntlMessages } from 'next-intl';
 import type { Metadata, Viewport } from 'next/types';
 
 const CommandPalette = dynamic(() => import('@/components/command-palette'));
@@ -115,17 +115,11 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const locale = (await params).locale;
-  let messages: AbstractIntlMessages;
-  try {
-    messages = (
-      (await import(`../../messages/${locale}.json`)) as {
-        default: AbstractIntlMessages;
-      }
-    ).default;
-  } catch {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
   const session = await auth();
 
   return (
@@ -134,11 +128,7 @@ export default async function RootLayout({
       className={clsx(GeistSans.variable, GeistMono.variable)}
       suppressHydrationWarning>
       <body className="bg-gray-50 dark:bg-gray-800">
-        <NextIntlClientProvider
-          messages={messages}
-          locale={locale}
-          timeZone="Europe/Berlin"
-          now={new Date()}>
+        <NextIntlClientProvider>
           <ThemeProvider attribute="class">
             <a
               href="#skip"

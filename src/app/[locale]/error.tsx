@@ -1,8 +1,7 @@
 'use client';
 
+import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-
-import { Link } from '@/lib/navigation';
 
 export default function Error() {
   const t = useTranslations('error');

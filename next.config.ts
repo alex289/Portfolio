@@ -85,4 +85,4 @@ const securityHeaders = [
   },
 ];
 
-export default withNextIntl('src/i18n.ts')(nextConfig);
+export default withNextIntl()(nextConfig);

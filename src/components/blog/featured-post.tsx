@@ -1,8 +1,8 @@
+import { Link } from '@/i18n/navigation';
 import { clsx } from 'clsx';
 import { Eye } from 'lucide-react';
 import Balancer from 'react-wrap-balancer';
 
-import { Link } from '@/lib/navigation';
 import ViewCounter from './views-counter';
 
 interface FeaturedPostProps {

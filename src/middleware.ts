@@ -1,11 +1,8 @@
 import createIntlMiddleware from 'next-intl/middleware';
 
-import { defaultLocale, locales } from '@/lib/navigation';
+import { routing } from './i18n/routing';
 
-export default createIntlMiddleware({
-  locales: locales,
-  defaultLocale: defaultLocale,
-});
+export default createIntlMiddleware(routing);
 
 export const config = {
   matcher: ['/((?!api|_next|static|images|sitemap|feed|robots).*)'],

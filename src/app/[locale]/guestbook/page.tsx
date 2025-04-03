@@ -1,3 +1,4 @@
+import { routing } from '@/i18n/routing';
 import { desc } from 'drizzle-orm';
 import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
@@ -16,13 +17,13 @@ interface GuestbookProps {
 }
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'de' }];
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params,
 }: GuestbookProps): Promise<Metadata> {
-  const locale = (await params).locale;
+  const locale = (await params).locale as (typeof routing.locales)[number];
   const t = await getTranslations({ locale, namespace: 'guestbook' });
   return {
     title: t('title'),
@@ -66,7 +67,7 @@ const GuestbookPage = ({ params }: GuestbookProps) => {
 };
 
 async function GuestbookEntries({ params }: GuestbookProps) {
-  const locale = (await params).locale;
+  const locale = (await params).locale as (typeof routing.locales)[number];
   const [entries, session, t] = await Promise.all([
     getGuestbook(),
     auth(),

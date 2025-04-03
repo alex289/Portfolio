@@ -1,5 +1,6 @@
 import profilePic from 'public/static/images/konietzko_alexander.jpg';
 
+import { routing } from '@/i18n/routing';
 import { ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
@@ -14,11 +15,11 @@ interface IndexProps {
 }
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'de' }];
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 const Index = async ({ params }: IndexProps) => {
-  const locale = (await params).locale;
+  const locale = (await params).locale as (typeof routing.locales)[number];
   const [projects, t] = await Promise.all([
     getProjects(3),
     getTranslations({ locale }),

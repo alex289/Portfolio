@@ -1,5 +1,6 @@
 'use client';
 
+import { usePathname, useRouter } from '@/i18n/navigation';
 import {
   Combobox,
   ComboboxInput,
@@ -30,7 +31,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useEffect, useMemo, useState } from 'react';
 
-import { usePathname, useRouter } from '@/lib/navigation';
 import { useUrlState } from '@/lib/use-url-state';
 
 import type { Session } from 'next-auth';
