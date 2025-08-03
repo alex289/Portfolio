@@ -13,6 +13,7 @@ permissions:
 
 env:
   POSTGRES_URL: postgres://test_user:test_password@localhost:5432/test_db
+  LOCAL_DB: true
   AUTH_URL: http://localhost:3000
   ADMIN_EMAIL: test@example.com
   AUTH_SECRET: test_secret_for_ci_only
