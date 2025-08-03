@@ -11,7 +11,7 @@
     "format": "prettier --write \"**/*.{css,js,mjs,cjs,json,jsx,ts,tsx}\"",
     "format:check": "prettier --check \"**/*.{css,js,mjs,cjs,json,jsx,ts,tsx}\"",
     "typecheck": "tsc --noEmit",
-    "db:push": "drizzle-kit push:pg",
+    "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio"
   },
   "repository": {
