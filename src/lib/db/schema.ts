@@ -1,7 +1,7 @@
-import { sql } from 'drizzle-orm';
 import {
   integer,
   pgTableCreator,
+  serial,
   timestamp,
   varchar,
 } from 'drizzle-orm/pg-core';
@@ -14,9 +14,7 @@ export const views = createTable('views', {
 });
 
 export const guestbook = createTable('guestbook', {
-  id: integer('id')
-    .default(sql`nextval('guestbook_id_seq'::regclass)`)
-    .primaryKey(),
+  id: serial('id').primaryKey(),
   email: varchar('email', { length: 256 }).notNull(),
   body: varchar('body', { length: 500 }).notNull(),
   created_by: varchar('created_by', { length: 256 }).notNull(),
