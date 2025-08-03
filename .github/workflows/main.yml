@@ -12,24 +12,41 @@ permissions:
   pull-requests: write
 
 env:
-  POSTGRES_URL: ${{ secrets.DATABASE_URL }}
+  POSTGRES_URL: postgres://test_user:test_password@localhost:5432/test_db
   AUTH_URL: http://localhost:3000
-  ADMIN_EMAIL: some@thing.com
-  AUTH_SECRET: something
-  GOOGLE_CLIENT_ID: something
-  GOOGLE_CLIENT_SECRET: something
-  GITHUB_CLIENT_ID: something
-  GITHUB_CLIENT_SECRET: something
-  SPOTIFY_CLIENT_ID: something
-  SPOTIFY_CLIENT_SECRET: something
-  SPOTIFY_REFRESH_TOKEN: something
-  GITHUB_API_TOKEN: something
+  ADMIN_EMAIL: test@example.com
+  AUTH_SECRET: test_secret_for_ci_only
+  GOOGLE_CLIENT_ID: test_google_client_id
+  GOOGLE_CLIENT_SECRET: test_google_client_secret
+  GITHUB_CLIENT_ID: test_github_client_id
+  GITHUB_CLIENT_SECRET: test_github_client_secret
+  SPOTIFY_CLIENT_ID: test_spotify_client_id
+  SPOTIFY_CLIENT_SECRET: test_spotify_client_secret
+  SPOTIFY_REFRESH_TOKEN: test_spotify_refresh_token
+  GITHUB_API_TOKEN: test_github_api_token
+  SKIP_ENV_VALIDATION: true
 
 jobs:
   build:
     name: Build
     timeout-minutes: 15
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: test_user
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_DB: test_db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
     strategy:
       matrix:
         node-version: [22.x]
@@ -51,6 +68,11 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Set up test database
+        run: pnpm db:push
+        env:
+          SKIP_ENV_VALIDATION: true
 
       - name: Format
         run: pnpm run format:check
