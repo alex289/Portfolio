@@ -16,8 +16,6 @@ updates:
           - "*"
     assignees:
       - "alex289"
-    reviewers:
-      - "alex289"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -34,6 +32,4 @@ updates:
         patterns:
           - "*"
     assignees:
-      - "alex289"
-    reviewers:
       - "alex289"
