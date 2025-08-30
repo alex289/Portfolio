@@ -71,7 +71,7 @@
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.536.0",
     "motion": "^12.23.12",
-    "next": "15.4.5",
+    "next": "15.4.7",
     "next-auth": "5.0.0-beta.29",
     "next-intl": "4.3.4",
     "next-mdx-remote": "^5.0.0",
