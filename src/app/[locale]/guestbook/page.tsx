@@ -12,17 +12,13 @@ import { guestbook } from '@/lib/db/schema';
 
 import type { Metadata } from 'next/types';
 
-interface GuestbookProps {
-  params: Promise<{ locale: string }>;
-}
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params,
-}: GuestbookProps): Promise<Metadata> {
+}: PageProps<'/[locale]/guestbook'>): Promise<Metadata> {
   const locale = (await params).locale as (typeof routing.locales)[number];
   const t = await getTranslations({ locale, namespace: 'guestbook' });
   return {
@@ -55,7 +51,7 @@ async function getGuestbook() {
   });
 }
 
-const GuestbookPage = ({ params }: GuestbookProps) => {
+const GuestbookPage = ({ params }: PageProps<'/[locale]/guestbook'>) => {
   return (
     <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
       <Suspense>
@@ -66,7 +62,11 @@ const GuestbookPage = ({ params }: GuestbookProps) => {
   );
 };
 
-async function GuestbookEntries({ params }: GuestbookProps) {
+async function GuestbookEntries({
+  params,
+}: {
+  params: PageProps<'/[locale]/guestbook'>['params'];
+}) {
   const locale = (await params).locale as (typeof routing.locales)[number];
   const [entries, session, t] = await Promise.all([
     getGuestbook(),

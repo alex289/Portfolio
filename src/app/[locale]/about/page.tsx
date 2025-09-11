@@ -11,17 +11,13 @@ import Tools from '@/components/tools';
 
 import type { Metadata } from 'next/types';
 
-interface AboutPageProps {
-  params: Promise<{ locale: string }>;
-}
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params,
-}: AboutPageProps): Promise<Metadata> {
+}: PageProps<'/[locale]/about'>): Promise<Metadata> {
   const locale = (await params).locale as (typeof routing.locales)[number];
   const t = await getTranslations({ locale, namespace: 'main' });
   return {

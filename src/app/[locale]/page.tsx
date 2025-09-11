@@ -10,15 +10,11 @@ import FeaturedPost from '@/components/blog/featured-post';
 import Project from '@/components/projects';
 import { getProjects } from '@/lib/github';
 
-interface IndexProps {
-  params: Promise<{ locale: string }>;
-}
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const Index = async ({ params }: IndexProps) => {
+const Index = async ({ params }: PageProps<'/[locale]'>) => {
   const locale = (await params).locale as (typeof routing.locales)[number];
   const [projects, t] = await Promise.all([
     getProjects(3),
