@@ -52,6 +52,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Typegen
+        run: pnpm run typegen
+
       - name: Format
         run: pnpm run format:check
 
