@@ -16,6 +16,7 @@ const CustomLink = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
 
   if (isInternalLink) {
     return (
+      // @ts-expect-error Cant type this link
       <Link href={href} {...props}>
         {props.children}
       </Link>

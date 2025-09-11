@@ -158,6 +158,7 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
               {mounted && <ThemeToggleIcon theme={resolvedTheme} />}
             </button>
             <Link
+              // @ts-expect-error Cant type this link
               href={getTranslationPath()}
               scroll={false}
               shallow

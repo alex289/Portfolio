@@ -31,6 +31,7 @@ export function useUrlState<T>(
       params.delete(key);
     }
 
+    // @ts-expect-error Cant type this link
     router.push(createUrl(pathname, params));
   }
 
