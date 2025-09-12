@@ -15,10 +15,6 @@ import { getTopTracks } from '@/lib/spotify';
 
 import type { Metadata } from 'next/types';
 
-interface DashboardProps {
-  params: Promise<{ locale: string }>;
-}
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -57,7 +53,7 @@ const getGuestbookEntriesCount = async () => {
   return data[0]?.total ?? 0;
 };
 
-const DashboardPage = async ({ params }: DashboardProps) => {
+const DashboardPage = async ({ params }: PageProps<'/[locale]/dashboard'>) => {
   const locale = (await params).locale as (typeof routing.locales)[number];
   const [session, t, viewsCount, guesbookEntriesCount, topTracks] =
     await Promise.all([
@@ -73,7 +69,7 @@ const DashboardPage = async ({ params }: DashboardProps) => {
   }
 
   if (!session.user.isAdmin) {
-    return redirect('/');
+    return redirect(`/${locale}`);
   }
 
   return (

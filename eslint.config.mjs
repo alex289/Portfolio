@@ -1,11 +1,34 @@
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import nextPlugin from '@next/eslint-plugin-next';
 import eslintConfigPrettier from 'eslint-config-prettier';
+// @ts-expect-error - No types available
 import drizzlePlugin from 'eslint-plugin-drizzle';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default [
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const config = [
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  {
+    ignores: [
+      'node_modules/**',
+      '.next/**',
+      'out/**',
+      'build/**',
+      'next-env.d.ts',
+      '.github/**',
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
@@ -55,3 +78,5 @@ export default [
     },
   },
 ];
+
+export default config;

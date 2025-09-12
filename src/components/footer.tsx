@@ -83,6 +83,7 @@ export default function Footer() {
             link.href.startsWith('/') ? (
               <Link
                 key={link.id}
+                // @ts-expect-error Cant type this link
                 href={`${link.noTranslate !== true ? '/' + locale : ''}${
                   link.href
                 }`}

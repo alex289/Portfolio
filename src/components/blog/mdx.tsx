@@ -16,6 +16,7 @@ const CustomLink = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
 
   if (isInternalLink) {
     return (
+      // @ts-expect-error Cant type this link
       <Link href={href} {...props}>
         {props.children}
       </Link>
@@ -137,6 +138,7 @@ function slugify(str: ReactNode) {
 }
 
 function createHeading(level: number) {
+  // eslint-disable-next-line react/display-name
   return ({ children }: { children: ReactNode }) => {
     const slug = slugify(children);
     return createElement(

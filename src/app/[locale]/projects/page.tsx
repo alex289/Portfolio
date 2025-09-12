@@ -15,17 +15,13 @@ import { getProjects, getStats } from '@/lib/github';
 
 import type { Metadata } from 'next/types';
 
-interface ProjectsProps {
-  params: Promise<{ locale: string }>;
-}
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params,
-}: ProjectsProps): Promise<Metadata> {
+}: PageProps<'/[locale]/projects'>): Promise<Metadata> {
   const locale = (await params).locale as (typeof routing.locales)[number];
   const t = await getTranslations({ locale });
   return {
@@ -43,7 +39,7 @@ export async function generateMetadata({
   };
 }
 
-const ProjectsPage = async ({ params }: ProjectsProps) => {
+const ProjectsPage = async ({ params }: PageProps<'/[locale]/projects'>) => {
   const locale = (await params).locale as (typeof routing.locales)[number];
   const [stats, projects, t] = await Promise.all([
     getStats(),

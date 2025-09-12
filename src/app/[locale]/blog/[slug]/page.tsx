@@ -29,9 +29,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string; locale: string }>;
-}): Promise<Metadata | undefined> {
+}: PageProps<'/[locale]/blog/[slug]'>): Promise<Metadata | undefined> {
   const paramSlug = (await params).slug;
   const locale = (await params).locale as (typeof routing.locales)[number];
   const t = await getTranslations({ locale: locale, namespace: 'blog' });
@@ -91,13 +89,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({
-  params,
-}: {
-  params: Promise<{ slug: string; locale: string }>;
-}) {
-  const locale = (await params).locale as (typeof routing.locales)[number];
-  const slug = (await params).slug;
+export default async function Blog(props: PageProps<'/[locale]/blog/[slug]'>) {
+  const locale = (await props.params)
+    .locale as (typeof routing.locales)[number];
+  const slug = (await props.params).slug;
   setRequestLocale(locale);
 
   const now = await getNow({ locale: locale });
