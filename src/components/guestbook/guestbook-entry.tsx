@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 
-import type { Session } from 'next-auth';
+import { User } from '@/lib/auth-client';
 
 interface GuestBookEntryProps {
   entry: {
@@ -12,14 +12,14 @@ interface GuestBookEntryProps {
     created_by: string;
     updated_at: string;
   };
-  session: Session | null;
+  user: User | undefined;
   locale: string;
   deleteText: string;
 }
 
 export default function GuestbookEntry({
   entry,
-  session,
+  user,
   locale,
   deleteText,
 }: GuestBookEntryProps) {
@@ -57,17 +57,16 @@ export default function GuestbookEntry({
             },
           )}
         </p>
-        {session?.user &&
-          (entry.email === session.user.email || session.user.isAdmin) && (
-            <>
-              <span className="text-gray-600 dark:text-[#c2c2c2]">/</span>
-              <button
-                className="text-sm text-red-600 dark:text-red-400 cursor-pointer"
-                onClick={deleteEntry}>
-                {deleteText}
-              </button>
-            </>
-          )}
+        {user && (entry.email === user.email || user.isAdmin) && (
+          <>
+            <span className="text-gray-600 dark:text-[#c2c2c2]">/</span>
+            <button
+              className="text-sm text-red-600 dark:text-red-400 cursor-pointer"
+              onClick={deleteEntry}>
+              {deleteText}
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

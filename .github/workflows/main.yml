@@ -13,9 +13,9 @@ permissions:
 
 env:
   POSTGRES_URL: ${{ secrets.DATABASE_URL }}
-  AUTH_URL: http://localhost:3000
+  BETTER_AUTH_URL: http://localhost:3000
   ADMIN_EMAIL: some@thing.com
-  AUTH_SECRET: something
+  BETTER_AUTH_SECRET: something
   GOOGLE_CLIENT_ID: something
   GOOGLE_CLIENT_SECRET: something
   GITHUB_CLIENT_ID: something
