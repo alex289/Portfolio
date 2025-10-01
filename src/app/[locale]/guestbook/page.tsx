@@ -1,6 +1,7 @@
 import { routing } from '@/i18n/routing';
 import { desc } from 'drizzle-orm';
 import { getTranslations } from 'next-intl/server';
+import { headers } from 'next/headers';
 import { Suspense } from 'react';
 
 import env from '@/env.mjs';
@@ -70,7 +71,9 @@ async function GuestbookEntries({
   const locale = (await params).locale as (typeof routing.locales)[number];
   const [entries, session, t] = await Promise.all([
     getGuestbook(),
-    auth(),
+    auth.api.getSession({
+      headers: await headers(),
+    }),
     getTranslations({ locale, namespace: 'guestbook' }),
   ]);
 
@@ -80,7 +83,7 @@ async function GuestbookEntries({
         <GuestbookEntry
           key={entry.id.toString()}
           entry={entry}
-          session={session}
+          user={session?.user}
           locale={locale}
           deleteText={t('delete')}
         />
@@ -90,8 +93,10 @@ async function GuestbookEntries({
 }
 
 async function GuestbookFormWrapper() {
-  const session = await auth();
-  return <GuestbookForm session={session} />;
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  return <GuestbookForm user={session?.user} />;
 }
 
 export default GuestbookPage;

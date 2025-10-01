@@ -1,38 +1,36 @@
-import NextAuth from 'next-auth';
-import GithubProvider from 'next-auth/providers/github';
-import GoogleProvider from 'next-auth/providers/google';
+import { betterAuth } from 'better-auth';
+import { customSession } from 'better-auth/plugins';
 
 import env from '@/env.mjs';
 
-export const {
-  handlers: { GET, POST },
-  auth,
-} = NextAuth({
-  theme: {
-    colorScheme: 'auto',
-    brandColor: '',
-    logo: `${env.NEXT_PUBLIC_WEBSITE_URL}/static/images/konietzko_alexander.png`,
-  },
-  providers: [
-    GithubProvider({
-      clientId: env.GITHUB_CLIENT_ID,
-      clientSecret: env.GITHUB_CLIENT_SECRET,
-    }),
-    GoogleProvider({
-      clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET,
-    }),
-  ],
-  callbacks: {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    session({ session, token, user }) {
-      return {
-        ...session,
-        user: {
-          ...session.user,
-          isAdmin: session.user.email === env.ADMIN_EMAIL,
-        },
-      };
+export const auth = betterAuth({
+  appName: 'Alexander Konietzko',
+  telemetry: { enabled: false },
+  session: {
+    cookieCache: {
+      enabled: process.env.NODE_ENV === 'production',
+      maxAge: 5 * 60, // Cache duration in seconds
     },
   },
+  socialProviders: {
+    github: {
+      clientId: env.GITHUB_CLIENT_ID,
+      clientSecret: env.GITHUB_CLIENT_SECRET,
+    },
+    google: {
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
+    },
+  },
+  plugins: [
+    customSession(async ({ user, session }) => {
+      return {
+        user: {
+          ...user,
+          isAdmin: user.email === env.ADMIN_EMAIL,
+        },
+        session,
+      };
+    }),
+  ],
 });

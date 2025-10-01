@@ -7,10 +7,10 @@ My own personal portfolio website
 Inspired by [leerob](https://github.com/leerob/leerob.io)
 
 - **Framework**: [Next.js](https://nextjs.org/)
-- **Database**: [Vercel Postgres](https://vercel.com)
+- **Database**: [Vercel Postgres](https://vercel.com/)
 - **ORM**: [Drizzle](https://orm.drizzle.team/)
-- **Authentication**: [NextAuth.js](https://next-auth.js.org/)
-- **Deployment**: [Vercel](https://vercel.com)
+- **Authentication**: [Better-Auth](https://www.better-auth.com/)
+- **Deployment**: [Vercel](https://vercel.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
 ## Overview
