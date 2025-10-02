@@ -186,7 +186,7 @@ export default function CommandPalette({
     );
   }, [search, config]);
 
-  function handleChange(value: string) {
+  function handleChange(value: string | null) {
     if (!value || value === '') {
       setSearch('');
       return;
