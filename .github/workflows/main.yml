@@ -12,7 +12,7 @@ permissions:
   pull-requests: write
 
 env:
-  POSTGRES_URL: ${{ secrets.DATABASE_URL }}
+  POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
   AUTH_URL: http://localhost:3000
   ADMIN_EMAIL: some@thing.com
   AUTH_SECRET: something
