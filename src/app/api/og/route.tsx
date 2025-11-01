@@ -4,8 +4,6 @@ import { type NextRequest } from 'next/server';
 
 import env from '@/env.mjs';
 
-export const runtime = 'edge';
-
 export function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);

@@ -1,7 +1,5 @@
 import { getNowPlaying } from '@/lib/spotify';
 
-export const runtime = 'edge';
-
 interface SongResponse {
   item: {
     name: string;

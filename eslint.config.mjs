@@ -1,24 +1,14 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
-import nextPlugin from '@next/eslint-plugin-next';
+// @ts-expect-error - No types available
+import nextVitals from 'eslint-config-next/core-web-vitals';
 import eslintConfigPrettier from 'eslint-config-prettier';
 // @ts-expect-error - No types available
 import drizzlePlugin from 'eslint-plugin-drizzle';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
 const config = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...nextVitals,
   {
     ignores: [
       'node_modules/**',
@@ -45,12 +35,9 @@ const config = [
       },
     },
     plugins: {
-      '@next/next': nextPlugin,
       drizzle: drizzlePlugin,
     },
     rules: {
-      ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs['core-web-vitals'].rules,
       ...drizzlePlugin.configs.recommended.rules,
       semi: 'warn',
       eqeqeq: 'warn',
