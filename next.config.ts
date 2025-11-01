@@ -7,6 +7,8 @@ import withNextIntl from 'next-intl/plugin';
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   typedRoutes: true,
+  reactCompiler: true,
+  cacheComponents: true,
   images: {
     remotePatterns: [
       {
