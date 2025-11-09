@@ -33,6 +33,16 @@ pnpm dev
 
 Create a `.env` file similar to [`.env.example`](https://github.com/alex289/Portfolio/blob/main/.env.example)
 
+## Deploying to Vercel
+
+For detailed instructions on deploying this portfolio to Vercel with all environment variables configured, see **[VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)**.
+
+Quick deploy:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Daniel21b/daniel-portfolio)
+
+**Note**: The site will build successfully even without all environment variables. Features like authentication, guestbook, and Spotify integration require their respective API credentials to be configured.
+
 ## Cloning / Forking
 
 Please review the [license](https://github.com/alex289/Portfolio/blob/main/LICENSE) and remove all of my personal information (resume, blog posts, images, etc.).

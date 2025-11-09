@@ -3,16 +3,16 @@ import { z } from 'zod';
 
 const env = createEnv({
   server: {
-    POSTGRES_URL: z.string().url(),
-    ADMIN_EMAIL: z.string().email(),
-    GOOGLE_CLIENT_ID: z.string(),
-    GOOGLE_CLIENT_SECRET: z.string(),
-    GITHUB_CLIENT_ID: z.string(),
-    GITHUB_CLIENT_SECRET: z.string(),
-    SPOTIFY_CLIENT_ID: z.string(),
-    SPOTIFY_CLIENT_SECRET: z.string(),
-    SPOTIFY_REFRESH_TOKEN: z.string(),
-    GITHUB_API_TOKEN: z.string(),
+    POSTGRES_URL: z.string().url().optional(),
+    ADMIN_EMAIL: z.string().email().optional(),
+    GOOGLE_CLIENT_ID: z.string().optional(),
+    GOOGLE_CLIENT_SECRET: z.string().optional(),
+    GITHUB_CLIENT_ID: z.string().optional(),
+    GITHUB_CLIENT_SECRET: z.string().optional(),
+    SPOTIFY_CLIENT_ID: z.string().optional(),
+    SPOTIFY_CLIENT_SECRET: z.string().optional(),
+    SPOTIFY_REFRESH_TOKEN: z.string().optional(),
+    GITHUB_API_TOKEN: z.string().optional(),
   },
   client: {
     NEXT_PUBLIC_WEBSITE_URL: z
