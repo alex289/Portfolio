@@ -14,7 +14,6 @@ import AnalyticsWrapper from '@/components/analytics';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import { auth } from '@/lib/auth';
-import { getBlogPosts } from '@/lib/blog';
 
 import type { Metadata, Viewport } from 'next/types';
 
@@ -29,17 +28,17 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
     title: {
-      default: 'Alexander Konietzko',
-      template: '%s | Alexander Konietzko',
+      default: 'Daniel Berhane',
+      template: '%s | Daniel Berhane',
     },
-    authors: [{ name: 'Alexander Konietzko' }],
-    applicationName: 'Alexander Konietzko',
-    description: 'Software developer, TypeScript enthusiast and dual student',
+    authors: [{ name: 'Daniel Berhane' }],
+    applicationName: 'Daniel Berhane',
+    description: 'Data Analyst specializing in cloud-based analytics and ETL pipelines',
     openGraph: {
-      title: 'Alexander Konietzko',
-      description: 'Software developer, TypeScript enthusiast and dual student',
+      title: 'Daniel Berhane',
+      description: 'Data Analyst specializing in cloud-based analytics and ETL pipelines',
       url: env.NEXT_PUBLIC_WEBSITE_URL,
-      siteName: 'Alexander Konietzko',
+      siteName: 'Daniel Berhane',
       images: [
         {
           url: `${env.NEXT_PUBLIC_WEBSITE_URL}/api/og`,
@@ -47,7 +46,7 @@ export async function generateMetadata({
           height: 1080,
         },
       ],
-      locale: locale === 'en' ? 'en-US' : 'de-DE',
+      locale: 'en-US',
       type: 'website',
     },
     robots: {
@@ -62,28 +61,20 @@ export async function generateMetadata({
       },
     },
     twitter: {
-      title: 'Alexander Konietzko',
+      title: 'Daniel Berhane',
       card: 'summary_large_image',
-      description: 'Software developer, TypeScript enthusiast and dual student',
+      description: 'Data Analyst specializing in cloud-based analytics and ETL pipelines',
       images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og`],
     },
     icons: {
-      shortcut: '/static/favicon.ico',
-      apple: '/static/icon/apple-touch-icon.png',
-      other: [
+      icon: [
         {
           rel: 'icon',
           type: 'image/png',
-          sizes: '32x32',
-          url: '/static/icon/favicon-32x32.png',
-        },
-        {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '16x16',
-          url: '/static/icon/favicon-16x16.png',
+          url: '/favicon.png',
         },
       ],
+      apple: '/favicon.png',
     },
     manifest: '/static/site.webmanifest',
     verification: {
@@ -91,10 +82,6 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: env.NEXT_PUBLIC_WEBSITE_URL,
-      languages: {
-        en: `${env.NEXT_PUBLIC_WEBSITE_URL}/en`,
-        de: `${env.NEXT_PUBLIC_WEBSITE_URL}/de`,
-      },
       types: {
         'application/rss+xml': `${env.NEXT_PUBLIC_WEBSITE_URL}/feed.xml`,
       },
@@ -133,7 +120,7 @@ export default async function RootLayout({
               Skip to content
             </a>
             <CommandPalette session={session} />
-            <Navbar posts={getBlogPosts()} />
+            <Navbar />
             <main
               className="mx-auto mb-16 flex max-w-3xl flex-col justify-center px-8 dark:bg-gray-800 md:mt-6 md:px-0"
               id="skip">

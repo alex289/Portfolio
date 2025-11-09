@@ -4,8 +4,8 @@ import env from '@/env.mjs';
 import { getBlogPosts } from '@/lib/blog';
 
 const feed = new RSS({
-  title: 'Alexander Konietzko',
-  description: 'Blog of Alexander Konietzko',
+  title: 'Daniel Berhane',
+  description: 'Blog of Daniel Berhane',
   site_url: env.NEXT_PUBLIC_WEBSITE_URL,
   feed_url: `${env.NEXT_PUBLIC_WEBSITE_URL}/feed.xml`,
 });
@@ -17,7 +17,7 @@ getBlogPosts().map((post) => {
     url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${post.language}/blog/${post.slug}`,
     date: post.publishedAt,
     description: post.summary,
-    author: 'Alexander Konietzko',
+    author: 'Daniel Berhane',
     categories: post.tags,
   });
 });

@@ -13,7 +13,8 @@ export async function GET() {
       },
     });
   } catch (e) {
-    return new Response(JSON.stringify(e), {
+    console.error('Error fetching views:', e);
+    return new Response(JSON.stringify([]), {
       status: 500,
       headers: {
         'Content-Type': 'application/json',

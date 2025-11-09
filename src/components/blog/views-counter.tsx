@@ -13,13 +13,13 @@ interface Props {
 
 interface PostView {
   slug: string;
-  count: string;
+  count: number;
 }
 
 export default function ViewCounter({ slug, trackView }: Props) {
   const t = useTranslations('blog');
   const { data } = useSWR<PostView[]>(`/api/views`, fetcher);
-  const viewsForSlug = data?.find((view) => view.slug === slug);
+  const viewsForSlug = Array.isArray(data) ? data.find((view) => view.slug === slug) : undefined;
   const views = new Number(viewsForSlug?.count ?? 0);
 
   useEffect(() => {

@@ -15,27 +15,13 @@ import MenuIcon from './icons/menu-icon';
 import ThemeToggleIcon from './icons/theme-icon';
 import MobileMenu from './mobile-menu';
 
-import type { BlogPost } from '@/lib/types';
-
-const Navbar = ({ posts }: { posts: BlogPost[] }) => {
+const Navbar = () => {
   const [commandPaletteOpen, setCommandPaletteOpen] =
     useUrlState<boolean>('menu');
   const { resolvedTheme, setTheme } = useTheme();
   const t = useTranslations();
   const locale = useLocale();
   const path = usePathname();
-
-  const getTranslationPath = () => {
-    const nextLocale = locale === 'de' ? 'en' : 'de';
-    if (path.includes('/blog/')) {
-      const slug = path.substring(path.lastIndexOf('/') + 1);
-      const post = posts.find((post) => post.slug === slug);
-      return `/${nextLocale}/blog/${post?.translation}`;
-    }
-    const correctPath = path.replace('/de', '').replace('/en', '');
-    return `/${nextLocale}${correctPath}`;
-  };
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -72,13 +58,8 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
     },
     {
       href: '/blog',
-      text: 'Blog',
-      id: 'nav-blog',
-    },
-    {
-      href: '/guestbook',
-      text: t('guestbook.title'),
-      id: 'nav-guestbook',
+      text: t('main.books'),
+      id: 'nav-books',
     },
   ];
 
@@ -151,22 +132,12 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
               aria-label="Toggle Dark Mode"
               type="button"
               data-umami-event="theme-switcher-click"
-              className="mr-1 cursor-pointer h-10 w-10 rounded-lg bg-gray-200 p-3 ring-gray-300 hover:ring-4 dark:bg-gray-700 md:mr-3"
+              className="mr-3 cursor-pointer h-10 w-10 rounded-lg bg-gray-200 p-3 ring-gray-300 hover:ring-4 dark:bg-gray-700"
               onClick={() =>
                 setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
               }>
               {mounted && <ThemeToggleIcon theme={resolvedTheme} />}
             </button>
-            <Link
-              // @ts-expect-error Cant type this link
-              href={getTranslationPath()}
-              scroll={false}
-              shallow
-              data-umami-event="language-switcher-click"
-              id="switch-lang"
-              className="md:dark:link-underline cursor-pointer md:link-underline-black mx-3 pb-1 text-lg tracking-wide">
-              {locale === 'de' ? 'EN' : 'DE'}
-            </Link>
           </div>
         </div>
       </nav>

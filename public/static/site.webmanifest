@@ -1,10 +1,10 @@
 {
-    "name": "Alexander Konietzko",
-    "description": "Software developer, TypeScript enthusiast and dual student",
+    "name": "Daniel Berhane",
+    "description": "Data Analyst & Software Engineer",
     "start_url": "/",
     "background_color": "#f9fafb",
     "theme_color": "#222222",
-    "short_name": "Alex",
+    "short_name": "Daniel",
     "display": "standalone",
     "orientation": "portrait",
     "dir": "ltr",

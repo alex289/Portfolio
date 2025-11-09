@@ -11,7 +11,7 @@ export const {
   theme: {
     colorScheme: 'auto',
     brandColor: '',
-    logo: `${env.NEXT_PUBLIC_WEBSITE_URL}/static/images/konietzko_alexander.png`,
+    logo: `${env.NEXT_PUBLIC_WEBSITE_URL}/favicon.png`,
   },
   providers: [
     GithubProvider({

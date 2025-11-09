@@ -26,7 +26,7 @@ export default function PostCard({ title, excerpt, slug, date, tags }: Props) {
         <p className="mb-4 min-w-fit max-w-full text-left text-gray-900 dark:text-[#c2c2c2] md:mb-0 md:text-right">
           <ViewCounter slug={slug} trackView={false} /> |{' '}
           {new Date(date).toLocaleDateString(
-            locale === 'de' ? 'de-DE' : 'en-US',
+            'en-US',
             {
               year: 'numeric',
               month: 'short',

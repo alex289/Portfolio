@@ -17,22 +17,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alex289/Portfolio.git"
+    "url": "git+https://github.com/Daniel21b/portfolio.git"
   },
   "keywords": [
     "Next.js",
     "TailwindCSS",
-    "Portfolio"
+    "Portfolio",
+    "Data Analytics"
   ],
   "author": {
-    "name": "Alexander Konietzko",
-    "url": "https://alexanderkonietzko.vercel.app"
+    "name": "Daniel Berhane",
+    "email": "dberhane@terpmail.umd.edu",
+    "url": "https://github.com/Daniel21b"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alex289/Portfolio/issues"
+    "url": "https://github.com/Daniel21b/portfolio/issues"
   },
-  "homepage": "https://alexanderkonietzko.vercel.app",
+  "homepage": "https://github.com/Daniel21b/portfolio",
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.36.0",

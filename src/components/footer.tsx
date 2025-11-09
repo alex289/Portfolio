@@ -11,66 +11,19 @@ export default function Footer() {
 
   const links = [
     {
-      href: '/',
-      id: 'footer.home',
-      text: t('main.home'),
-    },
-    {
-      href: '/blog',
-      id: 'footer.blog',
-      text: 'Blog',
-    },
-    {
-      href: 'https://github.com/alex289/dotfiles',
-      id: 'footer.my-setup',
-      text: t('footer.my-setup'),
-    },
-    {
-      href: 'https://alexanderkonietzko-analytics.vercel.app/share/umAbxBDxID0MgUDd/Portfolio',
-      id: 'footer.analytics',
-      text: t('footer.analytics'),
-    },
-    {
-      href: '/about',
-      id: 'footer.about',
-      text: t('main.about'),
-    },
-    {
-      href: '/guestbook',
-      id: 'footer.guestbook',
-      text: t('guestbook.title'),
-    },
-    {
-      href: 'https://github.com/alex289/Portfolio',
-      id: 'footer.sourcecode',
-      text: t('footer.sourcecode'),
-    },
-    {
-      href: '/feed.xml',
-      id: 'footer.feed',
-      text: 'Feed',
-      noTranslate: true,
-    },
-    {
       href: '/projects',
       id: 'footer.projects',
       text: t('main.projects'),
     },
     {
-      href: 'https://github.com/alex289',
+      href: 'https://github.com/Daniel21b',
       id: 'footer.github',
       text: 'GitHub',
     },
     {
-      href: 'mailto:me@alexanderkonietzko.com',
+      href: 'mailto:dberhane@terpmail.umd.edu',
       id: 'footer.contact',
       text: t('footer.contact'),
-    },
-    {
-      href: '/sitemap.xml',
-      id: 'footer.sitemap',
-      text: t('footer.sitemap'),
-      noTranslate: true,
     },
   ];
   return (
@@ -78,7 +31,7 @@ export default function Footer() {
       <footer className="mx-auto mb-8 flex w-full max-w-3xl flex-col items-start justify-center">
         <hr className="mb-8 w-full border border-gray-200 bg-gray-200 dark:border-gray-700 dark:bg-gray-700" />
         <NowPlaying />
-        <div className="grid w-full max-w-3xl grid-cols-1 gap-4 pb-12 sm:grid-cols-4 sm:grid-rows-3">
+        <div className="flex w-full max-w-3xl gap-6 pb-12 justify-center">
           {links.map((link) =>
             link.href.startsWith('/') ? (
               <Link
@@ -134,7 +87,7 @@ export default function Footer() {
           .
         </p>
         <p className="mx-auto text-sm text-gray-500 dark:text-gray-300">
-          © {new Date().getFullYear()} Alexander Konietzko
+          © {new Date().getFullYear()} Daniel Berhane
         </p>
       </footer>
     </div>

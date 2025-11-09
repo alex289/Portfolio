@@ -53,15 +53,9 @@ export default function MobileMenu({ isMenuOpen, toggle }: Props) {
     },
     {
       href: '/blog',
-      text: 'Blog',
-      id: 'mobile-nav-blog',
+      text: t('main.books'),
+      id: 'mobile-nav-books',
       transitionDelay: '250ms',
-    },
-    {
-      href: '/guestbook',
-      text: t('guestbook.title'),
-      id: 'mobile-nav-guestbook',
-      transitionDelay: '275ms',
     },
   ];
 

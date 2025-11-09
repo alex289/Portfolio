@@ -50,7 +50,7 @@ export async function generateMetadata({
   } = post;
 
   const formattedDate = new Date(publishedTime).toLocaleDateString(
-    language === 'de' ? 'de-DE' : 'en-US',
+    'en-US',
     {
       year: 'numeric',
       month: 'short',
@@ -104,7 +104,7 @@ export default async function Blog(props: PageProps<'/[locale]/blog/[slug]'>) {
   }
 
   const formattedDate = new Date(post.publishedAt).toLocaleDateString(
-    locale === 'de' ? 'de-DE' : 'en-US',
+    'en-US',
     {
       year: 'numeric',
       month: 'short',
@@ -131,7 +131,7 @@ export default async function Blog(props: PageProps<'/[locale]/blog/[slug]'>) {
             url: `https://${env.NEXT_PUBLIC_WEBSITE_URL}/${post.language}/blog/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: 'Alexander Konietzko',
+              name: 'Daniel Berhane',
             },
           }),
         }}

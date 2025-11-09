@@ -2,7 +2,8 @@
   "main": {
     "home": "Home",
     "about": "About",
-    "projects": "Projects"
+    "projects": "Projects",
+    "books": "Blog"
   },
   "footer": {
     "my-setup": "My dotfiles",
@@ -15,40 +16,32 @@
     "hosted": "Hosted on "
   },
   "index-page": {
-    "title": "Software Engineer and Student at",
-    "intro": "Trying to build a faster web. Learning about web development, .NET Core and React / Next.js.",
+    "title": "Data Analyst",
+    "intro": "Experienced in cloud-based analytics, ETL pipeline development, and business intelligence. Building dashboards and automating workflows that drive data-driven decisions.",
     "posts": {
-      "read-all": "Read all posts",
+      "read-all": "View all posts",
       "1": {
-        "title": "Initial Commit",
-        "slug": "initial-commit"
-      },
-      "2": {
-        "title": "The Best PowerShell Terminal Setup",
-        "slug": "terminal-setup"
-      },
-      "3": {
-        "title": "How to Deploy a Fullstack Web App on Vercel?",
-        "slug": "vercel-deployment"
+        "title": "M1 MacBook Pro Dev Setup",
+        "slug": "m1-macbook-pro-dev-setup"
       }
     }
   },
   "about-page": {
-    "text-1": "Hey, I'm Alex. I'm {age} years \nold and come from Germany. I live in NRW and spend my free time \nplaying piano, do sports or enjoying time with friends and family.",
-    "text-2": "I started working with computers when I was young and started \nprogramming in school. After I graduated I began my dual study at \nNetgo GmbH where I work and Westfälische Hochschule where I study.",
-    "text-3": "I'm currently learning .NET Core and Angular but my favourite framework is \nNextJs. In the future I want to build my own Kubernetes cluster with \nbackend services, database integration and a solid frontend combined \nby Nginx.",
+    "text-1": "Hey, I'm Daniel. I'm a data analyst with experience in cloud-based analytics, ETL pipeline development, and business intelligence. I'm passionate about turning data into actionable insights that drive operational decisions across healthcare and business environments.",
+    "text-2": "I graduated from the University of Maryland with a Bachelor of Science in Computer Science (GPA: 3.5) in August 2025. During my studies, I developed strong foundations in algorithms, software engineering, statistics, data science, and data visualization.",
+    "text-3": "I'm proficient in SQL optimization, Python-based data processing, and creating dashboards using Power BI and Tableau. I've worked with modern data stack tools like dbt, AWS, and Snowflake to build robust data pipelines.",
     "website": "Website",
     "tools": {
       "title": "Tools",
-      "text": "Those are the tools I almost use daily. I really enjoy finding new technologies improving my workflow.",
-      "tailwind": "When it comes to CSS, I always use TailwindCSS. It is a great tool for styling your website really fast.",
-      "next": "My go-to framework for building web applications. The quality of the codebase is fantastic.",
-      "vercel": "The most seamless way to deploy your website. I use it for all of my projects.",
-      "vscode": "VS Code is the text editor I reach for most often, given it's range of extensions."
+      "text": "These are the tools I use daily for data analysis and building data pipelines. I'm always exploring new technologies to improve my workflow.",
+      "python": "My primary language for data processing, analysis, and automation. I use Pandas, NumPy, and scikit-learn extensively.",
+      "sql": "Essential for data extraction and transformation. I work with MySQL, PostgreSQL, and optimize complex queries for performance.",
+      "powerbi": "My go-to tool for creating interactive dashboards and business intelligence reports connected to various data sources.",
+      "aws": "I use AWS services like Glue, Lambda, and EC2 for building scalable ETL pipelines and deploying data applications."
     },
     "uses": {
       "title": "My Gear",
-      "text": "Here's what tech I'm currently using for coding. Most of have been accumulated over the past few years.",
+      "text": "Here's what tech I'm currently using for data analysis and development.",
       "office": "Workstation",
       "other-tech": "Other tech",
       "and": "and",
@@ -56,21 +49,25 @@
     },
     "timeline": {
       "title": "Timeline",
-      "learn-more": "Learn more about netgo",
+      "learn-more": "Learn more",
       "1": {
-        "date": "July 2021",
-        "title": "Graduation from school",
-        "description": "I finished my school :D"
+        "date": "August 2025",
+        "title": "Graduated from University of Maryland",
+        "description": "Completed Bachelor of Science in Computer Science with a 3.5 GPA. Coursework included Algorithms, Software Engineering, Statistics, Data Science, and Data Visualization."
       },
       "2": {
-        "title": "Dual study at netgo / Westfälische Hochschule",
-        "description": "I started my first job as a software engineer trainee at netgo. In combination I studied software systems (Informatics, B. SC.)."
+        "title": "Data Analytics Consultant at ICATT Consulting",
+        "description": "Designed and implemented ETL workflows using AWS Glue & Lambda. Built real-time Power BI dashboards connected to Snowflake. Implemented dbt data quality checks to ensure reporting pipeline integrity."
+      },
+      "3": {
+        "title": "Data Analyst Intern at University of Maryland Career Center",
+        "description": "Automated weekly employment reports using Python and SQL. Analyzed student placement data in MySQL to identify hiring trends. Improved database query performance by 3x through optimization. Built Tableau dashboards for career fair analytics."
       }
     }
   },
   "404": {
     "title": "Page not found",
-    "description": "Why show a generic 404 when I can make it sound mysterious? It seems \nyou've found something that used to exist, or you spelled \nsomething wrong. I'm guessing you spelled something wrong. Can \nyou double check that URL?",
+    "description": "Why show a generic 404 when I can make it sound mysterious? It seems you've found something that used to exist, or you spelled something wrong. I'm guessing you spelled something wrong. Can you double check that URL?",
     "return-home": "Return Home"
   },
   "error": {
@@ -79,7 +76,7 @@
     "return-home": "Return home"
   },
   "blog": {
-    "description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written {amount} articles on my blog. Use the search below to filter by title.",
+    "description": "Technical articles and guides about data analysis, machine learning, software engineering, and technology. In total, I've written {amount} posts. Use the search below to filter by title.",
     "no-posts": "No posts found.",
     "all-posts": "All Posts",
     "search": "Search",
@@ -127,7 +124,6 @@
     "settings": "Settings",
     "socials": "Socials",
     "switch-theme": "Switch theme",
-    "switch-language": "Change language (de)",
     "search-placeholder": "Search...",
     "no-results": "No results"
   },

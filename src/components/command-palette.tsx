@@ -19,7 +19,6 @@ import {
   Fingerprint,
   Folder,
   Home,
-  Languages,
   Link,
   Moon,
   Power,
@@ -108,25 +107,17 @@ export default function CommandPalette({
         group: t('command-palette.socials'),
         title: 'GitHub',
         action: Actions.Router,
-        args: 'https://github.com/alex289',
+        args: 'https://github.com/Daniel21b',
         icon: <Link strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         title: t('footer.sourcecode'),
         action: Actions.Router,
-        args: 'https://github.com/alex289/Portfolio',
+        args: 'https://github.com/Daniel21b/portfolio',
         icon: <Code2 strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
       {
         group: t('command-palette.settings'),
-        title: t('command-palette.switch-language'),
-        action: Actions.Language,
-        args: '',
-        icon: (
-          <Languages strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
-        ),
-      },
-      {
         title: t('command-palette.switch-theme'),
         action: Actions.Theme,
         args: '',
@@ -206,13 +197,6 @@ export default function CommandPalette({
       case Actions.Router:
         if (valuePath !== '/blog/[slug]') {
           router.push(valuePath);
-        }
-        break;
-      case Actions.Language:
-        if (pathname !== '/blog/[slug]') {
-          router.replace(pathname, {
-            locale: locale === 'de' ? 'en' : 'de',
-          });
         }
         break;
       case Actions.Theme:

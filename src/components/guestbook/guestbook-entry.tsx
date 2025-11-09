@@ -47,7 +47,7 @@ export default function GuestbookEntry({
         <span className="text-gray-600 dark:text-[#c2c2c2]">/</span>
         <p className="text-sm text-gray-600 dark:text-[#c2c2c2]">
           {new Date(entry.updated_at).toLocaleDateString(
-            locale === 'de' ? 'de-DE' : 'en-US',
+            'en-US',
             {
               year: 'numeric',
               month: 'short',
