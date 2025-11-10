@@ -51,6 +51,8 @@ export default function CommandPalette({
   const [search, setSearch] = useState('');
   const { theme, setTheme } = useTheme();
   const router = useRouter();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const pathname = usePathname();
 
   const config = useMemo(() => {
     return [
