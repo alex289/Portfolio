@@ -1,6 +1,6 @@
 import { getBlogPosts } from '@/lib/blog';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 export async function GET() {
   try {
