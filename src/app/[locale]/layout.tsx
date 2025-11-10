@@ -24,7 +24,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const locale = (await params).locale;
+  await params;
   return {
     metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
     title: {

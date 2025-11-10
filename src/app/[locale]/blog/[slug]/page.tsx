@@ -45,7 +45,6 @@ export async function generateMetadata({
     readingTime,
     summary: description,
     slug,
-    language,
     tags,
   } = post;
 

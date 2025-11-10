@@ -20,7 +20,7 @@ interface GuestBookEntryProps {
 export default function GuestbookEntry({
   entry,
   session,
-  locale,
+  locale: _locale,
   deleteText,
 }: GuestBookEntryProps) {
   const router = useRouter();

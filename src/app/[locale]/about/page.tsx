@@ -153,7 +153,7 @@ const AboutPage = () => {
         Skills & Technologies
       </h1>
       <p className="mb-6 text-gray-500 dark:text-[#c2c2c2]">
-        Here's my technical stack for data analysis and engineering.
+        Here&apos;s my technical stack for data analysis and engineering.
       </p>
       <div className="prose mb-16 text-gray-600 dark:text-[#c2c2c2]">
         <h3 className="text-lg font-bold tracking-tight text-black dark:text-white md:text-xl">

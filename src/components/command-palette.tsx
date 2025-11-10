@@ -51,8 +51,6 @@ export default function CommandPalette({
   const [search, setSearch] = useState('');
   const { theme, setTheme } = useTheme();
   const router = useRouter();
-  const pathname = usePathname();
-  const locale = useLocale();
 
   const config = useMemo(() => {
     return [
