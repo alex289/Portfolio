@@ -5,6 +5,7 @@ const env = createEnv({
   server: {
     POSTGRES_URL: z.string().url().optional(),
     ADMIN_EMAIL: z.string().email().optional(),
+    AUTH_SECRET: z.string().optional(),
     GOOGLE_CLIENT_ID: z.string().optional(),
     GOOGLE_CLIENT_SECRET: z.string().optional(),
     GITHUB_CLIENT_ID: z.string().optional(),
@@ -29,6 +30,7 @@ const env = createEnv({
   runtimeEnv: {
     POSTGRES_URL: process.env.POSTGRES_URL,
     ADMIN_EMAIL: process.env.ADMIN_EMAIL,
+    AUTH_SECRET: process.env.AUTH_SECRET,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,

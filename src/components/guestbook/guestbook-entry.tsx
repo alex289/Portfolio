@@ -58,7 +58,7 @@ export default function GuestbookEntry({
           )}
         </p>
         {session?.user &&
-          (entry.email === session.user.email || session.user.isAdmin) && (
+          (entry.email === session.user.email || session.user?.isAdmin) && (
             <>
               <span className="text-gray-600 dark:text-[#c2c2c2]">/</span>
               <button

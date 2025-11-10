@@ -8,6 +8,7 @@ export const {
   handlers: { GET, POST },
   auth,
 } = NextAuth({
+  secret: env.AUTH_SECRET,
   theme: {
     colorScheme: 'auto',
     brandColor: '',

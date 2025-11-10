@@ -26,7 +26,7 @@ import {
   User,
 } from 'lucide-react';
 import { signIn, signOut } from 'next-auth/react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -51,7 +51,6 @@ export default function CommandPalette({
   const [search, setSearch] = useState('');
   const { theme, setTheme } = useTheme();
   const router = useRouter();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const pathname = usePathname();
 
   const config = useMemo(() => {

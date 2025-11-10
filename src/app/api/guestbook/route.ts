@@ -73,7 +73,7 @@ export async function DELETE(req: Request) {
     return Unauthorized();
   }
 
-  if (session.user.email !== entry.email && !session.user.isAdmin) {
+  if (session.user.email !== entry.email && !session.user?.isAdmin) {
     return Unauthorized();
   }
 
