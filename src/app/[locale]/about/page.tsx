@@ -74,16 +74,6 @@ const AboutPage = () => {
               dberhane@terpmail.umd.edu
             </a>
           </li>
-          <li>
-            {t('about-page.website')}:{' '}
-            <a
-              href={env.NEXT_PUBLIC_WEBSITE_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
-              {env.NEXT_PUBLIC_WEBSITE_URL}
-            </a>
-          </li>
         </ul>
       </div>
 
