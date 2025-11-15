@@ -228,11 +228,7 @@ export default function CommandPalette({ user }: { user: User | undefined }) {
         } else {
           await authClient.signIn.social({
             provider: value.slice(2),
-            fetchOptions: {
-              onSuccess: () => {
-                router.push(url.toString() as '/');
-              },
-            },
+            callbackURL: window.location.pathname,
           });
         }
         break;

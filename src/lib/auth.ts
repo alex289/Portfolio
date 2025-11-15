@@ -6,12 +6,6 @@ import env from '@/env.mjs';
 export const auth = betterAuth({
   appName: 'Alexander Konietzko',
   telemetry: { enabled: false },
-  session: {
-    cookieCache: {
-      enabled: process.env.NODE_ENV === 'production',
-      maxAge: 5 * 60, // Cache duration in seconds
-    },
-  },
   socialProviders: {
     github: {
       clientId: env.GITHUB_CLIENT_ID,

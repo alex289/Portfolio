@@ -81,7 +81,10 @@ export default function GuestbookForm({ user }: { user: User | undefined }) {
               type="button"
               className="mb-2 mr-2 inline-flex cursor-pointer items-center rounded-lg bg-[#24292F] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#24292F]/90 focus:outline-hidden focus:ring-4 focus:ring-[#24292F]/50 dark:hover:bg-[#050708]/30 dark:focus:ring-gray-500"
               onClick={async () => {
-                await authClient.signIn.social({ provider: 'github' });
+                await authClient.signIn.social({
+                  provider: 'github',
+                  callbackURL: window.location.pathname,
+                });
               }}>
               <GitHubIcon className="-ml-1 mr-2 h-4 w-4" />
               {t('guestbook.login')}GitHub
@@ -90,7 +93,10 @@ export default function GuestbookForm({ user }: { user: User | undefined }) {
               type="button"
               className="dark:focus:ring-[#4285F4]/55 cursor-pointer mb-2 mr-2 inline-flex items-center rounded-lg bg-[#4285F4] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#4285F4]/90 focus:outline-hidden focus:ring-4 focus:ring-[#4285F4]/50"
               onClick={async () => {
-                await authClient.signIn.social({ provider: 'google' });
+                await authClient.signIn.social({
+                  provider: 'google',
+                  callbackURL: window.location.pathname,
+                });
               }}>
               <GoogleIcon className="-ml-1 mr-2 h-4 w-4" />
               {t('guestbook.login')}Google
@@ -121,7 +127,15 @@ export default function GuestbookForm({ user }: { user: User | undefined }) {
             <button
               className="my-3 cursor-pointer flex items-center text-sm text-gray-800 dark:text-gray-200"
               type="button"
-              onClick={async () => await authClient.signOut()}>
+              onClick={async () =>
+                await authClient.signOut({
+                  fetchOptions: {
+                    onSuccess: () => {
+                      router.refresh();
+                    },
+                  },
+                })
+              }>
               <ArrowRight strokeWidth={1.5} height={20} className="ml-1" />{' '}
               {t('guestbook.logout')}
             </button>
