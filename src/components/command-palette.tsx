@@ -24,16 +24,14 @@ import {
   Moon,
   Power,
   Sun,
-  User,
+  User as UserIcon,
 } from 'lucide-react';
-import { signIn, signOut } from 'next-auth/react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useEffect, useMemo, useState } from 'react';
 
+import { authClient, User } from '@/lib/auth-client';
 import { useUrlState } from '@/lib/use-url-state';
-
-import type { Session } from 'next-auth';
 
 enum Actions {
   Router,
@@ -42,11 +40,7 @@ enum Actions {
   Session,
 }
 
-export default function CommandPalette({
-  session,
-}: {
-  session: Session | null;
-}) {
+export default function CommandPalette({ user }: { user: User | undefined }) {
   const t = useTranslations();
   const [isOpen, setIsOpen] = useUrlState<boolean>('menu');
   const [search, setSearch] = useState('');
@@ -99,7 +93,7 @@ export default function CommandPalette({
         title: 'Dashboard',
         action: Actions.Router,
         args: '/dashboard',
-        disabled: !session?.user.isAdmin,
+        disabled: !user?.isAdmin,
         icon: (
           <BarChart3 strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
         ),
@@ -141,25 +135,29 @@ export default function CommandPalette({
         title: 'Login (Google)',
         action: Actions.Session,
         args: 'google',
-        disabled: session ? true : false,
-        icon: <User strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        disabled: user ? true : false,
+        icon: (
+          <UserIcon strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
+        ),
       },
       {
         title: 'Login (GitHub)',
         action: Actions.Session,
         args: 'github',
-        disabled: session ? true : false,
-        icon: <User strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
+        disabled: user ? true : false,
+        icon: (
+          <UserIcon strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
+        ),
       },
       {
-        title: `Logout (${session?.user.name})`,
+        title: `Logout (${user?.name})`,
         action: Actions.Session,
         args: '',
-        disabled: session ? false : true,
+        disabled: user ? false : true,
         icon: <Power strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
       },
     ];
-  }, [session, t, theme]);
+  }, [user, t, theme]);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -186,7 +184,7 @@ export default function CommandPalette({
     );
   }, [search, config]);
 
-  function handleChange(value: string | null) {
+  async function handleChange(value: string | null) {
     if (!value || value === '') {
       setSearch('');
       return;
@@ -220,9 +218,18 @@ export default function CommandPalette({
         break;
       case Actions.Session:
         if (value.slice(2) === '') {
-          void signOut({ callbackUrl: url.toString() });
+          await authClient.signOut({
+            fetchOptions: {
+              onSuccess: () => {
+                router.push(url.toString() as '/');
+              },
+            },
+          });
         } else {
-          void signIn(value.slice(2), { callbackUrl: url.toString() });
+          await authClient.signIn.social({
+            provider: value.slice(2),
+            callbackURL: window.location.pathname,
+          });
         }
         break;
     }

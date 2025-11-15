@@ -1,11 +1,11 @@
 'use client';
 
 import { ArrowRight, Loader2 } from 'lucide-react';
-import { signIn, signOut } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { useRef, useState } from 'react';
 
+import { authClient, User } from '@/lib/auth-client';
 import { Form } from '@/lib/types';
 import GitHubIcon from '../icons/github-icon';
 import GoogleIcon from '../icons/google-icon';
@@ -13,14 +13,9 @@ import ErrorMessage from './error-message';
 import SuccessMessage from './success-message';
 
 import type { FormState } from '@/lib/types';
-import type { Session } from 'next-auth';
 import type { FormEvent } from 'react';
 
-export default function GuestbookForm({
-  session,
-}: {
-  session: Session | null;
-}) {
+export default function GuestbookForm({ user }: { user: User | undefined }) {
   const router = useRouter();
   const t = useTranslations();
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
@@ -80,13 +75,16 @@ export default function GuestbookForm({
         <p className="my-1 text-gray-800 dark:text-gray-200">
           {t('guestbook.form.description')}
         </p>
-        {!session && (
+        {!user && (
           <div className="my-1 flex flex-col gap-3 sm:flex-row">
             <button
               type="button"
               className="mb-2 mr-2 inline-flex cursor-pointer items-center rounded-lg bg-[#24292F] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#24292F]/90 focus:outline-hidden focus:ring-4 focus:ring-[#24292F]/50 dark:hover:bg-[#050708]/30 dark:focus:ring-gray-500"
-              onClick={() => {
-                void signIn('github');
+              onClick={async () => {
+                await authClient.signIn.social({
+                  provider: 'github',
+                  callbackURL: window.location.pathname,
+                });
               }}>
               <GitHubIcon className="-ml-1 mr-2 h-4 w-4" />
               {t('guestbook.login')}GitHub
@@ -94,15 +92,18 @@ export default function GuestbookForm({
             <button
               type="button"
               className="dark:focus:ring-[#4285F4]/55 cursor-pointer mb-2 mr-2 inline-flex items-center rounded-lg bg-[#4285F4] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#4285F4]/90 focus:outline-hidden focus:ring-4 focus:ring-[#4285F4]/50"
-              onClick={() => {
-                void signIn('google');
+              onClick={async () => {
+                await authClient.signIn.social({
+                  provider: 'google',
+                  callbackURL: window.location.pathname,
+                });
               }}>
               <GoogleIcon className="-ml-1 mr-2 h-4 w-4" />
               {t('guestbook.login')}Google
             </button>
           </div>
         )}
-        {session?.user && (
+        {user && (
           <form className="relative my-4" onSubmit={(e) => leaveEntry(e)}>
             <input
               ref={inputEl}
@@ -126,7 +127,15 @@ export default function GuestbookForm({
             <button
               className="my-3 cursor-pointer flex items-center text-sm text-gray-800 dark:text-gray-200"
               type="button"
-              onClick={() => signOut()}>
+              onClick={async () =>
+                await authClient.signOut({
+                  fetchOptions: {
+                    onSuccess: () => {
+                      router.refresh();
+                    },
+                  },
+                })
+              }>
               <ArrowRight strokeWidth={1.5} height={20} className="ml-1" />{' '}
               {t('guestbook.logout')}
             </button>

@@ -1,4 +1,5 @@
 import { and, eq } from 'drizzle-orm';
+import { headers } from 'next/headers';
 
 import { BadRequest, Unauthorized } from '@/lib/api';
 import { auth } from '@/lib/auth';
@@ -6,7 +7,9 @@ import { db } from '@/lib/db';
 import { guestbook } from '@/lib/db/schema';
 
 export async function POST(req: Request) {
-  const session = await auth();
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
 
   if (!session?.user.email || !session.user.name) {
     return Unauthorized();
@@ -49,7 +52,9 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  const session = await auth();
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
   const { searchParams } = new URL(req.url);
   const id = searchParams.get('id');
 

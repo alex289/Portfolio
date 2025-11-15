@@ -7,6 +7,7 @@ import { GeistSans } from 'geist/font/sans';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import dynamic from 'next/dynamic';
+import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 
 import env from '@/env.mjs';
@@ -117,7 +118,9 @@ export default async function RootLayout({
     notFound();
   }
 
-  const session = await auth();
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
 
   return (
     <html
@@ -132,7 +135,7 @@ export default async function RootLayout({
               className="absolute -top-8 left-1/4 -translate-y-12 px-4 py-2 transition-transform duration-200 focus:translate-y-3">
               Skip to content
             </a>
-            <CommandPalette session={session} />
+            <CommandPalette user={session?.user} />
             <Navbar posts={getBlogPosts()} />
             <main
               className="mx-auto mb-16 flex max-w-3xl flex-col justify-center px-8 dark:bg-gray-800 md:mt-6 md:px-0"

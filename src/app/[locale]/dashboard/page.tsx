@@ -1,6 +1,7 @@
 import { routing } from '@/i18n/routing';
 import { count, sum } from 'drizzle-orm';
 import { getTranslations } from 'next-intl/server';
+import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 import env from '@/env.mjs';
@@ -57,7 +58,9 @@ const DashboardPage = async ({ params }: PageProps<'/[locale]/dashboard'>) => {
   const locale = (await params).locale as (typeof routing.locales)[number];
   const [session, t, viewsCount, guesbookEntriesCount, topTracks] =
     await Promise.all([
-      auth(),
+      auth.api.getSession({
+        headers: await headers(),
+      }),
       getTranslations({ locale, namespace: 'dashboard' }),
       getViewsCount(),
       getGuestbookEntriesCount(),
