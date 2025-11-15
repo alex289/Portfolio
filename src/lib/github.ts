@@ -50,7 +50,7 @@ interface RepoResponse {
           description: string;
           homepageUrl: string;
           stargazerCount: number;
-          primaryLanguage: {
+          primaryLanguage?: {
             name: string;
             color: string;
           };
@@ -179,7 +179,7 @@ export const getProjects = async (perPage = 10) => {
       query: `
         query projectsInfo($login: String!, $perPage: Int!) {
           user(login: $login) {
-            repositories(first: $perPage, orderBy: {field: PUSHED_AT, direction: DESC}, privacy: PUBLIC) {
+            repositories(first: $perPage, orderBy: {field: PUSHED_AT, direction: DESC}, privacy: PUBLIC, isFork: false) {
               nodes {
                 name
                 url
@@ -217,8 +217,8 @@ export const getProjects = async (perPage = 10) => {
         description: repo.description || '',
         stargazerCount: repo.stargazerCount,
         language: {
-          name: repo.primaryLanguage.name || '',
-          color: repo.primaryLanguage.color || '',
+          name: repo.primaryLanguage?.name || '',
+          color: repo.primaryLanguage?.color || '',
         },
       }) as Projects,
   );
