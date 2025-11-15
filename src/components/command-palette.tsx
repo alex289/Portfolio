@@ -184,7 +184,7 @@ export default function CommandPalette({ user }: { user: User | undefined }) {
     );
   }, [search, config]);
 
-  async function handleChange(value: string) {
+  async function handleChange(value: string | null) {
     if (!value || value === '') {
       setSearch('');
       return;
