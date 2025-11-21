@@ -29,14 +29,24 @@ export async function generateMetadata({
 
 const certifications = [
   {
-    name: 'Microsoft Certified: Azure AI Fundamentals',
-    issuer: 'Microsoft',
+    name: 'IBM Accelerate Consulting Certification',
+    issuer: 'IBM',
     date: 'November 2024',
     credentialId: 'c92e8117-05a0-4063-be5e-f67be8cb36e9',
     credentialUrl: 'https://www.credly.com/badges/c92e8117-05a0-4063-be5e-f67be8cb36e9',
-    description: 'Demonstrated foundational knowledge of machine learning and artificial intelligence concepts and related Microsoft Azure services.',
-    skills: ['Azure AI', 'Machine Learning', 'Computer Vision', 'Natural Language Processing'],
+    description: 'Completed IBM Accelerate Consulting program, demonstrating expertise in business consulting, technology solutions, and strategic problem-solving.',
+    skills: ['Consulting', 'Business Strategy', 'Technology Solutions', 'Problem Solving'],
     color: 'from-blue-500 to-blue-600',
+  },
+  {
+    name: 'Data Scientist in Python',
+    issuer: 'Dataquest',
+    date: '2024',
+    credentialId: 'DBLZAYJ1P5UOS5MSXM9I',
+    credentialUrl: 'https://app.dataquest.io/view_cert/DBLZAYJ1P5UOS5MSXM9I',
+    description: 'Completed comprehensive data science path covering Python programming, data analysis, machine learning, statistics, and data visualization.',
+    skills: ['Python', 'Pandas', 'Machine Learning', 'Statistics', 'Data Visualization'],
+    color: 'from-purple-500 to-purple-600',
   },
   {
     name: 'AWS Certified Solutions Architect',
