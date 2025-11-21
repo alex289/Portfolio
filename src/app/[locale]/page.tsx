@@ -62,7 +62,11 @@ const Index = async ({ params }: PageProps<'/[locale]'>) => {
     'from-[#D8B4FE] via-[#726dde] to-[#818CF8]',
     'from-[#FDE68A] via-[#FCA5A5] to-[#FBBF24]',
     'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]',
-  ];
+  ] as const;
+  
+  const getGradient = (index: number): string => {
+    return gradients[index % gradients.length] ?? gradients[0];
+  };
 
   return (
     <>
@@ -101,7 +105,7 @@ const Index = async ({ params }: PageProps<'/[locale]'>) => {
             key={post.slug}
             title={post.title}
             slug={post.slug}
-            gradient={gradients[index % gradients.length]}
+            gradient={getGradient(index)}
           />
         ))}
       </div>
