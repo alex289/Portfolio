@@ -5,6 +5,8 @@ import { createElement } from 'react';
 import { highlight } from 'sugar-high';
 
 import CodeBlock from './code-block';
+import { BookCollection } from './book-collection';
+import { YouTubeEmbed } from './youtube-embed';
 
 import type { MDXRemoteProps } from 'next-mdx-remote/rsc';
 import type { ImageProps } from 'next/image';
@@ -173,6 +175,8 @@ const components = {
   code: Code,
   Table,
   pre: CodeBlock,
+  BookCollection,
+  YouTubeEmbed,
 } as MDXRemoteComponents;
 
 export function CustomMDX({ content }: { content: string }) {
