@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import FeaturedPost from '@/components/blog/featured-post';
+import { getBlogPosts } from '@/lib/blog';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -51,6 +52,18 @@ const featuredProjects = [
 const Index = async ({ params }: PageProps<'/[locale]'>) => {
   const locale = (await params).locale as (typeof routing.locales)[number];
   const t = await getTranslations({ locale });
+  
+  const allPosts = getBlogPosts()
+    .filter((post) => post.language === locale)
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, 3);
+
+  const gradients = [
+    'from-[#D8B4FE] via-[#726dde] to-[#818CF8]',
+    'from-[#FDE68A] via-[#FCA5A5] to-[#FBBF24]',
+    'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]',
+  ];
+
   return (
     <>
       <div className="flex flex-col-reverse items-start sm:flex-row">
@@ -83,11 +96,14 @@ const Index = async ({ params }: PageProps<'/[locale]'>) => {
       </h3>
 
       <div className="flex flex-col gap-6 md:flex-row">
-        <FeaturedPost
-          title={t('index-page.posts.1.title')}
-          slug={t('index-page.posts.1.slug')}
-          gradient="from-[#D8B4FE] via-[#726dde] to-[#818CF8]"
-        />
+        {allPosts.map((post, index) => (
+          <FeaturedPost
+            key={post.slug}
+            title={post.title}
+            slug={post.slug}
+            gradient={gradients[index % gradients.length]}
+          />
+        ))}
       </div>
 
       <Link
