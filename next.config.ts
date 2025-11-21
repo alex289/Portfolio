@@ -7,6 +7,7 @@ import withNextIntl from 'next-intl/plugin';
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   typedRoutes: true,
+  outputFileTracingRoot: __dirname,
   images: {
     remotePatterns: [
       {

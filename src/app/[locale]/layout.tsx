@@ -104,7 +104,13 @@ export default async function RootLayout({
     notFound();
   }
 
-  const session = await auth();
+  let session = null;
+  try {
+    session = await auth();
+  } catch {
+    // Auth may fail during build/static generation
+    console.log('Auth skipped during static generation');
+  }
 
   return (
     <html

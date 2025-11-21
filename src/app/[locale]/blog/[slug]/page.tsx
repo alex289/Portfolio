@@ -21,7 +21,14 @@ import type { Metadata } from 'next/types';
 export const dynamic = 'force-static';
 
 export function generateStaticParams() {
-  return getBlogPosts().map((post) => ({
+  const posts = getBlogPosts();
+  
+  if (posts.length === 0) {
+    console.warn('No blog posts found for static generation');
+    return [];
+  }
+  
+  return posts.map((post) => ({
     locale: post.language,
     slug: post.slug,
   }));
