@@ -27,6 +27,9 @@ export const {
   callbacks: {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     session({ session, token, user }) {
+      if (!session?.user) {
+        return session;
+      }
       return {
         ...session,
         user: {

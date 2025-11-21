@@ -1,5 +1,5 @@
 import { routing } from '@/i18n/routing';
-import { ArrowRight, Github } from 'lucide-react';
+import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,7 +16,7 @@ const featuredProjects = [
     description:
       'Scraped job postings to track hiring patterns and visualize trends using Python, Pandas, and Matplotlib.',
     url: 'https://github.com/Daniel21b/Job-Market-Analytics',
-    homepage: '',
+    liveDemo: 'https://job-market-analytics-fx.streamlit.app/',
     stargazerCount: 0,
     language: {
       name: 'Python',
@@ -28,7 +28,7 @@ const featuredProjects = [
     description:
       'Analyzed 2M+ bikeshare trips with statistical correlations and interactive Plotly visualizations.',
     url: 'https://github.com/Daniel21b/DC-Bikeshare-Demand-Analysis',
-    homepage: '',
+    liveDemo: 'https://dc-bikeshare-demand-analysis-ycklasmcgsozwy87bsdgzr.streamlit.app/',
     stargazerCount: 0,
     language: {
       name: 'Python',
@@ -36,11 +36,10 @@ const featuredProjects = [
     },
   },
   {
-    name: 'E-commerce Recommendation Engine',
+    name: 'Open Source Contribution - Crawl4AI',
     description:
-      'Built ML recommendation models with scikit-learn, MLflow tracking, and AWS deployment.',
-    url: 'https://github.com/Daniel21b/Retail-Demand-Prediction',
-    homepage: '',
+      'Built async scraping pipelines handling 500+ pages with FastAPI/JWT authentication, reducing unauthorized access by 95%.',
+    url: 'https://github.com/Daniel21b/crawl4ai',
     stargazerCount: 0,
     language: {
       name: 'Python',
@@ -71,7 +70,7 @@ const Index = async ({ params }: PageProps<'/[locale]'>) => {
             alt="Daniel Berhane"
             height={500}
             width={500}
-            src="/favicon.png"
+            src="/static/images/portfolio_profile.png"
             sizes="30vw"
             priority
             className="rounded-full"
@@ -127,14 +126,26 @@ const Index = async ({ params }: PageProps<'/[locale]'>) => {
                   </div>
                 </div>
               </div>
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-4 rounded-lg border border-gray-200 bg-white p-2 text-gray-400 hover:bg-gray-50 hover:text-gray-700 dark:border-gray-500 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
-                aria-label="View on GitHub">
-                <Github className="h-5 w-5" />
-              </a>
+              <div className="ml-4 flex gap-2">
+                {project.liveDemo && (
+                  <a
+                    href={project.liveDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg border border-indigo-200 bg-indigo-50 p-2 text-indigo-600 hover:bg-indigo-100 hover:text-indigo-700 dark:border-indigo-500 dark:bg-indigo-900/30 dark:text-indigo-400 dark:hover:bg-indigo-900/50 dark:hover:text-indigo-300"
+                    aria-label="View Live Demo">
+                    <ExternalLink className="h-5 w-5" />
+                  </a>
+                )}
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg border border-gray-200 bg-white p-2 text-gray-400 hover:bg-gray-50 hover:text-gray-700 dark:border-gray-500 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+                  aria-label="View on GitHub">
+                  <Github className="h-5 w-5" />
+                </a>
+              </div>
             </div>
           </div>
         ))}

@@ -192,7 +192,7 @@ const AboutPage = () => {
           alt="Daniel Berhane profile"
           width={200}
           height={200}
-          src="/favicon.png"
+          src="/static/images/portfolio_profile.png"
           className="rounded-full"
         />
       </div>
