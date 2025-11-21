@@ -1,5 +1,5 @@
 import { routing } from '@/i18n/routing';
-import { Database, Code, BarChart3, ExternalLink, Github } from 'lucide-react';
+import { Database, BarChart3, ExternalLink, Github } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 import env from '@/env.mjs';
@@ -38,6 +38,7 @@ const myProjects = [
     technologies: ['Python', 'Pandas', 'BeautifulSoup', 'Matplotlib', 'NumPy'],
     period: 'Jan 2024 - Mar 2024',
     github: 'https://github.com/Daniel21b/Job-Market-Analytics',
+    liveDemo: 'https://job-market-analytics-fx.streamlit.app/',
     category: 'data-analysis',
   },
   {
@@ -47,23 +48,23 @@ const myProjects = [
     technologies: ['Python', 'Pandas', 'Seaborn', 'Plotly', 'Looker'],
     period: 'Aug 2024 - Oct 2024',
     github: 'https://github.com/Daniel21b/DC-Bikeshare-Demand-Analysis',
+    liveDemo: 'https://dc-bikeshare-demand-analysis-ycklasmcgsozwy87bsdgzr.streamlit.app/',
     category: 'data-analysis',
   },
   {
-    title: 'E-commerce Recommendation Engine',
+    title: 'Open Source Contribution - Crawl4AI',
     description:
-      'Developed recommendation models using scikit-learn to predict customer product preferences. Tracked experiments with MLflow. Stored recommendation scores in PostgreSQL. Deployed interactive Plotly dashboard on AWS EC2.',
+      'Built async scraping pipelines with Crawl4AI handling 500+ pages, implementing session management. Enhanced FastAPI endpoints with JWT authentication, reducing unauthorized access attempts by 95%. Automated data extraction to structured JSON/Markdown, cutting manual cleanup time to 15 minutes.',
     technologies: [
       'Python',
-      'scikit-learn',
-      'MLflow',
-      'PostgreSQL',
-      'AWS',
-      'Plotly',
+      'Crawl4AI',
+      'FastAPI',
+      'JWT',
+      'AsyncIO',
     ],
     period: 'Mar 2025 - May 2025',
-    github: 'https://github.com/Daniel21b/Retail-Demand-Prediction',
-    category: 'machine-learning',
+    github: 'https://github.com/Daniel21b/crawl4ai',
+    category: 'backend',
   },
 ];
 
@@ -82,13 +83,6 @@ const services = [
       'Snowflake',
       'dbt',
     ],
-  },
-  {
-    icon: Code,
-    title: 'Frontend Development',
-    description:
-      'Building responsive and interactive user interfaces using modern JavaScript frameworks and libraries.',
-    skills: ['JavaScript', 'React', 'Next.js', 'TailwindCSS', 'TypeScript'],
   },
   {
     icon: Database,
@@ -116,7 +110,7 @@ const ProjectsPage = async ({ params }: PageProps<'/[locale]/projects'>) => {
       <h2 className="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
         Services
       </h2>
-      <div className="mb-12 grid w-full gap-4 md:grid-cols-3">
+      <div className="mb-12 grid w-full gap-4 md:grid-cols-2">
         {services.map((service) => (
           <div
             key={service.title}
@@ -158,6 +152,16 @@ const ProjectsPage = async ({ params }: PageProps<'/[locale]/projects'>) => {
                 </p>
               </div>
               <div className="flex gap-2">
+                {project.liveDemo && (
+                  <a
+                    href={project.liveDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg border border-indigo-200 bg-indigo-50 p-2 text-indigo-600 hover:bg-indigo-100 hover:text-indigo-700 dark:border-indigo-500 dark:bg-indigo-900/30 dark:text-indigo-400 dark:hover:bg-indigo-900/50 dark:hover:text-indigo-300"
+                    aria-label="View Live Demo">
+                    <ExternalLink className="h-5 w-5" />
+                  </a>
+                )}
                 <a
                   href={project.github}
                   target="_blank"

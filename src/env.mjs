@@ -5,6 +5,7 @@ const env = createEnv({
   server: {
     POSTGRES_URL: z.string().url().optional(),
     ADMIN_EMAIL: z.string().email().optional(),
+    // AUTH_SECRET is required for NextAuth in production (generate with: openssl rand -base64 32)
     AUTH_SECRET: z.string().optional(),
     GOOGLE_CLIENT_ID: z.string().optional(),
     GOOGLE_CLIENT_SECRET: z.string().optional(),
