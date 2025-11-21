@@ -3,7 +3,8 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "books": "Blog"
+    "books": "Blog",
+    "certifications": "Certifications"
   },
   "footer": {
     "my-setup": "My dotfiles",
@@ -21,8 +22,8 @@
     "posts": {
       "read-all": "View all posts",
       "1": {
-        "title": "M1 MacBook Pro Dev Setup",
-        "slug": "m1-macbook-pro-dev-setup"
+        "title": "M2 MacBook Pro Dev Setup",
+        "slug": "m2-macbook-pro-dev-setup"
       }
     }
   },
@@ -135,5 +136,11 @@
     "issues": "Total Issues",
     "contributed": "Contributed to",
     "top-languages": "Top Languages"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "description": "Professional certifications and credentials I've earned to validate my technical expertise.",
+    "view-credential": "View Credential",
+    "coming-soon": "Coming Soon"
   }
 }

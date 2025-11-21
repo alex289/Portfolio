@@ -63,7 +63,7 @@ const myProjects = [
       'AsyncIO',
     ],
     period: 'Mar 2025 - May 2025',
-    github: 'https://github.com/Daniel21b/crawl4ai',
+    github: 'https://github.com/unclecode/crawl4ai/pull/1630',
     category: 'backend',
   },
 ];

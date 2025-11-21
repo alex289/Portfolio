@@ -40,7 +40,7 @@ const featuredProjects = [
     name: 'Open Source Contribution - Crawl4AI',
     description:
       'Built async scraping pipelines handling 500+ pages with FastAPI/JWT authentication, reducing unauthorized access by 95%.',
-    url: 'https://github.com/Daniel21b/crawl4ai',
+    url: 'https://github.com/unclecode/crawl4ai/pull/1630',
     stargazerCount: 0,
     language: {
       name: 'Python',

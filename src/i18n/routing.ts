@@ -8,6 +8,7 @@ export const routing = defineRouting({
     '/about': '/about',
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
+    '/certifications': '/certifications',
     '/dashboard': '/dashboard',
     '/guestbook': '/guestbook',
     '/projects': '/projects',
