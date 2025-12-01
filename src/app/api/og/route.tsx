@@ -19,59 +19,57 @@ export function GET(req: NextRequest) {
       : '';
 
     return new ImageResponse(
-      (
+      <div
+        style={{
+          height: '100%',
+          width: '100%',
+          backgroundColor: '#222222',
+          color: '#eaeaea',
+          fontSize: 35,
+          display: 'flex',
+          flexDirection: 'column',
+        }}>
+        {hasHeaderInformation && (
+          <div
+            style={{
+              paddingTop: '2em',
+              paddingLeft: '2em',
+            }}>
+            {header}
+          </div>
+        )}
+
         <div
           style={{
-            height: '100%',
-            width: '100%',
-            backgroundColor: '#222222',
-            color: '#eaeaea',
-            fontSize: 35,
-            display: 'flex',
-            flexDirection: 'column',
+            marginTop: '2.5em',
+            marginBottom: 'auto',
+            fontSize: 100,
+            paddingLeft: '1em',
+            paddingRight: '1em',
+            color: '#818cf8',
+            fontWeight: 800,
           }}>
-          {hasHeaderInformation && (
-            <div
-              style={{
-                paddingTop: '2em',
-                paddingLeft: '2em',
-              }}>
-              {header}
-            </div>
-          )}
-
-          <div
-            style={{
-              marginTop: '2.5em',
-              marginBottom: 'auto',
-              fontSize: 100,
-              paddingLeft: '1em',
-              paddingRight: '1em',
-              color: '#818cf8',
-              fontWeight: 800,
-            }}>
-            {title}
-          </div>
-
-          <div
-            style={{
-              marginBottom: '2em',
-              marginLeft: '2em',
-              display: 'flex',
-              alignItems: 'center',
-            }}>
-            Alexander Konietzko
-            <img
-              src={`${env.NEXT_PUBLIC_WEBSITE_URL}/static/images/konietzko_alexander.png`}
-              alt="Alexander Konietzko"
-              style={{
-                width: '3em',
-                marginLeft: 'auto',
-                marginRight: '2em',
-              }}></img>
-          </div>
+          {title}
         </div>
-      ),
+
+        <div
+          style={{
+            marginBottom: '2em',
+            marginLeft: '2em',
+            display: 'flex',
+            alignItems: 'center',
+          }}>
+          Alexander Konietzko
+          <img
+            src={`${env.NEXT_PUBLIC_WEBSITE_URL}/static/images/konietzko_alexander.png`}
+            alt="Alexander Konietzko"
+            style={{
+              width: '3em',
+              marginLeft: 'auto',
+              marginRight: '2em',
+            }}></img>
+        </div>
+      </div>,
       {
         width: 1820,
         height: 980,

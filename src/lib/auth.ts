@@ -1,4 +1,4 @@
-import { betterAuth } from 'better-auth';
+import { betterAuth } from 'better-auth/minimal';
 import { customSession, oAuthProxy } from 'better-auth/plugins';
 
 import env from '@/env.mjs';
