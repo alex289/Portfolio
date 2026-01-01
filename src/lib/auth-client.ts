@@ -10,5 +10,6 @@ export const authClient = createAuthClient({
   plugins: [customSessionClient<typeof auth>()],
 });
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const UserInfer = authClient.$Infer.Session.user;
 export type User = typeof UserInfer;

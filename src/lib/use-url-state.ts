@@ -27,7 +27,6 @@ export function useUrlState<T>(
     if (value) {
       params.set(key, value.toString());
     } else {
-      // eslint-disable-next-line drizzle/enforce-delete-with-where -- This is not drizzle
       params.delete(key);
     }
 

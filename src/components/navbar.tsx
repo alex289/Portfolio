@@ -38,6 +38,8 @@ const Navbar = ({ posts }: { posts: BlogPost[] }) => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMounted(true), []);
   useEffect(() => {
     const themeColor = window.document.querySelector('meta[name=theme-color]');

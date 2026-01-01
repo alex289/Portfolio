@@ -197,7 +197,6 @@ export default function CommandPalette({ user }: { user: User | undefined }) {
     const valuePath = value.slice(2) as typeof pathname;
 
     const url = new URL(window.location.href);
-    // eslint-disable-next-line drizzle/enforce-delete-with-where
     url.searchParams.delete('menu');
 
     switch (action) {
