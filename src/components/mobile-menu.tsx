@@ -52,10 +52,22 @@ export default function MobileMenu({ isMenuOpen, toggle }: Props) {
       transitionDelay: '200ms',
     },
     {
+      href: '/certifications',
+      text: t('main.certifications'),
+      id: 'mobile-nav-certifications',
+      transitionDelay: '225ms',
+    },
+    {
+      href: '/startups',
+      text: t('main.startups'),
+      id: 'mobile-nav-startups',
+      transitionDelay: '250ms',
+    },
+    {
       href: '/blog',
       text: t('main.books'),
       id: 'mobile-nav-books',
-      transitionDelay: '250ms',
+      transitionDelay: '275ms',
     },
   ];
 

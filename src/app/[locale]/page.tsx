@@ -13,6 +13,18 @@ export function generateStaticParams() {
 
 const featuredProjects = [
   {
+    name: 'Streaming Service Content Performance Pipeline',
+    description:
+      'Orchestrated automated ETL workflows using n8n to ingest 50K+ daily viewer events. Built Python scripts with Pandas transforming raw event data into aggregated metrics. Designed pipeline loading clean data into Snowflake for real-time analytics.',
+    url: 'https://github.com/Daniel21b',
+    stargazerCount: 0,
+    language: {
+      name: 'Python + Snowflake',
+      color: '#3572A5',
+    },
+    tags: ['n8n', 'Python', 'Snowflake', 'ETL'],
+  },
+  {
     name: 'Tech Job Market Trends Dashboard',
     description:
       'Scraped job postings to track hiring patterns and visualize trends using Python, Pandas, and Matplotlib.',
@@ -27,20 +39,9 @@ const featuredProjects = [
   {
     name: 'DC Bikeshare Demand Analysis',
     description:
-      'Analyzed 2M+ bikeshare trips with statistical correlations and interactive Plotly visualizations.',
+      'Processed 2+ million Bikeshare trips using Pandas and SQL to identify peak usage patterns, discovering 8 stations account for 60% of rush-hour demand. Engineered data transformations calculating temporal and geographic metrics. Validated findings through correlation analysis.',
     url: 'https://github.com/Daniel21b/DC-Bikeshare-Demand-Analysis',
     liveDemo: 'https://dc-bikeshare-demand-analysis-ycklasmcgsozwy87bsdgzr.streamlit.app/',
-    stargazerCount: 0,
-    language: {
-      name: 'Python',
-      color: '#3572A5',
-    },
-  },
-  {
-    name: 'Open Source Contribution - Crawl4AI',
-    description:
-      'Built async scraping pipelines handling 500+ pages with FastAPI/JWT authentication, reducing unauthorized access by 95%.',
-    url: 'https://github.com/unclecode/crawl4ai/pull/1630',
     stargazerCount: 0,
     language: {
       name: 'Python',

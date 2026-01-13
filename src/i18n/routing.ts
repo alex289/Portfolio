@@ -12,5 +12,6 @@ export const routing = defineRouting({
     '/dashboard': '/dashboard',
     '/guestbook': '/guestbook',
     '/projects': '/projects',
+    '/startups': '/startups',
   },
 });

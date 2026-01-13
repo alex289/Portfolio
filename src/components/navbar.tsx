@@ -62,6 +62,11 @@ const Navbar = () => {
       id: 'nav-certifications',
     },
     {
+      href: '/startups',
+      text: t('main.startups'),
+      id: 'nav-startups',
+    },
+    {
       href: '/blog',
       text: t('main.books'),
       id: 'nav-books',

@@ -4,7 +4,8 @@
     "about": "About",
     "projects": "Projects",
     "books": "Blog",
-    "certifications": "Certifications"
+    "certifications": "Certifications",
+    "startups": "Startups"
   },
   "footer": {
     "my-setup": "My dotfiles",
@@ -17,8 +18,8 @@
     "hosted": "Hosted on "
   },
   "index-page": {
-    "title": "Data Analyst",
-    "intro": "Experienced in cloud-based analytics, ETL pipeline development, and business intelligence. Building dashboards and automating workflows that drive data-driven decisions.",
+    "title": "Data Analyst & Aspiring Data Engineer",
+    "intro": "Experienced in cloud-based analytics, ETL pipeline development, and business intelligence. Building dashboards, data pipelines, and automating workflows that drive data-driven decisions.",
     "posts": {
       "read-all": "View all posts",
       "1": {
@@ -142,5 +143,11 @@
     "description": "Professional certifications and credentials I've earned to validate my technical expertise.",
     "view-credential": "View Credential",
     "coming-soon": "Coming Soon"
+  },
+  "startups": {
+    "title": "Startups",
+    "description": "Entrepreneurial ventures and startup projects I'm building or have been involved with.",
+    "coming-soon-title": "Coming Soon",
+    "coming-soon-description": "I'm currently working on some exciting ventures. Check back soon to see what I'm building!"
   }
 }
