@@ -1,11 +1,26 @@
 import { routing } from '@/i18n/routing';
-import { Rocket, ExternalLink, Globe, Users, Calendar } from 'lucide-react';
+import { Rocket, Globe, Users, Calendar } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 import env from '@/env.mjs';
 
 import type { Metadata } from 'next/types';
+
+interface Startup {
+  name: string;
+  tagline: string;
+  description: string;
+  website?: string;
+  founded: string;
+  role: string;
+  status: 'Active' | 'Acquired' | 'Stealth' | 'Building';
+  industry: string;
+  teamSize?: string;
+  highlights: string[];
+  technologies: string[];
+  color: string;
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -45,20 +60,7 @@ export async function generateMetadata({
 //   technologies: ['Tech 1', 'Tech 2'],
 //   color: 'from-blue-500 to-indigo-600',
 // }
-const startups: Array<{
-  name: string;
-  tagline: string;
-  description: string;
-  website?: string;
-  founded: string;
-  role: string;
-  status: 'Active' | 'Acquired' | 'Stealth' | 'Building';
-  industry: string;
-  teamSize?: string;
-  highlights: string[];
-  technologies: string[];
-  color: string;
-}> = [];
+const startups: Startup[] = [];
 
 const StartupsPage = () => {
   const t = useTranslations();
