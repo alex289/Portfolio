@@ -3,8 +3,6 @@
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-import NowPlaying from './now-playing';
-
 export default function Footer() {
   const t = useTranslations();
   const locale = useLocale();
@@ -26,11 +24,6 @@ export default function Footer() {
       text: t('footer.my-setup'),
     },
     {
-      href: 'https://alexanderkonietzko-analytics.vercel.app/share/umAbxBDxID0MgUDd/Portfolio',
-      id: 'footer.analytics',
-      text: t('footer.analytics'),
-    },
-    {
       href: '/about',
       id: 'footer.about',
       text: t('main.about'),
@@ -46,12 +39,6 @@ export default function Footer() {
       text: t('footer.sourcecode'),
     },
     {
-      href: '/feed.xml',
-      id: 'footer.feed',
-      text: 'Feed',
-      noTranslate: true,
-    },
-    {
       href: '/projects',
       id: 'footer.projects',
       text: t('main.projects'),
@@ -61,23 +48,11 @@ export default function Footer() {
       id: 'footer.github',
       text: 'GitHub',
     },
-    {
-      href: 'mailto:me@alexanderkonietzko.com',
-      id: 'footer.contact',
-      text: t('footer.contact'),
-    },
-    {
-      href: '/sitemap.xml',
-      id: 'footer.sitemap',
-      text: t('footer.sitemap'),
-      noTranslate: true,
-    },
   ];
   return (
     <div className="flex flex-col justify-center bg-gray-50 px-8 dark:bg-gray-800">
       <footer className="mx-auto mb-8 flex w-full max-w-3xl flex-col items-start justify-center">
         <hr className="mb-8 w-full border border-gray-200 bg-gray-200 dark:border-gray-700 dark:bg-gray-700" />
-        <NowPlaying />
         <div className="grid w-full max-w-3xl grid-cols-1 gap-4 pb-12 sm:grid-cols-4 sm:grid-rows-3">
           {links.map((link) =>
             link.href.startsWith('/') ? (
@@ -104,35 +79,6 @@ export default function Footer() {
             ),
           )}
         </div>
-        <p
-          className="mx-auto text-sm text-gray-500 dark:text-gray-300"
-          id="powered-by">
-          {t('footer.powered')}
-          <a
-            className="text-indigo-500"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://nextjs.org/">
-            Next.js
-          </a>{' '}
-          {t('footer.and')}
-          <a
-            className="text-indigo-500"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://tailwindcss.com/">
-            TailwindCSS
-          </a>
-          . {t('footer.hosted')}{' '}
-          <a
-            className="text-indigo-500"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://vercel.com/">
-            Vercel
-          </a>
-          .
-        </p>
         <p className="mx-auto text-sm text-gray-500 dark:text-gray-300">
           © {new Date().getFullYear()} Alexander Konietzko
         </p>

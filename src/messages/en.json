@@ -6,13 +6,7 @@
   },
   "footer": {
     "my-setup": "My dotfiles",
-    "sourcecode": "Source code",
-    "contact": "Contact",
-    "analytics": "Analytics",
-    "sitemap": "Sitemap",
-    "powered": "Powered by ",
-    "and": "and ",
-    "hosted": "Hosted on "
+    "sourcecode": "Source code"
   },
   "index-page": {
     "title": "Software Engineer and Student at",
@@ -105,24 +99,11 @@
     "error": "Please enter a message.",
     "delete": "Delete"
   },
-  "dashboard": {
-    "unauthorized": "You are not authorized to view this page.",
-    "logout": "Sign out",
-    "logged-in": "Logged in as",
-    "stats": "Stats",
-    "top-tracks": "Top Spotify Tracks",
-    "metrics": {
-      "blog-views": "Blog views",
-      "guestbook-entries": "Guestbook entries",
-      "posts-count": "Amount of all posts (EN)"
-    }
-  },
   "projects": {
     "not-found": "No projects found",
     "see-more": "See all projects",
     "all-repos": "All Repositories"
   },
-  "not-playing": "Not Playing",
   "command-palette": {
     "settings": "Settings",
     "socials": "Socials",

@@ -6,13 +6,7 @@
   },
   "footer": {
     "my-setup": "Mein Setup",
-    "sourcecode": "Quellcode",
-    "contact": "Kontakt",
-    "analytics": "Analytik",
-    "sitemap": "Seitenverzeichnis",
-    "powered": "Geschrieben mit ",
-    "and": "und ",
-    "hosted": "Bereitgestellt auf "
+    "sourcecode": "Quellcode"
   },
   "index-page": {
     "title": "Software Entwickler und Student bei",
@@ -105,24 +99,11 @@
     "error": "Bitte gebe eine Nachricht ein.",
     "delete": "Löschen"
   },
-  "dashboard": {
-    "unauthorized": "Du bist nicht autorisiert diese Seite zu sehen.",
-    "logout": "Ausloggen",
-    "logged-in": "Eingeloggt als",
-    "stats": "Statistiken",
-    "top-tracks": "Top Spotify Lieder",
-    "metrics": {
-      "blog-views": "Blog Aufrufe",
-      "guestbook-entries": "Gästebuch Einträge",
-      "posts-count": "Anzahl aller Beiträge (DE)"
-    }
-  },
   "projects": {
     "not-found": "Keine Projekte gefunden",
     "see-more": "Alle Projekte",
     "all-repos": "Alle Repositories"
   },
-  "not-playing": "Spielt nichts",
   "command-palette": {
     "settings": "Einstellungen",
     "socials": "Soziales",

@@ -16,9 +16,6 @@ env:
   GOOGLE_CLIENT_SECRET: something
   GITHUB_CLIENT_ID: something
   GITHUB_CLIENT_SECRET: something
-  SPOTIFY_CLIENT_ID: something
-  SPOTIFY_CLIENT_SECRET: something
-  SPOTIFY_REFRESH_TOKEN: something
   GITHUB_API_TOKEN: something
 
 jobs:

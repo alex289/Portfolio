@@ -1,12 +1,3 @@
-export interface NowPlayingSong {
-  album: string;
-  albumImageUrl: string;
-  artist: string;
-  isPlaying: boolean;
-  songUrl: string;
-  title: string;
-}
-
 export interface Stats {
   stars: number;
   totalCommits: number;
@@ -44,32 +35,6 @@ export enum Form {
 export interface FormState {
   state: Form;
   message?: string;
-}
-
-export interface Song {
-  songUrl: string;
-  artist: string;
-  cover: string;
-  title: string;
-}
-
-export interface TopTracks {
-  tracks: Song[];
-}
-
-export interface ResponseTrackType {
-  artists: {
-    name: string;
-  }[];
-  name: string;
-  external_urls: {
-    spotify: string;
-  };
-  album: {
-    images: {
-      url: string;
-    }[];
-  };
 }
 
 export interface BlogPost {

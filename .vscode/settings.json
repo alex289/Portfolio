@@ -3,7 +3,6 @@
     ".next": true
   },
   "editor.formatOnSave": true,
-  "typescript.tsdk": "node_modules/typescript/lib",
   "i18n-ally.localesPaths": ["src/messages"],
   "i18n-ally.keystyle": "nested",
   "workbench.editor.customLabels.patterns": {

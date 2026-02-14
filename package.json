@@ -26,13 +26,13 @@
   ],
   "author": {
     "name": "Alexander Konietzko",
-    "url": "https://alexanderkonietzko.vercel.app"
+    "url": "https://alexanderkonietzko.com"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alex289/Portfolio/issues"
   },
-  "homepage": "https://alexanderkonietzko.vercel.app",
+  "homepage": "https://alexanderkonietzko.com",
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
@@ -82,10 +82,5 @@
     "sugar-high": "^0.9.5",
     "swr": "^2.4.0",
     "zod": "^4.3.6"
-  },
-  "nextBundleAnalysis": {
-    "budget": 143360,
-    "budgetPercentIncreaseRed": 20,
-    "showDetails": true
   }
 }

@@ -3,7 +3,6 @@
     "bradlc.vscode-tailwindcss",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "Prisma.prisma",
     "lokalise.i18n-ally"
   ],
   "unwantedRecommendations": []

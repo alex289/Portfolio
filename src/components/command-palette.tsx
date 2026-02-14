@@ -12,7 +12,6 @@ import {
 } from '@headlessui/react';
 import { clsx } from 'clsx';
 import {
-  BarChart3,
   Book,
   Code2,
   Edit,
@@ -88,15 +87,6 @@ export default function CommandPalette({ user }: { user: User | undefined }) {
         action: Actions.Router,
         args: '/guestbook',
         icon: <Edit strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />,
-      },
-      {
-        title: 'Dashboard',
-        action: Actions.Router,
-        args: '/dashboard',
-        disabled: !user?.isAdmin,
-        icon: (
-          <BarChart3 strokeWidth={1.5} className="mr-2 mt-[0.12rem] h-5 w-5" />
-        ),
       },
       {
         group: t('command-palette.socials'),
