@@ -1,0 +1,35 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+      time: '06:00'
+    commit-message:
+      prefix: 'chore'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 5
+    groups:
+      dependencies:
+        patterns:
+          - '*'
+    assignees:
+      - 'alex289'
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+      time: '06:00'
+    commit-message:
+      prefix: 'chore'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 5
+    groups:
+      dependencies:
+        patterns:
+          - '*'
+    assignees:
+      - 'alex289'

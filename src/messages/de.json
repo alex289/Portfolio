@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "description": "Softwareentwickler und Informatikstudent"
+  },
+  "layout": {
+    "navigation": {
+      "home": "Startseite",
+      "about": "Über mich",
+      "projects": "Projekte",
+      "guestbook": "Gästebuch"
+    },
+    "footer": {
+      "rights": "Alle Rechte vorbehalten.",
+      "privacy": "Datenschutz",
+      "imprint": "Impressum"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "Über mich",
+      "bio": "Hallo, ich bin Alex. Ich bin {age} Jahre alt und komme aus Nordrhein-Westfalen, Deutschland.<br></br><br></br> Ich arbeite als Werksstudent Softwareentwickler bei <netgo>netgo</netgo>. Nebenher studiere ich im Master Informatik – Intelligente Systeme an der <wh>Westfälischen Hochschule</wh>.<br></br><br></br> In meiner Freizeit spiele ich Klavier und trainiere Jiu Jitsu wo ich den 1. Dan habe und außerdem Jugendtrainer bin.<br></br><br></br>Außerdem arbeite ich an meinem eigenen Smart Home mit Home Assistant. Mein Traum ist es, daraus ein autonomes, intelligentes System zu machen, das sich selbstständig durch KI regelt.",
+      "netgo-description": "IT-Dienstleistungsunternehmen und Managed Service Provider aus Deutschland.",
+      "netgo-link": "netgo.de besuchen",
+      "wh-description": "Fachhochschule in Nordrhein-Westfalen mit diversen Bachelor- und Masterstudiengängen.",
+      "wh-link": "w-hs.de besuchen",
+      "skillsTitle": "Fähigkeiten",
+      "languages": "Sprachen",
+      "frameworks": "Frameworks & Bibliotheken",
+      "tools": "Tools & Plattformen",
+      "experienceTitle": "Erfahrung",
+      "my-projects": "Meine Projekte"
+    },
+    "projects": {
+      "title": "Projekte",
+      "description": "Überblick über meine GitHub-Projekte und Statistiken.",
+      "no-projects": "Keine Projekte gefunden.",
+      "all-repos": "Alle Repositories",
+      "stats": {
+        "title": "Meine GitHub Statistiken",
+        "stars": "Anzahl Sterne",
+        "commits": "Anzahl Commits",
+        "prs": "PRs Insgesamt",
+        "issues": "Anzahl Issues",
+        "contributed": "Beigetragen zu",
+        "top-languages": "Meist benutzte Sprachen"
+      }
+    },
+    "guestbook": {
+      "title": "Gästebuch",
+      "description": "Hinterlasse eine Nachricht oder Feedback zu meinem Portfolio oder meinen Projekten.",
+      "no-messages": "Noch keine Nachrichten.",
+      "form": {
+        "placeholder": "Schreibe deine Nachricht hier...",
+        "submit": "Senden",
+        "error": {
+          "title": "Nachricht konnte nicht gesendet werden",
+          "rate-limit": "Du kannst nur 3 Nachrichten alle 10 Minuten senden."
+        }
+      },
+      "auth": {
+        "sign-in-prompt": "Bitte melde dich an, um eine Nachricht zu hinterlassen.",
+        "sign-in-github": "Mit GitHub anmelden",
+        "sign-in-google": "Mit Google anmelden",
+        "signed-in-as": "Angemeldet als",
+        "sign-out": "Abmelden"
+      }
+    },
+    "home": {
+      "no-projects": "Keine Projekte gefunden.",
+      "more-projects": "Weitere Projekte",
+      "greeting": "Hi, ich bin",
+      "name": "Alexander Konietzko",
+      "title": "Softwareentwickler und Informatikstudent",
+      "tagline": "Ich entwickle saubere, performante und benutzerfreundliche Webanwendungen.",
+      "projects": "Projekte"
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "source": "Zum größten Teil erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke",
+      "intro": "Diese Datenschutzerklärung erläutert, wie personenbezogene Daten beim Besuch dieser Website erhoben, verwendet und geschützt werden."
+    },
+    "not-found": {
+      "title": "Seite nicht gefunden",
+      "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+      "back-home": "Zur Startseite"
+    },
+    "error": {
+      "title": "Etwas ist schiefgelaufen",
+      "description": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuche es später erneut.",
+      "retry": "Erneut versuchen"
+    },
+    "imprint": {
+      "title": "Impressum",
+      "responsible-title": "Verantwortlich für diese Website",
+      "name": "Alexander Konietzko",
+      "address": "Neustraße, 46535 Dinslaken, Deutschland",
+      "email": "me@alexanderkonietzko.com",
+      "disclaimer-title": "Haftungsausschluss",
+      "disclaimer": "Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als Diensteanbieter bin ich für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Ich bin jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+      "links-title": "Haftung für Links",
+      "links": "Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann für diese fremden Inhalte keine Gewähr übernommen werden. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich."
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "description": "Software engineer and computer science student"
+  },
+  "layout": {
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "guestbook": "Guestbook"
+    },
+    "footer": {
+      "rights": "All rights reserved.",
+      "privacy": "Privacy",
+      "imprint": "Imprint"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "About me",
+      "bio": "Hi, I'm Alex. I'm {age} years old and come from North Rhine-Westphalia, Germany.<br></br><br></br> I work as a working student software developer at <netgo>netgo</netgo>. Alongside that, I'm pursuing my Master's degree in Computer Science – Intelligent Systems at <wh>Westfälische Hochschule</wh>.<br></br><br></br> In my free time, I play piano and train Jiu Jitsu, where I hold a 1st Dan and also coach youth.<br></br><br></br>I also work on my own smart home with Home Assistant. My dream is to turn it into an autonomous, intelligent system that regulates itself through AI",
+      "netgo-description": "IT service company and managed service provider from Germany.",
+      "netgo-link": "Visit netgo.de",
+      "wh-description": "University of Applied Sciences in North Rhine-Westphalia offering various Bachelor's and Master's programs.",
+      "wh-link": "Visit w-hs.de",
+      "skillsTitle": "Skills",
+      "languages": "Languages",
+      "frameworks": "Frameworks & Libraries",
+      "tools": "Tools & Platforms",
+      "experienceTitle": "Experience",
+      "my-projects": "My Projects"
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Overview of my GitHub projects and statistics.",
+      "no-projects": "No projects found.",
+      "all-repos": "All Repositories",
+      "stats": {
+        "title": "My GitHub Stats",
+        "stars": "Total Stars Earned",
+        "commits": "Total Commits",
+        "prs": "Total PRs",
+        "issues": "Total Issues",
+        "contributed": "Contributed to",
+        "top-languages": "Top Languages"
+      }
+    },
+    "guestbook": {
+      "title": "Guestbook",
+      "description": "Leave a message or feedback about my portfolio or projects.",
+      "no-messages": "No messages yet.",
+      "form": {
+        "placeholder": "Write your message here...",
+        "submit": "Submit",
+        "error": {
+          "title": "Could not submit message",
+          "rate-limit": "You can only post 3 messages every 10 minutes."
+        }
+      },
+      "auth": {
+        "sign-in-prompt": "Please sign in to leave a message.",
+        "sign-in-github": "Sign in with GitHub",
+        "sign-in-google": "Sign in with Google",
+        "signed-in-as": "Signed in as",
+        "sign-out": "Sign Out"
+      }
+    },
+    "home": {
+      "no-projects": "No projects found.",
+      "more-projects": "More Projects",
+      "greeting": "Hi, I'm",
+      "name": "Alexander Konietzko",
+      "title": "Software Engineer and Computer Science Student",
+      "tagline": "Building clean, performant, and user-friendly web applications.",
+      "projects": "Projects"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "source": "Mostly generated using free privacy policy generator from Dr. Thomas Schwenke at Datenschutz-Generator.de",
+      "intro": "This privacy policy explains how personal data is collected, used, and protected when you visit this website."
+    },
+    "not-found": {
+      "title": "Page Not Found",
+      "description": "The page you're looking for doesn't exist or has been moved.",
+      "back-home": "Back to Home"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "An unexpected error occurred. Please try again later.",
+      "retry": "Try Again"
+    },
+    "imprint": {
+      "title": "Imprint",
+      "responsible-title": "Responsible for this website",
+      "name": "Alexander Konietzko",
+      "address": "Neustraße, 46535 Dinslaken, Germany",
+      "email": "me@alexanderkonietzko.com",
+      "disclaimer-title": "Disclaimer",
+      "disclaimer": "The contents of this website have been created with the utmost care. However, no guarantee can be given for the correctness, completeness, and timeliness of the content. As a service provider, I am responsible for my own content on these pages under general law. However, I am not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
+      "links-title": "Liability for Links",
+      "links": "This website contains links to external third-party websites over whose content I have no influence. Therefore, no guarantee can be given for this third-party content. The respective provider or operator of the linked pages is always responsible for their content."
+    }
+  }
+}
