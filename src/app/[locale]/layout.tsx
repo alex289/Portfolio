@@ -96,7 +96,7 @@ export async function generateMetadata({
     },
     manifest: '/static/site.webmanifest',
     verification: {
-      google: '64Pb4e1oRhhlHgM6aJGvqSunCfPa38sJ5ZHPfLNtzts',
+      google: 'Ix7FlAE1lxVsGj4EhSc23niVmi9-sLS9MKa0seaDdog',
     },
     alternates: {
       canonical: process.env.NEXT_PUBLIC_WEBSITE_URL,
