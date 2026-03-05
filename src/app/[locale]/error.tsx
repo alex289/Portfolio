@@ -1,24 +1,24 @@
 'use client';
 
-import { Link } from '@/i18n/navigation';
+import { Button } from '@/components/ui/button';
 import { useTranslations } from 'next-intl';
 
-export default function Error() {
-  const t = useTranslations('error');
+export default function Error({
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
+  const t = useTranslations('pages.error');
 
   return (
-    <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center">
-      <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-        Oops – {t('title')}
-      </h1>
-      <p className="mb-8 text-gray-600 dark:text-gray-400">
-        {t('description')}
-      </p>
-      <Link
-        href="/"
-        className="mx-auto w-64 rounded-md bg-gray-200 p-1 py-3 text-center font-bold text-black hover:bg-[#c9c9c9] dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 sm:p-4">
-        {t('return-home')}
-      </Link>
-    </div>
+    <section className="mx-auto flex max-w-4xl flex-col items-center justify-center px-6 py-32 text-center">
+      <h1 className="text-6xl font-bold tracking-tight">500</h1>
+      <h2 className="mt-4 text-2xl font-semibold">{t('title')}</h2>
+      <p className="text-muted-foreground mt-2 max-w-md">{t('description')}</p>
+      <Button variant="outline" className="mt-8" onClick={reset}>
+        {t('retry')}
+      </Button>
+    </section>
   );
 }

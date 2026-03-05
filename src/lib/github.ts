@@ -1,8 +1,32 @@
-import env from '@/env.mjs';
+export type Stats = {
+  stars: number;
+  totalCommits: number;
+  totalRepos: number;
+  followers: number;
+  contributions: number;
+  prs: number;
+  issues: number;
+  topLanguages: {
+    name: string;
+    count: number;
+    color: string;
+  }[];
+};
 
-import type { Projects, Stats } from './types';
+export type Project = {
+  name: string;
+  url: string;
+  homepage: string;
+  description: string;
+  stargazerCount: number;
+  language: {
+    name: string;
+    color: string;
+  };
+  topics: string[];
+};
 
-interface StatsResponse {
+type StatsResponse = {
   data: {
     user: {
       repositories: {
@@ -38,9 +62,9 @@ interface StatsResponse {
       };
     };
   };
-}
+};
 
-interface RepoResponse {
+type RepoResponse = {
   data: {
     user: {
       repositories: {
@@ -54,11 +78,18 @@ interface RepoResponse {
             name: string;
             color: string;
           };
+          repositoryTopics: {
+            nodes: {
+              topic: {
+                name: string;
+              };
+            }[];
+          };
         }[];
       };
     };
   };
-}
+};
 
 export const getStats = async () => {
   const statsResponse = await fetch('https://api.github.com/graphql', {
@@ -66,7 +97,7 @@ export const getStats = async () => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
+      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
     },
     body: JSON.stringify({
       query: `
@@ -93,7 +124,7 @@ export const getStats = async () => {
             followers {
               totalCount
             }
-            repositories(ownerAffiliations: OWNER, first: 100) {
+            repositories(ownerAffiliations: [COLLABORATOR, OWNER], first: 100) {
               totalCount,
               nodes {
                 name
@@ -110,7 +141,7 @@ export const getStats = async () => {
         }
         `,
       variables: {
-        login: 'alex289',
+        login: process.env.GITHUB_USERNAME,
       },
     }),
   });
@@ -173,7 +204,7 @@ export const getProjects = async (perPage = 10) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
+      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
     },
     body: JSON.stringify({
       query: `
@@ -190,13 +221,20 @@ export const getProjects = async (perPage = 10) => {
                   name
                   color
                 }
+                repositoryTopics(first: 5) {
+                  nodes {
+                    topic {
+                      name
+                    }
+                  }
+                }
               }
             }
           }
         }
         `,
       variables: {
-        login: 'alex289',
+        login: process.env.GITHUB_USERNAME,
         perPage: perPage,
       },
     }),
@@ -220,6 +258,7 @@ export const getProjects = async (perPage = 10) => {
           name: repo.primaryLanguage?.name || '',
           color: repo.primaryLanguage?.color || '',
         },
-      }) as Projects,
+        topics: repo.repositoryTopics.nodes.map((node) => node.topic.name),
+      }) as Project,
   );
 };

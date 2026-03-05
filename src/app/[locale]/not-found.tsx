@@ -1,24 +1,22 @@
-'use client';
-
+import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/navigation';
+import { ArrowLeft } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-export default function Error() {
-  const t = useTranslations('404');
+export default function NotFound() {
+  const t = useTranslations('pages.not-found');
 
   return (
-    <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center">
-      <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-        Oops – {t('title')}
-      </h1>
-      <p className="mb-8 text-gray-600 dark:text-gray-400">
-        {t('description')}
-      </p>
-      <Link
-        href="/"
-        className="mx-auto w-64 rounded-md bg-gray-200 p-1 py-3 text-center font-bold text-black hover:bg-[#c9c9c9] dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 sm:p-4">
-        {t('return-home')}
+    <section className="mx-auto flex max-w-4xl flex-col items-center justify-center px-6 py-32 text-center">
+      <h1 className="text-6xl font-bold tracking-tight">404</h1>
+      <h2 className="mt-4 text-2xl font-semibold">{t('title')}</h2>
+      <p className="text-muted-foreground mt-2 max-w-md">{t('description')}</p>
+      <Link href="/">
+        <Button variant="outline" className="mt-8">
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          {t('back-home')}
+        </Button>
       </Link>
-    </div>
+    </section>
   );
 }

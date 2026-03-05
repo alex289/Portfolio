@@ -1,29 +1,21 @@
+import { defineConfig, globalIgnores } from 'eslint/config';
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextTs from 'eslint-config-next/typescript';
 import js from '@eslint/js';
-import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
-import nextTypescript from 'eslint-config-next/typescript';
 import tseslint from 'typescript-eslint';
 
-const eslintConfig = [
-  ...nextCoreWebVitals,
-  ...nextTypescript,
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
   js.configs.recommended,
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
   {
-    ignores: [
-      'node_modules/**',
-      '.next/**',
-      'out/**',
-      'build/**',
-      'next-env.d.ts',
-      '.github/**',
-    ],
     rules: {
-      semi: 'warn',
-      eqeqeq: 'warn',
-      curly: 'warn',
+      '@typescript-eslint/consistent-type-definitions': 'off',
     },
   },
-];
+]);
 
 export default eslintConfig;

@@ -1,30 +1,33 @@
 import { betterAuth } from 'better-auth/minimal';
-import { customSession, oAuthProxy } from 'better-auth/plugins';
-
-import env from '@/env.mjs';
+import {
+  customSession,
+  lastLoginMethod,
+  oAuthProxy,
+} from 'better-auth/plugins';
 
 export const auth = betterAuth({
   appName: 'Alexander Konietzko',
   telemetry: { enabled: false },
   socialProviders: {
     github: {
-      clientId: env.GITHUB_CLIENT_ID,
-      clientSecret: env.GITHUB_CLIENT_SECRET,
-      redirectURI: `${env.NEXT_PUBLIC_WEBSITE_URL}/api/auth/callback/github`,
+      clientId: process.env.GITHUB_CLIENT_ID as string,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      redirectURI: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/auth/callback/github`,
     },
     google: {
-      clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET,
-      redirectURI: `${env.NEXT_PUBLIC_WEBSITE_URL}/api/auth/callback/google`,
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      redirectURI: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/auth/callback/google`,
     },
   },
   plugins: [
     oAuthProxy(),
+    lastLoginMethod(),
     customSession(async ({ user, session }) => {
       return {
         user: {
           ...user,
-          isAdmin: user.email === env.ADMIN_EMAIL,
+          isAdmin: user.email === process.env.ADMIN_EMAIL,
         },
         session,
       };

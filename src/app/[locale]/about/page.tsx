@@ -1,15 +1,17 @@
-import avatar from 'public/static/images/konietzko_alexander.jpg';
-
+import { skills } from '@/components/skills';
+import { Button } from '@/components/ui/button';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card';
+import { Separator } from '@/components/ui/separator';
+import { Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import { ArrowRight } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
-import Image from 'next/image';
-
-import env from '@/env.mjs';
-import Tools from '@/components/tools';
-
-import type { Metadata } from 'next/types';
+import { Metadata } from 'next';
+import { Locale } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -18,215 +20,155 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps<'/[locale]/about'>): Promise<Metadata> {
-  const locale = (await params).locale as (typeof routing.locales)[number];
-  const t = await getTranslations({ locale, namespace: 'main' });
-  return {
-    title: t('about'),
-    openGraph: {
-      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${t('about')}`],
-    },
-    twitter: {
-      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${t('about')}`],
-    },
-  };
+  const { locale } = await params;
+  setRequestLocale(locale as Locale);
+  const t = await getTranslations('pages.about');
+  return { title: t('title') };
 }
 
-const AboutPage = () => {
-  const t = useTranslations();
-  const age = Math.floor(
-    (new Date().getTime() - new Date('2002-09-28').getTime()) / 3.15576e10,
-  );
+export default async function About({ params }: PageProps<'/[locale]/about'>) {
+  const { locale } = await params;
+  setRequestLocale(locale as Locale);
+
+  const t = await getTranslations('pages.about');
+
+  const birthDate = new Date(2002, 9, 28);
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+
   return (
-    <>
-      <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-        {t('main.about')}
-      </h1>
-      <div className="mb-16 text-gray-600 dark:text-[#c2c2c2]">
-        <p className="mb-6">{t('about-page.text-1', { age })}</p>
-        <p className="mb-6">{t('about-page.text-2')}</p>
-        <p>{t('about-page.text-3')}</p>
-      </div>
-      <h1 className="text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
-        Links
-      </h1>
-      <div className="prose mb-16 text-gray-600 dark:text-[#c2c2c2]">
-        <ul className="list-disc">
-          <li>
-            GitHub:{' '}
-            <a
-              href="https://github.com/alex289"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
-              @alex289
-            </a>
-          </li>
-          <li>
-            Twitter:{' '}
-            <a
-              href="https://twitter.com/_alex289"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
-              @_alex289
-            </a>
-          </li>
-          <li>
-            {t('about-page.website')}:{' '}
-            <a
-              href={env.NEXT_PUBLIC_WEBSITE_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
-              {env.NEXT_PUBLIC_WEBSITE_URL}
-            </a>
-          </li>
-          <li>
-            Quicklinks:{' '}
-            <a
-              href="https://alexanderkonietzko-links.vercel.app"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
-              https://alexanderkonietzko-links.vercel.app
-            </a>
-          </li>
-        </ul>
-      </div>
+    <section className="mx-auto max-w-4xl px-6 py-8">
+      <h1 className="text-4xl font-bold">{t('title')}</h1>
 
-      <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
-        {t('about-page.timeline.title')}
-      </h1>
-      <ol className="relative mb-16 border-l border-gray-200 dark:border-gray-700">
-        <li className="mb-10 ml-4">
-          <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
-          <time className="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-[#c2c2c2]">
-            August 2021
-          </time>
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-            {t('about-page.timeline.2.title')}
-          </h2>
-          <p className="mb-4 text-base font-normal text-gray-500 dark:text-[#c2c2c2]">
-            {t('about-page.timeline.2.description')}
-          </p>
-          <a
-            target="_blank"
-            rel="noreferrer noopener"
-            href="https://www.netgo.de/"
-            aria-label="Netgo homepage">
-            <div className="inline-flex cursor-pointer items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:z-10 focus:ring-2 dark:border-gray-600 dark:bg-gray-800 dark:text-[#c2c2c2] dark:hover:bg-gray-700 dark:hover:text-white">
-              {t('about-page.timeline.learn-more')}{' '}
-              <ArrowRight className="ml-2 h-3 w-3" />
-            </div>
-          </a>
-        </li>
-        <li className="ml-4">
-          <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
-          <time className="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-[#c2c2c2]">
-            {t('about-page.timeline.1.date')}
-          </time>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            {t('about-page.timeline.1.title')}
-          </h3>
-          <p className="text-base font-normal text-gray-500 dark:text-[#c2c2c2]">
-            {t('about-page.timeline.1.description')}
-          </p>
-        </li>
-      </ol>
-
-      <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
-        {t('about-page.tools.title')}
-      </h1>
-      <div className="mb-16">
-        <p className="text-gray-500 dark:text-[#c2c2c2]">
-          {t('about-page.tools.text')}
-        </p>
-        <Tools />
-      </div>
-
-      <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
-        {t('about-page.uses.title')}
-      </h1>
-      <p className="mb-6 text-gray-500 dark:text-[#c2c2c2]">
-        {t('about-page.uses.text')}
+      <p className="text-muted-foreground mt-6 leading-relaxed">
+        {t.rich('bio', {
+          age,
+          br: () => <br />,
+          netgo: (chunks) => (
+            <HoverCard openDelay={100} closeDelay={100}>
+              <HoverCardTrigger asChild>
+                <a
+                  href="https://netgo.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground cursor-pointer underline decoration-dotted underline-offset-4">
+                  {chunks}
+                </a>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-72">
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold">netgo</p>
+                  <p className="text-muted-foreground text-sm">
+                    {t('netgo-description')}
+                  </p>
+                  <a
+                    href="https://netgo.de"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary text-sm hover:underline">
+                    {t('netgo-link')} →
+                  </a>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
+          ),
+          wh: (chunks) => (
+            <HoverCard openDelay={100} closeDelay={100}>
+              <HoverCardTrigger asChild>
+                <a
+                  href="https://w-hs.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground cursor-pointer underline decoration-dotted underline-offset-4">
+                  {chunks}
+                </a>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-72">
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold">
+                    Westfälische Hochschule
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    {t('wh-description')}
+                  </p>
+                  <a
+                    href="https://w-hs.de"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary text-sm hover:underline">
+                    {t('wh-link')} →
+                  </a>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
+          ),
+        })}
       </p>
-      <div className="prose mb-16 text-gray-600 dark:text-[#c2c2c2]">
-        <h3 className="text-lg font-bold tracking-tight text-black dark:text-white md:text-xl">
-          {t('about-page.uses.office')}
-        </h3>
-        <ul className="list-disc">
-          <li>14&quot; MacBook Pro, M1 Pro, 16GB RAM (2021)</li>
-          <li>Logitech MX Master 3 Mouse</li>
-          <li>
-            Keychron K2 Keyboard (RGB Backlight, Gateron G Pro Brown Switches)
-          </li>
-        </ul>
 
-        <h3 className="text-lg font-bold tracking-tight text-black dark:text-white md:text-xl">
-          Coding
-        </h3>
-        <ul className="list-disc">
-          <li>
-            Editor: VS Code, Neovim {t('about-page.uses.and')} JetBrains Rider (
-            <a
-              href="https://github.com/alex289/dotfiles"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400">
-              {t('about-page.uses.configuration')}
-            </a>
-            )
-          </li>
-          <li>Terminal: ITerm2 / zsh</li>
-        </ul>
+      <Link href="/projects">
+        <Button variant="ghost" className="mt-6">
+          {t('my-projects')}
+          <ArrowRight strokeWidth={1.5} className="ml-1" />
+        </Button>
+      </Link>
 
-        <h3 className="text-lg font-bold tracking-tight text-black dark:text-white md:text-xl">
-          Software
-        </h3>
-        <ul className="list-disc">
-          <li>Arc</li>
-          <li>Raycast</li>
-          <li>Rectagle</li>
-          <li>Spotify</li>
-          <li>Alt-tab</li>
-          <li>Docker</li>
-        </ul>
+      <Separator className="my-10" />
 
-        <h3 className="text-lg font-bold tracking-tight text-black dark:text-white md:text-xl">
-          {t('about-page.uses.other-tech')}
-        </h3>
-        <ul className="list-disc">
-          <li>Apple iPhone 15 Pro</li>
-          <li>Apple AirPods Pro</li>
-          <li>Apple Watch Series 5</li>
-        </ul>
+      <h2 className="text-2xl font-semibold tracking-tight">
+        {t('skillsTitle')}
+      </h2>
+
+      <div className="mt-6 space-y-6">
+        <div>
+          <h3 className="text-muted-foreground mb-3 text-sm font-medium">
+            {t('languages')}
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {skills.languages.map((skill) => (
+              <HoverCard key={skill.key} openDelay={10} closeDelay={100}>
+                <HoverCardTrigger>{skill}</HoverCardTrigger>
+                <HoverCardContent className="w-auto px-3 py-1.5 text-center">
+                  {skill.key}
+                </HoverCardContent>
+              </HoverCard>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-muted-foreground mb-3 text-sm font-medium">
+            {t('frameworks')}
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {skills.frameworks.map((skill) => (
+              <HoverCard key={skill.key} openDelay={10} closeDelay={100}>
+                <HoverCardTrigger>{skill}</HoverCardTrigger>
+                <HoverCardContent className="w-auto px-3 py-1.5 text-center">
+                  {skill.key}
+                </HoverCardContent>
+              </HoverCard>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-muted-foreground mb-3 text-sm font-medium">
+            {t('tools')}
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {skills.tools.map((skill) => (
+              <HoverCard key={skill.key} openDelay={10} closeDelay={100}>
+                <HoverCardTrigger>{skill}</HoverCardTrigger>
+                <HoverCardContent className="w-auto px-3 py-1.5 text-center">
+                  {skill.key}
+                </HoverCardContent>
+              </HoverCard>
+            ))}
+          </div>
+        </div>
       </div>
-
-      <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
-        Headshots
-      </h1>
-      <div className="flex space-x-8">
-        <a href="/static/images/konietzko_alexander.jpg">
-          <Image
-            alt="Alexander Konietzko headshot"
-            width={400}
-            quality={100}
-            src={avatar}
-            className="rounded-full"
-          />
-        </a>
-        <a href="/static/images/konietzko_alexander.jpg">
-          <Image
-            alt="Alexander Konietzko headshot"
-            width={400}
-            quality={100}
-            src={avatar}
-            className="rounded-full grayscale"
-          />
-        </a>
-      </div>
-    </>
+    </section>
   );
-};
-
-export default AboutPage;
+}

@@ -1,9 +1,8 @@
-import createIntlMiddleware from 'next-intl/middleware';
-
+import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
 
-export default createIntlMiddleware(routing);
+export default createMiddleware(routing);
 
 export const config = {
-  matcher: ['/((?!api|_next|static|images|sitemap|feed|robots).*)'],
+  matcher: ['/((?!api|static|_next|_vercel|.*\\..*).*)'],
 };

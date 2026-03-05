@@ -1,124 +1,104 @@
 {
-  "main": {
-    "home": "Home",
-    "about": "About",
-    "projects": "Projects"
+  "metadata": {
+    "description": "Software engineer and computer science student"
   },
-  "footer": {
-    "my-setup": "My dotfiles",
-    "sourcecode": "Source code"
-  },
-  "index-page": {
-    "title": "Software Engineer and Student at",
-    "intro": "Trying to build a faster web. Learning about web development, .NET Core and React / Next.js.",
-    "posts": {
-      "read-all": "Read all posts",
-      "1": {
-        "title": "Initial Commit",
-        "slug": "initial-commit"
-      },
-      "2": {
-        "title": "The Best PowerShell Terminal Setup",
-        "slug": "terminal-setup"
-      },
-      "3": {
-        "title": "How to Deploy a Fullstack Web App on Vercel?",
-        "slug": "vercel-deployment"
-      }
+  "layout": {
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "guestbook": "Guestbook"
+    },
+    "footer": {
+      "rights": "All rights reserved.",
+      "privacy": "Privacy",
+      "imprint": "Imprint"
     }
   },
-  "about-page": {
-    "text-1": "Hey, I'm Alex. I'm {age} years \nold and come from Germany. I live in NRW and spend my free time \nplaying piano, do sports or enjoying time with friends and family.",
-    "text-2": "I started working with computers when I was young and started \nprogramming in school. After I graduated I began my dual study at \nNetgo GmbH where I work and Westfälische Hochschule where I study.",
-    "text-3": "I'm currently learning .NET Core and Angular but my favourite framework is \nNextJs. In the future I want to build my own Kubernetes cluster with \nbackend services, database integration and a solid frontend combined \nby Nginx.",
-    "website": "Website",
-    "tools": {
-      "title": "Tools",
-      "text": "Those are the tools I almost use daily. I really enjoy finding new technologies improving my workflow.",
-      "tailwind": "When it comes to CSS, I always use TailwindCSS. It is a great tool for styling your website really fast.",
-      "next": "My go-to framework for building web applications. The quality of the codebase is fantastic.",
-      "vercel": "The most seamless way to deploy your website. I use it for all of my projects.",
-      "vscode": "VS Code is the text editor I reach for most often, given it's range of extensions."
+  "pages": {
+    "about": {
+      "title": "About me",
+      "bio": "Hi, I'm Alex. I'm {age} years old and come from North Rhine-Westphalia, Germany.<br></br><br></br> I work as a working student software developer at <netgo>netgo</netgo>. Alongside that, I'm pursuing my Master's degree in Computer Science – Intelligent Systems at <wh>Westfälische Hochschule</wh>.<br></br><br></br> In my free time, I play piano and train Jiu Jitsu, where I hold a 1st Dan and also coach youth.<br></br><br></br>I also work on my own smart home with Home Assistant. My dream is to turn it into an autonomous, intelligent system that regulates itself through AI",
+      "netgo-description": "IT service company and managed service provider from Germany.",
+      "netgo-link": "Visit netgo.de",
+      "wh-description": "University of Applied Sciences in North Rhine-Westphalia offering various Bachelor's and Master's programs.",
+      "wh-link": "Visit w-hs.de",
+      "skillsTitle": "Skills",
+      "languages": "Languages",
+      "frameworks": "Frameworks & Libraries",
+      "tools": "Tools & Platforms",
+      "experienceTitle": "Experience",
+      "my-projects": "My Projects"
     },
-    "uses": {
-      "title": "My Gear",
-      "text": "Here's what tech I'm currently using for coding. Most of have been accumulated over the past few years.",
-      "office": "Workstation",
-      "other-tech": "Other tech",
-      "and": "and",
-      "configuration": "Configuration"
-    },
-    "timeline": {
-      "title": "Timeline",
-      "learn-more": "Learn more about netgo",
-      "1": {
-        "date": "July 2021",
-        "title": "Graduation from school",
-        "description": "I finished my school :D"
-      },
-      "2": {
-        "title": "Dual study at netgo / Westfälische Hochschule",
-        "description": "I started my first job as a software engineer trainee at netgo. In combination I studied software systems (Informatics, B. SC.)."
+    "projects": {
+      "title": "Projects",
+      "description": "Overview of my GitHub projects and statistics.",
+      "no-projects": "No projects found.",
+      "all-repos": "All Repositories",
+      "stats": {
+        "title": "My GitHub Stats",
+        "stars": "Total Stars Earned",
+        "commits": "Total Commits",
+        "prs": "Total PRs",
+        "issues": "Total Issues",
+        "contributed": "Contributed to",
+        "top-languages": "Top Languages"
       }
+    },
+    "guestbook": {
+      "title": "Guestbook",
+      "description": "Leave a message or feedback about my portfolio or projects.",
+      "no-messages": "No messages yet.",
+      "form": {
+        "placeholder": "Write your message here...",
+        "submit": "Submit",
+        "error": {
+          "title": "Could not submit message",
+          "rate-limit": "You can only post 3 messages every 10 minutes."
+        }
+      },
+      "auth": {
+        "sign-in-prompt": "Please sign in to leave a message.",
+        "sign-in-github": "Sign in with GitHub",
+        "sign-in-google": "Sign in with Google",
+        "signed-in-as": "Signed in as",
+        "sign-out": "Sign Out"
+      }
+    },
+    "home": {
+      "no-projects": "No projects found.",
+      "more-projects": "More Projects",
+      "greeting": "Hi, I'm",
+      "name": "Alexander Konietzko",
+      "title": "Software Engineer and Computer Science Student",
+      "tagline": "Building clean, performant, and user-friendly web applications.",
+      "projects": "Projects"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "source": "Mostly generated using free privacy policy generator from Dr. Thomas Schwenke at Datenschutz-Generator.de",
+      "intro": "This privacy policy explains how personal data is collected, used, and protected when you visit this website."
+    },
+    "not-found": {
+      "title": "Page Not Found",
+      "description": "The page you're looking for doesn't exist or has been moved.",
+      "back-home": "Back to Home"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "An unexpected error occurred. Please try again later.",
+      "retry": "Try Again"
+    },
+    "imprint": {
+      "title": "Imprint",
+      "responsible-title": "Responsible for this website",
+      "name": "Alexander Konietzko",
+      "address": "Neustraße, 46535 Dinslaken, Germany",
+      "email": "me@alexanderkonietzko.com",
+      "disclaimer-title": "Disclaimer",
+      "disclaimer": "The contents of this website have been created with the utmost care. However, no guarantee can be given for the correctness, completeness, and timeliness of the content. As a service provider, I am responsible for my own content on these pages under general law. However, I am not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
+      "links-title": "Liability for Links",
+      "links": "This website contains links to external third-party websites over whose content I have no influence. Therefore, no guarantee can be given for this third-party content. The respective provider or operator of the linked pages is always responsible for their content."
     }
-  },
-  "404": {
-    "title": "Page not found",
-    "description": "Why show a generic 404 when I can make it sound mysterious? It seems \nyou've found something that used to exist, or you spelled \nsomething wrong. I'm guessing you spelled something wrong. Can \nyou double check that URL?",
-    "return-home": "Return Home"
-  },
-  "error": {
-    "title": "Something went wrong",
-    "description": "I'm sorry, but something went wrong. Please try again later.",
-    "return-home": "Return home"
-  },
-  "blog": {
-    "description": "I've been writing online since 2022, mostly about web devlopment and random stuff. In total, I've written {amount} articles on my blog. Use the search below to filter by title.",
-    "no-posts": "No posts found.",
-    "all-posts": "All Posts",
-    "search": "Search",
-    "filter": {
-      "by-name": "By name",
-      "by-tag": "By tag"
-    },
-    "views": "views",
-    "reading-time": "{minutes} min read"
-  },
-  "guestbook": {
-    "title": "Guestbook",
-    "login": "Sign in with ",
-    "logout": "Sign out",
-    "form": {
-      "title": "Sign the Guestbook",
-      "description": "Share a message for a future visitor of my site.",
-      "input": "Your message...",
-      "submit": "Send",
-      "info": "Your information is only used to display your name."
-    },
-    "success": "Hooray! Thanks for signing my Guestbook.",
-    "error": "Please enter a message.",
-    "delete": "Delete"
-  },
-  "projects": {
-    "not-found": "No projects found",
-    "see-more": "See all projects",
-    "all-repos": "All Repositories"
-  },
-  "command-palette": {
-    "settings": "Settings",
-    "socials": "Socials",
-    "switch-theme": "Switch theme",
-    "switch-language": "Change language (de)",
-    "search-placeholder": "Search...",
-    "no-results": "No results"
-  },
-  "stats": {
-    "title": "My GitHub Stats",
-    "stars": "Total Stars Earned",
-    "commits": "Total Commits",
-    "prs": "Total PRs",
-    "issues": "Total Issues",
-    "contributed": "Contributed to",
-    "top-languages": "Top Languages"
   }
 }

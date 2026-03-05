@@ -1,17 +1,17 @@
 import { routing } from '@/i18n/routing';
-import { desc } from 'drizzle-orm';
-import { getTranslations } from 'next-intl/server';
-import { headers } from 'next/headers';
-import { Suspense } from 'react';
-
-import env from '@/env.mjs';
-import GuestbookEntry from '@/components/guestbook/guestbook-entry';
-import GuestbookForm from '@/components/guestbook/guestbook-form';
 import { auth } from '@/lib/auth';
-import { db } from '@/lib/db';
-import { guestbook } from '@/lib/db/schema';
-
-import type { Metadata } from 'next/types';
+import { Metadata } from 'next';
+import { Locale } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { headers } from 'next/headers';
+import { SignInButtons, UserInfo } from '@/components/guestbook/guestbook-auth';
+import { GuestbookForm } from '@/components/guestbook/guestbook-form';
+import { Separator } from '@/components/ui/separator';
+import {
+  GuestbookMessagesFeed,
+  GuestbookMessagesSkeleton,
+} from '@/components/guestbook/guestbook-messages-feed';
+import { Suspense } from 'react';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -20,83 +20,45 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps<'/[locale]/guestbook'>): Promise<Metadata> {
-  const locale = (await params).locale as (typeof routing.locales)[number];
-  const t = await getTranslations({ locale, namespace: 'guestbook' });
-  return {
-    title: t('title'),
-    openGraph: {
-      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${t('title')}`],
-    },
-    twitter: {
-      images: [`${env.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${t('title')}`],
-    },
-  };
+  const { locale } = await params;
+  setRequestLocale(locale as Locale);
+  const t = await getTranslations('pages.guestbook');
+  return { title: t('title') };
 }
 
-async function getGuestbook() {
-  const data = await db
-    .select({
-      id: guestbook.id,
-      body: guestbook.body,
-      email: guestbook.email,
-      created_by: guestbook.created_by,
-      updated_at: guestbook.updated_at,
-    })
-    .from(guestbook)
-    .orderBy(desc(guestbook.updated_at))
-    .limit(100)
-    .execute();
-
-  return data.map((entry) => {
-    return { ...entry, updated_at: entry.updated_at.toISOString() };
-  });
-}
-
-const GuestbookPage = ({ params }: PageProps<'/[locale]/guestbook'>) => {
-  return (
-    <div className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-start justify-center">
-      <Suspense>
-        <GuestbookFormWrapper />
-        <GuestbookEntries params={params} />
-      </Suspense>
-    </div>
-  );
-};
-
-async function GuestbookEntries({
+export default async function Guestbook({
   params,
-}: {
-  params: PageProps<'/[locale]/guestbook'>['params'];
-}) {
-  const locale = (await params).locale as (typeof routing.locales)[number];
-  const [entries, session, t] = await Promise.all([
-    getGuestbook(),
+}: PageProps<'/[locale]/guestbook'>) {
+  const { locale } = await params;
+  setRequestLocale(locale as Locale);
+
+  const [session, t] = await Promise.all([
     auth.api.getSession({
       headers: await headers(),
     }),
-    getTranslations({ locale, namespace: 'guestbook' }),
+    getTranslations('pages.guestbook'),
   ]);
-
   return (
-    <div className="mt-4 space-y-8">
-      {entries.map((entry) => (
-        <GuestbookEntry
-          key={entry.id.toString()}
-          entry={entry}
-          user={session?.user}
-          locale={locale}
-          deleteText={t('delete')}
-        />
-      ))}
-    </div>
+    <section className="mx-auto max-w-4xl px-6 py-8">
+      <h1 className="text-3xl font-bold tracking-tight">{t('title')}</h1>
+      <p className="text-muted-foreground mt-2">{t('description')}</p>
+
+      <div className="mt-8 space-y-6">
+        {session ? (
+          <>
+            <UserInfo user={session.user} />
+            <GuestbookForm />
+          </>
+        ) : (
+          <SignInButtons />
+        )}
+      </div>
+
+      <Separator className="my-8" />
+
+      <Suspense fallback={<GuestbookMessagesSkeleton />}>
+        <GuestbookMessagesFeed />
+      </Suspense>
+    </section>
   );
 }
-
-async function GuestbookFormWrapper() {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-  return <GuestbookForm user={session?.user} />;
-}
-
-export default GuestbookPage;
