@@ -15,35 +15,35 @@ export default async function Stats({ stats }: { stats: Stats }) {
           <ul className="flex flex-col">
             <li className="mb-2 flex justify-between">
               <span className="flex items-center">
-                <Star className="text-primary mr-2 h-5 w-5" />
+                <Star className="mr-2 h-5 w-5 text-primary" />
                 {t('stars')}:
               </span>
               <span>{stats?.stars ?? '-'}</span>
             </li>
             <li className="mb-2 flex justify-between">
               <span className="flex items-center">
-                <History className="text-primary mr-2 h-5 w-5" /> {t('commits')}
+                <History className="mr-2 h-5 w-5 text-primary" /> {t('commits')}
                 :
               </span>
               <span>{stats?.totalCommits ?? '-'}</span>
             </li>
             <li className="mb-2 flex justify-between">
               <span className="flex items-center">
-                <GitPullRequest className="text-primary mr-2 h-5 w-5" />{' '}
+                <GitPullRequest className="mr-2 h-5 w-5 text-primary" />{' '}
                 {t('prs')}:
               </span>
               <span>{stats?.prs ?? '-'}</span>
             </li>
             <li className="mb-2 flex justify-between">
               <span className="flex items-center">
-                <AlertCircle className="text-primary mr-2 h-5 w-5" />{' '}
+                <AlertCircle className="mr-2 h-5 w-5 text-primary" />{' '}
                 {t('issues')}:
               </span>
               <span>{stats?.issues ?? '-'}</span>
             </li>
             <li className="flex justify-between">
               <span className="flex items-center">
-                <Book className="text-primary mr-2 h-5 w-5" />{' '}
+                <Book className="mr-2 h-5 w-5 text-primary" />{' '}
                 {t('contributed')}:
               </span>
               <span>{stats?.contributions ?? '-'}</span>

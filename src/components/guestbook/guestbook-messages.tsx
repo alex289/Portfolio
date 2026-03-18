@@ -29,7 +29,7 @@ export function GuestbookMessages({ messages }: { messages: Message[] }) {
           <div className="min-w-0 flex-1">
             <div className="flex items-baseline gap-2">
               <span className="text-sm font-medium">{msg.createdBy}</span>
-              <span className="text-muted-foreground text-xs">
+              <span className="text-xs text-muted-foreground">
                 {format.dateTime(msg.createdAt, {
                   year: 'numeric',
                   month: 'short',
@@ -39,7 +39,7 @@ export function GuestbookMessages({ messages }: { messages: Message[] }) {
                 })}
               </span>
             </div>
-            <p className="text-muted-foreground mt-0.5 text-sm wrap-break-word">
+            <p className="mt-0.5 text-sm wrap-break-word text-muted-foreground">
               {msg.body}
             </p>
           </div>

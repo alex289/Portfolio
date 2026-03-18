@@ -25,7 +25,7 @@ export default function SocialIcons({ size }: { size?: string }) {
             key={label}
             size="icon-lg"
             variant="ghost"
-            className={`hover:text-primary transition-colors ${size}`}>
+            className={`transition-colors hover:text-primary ${size}`}>
             <a
               aria-label={label}
               href={href}

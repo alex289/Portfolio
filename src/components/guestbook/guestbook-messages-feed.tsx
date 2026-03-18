@@ -11,7 +11,7 @@ export async function GuestbookMessagesFeed() {
 
   if (messages.length === 0) {
     return (
-      <p className="text-muted-foreground text-center">{t('no-messages')}</p>
+      <p className="text-center text-muted-foreground">{t('no-messages')}</p>
     );
   }
 

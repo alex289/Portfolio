@@ -23,7 +23,7 @@ export function SignInButtons() {
   }, []);
 
   return (
-    <div className="border-border flex flex-col items-center gap-4 rounded-lg border p-8">
+    <div className="flex flex-col items-center gap-4 rounded-lg border border-border p-8">
       <p className="text-muted-foreground">{t('sign-in-prompt')}</p>
       <div className="flex flex-col gap-3 md:flex-row">
         <Button
@@ -75,7 +75,7 @@ export function UserInfo({ user }: { user: User }) {
   }
   return (
     <div className="flex items-center justify-between">
-      <div className="text-muted-foreground flex items-center gap-2 text-sm">
+      <div className="flex items-center gap-2 text-sm text-muted-foreground">
         <Avatar className="h-6 w-6">
           <AvatarImage src={user.image ?? undefined} alt={user.name} />
           <AvatarFallback>{getInitials(user.name)}</AvatarFallback>

@@ -35,7 +35,7 @@ export default async function ImprintPage({
           <h2 className="text-xl font-semibold tracking-tight">
             {t('responsible-title')}
           </h2>
-          <div className="text-muted-foreground mt-3 space-y-1 leading-relaxed">
+          <div className="mt-3 space-y-1 leading-relaxed text-muted-foreground">
             <p>{t('name')}</p>
             <p>{t('address')}</p>
             <p>{t('email')}</p>
@@ -46,7 +46,7 @@ export default async function ImprintPage({
           <h2 className="text-xl font-semibold tracking-tight">
             {t('disclaimer-title')}
           </h2>
-          <p className="text-muted-foreground mt-3 leading-relaxed">
+          <p className="mt-3 leading-relaxed text-muted-foreground">
             {t('disclaimer')}
           </p>
         </div>
@@ -55,7 +55,7 @@ export default async function ImprintPage({
           <h2 className="text-xl font-semibold tracking-tight">
             {t('links-title')}
           </h2>
-          <p className="text-muted-foreground mt-3 leading-relaxed">
+          <p className="mt-3 leading-relaxed text-muted-foreground">
             {t('links')}
           </p>
         </div>

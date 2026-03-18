@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "bracketSameLine": true,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "semi": true,
+  "sortTailwindcss": {
+    "stylesheet": "./src/app/globals.css",
+    "functions": ["clsx", "cn"],
+    "preserveWhitespace": true
+  },
+  "printWidth": 80,
+  "sortPackageJson": false,
+  "ignorePatterns": ["pnpm-lock.yaml", "node_modules", ".next"]
+}

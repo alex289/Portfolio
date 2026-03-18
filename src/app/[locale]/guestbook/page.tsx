@@ -41,7 +41,7 @@ export default async function Guestbook({
   return (
     <section className="mx-auto max-w-4xl px-6 py-8">
       <h1 className="text-3xl font-bold tracking-tight">{t('title')}</h1>
-      <p className="text-muted-foreground mt-2">{t('description')}</p>
+      <p className="mt-2 text-muted-foreground">{t('description')}</p>
 
       <div className="mt-8 space-y-6">
         {session ? (

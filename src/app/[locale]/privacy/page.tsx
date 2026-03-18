@@ -31,7 +31,7 @@ export default async function PrivacyPage({
     <section className="mx-auto max-w-4xl px-6 py-16">
       <h1 className="text-3xl font-bold tracking-tight">{t('title')}</h1>
 
-      <p className="text-muted-foreground mt-6 mb-2 leading-relaxed">
+      <p className="mt-6 mb-2 leading-relaxed text-muted-foreground">
         {t('intro')}
       </p>
 

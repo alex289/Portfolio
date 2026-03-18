@@ -24,7 +24,7 @@ export function ProjectCard({ project }: { project: Project }) {
                 href={project.homepage}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm transition-colors">
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground">
                 <Home className="h-4 w-4 text-black dark:text-white" />
               </a>
             </Button>
@@ -34,7 +34,7 @@ export function ProjectCard({ project }: { project: Project }) {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm transition-colors">
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground">
               <GitHubIcon className="h-4 w-4 text-black dark:text-white" />
             </a>
           </Button>
@@ -63,7 +63,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
         {project.stargazerCount > 0 && (
           <div className="flex items-center">
-            <StarIcon className="text-primary mr-2 h-5 w-5" />
+            <StarIcon className="mr-2 h-5 w-5 text-primary" />
             {project.stargazerCount}
           </div>
         )}

@@ -42,7 +42,7 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
     <section className="mx-auto max-w-4xl px-6 py-8">
       <h1 className="text-4xl font-bold">{t('title')}</h1>
 
-      <p className="text-muted-foreground mt-6 leading-relaxed">
+      <p className="mt-6 leading-relaxed text-muted-foreground">
         {t.rich('bio', {
           age,
           br: () => <br />,
@@ -53,21 +53,21 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
                   href="https://netgo.de"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground cursor-pointer underline decoration-dotted underline-offset-4">
+                  className="cursor-pointer text-foreground underline decoration-dotted underline-offset-4">
                   {chunks}
                 </a>
               </HoverCardTrigger>
               <HoverCardContent className="w-72">
                 <div className="space-y-2">
                   <p className="text-sm font-semibold">netgo</p>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-sm text-muted-foreground">
                     {t('netgo-description')}
                   </p>
                   <a
                     href="https://netgo.de"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary text-sm hover:underline">
+                    className="text-sm text-primary hover:underline">
                     {t('netgo-link')} →
                   </a>
                 </div>
@@ -81,7 +81,7 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
                   href="https://w-hs.de"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground cursor-pointer underline decoration-dotted underline-offset-4">
+                  className="cursor-pointer text-foreground underline decoration-dotted underline-offset-4">
                   {chunks}
                 </a>
               </HoverCardTrigger>
@@ -90,14 +90,14 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
                   <p className="text-sm font-semibold">
                     Westfälische Hochschule
                   </p>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-sm text-muted-foreground">
                     {t('wh-description')}
                   </p>
                   <a
                     href="https://w-hs.de"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary text-sm hover:underline">
+                    className="text-sm text-primary hover:underline">
                     {t('wh-link')} →
                   </a>
                 </div>
@@ -122,7 +122,7 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
 
       <div className="mt-6 space-y-6">
         <div>
-          <h3 className="text-muted-foreground mb-3 text-sm font-medium">
+          <h3 className="mb-3 text-sm font-medium text-muted-foreground">
             {t('languages')}
           </h3>
           <div className="flex flex-wrap gap-2">
@@ -138,7 +138,7 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
         </div>
 
         <div>
-          <h3 className="text-muted-foreground mb-3 text-sm font-medium">
+          <h3 className="mb-3 text-sm font-medium text-muted-foreground">
             {t('frameworks')}
           </h3>
           <div className="flex flex-wrap gap-2">
@@ -154,7 +154,7 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
         </div>
 
         <div>
-          <h3 className="text-muted-foreground mb-3 text-sm font-medium">
+          <h3 className="mb-3 text-sm font-medium text-muted-foreground">
             {t('tools')}
           </h3>
           <div className="flex flex-wrap gap-2">

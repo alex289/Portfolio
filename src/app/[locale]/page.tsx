@@ -30,11 +30,11 @@ export default async function Home({ params }: PageProps<'/[locale]'>) {
           <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
             {t('name')}
           </h1>
-          <p className="text-muted-foreground mt-1 text-xl sm:text-2xl">
+          <p className="mt-1 text-xl text-muted-foreground sm:text-2xl">
             {t('title')}
           </p>
 
-          <p className="text-muted-foreground mt-2 mb-16 text-lg">
+          <p className="mt-2 mb-16 text-lg text-muted-foreground">
             {t('tagline')}
           </p>
         </div>
@@ -66,7 +66,7 @@ export default async function Home({ params }: PageProps<'/[locale]'>) {
           </div>
         ))
       ) : (
-        <p className="text-muted-foreground mt-12 text-center">
+        <p className="mt-12 text-center text-muted-foreground">
           {t('no-projects')}
         </p>
       )}

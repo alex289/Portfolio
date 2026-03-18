@@ -36,7 +36,7 @@ export default async function Projects({
   return (
     <section className="mx-auto max-w-4xl px-6 py-8">
       <h1 className="text-3xl font-bold tracking-tight">{t('title')}</h1>
-      <p className="text-muted-foreground mt-2 mb-4">{t('description')}</p>
+      <p className="mt-2 mb-4 text-muted-foreground">{t('description')}</p>
 
       {stats ? <Stats stats={stats} /> : null}
 
@@ -47,7 +47,7 @@ export default async function Projects({
           </div>
         ))
       ) : (
-        <p className="text-muted-foreground mt-12 text-center">
+        <p className="mt-12 text-center text-muted-foreground">
           {t('no-projects')}
         </p>
       )}
