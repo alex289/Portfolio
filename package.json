@@ -15,9 +15,9 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
     "@radix-ui/react-visually-hidden": "^1.2.4",
     "@vercel/analytics": "^2.0.1",
-    "@vercel/postgres": "^0.10.0",
     "@vercel/speed-insights": "^2.0.0",
     "better-auth": "^1.5.5",
     "class-variance-authority": "^0.7.1",
