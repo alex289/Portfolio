@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'radix-ui'],
   },
+  reactCompiler: true,
+  cacheComponents: true,
 };
 
 const withNextIntl = createNextIntlPlugin();

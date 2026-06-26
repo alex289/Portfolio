@@ -26,32 +26,37 @@ export async function generateMetadata({
   return { title: t('title') };
 }
 
+async function GuestbookAuthSection() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  return session ? (
+    <>
+      <UserInfo user={session.user} />
+      <GuestbookForm />
+    </>
+  ) : (
+    <SignInButtons />
+  );
+}
+
 export default async function Guestbook({
   params,
 }: PageProps<'/[locale]/guestbook'>) {
   const { locale } = await params;
   setRequestLocale(locale as Locale);
 
-  const [session, t] = await Promise.all([
-    auth.api.getSession({
-      headers: await headers(),
-    }),
-    getTranslations('pages.guestbook'),
-  ]);
+  const t = await getTranslations('pages.guestbook');
+
   return (
     <section className="mx-auto max-w-4xl px-6 py-8">
       <h1 className="text-3xl font-bold tracking-tight">{t('title')}</h1>
       <p className="mt-2 text-muted-foreground">{t('description')}</p>
 
       <div className="mt-8 space-y-6">
-        {session ? (
-          <>
-            <UserInfo user={session.user} />
-            <GuestbookForm />
-          </>
-        ) : (
-          <SignInButtons />
-        )}
+        <Suspense>
+          <GuestbookAuthSection />
+        </Suspense>
       </div>
 
       <Separator className="my-8" />

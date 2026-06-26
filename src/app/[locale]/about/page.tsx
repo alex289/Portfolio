@@ -27,6 +27,7 @@ export async function generateMetadata({
 }
 
 export default async function About({ params }: PageProps<'/[locale]/about'>) {
+  'use cache';
   const { locale } = await params;
   setRequestLocale(locale as Locale);
 
