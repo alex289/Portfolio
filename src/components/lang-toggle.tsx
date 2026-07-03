@@ -23,12 +23,14 @@ export function LanguageToggle() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <LanguagesIcon className="h-[1.2rem] w-[1.2rem]" />
-          <span className="sr-only">Toggle language</span>
-        </Button>
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger
+        render={
+          <Button variant="outline" size="icon">
+            <LanguagesIcon className="h-[1.2rem] w-[1.2rem]" />
+            <span className="sr-only">Toggle language</span>
+          </Button>
+        }
+      />
       <DropdownMenuContent align="end">
         {routing.locales.map((locale) => (
           <DropdownMenuItem
