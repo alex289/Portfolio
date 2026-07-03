@@ -15,6 +15,7 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@base-ui/react": "^1.6.0",
     "@neondatabase/serverless": "^1.1.0",
     "@radix-ui/react-visually-hidden": "^1.2.7",
     "@vercel/analytics": "^2.0.1",

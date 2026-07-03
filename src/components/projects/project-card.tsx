@@ -19,24 +19,30 @@ export function ProjectCard({ project }: { project: Project }) {
       <CardHeader>
         <CardAction className="flex gap-3">
           {project.homepage && (
-            <Button asChild variant="outline">
-              <a
-                href={project.homepage}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground">
-                <Home className="h-4 w-4 text-black dark:text-white" />
-              </a>
+            <Button
+              variant="outline"
+              render={
+                <a
+                  href={project.homepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                />
+              }>
+              <Home className="h-4 w-4 text-black dark:text-white" />
             </Button>
           )}
-          <Button asChild variant="outline">
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground">
-              <GitHubIcon className="h-4 w-4 text-black dark:text-white" />
-            </a>
+          <Button
+            variant="outline"
+            render={
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              />
+            }>
+            <GitHubIcon className="h-4 w-4 text-black dark:text-white" />
           </Button>
         </CardAction>
         <CardTitle className="text-lg">{project.name}</CardTitle>
