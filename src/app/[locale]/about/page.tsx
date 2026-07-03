@@ -48,15 +48,19 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
           age,
           br: () => <br />,
           netgo: (chunks) => (
-            <HoverCard openDelay={100} closeDelay={100}>
-              <HoverCardTrigger asChild>
-                <a
-                  href="https://netgo.de"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cursor-pointer text-foreground underline decoration-dotted underline-offset-4">
-                  {chunks}
-                </a>
+            <HoverCard>
+              <HoverCardTrigger
+                delay={100}
+                closeDelay={100}
+                render={
+                  <a
+                    href="https://netgo.de"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer text-foreground underline decoration-dotted underline-offset-4"
+                  />
+                }>
+                {chunks}
               </HoverCardTrigger>
               <HoverCardContent className="w-72">
                 <div className="space-y-2">
@@ -76,15 +80,19 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
             </HoverCard>
           ),
           wh: (chunks) => (
-            <HoverCard openDelay={100} closeDelay={100}>
-              <HoverCardTrigger asChild>
-                <a
-                  href="https://w-hs.de"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cursor-pointer text-foreground underline decoration-dotted underline-offset-4">
-                  {chunks}
-                </a>
+            <HoverCard>
+              <HoverCardTrigger
+                delay={100}
+                closeDelay={100}
+                render={
+                  <a
+                    href="https://w-hs.de"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer text-foreground underline decoration-dotted underline-offset-4"
+                  />
+                }>
+                {chunks}
               </HoverCardTrigger>
               <HoverCardContent className="w-72">
                 <div className="space-y-2">
@@ -128,8 +136,10 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
           </h3>
           <div className="flex flex-wrap gap-2">
             {skills.languages.map((skill) => (
-              <HoverCard key={skill.key} openDelay={10} closeDelay={100}>
-                <HoverCardTrigger>{skill}</HoverCardTrigger>
+              <HoverCard key={skill.key}>
+                <HoverCardTrigger delay={10} closeDelay={100}>
+                  {skill}
+                </HoverCardTrigger>
                 <HoverCardContent className="w-auto px-3 py-1.5 text-center">
                   {skill.key}
                 </HoverCardContent>
@@ -144,8 +154,10 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
           </h3>
           <div className="flex flex-wrap gap-2">
             {skills.frameworks.map((skill) => (
-              <HoverCard key={skill.key} openDelay={10} closeDelay={100}>
-                <HoverCardTrigger>{skill}</HoverCardTrigger>
+              <HoverCard key={skill.key}>
+                <HoverCardTrigger delay={10} closeDelay={100}>
+                  {skill}
+                </HoverCardTrigger>
                 <HoverCardContent className="w-auto px-3 py-1.5 text-center">
                   {skill.key}
                 </HoverCardContent>
@@ -160,8 +172,10 @@ export default async function About({ params }: PageProps<'/[locale]/about'>) {
           </h3>
           <div className="flex flex-wrap gap-2">
             {skills.tools.map((skill) => (
-              <HoverCard key={skill.key} openDelay={10} closeDelay={100}>
-                <HoverCardTrigger>{skill}</HoverCardTrigger>
+              <HoverCard key={skill.key}>
+                <HoverCardTrigger delay={10} closeDelay={100}>
+                  {skill}
+                </HoverCardTrigger>
                 <HoverCardContent className="w-auto px-3 py-1.5 text-center">
                   {skill.key}
                 </HoverCardContent>
