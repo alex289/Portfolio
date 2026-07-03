@@ -70,9 +70,9 @@ const NavMenu = ({
           <NavigationMenuItem key={link.href}>
             <SheetCloseWrapper {...sheetCloseWrapperProps}>
               <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}>
-                <Link href={link.href}>{t(link.label)}</Link>
+                className={navigationMenuTriggerStyle()}
+                render={<Link href={link.href} />}>
+                {t(link.label)}
               </NavigationMenuLink>
             </SheetCloseWrapper>
           </NavigationMenuItem>
