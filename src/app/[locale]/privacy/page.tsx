@@ -39,6 +39,7 @@ export default async function PrivacyPage({
         variant="ghost"
         size="sm"
         className="h-auto whitespace-normal"
+        nativeButton={false}
         render={
           <a
             href="https://datenschutz-generator.de/"

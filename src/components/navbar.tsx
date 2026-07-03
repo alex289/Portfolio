@@ -21,6 +21,7 @@ import {
 import { Button } from './ui/button';
 import { Menu } from 'lucide-react';
 import { ComponentProps } from 'react';
+import { cn } from '@/lib/utils';
 
 const navLinks = [
   { href: '/', label: 'home' },
@@ -54,13 +55,18 @@ export function Navbar() {
 
 const NavMenu = ({
   withSheetClose,
+  orientation = 'horizontal',
   ...props
 }: ComponentProps<typeof NavigationMenu> & { withSheetClose?: boolean }) => {
   const t = useTranslations('layout.navigation');
 
   return (
-    <NavigationMenu {...props}>
-      <NavigationMenuList className="data-[orientation=vertical]:-ms-2 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start">
+    <NavigationMenu orientation={orientation} {...props}>
+      <NavigationMenuList
+        className={cn(
+          orientation === 'vertical' &&
+            '-ms-2 flex-col items-start justify-start',
+        )}>
         {navLinks.map((link) => {
           const navLink = (
             <NavigationMenuLink
@@ -72,7 +78,11 @@ const NavMenu = ({
 
           return (
             <NavigationMenuItem key={link.href}>
-              {withSheetClose ? <SheetClose render={navLink} /> : navLink}
+              {withSheetClose ? (
+                <SheetClose nativeButton={false} render={navLink} />
+              ) : (
+                navLink
+              )}
             </NavigationMenuItem>
           );
         })}
@@ -97,6 +107,7 @@ export const NavigationSheet = () => {
       />
       <SheetContent className="px-6 py-3">
         <SheetClose
+          nativeButton={false}
           render={
             <Link
               href="/"

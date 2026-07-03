@@ -21,6 +21,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.homepage && (
             <Button
               variant="outline"
+              nativeButton={false}
               render={
                 <a
                   href={project.homepage}
@@ -34,6 +35,7 @@ export function ProjectCard({ project }: { project: Project }) {
           )}
           <Button
             variant="outline"
+            nativeButton={false}
             render={
               <a
                 href={project.url}

@@ -8,14 +8,17 @@ function NavigationMenu({
   align = 'start',
   className,
   children,
+  orientation = 'horizontal',
   ...props
 }: NavigationMenuPrimitive.Root.Props &
   Pick<NavigationMenuPrimitive.Positioner.Props, 'align'>) {
   return (
     <NavigationMenuPrimitive.Root
       data-slot="navigation-menu"
+      orientation={orientation}
       className={cn(
         'group/navigation-menu relative flex max-w-max flex-1 items-center justify-center',
+        orientation === 'vertical' && 'max-w-full items-start justify-start',
         className,
       )}
       {...props}>

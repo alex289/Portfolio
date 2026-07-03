@@ -25,6 +25,7 @@ export default function SocialIcons({ size }: { size?: string }) {
             size="icon-lg"
             variant="ghost"
             className={`transition-colors hover:text-primary ${size}`}
+            nativeButton={false}
             render={
               <a
                 aria-label={label}
