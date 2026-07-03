@@ -20,8 +20,7 @@ import {
 } from '@/components/ui/sheet';
 import { Button } from './ui/button';
 import { Menu } from 'lucide-react';
-import { ComponentProps, Fragment } from 'react';
-import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import { ComponentProps } from 'react';
 
 const navLinks = [
   { href: '/', label: 'home' },
@@ -59,24 +58,24 @@ const NavMenu = ({
 }: ComponentProps<typeof NavigationMenu> & { withSheetClose?: boolean }) => {
   const t = useTranslations('layout.navigation');
 
-  const [SheetCloseWrapper, sheetCloseWrapperProps] = withSheetClose
-    ? [SheetClose, { asChild: true }]
-    : [Fragment, {}];
-
   return (
     <NavigationMenu {...props}>
       <NavigationMenuList className="data-[orientation=vertical]:-ms-2 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start">
-        {navLinks.map((link) => (
-          <NavigationMenuItem key={link.href}>
-            <SheetCloseWrapper {...sheetCloseWrapperProps}>
-              <NavigationMenuLink
-                className={navigationMenuTriggerStyle()}
-                render={<Link href={link.href} />}>
-                {t(link.label)}
-              </NavigationMenuLink>
-            </SheetCloseWrapper>
-          </NavigationMenuItem>
-        ))}
+        {navLinks.map((link) => {
+          const navLink = (
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle()}
+              render={<Link href={link.href} />}>
+              {t(link.label)}
+            </NavigationMenuLink>
+          );
+
+          return (
+            <NavigationMenuItem key={link.href}>
+              {withSheetClose ? <SheetClose render={navLink} /> : navLink}
+            </NavigationMenuItem>
+          );
+        })}
       </NavigationMenuList>
     </NavigationMenu>
   );
@@ -85,22 +84,26 @@ const NavMenu = ({
 export const NavigationSheet = () => {
   return (
     <Sheet>
-      <VisuallyHidden>
-        <SheetTitle>Navigation Menu</SheetTitle>
-      </VisuallyHidden>
-      <SheetTrigger asChild>
-        <Button
-          size="icon"
-          variant="outline"
-          data-umami-event="mobile-menu-click">
-          <Menu />
-        </Button>
-      </SheetTrigger>
+      <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+      <SheetTrigger
+        render={
+          <Button
+            size="icon"
+            variant="outline"
+            data-umami-event="mobile-menu-click">
+            <Menu />
+          </Button>
+        }
+      />
       <SheetContent className="px-6 py-3">
-        <SheetClose asChild>
-          <Link href="/" className="mt-1 text-lg font-semibold tracking-tight">
-            alexander<span className="text-muted-foreground">konietzko</span>
-          </Link>
+        <SheetClose
+          render={
+            <Link
+              href="/"
+              className="mt-1 text-lg font-semibold tracking-tight"
+            />
+          }>
+          alexander<span className="text-muted-foreground">konietzko</span>
         </SheetClose>
 
         <NavMenu
