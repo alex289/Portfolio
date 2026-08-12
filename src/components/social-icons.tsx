@@ -21,18 +21,20 @@ export default function SocialIcons({ size }: { size?: string }) {
       <div className="flex items-center">
         {socialLinks.map(({ href, label, icon }) => (
           <Button
-            asChild
             key={label}
             size="icon-lg"
             variant="ghost"
-            className={`transition-colors hover:text-primary ${size}`}>
-            <a
-              aria-label={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer">
-              {icon}
-            </a>
+            className={`transition-colors hover:text-primary ${size}`}
+            nativeButton={false}
+            render={
+              <a
+                aria-label={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }>
+            {icon}
           </Button>
         ))}
       </div>

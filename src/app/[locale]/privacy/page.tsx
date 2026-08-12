@@ -36,16 +36,18 @@ export default async function PrivacyPage({
       </p>
 
       <Button
-        asChild
         variant="ghost"
         size="sm"
-        className="h-auto whitespace-normal">
-        <a
-          href="https://datenschutz-generator.de/"
-          target="_blank"
-          rel="noopener noreferrer">
-          {t('source')}
-        </a>
+        className="h-auto whitespace-normal"
+        nativeButton={false}
+        render={
+          <a
+            href="https://datenschutz-generator.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+        }>
+        {t('source')}
       </Button>
 
       <Separator className="my-10" />
