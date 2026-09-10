@@ -10,27 +10,19 @@ import { Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import { ArrowRight } from 'lucide-react';
 import { Metadata } from 'next';
-import { Locale } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps<'/[locale]/about'>): Promise<Metadata> {
-  const { locale } = await params;
-  setRequestLocale(locale as Locale);
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('pages.about');
   return { title: t('title') };
 }
 
-export default async function About({ params }: PageProps<'/[locale]/about'>) {
+export default async function About() {
   'use cache';
-  const { locale } = await params;
-  setRequestLocale(locale as Locale);
-
   const t = await getTranslations('pages.about');
 
   const birthDate = new Date(2002, 9, 28);

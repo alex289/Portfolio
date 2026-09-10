@@ -1,8 +1,7 @@
 import { routing } from '@/i18n/routing';
 import { auth } from '@/lib/auth';
 import { Metadata } from 'next';
-import { Locale } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import { headers } from 'next/headers';
 import { SignInButtons, UserInfo } from '@/components/guestbook/guestbook-auth';
 import { GuestbookForm } from '@/components/guestbook/guestbook-form';
@@ -17,11 +16,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps<'/[locale]/guestbook'>): Promise<Metadata> {
-  const { locale } = await params;
-  setRequestLocale(locale as Locale);
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('pages.guestbook');
   return { title: t('title') };
 }
@@ -40,12 +35,7 @@ async function GuestbookAuthSection() {
   );
 }
 
-export default async function Guestbook({
-  params,
-}: PageProps<'/[locale]/guestbook'>) {
-  const { locale } = await params;
-  setRequestLocale(locale as Locale);
-
+export default async function Guestbook() {
   const t = await getTranslations('pages.guestbook');
 
   return (

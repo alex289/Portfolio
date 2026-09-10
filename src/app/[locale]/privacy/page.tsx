@@ -1,7 +1,6 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
-import { Locale } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import GermanPrivacy from '@/components/privacy/german';
 import EnglishPrivacy from '@/components/privacy/english';
@@ -11,20 +10,13 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps<'/[locale]/privacy'>): Promise<Metadata> {
-  const { locale } = await params;
-  setRequestLocale(locale as Locale);
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('pages.privacy');
   return { title: t('title') };
 }
 
-export default async function PrivacyPage({
-  params,
-}: PageProps<'/[locale]/privacy'>) {
-  const { locale } = await params;
-  setRequestLocale(locale as Locale);
+export default async function PrivacyPage() {
+  const locale = await getLocale();
   const t = await getTranslations('pages.privacy');
 
   return (

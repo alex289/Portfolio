@@ -5,28 +5,18 @@ import { routing } from '@/i18n/routing';
 import { getProjects, getStats } from '@/lib/github';
 import { ArrowRight } from 'lucide-react';
 import { Metadata } from 'next';
-import { Locale } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps<'/[locale]/projects'>): Promise<Metadata> {
-  const { locale } = await params;
-  setRequestLocale(locale as Locale);
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('pages.projects');
   return { title: t('title') };
 }
 
-export default async function Projects({
-  params,
-}: PageProps<'/[locale]/projects'>) {
-  const { locale } = await params;
-  setRequestLocale(locale as Locale);
-
+export default async function Projects() {
   const [stats, projects, t] = await Promise.all([
     getStats(),
     getProjects(),
