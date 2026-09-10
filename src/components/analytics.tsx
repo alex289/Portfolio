@@ -7,6 +7,7 @@ import Script from 'next/script';
 
 const AnalyticsWrapper = () => {
   const [mounted, setMounted] = useState(false);
+  // oxlint-disable-next-line react/set-state-in-effect
   useEffect(() => setMounted(true), []);
 
   if (!mounted || process.env.NODE_ENV !== 'production') {

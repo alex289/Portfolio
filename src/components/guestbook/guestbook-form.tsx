@@ -9,7 +9,7 @@ import {
   InputGroupButton,
   InputGroupInput,
 } from '../ui/input-group';
-import { toast } from 'sonner';
+import { toast } from '../ui/toast';
 
 export function GuestbookForm() {
   const t = useTranslations('pages.guestbook.form');
@@ -21,10 +21,12 @@ export function GuestbookForm() {
       formRef.current?.reset();
     } catch (error) {
       const message = (error as Error).message;
-      toast.error(t('error.title'), {
-        position: 'bottom-right',
+      toast.add({
+        type: 'error',
+        title: t('error.title'),
         description:
           message === 'RATE_LIMIT_EXCEEDED' ? t('error.rate-limit') : message,
+        priority: 'high',
       });
     }
   }

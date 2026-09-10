@@ -3,15 +3,14 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import '../globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import AnalyticsWrapper from '@/components/analytics';
-import { Toaster } from '@/components/ui/sonner';
-import { Locale, NextIntlClientProvider, hasLocale } from 'next-intl';
-import { notFound } from 'next/navigation';
+import { NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { Navbar } from '@/components/navbar';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 import { Footer } from '@/components/footer';
 import { EasterEgg } from '@/components/easter-egg';
+import { Toaster } from '@/components/ui/toast';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -37,11 +36,8 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: LayoutProps<'/[locale]'>): Promise<Metadata> {
-  const { locale } = await params;
-  setRequestLocale(locale as Locale);
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
   const t = await getTranslations('metadata');
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_WEBSITE_URL as string),
@@ -110,14 +106,8 @@ export async function generateMetadata({
 
 export default async function LocaleLayout({
   children,
-  params,
 }: LayoutProps<'/[locale]'>) {
-  const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
-  setRequestLocale(locale);
+  const locale = await getLocale();
 
   return (
     <html lang={locale} suppressHydrationWarning>

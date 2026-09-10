@@ -6,18 +6,14 @@ import { Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import { getProjects } from '@/lib/github';
 import { ArrowRight } from 'lucide-react';
-import { Locale } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default async function Home({ params }: PageProps<'/[locale]'>) {
-  const { locale } = await params;
-  setRequestLocale(locale as Locale);
-
+export default async function Home() {
   const [projects, t] = await Promise.all([
     getProjects(3),
     getTranslations('pages.home'),

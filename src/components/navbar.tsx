@@ -21,7 +21,7 @@ import {
 import { Button } from './ui/button';
 import { Menu } from 'lucide-react';
 import { ComponentProps } from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from 'cn';
 
 const navLinks = [
   { href: '/', label: 'home' },
