@@ -1,3 +1,5 @@
+import NetgoIcon from '@/components/icons/netgo';
+import WestfaelischeHochschuleIcon from '@/components/icons/westfaelische-hochschule';
 import { skills } from '@/components/skills';
 import { Button } from '@/components/ui/button';
 import {
@@ -25,11 +27,9 @@ export default async function About() {
   'use cache';
   const t = await getTranslations('pages.about');
 
-  const birthDate = new Date(2002, 9, 28);
+  const birthDate = new Date(2002, 1, 1);
   const today = new Date();
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const m = today.getMonth() - birthDate.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+  const age = today.getFullYear() - birthDate.getFullYear();
 
   return (
     <section className="mx-auto max-w-4xl px-6 py-8">
@@ -56,7 +56,8 @@ export default async function About() {
               </HoverCardTrigger>
               <HoverCardContent className="w-72">
                 <div className="space-y-2">
-                  <p className="text-sm font-semibold">netgo</p>
+                  <NetgoIcon className="h-5 w-auto text-foreground" />
+                  <span className="sr-only">netgo</span>
                   <p className="text-sm text-muted-foreground">
                     {t('netgo-description')}
                   </p>
@@ -88,9 +89,8 @@ export default async function About() {
               </HoverCardTrigger>
               <HoverCardContent className="w-72">
                 <div className="space-y-2">
-                  <p className="text-sm font-semibold">
-                    Westfälische Hochschule
-                  </p>
+                  <WestfaelischeHochschuleIcon className="h-10 w-auto text-foreground" />
+                  <span className="sr-only">Westfälische Hochschule</span>
                   <p className="text-sm text-muted-foreground">
                     {t('wh-description')}
                   </p>

@@ -1,4 +1,5 @@
 import profilePic from '../../../public/static/images/konietzko_alexander.jpg';
+import { HoloCard } from '@/components/holo-card';
 import { ProjectCard } from '@/components/projects/project-card';
 import SocialIcons from '@/components/social-icons';
 import { Button } from '@/components/ui/button';
@@ -30,23 +31,23 @@ export default async function Home() {
             {t('title')}
           </p>
 
-          <p className="mt-2 mb-16 text-lg text-muted-foreground">
+          <p className="mt-2 mb-16 max-w-xl text-lg text-muted-foreground">
             {t('tagline')}
           </p>
         </div>
 
-        <div className="relative mb-6 w-32 sm:mb-0 sm:w-44">
+        <HoloCard className="mb-6 w-32 shrink-0 rounded-full sm:mb-0 sm:w-44">
           <Image
             alt="Alexander Konietzko"
             height={500}
             width={500}
             src={profilePic}
             placeholder="blur"
-            sizes="30vw"
-            priority
-            className="rounded-full"
+            sizes="176px"
+            preload
+            className="block h-auto w-full"
           />
-        </div>
+        </HoloCard>
       </div>
 
       <SocialIcons size="size-12" />

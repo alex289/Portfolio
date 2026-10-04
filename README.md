@@ -3,12 +3,13 @@
 My own personal portfolio website
 
 - **Framework**: [Next.js](https://nextjs.org/)
-- **Database**: [Vercel Postgres](https://vercel.com/)
+- **Database**: [Neon](https://neon.tech/)
 - **ORM**: [Drizzle](https://orm.drizzle.team/)
 - **Authentication**: [Better-Auth](https://www.better-auth.com/)
 - **Deployment**: [Vercel](https://vercel.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Shadcn UI**: [Shadcn UI](https://ui.shadcn.com/)
+- **UI**: [Base UI](https://base-ui.com/) via [shadcn/ui](https://ui.shadcn.com/)
+- **i18n**: [next-intl](https://next-intl.dev/)
 
 ## Running Locally
 

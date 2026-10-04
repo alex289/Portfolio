@@ -1,10 +1,11 @@
 'use client';
 
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Blobatar } from '@blobatar/react';
 import { useFormatter } from 'next-intl';
 import { Button } from '../ui/button';
 import { Trash2 } from 'lucide-react';
 import { deleteMessage } from '@/app/[locale]/guestbook/actions';
+import 'blobatar/motion.css';
 
 type Message = {
   id: string;
@@ -21,11 +22,11 @@ export function GuestbookMessages({ messages }: { messages: Message[] }) {
     <div className="flex flex-col gap-3 space-y-4">
       {messages.map((msg) => (
         <div key={msg.id} className="flex gap-3">
-          <Avatar className="h-8 w-8 shrink-0">
-            <AvatarFallback>
-              {msg.createdBy.charAt(0).toUpperCase()}
-            </AvatarFallback>
-          </Avatar>
+          <Blobatar
+            name={msg.createdBy}
+            animate="hover"
+            className="size-10 shrink-0"
+          />
           <div className="min-w-0 flex-1">
             <div className="flex items-baseline gap-2">
               <span className="text-sm font-medium">{msg.createdBy}</span>

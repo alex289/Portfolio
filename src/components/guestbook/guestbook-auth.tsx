@@ -3,14 +3,14 @@
 import { useTranslations } from 'next-intl';
 import { authClient, User } from '@/lib/auth-client';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Blobatar } from '@blobatar/react';
 import GitHubIcon from '../icons/github';
 import GoogleIcon from '../icons/google';
-import { getInitials } from '@/lib/utils';
 import { LogOut } from 'lucide-react';
 import { useRouter } from '@/i18n/navigation';
 import { Badge } from '../ui/badge';
 import { useEffect, useState } from 'react';
+import 'blobatar/motion.css';
 
 export function SignInButtons() {
   const t = useTranslations('pages.guestbook.auth');
@@ -18,7 +18,7 @@ export function SignInButtons() {
 
   // Hydration error fix
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    // oxlint-disable-next-line react/set-state-in-effect
     setLastMethod(authClient.getLastUsedLoginMethod());
   }, []);
 
@@ -76,10 +76,11 @@ export function UserInfo({ user }: { user: User }) {
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Avatar className="h-6 w-6">
-          <AvatarImage src={user.image ?? undefined} alt={user.name} />
-          <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
-        </Avatar>
+        <Blobatar
+          name={user.name}
+          animate="always"
+          className="size-10 shrink-0"
+        />
         <span>
           {t('signed-in-as')}{' '}
           <strong className="text-foreground">{user.name}</strong>

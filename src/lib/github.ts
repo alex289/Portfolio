@@ -64,28 +64,38 @@ type StatsResponse = {
   };
 };
 
+type RepoNode = {
+  name: string;
+  url: string;
+  description: string | null;
+  homepageUrl: string | null;
+  stargazerCount: number;
+  forkCount: number;
+  isArchived: boolean;
+  pushedAt: string;
+  licenseInfo: { key: string } | null;
+  releases: { totalCount: number };
+  primaryLanguage?: {
+    name: string;
+    color: string;
+  };
+  defaultBranchRef: {
+    target: { history: { totalCount: number } } | null;
+  } | null;
+  repositoryTopics: {
+    nodes: {
+      topic: {
+        name: string;
+      };
+    }[];
+  };
+};
+
 type RepoResponse = {
   data: {
     user: {
       repositories: {
-        nodes: {
-          name: string;
-          url: string;
-          description: string;
-          homepageUrl: string;
-          stargazerCount: number;
-          primaryLanguage?: {
-            name: string;
-            color: string;
-          };
-          repositoryTopics: {
-            nodes: {
-              topic: {
-                name: string;
-              };
-            }[];
-          };
-        }[];
+        nodes: RepoNode[];
       };
     };
   };
@@ -198,7 +208,39 @@ export const getStats = async () => {
   } as Stats;
 };
 
-export const getProjects = async (perPage = 10) => {
+const MONTH_IN_MS = 1000 * 60 * 60 * 24 * 30.44;
+const FRESHNESS_HALF_LIFE_MONTHS = 18;
+
+const logScore = (value: number, reference: number) =>
+  Math.min(1, Math.log10(1 + value) / Math.log10(1 + reference));
+
+const isShowcaseWorthy = (repo: RepoNode, login: string) =>
+  !repo.isArchived &&
+  !!repo.description?.trim() &&
+  repo.name.toLowerCase() !== login.toLowerCase() &&
+  repo.name !== '.github';
+
+// Ranks a repo 0-100 from signals GitHub already tracks, so the showcase stays
+// curated without a hardcoded list or topics. `newestPush` keeps the freshness
+// term deterministic -- reading the wall clock here would break prerendering.
+const scoreRepo = (repo: RepoNode, newestPush: number) => {
+  const commits = repo.defaultBranchRef?.target?.history.totalCount ?? 0;
+  const monthsBehind = (newestPush - Date.parse(repo.pushedAt)) / MONTH_IN_MS;
+
+  return (
+    35 * logScore(repo.stargazerCount, 300) +
+    20 * logScore(commits, 500) +
+    15 * Math.pow(0.5, monthsBehind / FRESHNESS_HALF_LIFE_MONTHS) +
+    10 * logScore(repo.forkCount, 40) +
+    10 * logScore(repo.releases.totalCount, 30) +
+    (repo.homepageUrl ? 6 : 0) +
+    (repo.licenseInfo ? 4 : 0)
+  );
+};
+
+export const getProjects = async (limit = 6) => {
+  const login = process.env.GITHUB_USERNAME;
+
   const reposResponse = await fetch('https://api.github.com/graphql', {
     next: { revalidate: 3600 }, // 1 hour
     method: 'POST',
@@ -208,18 +250,36 @@ export const getProjects = async (perPage = 10) => {
     },
     body: JSON.stringify({
       query: `
-        query projectsInfo($login: String!, $perPage: Int!) {
+        query projectsInfo($login: String!) {
           user(login: $login) {
-            repositories(first: $perPage, orderBy: {field: PUSHED_AT, direction: DESC}, privacy: PUBLIC, isFork: false) {
+            repositories(first: 100, orderBy: {field: PUSHED_AT, direction: DESC}, privacy: PUBLIC, isFork: false) {
               nodes {
                 name
                 url
                 description
                 homepageUrl
                 stargazerCount
+                forkCount
+                isArchived
+                pushedAt
+                licenseInfo {
+                  key
+                }
+                releases {
+                  totalCount
+                }
                 primaryLanguage {
                   name
                   color
+                }
+                defaultBranchRef {
+                  target {
+                    ... on Commit {
+                      history {
+                        totalCount
+                      }
+                    }
+                  }
                 }
                 repositoryTopics(first: 5) {
                   nodes {
@@ -234,8 +294,7 @@ export const getProjects = async (perPage = 10) => {
         }
         `,
       variables: {
-        login: process.env.GITHUB_USERNAME,
-        perPage: perPage,
+        login: login,
       },
     }),
   });
@@ -246,19 +305,35 @@ export const getProjects = async (perPage = 10) => {
 
   const data = (await reposResponse.json()) as RepoResponse;
 
-  return data.data.user.repositories.nodes.map(
-    (repo) =>
-      ({
-        name: repo.name,
-        url: repo.url,
-        homepage: repo.homepageUrl,
-        description: repo.description || '',
-        stargazerCount: repo.stargazerCount,
-        language: {
-          name: repo.primaryLanguage?.name || '',
-          color: repo.primaryLanguage?.color || '',
-        },
-        topics: repo.repositoryTopics.nodes.map((node) => node.topic.name),
-      }) as Project,
+  const candidates = data.data.user.repositories.nodes.filter((repo) =>
+    isShowcaseWorthy(repo, login ?? ''),
   );
+
+  if (candidates.length === 0) {
+    return [];
+  }
+
+  const newestPush = Math.max(
+    ...candidates.map((repo) => Date.parse(repo.pushedAt)),
+  );
+
+  return candidates
+    .map((repo) => ({ repo, score: scoreRepo(repo, newestPush) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(
+      ({ repo }) =>
+        ({
+          name: repo.name,
+          url: repo.url,
+          homepage: repo.homepageUrl ?? '',
+          description: repo.description ?? '',
+          stargazerCount: repo.stargazerCount,
+          language: {
+            name: repo.primaryLanguage?.name || '',
+            color: repo.primaryLanguage?.color || '',
+          },
+          topics: repo.repositoryTopics.nodes.map((node) => node.topic.name),
+        }) as Project,
+    );
 };
