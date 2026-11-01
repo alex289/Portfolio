@@ -22,7 +22,7 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "babel-plugin-react-compiler": "^1.0.0",
-    "better-auth": "^1.7.6",
+    "better-auth": "^1.7.7",
     "blobatar": "^2.7.0",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.4.0",
